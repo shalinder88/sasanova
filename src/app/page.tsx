@@ -233,7 +233,7 @@ export default async function Home() {
                         <span className="text-sm font-bold">{vs.toolB.name}</span>
                       </div>
                       <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${vs.verdict === "depends" ? "bg-warning-light text-warning" : "bg-success-light text-success"}`}>
-                        {vs.verdict === "depends" ? "It depends" : `${tools.find(t => t.slug === vs.verdict)?.name} wins`}
+                        {vs.verdict === "depends" ? "Different jobs" : `${tools.find(t => t.slug === vs.verdict)?.name ?? vs.verdict} for most`}
                       </span>
                     </div>
                   </div>

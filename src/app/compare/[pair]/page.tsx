@@ -104,14 +104,16 @@ export default async function ComparisonPage({ params }: PageProps) {
   const scoreA = getOverallScore(toolA.scores);
   const scoreB = getOverallScore(toolB.scores);
 
+  // Fuzzy feature matching: normalize by removing spaces, punctuation, lowercasing
+  const normalize = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
   const sharedFeatures = toolA.features.filter((f) =>
-    toolB.features.some((bf) => bf.toLowerCase() === f.toLowerCase())
+    toolB.features.some((bf) => normalize(bf) === normalize(f) || bf.toLowerCase().includes(f.toLowerCase().split(" ")[0]))
   );
   const uniqueA = toolA.features.filter(
-    (f) => !toolB.features.some((bf) => bf.toLowerCase() === f.toLowerCase())
+    (f) => !toolB.features.some((bf) => normalize(bf) === normalize(f) || bf.toLowerCase().includes(f.toLowerCase().split(" ")[0]))
   );
   const uniqueB = toolB.features.filter(
-    (f) => !toolA.features.some((af) => af.toLowerCase() === f.toLowerCase())
+    (f) => !toolA.features.some((af) => normalize(af) === normalize(f) || af.toLowerCase().includes(f.toLowerCase().split(" ")[0]))
   );
 
   /* JSON-LD */
