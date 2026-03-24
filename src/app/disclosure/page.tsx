@@ -212,7 +212,7 @@ export default function DisclosurePage() {
             methodology is applied regardless of whether a tool has an affiliate relationship with
             us. For complete details on our scoring framework, criteria definitions, and weighting
             methodology, see our{" "}
-            <Link href="/about/scoring" className="text-accent hover:underline">
+            <Link href="/about/methodology" className="text-accent hover:underline">
               Scoring Methodology
             </Link>
             .
@@ -389,7 +389,7 @@ export default function DisclosurePage() {
               — our full commitment to unbiased editorial content.
             </li>
             <li>
-              <Link href="/about/scoring" className="text-accent hover:underline">
+              <Link href="/about/methodology" className="text-accent hover:underline">
                 Scoring Methodology
               </Link>{" "}
               — how we evaluate and score every tool.

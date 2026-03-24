@@ -69,40 +69,34 @@ export const categories: Category[] = [
   // Cluster 1: Newsletters / Email Marketing / Creator Monetization
   { slug: "email-marketing", name: "Email Marketing", description: "Send campaigns, automate sequences, and grow your audience.", cluster: 1, toolCount: 5, icon: "mail" },
   { slug: "newsletter-platforms", name: "Newsletter Platforms", description: "Publish, monetize, and grow a newsletter business.", cluster: 1, toolCount: 5, icon: "newspaper" },
-  { slug: "creator-monetization", name: "Creator Monetization", description: "Sell digital products, courses, memberships, and subscriptions.", cluster: 1, toolCount: 4, icon: "dollar" },
+  { slug: "creator-monetization", name: "Creator Monetization", description: "Sell digital products, courses, memberships, and subscriptions.", cluster: 1, toolCount: 6, icon: "dollar" },
   // Cluster 2: Automation / Forms / Scheduling
   { slug: "automation", name: "Automation Tools", description: "Connect apps and automate workflows without code.", cluster: 2, toolCount: 9, icon: "zap" },
   { slug: "scheduling", name: "Scheduling & Booking", description: "Let clients and teammates book time without back-and-forth.", cluster: 2, toolCount: 6, icon: "calendar" },
   { slug: "forms-surveys", name: "Forms & Surveys", description: "Collect data, leads, and feedback with smart forms.", cluster: 2, toolCount: 5, icon: "clipboard" },
   // Cluster 3: CRM / Pipeline / Outreach
-  { slug: "crm", name: "CRM Software", description: "Manage contacts, deals, and customer relationships.", cluster: 3, toolCount: 9, icon: "users" },
+  { slug: "crm", name: "CRM Software", description: "Manage contacts, deals, and customer relationships.", cluster: 3, toolCount: 10, icon: "users" },
   { slug: "sales-outreach", name: "Sales & Outreach", description: "Automate prospecting, email outreach, and follow-ups.", cluster: 3, toolCount: 10, icon: "send" },
   // Cluster 4: Project Management / Docs / Collaboration
-  { slug: "project-management", name: "Project Management", description: "Plan, track, and ship work with your team.", cluster: 4, toolCount: 10, icon: "layout" },
-  { slug: "task-management", name: "Task Management", description: "Organize personal and team tasks with simple, focused tools.", cluster: 4, toolCount: 4, icon: "check-square" },
-  { slug: "docs-knowledge", name: "Docs & Knowledge Base", description: "Write, organize, and share team knowledge.", cluster: 4, toolCount: 9, icon: "book" },
+  { slug: "project-management", name: "Project Management", description: "Plan, track, and ship work with your team.", cluster: 4, toolCount: 11, icon: "layout" },
+  { slug: "task-management", name: "Task Management", description: "Organize personal and team tasks with simple, focused tools.", cluster: 4, toolCount: 5, icon: "check-square" },
+  { slug: "docs-knowledge", name: "Docs & Knowledge Base", description: "Write, organize, and share team knowledge.", cluster: 4, toolCount: 11, icon: "book" },
   { slug: "ai-writing", name: "AI Writing & Assistants", description: "Generate, edit, and enhance content with AI.", cluster: 4, toolCount: 9, icon: "sparkles" },
-  { slug: "meeting-transcription", name: "Meeting & Transcription", description: "Record, transcribe, and summarize meetings with AI.", cluster: 4, toolCount: 7, icon: "mic" },
+  { slug: "meeting-transcription", name: "Meeting & Transcription", description: "Record, transcribe, and summarize meetings with AI.", cluster: 4, toolCount: 9, icon: "mic" },
   // Cluster 5: Design / Communication / Help Desk / Analytics / Developer Tools
   { slug: "design-creative", name: "Design & Creative Tools", description: "Design interfaces, graphics, and websites with collaborative visual tools.", cluster: 5, toolCount: 5, icon: "pen-tool" },
-  { slug: "communication", name: "Communication & Chat", description: "Team messaging, async video, and real-time collaboration.", cluster: 5, toolCount: 5, icon: "message-circle" },
+  { slug: "communication", name: "Communication & Chat", description: "Team messaging, async video, and real-time collaboration.", cluster: 5, toolCount: 7, icon: "message-circle" },
   { slug: "helpdesk-support", name: "Help Desk & Support", description: "Customer service platforms for ticketing, live chat, and knowledge bases.", cluster: 5, toolCount: 6, icon: "life-buoy" },
   { slug: "analytics", name: "Analytics & Data", description: "Product analytics, heatmaps, session recordings, and privacy-friendly tracking.", cluster: 5, toolCount: 5, icon: "bar-chart" },
   { slug: "developer-tools", name: "Developer Tools", description: "Deployment, hosting, databases, and infrastructure for modern applications.", cluster: 5, toolCount: 5, icon: "terminal" },
   // Cluster 6: Finance / HR / E-commerce / Website Builders / Video / Social Media / Cloud Storage
-  { slug: "accounting-finance", name: "Accounting & Finance", description: "Invoicing, bookkeeping, expense tracking, and financial reporting for businesses.", cluster: 6, toolCount: 4, icon: "receipt" },
+  { slug: "accounting-finance", name: "Accounting & Finance", description: "Invoicing, bookkeeping, expense tracking, and financial reporting for businesses.", cluster: 6, toolCount: 5, icon: "receipt" },
   { slug: "hr-people", name: "HR & People", description: "Payroll, benefits, onboarding, and people management for growing teams.", cluster: 6, toolCount: 4, icon: "heart-handshake" },
-  { slug: "ecommerce", name: "E-commerce", description: "Build online stores, sell digital and physical products, and manage payments.", cluster: 6, toolCount: 5, icon: "shopping-cart" },
-  { slug: "website-builders", name: "Website Builders", description: "Design and publish websites without code using drag-and-drop builders.", cluster: 6, toolCount: 4, icon: "globe" },
+  { slug: "ecommerce", name: "E-commerce", description: "Build online stores, sell digital and physical products, and manage payments.", cluster: 6, toolCount: 8, icon: "shopping-cart" },
+  { slug: "website-builders", name: "Website Builders", description: "Design and publish websites without code using drag-and-drop builders.", cluster: 6, toolCount: 5, icon: "globe" },
   { slug: "video-media", name: "Video & Media", description: "Record, edit, and distribute video and audio content.", cluster: 6, toolCount: 4, icon: "video" },
   { slug: "social-media", name: "Social Media Management", description: "Schedule, publish, and analyze social media content across platforms.", cluster: 6, toolCount: 4, icon: "share-2" },
   { slug: "cloud-storage", name: "Cloud Storage", description: "Store, sync, and share files securely across teams and devices.", cluster: 6, toolCount: 3, icon: "cloud" },
-  // Cluster 7: High-Affiliate-Payout Categories
-  { slug: "webinar-events", name: "Webinar & Events", description: "Host webinars, virtual events, and live-streamed presentations at scale.", cluster: 7, toolCount: 5, icon: "radio" },
-  { slug: "landing-pages", name: "Landing Pages & Conversion", description: "Build high-converting landing pages, run A/B tests, and capture leads.", cluster: 7, toolCount: 5, icon: "layers" },
-  { slug: "seo-tools", name: "SEO Tools", description: "Research keywords, audit sites, track rankings, and optimize content for search.", cluster: 7, toolCount: 5, icon: "search" },
-  { slug: "customer-success", name: "Customer Success", description: "Monitor customer health, reduce churn, and drive expansion revenue.", cluster: 7, toolCount: 5, icon: "heart" },
-  { slug: "proposals-contracts", name: "Proposals & Contracts", description: "Create, send, track, and e-sign proposals, quotes, and contracts.", cluster: 7, toolCount: 5, icon: "file-text" },
 ];
 
 export const tools: Tool[] = [
