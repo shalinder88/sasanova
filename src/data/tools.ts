@@ -72,17 +72,17 @@ export const categories: Category[] = [
   { slug: "creator-monetization", name: "Creator Monetization", description: "Sell digital products, courses, memberships, and subscriptions.", cluster: 1, toolCount: 4, icon: "dollar" },
   // Cluster 2: Automation / Forms / Scheduling
   { slug: "automation", name: "Automation Tools", description: "Connect apps and automate workflows without code.", cluster: 2, toolCount: 9, icon: "zap" },
-  { slug: "scheduling", name: "Scheduling & Booking", description: "Let clients and teammates book time without back-and-forth.", cluster: 2, toolCount: 5, icon: "calendar" },
-  { slug: "forms-surveys", name: "Forms & Surveys", description: "Collect data, leads, and feedback with smart forms.", cluster: 2, toolCount: 4, icon: "clipboard" },
+  { slug: "scheduling", name: "Scheduling & Booking", description: "Let clients and teammates book time without back-and-forth.", cluster: 2, toolCount: 6, icon: "calendar" },
+  { slug: "forms-surveys", name: "Forms & Surveys", description: "Collect data, leads, and feedback with smart forms.", cluster: 2, toolCount: 5, icon: "clipboard" },
   // Cluster 3: CRM / Pipeline / Outreach
   { slug: "crm", name: "CRM Software", description: "Manage contacts, deals, and customer relationships.", cluster: 3, toolCount: 9, icon: "users" },
-  { slug: "sales-outreach", name: "Sales & Outreach", description: "Automate prospecting, email outreach, and follow-ups.", cluster: 3, toolCount: 9, icon: "send" },
+  { slug: "sales-outreach", name: "Sales & Outreach", description: "Automate prospecting, email outreach, and follow-ups.", cluster: 3, toolCount: 10, icon: "send" },
   // Cluster 4: Project Management / Docs / Collaboration
   { slug: "project-management", name: "Project Management", description: "Plan, track, and ship work with your team.", cluster: 4, toolCount: 10, icon: "layout" },
   { slug: "task-management", name: "Task Management", description: "Organize personal and team tasks with simple, focused tools.", cluster: 4, toolCount: 4, icon: "check-square" },
   { slug: "docs-knowledge", name: "Docs & Knowledge Base", description: "Write, organize, and share team knowledge.", cluster: 4, toolCount: 9, icon: "book" },
   { slug: "ai-writing", name: "AI Writing & Assistants", description: "Generate, edit, and enhance content with AI.", cluster: 4, toolCount: 9, icon: "sparkles" },
-  { slug: "meeting-transcription", name: "Meeting & Transcription", description: "Record, transcribe, and summarize meetings with AI.", cluster: 4, toolCount: 6, icon: "mic" },
+  { slug: "meeting-transcription", name: "Meeting & Transcription", description: "Record, transcribe, and summarize meetings with AI.", cluster: 4, toolCount: 7, icon: "mic" },
   // Cluster 5: Design / Communication / Help Desk / Analytics / Developer Tools
   { slug: "design-creative", name: "Design & Creative Tools", description: "Design interfaces, graphics, and websites with collaborative visual tools.", cluster: 5, toolCount: 5, icon: "pen-tool" },
   { slug: "communication", name: "Communication & Chat", description: "Team messaging, async video, and real-time collaboration.", cluster: 5, toolCount: 5, icon: "message-circle" },

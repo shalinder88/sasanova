@@ -104,6 +104,11 @@ export default async function Home() {
               </div>
             </div>
 
+            {/* Metric definitions */}
+            <p className="text-xs text-muted/60 text-center max-w-lg mx-auto mb-8">
+              Tools tracked = live reviewed entries in our directory. Comparisons = published head-to-head pages. Categories = active browseable clusters with 2+ tools. Data verified = last global verification sweep.
+            </p>
+
             {/* CTAs — pushed lower */}
             <div className="flex flex-wrap justify-center gap-3 mb-6">
               <Link href="/tools" className="px-7 py-3 text-sm font-semibold bg-accent text-white rounded-lg hover:brightness-110 transition-all">
@@ -381,7 +386,7 @@ export default async function Home() {
             Not another review site.
           </h2>
           <p className="text-base text-muted mb-12 max-w-xl">
-            Most comparison sites rank by who pays the most. We built something different.
+            Too many comparison sites optimize for monetization, not decision quality. We built Sasanova to fix that.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
