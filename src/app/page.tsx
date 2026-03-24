@@ -46,26 +46,42 @@ export default function Home() {
   return (
     <>
       {/* ═══════════════════════════════════════════════════════
-          SECTION 1 — HERO
-          Linear: massive headline + embedded product preview
+          SECTION 1 — HERO (centered, clean, orbital animation)
           ═══════════════════════════════════════════════════════ */}
-      <section className="hero-mesh border-b border-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-24 pb-0">
-          {/* Headline */}
-          <div className="max-w-3xl mb-12">
-            <h1 className="text-[2.5rem] sm:text-[3.25rem] lg:text-[4rem] font-extrabold leading-[1.05] tracking-[-0.03em] mb-4">
+      <section className="hero-mesh border-b border-border relative overflow-hidden">
+        {/* Subtle orbital animation behind text */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
+          {/* Outer orbit */}
+          <div className="w-[500px] h-[500px] lg:w-[600px] lg:h-[600px] rounded-full border border-border/40 animate-orbit">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-accent/40 animate-pulse-soft" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-1.5 h-1.5 rounded-full bg-cyan/30 animate-pulse-soft" />
+          </div>
+          {/* Inner orbit */}
+          <div className="absolute w-[300px] h-[300px] lg:w-[380px] lg:h-[380px] rounded-full border border-border/20 animate-orbit-reverse">
+            <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-success/30 animate-pulse-soft" />
+          </div>
+        </div>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 lg:pt-28 pb-0 relative z-10">
+          {/* Centered headline */}
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 bg-accent-light text-accent text-xs font-medium px-3 py-1 rounded-full mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-soft" />
+              {tools.length} tools tracked &middot; {versusPairs.length} comparisons &middot; Updated weekly
+            </div>
+            <h1 className="text-[2.5rem] sm:text-[3.25rem] lg:text-[4rem] font-extrabold leading-[1.05] tracking-[-0.03em] mb-5">
               Software decisions,
               <br />
               <span className="text-muted">made with evidence.</span>
             </h1>
-            <p className="text-base lg:text-lg text-muted leading-relaxed max-w-xl mb-8">
+            <p className="text-base lg:text-lg text-muted leading-relaxed max-w-xl mx-auto mb-8">
               Normalized pricing. Multi-axis scoring. Switching intelligence. The comparison platform that shows you what matters — not what&apos;s sponsored.
             </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/tools" className="px-5 py-2.5 text-sm font-semibold bg-foreground text-background rounded-lg hover:opacity-90 transition-opacity">
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/tools" className="px-6 py-2.5 text-sm font-semibold bg-foreground text-background rounded-lg hover:opacity-90 transition-opacity">
                 Explore {tools.length} tools
               </Link>
-              <Link href="/compare" className="px-5 py-2.5 text-sm font-semibold border border-border rounded-lg hover:bg-surface transition-colors">
+              <Link href="/compare" className="px-6 py-2.5 text-sm font-semibold border border-border rounded-lg hover:bg-surface transition-colors">
                 Compare tools
               </Link>
             </div>

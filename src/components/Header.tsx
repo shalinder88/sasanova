@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { LogoIcon } from "./Logo";
 
 const nav = [
   { href: "/tools", label: "Tools Directory" },
@@ -22,9 +23,7 @@ export default function Header() {
         <div className="flex h-14 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-accent flex items-center justify-center">
-              <span className="text-white font-bold text-xs">S</span>
-            </div>
+            <LogoIcon size={28} />
             <span className="text-lg font-bold tracking-tight">
               Sasa<span className="text-accent">nova</span>
             </span>
