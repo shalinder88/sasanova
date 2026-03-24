@@ -194,6 +194,46 @@ const guideMeta: Record<string, { title: string; category: string }> = {
     title: "Marketing Automation on a Budget: What Actually Moves the Needle",
     category: "Persona Guide",
   },
+  "switch-from-mailchimp-to-activecampaign": {
+    title: "Mailchimp to ActiveCampaign: When You Need Real Automation",
+    category: "Migration Guide",
+  },
+  "switch-from-pipedrive-to-hubspot": {
+    title: "Pipedrive to HubSpot: When You Need Marketing + Sales Together",
+    category: "Migration Guide",
+  },
+  "switch-from-kit-to-beehiiv": {
+    title: "Kit to beehiiv: The Creator Newsletter Migration",
+    category: "Email Migration",
+  },
+  "switch-from-make-to-zapier": {
+    title: "Going Back to Zapier from Make: When Simplicity Wins",
+    category: "Migration Guide",
+  },
+  "switch-from-notion-to-clickup": {
+    title: "Notion to ClickUp: When You Need a Real Project Manager",
+    category: "Migration Guide",
+  },
+  "hubspot-crm-setup-guide": {
+    title: "HubSpot CRM Setup in 30 Minutes: The No-Nonsense Guide",
+    category: "Implementation Guide",
+  },
+  "beehiiv-setup-guide": {
+    title: "beehiiv Setup Guide: From Zero to First Newsletter in 60 Minutes",
+    category: "Implementation Guide",
+  },
+  "zapier-setup-guide": {
+    title: "Your First 5 Zapier Automations: A Practical Setup Guide",
+    category: "Implementation Guide",
+  },
+  "pipedrive-setup-guide": {
+    title: "Pipedrive Setup for Sales Teams: Pipeline to First Deal",
+    category: "Implementation Guide",
+  },
+  "make-setup-guide": {
+    title: "Make (Integromat) Setup: Your First Automation Without the Confusion",
+    category: "Implementation Guide",
+  },
 };
 
 export function generateStaticParams() {

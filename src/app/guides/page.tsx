@@ -389,6 +389,86 @@ const guides = [
     readingTime: "15 min read",
     category: "Persona Guide",
   },
+  {
+    slug: "switch-from-mailchimp-to-activecampaign",
+    title: "Mailchimp to ActiveCampaign: When You Need Real Automation",
+    description:
+      "Why teams outgrow Mailchimp, what ActiveCampaign does better (visual automation builder, CRM, conditional logic), data migration steps, and cost comparison at 1K to 25K contacts.",
+    readingTime: "16 min read",
+    category: "Migration Guide",
+  },
+  {
+    slug: "switch-from-pipedrive-to-hubspot",
+    title: "Pipedrive to HubSpot: When You Need Marketing + Sales Together",
+    description:
+      "Why teams upgrade from Pipedrive, the HubSpot pricing cliff reality (Starter to Professional is $890/mo), what transfers and what breaks, and when Pipedrive plus a separate marketing tool is cheaper.",
+    readingTime: "15 min read",
+    category: "Migration Guide",
+  },
+  {
+    slug: "switch-from-kit-to-beehiiv",
+    title: "Kit to beehiiv: The Creator Newsletter Migration",
+    description:
+      "Why newsletter creators switch (monetization, referral programs, ad network), what beehiiv does better, what you lose (automation builder, commerce), and revenue comparison at 5K to 25K subscribers.",
+    readingTime: "14 min read",
+    category: "Email Migration",
+  },
+  {
+    slug: "switch-from-make-to-zapier",
+    title: "Going Back to Zapier from Make: When Simplicity Wins",
+    description:
+      "The contrarian take: sometimes Zapier IS the right choice. When Make's complexity becomes a liability, integration coverage gaps, the rebuild cost, and when to stay on Make.",
+    readingTime: "14 min read",
+    category: "Migration Guide",
+  },
+  {
+    slug: "switch-from-notion-to-clickup",
+    title: "Notion to ClickUp: When You Need a Real Project Manager",
+    description:
+      "Why teams outgrow Notion for PM (no native Gantt, limited automations, no time tracking), what ClickUp does better, the hybrid approach, and migration steps.",
+    readingTime: "15 min read",
+    category: "Migration Guide",
+  },
+  {
+    slug: "hubspot-crm-setup-guide",
+    title: "HubSpot CRM Setup in 30 Minutes: The No-Nonsense Guide",
+    description:
+      "Account creation, contact imports, deal pipeline stages, email integration (Gmail/Outlook), and your first automation — with the common mistakes that waste your first week.",
+    readingTime: "14 min read",
+    category: "Implementation Guide",
+  },
+  {
+    slug: "beehiiv-setup-guide",
+    title: "beehiiv Setup Guide: From Zero to First Newsletter in 60 Minutes",
+    description:
+      "Account creation, custom domain DNS walkthrough, template design, subscriber import from Mailchimp/Substack, monetization setup (Boosts, paid subscriptions), and your first send checklist.",
+    readingTime: "16 min read",
+    category: "Implementation Guide",
+  },
+  {
+    slug: "zapier-setup-guide",
+    title: "Your First 5 Zapier Automations: A Practical Setup Guide",
+    description:
+      "Account setup, free tier orientation, and 5 step-by-step automations: form to CRM, subscriber to Slack, calendar to notes, blog to social, and weekly digest. Plus task-counting tips to stay on free longer.",
+    readingTime: "15 min read",
+    category: "Implementation Guide",
+  },
+  {
+    slug: "pipedrive-setup-guide",
+    title: "Pipedrive Setup for Sales Teams: Pipeline to First Deal",
+    description:
+      "Pipeline customization, contact and deal imports, email sync and tracking, activity types, dashboard basics, and when to add integrations vs. keep it simple.",
+    readingTime: "15 min read",
+    category: "Implementation Guide",
+  },
+  {
+    slug: "make-setup-guide",
+    title: "Make (Integromat) Setup: Your First Automation Without the Confusion",
+    description:
+      "Account creation, understanding scenarios/modules/operations, building your first scenario step-by-step, error handling basics, scheduling, and when to move from free to Core plan.",
+    readingTime: "16 min read",
+    category: "Implementation Guide",
+  },
 ];
 
 export default function GuidesHub() {
