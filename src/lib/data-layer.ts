@@ -89,9 +89,11 @@ function normaliseSupaCategory(c: SupaCategory): StaticCategory {
 // ---------------------------------------------------------------------------
 
 export async function getToolsHybrid(): Promise<StaticTool[]> {
+  // Use static data when it has more tools (Supabase not fully synced yet)
+  // Once Supabase catches up, this will prefer Supabase
   try {
     const supaTools = await getTools();
-    if (supaTools.length > 0) {
+    if (supaTools.length > staticTools.length) {
       return supaTools.map(normaliseSupaTool);
     }
   } catch (e) {
@@ -114,7 +116,7 @@ export async function getToolBySlugHybrid(slug: string): Promise<StaticTool | un
 export async function getCategoriesHybrid(): Promise<StaticCategory[]> {
   try {
     const supaCats = await getCategories();
-    if (supaCats.length > 0) {
+    if (supaCats.length > staticCategories.length) {
       return supaCats.map(normaliseSupaCategory);
     }
   } catch (e) {
@@ -134,7 +136,7 @@ export async function getCategoriesHybrid(): Promise<StaticCategory[]> {
 export async function getComparisonsHybrid(): Promise<VersusMatch[]> {
   try {
     const supaComps = await getComparisons();
-    if (supaComps.length > 0) {
+    if (supaComps.length > staticVersusPairs.length) {
       return supaComps.map((c: SupaComparison) => {
         const toolASlug = c.tool_a?.slug ?? c.slug.split('-vs-')[0] ?? '';
         const toolBSlug = c.tool_b?.slug ?? c.slug.split('-vs-').slice(1).join('-vs-') ?? '';
