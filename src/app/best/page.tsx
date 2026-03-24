@@ -33,7 +33,7 @@ export default function BestOfHub() {
             Best Software by Category
           </h1>
           <p className="text-base text-muted max-w-2xl leading-relaxed">
-            Explore top-rated tools across {categories.length} categories, ranked by value, ease-of-use, power, and transparency — with evidence-backed scores updated regularly.
+            Explore top-rated tools across {categories.filter(c => getToolsByCategory(c.slug).length >= 2).length} categories, ranked by value, ease-of-use, power, and transparency — with evidence-backed scores verified March 2026.
           </p>
         </div>
       </section>
@@ -41,7 +41,7 @@ export default function BestOfHub() {
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {categories.map((cat) => {
+            {categories.filter((cat) => getToolsByCategory(cat.slug).length >= 2).map((cat) => {
               const toolCount = getToolsByCategory(cat.slug).length;
               return (
                 <Link

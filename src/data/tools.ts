@@ -88,6 +88,14 @@ export const categories: Category[] = [
   { slug: "helpdesk-support", name: "Help Desk & Support", description: "Customer service platforms for ticketing, live chat, and knowledge bases.", cluster: 5, toolCount: 6, icon: "life-buoy" },
   { slug: "analytics", name: "Analytics & Data", description: "Product analytics, heatmaps, session recordings, and privacy-friendly tracking.", cluster: 5, toolCount: 5, icon: "bar-chart" },
   { slug: "developer-tools", name: "Developer Tools", description: "Deployment, hosting, databases, and infrastructure for modern applications.", cluster: 5, toolCount: 5, icon: "terminal" },
+  // Cluster 6: Finance / HR / E-commerce / Website Builders / Video / Social Media / Cloud Storage
+  { slug: "accounting-finance", name: "Accounting & Finance", description: "Invoicing, bookkeeping, expense tracking, and financial reporting for businesses.", cluster: 6, toolCount: 4, icon: "receipt" },
+  { slug: "hr-people", name: "HR & People", description: "Payroll, benefits, onboarding, and people management for growing teams.", cluster: 6, toolCount: 4, icon: "heart-handshake" },
+  { slug: "ecommerce", name: "E-commerce", description: "Build online stores, sell digital and physical products, and manage payments.", cluster: 6, toolCount: 5, icon: "shopping-cart" },
+  { slug: "website-builders", name: "Website Builders", description: "Design and publish websites without code using drag-and-drop builders.", cluster: 6, toolCount: 4, icon: "globe" },
+  { slug: "video-media", name: "Video & Media", description: "Record, edit, and distribute video and audio content.", cluster: 6, toolCount: 4, icon: "video" },
+  { slug: "social-media", name: "Social Media Management", description: "Schedule, publish, and analyze social media content across platforms.", cluster: 6, toolCount: 4, icon: "share-2" },
+  { slug: "cloud-storage", name: "Cloud Storage", description: "Store, sync, and share files securely across teams and devices.", cluster: 6, toolCount: 3, icon: "cloud" },
 ];
 
 export const tools: Tool[] = [
@@ -2653,6 +2661,10 @@ export interface VersusMatch {
   slugB: string;
   verdict: string;
   summary: string;
+  priceDelta?: string;
+  biggestDifference?: string;
+  chooseAIf?: string[];
+  chooseBIf?: string[];
 }
 
 export const versusPairs: VersusMatch[] = [

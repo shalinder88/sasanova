@@ -91,16 +91,16 @@ export default async function Home() {
               </div>
               <div className="w-px h-10 bg-border" />
               <div className="text-center">
-                <p className="text-2xl lg:text-3xl font-extrabold text-success">{categories.length}</p>
+                <p className="text-2xl lg:text-3xl font-extrabold text-success">{categories.filter(c => getToolsByCategory(c.slug).length >= 2).length}</p>
                 <p className="text-[10px] text-muted uppercase tracking-wider">Categories</p>
               </div>
               <div className="w-px h-10 bg-border" />
               <div className="text-center">
                 <div className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-success animate-pulse-soft" />
-                  <p className="text-2xl lg:text-3xl font-extrabold text-foreground">Live</p>
+                  <span className="w-1.5 h-1.5 rounded-full bg-success" />
+                  <p className="text-lg lg:text-xl font-extrabold text-foreground">Mar 2026</p>
                 </div>
-                <p className="text-[10px] text-muted uppercase tracking-wider">Updated</p>
+                <p className="text-[10px] text-muted uppercase tracking-wider">Data Verified</p>
               </div>
             </div>
 
@@ -126,7 +126,7 @@ export default async function Home() {
               <div className="ml-auto px-4 py-2.5 text-muted">
                 <span className="flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-success" />
-                  Updated recently
+                  Verified Mar 2026
                 </span>
               </div>
             </div>
@@ -209,7 +209,7 @@ export default async function Home() {
               <span className="text-muted">comparisons</span>
             </h2>
             <p className="text-base text-muted leading-relaxed lg:pt-2">
-              Side-by-side scoring across 6 axes. Pricing breakdowns. Feature overlap analysis. Switching guidance. Not opinions — structured evidence.
+              Side-by-side scoring across 6 axes. Pricing breakdowns. Feature overlap analysis. Switching guidance. Every claim cites a first-party source.
             </p>
           </div>
 
@@ -288,7 +288,7 @@ export default async function Home() {
               <p className="text-sm text-muted mb-6">Find the best tools for your use case</p>
 
               <div className="grid grid-cols-2 gap-2">
-                {categories.map((cat) => {
+                {categories.filter((cat) => getToolsByCategory(cat.slug).length >= 2).map((cat) => {
                   const catTools = getToolsByCategory(cat.slug);
                   const top = catTools.sort((a, b) => getOverallScore(b.scores) - getOverallScore(a.scores))[0];
                   return (
@@ -299,7 +299,7 @@ export default async function Home() {
                     >
                       <div className="min-w-0">
                         <p className="text-sm font-semibold group-hover:text-accent transition-colors truncate">{cat.name}</p>
-                        <p className="text-[10px] text-muted">{catTools.length} tools · #{1} {top?.name}</p>
+                        <p className="text-[10px] text-muted">{catTools.length} tools · #1 {top?.name}</p>
                       </div>
                       <svg className="w-4 h-4 text-muted group-hover:text-accent shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

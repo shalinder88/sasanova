@@ -17,14 +17,15 @@ function VerdictBadge({ verdict, nameA, nameB }: { verdict: string; nameA: strin
   if (verdict === "depends") {
     return (
       <span className="inline-block text-[10px] font-semibold bg-amber-50 text-amber-700 border border-amber-200 px-2 py-0.5 rounded-full">
-        It Depends
+        Different jobs
       </span>
     );
   }
   const winnerName = tools.find(t => t.slug === verdict)?.name;
+  const loserName = verdict === nameA ? nameB : nameA;
   return (
     <span className="inline-block text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded-full">
-      {winnerName ?? verdict} Wins
+      {winnerName ?? verdict} for most users
     </span>
   );
 }

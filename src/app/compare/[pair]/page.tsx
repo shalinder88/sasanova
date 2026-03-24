@@ -53,14 +53,14 @@ function VerdictBadge({ verdict, toolA, toolB }: { verdict: string; toolA: Tool;
   if (verdict === "depends") {
     return (
       <span className="inline-block text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200 px-3 py-1 rounded-full">
-        It Depends
+        Different jobs — depends on your workflow
       </span>
     );
   }
   const winner = verdict === toolA.slug ? toolA : verdict === toolB.slug ? toolB : null;
   return (
     <span className="inline-block text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1 rounded-full">
-      {winner ? `${winner.name} Wins` : `${verdict} Wins`}
+      {winner ? `${winner.name} for most users` : `${verdict} for most users`}
     </span>
   );
 }
@@ -210,8 +210,8 @@ export default async function ComparisonPage({ params }: PageProps) {
             Between <strong>{toolA.name}</strong> and <strong>{toolB.name}</strong>,{" "}
             {vsMatch
               ? vsMatch.verdict === "depends"
-                ? "the best choice depends on your needs"
-                : `${vsMatch.verdict === toolA.slug ? toolA.name : toolB.name} is the stronger pick overall`
+                ? "these tools serve different jobs — the right choice depends on your specific workflow"
+                : `${vsMatch.verdict === toolA.slug ? toolA.name : toolB.name} is the stronger pick for most users`
               : "both are strong options"}.{" "}
             {toolA.name} scores {scoreA}/10, {toolB.name} scores {scoreB}/10.{" "}
             Choose {toolA.name} if {toolA.bestFor[0]?.toLowerCase()}.{" "}
