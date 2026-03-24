@@ -1,14 +1,7 @@
 import Link from "next/link";
-import { categories, tools, versusPairs, getOverallScore, getToolsByCategory, type Tool, type ToolScore } from "@/data/tools";
+import { categories, getOverallScore, getToolsByCategory, type Tool, type ToolScore } from "@/data/tools";
+import { getToolsHybrid, getComparisonsHybrid } from "@/lib/data-layer";
 import EmailCapture from "@/components/EmailCapture";
-
-/* ── Derived data ── */
-const topTools = [...tools].sort((a, b) => getOverallScore(b.scores) - getOverallScore(a.scores));
-const featuredVs = versusPairs.slice(0, 3).map((vs) => ({
-  ...vs,
-  toolA: tools.find((t) => t.slug === vs.slugA)!,
-  toolB: tools.find((t) => t.slug === vs.slugB)!,
-})).filter((v) => v.toolA && v.toolB);
 
 /* ── Mini score bar (inline) ── */
 function MiniBar({ value, max = 10, color = "bg-accent" }: { value: number; max?: number; color?: string }) {
@@ -40,7 +33,21 @@ function ScoreAxis({ label, a, b }: { label: string; a: number; b: number }) {
   );
 }
 
-export default function Home() {
+export default async function Home() {
+  /* ── Fetch hybrid data ── */
+  const [tools, versusPairs] = await Promise.all([
+    getToolsHybrid(),
+    getComparisonsHybrid(),
+  ]);
+
+  /* ── Derived data ── */
+  const topTools = [...tools].sort((a, b) => getOverallScore(b.scores) - getOverallScore(a.scores));
+  const featuredVs = versusPairs.slice(0, 3).map((vs) => ({
+    ...vs,
+    toolA: tools.find((t) => t.slug === vs.slugA)!,
+    toolB: tools.find((t) => t.slug === vs.slugB)!,
+  })).filter((v) => v.toolA && v.toolB);
+
   const top1 = topTools[0];
 
   return (

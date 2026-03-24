@@ -9,32 +9,17 @@ export function LogoIcon({ size = 28, className = "" }: { size?: number; classNa
       className={className}
       aria-hidden="true"
     >
-      {/* Diamond prism shape — represents clarity in decision-making */}
-      <rect width="32" height="32" rx="8" fill="url(#logo-gradient)" />
-      {/* Prism / lens shape */}
-      <path
-        d="M16 6L24 16L16 26L8 16L16 6Z"
-        fill="white"
-        fillOpacity="0.95"
-      />
-      {/* Inner refraction line */}
-      <path
-        d="M16 6L20 16L16 26"
-        fill="white"
-        fillOpacity="0.6"
-      />
-      {/* Light beam accent */}
-      <path
-        d="M12 13L16 6L20 13"
-        stroke="white"
-        strokeWidth="0.5"
-        strokeOpacity="0.4"
-        fill="none"
-      />
+      {/* Rounded square base */}
+      <rect width="32" height="32" rx="8" fill="url(#sasanova-grad)" />
+      {/* Two overlapping rounded rectangles — represents comparison/decision */}
+      <rect x="7" y="8" width="12" height="16" rx="3" fill="white" fillOpacity="0.9" />
+      <rect x="13" y="8" width="12" height="16" rx="3" fill="white" fillOpacity="0.55" />
+      {/* Center line — the decision point */}
+      <line x1="16" y1="11" x2="16" y2="21" stroke="url(#sasanova-grad)" strokeWidth="1.5" strokeLinecap="round" />
       <defs>
-        <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+        <linearGradient id="sasanova-grad" x1="0" y1="0" x2="32" y2="32">
           <stop stopColor="#6366f1" />
-          <stop offset="1" stopColor="#4338ca" />
+          <stop offset="1" stopColor="#4f46e5" />
         </linearGradient>
       </defs>
     </svg>

@@ -1,17 +1,22 @@
 import type { Metadata } from "next";
-import { tools, categories } from "@/data/tools";
+import { categories } from "@/data/tools";
+import { getToolsHybrid } from "@/lib/data-layer";
 import ToolsDirectoryClient from "./ToolsDirectoryClient";
 
 export const metadata: Metadata = {
   title: "All Tools — Software Directory",
-  description: `Browse and compare ${tools.length}+ software tools with honest multi-axis scoring, normalized pricing, and evidence-backed reviews.`,
+  description:
+    "Browse and compare software tools with honest multi-axis scoring, normalized pricing, and evidence-backed reviews.",
   openGraph: {
     title: "All Tools — Sasanova Software Directory",
-    description: `Browse and compare ${tools.length}+ software tools with honest multi-axis scoring and normalized pricing.`,
+    description:
+      "Browse and compare software tools with honest multi-axis scoring and normalized pricing.",
   },
 };
 
-export default function ToolsPage() {
+export default async function ToolsPage() {
+  const tools = await getToolsHybrid();
+
   return (
     <>
       <section className="border-b border-border bg-surface">
