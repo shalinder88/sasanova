@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --surface: #fafafa;
+  --surface-alt: #f5f5f5;
+  --border: #e8e8e8;
+  --border-strong: #d4d4d4;
+  --muted: #737373;
+  --accent: #5046e5;
+  --accent-light: #eef2ff;
+  --accent-dark: #4338ca;
+  --success: #16a34a;
+  --success-light: #f0fdf4;
+  --warning: #ca8a04;
+  --warning-light: #fefce8;
+  --danger: #dc2626;
+  --danger-light: #fef2f2;
+  --cyan: #0891b2;
+  --cyan-light: #ecfeff;
+}
+
+.dark {
+  --background: #09090b;
+  --foreground: #fafafa;
+  --surface: #141414;
+  --surface-alt: #1c1c1c;
+  --border: #262626;
+  --border-strong: #3a3a3a;
+  --muted: #a3a3a3;
+  --accent: #818cf8;
+  --accent-light: #1e1b4b;
+  --accent-dark: #a5b4fc;
+  --success: #4ade80;
+  --success-light: #052e16;
+  --warning: #facc15;
+  --warning-light: #422006;
+  --danger: #f87171;
+  --danger-light: #450a0a;
+  --cyan: #22d3ee;
+  --cyan-light: #083344;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-accent-dark: var(--accent-dark);
+  --color-success: var(--success);
+  --color-success-light: var(--success-light);
+  --color-warning: var(--warning);
+  --color-warning-light: var(--warning-light);
+  --color-danger: var(--danger);
+  --color-danger-light: var(--danger-light);
+  --color-cyan: var(--cyan);
+  --color-cyan-light: var(--cyan-light);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar — minimal */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+/* Focus ring — accessibility */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Score bar animation */
+@keyframes fill-bar {
+  from { width: 0; }
+}
+.animate-fill {
+  animation: fill-bar 0.6s ease-out forwards;
+}
+
+/* Gradient mesh hero — Stripe-inspired but restrained */
+.hero-mesh {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(80, 70, 229, 0.08), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 50%, rgba(8, 145, 178, 0.05), transparent),
+    var(--background);
+}
+
+/* Grid pattern — Linear-inspired */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Fade in on scroll */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.5s ease-out forwards;
+}
+
+/* Hover lift */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
