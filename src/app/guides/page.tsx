@@ -128,6 +128,46 @@ const guides = [
     readingTime: "13 min read",
     category: "Support",
   },
+  {
+    slug: "ecommerce-stack-solo-creator",
+    title: "The Complete E-commerce Stack for Solo Creators Under $100/Month",
+    description:
+      "Gumroad vs LemonSqueezy vs Shopify for digital products. Real pricing, real fees, and the exact stack you need for email, payments, and analytics.",
+    readingTime: "14 min read",
+    category: "E-Commerce",
+  },
+  {
+    slug: "choosing-analytics-tool",
+    title: "How to Choose an Analytics Tool Without Drowning in Data",
+    description:
+      "PostHog vs Mixpanel vs Amplitude vs Plausible vs Hotjar. When you need product analytics vs web analytics vs session recording, and the truth about free tiers.",
+    readingTime: "13 min read",
+    category: "Analytics",
+  },
+  {
+    slug: "remote-team-communication",
+    title: "Setting Up Communication Tools for a Remote Team of 5-50",
+    description:
+      "Slack vs Discord vs Teams for small remote teams. Plus Loom for async video and Notion for docs. Total stack costs at 10, 25, and 50 people.",
+    readingTime: "13 min read",
+    category: "Remote Work",
+  },
+  {
+    slug: "design-tools-non-designers",
+    title: "Design Tools for People Who Can't Design: A Practical Guide",
+    description:
+      "Canva for quick graphics, Figma for UI, Framer and Webflow for sites. What you actually need vs what looks cool, plus budget options and free tier reality.",
+    readingTime: "12 min read",
+    category: "Design",
+  },
+  {
+    slug: "accounting-freelancers",
+    title: "Accounting Software for Freelancers: Stop Overpaying",
+    description:
+      "Wave vs FreshBooks vs QuickBooks for freelancers. When you need an accountant vs software, plus tax prep features, invoicing, and expense tracking compared.",
+    readingTime: "13 min read",
+    category: "Finance",
+  },
 ];
 
 export default function GuidesHub() {

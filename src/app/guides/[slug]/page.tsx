@@ -62,6 +62,26 @@ const guideMeta: Record<string, { title: string; category: string }> = {
     title: "Customer Support Software for Teams Under 20: What You Actually Need",
     category: "Support",
   },
+  "ecommerce-stack-solo-creator": {
+    title: "The Complete E-commerce Stack for Solo Creators Under $100/Month",
+    category: "E-Commerce",
+  },
+  "choosing-analytics-tool": {
+    title: "How to Choose an Analytics Tool Without Drowning in Data",
+    category: "Analytics",
+  },
+  "remote-team-communication": {
+    title: "Setting Up Communication Tools for a Remote Team of 5-50",
+    category: "Remote Work",
+  },
+  "design-tools-non-designers": {
+    title: "Design Tools for People Who Can't Design: A Practical Guide",
+    category: "Design",
+  },
+  "accounting-freelancers": {
+    title: "Accounting Software for Freelancers: Stop Overpaying",
+    category: "Finance",
+  },
 };
 
 export function generateStaticParams() {

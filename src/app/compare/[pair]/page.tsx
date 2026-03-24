@@ -235,8 +235,14 @@ export default async function ComparisonPage({ params }: PageProps) {
                 {/* Pricing */}
                 <tr>
                   <td className="py-3 px-4 text-muted font-medium">Cheapest Paid Plan</td>
-                  <td className="py-3 px-4">{cheapestPaidPlan(toolA)}</td>
-                  <td className="py-3 px-4">{cheapestPaidPlan(toolB)}</td>
+                  <td className="py-3 px-4">
+                    {cheapestPaidPlan(toolA)}
+                    <a href={`${toolA.website}/pricing`} target="_blank" rel="noopener noreferrer" className="block text-[10px] text-accent hover:underline mt-0.5">Source: {toolA.vendor} pricing page →</a>
+                  </td>
+                  <td className="py-3 px-4">
+                    {cheapestPaidPlan(toolB)}
+                    <a href={`${toolB.website}/pricing`} target="_blank" rel="noopener noreferrer" className="block text-[10px] text-accent hover:underline mt-0.5">Source: {toolB.vendor} pricing page →</a>
+                  </td>
                 </tr>
                 <tr className="bg-surface-alt/50">
                   <td className="py-3 px-4 text-muted font-medium">Free Tier</td>
@@ -310,6 +316,17 @@ export default async function ComparisonPage({ params }: PageProps) {
                 </tr>
               </tbody>
             </table>
+          </div>
+
+          {/* Evidence & verification footer */}
+          <div className="flex flex-wrap items-center gap-4 mt-4 text-[10px] text-muted">
+            <span className="flex items-center gap-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-success" />
+              Data independently verified
+            </span>
+            <span>Last verified: {toolA.lastVerified}</span>
+            <a href="/about/methodology" className="text-accent hover:underline">Scoring methodology →</a>
+            <a href="/about/source-policy" className="text-accent hover:underline">Source policy →</a>
           </div>
         </section>
 
