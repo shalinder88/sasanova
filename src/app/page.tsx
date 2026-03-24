@@ -95,10 +95,10 @@ export default async function Home() {
           </div>
 
           {/* ── Embedded product preview: live comparison widget ── */}
-          <div className="border border-border rounded-t-xl bg-white overflow-hidden shadow-sm">
+          <div className="border border-border rounded-t-xl bg-surface overflow-hidden shadow-sm">
             {/* Tab bar */}
             <div className="flex items-center gap-0 border-b border-border bg-surface text-xs">
-              <span className="px-4 py-2.5 font-medium border-b-2 border-accent text-accent bg-white">Top Tools</span>
+              <span className="px-4 py-2.5 font-medium border-b-2 border-accent text-accent bg-surface">Top Tools</span>
               <Link href="/compare" className="px-4 py-2.5 text-muted hover:text-foreground transition-colors">Comparisons</Link>
               <Link href="/pricing" className="px-4 py-2.5 text-muted hover:text-foreground transition-colors">Pricing</Link>
               <Link href="/alternatives" className="px-4 py-2.5 text-muted hover:text-foreground transition-colors">Alternatives</Link>
@@ -128,7 +128,7 @@ export default async function Home() {
                     const cat = categories.find((c) => c.slug === tool.categorySlug);
                     const cheapest = tool.pricing.find((p) => p.priceMonthly && p.priceMonthly > 0);
                     return (
-                      <tr key={tool.slug} className={`border-b border-border last:border-0 hover:bg-surface/60 transition-colors ${i === 0 ? "bg-accent-light/30" : ""}`}>
+                      <tr key={tool.slug} className={`table-row-hover border-b border-border last:border-0 hover:bg-surface/60 transition-colors ${i === 0 ? "bg-accent-light/30" : ""}`}>
                         <td className="py-2.5 px-4 text-[11px] text-muted font-mono">{i + 1}</td>
                         <td className="py-2.5 px-4">
                           <Link href={`/tools/${tool.slug}`} className="group">
@@ -201,7 +201,7 @@ export default async function Home() {
                 <Link
                   key={`${vs.slugA}-${vs.slugB}`}
                   href={`/compare/${vs.slugA}-vs-${vs.slugB}`}
-                  className="group border border-border rounded-xl overflow-hidden bg-white hover-lift"
+                  className="group border border-border rounded-xl overflow-hidden bg-surface hover-glow"
                 >
                   {/* Header */}
                   <div className="px-5 py-4 border-b border-border bg-surface">
@@ -274,7 +274,7 @@ export default async function Home() {
                     <Link
                       key={cat.slug}
                       href={`/best/${cat.slug}`}
-                      className="group flex items-center justify-between p-3 border border-border rounded-lg bg-white hover:border-accent/30 transition-all"
+                      className="group flex items-center justify-between p-3 border border-border rounded-lg bg-surface hover:border-accent/30 transition-all"
                     >
                       <div className="min-w-0">
                         <p className="text-sm font-semibold group-hover:text-accent transition-colors truncate">{cat.name}</p>
@@ -294,7 +294,7 @@ export default async function Home() {
               <h2 className="text-2xl font-extrabold tracking-tight mb-1">This week&apos;s pick</h2>
               <p className="text-sm text-muted mb-6">Hand-selected by our editorial team</p>
 
-              <div className="border border-border rounded-xl bg-white p-6">
+              <div className="border border-border rounded-xl bg-surface p-6">
                 {top1.badge && (
                   <span className="inline-block text-[10px] font-semibold text-accent bg-accent-light px-2 py-0.5 rounded mb-3">{top1.badge}</span>
                 )}
@@ -396,7 +396,7 @@ export default async function Home() {
               { tag: "Compare", title: "ChatGPT vs Claude: Which AI Wins?", desc: "ChatGPT (8.0) wins on ecosystem — GPTs, plugins, DALL-E, browsing. Claude (8.5) wins on reasoning depth, 200K context, and careful analysis. For coding: Claude. For variety: ChatGPT.", href: "/compare/chatgpt-vs-claude-ai" },
               { tag: "Pricing", title: "The Hidden Cost of Mailchimp", desc: "Free tier caps at 500 contacts. Standard jumps to $20/mo. At 10K contacts you're paying $100+/mo. Brevo charges by emails sent — not contacts — making it 40-60% cheaper at scale.", href: "/pricing/mailchimp" },
             ].map((p) => (
-              <Link key={p.href} href={p.href} className="group border border-border rounded-xl p-5 bg-white hover-lift">
+              <Link key={p.href} href={p.href} className="group border border-border rounded-xl p-5 bg-surface hover-glow">
                 <span className="inline-block text-[10px] font-semibold text-accent bg-accent-light px-2 py-0.5 rounded mb-3">{p.tag}</span>
                 <h3 className="text-sm font-bold mb-2 group-hover:text-accent transition-colors leading-snug">{p.title}</h3>
                 <p className="text-[11px] text-muted leading-relaxed">{p.desc}</p>

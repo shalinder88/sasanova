@@ -17,18 +17,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sasanova.com"),
   title: {
     default: "Sasanova — Software Discovery & Comparison",
     template: "%s | Sasanova",
   },
   description:
     "Compare software tools with normalized pricing, honest scoring, and evidence-backed reviews. Find the right tool for your team.",
+  alternates: {
+    canonical: "https://sasanova.com",
+  },
+  verification: {
+    google: "PLACEHOLDER_GOOGLE_SITE_VERIFICATION",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "Sasanova",
     title: "Sasanova — Software Discovery & Comparison",
-    description: "Compare software tools with normalized pricing, honest scoring, and evidence-backed reviews.",
+    description:
+      "Compare software tools with normalized pricing, honest scoring, and evidence-backed reviews.",
   },
   robots: { index: true, follow: true },
 };

@@ -1,45 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafbfc;
-  --foreground: #0a0a0a;
-  --surface: #ffffff;
-  --surface-alt: #f3f4f6;
-  --border: #e8e8e8;
-  --border-strong: #d4d4d4;
-  --muted: #737373;
-  --accent: #5046e5;
-  --accent-light: #eef2ff;
-  --accent-dark: #4338ca;
-  --success: #16a34a;
-  --success-light: #f0fdf4;
-  --warning: #ca8a04;
-  --warning-light: #fefce8;
-  --danger: #dc2626;
-  --danger-light: #fef2f2;
-  --cyan: #0891b2;
-  --cyan-light: #ecfeff;
-}
-
-.dark {
-  --background: #09090b;
-  --foreground: #fafafa;
-  --surface: #141414;
-  --surface-alt: #1c1c1c;
-  --border: #262626;
-  --border-strong: #3a3a3a;
-  --muted: #a3a3a3;
+  /* Dark charcoal theme — default */
+  --background: #0c0c0f;
+  --foreground: #e4e4e7;
+  --surface: #16161a;
+  --surface-alt: #1e1e24;
+  --border: #2a2a32;
+  --border-strong: #3a3a44;
+  --muted: #9ca3af;
   --accent: #818cf8;
-  --accent-light: #1e1b4b;
+  --accent-light: rgba(129, 140, 248, 0.1);
   --accent-dark: #a5b4fc;
   --success: #4ade80;
-  --success-light: #052e16;
-  --warning: #facc15;
-  --warning-light: #422006;
+  --success-light: rgba(74, 222, 128, 0.1);
+  --warning: #fbbf24;
+  --warning-light: rgba(251, 191, 36, 0.1);
   --danger: #f87171;
-  --danger-light: #450a0a;
+  --danger-light: rgba(248, 113, 113, 0.1);
   --cyan: #22d3ee;
-  --cyan-light: #083344;
+  --cyan-light: rgba(34, 211, 238, 0.1);
 }
 
 @theme inline {
@@ -92,20 +72,40 @@ body {
   animation: fill-bar 0.6s ease-out forwards;
 }
 
-/* Gradient mesh hero — Stripe-inspired but restrained */
+/* Gradient mesh hero — dark charcoal with subtle accent glow */
 .hero-mesh {
   background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(80, 70, 229, 0.08), transparent),
-    radial-gradient(ellipse 60% 40% at 80% 50%, rgba(8, 145, 178, 0.05), transparent),
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(129, 140, 248, 0.08), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 50%, rgba(34, 211, 238, 0.04), transparent),
     var(--background);
 }
 
-/* Grid pattern — Linear-inspired */
+/* Grid pattern — subtle on dark */
 .grid-pattern {
   background-image:
-    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
   background-size: 48px 48px;
+}
+
+/* Table row hover — lift + glow */
+tr.table-row-hover {
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+tr.table-row-hover:hover {
+  background: var(--surface-alt) !important;
+  box-shadow: 0 2px 8px rgba(129, 140, 248, 0.06);
+  transform: translateY(-1px);
+}
+
+/* Card hover glow for dark theme */
+.hover-glow {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.hover-glow:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(129, 140, 248, 0.08), 0 4px 12px rgba(0,0,0,0.3);
+  transform: translateY(-2px);
 }
 
 /* Fade in on scroll */
@@ -123,7 +123,7 @@ body {
 }
 .hover-lift:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4), 0 0 12px rgba(129, 140, 248, 0.05);
 }
 
 /* Hero orbit animation */
