@@ -19,83 +19,76 @@ interface PricingCalculatorProps {
 export default function PricingCalculator({ plans, toolName }: PricingCalculatorProps) {
   const [teamSize, setTeamSize] = useState(5);
   const [annual, setAnnual] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
 
   const calculations = useMemo(() => {
     return plans.map((plan) => {
-      let monthlyCost: number | null = null;
-      let annualCost: number | null = null;
-
       if (plan.priceMonthly === null) {
-        // Custom pricing
-        return { plan, monthlyCost: null, annualCost: null, perUser: null, annualSavings: null };
+        return { plan, monthlyCost: null, annualCost: null, perUser: null, annualSavings: null, monthlyIfMonthly: null };
       }
+
+      let monthlyCost: number;
+      let annualTotal: number | null = null;
 
       switch (plan.billingModel) {
         case "per_seat":
           monthlyCost = plan.priceMonthly * teamSize;
-          annualCost = plan.priceAnnual !== null ? plan.priceAnnual * teamSize : null;
+          annualTotal = plan.priceAnnual !== null ? plan.priceAnnual * teamSize : null;
           break;
         case "flat":
           monthlyCost = plan.priceMonthly;
-          annualCost = plan.priceAnnual;
+          annualTotal = plan.priceAnnual;
           break;
         case "usage":
-          // Usage-based: show base price, scale linearly as rough estimate
           monthlyCost = plan.priceMonthly * Math.max(1, Math.ceil(teamSize / 5));
-          annualCost = plan.priceAnnual !== null ? plan.priceAnnual * Math.max(1, Math.ceil(teamSize / 5)) : null;
+          annualTotal = plan.priceAnnual !== null ? plan.priceAnnual * Math.max(1, Math.ceil(teamSize / 5)) : null;
           break;
         default:
           monthlyCost = plan.priceMonthly;
-          annualCost = plan.priceAnnual;
+          annualTotal = plan.priceAnnual;
       }
 
-      const effectiveMonthly = annual && annualCost !== null ? annualCost / 12 : monthlyCost;
-      const perUser = effectiveMonthly !== null && teamSize > 0 ? effectiveMonthly / teamSize : null;
+      const monthlyIfMonthly = monthlyCost;
+      const effectiveMonthly = annual && annualTotal !== null ? annualTotal / 12 : monthlyCost;
+      const perUser = effectiveMonthly > 0 && teamSize > 0 ? effectiveMonthly / teamSize : null;
 
       let annualSavings: number | null = null;
-      if (monthlyCost !== null && monthlyCost > 0 && annualCost !== null) {
-        annualSavings = monthlyCost * 12 - annualCost;
+      if (monthlyCost > 0 && annualTotal !== null) {
+        annualSavings = monthlyCost * 12 - annualTotal;
       }
 
-      return { plan, monthlyCost: effectiveMonthly, annualCost, perUser, annualSavings };
+      return { plan, monthlyCost: effectiveMonthly, annualCost: annualTotal, perUser, annualSavings, monthlyIfMonthly };
     });
   }, [plans, teamSize, annual]);
 
-  // Recommend the best plan based on team size
+  // Recommend best plan
   const recommended = useMemo(() => {
     const viable = calculations.filter((c) => c.monthlyCost !== null && c.monthlyCost >= 0);
     if (viable.length === 0) return null;
-
-    // For small teams (1-5) prefer the cheapest non-free plan, or free if that's all there is
-    // For larger teams, prefer plans with best per-user cost that aren't free tier
     if (teamSize <= 3) {
-      const cheapest = viable
-        .filter((c) => c.monthlyCost !== null && c.monthlyCost >= 0)
-        .sort((a, b) => (a.monthlyCost ?? 0) - (b.monthlyCost ?? 0));
-      return cheapest[0]?.plan.name ?? null;
+      const sorted = [...viable].sort((a, b) => (a.monthlyCost ?? 0) - (b.monthlyCost ?? 0));
+      return sorted[0]?.plan.name ?? null;
     }
-
     const paid = viable.filter((c) => c.monthlyCost !== null && c.monthlyCost > 0);
     if (paid.length === 0) return viable[0]?.plan.name ?? null;
-
-    // Best per-user value among paid plans
-    const best = paid.sort((a, b) => (a.perUser ?? Infinity) - (b.perUser ?? Infinity));
+    const best = [...paid].sort((a, b) => (a.perUser ?? Infinity) - (b.perUser ?? Infinity));
     return best[0]?.plan.name ?? null;
   }, [calculations, teamSize]);
+
+  const active = selectedPlan ?? recommended;
 
   return (
     <div className="bg-surface border border-border rounded-xl p-6">
       <h3 className="text-lg font-bold text-foreground mb-1">Pricing Calculator</h3>
       <p className="text-xs text-muted mb-6">
-        Estimate your monthly cost for {toolName} based on team size and billing cycle.
+        Estimate your monthly cost for {toolName}. Click a plan to select it.
       </p>
 
       {/* Controls */}
       <div className="flex flex-col sm:flex-row gap-6 mb-8">
-        {/* Team size */}
         <div className="flex-1">
           <label className="block text-sm font-medium text-foreground mb-2">
-            Team Size: <span className="text-accent font-bold">{teamSize}</span>
+            Team Size: <span className="text-accent font-bold">{teamSize}</span> {teamSize === 1 ? "person" : "people"}
           </label>
           <input
             type="range"
@@ -114,41 +107,42 @@ export default function PricingCalculator({ plans, toolName }: PricingCalculator
           </div>
         </div>
 
-        {/* Billing toggle */}
         <div className="shrink-0">
           <label className="block text-sm font-medium text-foreground mb-2">Billing Cycle</label>
-          <div className="flex items-center gap-2 bg-surface-alt border border-border rounded-lg p-1">
+          <div className="flex items-center gap-0 bg-surface-alt border border-border rounded-lg p-1">
             <button
               onClick={() => setAnnual(false)}
-              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
-                !annual ? "bg-accent text-white" : "text-muted hover:text-foreground"
+              className={`px-4 py-2 text-xs font-semibold rounded-md transition-all ${
+                !annual ? "bg-accent text-white shadow-sm" : "text-muted hover:text-foreground"
               }`}
             >
               Monthly
             </button>
             <button
               onClick={() => setAnnual(true)}
-              className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
-                annual ? "bg-accent text-white" : "text-muted hover:text-foreground"
+              className={`px-4 py-2 text-xs font-semibold rounded-md transition-all ${
+                annual ? "bg-accent text-white shadow-sm" : "text-muted hover:text-foreground"
               }`}
             >
-              Annual
+              Annual {annual ? "" : "(save more)"}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Results */}
+      {/* Plan cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {calculations.map(({ plan, monthlyCost, perUser, annualSavings }) => {
+        {calculations.map(({ plan, monthlyCost, perUser, annualSavings, monthlyIfMonthly }) => {
+          const isActive = plan.name === active;
           const isRecommended = plan.name === recommended;
           return (
-            <div
+            <button
               key={plan.name}
-              className={`relative border rounded-xl p-4 transition-colors ${
-                isRecommended
-                  ? "border-accent bg-accent-light/30"
-                  : "border-border bg-background"
+              onClick={() => setSelectedPlan(plan.name)}
+              className={`relative text-left border rounded-xl p-4 transition-all duration-200 cursor-pointer ${
+                isActive
+                  ? "border-accent bg-accent-light/30 shadow-md shadow-accent/10 -translate-y-1"
+                  : "border-border bg-background hover:border-accent/40 hover:-translate-y-0.5 hover:shadow-sm"
               }`}
             >
               {isRecommended && (
@@ -156,7 +150,7 @@ export default function PricingCalculator({ plans, toolName }: PricingCalculator
                   Recommended
                 </span>
               )}
-              <p className="text-sm font-semibold text-foreground mb-3">{plan.name}</p>
+              <p className={`text-sm font-semibold mb-3 ${isActive ? "text-accent" : "text-foreground"}`}>{plan.name}</p>
 
               {monthlyCost === null ? (
                 <p className="text-lg font-bold text-muted">Contact Sales</p>
@@ -173,29 +167,41 @@ export default function PricingCalculator({ plans, toolName }: PricingCalculator
                     )}
                   </p>
 
-                  {perUser !== null && monthlyCost > 0 && (
+                  {/* Show monthly price crossed out when on annual */}
+                  {annual && monthlyIfMonthly !== null && monthlyIfMonthly > 0 && monthlyCost > 0 && monthlyCost < monthlyIfMonthly && (
+                    <p className="text-xs text-muted mt-0.5">
+                      <span className="line-through">${monthlyIfMonthly.toLocaleString()}/mo</span>
+                      <span className="text-success ml-1">
+                        {Math.round(((monthlyIfMonthly - monthlyCost) / monthlyIfMonthly) * 100)}% off
+                      </span>
+                    </p>
+                  )}
+
+                  {perUser !== null && monthlyCost > 0 && teamSize > 1 && (
                     <p className="text-xs text-muted mt-1">
                       ${perUser.toFixed(2)} per user/mo
                     </p>
                   )}
 
                   {annualSavings !== null && annualSavings > 0 && !annual && (
-                    <p className="text-xs text-success mt-2">
-                      Save ${annualSavings.toLocaleString()} /yr by switching to annual
+                    <p className="text-xs text-success mt-2 font-medium">
+                      Save ${annualSavings.toLocaleString()}/yr with annual billing
                     </p>
                   )}
                 </>
               )}
 
-              <p className="text-[10px] text-muted mt-2 capitalize">{plan.billingModel} billing</p>
-            </div>
+              <p className="text-[10px] text-muted mt-3 capitalize">{plan.billingModel} billing</p>
+              {plan.limits && (
+                <p className="text-[10px] text-muted mt-1 line-clamp-2">{plan.limits}</p>
+              )}
+            </button>
           );
         })}
       </div>
 
       <p className="text-[10px] text-muted mt-4">
-        Estimates are based on published pricing. Usage-based plans are approximated.
-        Always verify with the vendor for exact quotes.
+        Estimates based on published pricing. Usage-based plans are approximated. Verify with vendor for exact quotes.
       </p>
     </div>
   );

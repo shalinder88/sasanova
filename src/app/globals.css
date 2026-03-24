@@ -117,6 +117,24 @@ tr.table-row-hover:hover {
   animation: fade-up 0.5s ease-out forwards;
 }
 
+/* Fade in */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+/* Interactive section hover — lift effect for tool page sections */
+.section-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.section-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
 /* Hover lift */
 .hover-lift {
   transition: transform 0.2s ease, box-shadow 0.2s ease;

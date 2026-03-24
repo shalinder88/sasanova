@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { tools, versusPairs, getOverallScore } from "@/data/tools";
 import ScoreBar from "@/components/ScoreBar";
 import PricingCalculator from "@/components/PricingCalculator";
+import StickyToolCTA from "@/components/StickyToolCTA";
 import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 
 /* ---------- Static generation ---------- */
@@ -123,6 +124,14 @@ export default async function ToolProfilePage({ params }: Props) {
             ])
           ),
         }}
+      />
+
+      {/* Floating CTA */}
+      <StickyToolCTA
+        toolName={tool.name}
+        affiliateUrl={tool.affiliateUrl}
+        slug={tool.slug}
+        freeTier={tool.freeTier}
       />
 
       {/* Breadcrumbs */}
