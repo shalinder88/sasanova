@@ -204,7 +204,7 @@ export default async function PricingDetailPage({
                   return (
                     <tr
                       key={plan.name}
-                      className={plan.highlighted ? "bg-accent-light/50 border-l-2 border-l-accent" : ""}
+                      className={`table-row-hover ${plan.highlighted ? "bg-accent-light/50 border-l-2 border-l-accent" : ""}`}
                     >
                       <td className="px-4 py-3 font-medium whitespace-nowrap">
                         {plan.name}
@@ -291,7 +291,7 @@ export default async function PricingDetailPage({
             <div className="border border-warning/20 bg-warning-light rounded-xl p-5">
               <ul className="space-y-2">
                 {tool.avoidIf.map((note, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm">
+                  <li key={i} className="flex items-start gap-2 text-sm hover-item">
                     <svg
                       className="w-4 h-4 text-warning shrink-0 mt-0.5"
                       fill="currentColor"

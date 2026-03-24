@@ -228,20 +228,20 @@ export default async function ComparisonPage({ params }: PageProps) {
               </thead>
               <tbody className="divide-y divide-border">
                 {/* Pricing */}
-                <tr>
-                  <td className="py-3 px-4 text-muted font-medium">Cheapest Paid Plan</td>
-                  <td className="py-3 px-4">
+                <tr className="table-row-hover">
+                  <td className="py-3 px-4 text-muted font-medium hover-cell">Cheapest Paid Plan</td>
+                  <td className="py-3 px-4 hover-cell">
                     {cheapestPaidPlan(toolA)}
                     <a href={`${toolA.website}/pricing`} target="_blank" rel="noopener noreferrer" className="block text-[10px] text-accent hover:underline mt-0.5">Source: {toolA.vendor} pricing page →</a>
                   </td>
-                  <td className="py-3 px-4">
+                  <td className="py-3 px-4 hover-cell">
                     {cheapestPaidPlan(toolB)}
                     <a href={`${toolB.website}/pricing`} target="_blank" rel="noopener noreferrer" className="block text-[10px] text-accent hover:underline mt-0.5">Source: {toolB.vendor} pricing page →</a>
                   </td>
                 </tr>
-                <tr className="bg-surface-alt/50">
-                  <td className="py-3 px-4 text-muted font-medium">Free Tier</td>
-                  <td className="py-3 px-4">
+                <tr className="bg-surface-alt/50 table-row-hover">
+                  <td className="py-3 px-4 text-muted font-medium hover-cell">Free Tier</td>
+                  <td className="py-3 px-4 hover-cell">
                     {toolA.freeTier ? (
                       <span className="text-success font-medium">Yes</span>
                     ) : (
@@ -251,7 +251,7 @@ export default async function ComparisonPage({ params }: PageProps) {
                       <p className="text-xs text-muted mt-0.5">{toolA.freeTierLimits}</p>
                     )}
                   </td>
-                  <td className="py-3 px-4">
+                  <td className="py-3 px-4 hover-cell">
                     {toolB.freeTier ? (
                       <span className="text-success font-medium">Yes</span>
                     ) : (
@@ -265,33 +265,33 @@ export default async function ComparisonPage({ params }: PageProps) {
 
                 {/* Scores */}
                 {scoreLabels.map((s, i) => (
-                  <tr key={s.key} className={i % 2 === 0 ? "" : "bg-surface-alt/50"}>
-                    <td className="py-3 px-4 text-muted font-medium">{s.label}</td>
-                    <td className="py-3 px-4">
+                  <tr key={s.key} className={`hover-score-row ${i % 2 === 0 ? "" : "bg-surface-alt/50"}`}>
+                    <td className="py-3 px-4 text-muted font-medium hover-cell">{s.label}</td>
+                    <td className="py-3 px-4 hover-cell">
                       <ScoreBar label="" value={toolA.scores[s.key]} />
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="py-3 px-4 hover-cell">
                       <ScoreBar label="" value={toolB.scores[s.key]} />
                     </td>
                   </tr>
                 ))}
 
                 {/* Deployment */}
-                <tr>
-                  <td className="py-3 px-4 text-muted font-medium">Deployment</td>
-                  <td className="py-3 px-4 capitalize">{toolA.deployment}</td>
-                  <td className="py-3 px-4 capitalize">{toolB.deployment}</td>
+                <tr className="table-row-hover">
+                  <td className="py-3 px-4 text-muted font-medium hover-cell">Deployment</td>
+                  <td className="py-3 px-4 capitalize hover-cell">{toolA.deployment}</td>
+                  <td className="py-3 px-4 capitalize hover-cell">{toolB.deployment}</td>
                 </tr>
-                <tr className="bg-surface-alt/50">
-                  <td className="py-3 px-4 text-muted font-medium">API Available</td>
-                  <td className="py-3 px-4">
+                <tr className="bg-surface-alt/50 table-row-hover">
+                  <td className="py-3 px-4 text-muted font-medium hover-cell">API Available</td>
+                  <td className="py-3 px-4 hover-cell">
                     {toolA.apiAvailable ? (
                       <span className="text-success font-medium">Yes</span>
                     ) : (
                       <span className="text-danger font-medium">No</span>
                     )}
                   </td>
-                  <td className="py-3 px-4">
+                  <td className="py-3 px-4 hover-cell">
                     {toolB.apiAvailable ? (
                       <span className="text-success font-medium">Yes</span>
                     ) : (
@@ -299,15 +299,15 @@ export default async function ComparisonPage({ params }: PageProps) {
                     )}
                   </td>
                 </tr>
-                <tr>
-                  <td className="py-3 px-4 text-muted font-medium">Platforms</td>
-                  <td className="py-3 px-4">{toolA.platforms.join(", ")}</td>
-                  <td className="py-3 px-4">{toolB.platforms.join(", ")}</td>
+                <tr className="table-row-hover">
+                  <td className="py-3 px-4 text-muted font-medium hover-cell">Platforms</td>
+                  <td className="py-3 px-4 hover-cell">{toolA.platforms.join(", ")}</td>
+                  <td className="py-3 px-4 hover-cell">{toolB.platforms.join(", ")}</td>
                 </tr>
-                <tr className="bg-surface-alt/50">
-                  <td className="py-3 px-4 text-muted font-medium">Compliance</td>
-                  <td className="py-3 px-4">{toolA.compliance.join(", ") || "None listed"}</td>
-                  <td className="py-3 px-4">{toolB.compliance.join(", ") || "None listed"}</td>
+                <tr className="bg-surface-alt/50 table-row-hover">
+                  <td className="py-3 px-4 text-muted font-medium hover-cell">Compliance</td>
+                  <td className="py-3 px-4 hover-cell">{toolA.compliance.join(", ") || "None listed"}</td>
+                  <td className="py-3 px-4 hover-cell">{toolB.compliance.join(", ") || "None listed"}</td>
                 </tr>
               </tbody>
             </table>
@@ -388,7 +388,7 @@ export default async function ComparisonPage({ params }: PageProps) {
                   <p className="text-xs font-semibold uppercase tracking-wider text-success mb-2">Best for</p>
                   <ul className="space-y-1.5">
                     {tool.bestFor.map((b) => (
-                      <li key={b} className="text-xs text-muted flex items-start gap-1.5">
+                      <li key={b} className="text-xs text-muted flex items-start gap-1.5 hover-item">
                         <svg className="w-3.5 h-3.5 text-success shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
@@ -401,7 +401,7 @@ export default async function ComparisonPage({ params }: PageProps) {
                   <p className="text-xs font-semibold uppercase tracking-wider text-danger mb-2">Avoid if</p>
                   <ul className="space-y-1.5">
                     {tool.avoidIf.map((a) => (
-                      <li key={a} className="text-xs text-muted flex items-start gap-1.5">
+                      <li key={a} className="text-xs text-muted flex items-start gap-1.5 hover-item">
                         <svg className="w-3.5 h-3.5 text-danger shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                         </svg>

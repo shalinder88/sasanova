@@ -276,7 +276,7 @@ export default async function ToolProfilePage({ params }: Props) {
             <h2 className="text-lg font-bold mb-3 text-success">Best For</h2>
             <ul className="space-y-2">
               {tool.bestFor.map((item) => (
-                <li key={item} className="flex items-start gap-2 text-sm">
+                <li key={item} className="hover-item flex items-start gap-2 text-sm">
                   <svg
                     className="w-4 h-4 text-success shrink-0 mt-0.5"
                     fill="currentColor"
@@ -298,7 +298,7 @@ export default async function ToolProfilePage({ params }: Props) {
             <h2 className="text-lg font-bold mb-3 text-danger">Avoid If</h2>
             <ul className="space-y-2">
               {tool.avoidIf.map((item) => (
-                <li key={item} className="flex items-start gap-2 text-sm">
+                <li key={item} className="hover-item flex items-start gap-2 text-sm">
                   <svg
                     className="w-4 h-4 text-danger shrink-0 mt-0.5"
                     fill="currentColor"
@@ -324,7 +324,7 @@ export default async function ToolProfilePage({ params }: Props) {
             {tool.features.map((f) => (
               <div
                 key={f}
-                className="flex items-center gap-2 text-sm py-1.5"
+                className="hover-item flex items-center gap-2 text-sm py-1.5"
               >
                 <svg
                   className="w-3.5 h-3.5 text-accent shrink-0"
@@ -367,7 +367,7 @@ export default async function ToolProfilePage({ params }: Props) {
                 {tool.pricing.map((plan) => (
                   <tr
                     key={plan.name}
-                    className={`border-b border-border ${
+                    className={`border-b border-border table-row-hover ${
                       plan.highlighted
                         ? "bg-accent-light/40 border-l-2 border-l-accent"
                         : ""
@@ -415,7 +415,7 @@ export default async function ToolProfilePage({ params }: Props) {
               <h3 className="text-xs font-bold text-warning mb-2 uppercase tracking-wider">Hidden Costs & Gotchas</h3>
               <ul className="space-y-1">
                 {tool.hiddenCosts.map((cost) => (
-                  <li key={cost} className="text-xs text-muted flex items-start gap-1.5">
+                  <li key={cost} className="hover-item text-xs text-muted flex items-start gap-1.5">
                     <svg className="w-3 h-3 text-warning shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                     </svg>
@@ -446,7 +446,7 @@ export default async function ToolProfilePage({ params }: Props) {
             {tool.integrations.map((i) => (
               <span
                 key={i}
-                className="px-3 py-1.5 text-xs font-medium bg-surface-alt border border-border rounded-full"
+                className="hover-pill px-3 py-1.5 text-xs font-medium bg-surface-alt border border-border rounded-full"
               >
                 {i}
               </span>
@@ -468,7 +468,7 @@ export default async function ToolProfilePage({ params }: Props) {
                     {tool.switchingTriggers.map((t) => (
                       <li
                         key={t}
-                        className="flex items-start gap-2 text-sm text-muted"
+                        className="hover-item flex items-start gap-2 text-sm text-muted"
                       >
                         <svg
                           className="w-3.5 h-3.5 text-warning shrink-0 mt-0.5"
@@ -499,7 +499,7 @@ export default async function ToolProfilePage({ params }: Props) {
                     {tool.switchingBlockers.map((b) => (
                       <li
                         key={b}
-                        className="flex items-start gap-2 text-sm text-muted"
+                        className="hover-item flex items-start gap-2 text-sm text-muted"
                       >
                         <svg
                           className="w-3.5 h-3.5 text-danger shrink-0 mt-0.5"
@@ -548,7 +548,7 @@ export default async function ToolProfilePage({ params }: Props) {
                   <Link
                     key={alt.slug}
                     href={`/tools/${alt.slug}`}
-                    className="group border border-border rounded-xl p-4 hover:border-accent/30 transition-all bg-background"
+                    className="hover-glow group border border-border rounded-xl p-4 hover:border-accent/30 transition-all bg-background"
                   >
                     <div className="flex items-start justify-between">
                       <div className="min-w-0">
@@ -587,7 +587,7 @@ export default async function ToolProfilePage({ params }: Props) {
                   <Link
                     key={pairPath}
                     href={`/compare/${pairPath}`}
-                    className="group border border-border rounded-xl p-4 hover:border-accent/30 transition-all bg-background"
+                    className="hover-glow group border border-border rounded-xl p-4 hover:border-accent/30 transition-all bg-background"
                   >
                     <p className="text-sm font-bold group-hover:text-accent transition-colors">
                       {tool.name} vs {otherTool?.name ?? otherSlug}

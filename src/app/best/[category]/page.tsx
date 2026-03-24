@@ -156,7 +156,7 @@ export default async function BestCategoryPage({
               return (
                 <div
                   key={tool.slug}
-                  className={`border rounded-xl p-5 transition-all ${
+                  className={`border rounded-xl p-5 transition-all hover-glow ${
                     isWinner
                       ? "border-accent bg-accent-light/50"
                       : "border-border bg-background"
@@ -211,7 +211,7 @@ export default async function BestCategoryPage({
                         <span>{pricingSummary(tool)}</span>
                         <span className="w-px h-3 bg-border" />
                         {tool.bestFor[0] && (
-                          <span className="px-2 py-0.5 bg-surface-alt rounded-full">
+                          <span className="px-2 py-0.5 bg-surface-alt rounded-full hover-pill">
                             Best for: {tool.bestFor[0]}
                           </span>
                         )}

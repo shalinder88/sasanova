@@ -198,25 +198,25 @@ export default async function CategoryPage({ params }: Props) {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
-                  <tr>
-                    <td className="py-3 px-4 text-muted font-medium">Score</td>
+                  <tr className="table-row-hover">
+                    <td className="py-3 px-4 text-muted font-medium hover-cell">Score</td>
                     {top3.map((t) => (
-                      <td key={t.slug} className="py-3 px-4">
+                      <td key={t.slug} className="py-3 px-4 hover-cell">
                         <span className="text-lg font-extrabold text-accent">{t.overall}</span>
                         <span className="text-xs text-muted"> / 10</span>
                       </td>
                     ))}
                   </tr>
-                  <tr className="bg-surface-alt/50">
-                    <td className="py-3 px-4 text-muted font-medium">Price</td>
+                  <tr className="bg-surface-alt/50 table-row-hover">
+                    <td className="py-3 px-4 text-muted font-medium hover-cell">Price</td>
                     {top3.map((t) => (
-                      <td key={t.slug} className="py-3 px-4">{pricingSummary(t)}</td>
+                      <td key={t.slug} className="py-3 px-4 hover-cell">{pricingSummary(t)}</td>
                     ))}
                   </tr>
-                  <tr>
-                    <td className="py-3 px-4 text-muted font-medium">Free Tier</td>
+                  <tr className="table-row-hover">
+                    <td className="py-3 px-4 text-muted font-medium hover-cell">Free Tier</td>
                     {top3.map((t) => (
-                      <td key={t.slug} className="py-3 px-4">
+                      <td key={t.slug} className="py-3 px-4 hover-cell">
                         {t.freeTier ? (
                           <span className="text-success font-medium">Yes</span>
                         ) : (
@@ -225,10 +225,10 @@ export default async function CategoryPage({ params }: Props) {
                       </td>
                     ))}
                   </tr>
-                  <tr className="bg-surface-alt/50">
-                    <td className="py-3 px-4 text-muted font-medium">Best For</td>
+                  <tr className="bg-surface-alt/50 table-row-hover">
+                    <td className="py-3 px-4 text-muted font-medium hover-cell">Best For</td>
                     {top3.map((t) => (
-                      <td key={t.slug} className="py-3 px-4 text-xs text-muted">
+                      <td key={t.slug} className="py-3 px-4 text-xs text-muted hover-cell">
                         {t.bestFor[0] ?? "General use"}
                       </td>
                     ))}
@@ -255,7 +255,7 @@ export default async function CategoryPage({ params }: Props) {
             {sorted.map((tool) => (
               <div
                 key={tool.slug}
-                className="border border-border rounded-xl p-5 bg-background hover:border-accent/30 transition-all"
+                className="border border-border rounded-xl p-5 bg-background hover:border-accent/30 transition-all hover-glow"
               >
                 <div className="flex items-start justify-between mb-3">
                   <div className="min-w-0">

@@ -16,7 +16,7 @@ export default function StickyToolCTA({ toolName, affiliateUrl, slug, freeTier }
   useEffect(() => {
     const handleScroll = () => {
       // Show after scrolling past the hero area (~400px)
-      setVisible(window.scrollY > 400);
+      setVisible(window.scrollY > 150);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);

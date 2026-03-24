@@ -65,7 +65,7 @@ export default function ComparePage() {
                 <Link
                   key={`${vs.slugA}-vs-${vs.slugB}`}
                   href={`/compare/${vs.slugA}-vs-${vs.slugB}`}
-                  className="group border border-border rounded-xl p-5 hover:border-accent/30 hover:shadow-sm transition-all bg-background"
+                  className="group border border-border rounded-xl p-5 hover:border-accent/30 hover:shadow-sm transition-all bg-background hover-glow"
                 >
                   {/* Tool names and scores */}
                   <div className="flex items-center justify-between mb-3">
