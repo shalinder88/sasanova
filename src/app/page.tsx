@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { categories, getOverallScore, getToolsByCategory, type Tool, type ToolScore } from "@/data/tools";
-import { getToolsHybrid, getComparisonsHybrid } from "@/lib/data-layer";
+import { tools, versusPairs, categories, getOverallScore, getToolsByCategory, type Tool, type ToolScore } from "@/data/tools";
 import EmailCapture from "@/components/EmailCapture";
 
 /* ── Mini score bar (inline) ── */
@@ -33,12 +32,11 @@ function ScoreAxis({ label, a, b }: { label: string; a: number; b: number }) {
   );
 }
 
-export default async function Home() {
-  /* ── Fetch hybrid data ── */
-  const [tools, versusPairs] = await Promise.all([
-    getToolsHybrid(),
-    getComparisonsHybrid(),
-  ]);
+export default function Home() {
+  /* ── Use static data directly for consistency across all pages ── */
+  // Previously used hybrid Supabase layer, but caused count mismatches
+  // between homepage (Supabase: 19) and About page (static: 123).
+  // Static data is the source of truth until Supabase is fully synced.
 
   /* ── Derived data ── */
   const topTools = [...tools].sort((a, b) => getOverallScore(b.scores) - getOverallScore(a.scores));
