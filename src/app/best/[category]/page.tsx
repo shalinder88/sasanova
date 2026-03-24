@@ -10,6 +10,14 @@ import {
 import ScoreBar from "@/components/ScoreBar";
 import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 
+/** Avoid titles like "Best Automation Tools Tools in 2026" */
+function bestTitle(name: string): string {
+  if (/tools$/i.test(name) || /software$/i.test(name)) {
+    return `Best ${name} in 2026`;
+  }
+  return `Best ${name} Tools in 2026`;
+}
+
 export async function generateStaticParams() {
   return categories.map((cat) => ({ category: cat.slug }));
 }
@@ -23,7 +31,7 @@ export async function generateMetadata({
   const cat = getCategoryBySlug(category);
   if (!cat) return {};
   return {
-    title: `Best ${cat.name} Tools in 2026`,
+    title: `${bestTitle(cat.name)}`,
     description: `Ranked list of the best ${cat.name.toLowerCase()} software in 2026, scored on value, ease-of-use, and power. Compare pricing, features, and honest ratings.`,
     alternates: { canonical: canonicalUrl(`/best/${category}`) },
     openGraph: {
@@ -63,7 +71,7 @@ export default async function BestCategoryPage({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: `Best ${cat.name} Tools in 2026`,
+    name: `${bestTitle(cat.name)}`,
     itemListOrder: "https://schema.org/ItemListOrderDescending",
     numberOfItems: toolsInCategory.length,
     itemListElement: toolsInCategory.map((tool, i) => ({
@@ -117,7 +125,7 @@ export default async function BestCategoryPage({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-2">Best Of</p>
           <h1 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-3">
-            Best {cat.name} Tools in 2026
+            {bestTitle(cat.name)}
           </h1>
           {/* AEO answer-first summary */}
           <p className="text-base text-muted max-w-3xl leading-relaxed">

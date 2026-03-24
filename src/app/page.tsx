@@ -147,10 +147,10 @@ export default function Home() {
                     const cat = categories.find((c) => c.slug === tool.categorySlug);
                     const cheapest = tool.pricing.find((p) => p.priceMonthly && p.priceMonthly > 0);
                     return (
-                      <tr key={tool.slug} className={`table-row-hover border-b border-border last:border-0 hover:bg-surface/60 transition-colors ${i === 0 ? "bg-accent-light/30" : ""}`}>
+                      <tr key={tool.slug} className={`table-row-hover border-b border-border last:border-0 hover:bg-surface/60 transition-colors cursor-pointer relative ${i === 0 ? "bg-accent-light/30" : ""}`}>
                         <td className="py-2.5 px-4 text-xs text-muted font-mono">{i + 1}</td>
                         <td className="py-2.5 px-4">
-                          <Link href={`/tools/${tool.slug}`} className="group">
+                          <Link href={`/tools/${tool.slug}`} className="group after:absolute after:inset-0 after:content-['']">
                             <span className="text-sm font-semibold group-hover:text-accent transition-colors">{tool.name}</span>
                             {tool.badge && <span className="ml-1.5 text-[9px] font-medium text-accent bg-accent-light px-1.5 py-0.5 rounded">{tool.badge}</span>}
                             <p className="text-xs text-muted leading-tight">{tool.vendor}</p>

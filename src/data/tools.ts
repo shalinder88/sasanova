@@ -118,14 +118,14 @@ export const tools: Tool[] = [
     categories: ["email-marketing", "automation"],
     scores: { value: 5, ease: 7, power: 8, setupFriction: 8, migrationDifficulty: 5, transparency: 4 },
     pricing: [
-      { name: "Free", priceMonthly: 0, priceAnnual: 0, billingModel: "flat", limits: "500 contacts, 1,000 sends/mo, limited automations" },
+      { name: "Free", priceMonthly: 0, priceAnnual: 0, billingModel: "flat", limits: "250 contacts, 500 sends/mo, limited automations" },
       { name: "Essentials", priceMonthly: 13, priceAnnual: 156, billingModel: "flat", limits: "500 contacts, 5,000 sends/mo, email + chat support" },
       { name: "Standard", priceMonthly: 20, priceAnnual: 240, billingModel: "flat", limits: "500 contacts, 6,000 sends/mo, advanced automations", highlighted: true },
       { name: "Premium", priceMonthly: 350, priceAnnual: 4200, billingModel: "flat", limits: "10,000 contacts, 150,000 sends/mo, phone support" },
     ],
     pricingUrl: "https://mailchimp.com/pricing/",
     freeTier: true,
-    freeTierLimits: "500 contacts, 1,000 emails/month, Mailchimp branding, limited automations",
+    freeTierLimits: "Up to 250 contacts, 500 emails/month, 1 audience, basic templates, limited reporting",
     bestFor: ["Small businesses starting email marketing", "E-commerce stores needing built-in product recommendations", "Teams wanting an all-in-one marketing suite"],
     avoidIf: ["You need affordable pricing as your list grows (costs scale steeply)", "You want a clean, simple interface (Mailchimp has become complex)", "You prioritize deliverability above all else"],
     features: ["Email campaigns", "Automation workflows", "Landing pages", "Audience segmentation", "A/B testing", "Content optimizer", "Social posting", "Postcards", "Customer journey builder", "Reporting dashboards"],
@@ -5627,7 +5627,7 @@ export const versusPairs: VersusMatch[] = [
   { slugA: "activecampaign", slugB: "brevo", verdict: "depends", summary: "ActiveCampaign has the most powerful automation builder with conditional logic and CRM pipeline. Brevo wins on price with unlimited contacts and built-in SMS/WhatsApp channels." },
   // ── Missing Newsletter/Email Marketing cluster pairs ──
   { slugA: "mailchimp", slugB: "beehiiv", verdict: "beehiiv", summary: "beehiiv wins for newsletter-first businesses with free tier up to 2,500 subscribers, built-in ad network, and referral program. Mailchimp is better for e-commerce email marketing with Shopify integrations and a mature template library." },
-  { slugA: "mailchimp", slugB: "substack", verdict: "depends", summary: "Mailchimp is a full email marketing platform with automations, templates, and e-commerce integrations starting free for 500 contacts. Substack is a zero-setup newsletter platform with built-in paid subscriptions but takes a 10% revenue cut." },
+  { slugA: "mailchimp", slugB: "substack", verdict: "depends", summary: "Mailchimp is a full email marketing platform with automations, templates, and e-commerce integrations starting free for 250 contacts. Substack is a zero-setup newsletter platform with built-in paid subscriptions but takes a 10% revenue cut." },
   { slugA: "mailchimp", slugB: "ghost", verdict: "depends", summary: "Mailchimp is better for traditional email marketing with drag-and-drop templates and e-commerce integrations. Ghost is better for independent publishers wanting full ownership, custom themes, and membership revenue with zero platform fees." },
   { slugA: "mailchimp", slugB: "buttondown", verdict: "depends", summary: "Mailchimp offers a visual drag-and-drop editor, 300+ templates, and e-commerce tools. Buttondown is a minimalist, Markdown-first newsletter tool built by a solo developer, free for 100 subscribers and $9/mo after." },
   { slugA: "convertkit", slugB: "brevo", verdict: "depends", summary: "Kit is built for creators selling digital products with visual automation workflows and commerce features. Brevo is a multi-channel marketing platform (email + SMS + WhatsApp) that charges by emails sent, not contacts stored." },
@@ -5708,7 +5708,7 @@ export const versusPairs: VersusMatch[] = [
   { slugA: "bardeen", slugB: "make", verdict: "depends", summary: "Make is a cloud-based visual automation platform with 1,800+ API integrations. Bardeen runs locally in your browser, automating web UI tasks like scraping LinkedIn or filling forms — workflows Make cannot replicate since it only connects via APIs." },
   { slugA: "bardeen", slugB: "pipedream", verdict: "depends", summary: "Bardeen automates browser-based tasks like web scraping, form filling, and repetitive clicks with no code. Pipedream is a developer platform for connecting APIs with custom code — they solve fundamentally different automation problems and pair well together." },
   // ── Cross-cluster pairs ──
-  { slugA: "mailchimp", slugB: "hubspot-crm", verdict: "depends", summary: "Mailchimp is a dedicated email marketing platform with templates, e-commerce integrations, and social posting starting free for 500 contacts. HubSpot is a full CRM platform where email marketing is one module — free CRM but $890/mo for marketing automation." },
+  { slugA: "mailchimp", slugB: "hubspot-crm", verdict: "depends", summary: "Mailchimp is a dedicated email marketing platform with templates, e-commerce integrations, and social posting starting free for 250 contacts. HubSpot is a full CRM platform where email marketing is one module — free CRM but $890/mo for marketing automation." },
 ];
 
 export function getVersusMatch(slugA: string, slugB: string): VersusMatch | undefined {
