@@ -15,14 +15,14 @@ function MiniBar({ value, max = 10, color = "bg-accent" }: { value: number; max?
 /* ── Score axis row ── */
 function ScoreAxis({ label, a, b }: { label: string; a: number; b: number }) {
   return (
-    <div className="grid grid-cols-[1fr_80px_1fr] items-center gap-2 text-[11px]">
+    <div className="grid grid-cols-[1fr_80px_1fr] items-center gap-2 text-xs">
       <div className="flex items-center gap-1.5 justify-end">
         <span className="font-mono">{a}</span>
         <div className="w-16 h-1 bg-surface-alt rounded-full overflow-hidden">
           <div className="h-full bg-accent rounded-full ml-auto" style={{ width: `${a * 10}%` }} />
         </div>
       </div>
-      <span className="text-center text-muted text-[10px]">{label}</span>
+      <span className="text-center text-muted text-xs">{label}</span>
       <div className="flex items-center gap-1.5">
         <div className="w-16 h-1 bg-surface-alt rounded-full overflow-hidden">
           <div className="h-full bg-cyan rounded-full" style={{ width: `${b * 10}%` }} />
@@ -82,17 +82,17 @@ export default async function Home() {
             <div className="flex flex-wrap justify-center gap-6 mb-10">
               <div className="text-center">
                 <p className="text-2xl lg:text-3xl font-extrabold text-accent">{tools.length}</p>
-                <p className="text-[10px] text-muted uppercase tracking-wider">Tools Tracked</p>
+                <p className="text-xs text-muted uppercase tracking-wider">Tools Tracked</p>
               </div>
               <div className="w-px h-10 bg-border" />
               <div className="text-center">
                 <p className="text-2xl lg:text-3xl font-extrabold text-cyan">{versusPairs.length}</p>
-                <p className="text-[10px] text-muted uppercase tracking-wider">Comparisons</p>
+                <p className="text-xs text-muted uppercase tracking-wider">Comparisons</p>
               </div>
               <div className="w-px h-10 bg-border" />
               <div className="text-center">
                 <p className="text-2xl lg:text-3xl font-extrabold text-success">{categories.filter(c => getToolsByCategory(c.slug).length >= 2).length}</p>
-                <p className="text-[10px] text-muted uppercase tracking-wider">Categories</p>
+                <p className="text-xs text-muted uppercase tracking-wider">Categories</p>
               </div>
               <div className="w-px h-10 bg-border" />
               <div className="text-center">
@@ -100,7 +100,7 @@ export default async function Home() {
                   <span className="w-1.5 h-1.5 rounded-full bg-success" />
                   <p className="text-lg lg:text-xl font-extrabold text-foreground">Mar 2026</p>
                 </div>
-                <p className="text-[10px] text-muted uppercase tracking-wider">Data Verified</p>
+                <p className="text-xs text-muted uppercase tracking-wider">Data Verified</p>
               </div>
             </div>
 
@@ -135,13 +135,13 @@ export default async function Home() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="text-left py-2 px-4 font-medium text-muted text-[11px] w-8">#</th>
-                    <th className="text-left py-2 px-4 font-medium text-muted text-[11px]">Tool</th>
-                    <th className="text-left py-2 px-4 font-medium text-muted text-[11px] hidden sm:table-cell">Category</th>
-                    <th className="text-center py-2 px-4 font-medium text-muted text-[11px] w-16">Score</th>
-                    <th className="text-left py-2 px-4 font-medium text-muted text-[11px] hidden md:table-cell w-40">Value · Ease · Power</th>
-                    <th className="text-left py-2 px-4 font-medium text-muted text-[11px] hidden lg:table-cell">Starts at</th>
-                    <th className="text-center py-2 px-4 font-medium text-muted text-[11px] w-12">Free</th>
+                    <th className="text-left py-2 px-4 font-medium text-muted text-xs w-8">#</th>
+                    <th className="text-left py-2 px-4 font-medium text-muted text-xs">Tool</th>
+                    <th className="text-left py-2 px-4 font-medium text-muted text-xs hidden sm:table-cell">Category</th>
+                    <th className="text-center py-2 px-4 font-medium text-muted text-xs w-16">Score</th>
+                    <th className="text-left py-2 px-4 font-medium text-muted text-xs hidden md:table-cell w-40">Value · Ease · Power</th>
+                    <th className="text-left py-2 px-4 font-medium text-muted text-xs hidden lg:table-cell">Starts at</th>
+                    <th className="text-center py-2 px-4 font-medium text-muted text-xs w-12">Free</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -150,15 +150,15 @@ export default async function Home() {
                     const cheapest = tool.pricing.find((p) => p.priceMonthly && p.priceMonthly > 0);
                     return (
                       <tr key={tool.slug} className={`table-row-hover border-b border-border last:border-0 hover:bg-surface/60 transition-colors ${i === 0 ? "bg-accent-light/30" : ""}`}>
-                        <td className="py-2.5 px-4 text-[11px] text-muted font-mono">{i + 1}</td>
+                        <td className="py-2.5 px-4 text-xs text-muted font-mono">{i + 1}</td>
                         <td className="py-2.5 px-4">
                           <Link href={`/tools/${tool.slug}`} className="group">
                             <span className="text-sm font-semibold group-hover:text-accent transition-colors">{tool.name}</span>
                             {tool.badge && <span className="ml-1.5 text-[9px] font-medium text-accent bg-accent-light px-1.5 py-0.5 rounded">{tool.badge}</span>}
-                            <p className="text-[11px] text-muted leading-tight">{tool.vendor}</p>
+                            <p className="text-xs text-muted leading-tight">{tool.vendor}</p>
                           </Link>
                         </td>
-                        <td className="py-2.5 px-4 text-[11px] text-muted hidden sm:table-cell">{cat?.name}</td>
+                        <td className="py-2.5 px-4 text-xs text-muted hidden sm:table-cell">{cat?.name}</td>
                         <td className="py-2.5 px-4 text-center">
                           <span className="text-base font-extrabold">{getOverallScore(tool.scores)}</span>
                         </td>
@@ -173,13 +173,13 @@ export default async function Home() {
                                 <div className="w-8 h-1 bg-surface-alt rounded-full overflow-hidden">
                                   <div className={`h-full rounded-full ${s.c}`} style={{ width: `${s.v * 10}%` }} />
                                 </div>
-                                <span className="text-[10px] font-mono text-muted w-3">{s.v}</span>
+                                <span className="text-xs font-mono text-muted w-3">{s.v}</span>
                               </div>
                             ))}
                           </div>
                         </td>
-                        <td className="py-2.5 px-4 text-[11px] hidden lg:table-cell">{cheapest ? `$${cheapest.priceMonthly}/mo` : "Free"}</td>
-                        <td className="py-2.5 px-4 text-center text-[11px]">
+                        <td className="py-2.5 px-4 text-xs hidden lg:table-cell">{cheapest ? `$${cheapest.priceMonthly}/mo` : "Free"}</td>
+                        <td className="py-2.5 px-4 text-center text-xs">
                           {tool.freeTier ? <span className="text-success">✓</span> : <span className="text-muted">—</span>}
                         </td>
                       </tr>
@@ -229,10 +229,10 @@ export default async function Home() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <span className="text-sm font-bold">{vs.toolA.name}</span>
-                        <span className="text-[10px] text-muted px-1.5 py-0.5 bg-surface-alt rounded">vs</span>
+                        <span className="text-xs text-muted px-1.5 py-0.5 bg-surface-alt rounded">vs</span>
                         <span className="text-sm font-bold">{vs.toolB.name}</span>
                       </div>
-                      <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${vs.verdict === "depends" ? "bg-warning-light text-warning" : "bg-success-light text-success"}`}>
+                      <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${vs.verdict === "depends" ? "bg-warning-light text-warning" : "bg-success-light text-success"}`}>
                         {vs.verdict === "depends" ? "Different jobs" : `${tools.find(t => t.slug === vs.verdict)?.name ?? vs.verdict} for most`}
                       </span>
                     </div>
@@ -243,7 +243,7 @@ export default async function Home() {
                     <div className="flex items-center justify-between mb-4">
                       <div className="text-center">
                         <p className="text-2xl font-extrabold">{scoreA}</p>
-                        <p className="text-[10px] text-muted">/ 10</p>
+                        <p className="text-xs text-muted">/ 10</p>
                       </div>
                       <div className="flex-1 px-4 space-y-1.5">
                         <ScoreAxis label="Value" a={vs.toolA.scores.value} b={vs.toolB.scores.value} />
@@ -252,13 +252,13 @@ export default async function Home() {
                       </div>
                       <div className="text-center">
                         <p className="text-2xl font-extrabold">{scoreB}</p>
-                        <p className="text-[10px] text-muted">/ 10</p>
+                        <p className="text-xs text-muted">/ 10</p>
                       </div>
                     </div>
 
-                    <p className="text-[11px] text-muted line-clamp-2 mb-3">{vs.summary}</p>
+                    <p className="text-xs text-muted line-clamp-2 mb-3">{vs.summary}</p>
 
-                    <span className="text-[11px] text-accent font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-xs text-accent font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                       Full comparison →
                     </span>
                   </div>
@@ -299,7 +299,7 @@ export default async function Home() {
                     >
                       <div className="min-w-0">
                         <p className="text-sm font-semibold group-hover:text-accent transition-colors truncate">{cat.name}</p>
-                        <p className="text-[10px] text-muted">{catTools.length} tools · #1 {top?.name}</p>
+                        <p className="text-xs text-muted">{catTools.length} tools · #1 {top?.name}</p>
                       </div>
                       <svg className="w-4 h-4 text-muted group-hover:text-accent shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -317,7 +317,7 @@ export default async function Home() {
 
               <div className="border border-border rounded-xl bg-surface p-6">
                 {top1.badge && (
-                  <span className="inline-block text-[10px] font-semibold text-accent bg-accent-light px-2 py-0.5 rounded mb-3">{top1.badge}</span>
+                  <span className="inline-block text-xs font-semibold text-accent bg-accent-light px-2 py-0.5 rounded mb-3">{top1.badge}</span>
                 )}
                 <h3 className="text-xl font-bold mb-1">{top1.name}</h3>
                 <p className="text-xs text-muted mb-4">{top1.tagline}</p>
@@ -325,14 +325,14 @@ export default async function Home() {
                 <div className="flex items-center gap-3 mb-5">
                   <div className="text-center">
                     <p className="text-3xl font-extrabold text-accent">{getOverallScore(top1.scores)}</p>
-                    <p className="text-[10px] text-muted">Overall</p>
+                    <p className="text-xs text-muted">Overall</p>
                   </div>
                   <div className="flex-1 space-y-1.5">
                     {(["value", "ease", "power", "transparency"] as (keyof ToolScore)[]).map((key) => (
                       <div key={key} className="flex items-center gap-2">
-                        <span className="w-20 text-[10px] text-muted capitalize">{key === "transparency" ? "Trust" : key}</span>
+                        <span className="w-20 text-xs text-muted capitalize">{key === "transparency" ? "Trust" : key}</span>
                         <MiniBar value={top1.scores[key]} color={top1.scores[key] >= 8 ? "bg-success" : "bg-accent"} />
-                        <span className="text-[10px] font-mono w-4">{top1.scores[key]}</span>
+                        <span className="text-xs font-mono w-4">{top1.scores[key]}</span>
                       </div>
                     ))}
                   </div>
@@ -340,7 +340,7 @@ export default async function Home() {
 
                 <div className="space-y-1.5 mb-5">
                   {top1.bestFor.slice(0, 2).map((b) => (
-                    <div key={b} className="flex items-start gap-1.5 text-[11px]">
+                    <div key={b} className="flex items-start gap-1.5 text-xs">
                       <svg className="w-3 h-3 text-success shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
@@ -349,7 +349,7 @@ export default async function Home() {
                   ))}
                 </div>
 
-                <div className="flex items-center justify-between text-[11px] text-muted mb-4 pt-3 border-t border-border">
+                <div className="flex items-center justify-between text-xs text-muted mb-4 pt-3 border-t border-border">
                   <span>{top1.freeTier ? "Free tier available" : `From $${top1.pricing.find(p => p.priceMonthly && p.priceMonthly > 0)?.priceMonthly}/mo`}</span>
                   <span className="flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-success" />
@@ -394,7 +394,7 @@ export default async function Home() {
               { n: "06", title: "Weekly freshness", desc: "Software changes fast. We monitor pricing pages, changelogs, and feature updates — not just publish and forget." },
             ].map((f) => (
               <div key={f.n} className="group">
-                <span className="text-[11px] font-mono text-muted">{f.n}</span>
+                <span className="text-xs font-mono text-muted">{f.n}</span>
                 <h3 className="text-base font-bold mt-1 mb-2">{f.title}</h3>
                 <p className="text-sm text-muted leading-relaxed">{f.desc}</p>
               </div>
@@ -418,9 +418,9 @@ export default async function Home() {
               { tag: "Pricing", title: "The Hidden Cost of Mailchimp", desc: "Free tier caps at 500 contacts. Standard jumps to $20/mo. At 10K contacts you're paying $100+/mo. Brevo charges by emails sent — not contacts — making it 40-60% cheaper at scale.", href: "/pricing/mailchimp" },
             ].map((p) => (
               <Link key={p.href} href={p.href} className="group border border-border rounded-xl p-5 bg-surface hover-glow">
-                <span className="inline-block text-[10px] font-semibold text-accent bg-accent-light px-2 py-0.5 rounded mb-3">{p.tag}</span>
+                <span className="inline-block text-xs font-semibold text-accent bg-accent-light px-2 py-0.5 rounded mb-3">{p.tag}</span>
                 <h3 className="text-sm font-bold mb-2 group-hover:text-accent transition-colors leading-snug">{p.title}</h3>
-                <p className="text-[11px] text-muted leading-relaxed">{p.desc}</p>
+                <p className="text-xs text-muted leading-relaxed">{p.desc}</p>
               </Link>
             ))}
           </div>
@@ -435,7 +435,7 @@ export default async function Home() {
           <h2 className="text-2xl font-extrabold tracking-tight mb-2">Stay sharp</h2>
           <p className="text-sm text-muted mb-6">New reviews, pricing changes, and comparison updates — every Tuesday.</p>
           <EmailCapture variant="inline" />
-          <p className="text-[11px] text-muted mt-3">No spam. Unsubscribe anytime.</p>
+          <p className="text-xs text-muted mt-3">No spam. Unsubscribe anytime.</p>
         </div>
       </section>
 
@@ -444,7 +444,7 @@ export default async function Home() {
           ═══════════════════════════════════════════════════════ */}
       <section className="py-6 bg-surface border-b border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1.5 text-[11px] text-muted">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1.5 text-xs text-muted">
             {["Evidence-backed claims", "Normalized pricing data", "6-axis scoring methodology", "Editorial independent of affiliates", "Data verified March 2026"].map((t) => (
               <span key={t} className="flex items-center gap-1">
                 <svg className="w-3 h-3 text-success shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
