@@ -208,6 +208,46 @@ const guides = [
     readingTime: "13 min read",
     category: "Infrastructure",
   },
+  {
+    slug: "best-webinar-platform",
+    title: "Choosing a Webinar Platform Without Overpaying",
+    description:
+      "Zoom vs Demio vs Livestorm vs Hopin compared at real attendee counts. When Zoom is enough vs when you need dedicated webinar software, with actual pricing.",
+    readingTime: "13 min read",
+    category: "Webinars",
+  },
+  {
+    slug: "landing-page-builder-comparison",
+    title: "Landing Page Builders: When to Pay $99/Month and When $0 Works",
+    description:
+      "Unbounce vs Instapage vs Leadpages vs Carrd compared with real pricing, conversion rate data, and cost-per-landing-page math. Find out when free is enough.",
+    readingTime: "12 min read",
+    category: "Conversion",
+  },
+  {
+    slug: "seo-tools-for-small-sites",
+    title: "SEO Tools for Sites Under 10K Monthly Visitors",
+    description:
+      "Why most small sites don't need Ahrefs at $99/mo. Semrush vs Ahrefs vs Mangools vs free alternatives compared. What actually moves rankings for small sites.",
+    readingTime: "14 min read",
+    category: "SEO",
+  },
+  {
+    slug: "proposal-software-freelancers",
+    title: "Stop Sending PDFs: Proposal Software That Actually Closes Deals",
+    description:
+      "PandaDoc vs Proposify vs Better Proposals compared for freelancers. Win rate data, template quality, e-signature integration, and when a Google Doc is still fine.",
+    readingTime: "13 min read",
+    category: "Sales",
+  },
+  {
+    slug: "customer-success-tools",
+    title: "Customer Success Tools: When Spreadsheets Stop Working",
+    description:
+      "Gainsight vs Vitally vs Totango compared for growing SaaS teams. When you actually need CS software (hint: 50+ accounts). Health score reality check.",
+    readingTime: "14 min read",
+    category: "Customer Success",
+  },
 ];
 
 export default function GuidesHub() {

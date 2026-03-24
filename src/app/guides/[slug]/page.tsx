@@ -102,6 +102,26 @@ const guideMeta: Record<string, { title: string; category: string }> = {
     title: "Cloud Storage for Teams: Dropbox vs Google Workspace vs Box",
     category: "Infrastructure",
   },
+  "best-webinar-platform": {
+    title: "Choosing a Webinar Platform Without Overpaying",
+    category: "Webinars",
+  },
+  "landing-page-builder-comparison": {
+    title: "Landing Page Builders: When to Pay $99/Month and When $0 Works",
+    category: "Conversion",
+  },
+  "seo-tools-for-small-sites": {
+    title: "SEO Tools for Sites Under 10K Monthly Visitors",
+    category: "SEO",
+  },
+  "proposal-software-freelancers": {
+    title: "Stop Sending PDFs: Proposal Software That Actually Closes Deals",
+    category: "Sales",
+  },
+  "customer-success-tools": {
+    title: "Customer Success Tools: When Spreadsheets Stop Working",
+    category: "Customer Success",
+  },
 };
 
 export function generateStaticParams() {
