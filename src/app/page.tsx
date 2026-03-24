@@ -82,17 +82,17 @@ export default async function Home() {
             <div className="flex flex-wrap justify-center gap-6 mb-10">
               <div className="text-center">
                 <p className="text-2xl lg:text-3xl font-extrabold text-accent">{tools.length}</p>
-                <p className="text-xs text-muted uppercase tracking-wider">Tools Tracked</p>
+                <p className="text-xs text-muted uppercase tracking-wider">Tools Tracked*</p>
               </div>
               <div className="w-px h-10 bg-border" />
               <div className="text-center">
                 <p className="text-2xl lg:text-3xl font-extrabold text-cyan">{versusPairs.length}</p>
-                <p className="text-xs text-muted uppercase tracking-wider">Comparisons</p>
+                <p className="text-xs text-muted uppercase tracking-wider">Comparisons*</p>
               </div>
               <div className="w-px h-10 bg-border" />
               <div className="text-center">
                 <p className="text-2xl lg:text-3xl font-extrabold text-success">{categories.filter(c => getToolsByCategory(c.slug).length >= 2).length}</p>
-                <p className="text-xs text-muted uppercase tracking-wider">Categories</p>
+                <p className="text-xs text-muted uppercase tracking-wider">Categories*</p>
               </div>
               <div className="w-px h-10 bg-border" />
               <div className="text-center">
@@ -100,14 +100,9 @@ export default async function Home() {
                   <span className="w-1.5 h-1.5 rounded-full bg-success" />
                   <p className="text-lg lg:text-xl font-extrabold text-foreground">Mar 2026</p>
                 </div>
-                <p className="text-xs text-muted uppercase tracking-wider">Data Verified</p>
+                <p className="text-xs text-muted uppercase tracking-wider">Data Verified*</p>
               </div>
             </div>
-
-            {/* Metric definitions */}
-            <p className="text-xs text-muted/60 text-center max-w-lg mx-auto mb-8">
-              Tools tracked = live reviewed entries in our directory. Comparisons = published head-to-head pages. Categories = active browseable clusters with 2+ tools. Data verified = last global verification sweep.
-            </p>
 
             {/* CTAs — pushed lower */}
             <div className="flex flex-wrap justify-center gap-3 mb-6">
@@ -197,6 +192,11 @@ export default async function Home() {
               View all {tools.length} tools →
             </Link>
           </div>
+
+          {/* Metric footnote */}
+          <p className="text-[10px] text-muted/40 text-center mt-8">
+            *Tools tracked = live reviewed entries in our directory. Comparisons = published head-to-head pages. Categories = active browseable clusters with 2+ tools. Data verified = last global verification sweep.
+          </p>
         </div>
       </section>
 
