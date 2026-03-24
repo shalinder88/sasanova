@@ -66,7 +66,7 @@ export default function ToolsDirectoryClient({
         >
           All
         </button>
-        {categories.map((cat) => (
+        {categories.filter((cat) => tools.some(t => t.categories.includes(cat.slug))).map((cat) => (
           <button
             key={cat.slug}
             onClick={() =>
