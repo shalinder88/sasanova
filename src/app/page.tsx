@@ -279,6 +279,119 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
+          SECTION 2b — POPULAR TOOL STACKS
+          Curated guide stacks with cost badges
+          ═══════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 border-b border-border bg-surface">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-12">
+            <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
+              Popular tool
+              <br />
+              <span className="text-muted">stacks</span>
+            </h2>
+            <p className="text-base text-muted leading-relaxed lg:pt-2">
+              Pre-built combinations tested by real teams. Each stack includes specific plans, prices, and limits so you can set up in an afternoon.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                title: "Newsletter Creator Stack",
+                desc: "beehiiv + Notion + Canva — everything a one-person newsletter needs.",
+                cost: "Under $150/mo",
+                href: "/guides/newsletter-stack",
+                icon: (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Solo Founder CRM",
+                desc: "Folk or Pipedrive + Tally + Zapier — close deals without the overhead.",
+                cost: "Under $50/mo",
+                href: "/guides/crm-solo-founder",
+                icon: (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Automation Under $50/mo",
+                desc: "Make + Notion + beehiiv — automate lead capture, email, and ops.",
+                cost: "Under $50/mo",
+                href: "/guides/best-automation-tool-solopreneurs",
+                icon: (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Free Startup Stack",
+                desc: "All-free tools that actually scale — no crippled tiers, no bait-and-switch.",
+                cost: "$0/mo",
+                href: "/guides/best-free-tools-startups",
+                icon: (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+                  </svg>
+                ),
+              },
+            ].map((stack) => (
+              <Link
+                key={stack.href}
+                href={stack.href}
+                className="group border border-border rounded-xl p-5 bg-surface hover-glow flex flex-col"
+              >
+                <div className="flex items-center gap-2 mb-3 text-accent">
+                  {stack.icon}
+                  <span className="text-xs font-semibold px-2 py-0.5 bg-accent-light rounded-full">{stack.cost}</span>
+                </div>
+                <h3 className="text-sm font-bold mb-1.5 group-hover:text-accent transition-colors">{stack.title}</h3>
+                <p className="text-xs text-muted leading-relaxed flex-1">{stack.desc}</p>
+                <span className="text-xs text-accent font-medium mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                  View stack →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          SECTION 2c — SAVINGS CALCULATOR CALLOUT
+          Data-driven migration nudge
+          ═══════════════════════════════════════════════════════ */}
+      <section className="border-b border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <Link href="/guides/migrate-mailchimp-to-beehiiv" className="group flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 border border-border rounded-xl bg-surface hover:border-accent/30 transition-all">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg bg-success/10 flex items-center justify-center shrink-0">
+                <svg className="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-sm font-bold group-hover:text-accent transition-colors">
+                  Switching from Mailchimp to beehiiv? Save up to $3,432/year.
+                </p>
+                <p className="text-xs text-muted mt-0.5">
+                  At 50K subscribers, Mailchimp Standard costs $385/mo. beehiiv Max is $99/mo. That&apos;s $286/mo back in your pocket — verified with live pricing data.
+                </p>
+              </div>
+            </div>
+            <span className="text-xs text-accent font-medium whitespace-nowrap shrink-0 opacity-80 group-hover:opacity-100 transition-opacity">
+              See the full breakdown →
+            </span>
+          </Link>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
           SECTION 3 — CATEGORIES + FEATURED PICK
           Two-column: browse left, spotlight right
           ═══════════════════════════════════════════════════════ */}

@@ -21,6 +21,32 @@ const footerSections = [
     ],
   },
   {
+    title: "Popular Guides",
+    links: [
+      { href: "/guides/newsletter-stack", label: "Newsletter Stack Under $150/mo" },
+      { href: "/guides/hubspot-pricing-reality", label: "HubSpot Pricing Reality" },
+      { href: "/guides/zapier-hidden-costs", label: "Zapier Hidden Costs" },
+      { href: "/guides/mailchimp-hidden-costs", label: "Mailchimp Hidden Costs" },
+      { href: "/guides/best-crm-freelancers-consultants", label: "Best CRM for Freelancers" },
+      { href: "/guides/best-email-tool-creators", label: "Best Email for Creators" },
+      { href: "/guides/salesforce-hidden-costs", label: "Salesforce Hidden Costs" },
+      { href: "/guides/automation-pricing-compared", label: "Automation Pricing Compared" },
+    ],
+  },
+  {
+    title: "Top Comparisons",
+    links: [
+      { href: "/compare/mailchimp-vs-convertkit", label: "Mailchimp vs Kit" },
+      { href: "/compare/hubspot-crm-vs-pipedrive", label: "HubSpot vs Pipedrive" },
+      { href: "/compare/zapier-vs-make", label: "Zapier vs Make" },
+      { href: "/compare/notion-vs-clickup", label: "Notion vs ClickUp" },
+      { href: "/compare/beehiiv-vs-substack", label: "beehiiv vs Substack" },
+      { href: "/compare/slack-vs-discord", label: "Slack vs Discord" },
+      { href: "/compare/figma-vs-canva", label: "Figma vs Canva" },
+      { href: "/compare/activecampaign-vs-brevo", label: "ActiveCampaign vs Brevo" },
+    ],
+  },
+  {
     title: "Trust",
     links: [
       { href: "/about", label: "About Sasanova" },
@@ -38,7 +64,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-border bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-3">
               <div className="w-6 h-6 rounded-md bg-accent flex items-center justify-center">

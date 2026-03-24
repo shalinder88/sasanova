@@ -54,6 +54,26 @@ const complexityMeta: Record<string, { label: string; color: string }> = {
   high: { label: "High", color: "text-danger bg-danger-light" },
 };
 
+const migrationGuides: Record<string, { href: string; label: string }[]> = {
+  mailchimp: [
+    { href: "/guides/migrate-mailchimp-to-kit", label: "Migrate from Mailchimp to Kit" },
+    { href: "/guides/migrate-mailchimp-to-beehiiv", label: "Migrate from Mailchimp to beehiiv" },
+  ],
+  substack: [
+    { href: "/guides/migrate-substack-to-beehiiv", label: "Migrate from Substack to beehiiv" },
+  ],
+  zapier: [
+    { href: "/guides/migrate-zapier-to-make", label: "Migrate from Zapier to Make" },
+    { href: "/guides/migrate-zapier-to-n8n", label: "Migrate from Zapier to n8n" },
+  ],
+  salesforce: [
+    { href: "/guides/migrate-salesforce-to-hubspot", label: "Migrate from Salesforce to HubSpot" },
+  ],
+  "hubspot-crm": [
+    { href: "/guides/switch-from-hubspot-to-pipedrive", label: "Switch from HubSpot to Pipedrive" },
+  ],
+};
+
 /* ---------- Page ---------- */
 
 export default async function ToolProfilePage({ params }: Props) {
@@ -270,6 +290,158 @@ export default async function ToolProfilePage({ params }: Props) {
           </p>
         </section>
 
+        {/* ── Switching Intelligence (Sasanova Exclusive) ── */}
+        <section className="border border-accent/30 rounded-2xl bg-surface-alt/50 overflow-hidden">
+          {/* Header */}
+          <div className="flex items-center gap-3 px-6 py-4 border-b border-border bg-surface-alt">
+            <svg className="w-5 h-5 text-accent shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+            </svg>
+            <h2 className="text-lg font-bold">Switching Intelligence</h2>
+            <span className="ml-auto text-[10px] font-semibold uppercase tracking-wider text-accent bg-accent-light px-2.5 py-0.5 rounded-full">
+              Sasanova Exclusive
+            </span>
+          </div>
+
+          <div className="p-6 space-y-6">
+            {/* Migration Difficulty Meter + Implementation Complexity */}
+            <div className="flex flex-wrap items-center gap-6">
+              <div>
+                <p className="text-xs font-semibold text-muted uppercase tracking-wider mb-2">Migration Difficulty</p>
+                <div className="flex items-center gap-1">
+                  {(["low", "medium", "high"] as const).map((level) => {
+                    const filled = level === "low"
+                      ? true
+                      : level === "medium"
+                        ? tool.implementationComplexity === "medium" || tool.implementationComplexity === "high"
+                        : tool.implementationComplexity === "high";
+                    const colors = filled
+                      ? level === "low" ? "bg-success" : level === "medium" ? "bg-warning" : "bg-danger"
+                      : "bg-border";
+                    return (
+                      <div key={level} className={`h-3 w-10 rounded-sm ${colors}`} />
+                    );
+                  })}
+                  <span className={`ml-2 text-sm font-bold ${
+                    tool.implementationComplexity === "low" ? "text-success"
+                    : tool.implementationComplexity === "medium" ? "text-warning"
+                    : "text-danger"
+                  }`}>
+                    {tool.implementationComplexity === "low" ? "Easy" : tool.implementationComplexity === "medium" ? "Moderate" : "Hard"}
+                  </span>
+                </div>
+              </div>
+
+              <div>
+                <p className="text-xs font-semibold text-muted uppercase tracking-wider mb-2">Implementation Complexity</p>
+                <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold ${complexityMeta[tool.implementationComplexity].color}`}>
+                  {complexityMeta[tool.implementationComplexity].label}
+                </span>
+              </div>
+            </div>
+
+            {/* Three subsections grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {/* Triggers */}
+              {tool.switchingTriggers && tool.switchingTriggers.length > 0 && (
+                <div className="border border-warning/20 bg-warning-light/10 rounded-xl p-5">
+                  <h3 className="text-sm font-bold mb-3 text-warning flex items-center gap-2">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                    </svg>
+                    What triggers people to switch AWAY
+                  </h3>
+                  <ul className="space-y-2">
+                    {tool.switchingTriggers.map((t) => (
+                      <li key={t} className="hover-item flex items-start gap-2 text-sm text-muted">
+                        <span className="w-1.5 h-1.5 rounded-full bg-warning shrink-0 mt-1.5" />
+                        <span>{t}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Blockers */}
+              {tool.switchingBlockers && tool.switchingBlockers.length > 0 && (
+                <div className="border border-danger/20 bg-danger-light/10 rounded-xl p-5">
+                  <h3 className="text-sm font-bold mb-3 text-danger flex items-center gap-2">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                    </svg>
+                    What blocks people from leaving
+                  </h3>
+                  <ul className="space-y-2">
+                    {tool.switchingBlockers.map((b) => (
+                      <li key={b} className="hover-item flex items-start gap-2 text-sm text-muted">
+                        <span className="w-1.5 h-1.5 rounded-full bg-danger shrink-0 mt-1.5" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+
+            {/* Hidden Costs (if any) */}
+            {tool.hiddenCosts && tool.hiddenCosts.length > 0 && (
+              <div className="border border-warning/20 bg-warning-light/10 rounded-xl p-5">
+                <h3 className="text-xs font-bold text-warning mb-2 uppercase tracking-wider flex items-center gap-2">
+                  <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                  </svg>
+                  Hidden Costs &amp; Gotchas
+                </h3>
+                <ul className="space-y-1.5">
+                  {tool.hiddenCosts.map((cost) => (
+                    <li key={cost} className="hover-item text-sm text-muted flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-warning shrink-0 mt-1.5" />
+                      {cost}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Data Export & Portability */}
+            {tool.dataExport && (
+              <div className="border border-border rounded-xl p-5 bg-background">
+                <h3 className="text-xs font-bold text-muted mb-2 uppercase tracking-wider flex items-center gap-2">
+                  <svg className="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                  </svg>
+                  Data Export &amp; Portability
+                </h3>
+                <p className="text-sm text-muted">{tool.dataExport}</p>
+              </div>
+            )}
+
+            {/* Migration Guides Callout */}
+            {migrationGuides[slug] && migrationGuides[slug].length > 0 && (
+              <div className="border border-accent/20 bg-accent-light/10 rounded-xl p-5">
+                <h3 className="text-sm font-bold mb-3 flex items-center gap-2">
+                  <svg className="w-4 h-4 text-accent" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.591" />
+                  </svg>
+                  Switching from {tool.name}?
+                </h3>
+                <p className="text-xs text-muted mb-3">Planning to switch? Read our migration guides:</p>
+                <div className="flex flex-wrap gap-2">
+                  {migrationGuides[slug].map((guide) => (
+                    <Link
+                      key={guide.href}
+                      href={guide.href}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-accent bg-accent-light rounded-full hover:bg-accent hover:text-white transition-colors"
+                    >
+                      {guide.label} →
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+
         {/* Best For / Avoid If */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <section className="border border-border rounded-xl p-5 bg-success-light/30">
@@ -409,23 +581,6 @@ export default async function ToolProfilePage({ params }: Props) {
             </p>
           )}
 
-          {/* Hidden costs */}
-          {tool.hiddenCosts && tool.hiddenCosts.length > 0 && (
-            <div className="mt-4 bg-warning-light/30 border border-warning/20 rounded-lg p-4">
-              <h3 className="text-xs font-bold text-warning mb-2 uppercase tracking-wider">Hidden Costs & Gotchas</h3>
-              <ul className="space-y-1">
-                {tool.hiddenCosts.map((cost) => (
-                  <li key={cost} className="hover-item text-xs text-muted flex items-start gap-1.5">
-                    <svg className="w-3 h-3 text-warning shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                    </svg>
-                    {cost}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
           {/* Evidence footer */}
           <div className="flex flex-wrap items-center gap-4 mt-4 text-[10px] text-muted border-t border-border pt-3">
             <a href={`${tool.website}/pricing`} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
@@ -452,88 +607,6 @@ export default async function ToolProfilePage({ params }: Props) {
               </span>
             ))}
           </div>
-        </section>
-
-        {/* Switching Intelligence */}
-        {(tool.switchingTriggers?.length || tool.switchingBlockers?.length) && (
-          <section>
-            <h2 className="text-lg font-bold mb-4">Switching Intelligence</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {tool.switchingTriggers && tool.switchingTriggers.length > 0 && (
-                <div className="border border-border rounded-xl p-5">
-                  <h3 className="text-sm font-semibold mb-3">
-                    What triggers people to switch
-                  </h3>
-                  <ul className="space-y-2">
-                    {tool.switchingTriggers.map((t) => (
-                      <li
-                        key={t}
-                        className="hover-item flex items-start gap-2 text-sm text-muted"
-                      >
-                        <svg
-                          className="w-3.5 h-3.5 text-warning shrink-0 mt-0.5"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
-                          />
-                        </svg>
-                        <span>{t}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {tool.switchingBlockers && tool.switchingBlockers.length > 0 && (
-                <div className="border border-border rounded-xl p-5">
-                  <h3 className="text-sm font-semibold mb-3">
-                    What blocks switching
-                  </h3>
-                  <ul className="space-y-2">
-                    {tool.switchingBlockers.map((b) => (
-                      <li
-                        key={b}
-                        className="hover-item flex items-start gap-2 text-sm text-muted"
-                      >
-                        <svg
-                          className="w-3.5 h-3.5 text-danger shrink-0 mt-0.5"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
-                          />
-                        </svg>
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          </section>
-        )}
-
-        {/* Implementation Complexity */}
-        <section>
-          <h2 className="text-lg font-bold mb-3">Implementation Complexity</h2>
-          <span
-            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold ${
-              complexityMeta[tool.implementationComplexity].color
-            }`}
-          >
-            {complexityMeta[tool.implementationComplexity].label}
-          </span>
         </section>
 
         {/* Alternatives */}
