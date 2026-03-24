@@ -168,6 +168,46 @@ const guides = [
     readingTime: "13 min read",
     category: "Finance",
   },
+  {
+    slug: "hr-payroll-small-business",
+    title: "HR and Payroll Software for Small Businesses: The Honest Comparison",
+    description:
+      "Gusto vs Rippling vs BambooHR vs Deel compared for small businesses. Real per-employee costs, hidden fees, and when you actually need payroll software vs just an accountant.",
+    readingTime: "14 min read",
+    category: "HR & Payroll",
+  },
+  {
+    slug: "video-podcast-recording",
+    title: "Recording Setup for Remote Podcasts and Video: What Actually Works",
+    description:
+      "Riverside vs Descript vs StreamYard vs Zoom for remote podcast and video recording. Quality differences, local vs cloud recording, and a budget stack under $50/month.",
+    readingTime: "13 min read",
+    category: "Content Creation",
+  },
+  {
+    slug: "social-media-management-stack",
+    title: "Social Media Management Without the $300/Month Bill",
+    description:
+      "Buffer vs Hootsuite vs Later vs Sprout Social compared honestly. Why most teams overpay for social media tools, what features actually matter, and when free tools are enough.",
+    readingTime: "12 min read",
+    category: "Social Media",
+  },
+  {
+    slug: "website-builder-for-business",
+    title: "Choosing a Website Builder in 2026: Beyond the Marketing Pages",
+    description:
+      "Squarespace vs Wix vs Webflow vs Framer vs Carrd vs WordPress compared honestly. Real 12-month costs including domain, hosting, and plugins. Plus migration difficulty between platforms.",
+    readingTime: "15 min read",
+    category: "Web Development",
+  },
+  {
+    slug: "cloud-storage-teams",
+    title: "Cloud Storage for Teams: Dropbox vs Google Workspace vs Box",
+    description:
+      "Cloud storage compared for teams of 10, 50, and 100 people. Security features, compliance, admin controls, and effective per-user cost at every scale.",
+    readingTime: "13 min read",
+    category: "Infrastructure",
+  },
 ];
 
 export default function GuidesHub() {

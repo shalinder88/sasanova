@@ -82,6 +82,26 @@ const guideMeta: Record<string, { title: string; category: string }> = {
     title: "Accounting Software for Freelancers: Stop Overpaying",
     category: "Finance",
   },
+  "hr-payroll-small-business": {
+    title: "HR and Payroll Software for Small Businesses: The Honest Comparison",
+    category: "HR & Payroll",
+  },
+  "video-podcast-recording": {
+    title: "Recording Setup for Remote Podcasts and Video: What Actually Works",
+    category: "Content Creation",
+  },
+  "social-media-management-stack": {
+    title: "Social Media Management Without the $300/Month Bill",
+    category: "Social Media",
+  },
+  "website-builder-for-business": {
+    title: "Choosing a Website Builder in 2026: Beyond the Marketing Pages",
+    category: "Web Development",
+  },
+  "cloud-storage-teams": {
+    title: "Cloud Storage for Teams: Dropbox vs Google Workspace vs Box",
+    category: "Infrastructure",
+  },
 };
 
 export function generateStaticParams() {
