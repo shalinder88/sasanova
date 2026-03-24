@@ -182,6 +182,18 @@ const guideMeta: Record<string, { title: string; category: string }> = {
     title: "Zapier vs Make vs n8n Pricing: The Honest Math Nobody Shows You",
     category: "Pricing Deep Dive",
   },
+  "salesforce-hidden-costs": {
+    title: "Salesforce Pricing: The Real Number Is 3-5x What You See",
+    category: "Hidden Costs",
+  },
+  "switch-from-hubspot-to-pipedrive": {
+    title: "Switching from HubSpot to Pipedrive: A Smaller CRM That Gets Used",
+    category: "Migration Guide",
+  },
+  "best-automation-marketing-teams": {
+    title: "Marketing Automation on a Budget: What Actually Moves the Needle",
+    category: "Persona Guide",
+  },
 };
 
 export function generateStaticParams() {

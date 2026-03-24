@@ -368,6 +368,27 @@ const guides = [
     readingTime: "16 min read",
     category: "Pricing Deep Dive",
   },
+  {
+    slug: "salesforce-hidden-costs",
+    title: "Salesforce Pricing: The Real Number Is 3-5x What You See",
+    description: "Per-user add-ons, implementation costs, admin salary requirements, data storage overages, and the annual contract lock-in nobody warns you about.",
+    readingTime: "15 min read",
+    category: "Hidden Costs",
+  },
+  {
+    slug: "switch-from-hubspot-to-pipedrive",
+    title: "Switching from HubSpot to Pipedrive: A Smaller CRM That Actually Gets Used",
+    description: "Why teams leave HubSpot, what you gain and lose, data migration steps, and cost savings math.",
+    readingTime: "14 min read",
+    category: "Migration Guide",
+  },
+  {
+    slug: "best-automation-marketing-teams",
+    title: "Marketing Automation on a Budget: What Actually Moves the Needle",
+    description: "HubSpot Marketing Hub vs ActiveCampaign vs Brevo vs Kit — lead scoring, email sequences, and landing pages compared with real pricing.",
+    readingTime: "15 min read",
+    category: "Persona Guide",
+  },
 ];
 
 export default function GuidesHub() {
