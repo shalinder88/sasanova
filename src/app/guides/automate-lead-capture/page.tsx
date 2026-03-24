@@ -316,6 +316,24 @@ export default function AutomateLeadCaptureGuide() {
               save the money and build lean.
             </p>
           </section>
+
+          <section className="border-t border-border pt-8 mt-8">
+            <h2 className="text-xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">What is the cheapest way to automate lead capture?</h3>
+                <p>The cheapest effective stack is a free form tool (Tally or Google Forms) connected to a free CRM (HubSpot free tier or Folk) via Zapier&apos;s free plan. Total cost: $0/month for up to 100 leads per month. Upgrade to paid tools only when volume exceeds free tier limits.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Do I need HubSpot for lead capture?</h3>
+                <p>No. HubSpot Professional ($800+/month) is overkill for most small businesses. You can replicate 80% of its lead capture functionality with Tally forms, Make automations, and a lightweight CRM for under $85/month. HubSpot makes sense only when you have a dedicated marketing operations person.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">How do I send leads from a form to my CRM automatically?</h3>
+                <p>Connect your form tool to your CRM using Zapier or Make. When someone submits a form, the automation creates a new contact in your CRM with all the submitted fields mapped. Most form tools (Tally, Typeform, JotForm) have native integrations with popular CRMs, often requiring zero code.</p>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </>

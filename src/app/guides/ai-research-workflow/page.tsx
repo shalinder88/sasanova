@@ -305,6 +305,24 @@ export default function AIResearchWorkflowGuide() {
               afternoon instead of a week.
             </p>
           </section>
+
+          <section className="border-t border-border pt-8 mt-8">
+            <h2 className="text-xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">What is the best AI tool for research in 2026?</h3>
+                <p>For deep analysis and long documents, Claude is the strongest option. For broad web research with citations, Perplexity AI is the most efficient starting point. ChatGPT sits between the two with the broadest plugin ecosystem. Most serious researchers use two or more tools in combination.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Can AI replace human researchers?</h3>
+                <p>No. AI compresses research time but does not replace critical thinking, source verification, or expert judgment. AI tools hallucinate facts, miss nuance, and lack domain context. Use them to accelerate collection and summarization, but always verify outputs against primary sources.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">How much does an AI research workflow cost per month?</h3>
+                <p>A functional AI research stack costs about $40/month: ChatGPT Plus ($20) or Claude Pro ($20) for analysis, plus Perplexity Pro ($20) for sourced web research. Free tiers exist for all three but have meaningful usage limits that slow down serious research work.</p>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </>

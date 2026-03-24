@@ -387,6 +387,28 @@ export default function ProjectManagementGuide() {
               The best tool is the one your team will actually open every morning.
             </p>
           </section>
+
+          <section className="border-t border-border pt-8 mt-8">
+            <h2 className="text-xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">What is the best project management tool for small teams?</h3>
+                <p>For most small teams (under 20 people), Asana or ClickUp are the strongest choices. Asana offers a cleaner, more structured experience for non-technical teams. ClickUp offers more features at a lower price but has a steeper learning curve. Both have generous free tiers.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Is Notion good for project management?</h3>
+                <p>Notion works for docs-first teams that want flexible databases and wikis alongside lightweight task tracking. It lacks dedicated PM features like Gantt charts, workload views, and time tracking. Use Notion for knowledge management and pair it with a PM tool if you need structured project workflows.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">How do I choose between Asana, ClickUp, and Monday.com?</h3>
+                <p>Choose Asana for clean workflows and non-technical teams. Choose ClickUp for maximum features at the lowest price. Choose Monday.com for visually-oriented teams who prefer colorful boards and simple drag-and-drop. Run a 2-week trial with your actual team before committing.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Do small teams need Jira?</h3>
+                <p>No, unless you are a software engineering team that needs sprint planning, issue tracking with custom fields, and deep Git integration. For non-engineering small teams, Jira adds unnecessary complexity. Linear is a better fit for engineering teams that want speed and simplicity over Jira&apos;s customization depth.</p>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </>

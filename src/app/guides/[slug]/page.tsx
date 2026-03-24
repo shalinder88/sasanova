@@ -22,6 +22,46 @@ const guideMeta: Record<string, { title: string; category: string }> = {
     title: "Choosing Project Management Software Without Losing Your Mind",
     category: "Project Management",
   },
+  "email-marketing-ecommerce": {
+    title: "Email Marketing for E-Commerce: Stop Paying Mailchimp Prices",
+    category: "E-Commerce",
+  },
+  "automation-zapier-vs-make-vs-n8n": {
+    title: "Zapier vs Make vs n8n: Which Automation Tool Fits Your Budget and Brain",
+    category: "Automation",
+  },
+  "meeting-recording-comparison": {
+    title: "AI Meeting Assistants: What Actually Works and What's Marketing Hype",
+    category: "Productivity",
+  },
+  "notion-vs-obsidian-decision": {
+    title: "Notion vs Obsidian: The Decision That Reveals How You Think",
+    category: "Knowledge Management",
+  },
+  "scheduling-tool-comparison": {
+    title: "Calendly vs Cal.com: Pay $192/Year or Self-Host for Free",
+    category: "Scheduling",
+  },
+  "best-free-tools-startups": {
+    title: "The $0 Startup Stack: Every Free Tool That's Actually Worth Using",
+    category: "Stack Building",
+  },
+  "saas-affiliate-playbook": {
+    title: "How SaaS Affiliate Programs Actually Work: A Realistic Guide for Content Sites",
+    category: "Monetization",
+  },
+  "migrate-from-mailchimp": {
+    title: "How to Leave Mailchimp Without Losing Your List: A Step-by-Step Migration Guide",
+    category: "Email Migration",
+  },
+  "building-knowledge-base": {
+    title: "Building a Knowledge Base That Your Team Actually Uses",
+    category: "Knowledge Management",
+  },
+  "customer-support-stack": {
+    title: "Customer Support Software for Teams Under 20: What You Actually Need",
+    category: "Support",
+  },
 };
 
 export function generateStaticParams() {

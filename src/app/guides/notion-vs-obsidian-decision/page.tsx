@@ -403,6 +403,28 @@ export default function NotionVsObsidianPage() {
             </p>
           </section>
 
+          <section className="border-t border-border pt-8 mt-8">
+            <h2 className="text-xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Is Notion or Obsidian better for note-taking?</h3>
+                <p>Obsidian is better for personal, thinking-oriented note-taking with bidirectional links and local-first storage. Notion is better for collaborative workspaces with shared databases and team wikis. If you primarily write for yourself, choose Obsidian. If you share notes with others, choose Notion.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Can Obsidian replace Notion?</h3>
+                <p>Not fully. Obsidian lacks databases, team collaboration, and web-based access. Notion lacks Obsidian&apos;s speed, offline reliability, and graph-based linking. Many knowledge workers use both: Obsidian for personal thinking and research, Notion for team projects and shared documentation.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Is Obsidian really free?</h3>
+                <p>The core Obsidian app is free for personal use. Obsidian Sync ($4/month) and Obsidian Publish ($8/month) are paid add-ons. Community plugins are free. You can use Obsidian entirely for free if you sync via iCloud, Dropbox, or Git instead of using Obsidian Sync.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Does Notion work offline?</h3>
+                <p>Notion has limited offline support: pages you have previously loaded will be cached, but creating new pages or accessing unvisited content requires an internet connection. For true offline-first workflows, Obsidian is significantly more reliable since all files are stored locally.</p>
+              </div>
+            </div>
+          </section>
+
         </div>
       </article>
     </>

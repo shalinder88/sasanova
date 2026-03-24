@@ -11,6 +11,7 @@ import {
   type ToolScore,
 } from "@/data/tools";
 import ScoreBar from "@/components/ScoreBar";
+import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 
 /* ── Static generation ── */
 
@@ -82,6 +83,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title,
     description,
+    alternates: { canonical: canonicalUrl(`/compare/${pair}`) },
     openGraph: { title: `${title} | Sasanova`, description },
   };
 }
@@ -140,6 +142,18 @@ export default async function ComparisonPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Compare", path: "/compare" },
+              { name: `${toolA.name} vs ${toolB.name}`, path: `/compare/${pair}` },
+            ])
+          ),
+        }}
+      />
 
       {/* Breadcrumbs */}
       <nav className="border-b border-border bg-surface" aria-label="Breadcrumb">
@@ -190,6 +204,21 @@ export default async function ComparisonPage({ params }: PageProps) {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+        {/* AEO Answer Block */}
+        <div className="bg-surface-alt border border-border rounded-lg p-4">
+          <p className="text-sm text-foreground leading-relaxed">
+            Between <strong>{toolA.name}</strong> and <strong>{toolB.name}</strong>,{" "}
+            {vsMatch
+              ? vsMatch.verdict === "depends"
+                ? "the best choice depends on your needs"
+                : `${vsMatch.verdict === toolA.slug ? toolA.name : toolB.name} is the stronger pick overall`
+              : "both are strong options"}.{" "}
+            {toolA.name} scores {scoreA}/10, {toolB.name} scores {scoreB}/10.{" "}
+            Choose {toolA.name} if {toolA.bestFor[0]?.toLowerCase()}.{" "}
+            Choose {toolB.name} if {toolB.bestFor[0]?.toLowerCase()}.
+          </p>
+        </div>
+
         {/* ── Side-by-Side Comparison Table ── */}
         <section>
           <h2 className="text-xl font-bold mb-6">Side-by-Side Comparison</h2>
@@ -508,6 +537,43 @@ export default async function ComparisonPage({ params }: PageProps) {
               </svg>
             </a>
           ))}
+        </section>
+
+        {/* ── See Also ── */}
+        <section>
+          <h2 className="text-lg font-bold mb-4">See Also</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            {[toolA, toolB].map((tool) => (
+              <Link
+                key={`review-${tool.slug}`}
+                href={`/tools/${tool.slug}`}
+                className="border border-border rounded-lg p-3 hover:border-accent/30 transition-all text-sm"
+              >
+                <span className="font-semibold hover:text-accent">{tool.name} Review</span>
+                <span className="block text-xs text-muted mt-0.5">{getOverallScore(tool.scores)}/10 overall score</span>
+              </Link>
+            ))}
+            {[toolA, toolB].map((tool) => (
+              <Link
+                key={`alt-${tool.slug}`}
+                href={`/alternatives/${tool.slug}`}
+                className="border border-border rounded-lg p-3 hover:border-accent/30 transition-all text-sm"
+              >
+                <span className="font-semibold hover:text-accent">{tool.name} Alternatives</span>
+                <span className="block text-xs text-muted mt-0.5">Compare top alternatives</span>
+              </Link>
+            ))}
+            {[toolA, toolB].map((tool) => (
+              <Link
+                key={`pricing-${tool.slug}`}
+                href={`/pricing/${tool.slug}`}
+                className="border border-border rounded-lg p-3 hover:border-accent/30 transition-all text-sm"
+              >
+                <span className="font-semibold hover:text-accent">{tool.name} Pricing</span>
+                <span className="block text-xs text-muted mt-0.5">Full plan breakdown</span>
+              </Link>
+            ))}
+          </div>
         </section>
       </div>
     </>

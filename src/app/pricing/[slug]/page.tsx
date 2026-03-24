@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { tools, getToolBySlug, getOverallScore } from "@/data/tools";
 import ScoreBar from "@/components/ScoreBar";
+import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 
 export function generateStaticParams() {
   return tools.map((t) => ({ slug: t.slug }));
@@ -27,6 +28,7 @@ export async function generateMetadata({
   return {
     title: `${tool.name} Pricing Explained (2026)`,
     description: `${tool.name} pricing starts ${priceRange}. Full plan breakdown, annual savings, free tier details, and hidden costs — independently verified.`,
+    alternates: { canonical: canonicalUrl(`/pricing/${slug}`) },
   };
 }
 
@@ -101,6 +103,18 @@ export default async function PricingDetailPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Pricing", path: "/pricing" },
+              { name: `${tool.name} Pricing`, path: `/pricing/${tool.slug}` },
+            ])
+          ),
+        }}
       />
 
       {/* Breadcrumbs */}

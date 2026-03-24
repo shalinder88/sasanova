@@ -315,6 +315,24 @@ export default function CRMSoloFounderGuide() {
               can&apos;t solve.
             </p>
           </section>
+
+          <section className="border-t border-border pt-8 mt-8">
+            <h2 className="text-xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">What is the best CRM for a solo founder?</h3>
+                <p>Folk ($20/month) is the best CRM for relationship-focused solo founders who manage contacts across networking, partnerships, and sales. Pipedrive ($14/month) is better for founders who run a structured sales pipeline with defined deal stages. Both set up in under 30 minutes.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Is HubSpot free CRM good enough for solo founders?</h3>
+                <p>HubSpot&apos;s free CRM is functional but adds friction for solo operators. It&apos;s designed to upsell you into the paid marketing and sales hubs. For pure contact management, Folk or even a well-organized spreadsheet is faster and less distracting. HubSpot free makes more sense if you plan to scale into a team.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Do I even need a CRM as a solo founder?</h3>
+                <p>If you track fewer than 50 active contacts, a spreadsheet or Notion database works fine. Once you regularly lose track of follow-ups, miss warm leads, or forget who introduced whom, a lightweight CRM pays for itself. The trigger is missed opportunities, not company size.</p>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </>

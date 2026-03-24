@@ -305,6 +305,28 @@ export default function NewsletterStackGuide() {
               while you build.
             </p>
           </section>
+
+          <section className="border-t border-border pt-8 mt-8">
+            <h2 className="text-xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">What is the best free newsletter platform for beginners?</h3>
+                <p>beehiiv&apos;s Launch plan is the best free option for most creators. It supports up to 2,500 subscribers with unlimited sends, built-in analytics, and a hosted publication page. Kit (ConvertKit) also offers a generous free tier for up to 10,000 subscribers but limits automation features.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">When should I upgrade from a free newsletter tool to a paid plan?</h3>
+                <p>Upgrade when you hit a concrete limit that blocks growth &mdash; not when a tool feels basic. Common triggers: exceeding subscriber limits, needing automation workflows, or wanting referral programs. For most creators, that happens around 2,500 subscribers or when revenue exceeds $500/month.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Is Substack worth it compared to beehiiv or ConvertKit?</h3>
+                <p>Substack is worth it only if you have zero audience and want built-in network discovery. However, Substack takes 10% of paid subscription revenue, offers limited design control, and has no automation features. Once you have traction, beehiiv or Kit will save you money and give you more tools.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">How much should a solo newsletter creator spend on tools per month?</h3>
+                <p>Most solo creators can run a complete newsletter stack for $0 until 2,500 subscribers. At scale (5,000&ndash;50,000 subscribers), expect $80&ndash;$150/month covering your email platform, basic automation, and analytics. Anything over $150/month as a solo operator is likely overspending.</p>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </>

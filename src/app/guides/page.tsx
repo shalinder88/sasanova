@@ -88,6 +88,46 @@ const guides = [
     readingTime: "12 min read",
     category: "Scheduling",
   },
+  {
+    slug: "best-free-tools-startups",
+    title: "The $0 Startup Stack: Every Free Tool That's Actually Worth Using",
+    description:
+      "Most \"free tool\" lists include tools that cripple you at scale. Here's what's genuinely free AND genuinely useful — with honest limits, setup costs, and migration warnings.",
+    readingTime: "14 min read",
+    category: "Stack Building",
+  },
+  {
+    slug: "saas-affiliate-playbook",
+    title: "How SaaS Affiliate Programs Actually Work: A Realistic Guide for Content Sites",
+    description:
+      "Most affiliate guides oversell the income. Here's the honest math, real commission structures, and the actual timeline from zero to meaningful SaaS affiliate revenue.",
+    readingTime: "13 min read",
+    category: "Monetization",
+  },
+  {
+    slug: "migrate-from-mailchimp",
+    title: "How to Leave Mailchimp Without Losing Your List: A Step-by-Step Migration Guide",
+    description:
+      "Mailchimp's pricing got worse. Here's exactly how to move to beehiiv, ConvertKit, or Brevo without losing subscribers, breaking automations, or tanking deliverability.",
+    readingTime: "12 min read",
+    category: "Email Migration",
+  },
+  {
+    slug: "building-knowledge-base",
+    title: "Building a Knowledge Base That Your Team Actually Uses",
+    description:
+      "Most internal wikis die within 3 months. Here's why they fail, which tools work, and the 3 rules that keep a knowledge base alive past launch day.",
+    readingTime: "13 min read",
+    category: "Knowledge Management",
+  },
+  {
+    slug: "customer-support-stack",
+    title: "Customer Support Software for Teams Under 20: What You Actually Need",
+    description:
+      "Zendesk is overkill for small teams. Here's the right support tool at each growth stage, with real pricing, honest tradeoffs, and a framework for when to upgrade.",
+    readingTime: "13 min read",
+    category: "Support",
+  },
 ];
 
 export default function GuidesHub() {

@@ -334,6 +334,28 @@ export default function EmailMarketingEcommercePage() {
             </p>
           </section>
 
+          <section className="border-t border-border pt-8 mt-8">
+            <h2 className="text-xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">What is the best Mailchimp alternative for e-commerce?</h3>
+                <p>For most e-commerce stores, Brevo (formerly Sendinblue) is the best Mailchimp alternative because it charges by emails sent rather than list size. Klaviyo is better for Shopify-native stores that need deep product analytics and purchase-triggered automations.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Why is Mailchimp so expensive for e-commerce stores?</h3>
+                <p>Mailchimp charges based on your total contact list size, including inactive subscribers. E-commerce stores often have large lists from one-time buyers, which inflates costs significantly. Platforms like Brevo avoid this by charging per email sent instead.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Is Klaviyo worth the higher price for Shopify stores?</h3>
+                <p>Klaviyo is worth it if your email channel generates measurable revenue and you rely on purchase-triggered flows, product recommendations, and attribution reporting. For stores spending under $200/month on email, Brevo or ActiveCampaign deliver similar results at lower cost.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">How do I migrate from Mailchimp to Brevo without losing subscribers?</h3>
+                <p>Export your Mailchimp audience as a CSV, clean inactive contacts (6+ months without opening), then import into Brevo. Re-authenticate your sending domain with SPF/DKIM records. The migration typically takes under an hour for lists up to 50,000 contacts.</p>
+              </div>
+            </div>
+          </section>
+
         </div>
       </article>
     </>

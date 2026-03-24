@@ -10,6 +10,7 @@ import {
   type ToolScore,
 } from "@/data/tools";
 import ScoreBar from "@/components/ScoreBar";
+import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return tools
@@ -28,6 +29,7 @@ export async function generateMetadata({
   return {
     title: `Best ${tool.name} Alternatives in 2026`,
     description: `Compare the best alternatives to ${tool.name} in 2026. Ranked by value, ease-of-use, and power with pricing breakdowns.`,
+    alternates: { canonical: canonicalUrl(`/alternatives/${slug}`) },
   };
 }
 
@@ -96,6 +98,18 @@ export default async function AlternativesPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Alternatives", path: "/alternatives" },
+              { name: `${tool.name} Alternatives`, path: `/alternatives/${tool.slug}` },
+            ])
+          ),
         }}
       />
 

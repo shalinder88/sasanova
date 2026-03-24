@@ -8,6 +8,7 @@ import {
   getOverallScore,
 } from "@/data/tools";
 import ScoreBar from "@/components/ScoreBar";
+import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return categories.map((cat) => ({ category: cat.slug }));
@@ -24,6 +25,7 @@ export async function generateMetadata({
   return {
     title: `Best ${cat.name} Tools in 2026`,
     description: `Ranked list of the best ${cat.name.toLowerCase()} software in 2026, scored on value, ease-of-use, and power. Compare pricing, features, and honest ratings.`,
+    alternates: { canonical: canonicalUrl(`/best/${category}`) },
   };
 }
 
@@ -73,6 +75,18 @@ export default async function BestCategoryPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Best Of", path: "/best" },
+              { name: cat.name, path: `/best/${cat.slug}` },
+            ])
+          ),
         }}
       />
 

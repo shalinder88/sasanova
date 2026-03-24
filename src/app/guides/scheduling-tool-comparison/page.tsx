@@ -442,6 +442,28 @@ export default function SchedulingToolComparisonPage() {
             </p>
           </section>
 
+          <section className="border-t border-border pt-8 mt-8">
+            <h2 className="text-xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Is Cal.com a good alternative to Calendly?</h3>
+                <p>Yes. Cal.com matches most Calendly features for free and is fully open source. It supports round-robin scheduling, team booking, and calendar integrations. Calendly still wins on enterprise features, brand recognition, and compliance certifications, but Cal.com is the better value for individuals and small teams.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">What is the best free scheduling tool?</h3>
+                <p>Cal.com&apos;s free tier is the most feature-rich free scheduling option. It includes unlimited event types, calendar connections, and a custom booking page. Calendly&apos;s free plan limits you to one event type. For teams that need free scheduling, Cal.com is the clear choice.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Can I self-host Cal.com?</h3>
+                <p>Yes. Cal.com is open source and can be self-hosted on your own infrastructure for free. Self-hosting removes all per-user costs but requires technical ability to deploy and maintain the application. Cal.com also offers managed cloud hosting starting at $12/user/month if you prefer not to self-host.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Does Calendly integrate with Salesforce?</h3>
+                <p>Yes, but only on the Teams plan ($16/user/month) and above. Calendly&apos;s Salesforce integration automatically creates leads, contacts, and events. This is one area where Calendly has a meaningful advantage over Cal.com for enterprise sales teams.</p>
+              </div>
+            </div>
+          </section>
+
         </div>
       </article>
     </>

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { tools, getOverallScore } from "@/data/tools";
+import { tools, versusPairs, getOverallScore } from "@/data/tools";
 import ScoreBar from "@/components/ScoreBar";
+import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 
 /* ---------- Static generation ---------- */
 
@@ -22,6 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${tool.name} Review — ${overall}/10 Score`,
     description: `${tool.tagline}. In-depth review with multi-axis scoring, pricing breakdown, alternatives, and switching intelligence.`,
+    alternates: { canonical: canonicalUrl(`/tools/${slug}`) },
     openGraph: {
       title: `${tool.name} Review — ${overall}/10 | Sasanova`,
       description: tool.tagline,
@@ -61,6 +63,17 @@ export default async function ToolProfilePage({ params }: Props) {
     .map((s) => tools.find((t) => t.slug === s))
     .filter(Boolean);
 
+  // Find comparison pages involving this tool
+  const relatedComparisons = versusPairs.filter(
+    (vs) => vs.slugA === slug || vs.slugB === slug
+  );
+
+  // Cheapest paid price for AEO block
+  const paidPlans = tool.pricing.filter((p) => p.priceMonthly !== null && p.priceMonthly > 0);
+  const cheapestPrice = paidPlans.length > 0
+    ? Math.min(...paidPlans.map((p) => p.priceMonthly as number))
+    : null;
+
   /* JSON-LD structured data */
   const jsonLd = {
     "@context": "https://schema.org",
@@ -96,6 +109,18 @@ export default async function ToolProfilePage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Tools", path: "/tools" },
+              { name: tool.name, path: `/tools/${tool.slug}` },
+            ])
+          ),
+        }}
       />
 
       {/* Breadcrumbs */}
@@ -185,6 +210,29 @@ export default async function ToolProfilePage({ params }: Props) {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+        {/* AEO Answer Block */}
+        <div className="bg-surface-alt border border-border rounded-lg p-4 mb-8">
+          <p className="text-sm text-foreground leading-relaxed">
+            <strong>{tool.name}</strong> scores {overall}/10 overall.{" "}
+            {tool.tagline}.{" "}
+            Best for: {tool.bestFor[0]}.{" "}
+            {cheapestPrice !== null
+              ? `Starting at $${cheapestPrice}/month.`
+              : tool.freeTier
+                ? "Free to start."
+                : "Custom pricing."}{" "}
+            <span className="text-muted">
+              Last verified{" "}
+              {new Date(tool.lastVerified).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
+              .
+            </span>
+          </p>
+        </div>
+
         {/* Multi-axis Scores */}
         <section>
           <h2 className="text-lg font-bold mb-4">Score Breakdown</h2>
@@ -472,6 +520,32 @@ export default async function ToolProfilePage({ params }: Props) {
                     <p className="text-xs text-muted mt-2 line-clamp-2">
                       {alt.tagline}
                     </p>
+                  </Link>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
+        {/* Related Comparisons */}
+        {relatedComparisons.length > 0 && (
+          <section>
+            <h2 className="text-lg font-bold mb-4">Related Comparisons</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {relatedComparisons.map((vs) => {
+                const otherSlug = vs.slugA === slug ? vs.slugB : vs.slugA;
+                const otherTool = tools.find((t) => t.slug === otherSlug);
+                const pairPath = `${vs.slugA}-vs-${vs.slugB}`;
+                return (
+                  <Link
+                    key={pairPath}
+                    href={`/compare/${pairPath}`}
+                    className="group border border-border rounded-xl p-4 hover:border-accent/30 transition-all bg-background"
+                  >
+                    <p className="text-sm font-bold group-hover:text-accent transition-colors">
+                      {tool.name} vs {otherTool?.name ?? otherSlug}
+                    </p>
+                    <p className="text-xs text-muted mt-1 line-clamp-2">{vs.summary}</p>
                   </Link>
                 );
               })}

@@ -382,6 +382,28 @@ export default function AutomationComparisonPage() {
             </p>
           </section>
 
+          <section className="border-t border-border pt-8 mt-8">
+            <h2 className="text-xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Is Make cheaper than Zapier?</h3>
+                <p>Yes. Make&apos;s paid plans start lower and include more operations per dollar than Zapier. Make charges by operations (each step in a workflow), while Zapier charges by tasks (each workflow run). For multi-step workflows, Make is typically 3&ndash;5x cheaper.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">When should I use n8n instead of Zapier or Make?</h3>
+                <p>Use n8n when you need self-hosted automation, custom code execution, or want to avoid per-operation pricing entirely. n8n is ideal for developers and technical teams. Non-technical users should stick with Zapier or Make for their visual builders and managed infrastructure.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Can I migrate my Zapier workflows to Make?</h3>
+                <p>There is no automatic migration tool. You need to rebuild each workflow manually in Make. However, Make&apos;s visual builder makes it straightforward to recreate most Zapier zaps. Start by migrating your highest-volume workflows first to maximize immediate savings.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Which automation tool has the most integrations?</h3>
+                <p>Zapier leads with 6,000+ app integrations. Make offers around 1,500 native integrations. n8n has fewer native connectors but supports custom HTTP/API nodes that can connect to any service with an API. For most common SaaS tools, all three platforms have coverage.</p>
+              </div>
+            </div>
+          </section>
+
         </div>
       </article>
     </>

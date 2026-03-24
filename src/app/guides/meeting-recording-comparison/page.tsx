@@ -344,6 +344,28 @@ export default function MeetingRecordingComparisonPage() {
             </p>
           </section>
 
+          <section className="border-t border-border pt-8 mt-8">
+            <h2 className="text-xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">What is the best free meeting recording tool?</h3>
+                <p>Fathom offers the most generous free tier: unlimited Zoom recordings with AI summaries and action items at no cost. Otter.ai and tl;dv also offer free plans but with tighter recording minute limits. For individual use, Fathom is the clear winner on the free tier.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Do meeting transcription tools work with Google Meet and Microsoft Teams?</h3>
+                <p>Most tools support Zoom natively. Google Meet and Microsoft Teams support varies: Otter.ai and Fireflies work across all three platforms. Fathom is Zoom-only as of 2026. tl;dv supports Zoom and Google Meet. Always verify platform compatibility before committing to a paid plan.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Are AI meeting notes accurate enough to replace a human note-taker?</h3>
+                <p>For action items and key decisions, current AI tools are 85&ndash;90% accurate in well-structured meetings. They struggle with heavy jargon, overlapping speakers, and poor audio quality. Treat AI notes as a strong first draft that needs a 2-minute human review, not a finished product.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Which meeting recording tool integrates with Slack and Notion?</h3>
+                <p>tl;dv has the strongest native integrations with both Slack and Notion, auto-posting summaries after each meeting. Fireflies also integrates with Slack and most CRMs. If your team lives in Notion and Slack, tl;dv saves the most manual work.</p>
+              </div>
+            </div>
+          </section>
+
         </div>
       </article>
     </>
