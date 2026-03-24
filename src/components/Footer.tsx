@@ -22,6 +22,7 @@ const footerSections = [
   {
     title: "Trust",
     links: [
+      { href: "/about", label: "About Sasanova" },
       { href: "/about/editorial-policy", label: "Editorial Policy" },
       { href: "/about/source-policy", label: "Source Policy" },
       { href: "/about/methodology", label: "Methodology" },
