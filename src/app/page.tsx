@@ -100,7 +100,7 @@ export default async function Home() {
                   <span className="w-2 h-2 rounded-full bg-success animate-pulse-soft" />
                   <p className="text-2xl lg:text-3xl font-extrabold text-foreground">Live</p>
                 </div>
-                <p className="text-[10px] text-muted uppercase tracking-wider">Updated Weekly</p>
+                <p className="text-[10px] text-muted uppercase tracking-wider">Live Updated</p>
               </div>
             </div>
 
