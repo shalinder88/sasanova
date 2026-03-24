@@ -69,26 +69,47 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 lg:pt-28 pb-0 relative z-10">
-          {/* Centered headline */}
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 bg-accent-light text-accent text-xs font-medium px-3 py-1 rounded-full mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-soft" />
-              {tools.length} tools tracked &middot; {versusPairs.length} comparisons &middot; Updated weekly
-            </div>
-            <h1 className="text-[2.5rem] sm:text-[3.25rem] lg:text-[4rem] font-extrabold leading-[1.05] tracking-[-0.03em] mb-5">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-24 pb-0 relative z-10">
+          {/* Centered headline — minimal text */}
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <h1 className="text-[2.75rem] sm:text-[3.5rem] lg:text-[4.5rem] font-extrabold leading-[1.0] tracking-[-0.03em] mb-16 lg:mb-20">
               Software decisions,
               <br />
               <span className="text-muted">made with evidence.</span>
             </h1>
-            <p className="text-base lg:text-lg text-muted leading-relaxed max-w-xl mx-auto mb-8">
-              Normalized pricing. Multi-axis scoring. Switching intelligence. The comparison platform that shows you what matters — not what&apos;s sponsored.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/tools" className="px-6 py-2.5 text-sm font-semibold bg-foreground text-background rounded-lg hover:opacity-90 transition-opacity">
+
+            {/* Live stat trackers — pushed lower with breathing room */}
+            <div className="flex flex-wrap justify-center gap-6 mb-10">
+              <div className="text-center">
+                <p className="text-2xl lg:text-3xl font-extrabold text-accent">{tools.length}</p>
+                <p className="text-[10px] text-muted uppercase tracking-wider">Tools Tracked</p>
+              </div>
+              <div className="w-px h-10 bg-border" />
+              <div className="text-center">
+                <p className="text-2xl lg:text-3xl font-extrabold text-cyan">{versusPairs.length}</p>
+                <p className="text-[10px] text-muted uppercase tracking-wider">Comparisons</p>
+              </div>
+              <div className="w-px h-10 bg-border" />
+              <div className="text-center">
+                <p className="text-2xl lg:text-3xl font-extrabold text-success">{categories.length}</p>
+                <p className="text-[10px] text-muted uppercase tracking-wider">Categories</p>
+              </div>
+              <div className="w-px h-10 bg-border" />
+              <div className="text-center">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-success animate-pulse-soft" />
+                  <p className="text-2xl lg:text-3xl font-extrabold text-foreground">Live</p>
+                </div>
+                <p className="text-[10px] text-muted uppercase tracking-wider">Updated Weekly</p>
+              </div>
+            </div>
+
+            {/* CTAs — pushed lower */}
+            <div className="flex flex-wrap justify-center gap-3 mb-6">
+              <Link href="/tools" className="px-7 py-3 text-sm font-semibold bg-accent text-white rounded-lg hover:brightness-110 transition-all">
                 Explore {tools.length} tools
               </Link>
-              <Link href="/compare" className="px-6 py-2.5 text-sm font-semibold border border-border rounded-lg hover:bg-surface transition-colors">
+              <Link href="/compare" className="px-7 py-3 text-sm font-semibold border border-border text-foreground rounded-lg hover:bg-surface transition-colors">
                 Compare tools
               </Link>
             </div>

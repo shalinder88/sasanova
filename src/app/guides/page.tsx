@@ -48,6 +48,46 @@ const guides = [
     readingTime: "13 min read",
     category: "Project Management",
   },
+  {
+    slug: "email-marketing-ecommerce",
+    title: "Email Marketing for E-Commerce: Stop Paying Mailchimp Prices",
+    description:
+      "Mailchimp charges by contacts. E-commerce stores with big lists get crushed. Here are the alternatives that charge by emails sent, not list size.",
+    readingTime: "14 min read",
+    category: "E-Commerce",
+  },
+  {
+    slug: "automation-zapier-vs-make-vs-n8n",
+    title: "Zapier vs Make vs n8n: Which Automation Tool Fits Your Budget and Brain",
+    description:
+      "Three automation platforms, three different philosophies. A real pricing comparison and honest assessment of who should use what.",
+    readingTime: "13 min read",
+    category: "Automation",
+  },
+  {
+    slug: "meeting-recording-comparison",
+    title: "AI Meeting Assistants: What Actually Works and What's Marketing Hype",
+    description:
+      "Every AI meeting tool claims to save hours. Here's what Otter, Fireflies, Fathom, and tl;dv actually deliver — and when AI notes don't help at all.",
+    readingTime: "11 min read",
+    category: "Productivity",
+  },
+  {
+    slug: "notion-vs-obsidian-decision",
+    title: "Notion vs Obsidian: The Decision That Reveals How You Think",
+    description:
+      "This isn't a feature comparison. It's a philosophy comparison. Cloud-first databases vs local-first linked notes — and why the choice matters.",
+    readingTime: "15 min read",
+    category: "Knowledge Management",
+  },
+  {
+    slug: "scheduling-tool-comparison",
+    title: "Calendly vs Cal.com: Pay $192/Year or Self-Host for Free",
+    description:
+      "Calendly is the default scheduling tool. Cal.com is the open-source challenger. Here's when each one makes sense and what self-hosting actually costs.",
+    readingTime: "12 min read",
+    category: "Scheduling",
+  },
 ];
 
 export default function GuidesHub() {
