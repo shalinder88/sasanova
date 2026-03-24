@@ -25,7 +25,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <LogoIcon size={28} />
-            <span className="text-lg font-bold tracking-tight">
+            <span className="text-lg font-bold tracking-tight" aria-label="Sasanova">
               Sasa<span className="text-accent">nova</span>
             </span>
           </Link>

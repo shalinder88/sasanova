@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { tools, versusPairs, getOverallScore } from "@/data/tools";
 import ScoreBar from "@/components/ScoreBar";
+import PricingCalculator from "@/components/PricingCalculator";
 import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 
 /* ---------- Static generation ---------- */
@@ -27,6 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${tool.name} Review — ${overall}/10 | Sasanova`,
       description: tool.tagline,
+      images: [{ url: `/og/tool/${slug}`, width: 1200, height: 630 }],
     },
   };
 }
@@ -424,6 +426,9 @@ export default async function ToolProfilePage({ params }: Props) {
             <a href="/about/methodology" className="text-accent hover:underline">Scoring methodology →</a>
           </div>
         </section>
+
+        {/* Pricing Calculator */}
+        <PricingCalculator plans={tool.pricing} toolName={tool.name} />
 
         {/* Integrations */}
         <section>

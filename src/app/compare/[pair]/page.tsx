@@ -11,6 +11,7 @@ import {
   type ToolScore,
 } from "@/data/tools";
 import ScoreBar from "@/components/ScoreBar";
+import FeatureMatrix from "@/components/FeatureMatrix";
 import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 
 /* ── Static generation ── */
@@ -84,7 +85,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     alternates: { canonical: canonicalUrl(`/compare/${pair}`) },
-    openGraph: { title: `${title} | Sasanova`, description },
+    openGraph: {
+      title: `${title} | Sasanova`,
+      description,
+      images: [{ url: `/og/compare/${pair}`, width: 1200, height: 630 }],
+    },
   };
 }
 
@@ -103,18 +108,6 @@ export default async function ComparisonPage({ params }: PageProps) {
   const vsMatch = getVersusMatch(slugA, slugB);
   const scoreA = getOverallScore(toolA.scores);
   const scoreB = getOverallScore(toolB.scores);
-
-  // Fuzzy feature matching: normalize by removing spaces, punctuation, lowercasing
-  const normalize = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
-  const sharedFeatures = toolA.features.filter((f) =>
-    toolB.features.some((bf) => normalize(bf) === normalize(f) || bf.toLowerCase().includes(f.toLowerCase().split(" ")[0]))
-  );
-  const uniqueA = toolA.features.filter(
-    (f) => !toolB.features.some((bf) => normalize(bf) === normalize(f) || bf.toLowerCase().includes(f.toLowerCase().split(" ")[0]))
-  );
-  const uniqueB = toolB.features.filter(
-    (f) => !toolA.features.some((af) => normalize(af) === normalize(f) || af.toLowerCase().includes(f.toLowerCase().split(" ")[0]))
-  );
 
   /* JSON-LD */
   const jsonLd = {
@@ -332,73 +325,13 @@ export default async function ComparisonPage({ params }: PageProps) {
           </div>
         </section>
 
-        {/* ── Feature Overlap ── */}
+        {/* ── Feature Comparison Matrix ── */}
         <section>
-          <h2 className="text-xl font-bold mb-6">Feature Overlap</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Shared */}
-            <div className="border border-border rounded-xl p-5">
-              <h3 className="text-sm font-semibold mb-3 text-accent">
-                Shared Features ({sharedFeatures.length})
-              </h3>
-              {sharedFeatures.length > 0 ? (
-                <ul className="space-y-1.5">
-                  {sharedFeatures.map((f) => (
-                    <li key={f} className="text-xs text-muted flex items-start gap-1.5">
-                      <svg className="w-3.5 h-3.5 text-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="text-xs text-muted">No overlapping features detected.</p>
-              )}
-            </div>
-
-            {/* Unique to A */}
-            <div className="border border-border rounded-xl p-5">
-              <h3 className="text-sm font-semibold mb-3">
-                Unique to {toolA.name} ({uniqueA.length})
-              </h3>
-              {uniqueA.length > 0 ? (
-                <ul className="space-y-1.5">
-                  {uniqueA.map((f) => (
-                    <li key={f} className="text-xs text-muted flex items-start gap-1.5">
-                      <svg className="w-3.5 h-3.5 text-success shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />
-                      </svg>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="text-xs text-muted">No unique features found.</p>
-              )}
-            </div>
-
-            {/* Unique to B */}
-            <div className="border border-border rounded-xl p-5">
-              <h3 className="text-sm font-semibold mb-3">
-                Unique to {toolB.name} ({uniqueB.length})
-              </h3>
-              {uniqueB.length > 0 ? (
-                <ul className="space-y-1.5">
-                  {uniqueB.map((f) => (
-                    <li key={f} className="text-xs text-muted flex items-start gap-1.5">
-                      <svg className="w-3.5 h-3.5 text-success shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />
-                      </svg>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="text-xs text-muted">No unique features found.</p>
-              )}
-            </div>
-          </div>
+          <h2 className="text-xl font-bold mb-6">Feature Comparison</h2>
+          <FeatureMatrix
+            toolA={{ name: toolA.name, features: toolA.features, apiAvailable: toolA.apiAvailable }}
+            toolB={{ name: toolB.name, features: toolB.features, apiAvailable: toolB.apiAvailable }}
+          />
         </section>
 
         {/* ── Pricing Comparison ── */}

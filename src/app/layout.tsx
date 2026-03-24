@@ -37,6 +37,7 @@ export const metadata: Metadata = {
     title: "Sasanova — Software Discovery & Comparison",
     description:
       "Compare software tools with normalized pricing, honest scoring, and evidence-backed reviews.",
+    images: [{ url: "/og/default", width: 1200, height: 630 }],
   },
   robots: { index: true, follow: true },
 };

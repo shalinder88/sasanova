@@ -43,7 +43,7 @@ export default function Footer() {
               <div className="w-6 h-6 rounded-md bg-accent flex items-center justify-center">
                 <span className="text-white font-bold text-[10px]">S</span>
               </div>
-              <span className="text-sm font-bold">Sasa<span className="text-accent">nova</span></span>
+              <span className="text-sm font-bold" aria-label="Sasanova">Sasa<span className="text-accent">nova</span></span>
             </Link>
             <p className="text-xs text-muted leading-relaxed">
               Evidence-backed software comparisons. Normalized pricing. Honest scoring. Updated regularly.

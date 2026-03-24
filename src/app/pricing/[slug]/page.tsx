@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { tools, getToolBySlug, getOverallScore } from "@/data/tools";
 import ScoreBar from "@/components/ScoreBar";
+import PricingCalculator from "@/components/PricingCalculator";
 import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -150,6 +151,30 @@ export default async function PricingDetailPage({
           </p>
         </header>
 
+        {/* AEO Answer Block */}
+        <div className="bg-surface-alt border border-border rounded-lg p-4 mb-10">
+          <p className="text-sm text-foreground leading-relaxed">
+            <strong>{tool.name}</strong>{" "}
+            {minPrice !== null
+              ? <>starts at ${minPrice}/mo{tool.freeTier ? " with a free tier available" : ""}.</>
+              : tool.freeTier
+                ? <>is free to use with no paid plans required.</>
+                : <>uses custom pricing — contact sales for a quote.</>}{" "}
+            {maxPrice !== null && minPrice !== null && maxPrice !== minPrice
+              ? <>Paid plans range up to ${maxPrice}/mo. </>
+              : null}
+            {tool.tagline}.{" "}
+            <span className="text-muted">
+              Pricing independently verified as of{" "}
+              {new Date(tool.lastVerified).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}.
+            </span>
+          </p>
+        </div>
+
         {/* Pricing Table */}
         <section className="mb-10">
           <h2 className="text-xl font-bold mb-4">All Plans</h2>
@@ -226,6 +251,11 @@ export default async function PricingDetailPage({
               </tbody>
             </table>
           </div>
+        </section>
+
+        {/* Pricing Calculator */}
+        <section className="mb-10">
+          <PricingCalculator plans={tool.pricing} toolName={tool.name} />
         </section>
 
         {/* Free Tier */}

@@ -150,6 +150,20 @@ export default async function AlternativesPage({
         </div>
       </section>
 
+      {/* AEO Answer Block */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+        <div className="bg-surface-alt border border-border rounded-lg p-4 mb-8">
+          <p className="text-sm text-foreground leading-relaxed">
+            The best <strong>{tool.name}</strong> alternative in 2026 is{" "}
+            <strong>{topAlt.name}</strong> because it scores {topAlt.overall}/10 vs {tool.name}&apos;s {toolOverall}/10
+            {topComparison.better.length > 0 && (
+              <>, with higher marks in {topComparison.better.map((b) => b.split(" (")[0]).join(" and ")}</>
+            )}.{" "}
+            We evaluated {alternatives.length} alternatives on value, ease-of-use, power, and pricing transparency.
+          </p>
+        </div>
+      </div>
+
       {/* Why people switch */}
       {tool.switchingTriggers && tool.switchingTriggers.length > 0 && (
         <section className="py-8 border-b border-border">
