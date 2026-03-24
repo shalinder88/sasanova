@@ -146,6 +146,24 @@ export default function BuildingKnowledgeBase() {
           <p className="text-muted mb-6">
             If your team&apos;s processes change weekly, a wiki can&apos;t keep up. Stabilize your processes first, then document them. Documenting chaos just creates documented chaos.
           </p>
+
+          <section className="border-t border-border pt-8 mt-8">
+            <h2 className="text-xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">What is the best tool for building a team knowledge base?</h3>
+                <p>Notion is the best all-around choice for team knowledge bases, combining docs, databases, and wikis in one tool. GitBook is better for developer documentation. Confluence works for teams already in the Atlassian ecosystem. For small teams, Notion&apos;s free plan covers most needs.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">How do I keep a knowledge base from going stale?</h3>
+                <p>Assign an owner to every document. Set quarterly review reminders. Delete or archive pages that nobody has viewed in 6 months. The single biggest reason knowledge bases fail is that nobody is accountable for keeping them current.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Should I use Notion or Confluence for documentation?</h3>
+                <p>Use Notion if your team values flexibility, modern UX, and all-in-one functionality. Use Confluence if you are already invested in the Atlassian ecosystem (Jira, Bitbucket) and need deep integration with those tools. For new teams starting fresh, Notion is almost always the better choice.</p>
+              </div>
+            </div>
+          </section>
         </div>
       </article>
     </>

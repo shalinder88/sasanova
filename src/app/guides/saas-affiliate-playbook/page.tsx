@@ -147,6 +147,24 @@ export default function SaasAffiliatePlaybook() {
           <p className="text-muted mb-6">
             If your site gets under 5,000 monthly visitors, focus on traffic first. Affiliate links on a low-traffic site earn pennies and distract you from the work that actually matters: creating content people want to read.
           </p>
+
+          <section className="border-t border-border pt-8 mt-8">
+            <h2 className="text-xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">How much can you earn from SaaS affiliate programs?</h3>
+                <p>Most SaaS affiliate programs pay 20&ndash;30% recurring commission on monthly subscriptions. A site with 10,000 monthly visitors converting at 1% with an average $30/month product generates roughly $600&ndash;900/month in recurring commissions. Income scales with traffic and content quality, not just volume.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">What type of content converts best for SaaS affiliates?</h3>
+                <p>Comparison pages (Tool A vs Tool B), alternatives pages, and pricing breakdowns convert at the highest rates because they target buyers who are actively deciding between tools. Generic feature lists and beginner tutorials convert poorly because the reader is not yet in buying mode.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">How many visitors do I need before adding affiliate links?</h3>
+                <p>Focus on reaching at least 5,000 monthly visitors before investing time in affiliate optimization. Below that threshold, the revenue is negligible and the affiliate links can distract from building the content quality and authority that drives sustainable traffic growth.</p>
+              </div>
+            </div>
+          </section>
         </div>
       </article>
     </>

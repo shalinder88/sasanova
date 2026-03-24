@@ -150,6 +150,28 @@ export default function MigrateFromMailchimp() {
           <p className="text-muted mb-6">
             If your team already knows Mailchimp well and your open rates are healthy (20%+ for newsletters, 30%+ for transactional), the switching cost may not justify the savings. Migration is worth it when you&apos;re paying significantly more than you should, or when Mailchimp&apos;s limitations are actively holding you back.
           </p>
+
+          <section className="border-t border-border pt-8 mt-8">
+            <h2 className="text-xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">How do I export my subscriber list from Mailchimp?</h3>
+                <p>Go to Audience, select All Contacts, click Export Audience. Mailchimp exports a CSV file with email addresses, tags, subscription dates, and engagement data. Clean inactive contacts (6+ months without opens) before importing into your new platform to protect deliverability.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Will I lose subscribers when migrating from Mailchimp?</h3>
+                <p>No, if you follow the right process. Export your full list as CSV, import into your new platform, and authenticate your new sending domain with SPF/DKIM. Send a re-engagement email early to confirm active subscribers. The main risk is deliverability dips from the new sending domain, which typically resolve within 2&ndash;4 weeks.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">What is the best Mailchimp alternative for newsletters?</h3>
+                <p>beehiiv is the best alternative for newsletter-focused businesses with its growth tools and no revenue cut on paid subscriptions. Kit (ConvertKit) is best for creators selling digital products alongside email. Brevo is best for businesses that want email without per-contact pricing.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">How long does it take to migrate from Mailchimp?</h3>
+                <p>A basic migration (export contacts, import into new platform, set up domain authentication) takes 1&ndash;2 hours. Rebuilding automation sequences and email templates adds 4&ndash;8 hours depending on complexity. Plan for a 2-week overlap period where both platforms are active to ensure nothing falls through the cracks.</p>
+              </div>
+            </div>
+          </section>
         </div>
       </article>
     </>

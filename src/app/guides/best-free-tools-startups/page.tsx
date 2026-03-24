@@ -151,6 +151,24 @@ export default function BestFreeToolsStartups() {
           <p className="text-muted mb-6">
             This stack is for bootstrapped founders, solo operators, and pre-revenue teams who need to move fast without burning cash on software subscriptions. For that audience, these 10 tools cover project management, CRM, email, design, analytics, automation, scheduling, and backend infrastructure &mdash; all at $0/month plus a few hours of setup.
           </p>
+
+          <section className="border-t border-border pt-8 mt-8">
+            <h2 className="text-xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">What free tools do startups actually need?</h3>
+                <p>At minimum: a project management tool (ClickUp or Notion free tier), a CRM (HubSpot free), email marketing (beehiiv or Kit free tier), analytics (Plausible or PostHog free tier), and automation (Zapier or Make free tier). This covers the essentials at $0/month.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Are free tool tiers good enough for real businesses?</h3>
+                <p>Yes, for early-stage businesses. Free tiers cover the fundamentals until you hit specific limits. The trap is upgrading too early. Stay on free tiers until you hit a concrete wall &mdash; subscriber caps, task limits, or missing features that block a specific workflow.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">When should a startup start paying for software?</h3>
+                <p>Pay when a free tier limit directly blocks revenue or growth. Common triggers: exceeding email subscriber caps, needing team collaboration features, or requiring integrations that are paid-only. For most startups, the first paid tool upgrade happens around $1K&ndash;5K monthly revenue.</p>
+              </div>
+            </div>
+          </section>
         </div>
       </article>
     </>

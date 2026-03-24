@@ -148,6 +148,24 @@ export default function CustomerSupportStack() {
           <p className="text-muted mb-6">
             If you have zero customers yet, stop reading and go get customers. Your first 50 support conversations should happen in your personal inbox so you feel every complaint directly. That pain teaches you what your product needs to fix. A helpdesk can&apos;t do that.
           </p>
+
+          <section className="border-t border-border pt-8 mt-8">
+            <h2 className="text-xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">What is the best customer support tool for small teams?</h3>
+                <p>For teams under 20 people, Freshdesk or Crisp are the strongest options. Freshdesk offers a generous free tier with ticketing and a knowledge base. Crisp combines live chat, helpdesk, and CRM features in one affordable package. Zendesk is typically overkill and overpriced for small teams.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Do I need a helpdesk if I have fewer than 100 customers?</h3>
+                <p>No. Handle support from your personal inbox until you regularly lose track of conversations or miss follow-ups. A shared inbox (like Google Groups or a team email) bridges the gap before you need a real helpdesk. Invest in proper support software when ticket volume exceeds what one person can track mentally.</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-foreground mb-1">Is Zendesk worth it for small businesses?</h3>
+                <p>Usually not. Zendesk&apos;s pricing starts at $19/agent/month and quickly climbs. Small teams rarely use the advanced features that justify the cost. Freshdesk, Crisp, or Help Scout deliver 80% of Zendesk&apos;s functionality at a fraction of the price. Reserve Zendesk for when you have 10+ support agents.</p>
+              </div>
+            </div>
+          </section>
         </div>
       </article>
     </>
