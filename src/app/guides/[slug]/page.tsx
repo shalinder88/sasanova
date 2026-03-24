@@ -54,6 +54,26 @@ const guideMeta: Record<string, { title: string; category: string }> = {
     title: "How to Leave Mailchimp Without Losing Your List: A Step-by-Step Migration Guide",
     category: "Email Migration",
   },
+  "migrate-mailchimp-to-kit": {
+    title: "How to Migrate from Mailchimp to Kit (ConvertKit) Without Losing Subscribers",
+    category: "Email Migration",
+  },
+  "migrate-mailchimp-to-beehiiv": {
+    title: "Leaving Mailchimp for beehiiv: The Complete Migration Playbook",
+    category: "Email Migration",
+  },
+  "migrate-substack-to-beehiiv": {
+    title: "Substack to beehiiv: Why Creators Switch and How to Do It",
+    category: "Email Migration",
+  },
+  "best-email-tool-creators": {
+    title: "The Best Email Platform for Creators in 2026 (Not What You Think)",
+    category: "Creator Tools",
+  },
+  "best-email-tool-agencies": {
+    title: "Email Marketing Tools for Agencies: Managing 10+ Client Accounts",
+    category: "Agency Tools",
+  },
   "building-knowledge-base": {
     title: "Building a Knowledge Base That Your Team Actually Uses",
     category: "Knowledge Management",
@@ -121,6 +141,46 @@ const guideMeta: Record<string, { title: string; category: string }> = {
   "customer-success-tools": {
     title: "Customer Success Tools: When Spreadsheets Stop Working",
     category: "Customer Success",
+  },
+  "migrate-salesforce-to-hubspot": {
+    title: "Migrating from Salesforce to HubSpot: What Actually Happens",
+    category: "CRM Migration",
+  },
+  "migrate-spreadsheet-to-crm": {
+    title: "Your Spreadsheet CRM is Costing You Deals: When and How to Switch",
+    category: "CRM Migration",
+  },
+  "best-crm-freelancers-consultants": {
+    title: "Best CRM for Freelancers and Consultants (You Don't Need Salesforce)",
+    category: "CRM",
+  },
+  "best-crm-sales-teams": {
+    title: "CRM for Sales Teams of 5-25: HubSpot vs Pipedrive vs Close",
+    category: "CRM",
+  },
+  "hubspot-pricing-reality": {
+    title: "HubSpot Pricing: What It Actually Costs (Not What the Website Says)",
+    category: "CRM",
+  },
+  "migrate-zapier-to-make": {
+    title: "Switching from Zapier to Make: The Real Savings and The Real Pain",
+    category: "Migration Guide",
+  },
+  "migrate-zapier-to-n8n": {
+    title: "Self-Hosting Your Automations: Zapier to n8n Migration Guide",
+    category: "Migration Guide",
+  },
+  "best-automation-tool-agencies": {
+    title: "Automation Tools for Agencies: Managing Client Workflows at Scale",
+    category: "Agency Operations",
+  },
+  "best-automation-tool-solopreneurs": {
+    title: "Automation for One-Person Businesses: What's Worth Paying For",
+    category: "Solopreneur",
+  },
+  "automation-pricing-compared": {
+    title: "Zapier vs Make vs n8n Pricing: The Honest Math Nobody Shows You",
+    category: "Pricing Deep Dive",
   },
 };
 

@@ -113,6 +113,46 @@ const guides = [
     category: "Email Migration",
   },
   {
+    slug: "migrate-mailchimp-to-kit",
+    title: "How to Migrate from Mailchimp to Kit (ConvertKit) Without Losing Subscribers",
+    description:
+      "Step-by-step migration guide from Mailchimp to Kit. What transfers, what breaks, timeline estimates, and the mistakes that cost creators subscribers.",
+    readingTime: "16 min read",
+    category: "Email Migration",
+  },
+  {
+    slug: "migrate-mailchimp-to-beehiiv",
+    title: "Leaving Mailchimp for beehiiv: The Complete Migration Playbook",
+    description:
+      "The complete playbook for migrating from Mailchimp to beehiiv. Export process, subscriber import, true cost comparison at 1K to 25K subscribers, and what you lose.",
+    readingTime: "15 min read",
+    category: "Email Migration",
+  },
+  {
+    slug: "migrate-substack-to-beehiiv",
+    title: "Substack to beehiiv: Why Creators Switch and How to Do It",
+    description:
+      "The 10% revenue cut math, content export, custom domain setup, and monetization comparison. When Substack is actually better and when beehiiv wins.",
+    readingTime: "14 min read",
+    category: "Email Migration",
+  },
+  {
+    slug: "best-email-tool-creators",
+    title: "The Best Email Platform for Creators in 2026 (Not What You Think)",
+    description:
+      "beehiiv vs Kit vs Substack vs Ghost head-to-head for creators. Revenue modeling at different subscriber counts and the real cost of free platforms.",
+    readingTime: "17 min read",
+    category: "Creator Tools",
+  },
+  {
+    slug: "best-email-tool-agencies",
+    title: "Email Marketing Tools for Agencies: Managing 10+ Client Accounts",
+    description:
+      "ActiveCampaign vs Mailchimp vs Brevo for agencies. Multi-account management, white-labeling, per-client cost modeling, and what agencies actually need.",
+    readingTime: "16 min read",
+    category: "Agency Tools",
+  },
+  {
     slug: "building-knowledge-base",
     title: "Building a Knowledge Base That Your Team Actually Uses",
     description:
@@ -247,6 +287,86 @@ const guides = [
       "Gainsight vs Vitally vs Totango compared for growing SaaS teams. When you actually need CS software (hint: 50+ accounts). Health score reality check.",
     readingTime: "14 min read",
     category: "Customer Success",
+  },
+  {
+    slug: "migrate-salesforce-to-hubspot",
+    title: "Migrating from Salesforce to HubSpot: What Actually Happens",
+    description:
+      "The real cost, timeline, and tradeoffs of moving from Salesforce to HubSpot. Data mapping, what you lose, true cost comparison at 10-100 users, and when Salesforce is actually worth the price.",
+    readingTime: "16 min read",
+    category: "CRM Migration",
+  },
+  {
+    slug: "migrate-spreadsheet-to-crm",
+    title: "Your Spreadsheet CRM is Costing You Deals: When and How to Switch",
+    description:
+      "The exact moment spreadsheets break, which CRM for which stage, 30-minute setup guides for Folk/Pipedrive/HubSpot, and the $0 CRM options that actually work.",
+    readingTime: "14 min read",
+    category: "CRM Migration",
+  },
+  {
+    slug: "best-crm-freelancers-consultants",
+    title: "Best CRM for Freelancers and Consultants (You Don't Need Salesforce)",
+    description:
+      "Why most CRMs are overkill for solo operators. Folk vs Pipedrive vs HubSpot Free head-to-head, monthly cost at 100-1000 contacts, and the honest case for no CRM at all.",
+    readingTime: "13 min read",
+    category: "CRM",
+  },
+  {
+    slug: "best-crm-sales-teams",
+    title: "CRM for Sales Teams of 5-25: HubSpot vs Pipedrive vs Close",
+    description:
+      "Per-seat cost modeling with actual plan names, deal pipeline features that matter, email integration depth, reporting reality check, and implementation timeline for mid-size sales teams.",
+    readingTime: "15 min read",
+    category: "CRM",
+  },
+  {
+    slug: "hubspot-pricing-reality",
+    title: "HubSpot Pricing: What It Actually Costs (Not What the Website Says)",
+    description:
+      "Free tier limits that matter, the Starter-to-Professional cliff, per-seat costs, contact tier traps, Marketing Hub vs Sales Hub, and when HubSpot Free is genuinely enough.",
+    readingTime: "14 min read",
+    category: "CRM",
+  },
+  {
+    slug: "migrate-zapier-to-make",
+    title: "Switching from Zapier to Make: The Real Savings and The Real Pain",
+    description:
+      "Why people leave Zapier (price at scale), what transfers (nothing auto-migrates), rebuilding top Zaps in Make, and when staying on Zapier is actually cheaper.",
+    readingTime: "16 min read",
+    category: "Migration Guide",
+  },
+  {
+    slug: "migrate-zapier-to-n8n",
+    title: "Self-Hosting Your Automations: Zapier to n8n Migration Guide",
+    description:
+      "True cost of self-hosting n8n (server, maintenance, your time), Docker setup walkthrough, which Zap patterns translate cleanly, and the hybrid approach.",
+    readingTime: "17 min read",
+    category: "Migration Guide",
+  },
+  {
+    slug: "best-automation-tool-agencies",
+    title: "Automation Tools for Agencies: Managing Client Workflows at Scale",
+    description:
+      "Per-client workspace costs across Zapier, Make, and n8n. White-labeling options, error handling, and cost modeling at 5, 15, and 30 clients.",
+    readingTime: "15 min read",
+    category: "Agency Operations",
+  },
+  {
+    slug: "best-automation-tool-solopreneurs",
+    title: "Automation for One-Person Businesses: What's Worth Paying For",
+    description:
+      "The 5 automations every solopreneur should set up first, free tier comparisons, when to upgrade, and the 'just use Make' argument.",
+    readingTime: "14 min read",
+    category: "Solopreneur",
+  },
+  {
+    slug: "automation-pricing-compared",
+    title: "Zapier vs Make vs n8n Pricing: The Honest Math Nobody Shows You",
+    description:
+      "Side-by-side pricing at every tier, how tasks vs operations vs executions count differently, hidden costs, and break-even analysis for self-hosting.",
+    readingTime: "16 min read",
+    category: "Pricing Deep Dive",
   },
 ];
 
