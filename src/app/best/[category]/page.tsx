@@ -164,13 +164,14 @@ export default async function BestCategoryPage({
               return (
                 <div
                   key={tool.slug}
-                  className={`border rounded-xl p-5 transition-all hover-glow ${
+                  className={`relative border rounded-xl p-5 transition-all hover-glow cursor-pointer ${
                     isWinner
                       ? "border-accent bg-accent-light/50"
                       : "border-border bg-background"
                   }`}
                 >
-                  <div className="flex items-start gap-4">
+                  <Link href={`/tools/${tool.slug}`} className="absolute inset-0 z-0 rounded-xl" aria-label={`View ${tool.name}`} />
+                  <div className="flex items-start gap-4 relative z-10 pointer-events-none">
                     {/* Rank */}
                     <div
                       className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-extrabold ${
@@ -226,7 +227,7 @@ export default async function BestCategoryPage({
                       </div>
 
                       {/* CTA */}
-                      <div className="mt-4 flex flex-wrap gap-2">
+                      <div className="mt-4 flex flex-wrap gap-2 pointer-events-auto relative z-20">
                         <a
                           href={tool.affiliateUrl}
                           rel="noopener noreferrer sponsored"
