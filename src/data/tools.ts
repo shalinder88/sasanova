@@ -97,6 +97,12 @@ export const categories: Category[] = [
   { slug: "video-media", name: "Video & Media", description: "Record, edit, and distribute video and audio content.", cluster: 6, toolCount: 4, icon: "video" },
   { slug: "social-media", name: "Social Media Management", description: "Schedule, publish, and analyze social media content across platforms.", cluster: 6, toolCount: 4, icon: "share-2" },
   { slug: "cloud-storage", name: "Cloud Storage", description: "Store, sync, and share files securely across teams and devices.", cluster: 6, toolCount: 3, icon: "cloud" },
+  // Cluster 7: High-Affiliate-Payout Categories
+  { slug: "webinar-events", name: "Webinar & Events", description: "Host webinars, virtual events, and live-streamed presentations at scale.", cluster: 7, toolCount: 5, icon: "radio" },
+  { slug: "landing-pages", name: "Landing Pages & Conversion", description: "Build high-converting landing pages, run A/B tests, and capture leads.", cluster: 7, toolCount: 5, icon: "layers" },
+  { slug: "seo-tools", name: "SEO Tools", description: "Research keywords, audit sites, track rankings, and optimize content for search.", cluster: 7, toolCount: 5, icon: "search" },
+  { slug: "customer-success", name: "Customer Success", description: "Monitor customer health, reduce churn, and drive expansion revenue.", cluster: 7, toolCount: 5, icon: "heart" },
+  { slug: "proposals-contracts", name: "Proposals & Contracts", description: "Create, send, track, and e-sign proposals, quotes, and contracts.", cluster: 7, toolCount: 5, icon: "file-text" },
 ];
 
 export const tools: Tool[] = [
@@ -4733,4 +4739,28 @@ export function getVersusMatch(slugA: string, slugB: string): VersusMatch | unde
   return versusPairs.find(
     (v) => (v.slugA === slugA && v.slugB === slugB) || (v.slugA === slugB && v.slugB === slugA)
   );
+}
+
+// ── Dynamic count helpers (single source of truth) ──
+
+/** Number of active categories with 2+ tools */
+export function getActiveCategoryCount(): number {
+  return categories.filter((c) => getToolsByCategory(c.slug).length >= 2).length;
+}
+
+/** Most recent lastVerified date across all tools, as ISO string */
+export function getLatestVerifiedDate(): string {
+  return tools.reduce((latest, t) => (t.lastVerified > latest ? t.lastVerified : latest), tools[0]?.lastVerified ?? "");
+}
+
+/** Format an ISO date like "2026-03-20" into "Mar 2026" */
+export function formatVerifiedShort(iso: string): string {
+  const d = new Date(iso + "T00:00:00");
+  return d.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+}
+
+/** Format an ISO date like "2026-03-20" into "March 2026" */
+export function formatVerifiedLong(iso: string): string {
+  const d = new Date(iso + "T00:00:00");
+  return d.toLocaleDateString("en-US", { month: "long", year: "numeric" });
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getLatestVerifiedDate, formatVerifiedLong } from "@/data/tools";
 
 const footerSections = [
   {
@@ -46,7 +47,7 @@ export default function Footer() {
               <span className="text-sm font-bold" aria-label="Sasanova">Sasa<span className="text-accent">nova</span></span>
             </Link>
             <p className="text-xs text-muted leading-relaxed">
-              Evidence-backed software comparisons. Normalized pricing. Honest scoring. Updated regularly.
+              Evidence-backed software comparisons. Normalized pricing. Honest scoring. Live updated.
             </p>
           </div>
 
@@ -72,7 +73,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
             <p className="text-[11px] text-muted">&copy; {new Date().getFullYear()} Sasanova. All rights reserved.</p>
-            <p className="text-[11px] text-muted">Data last verified: March 2026</p>
+            <p className="text-[11px] text-muted">Data last verified: {formatVerifiedLong(getLatestVerifiedDate())}</p>
           </div>
         </div>
       </div>

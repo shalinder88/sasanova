@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { categories, getToolsByCategory } from "@/data/tools";
+import { categories, getToolsByCategory, getActiveCategoryCount, getLatestVerifiedDate, formatVerifiedLong } from "@/data/tools";
 
 export const metadata: Metadata = {
   title: "Best Software by Category",
@@ -33,7 +33,7 @@ export default function BestOfHub() {
             Best Software by Category
           </h1>
           <p className="text-base text-muted max-w-2xl leading-relaxed">
-            Explore top-rated tools across {categories.filter(c => getToolsByCategory(c.slug).length >= 2).length} categories, ranked by value, ease-of-use, power, and transparency — with evidence-backed scores verified March 2026.
+            Explore top-rated tools across {getActiveCategoryCount()} categories, ranked by value, ease-of-use, power, and transparency — with evidence-backed scores verified {formatVerifiedLong(getLatestVerifiedDate())}.
           </p>
         </div>
       </section>

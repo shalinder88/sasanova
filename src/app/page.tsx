@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { tools, versusPairs, categories, getOverallScore, getToolsByCategory, type Tool, type ToolScore } from "@/data/tools";
+import { tools, versusPairs, categories, getOverallScore, getToolsByCategory, getActiveCategoryCount, getLatestVerifiedDate, formatVerifiedShort, formatVerifiedLong, type Tool, type ToolScore } from "@/data/tools";
 import EmailCapture from "@/components/EmailCapture";
 
 /* ── Mini score bar (inline) ── */
@@ -89,14 +89,14 @@ export default function Home() {
               </div>
               <div className="w-px h-10 bg-border" />
               <div className="text-center">
-                <p className="text-2xl lg:text-3xl font-extrabold text-success">{categories.filter(c => getToolsByCategory(c.slug).length >= 2).length}</p>
+                <p className="text-2xl lg:text-3xl font-extrabold text-success">{getActiveCategoryCount()}</p>
                 <p className="text-xs text-muted uppercase tracking-wider">Categories*</p>
               </div>
               <div className="w-px h-10 bg-border" />
               <div className="text-center">
                 <div className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-success" />
-                  <p className="text-lg lg:text-xl font-extrabold text-foreground">Mar 2026</p>
+                  <p className="text-lg lg:text-xl font-extrabold text-foreground">{formatVerifiedShort(getLatestVerifiedDate())}</p>
                 </div>
                 <p className="text-xs text-muted uppercase tracking-wider">Data Verified*</p>
               </div>
@@ -124,7 +124,7 @@ export default function Home() {
               <div className="ml-auto px-4 py-2.5 text-muted">
                 <span className="flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-success" />
-                  Verified Mar 2026
+                  Verified {formatVerifiedShort(getLatestVerifiedDate())}
                 </span>
               </div>
             </div>
@@ -394,7 +394,7 @@ export default function Home() {
               { n: "03", title: "Switching intelligence", desc: "What triggers people to leave. What blocks them from switching. Migration difficulty scored per tool." },
               { n: "04", title: "Evidence-backed claims", desc: "Every material claim links to a first-party source. Provenance tagged: verified, vendor-claimed, or community-reported." },
               { n: "05", title: "Editorial independence", desc: "Rankings never change based on affiliate status. Tools without affiliate programs are reviewed with the same rigor." },
-              { n: "06", title: "Weekly freshness", desc: "Software changes fast. We monitor pricing pages, changelogs, and feature updates — not just publish and forget." },
+              { n: "06", title: "Live updated", desc: "Software changes fast. We monitor pricing pages, changelogs, and feature updates — not just publish and forget." },
             ].map((f) => (
               <div key={f.n} className="group">
                 <span className="text-xs font-mono text-muted">{f.n}</span>
@@ -448,7 +448,7 @@ export default function Home() {
       <section className="py-6 bg-surface border-b border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1.5 text-xs text-muted">
-            {["Evidence-backed claims", "Normalized pricing data", "6-axis scoring methodology", "Editorial independent of affiliates", "Data verified March 2026"].map((t) => (
+            {["Evidence-backed claims", "Normalized pricing data", "6-axis scoring methodology", "Editorial independent of affiliates", `Data verified ${formatVerifiedLong(getLatestVerifiedDate())}`].map((t) => (
               <span key={t} className="flex items-center gap-1">
                 <svg className="w-3 h-3 text-success shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
                 {t}

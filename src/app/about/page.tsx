@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { tools, categories, versusPairs } from "@/data/tools";
+import { tools, versusPairs, getActiveCategoryCount } from "@/data/tools";
 
 export const metadata: Metadata = {
   title: "About Sasanova",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const toolCount = tools.length;
-  const catCount = categories.length;
+  const catCount = getActiveCategoryCount();
   const vsCount = versusPairs.length;
 
   return (
