@@ -34,7 +34,7 @@ export default function AutomateLeadCaptureGuide() {
           How to Automate Lead Capture Without Spending $500/Month on HubSpot
         </h1>
         <p className="text-sm text-muted mb-8">
-          Last updated March 2025 &middot; 13 min read
+          Last updated March 2026 &middot; 13 min read
         </p>
 
         <div className="prose-sm space-y-8 text-sm leading-relaxed text-muted">

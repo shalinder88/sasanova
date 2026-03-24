@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Salesforce Pricing: The Real Number Is 3-5x What You See",
@@ -537,6 +538,11 @@ export default function SalesforceHiddenCostsPage() {
             </div>
           </section>
 
+          <RelatedLinks
+            tools={["salesforce", "hubspot-crm", "zoho-crm"]}
+            comparisons={["hubspot-crm-vs-salesforce", "salesforce-vs-zoho-crm"]}
+            guides={["migrate-salesforce-to-hubspot"]}
+          />
         </div>
       </article>
     </>

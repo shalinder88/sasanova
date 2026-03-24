@@ -34,7 +34,7 @@ export default function DesignToolsNonDesignersGuide() {
           Design Tools for People Who Can&apos;t Design: A Practical Guide
         </h1>
         <p className="text-sm text-muted mb-8">
-          Last updated March 2025 &middot; 12 min read
+          Last updated March 2026 &middot; 12 min read
         </p>
 
         <div className="prose-sm space-y-8 text-sm leading-relaxed text-muted">

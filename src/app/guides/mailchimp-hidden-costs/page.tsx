@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "The Real Cost of Mailchimp: What the Pricing Page Doesn't Show",
@@ -503,6 +504,11 @@ export default function MailchimpHiddenCostsPage() {
             </div>
           </section>
 
+          <RelatedLinks
+            tools={["mailchimp", "brevo", "activecampaign"]}
+            comparisons={["mailchimp-vs-convertkit", "mailchimp-vs-brevo", "activecampaign-vs-brevo"]}
+            guides={["migrate-mailchimp-to-kit", "migrate-mailchimp-to-beehiiv"]}
+          />
         </div>
       </article>
     </>

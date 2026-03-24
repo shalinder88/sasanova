@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "HubSpot Pricing: What It Actually Costs (Not What the Website Says)",
@@ -343,6 +344,11 @@ export default function HubspotPricingReality() {
               </div>
             </div>
           </section>
+          <RelatedLinks
+            tools={["hubspot-crm", "pipedrive"]}
+            comparisons={["hubspot-crm-vs-pipedrive", "hubspot-crm-vs-salesforce"]}
+            guides={["migrate-salesforce-to-hubspot", "switch-from-hubspot-to-pipedrive"]}
+          />
         </div>
       </article>
     </>

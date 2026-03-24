@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "The Newsletter Stack for a One-Person Creator Under $150/Month",
@@ -34,7 +35,7 @@ export default function NewsletterStackGuide() {
           The Newsletter Stack for a One-Person Creator Under $150/Month
         </h1>
         <p className="text-sm text-muted mb-8">
-          Last updated March 2025 &middot; 14 min read
+          Last updated March 2026 &middot; 14 min read
         </p>
 
         <div className="prose-sm space-y-8 text-sm leading-relaxed text-muted">
@@ -327,6 +328,11 @@ export default function NewsletterStackGuide() {
               </div>
             </div>
           </section>
+          <RelatedLinks
+            tools={["beehiiv", "convertkit", "mailchimp"]}
+            comparisons={["beehiiv-vs-convertkit", "beehiiv-vs-substack"]}
+            guides={["best-email-tool-creators", "migrate-substack-to-beehiiv"]}
+          />
         </div>
       </div>
     </>

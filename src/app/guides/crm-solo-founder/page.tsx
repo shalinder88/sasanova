@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "The Best CRM Setup for a Solo Founder Who Hates CRMs",
@@ -34,7 +35,7 @@ export default function CRMSoloFounderGuide() {
           The Best CRM Setup for a Solo Founder Who Hates CRMs
         </h1>
         <p className="text-sm text-muted mb-8">
-          Last updated March 2025 &middot; 12 min read
+          Last updated March 2026 &middot; 12 min read
         </p>
 
         <div className="prose-sm space-y-8 text-sm leading-relaxed text-muted">
@@ -333,6 +334,11 @@ export default function CRMSoloFounderGuide() {
               </div>
             </div>
           </section>
+          <RelatedLinks
+            tools={["pipedrive", "hubspot-crm", "folk-crm"]}
+            comparisons={["hubspot-crm-vs-pipedrive"]}
+            guides={["best-crm-freelancers-consultants", "migrate-spreadsheet-to-crm"]}
+          />
         </div>
       </div>
     </>

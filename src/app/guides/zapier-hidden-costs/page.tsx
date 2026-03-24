@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Zapier's Hidden Costs: Why Your $20/Month Plan Becomes $100",
@@ -428,6 +429,11 @@ export default function ZapierHiddenCostsPage() {
             </div>
           </section>
 
+          <RelatedLinks
+            tools={["zapier", "make", "n8n"]}
+            comparisons={["zapier-vs-make", "zapier-vs-n8n"]}
+            guides={["migrate-zapier-to-make", "migrate-zapier-to-n8n"]}
+          />
         </div>
       </article>
     </>

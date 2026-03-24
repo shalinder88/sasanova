@@ -34,7 +34,7 @@ export default function EcommerceStackGuide() {
           The Complete E-commerce Stack for Solo Creators Under $100/Month
         </h1>
         <p className="text-sm text-muted mb-8">
-          Last updated March 2025 &middot; 14 min read
+          Last updated March 2026 &middot; 14 min read
         </p>
 
         <div className="prose-sm space-y-8 text-sm leading-relaxed text-muted">

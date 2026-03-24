@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Zapier vs Make vs n8n Pricing: The Honest Math Nobody Shows You",
@@ -683,6 +684,11 @@ export default function AutomationPricingComparedPage() {
             </div>
           </section>
 
+          <RelatedLinks
+            tools={["zapier", "make", "n8n", "pipedream"]}
+            comparisons={["zapier-vs-make", "make-vs-n8n", "zapier-vs-n8n"]}
+            guides={["zapier-hidden-costs", "migrate-zapier-to-make"]}
+          />
         </div>
       </article>
     </>
