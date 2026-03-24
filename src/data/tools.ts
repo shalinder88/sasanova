@@ -2947,7 +2947,7 @@ export const tools: Tool[] = [
     apiAvailable: true,
     provenanceLevel: "independently_verified",
     lastVerified: "2026-03-24",
-    affiliateUrl: "https://www.shopify.com",
+    affiliateUrl: "https://shopify.pxf.io/YVREZe",
     badge: "Most Popular",
     switchingTriggers: ["App costs add up significantly", "Transaction fees if not using Shopify Payments (2% on Basic)", "Need more design/code flexibility"],
     switchingBlockers: ["Entire storefront and product catalog", "Customer data and order history", "App integrations and workflows", "SEO rankings tied to Shopify URLs"],
