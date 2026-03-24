@@ -53,6 +53,7 @@ export interface Tool {
   implementationComplexity: "low" | "medium" | "high";
   alternatives: string[]; // slugs
   changelogUrl?: string;
+  hiddenCosts?: string[];
 }
 
 export interface Category {
@@ -349,7 +350,7 @@ export const tools: Tool[] = [
     switchingTriggers: ["Need marketing automation", "Need simpler setup", "Need mobile app for readers"],
     switchingBlockers: ["Custom theme investment", "Self-hosted infrastructure", "Member/subscriber data"],
     implementationComplexity: "medium",
-    alternatives: ["beehiiv", "substack"],
+    alternatives: ["beehiiv", "substack", "wordpress-com"],
   },
   {
     slug: "buttondown",
@@ -1820,7 +1821,7 @@ export const tools: Tool[] = [
     switchingTriggers: ["Need complex e-commerce", "Need extensive CMS features", "Need custom backend logic"],
     switchingBlockers: ["Website design investment", "CMS content", "Custom animations and interactions"],
     implementationComplexity: "low",
-    alternatives: ["webflow", "figma"],
+    alternatives: ["webflow", "figma", "squarespace"],
   },
   {
     slug: "webflow",
@@ -1858,7 +1859,7 @@ export const tools: Tool[] = [
     switchingTriggers: ["Steep learning curve for team", "Need app-like functionality", "Need better e-commerce at scale"],
     switchingBlockers: ["Complex site design investment", "CMS content and templates", "Client sites hosted on Webflow"],
     implementationComplexity: "medium",
-    alternatives: ["framer", "figma"],
+    alternatives: ["framer", "figma", "squarespace", "wix"],
   },
   {
     slug: "miro",
@@ -3725,6 +3726,17 @@ export const versusPairs: VersusMatch[] = [
   { slugA: "webflow", slugB: "framer", verdict: "depends", summary: "Webflow wins for complex sites needing deep CMS, e-commerce, and CSS control. Framer wins for designers wanting faster, more visual website creation with animations." },
   { slugA: "supabase", slugB: "planetscale", verdict: "depends", summary: "Supabase wins as a full backend platform (auth + storage + real-time + database). PlanetScale wins for teams specifically needing production-grade MySQL with branching and sharding." },
   { slugA: "help-scout", slugB: "intercom", verdict: "depends", summary: "Help Scout wins for teams wanting simple, email-like support with unlimited users. Intercom wins for SaaS companies wanting AI chatbots and proactive messaging." },
+  // New versus pairs — Cluster 6
+  { slugA: "quickbooks-online", slugB: "xero", verdict: "depends", summary: "QuickBooks wins on US accountant ecosystem and payroll integration. Xero wins on multi-currency, unlimited users, and international support." },
+  { slugA: "shopify", slugB: "woocommerce", verdict: "depends", summary: "Shopify wins for ease of use and all-in-one hosted commerce. WooCommerce wins for developers wanting full code control and lower ongoing costs." },
+  { slugA: "gumroad", slugB: "lemonsqueezy", verdict: "lemonsqueezy", summary: "Lemon Squeezy wins with lower fees (5% vs 10%), license key management, and Stripe backing. Gumroad wins on simplicity and established marketplace." },
+  { slugA: "squarespace", slugB: "wix", verdict: "depends", summary: "Squarespace wins for design-forward sites with better templates. Wix wins for drag-and-drop flexibility and AI site generation." },
+  { slugA: "buffer", slugB: "hootsuite", verdict: "buffer", summary: "Buffer wins for solopreneurs and small teams with affordable per-channel pricing. Hootsuite wins for enterprise teams needing social listening and advanced analytics." },
+  { slugA: "gusto", slugB: "rippling", verdict: "depends", summary: "Gusto wins for small businesses wanting simple, affordable payroll. Rippling wins for growing companies needing unified HR + IT + Finance." },
+  { slugA: "dropbox", slugB: "google-workspace", verdict: "google-workspace", summary: "Google Workspace wins by bundling email, docs, and storage with Gemini AI. Dropbox wins for pure file sync reliability and cross-platform desktop sync." },
+  { slugA: "shopify", slugB: "bigcommerce", verdict: "shopify", summary: "Shopify wins on app ecosystem, ease of use, and market share. BigCommerce wins on built-in features, zero transaction fees, and B2B capabilities." },
+  { slugA: "descript", slugB: "riverside", verdict: "depends", summary: "Descript wins for AI-powered video editing with text-based workflow. Riverside wins for studio-quality remote recording with local capture." },
+  { slugA: "sprout-social", slugB: "hootsuite", verdict: "depends", summary: "Sprout Social wins on analytics depth, CRM features, and modern UX. Hootsuite wins on lower price and social listening at the Team tier." },
 ];
 
 export function getVersusMatch(slugA: string, slugB: string): VersusMatch | undefined {

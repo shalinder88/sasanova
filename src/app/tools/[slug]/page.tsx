@@ -390,6 +390,15 @@ export default async function ToolProfilePage({ params }: Props) {
               {tool.freeTierLimits}
             </p>
           )}
+
+          {/* Evidence footer */}
+          <div className="flex flex-wrap items-center gap-4 mt-4 text-[10px] text-muted border-t border-border pt-3">
+            <a href={`${tool.website}/pricing`} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+              Source: {tool.vendor} pricing page →
+            </a>
+            <span>Verified: {new Date(tool.lastVerified).toLocaleDateString("en-US", { month: "short", year: "numeric" })}</span>
+            <a href="/about/methodology" className="text-accent hover:underline">Scoring methodology →</a>
+          </div>
         </section>
 
         {/* Integrations */}
