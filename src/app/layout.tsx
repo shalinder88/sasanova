@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     canonical: "https://sasanova.com",
   },
   verification: {
-    google: "PLACEHOLDER_GOOGLE_SITE_VERIFICATION",
+    google: "TOkwECIIE4ySbZq_6fk1NO3CDPAhFL0zic_x9hKniHI",
   },
   openGraph: {
     type: "website",

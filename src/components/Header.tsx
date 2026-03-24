@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { LogoIcon } from "./Logo";
+import SearchBar from "./SearchBar";
 
 const nav = [
   { href: "/tools", label: "Tools Directory" },
@@ -28,6 +29,11 @@ export default function Header() {
               Sasa<span className="text-accent">nova</span>
             </span>
           </Link>
+
+          {/* Search */}
+          <div className="hidden md:block">
+            <SearchBar />
+          </div>
 
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-0.5">

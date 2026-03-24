@@ -10,27 +10,43 @@ export const metadata: Metadata = {
 const guides = [
   {
     slug: "newsletter-stack",
-    title: "How to Build a Newsletter Stack Under $50/Month",
+    title: "The Newsletter Stack for a One-Person Creator Under $150/Month",
     description:
-      "A step-by-step guide to assembling a complete newsletter operation — email platform, landing pages, automation, and analytics — without breaking the bank.",
-    readingTime: "12 min read",
+      "Most creators overspend on tools. Here's the exact stack — with plan names, prices, and limits — that works from zero subscribers to 50,000.",
+    readingTime: "14 min read",
     category: "Stack Building",
   },
   {
     slug: "ai-research-workflow",
-    title: "Best AI Research Workflow for Solo Founders",
+    title: "How to Build an AI Research Workflow That Actually Saves Time",
     description:
-      "How to combine AI assistants, note-taking tools, and automation to build a research workflow that saves 10+ hours per week.",
-    readingTime: "9 min read",
+      "Most people use AI tools wrong for research. Here's a 3-tool workflow with Claude, Perplexity, and Notion that produces reliable output for $40/month.",
+    readingTime: "11 min read",
     category: "Workflow",
   },
   {
     slug: "automate-lead-capture",
-    title: "How to Automate Lead Capture Without Code",
+    title: "How to Automate Lead Capture Without Spending $500/Month on HubSpot",
     description:
-      "Connect forms, scheduling, CRM, and email marketing using no-code automation tools. Capture, qualify, and nurture leads on autopilot.",
-    readingTime: "11 min read",
+      "HubSpot Professional costs $800+/month. Here's how to get 80% of the value for under $100 using Tally, Zapier, Pipedrive, and beehiiv.",
+    readingTime: "13 min read",
     category: "Automation",
+  },
+  {
+    slug: "crm-solo-founder",
+    title: "The Best CRM Setup for a Solo Founder Who Hates CRMs",
+    description:
+      "Most CRMs are built for sales teams, not solo operators. Here's what actually works — Folk for relationship builders, Pipedrive for deal closers.",
+    readingTime: "12 min read",
+    category: "CRM",
+  },
+  {
+    slug: "project-management-small-team",
+    title: "Choosing Project Management Software Without Losing Your Mind",
+    description:
+      "There are 200+ PM tools. Here's the decision in 5 minutes: a decision tree based on team size, complexity, and budget.",
+    readingTime: "13 min read",
+    category: "Project Management",
   },
 ];
 

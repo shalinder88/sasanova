@@ -3,16 +3,24 @@ import Link from "next/link";
 
 const guideMeta: Record<string, { title: string; category: string }> = {
   "newsletter-stack": {
-    title: "How to Build a Newsletter Stack Under $50/Month",
+    title: "The Newsletter Stack for a One-Person Creator Under $150/Month",
     category: "Stack Building",
   },
   "ai-research-workflow": {
-    title: "Best AI Research Workflow for Solo Founders",
+    title: "How to Build an AI Research Workflow That Actually Saves Time",
     category: "Workflow",
   },
   "automate-lead-capture": {
-    title: "How to Automate Lead Capture Without Code",
+    title: "How to Automate Lead Capture Without Spending $500/Month on HubSpot",
     category: "Automation",
+  },
+  "crm-solo-founder": {
+    title: "The Best CRM Setup for a Solo Founder Who Hates CRMs",
+    category: "CRM",
+  },
+  "project-management-small-team": {
+    title: "Choosing Project Management Software Without Losing Your Mind",
+    category: "Project Management",
   },
 };
 
