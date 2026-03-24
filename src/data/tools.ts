@@ -67,19 +67,19 @@ export interface Category {
 export const categories: Category[] = [
   // Cluster 1: Newsletters / Email Marketing / Creator Monetization
   { slug: "email-marketing", name: "Email Marketing", description: "Send campaigns, automate sequences, and grow your audience.", cluster: 1, toolCount: 5, icon: "mail" },
-  { slug: "newsletter-platforms", name: "Newsletter Platforms", description: "Publish, monetize, and grow a newsletter business.", cluster: 1, toolCount: 4, icon: "newspaper" },
+  { slug: "newsletter-platforms", name: "Newsletter Platforms", description: "Publish, monetize, and grow a newsletter business.", cluster: 1, toolCount: 5, icon: "newspaper" },
   { slug: "creator-monetization", name: "Creator Monetization", description: "Sell digital products, courses, memberships, and subscriptions.", cluster: 1, toolCount: 4, icon: "dollar" },
   // Cluster 2: Automation / Forms / Scheduling
-  { slug: "automation", name: "Automation Tools", description: "Connect apps and automate workflows without code.", cluster: 2, toolCount: 4, icon: "zap" },
-  { slug: "scheduling", name: "Scheduling & Booking", description: "Let clients and teammates book time without back-and-forth.", cluster: 2, toolCount: 4, icon: "calendar" },
-  { slug: "forms-surveys", name: "Forms & Surveys", description: "Collect data, leads, and feedback with smart forms.", cluster: 2, toolCount: 4, icon: "clipboard" },
+  { slug: "automation", name: "Automation Tools", description: "Connect apps and automate workflows without code.", cluster: 2, toolCount: 5, icon: "zap" },
+  { slug: "scheduling", name: "Scheduling & Booking", description: "Let clients and teammates book time without back-and-forth.", cluster: 2, toolCount: 2, icon: "calendar" },
+  { slug: "forms-surveys", name: "Forms & Surveys", description: "Collect data, leads, and feedback with smart forms.", cluster: 2, toolCount: 0, icon: "clipboard" },
   // Cluster 3: CRM / Pipeline / Outreach
   { slug: "crm", name: "CRM Software", description: "Manage contacts, deals, and customer relationships.", cluster: 3, toolCount: 4, icon: "users" },
-  { slug: "sales-outreach", name: "Sales & Outreach", description: "Automate prospecting, email outreach, and follow-ups.", cluster: 3, toolCount: 3, icon: "send" },
+  { slug: "sales-outreach", name: "Sales & Outreach", description: "Automate prospecting, email outreach, and follow-ups.", cluster: 3, toolCount: 2, icon: "send" },
   // Cluster 4: Project Management / Docs / Collaboration
-  { slug: "project-management", name: "Project Management", description: "Plan, track, and ship work with your team.", cluster: 4, toolCount: 5, icon: "layout" },
-  { slug: "docs-knowledge", name: "Docs & Knowledge Base", description: "Write, organize, and share team knowledge.", cluster: 4, toolCount: 4, icon: "book" },
-  { slug: "ai-writing", name: "AI Writing & Assistants", description: "Generate, edit, and enhance content with AI.", cluster: 4, toolCount: 4, icon: "sparkles" },
+  { slug: "project-management", name: "Project Management", description: "Plan, track, and ship work with your team.", cluster: 4, toolCount: 3, icon: "layout" },
+  { slug: "docs-knowledge", name: "Docs & Knowledge Base", description: "Write, organize, and share team knowledge.", cluster: 4, toolCount: 3, icon: "book" },
+  { slug: "ai-writing", name: "AI Writing & Assistants", description: "Generate, edit, and enhance content with AI.", cluster: 4, toolCount: 2, icon: "sparkles" },
 ];
 
 export const tools: Tool[] = [
@@ -333,7 +333,7 @@ export const tools: Tool[] = [
     switchingTriggers: ["Need marketing automation", "Need simpler setup", "Need mobile app for readers"],
     switchingBlockers: ["Custom theme investment", "Self-hosted infrastructure", "Member/subscriber data"],
     implementationComplexity: "medium",
-    alternatives: ["beehiiv", "substack", "wordpress"],
+    alternatives: ["beehiiv", "substack"],
   },
   {
     slug: "buttondown",
@@ -406,7 +406,7 @@ export const tools: Tool[] = [
     switchingTriggers: ["Task volume costs", "Need more complex logic", "Need faster execution"],
     switchingBlockers: ["Hundreds of Zaps built over time", "Team familiarity", "Integration breadth"],
     implementationComplexity: "low",
-    alternatives: ["make", "n8n", "pipedream"],
+    alternatives: ["make", "n8n"],
   },
   {
     slug: "make",
@@ -443,7 +443,7 @@ export const tools: Tool[] = [
     switchingTriggers: ["Need broader integration catalog", "Steeper learning curve for team adoption"],
     switchingBlockers: ["Complex scenarios with routers/error handling", "Data stores", "Cost savings vs Zapier"],
     implementationComplexity: "medium",
-    alternatives: ["zapier", "n8n", "pipedream"],
+    alternatives: ["zapier", "n8n"],
   },
   {
     slug: "n8n",
@@ -479,7 +479,7 @@ export const tools: Tool[] = [
     switchingTriggers: ["Need more pre-built integrations", "Don't want to manage infrastructure"],
     switchingBlockers: ["Self-hosted data sovereignty", "Custom code nodes", "Infrastructure investment"],
     implementationComplexity: "high",
-    alternatives: ["zapier", "make", "pipedream"],
+    alternatives: ["zapier", "make"],
   },
   // ── CLUSTER 2: Scheduling ──
   {
@@ -515,7 +515,7 @@ export const tools: Tool[] = [
     affiliateUrl: "#your-affiliate-link-here",
     badge: "Most Popular",
     implementationComplexity: "low",
-    alternatives: ["savvycal", "cal-com", "tidycal"],
+    alternatives: ["cal-com"],
   },
   {
     slug: "cal-com",
@@ -549,7 +549,7 @@ export const tools: Tool[] = [
     affiliateUrl: "#your-affiliate-link-here",
     badge: "Best Open Source",
     implementationComplexity: "low",
-    alternatives: ["calendly", "savvycal", "tidycal"],
+    alternatives: ["calendly"],
   },
   // ── CLUSTER 3: CRM ──
   {
@@ -587,7 +587,7 @@ export const tools: Tool[] = [
     switchingTriggers: ["Pricing shock at Professional tier", "Feature bloat", "Need more customization"],
     switchingBlockers: ["Deep workflow automations", "Contact history and activity logs", "Multi-hub integration", "Team training investment"],
     implementationComplexity: "medium",
-    alternatives: ["pipedrive", "folk-crm", "attio"],
+    alternatives: ["pipedrive"],
     changelogUrl: "https://www.hubspot.com/changelog",
   },
   {
@@ -622,7 +622,7 @@ export const tools: Tool[] = [
     lastVerified: "2026-03-20",
     affiliateUrl: "#your-affiliate-link-here",
     implementationComplexity: "low",
-    alternatives: ["hubspot-crm", "folk-crm", "attio"],
+    alternatives: ["hubspot-crm"],
   },
   // ── CLUSTER 4: Project Management ──
   {
@@ -660,7 +660,7 @@ export const tools: Tool[] = [
     switchingTriggers: ["Performance issues on large workspaces", "Need dedicated PM features", "Team adoption challenges"],
     switchingBlockers: ["Years of accumulated content", "Complex database structures", "Team workflows built on Notion"],
     implementationComplexity: "medium",
-    alternatives: ["clickup", "asana", "monday"],
+    alternatives: ["clickup", "asana"],
   },
   {
     slug: "clickup",
@@ -696,7 +696,7 @@ export const tools: Tool[] = [
     switchingTriggers: ["Performance issues", "Feature overwhelm", "UX complexity"],
     switchingBlockers: ["Massive feature investment", "Docs and wikis stored in ClickUp", "Team workflows"],
     implementationComplexity: "high",
-    alternatives: ["notion", "asana", "monday"],
+    alternatives: ["notion", "asana"],
   },
   {
     slug: "asana",
@@ -732,7 +732,7 @@ export const tools: Tool[] = [
     switchingTriggers: ["Need docs/wiki features", "Need more customization", "Pricing for large teams"],
     switchingBlockers: ["Established workflows", "Goal/portfolio tracking", "Team habits"],
     implementationComplexity: "low",
-    alternatives: ["clickup", "notion", "monday"],
+    alternatives: ["clickup", "notion"],
   },
   // ── CLUSTER 4: AI Writing ──
   {
@@ -768,7 +768,7 @@ export const tools: Tool[] = [
     affiliateUrl: "#your-affiliate-link-here",
     badge: "Most Popular AI",
     implementationComplexity: "low",
-    alternatives: ["claude-ai", "gemini", "jasper"],
+    alternatives: ["claude-ai"],
   },
   {
     slug: "claude-ai",
@@ -803,7 +803,7 @@ export const tools: Tool[] = [
     affiliateUrl: "#your-affiliate-link-here",
     badge: "Best for Reasoning",
     implementationComplexity: "low",
-    alternatives: ["chatgpt", "gemini", "perplexity"],
+    alternatives: ["chatgpt"],
   },
 ];
 

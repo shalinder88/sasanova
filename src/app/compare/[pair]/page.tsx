@@ -491,7 +491,7 @@ export default async function ComparisonPage({ params }: PageProps) {
             <a
               key={tool.slug}
               href={tool.affiliateUrl}
-              rel="sponsored noopener"
+              rel="noopener noreferrer sponsored"
               target="_blank"
               className="flex items-center justify-between border border-accent/30 bg-accent-light/30 rounded-xl p-5 hover:bg-accent-light/60 transition-colors"
             >

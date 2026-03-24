@@ -194,10 +194,10 @@ export function getOverallScore(tool: Pick<Tool, 'score_value' | 'score_ease' | 
   const v = tool.score_value ?? 0;
   const e = tool.score_ease ?? 0;
   const p = tool.score_power ?? 0;
-  const sf = tool.score_setup_friction ?? 5;
-  const md = tool.score_migration_difficulty ?? 5;
+  const sf = tool.score_setup_friction ?? 0;
+  const md = tool.score_migration_difficulty ?? 0;
   const t = tool.score_transparency ?? 0;
 
-  const score = v * 0.20 + e * 0.15 + p * 0.20 + (10 - sf) * 0.10 + (10 - md) * 0.10 + t * 0.25;
+  const score = v * 0.25 + e * 0.15 + p * 0.20 + sf * 0.10 + md * 0.10 + t * 0.20;
   return Math.round(score * 10) / 10;
 }

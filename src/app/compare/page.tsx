@@ -21,10 +21,10 @@ function VerdictBadge({ verdict, nameA, nameB }: { verdict: string; nameA: strin
       </span>
     );
   }
-  const winnerName = verdict === nameA.toLowerCase() || tools.find(t => t.slug === verdict)?.name;
+  const winnerName = tools.find(t => t.slug === verdict)?.name;
   return (
     <span className="inline-block text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded-full">
-      {typeof winnerName === "string" ? winnerName : verdict} Wins
+      {winnerName ?? verdict} Wins
     </span>
   );
 }

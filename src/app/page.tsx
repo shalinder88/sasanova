@@ -105,7 +105,7 @@ export default async function Home() {
               <div className="ml-auto px-4 py-2.5 text-muted">
                 <span className="flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-success" />
-                  Updated Mar 2026
+                  Updated recently
                 </span>
               </div>
             </div>
@@ -414,7 +414,7 @@ export default async function Home() {
           <h2 className="text-2xl font-extrabold tracking-tight mb-2">Stay sharp</h2>
           <p className="text-sm text-muted mb-6">New reviews, pricing changes, and comparison updates — every Tuesday.</p>
           <EmailCapture variant="inline" />
-          <p className="text-[11px] text-muted mt-3">Join 0 readers. No spam. Unsubscribe anytime.</p>
+          <p className="text-[11px] text-muted mt-3">No spam. Unsubscribe anytime.</p>
         </div>
       </section>
 

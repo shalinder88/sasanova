@@ -86,7 +86,7 @@ export default async function AlternativesPage({
       "@type": "ListItem",
       position: i + 1,
       name: alt.name,
-      url: `https://saasanova.com/tools/${alt.slug}`,
+      url: `https://sasanova.com/tools/${alt.slug}`,
     })),
   };
 
@@ -268,7 +268,7 @@ export default async function AlternativesPage({
                       <div className="mt-4 flex flex-wrap gap-2">
                         <a
                           href={alt.affiliateUrl}
-                          rel="sponsored noopener"
+                          rel="noopener noreferrer sponsored"
                           target="_blank"
                           className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-lg bg-accent text-white hover:bg-accent/90 transition-colors"
                         >

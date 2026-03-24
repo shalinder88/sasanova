@@ -63,7 +63,7 @@ export default async function BestCategoryPage({
       "@type": "ListItem",
       position: i + 1,
       name: tool.name,
-      url: `https://saasanova.com/tools/${tool.slug}`,
+      url: `https://sasanova.com/tools/${tool.slug}`,
     })),
   };
 
@@ -188,7 +188,7 @@ export default async function BestCategoryPage({
                       <div className="mt-4 flex flex-wrap gap-2">
                         <a
                           href={tool.affiliateUrl}
-                          rel="sponsored noopener"
+                          rel="noopener noreferrer sponsored"
                           target="_blank"
                           className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-lg bg-accent text-white hover:bg-accent/90 transition-colors"
                         >
