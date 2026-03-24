@@ -154,7 +154,7 @@ export default async function ToolProfilePage({ params }: Props) {
             {/* Left */}
             <div className="min-w-0">
               {tool.badge && (
-                <span className="inline-block text-[10px] font-semibold text-accent bg-accent-light px-2.5 py-0.5 rounded-full mb-2">
+                <span className="inline-block text-[10px] font-semibold text-accent bg-accent-light px-2.5 py-0.5 rounded-full mb-2 cursor-help" title="Editorial badge assigned based on our 6-axis scoring methodology. See /about/methodology for criteria.">
                   {tool.badge}
                 </span>
               )}
@@ -235,7 +235,10 @@ export default async function ToolProfilePage({ params }: Props) {
 
         {/* Multi-axis Scores */}
         <section>
-          <h2 className="text-lg font-bold mb-4">Score Breakdown</h2>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-bold">Score Breakdown</h2>
+            <Link href="/about/methodology" className="text-[10px] text-accent hover:underline">How we score →</Link>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 max-w-2xl">
             <ScoreBar label="Value" value={tool.scores.value} />
             <ScoreBar label="Ease of Use" value={tool.scores.ease} />
@@ -250,6 +253,10 @@ export default async function ToolProfilePage({ params }: Props) {
               value={tool.scores.transparency}
             />
           </div>
+          <p className="text-[10px] text-muted mt-3">
+            Scores are editorial assessments on a 1–10 scale. Overall score uses a weighted formula: Value (25%), Power (20%), Transparency (20%), Ease (15%), Setup (10%), Migration (10%).{" "}
+            <Link href="/about/methodology" className="text-accent hover:underline">Full methodology</Link>
+          </p>
         </section>
 
         {/* Best For / Avoid If */}
