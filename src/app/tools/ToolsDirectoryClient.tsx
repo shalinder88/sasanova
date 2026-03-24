@@ -370,8 +370,7 @@ export default function ToolsDirectoryClient({
       {/* Results */}
       <div className="mt-6">
         <p className="text-xs text-muted mb-4">
-          Showing {filtered.length} of {tools.length} tool
-          {tools.length !== 1 ? "s" : ""}
+          Showing {filtered.length} of {tools.length} {tools.length !== 1 ? "tools" : "tool"}
         </p>
 
         {filtered.length === 0 ? (
