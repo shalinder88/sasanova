@@ -876,6 +876,30 @@ const guides = [
     readingTime: "9 min read",
     category: "FAQ",
   },
+  {
+    slug: "state-of-email-pricing-q1-2026",
+    title: "State of Email Marketing Pricing, Q1 2026",
+    description:
+      "Which platforms raised prices, which held steady, and which offer the best value at every subscriber tier from 1K to 100K. Price transparency rankings, Ghost's restructure, and predictions for Q2.",
+    readingTime: "20 min read",
+    category: "Quarterly Pricing Report",
+  },
+  {
+    slug: "state-of-crm-pricing-q1-2026",
+    title: "State of CRM Pricing, Q1 2026",
+    description:
+      "Per-seat cost rankings at 5, 10, and 25 users. Salesforce's 6% increase, HubSpot's $20-to-$890 cliff, genuine free tiers, plan rebrandings, and Salesforce's $10K–$50K hidden implementation costs.",
+    readingTime: "22 min read",
+    category: "Quarterly Pricing Report",
+  },
+  {
+    slug: "state-of-automation-pricing-q1-2026",
+    title: "State of Automation Tool Pricing, Q1 2026",
+    description:
+      "Task counting differences explained, cost rankings at 500 to 50K tasks/month, Bardeen's 890% price jump, self-hosting economics, Make as best value, and free tier comparison.",
+    readingTime: "20 min read",
+    category: "Quarterly Pricing Report",
+  },
 ];
 
 export default function GuidesHub() {
