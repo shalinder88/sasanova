@@ -53,6 +53,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <head>
+        <link rel="alternate" type="application/rss+xml" title="Sasanova — Software Changes & Updates" href="/feed" />
+        <link rel="alternate" type="application/rss+xml" title="Sasanova — Software Guides" href="/feed/guides" />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-BJWD8CZ1XT" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
