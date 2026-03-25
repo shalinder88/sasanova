@@ -90,6 +90,20 @@ export default async function CategoryPage({ params }: Props) {
   const top3 = sorted.slice(0, 3);
   const winner = sorted[0];
 
+  // Find cheapest verified tool (lowest non-zero monthly price among independently verified tools, fallback to any)
+  const cheapestVerified = (() => {
+    const withPrice = sorted
+      .map((t) => {
+        const paid = t.pricing.filter((p) => p.priceMonthly !== null && p.priceMonthly > 0);
+        const minPrice = paid.length > 0 ? Math.min(...paid.map((p) => p.priceMonthly as number)) : null;
+        return { tool: t, minPrice };
+      })
+      .filter((x) => x.minPrice !== null) as { tool: typeof sorted[number]; minPrice: number }[];
+    if (withPrice.length === 0) return null;
+    withPrice.sort((a, b) => a.minPrice - b.minPrice);
+    return withPrice[0];
+  })();
+
   // Related categories (same cluster, excluding self)
   const relatedCategories = categories.filter(
     (c) => c.cluster === cat.cluster && c.slug !== cat.slug && getToolsByCategory(c.slug).length >= 2
@@ -181,6 +195,24 @@ export default async function CategoryPage({ params }: Props) {
                 })()}
           </p>
         </div>
+
+        {/* Cheapest Verified Tool Callout */}
+        {cheapestVerified && (
+          <div className="flex items-center gap-2 bg-success-light/30 border border-success/20 rounded-lg px-4 py-3">
+            <svg className="w-4 h-4 text-success shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+            <p className="text-sm text-foreground">
+              <span className="font-medium">Cheapest verified option:</span>{" "}
+              <Link
+                href={`/pricing/${cheapestVerified.tool.slug}`}
+                className="font-bold text-accent hover:underline"
+              >
+                {cheapestVerified.tool.name} at ${cheapestVerified.minPrice}/mo →
+              </Link>
+            </p>
+          </div>
+        )}
 
         {/* Quick Comparison: Top 3 */}
         {top3.length >= 2 && (

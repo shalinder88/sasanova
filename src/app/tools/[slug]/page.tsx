@@ -54,6 +54,64 @@ const complexityMeta: Record<string, { label: string; color: string }> = {
   high: { label: "High", color: "text-danger bg-danger-light" },
 };
 
+const toolGuideMap: Record<string, { slug: string; title: string }[]> = {
+  mailchimp: [
+    { slug: "mailchimp-hidden-costs", title: "The Real Cost of Mailchimp: What the Pricing Page Doesn't Show" },
+    { slug: "when-mailchimp-becomes-expensive", title: "The Exact Subscriber Count Where Mailchimp Becomes a Bad Deal" },
+    { slug: "migrate-mailchimp-to-kit", title: "How to Migrate from Mailchimp to Kit (ConvertKit) Without Losing Subscribers" },
+    { slug: "migrate-mailchimp-to-beehiiv", title: "Leaving Mailchimp for beehiiv: The Complete Migration Playbook" },
+  ],
+  "hubspot-crm": [
+    { slug: "hubspot-pricing-reality", title: "HubSpot Pricing: What It Actually Costs (Not What the Website Says)" },
+    { slug: "when-hubspot-stops-being-cheap", title: "When HubSpot Stops Being Cheap: The Exact Thresholds" },
+    { slug: "migrate-salesforce-to-hubspot", title: "Migrating from Salesforce to HubSpot: What Actually Happens" },
+    { slug: "hubspot-crm-setup-guide", title: "HubSpot CRM Setup in 30 Minutes: The No-Nonsense Guide" },
+  ],
+  zapier: [
+    { slug: "zapier-hidden-costs", title: "Zapier's Hidden Costs: Why Your $20/Month Plan Becomes $100" },
+    { slug: "when-zapier-costs-more-than-make", title: "The Exact Task Volume Where Zapier Stops Making Sense" },
+    { slug: "migrate-zapier-to-make", title: "Switching from Zapier to Make: The Real Savings and The Real Pain" },
+    { slug: "zapier-setup-guide", title: "Your First 5 Zapier Automations: A Practical Setup Guide" },
+  ],
+  beehiiv: [
+    { slug: "beehiiv-setup-guide", title: "beehiiv Setup Guide: From Zero to First Newsletter in 60 Minutes" },
+    { slug: "migrate-substack-to-beehiiv", title: "Substack to beehiiv: Why Creators Switch and How to Do It" },
+    { slug: "migrate-mailchimp-to-beehiiv", title: "Leaving Mailchimp for beehiiv: The Complete Migration Playbook" },
+    { slug: "best-email-tool-creators", title: "The Best Email Platform for Creators in 2026 (Not What You Think)" },
+  ],
+  pipedrive: [
+    { slug: "pipedrive-setup-guide", title: "Pipedrive Setup for Sales Teams: Pipeline to First Deal" },
+    { slug: "best-crm-freelancers-consultants", title: "Best CRM for Freelancers and Consultants (You Don't Need Salesforce)" },
+    { slug: "best-crm-sales-teams", title: "CRM for Sales Teams of 5-25: HubSpot vs Pipedrive vs Close" },
+    { slug: "switch-from-hubspot-to-pipedrive", title: "Switching from HubSpot to Pipedrive: A Smaller CRM That Gets Used" },
+  ],
+  make: [
+    { slug: "migrate-zapier-to-make", title: "Switching from Zapier to Make: The Real Savings and The Real Pain" },
+    { slug: "automation-pricing-compared", title: "Zapier vs Make vs n8n Pricing: The Honest Math Nobody Shows You" },
+    { slug: "best-automation-tool-solopreneurs", title: "Automation for One-Person Businesses: What's Worth Paying For" },
+  ],
+  salesforce: [
+    { slug: "salesforce-hidden-costs", title: "Salesforce Pricing: The Real Number Is 3-5x What You See" },
+    { slug: "migrate-salesforce-to-hubspot", title: "Migrating from Salesforce to HubSpot: What Actually Happens" },
+    { slug: "when-hubspot-stops-being-cheap", title: "When HubSpot Stops Being Cheap: The Exact Thresholds" },
+  ],
+  convertkit: [
+    { slug: "migrate-mailchimp-to-kit", title: "How to Migrate from Mailchimp to Kit (ConvertKit) Without Losing Subscribers" },
+    { slug: "best-email-tool-creators", title: "The Best Email Platform for Creators in 2026 (Not What You Think)" },
+    { slug: "switch-from-kit-to-beehiiv", title: "Kit to beehiiv: The Creator Newsletter Migration" },
+  ],
+  activecampaign: [
+    { slug: "switch-from-mailchimp-to-activecampaign", title: "Mailchimp to ActiveCampaign: When You Need Real Automation" },
+    { slug: "best-email-tool-agencies", title: "Email Marketing Tools for Agencies: Managing 10+ Client Accounts" },
+    { slug: "email-automation-sequences-compared", title: "Email Automation Sequences: Which Platform Does It Best?" },
+  ],
+  n8n: [
+    { slug: "migrate-zapier-to-n8n", title: "Self-Hosting Your Automations: Zapier to n8n Migration Guide" },
+    { slug: "automation-pricing-compared", title: "Zapier vs Make vs n8n Pricing: The Honest Math Nobody Shows You" },
+    { slug: "best-automation-tool-agencies", title: "Automation Tools for Agencies: Managing Client Workflows at Scale" },
+  ],
+};
+
 const migrationGuides: Record<string, { href: string; label: string }[]> = {
   mailchimp: [
     { href: "/guides/migrate-mailchimp-to-kit", label: "Migrate from Mailchimp to Kit" },
@@ -651,6 +709,25 @@ export default async function ToolProfilePage({ params }: Props) {
                 );
               })}
             </div>
+          </section>
+        )}
+
+        {/* Recommended Reading */}
+        {toolGuideMap[slug] && toolGuideMap[slug].length > 0 && (
+          <section>
+            <h2 className="text-lg font-bold mb-4">Recommended Reading</h2>
+            <ul className="space-y-2">
+              {toolGuideMap[slug].map((guide) => (
+                <li key={guide.slug}>
+                  <Link
+                    href={`/guides/${guide.slug}`}
+                    className="text-sm text-accent hover:underline transition-colors"
+                  >
+                    {guide.title} →
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </section>
         )}
 
