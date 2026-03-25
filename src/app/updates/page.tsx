@@ -89,6 +89,67 @@ export default function UpdatesPage() {
       </section>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+        {/* Weekly Digests */}
+        <section>
+          <h2 className="text-xl font-bold tracking-tight mb-1">
+            Weekly Digests
+          </h2>
+          <p className="text-xs text-muted mb-4">
+            Detailed weekly summaries of every pricing change, correction, and
+            content update
+          </p>
+          <div className="grid gap-3 sm:grid-cols-2">
+            <Link
+              href="/updates/week-15-april-2026"
+              className="block rounded-lg border border-border bg-background p-4 hover:border-accent transition-colors"
+            >
+              <span className="text-sm font-semibold text-foreground">
+                Week 15 &mdash; April 8–14, 2026
+              </span>
+              <span className="block text-xs text-muted mt-1">
+                Email deliverability comparison, CRM reporting, cost threshold
+                pages
+              </span>
+            </Link>
+            <Link
+              href="/updates/week-14-april-2026"
+              className="block rounded-lg border border-border bg-background p-4 hover:border-accent transition-colors"
+            >
+              <span className="text-sm font-semibold text-foreground">
+                Week 14 &mdash; April 1–7, 2026
+              </span>
+              <span className="block text-xs text-muted mt-1">
+                34-tool pricing audit, 19 corrections, annual cost comparisons
+                launched
+              </span>
+            </Link>
+            <Link
+              href="/updates/week-13-march-2026"
+              className="block rounded-lg border border-border bg-background p-4 hover:border-accent transition-colors"
+            >
+              <span className="text-sm font-semibold text-foreground">
+                Week 13 &mdash; March 25–31, 2026
+              </span>
+              <span className="block text-xs text-muted mt-1">
+                Bardeen, Pipedrive, Salesforce pricing corrected; anti-recommendation
+                pages
+              </span>
+            </Link>
+            <Link
+              href="/updates/week-12-march-2026"
+              className="block rounded-lg border border-border bg-background p-4 hover:border-accent transition-colors"
+            >
+              <span className="text-sm font-semibold text-foreground">
+                Week 12 &mdash; March 18–24, 2026
+              </span>
+              <span className="block text-xs text-muted mt-1">
+                Sasanova launch: 148 tools, Ghost and Mailchimp pricing
+                restructured
+              </span>
+            </Link>
+          </div>
+        </section>
+
         {/* Recently Verified */}
         <section>
           <h2 className="text-xl font-bold tracking-tight mb-1">

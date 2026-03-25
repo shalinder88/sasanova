@@ -81,6 +81,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // Weekly digest pages: /updates/[slug]
+  const weeklyDigestSlugs = [
+    "week-12-march-2026",
+    "week-13-march-2026",
+    "week-14-april-2026",
+    "week-15-april-2026",
+  ];
+  const weeklyDigestPages: MetadataRoute.Sitemap = weeklyDigestSlugs.map(
+    (slug) => ({
+      url: `${BASE}/updates/${slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })
+  );
+
   // Guide pages: /guides/[slug] — read from guides hub data
   // Deduplicated guide slugs — every guide page on the site
   const guideSlugs = [...new Set([
@@ -154,5 +170,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...pricingPages,
     ...categoryPages,
     ...guidePages,
+    ...weeklyDigestPages,
   ];
 }
