@@ -12,6 +12,7 @@ import {
 } from "@/data/tools";
 import ScoreBar from "@/components/ScoreBar";
 import FeatureMatrix from "@/components/FeatureMatrix";
+import StickyComparisonCTAs from "@/components/StickyComparisonCTAs";
 import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 
 /* ── Static generation ── */
@@ -148,6 +149,13 @@ export default async function ComparisonPage({ params }: PageProps) {
             ])
           ),
         }}
+      />
+
+      <StickyComparisonCTAs
+        tools={[
+          { name: toolA.name, slug: toolA.slug, affiliateUrl: toolA.affiliateUrl },
+          { name: toolB.name, slug: toolB.slug, affiliateUrl: toolB.affiliateUrl },
+        ]}
       />
 
       {/* Breadcrumbs */}
