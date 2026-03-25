@@ -91,6 +91,86 @@ export const guides: Guide[] = [
     category: "Cost Threshold",
   },
   {
+    slug: "when-activecampaign-gets-expensive",
+    title: "When ActiveCampaign Stops Being Affordable: The Exact Thresholds",
+    description:
+      "Starter is $15/mo at 1,000 contacts. Plus jumps to $49/mo, Pro to $79/mo. The contact-tier trap scales steeply — prices multiply as your list grows. When Kit or Brevo become cheaper alternatives.",
+    readingTime: "11 min read",
+    category: "Cost Threshold",
+  },
+  {
+    slug: "when-notion-needs-a-paid-plan",
+    title: "When Notion's Free Tier Stops Being Enough",
+    description:
+      "Free gives you unlimited pages but only 7-day history, 10 guests, and 5MB uploads. Plus is $12/user/mo, Business is $24/user/mo. The exact triggers: version history, guest access, and file uploads.",
+    readingTime: "10 min read",
+    category: "Cost Threshold",
+  },
+  {
+    slug: "when-clickup-free-hits-limits",
+    title: "ClickUp Free Is Generous. Here's When It Stops Being Enough.",
+    description:
+      "Free gives you unlimited tasks, unlimited members, but only 100MB storage. Unlimited is $10/member/mo for unlimited storage, integrations, and dashboards. The exact triggers and per-seat math.",
+    readingTime: "10 min read",
+    category: "Cost Threshold",
+  },
+  {
+    slug: "when-pipedrive-needs-upgrade",
+    title: "Pipedrive Lite to Growth: When the Upgrade Is Worth It",
+    description:
+      "Lite is $14/seat with basic pipeline and limited reports. Growth is $39/seat — a 179% jump — for email sync, automations, and group emailing. Premium is $49/seat. When each upgrade pays for itself.",
+    readingTime: "10 min read",
+    category: "Cost Threshold",
+  },
+  {
+    slug: "when-make-core-isnt-enough",
+    title: "When Make Core Needs an Upgrade (And When It Doesn't)",
+    description:
+      "Core is $10.59/mo for 10,000 ops. Pro is $18.82/mo, Teams is $34.12/mo. Most solopreneurs never need to upgrade. When Core is enough and when Pro's debugging tools justify the premium.",
+    readingTime: "10 min read",
+    category: "Cost Threshold",
+  },
+  {
+    slug: "when-beehiiv-scale-beats-launch",
+    title: "beehiiv Launch vs Scale: When Free Stops Making Sense",
+    description:
+      "Launch is free for 2,500 subscribers with unlimited sends. Scale is $49/mo for unlimited subscribers, ad network, referral program, and A/B testing. Revenue math: when Boosts pay for the plan itself.",
+    readingTime: "11 min read",
+    category: "Cost Threshold",
+  },
+  {
+    slug: "when-slack-free-costs-you",
+    title: "Slack Free Hides Your Messages. Here's What That Actually Costs.",
+    description:
+      "Free limits you to 90-day message history and 10 integrations. Pro is $8.75/user/mo for unlimited history. The hidden cost: losing institutional knowledge every 90 days. When Discord free is better.",
+    readingTime: "10 min read",
+    category: "Cost Threshold",
+  },
+  {
+    slug: "when-freshsales-growth-isnt-enough",
+    title: "Freshsales Growth to Pro: Is the Jump Worth It?",
+    description:
+      "Growth is $11/seat with basic CRM, AI scoring, and built-in phone. Pro is $47/seat — a 327% jump — for multiple pipelines and AI deal insights. When Growth is enough and when Pro justifies 4.3x the price.",
+    readingTime: "10 min read",
+    category: "Cost Threshold",
+  },
+  {
+    slug: "when-calendly-free-stops-working",
+    title: "Calendly Free to Standard: The Exact Moment You Need to Pay",
+    description:
+      "Free gives you 1 event type. Standard is $12/user/mo for unlimited event types, reminders, and workflows. Cal.com gives you unlimited event types free. When to upgrade and when to switch.",
+    readingTime: "9 min read",
+    category: "Cost Threshold",
+  },
+  {
+    slug: "when-grammarly-free-isnt-enough",
+    title: "Grammarly Free vs Pro: Do You Actually Need to Pay $30/Month?",
+    description:
+      "Free gives you basic grammar and 100 AI prompts/mo. Pro is $30/mo ($12/mo annual) for full rewrites, plagiarism detection, and 2,000 AI prompts. When Free is genuinely enough and when Pro pays for itself.",
+    readingTime: "10 min read",
+    category: "Cost Threshold",
+  },
+  {
     slug: "creator-toolkit",
     title: "The Creator's Complete Software Toolkit: Every Tool You Need in 2026",
     description:
