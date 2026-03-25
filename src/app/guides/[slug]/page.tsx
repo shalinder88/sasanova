@@ -421,6 +421,26 @@ const guideMeta: Record<string, { title: string; category: string }> = {
     title: "Automation Questions Answered: 20 Things Buyers Actually Ask",
     category: "FAQ",
   },
+  "when-hubspot-stops-being-cheap": {
+    title: "When HubSpot Stops Being Cheap: The Exact Thresholds",
+    category: "Cost Threshold",
+  },
+  "when-mailchimp-becomes-expensive": {
+    title: "The Exact Subscriber Count Where Mailchimp Becomes a Bad Deal",
+    category: "Cost Threshold",
+  },
+  "when-zapier-costs-more-than-make": {
+    title: "The Exact Task Volume Where Zapier Stops Making Sense",
+    category: "Cost Threshold",
+  },
+  "when-free-crm-costs-more": {
+    title: "When Free CRM Plans Actually Cost You Money",
+    category: "Cost Threshold",
+  },
+  "saas-pricing-traps-2026": {
+    title: "7 SaaS Pricing Traps That Cost Founders Thousands in 2026",
+    category: "Cost Threshold",
+  },
 };
 
 export function generateStaticParams() {

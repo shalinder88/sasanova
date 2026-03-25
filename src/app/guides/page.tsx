@@ -52,6 +52,46 @@ const guides = [
     category: "Decision Framework",
   },
   {
+    slug: "when-hubspot-stops-being-cheap",
+    title: "When HubSpot Stops Being Cheap: The Exact Thresholds",
+    description:
+      "HubSpot Free is genuinely free. Starter is $20/seat. Then Professional is $890/mo flat — a 4,350% jump. The exact moments HubSpot stops being cheap, cost comparison vs Pipedrive + ActiveCampaign, and the $3,000 onboarding lock-in.",
+    readingTime: "12 min read",
+    category: "Cost Threshold",
+  },
+  {
+    slug: "when-mailchimp-becomes-expensive",
+    title: "The Exact Subscriber Count Where Mailchimp Becomes a Bad Deal",
+    description:
+      "Dollar-for-dollar comparison at 2,500 to 50,000 subscribers: Mailchimp Standard vs beehiiv Scale. Savings from $240/yr to $3,312/yr. Plus the contact counting trap that inflates your Mailchimp bill by 20–40%.",
+    readingTime: "11 min read",
+    category: "Cost Threshold",
+  },
+  {
+    slug: "when-zapier-costs-more-than-make",
+    title: "The Exact Task Volume Where Zapier Stops Making Sense",
+    description:
+      "Zapier vs Make at every volume from 100 to 10,000 tasks. Make saves $233–$1,115/yr. The multi-step trap: a 5-step Zap burns 5 tasks per run. Real workflow example with exact cost math.",
+    readingTime: "13 min read",
+    category: "Cost Threshold",
+  },
+  {
+    slug: "when-free-crm-costs-more",
+    title: "When Free CRM Plans Actually Cost You Money",
+    description:
+      "HubSpot Free, Zoho Free, and Freshsales Free compared honestly. The time-cost calculator: 2 hours/week of manual CRM work = $5,200/yr. Pipedrive Essential is $168/yr. The switching trap that gets worse every month.",
+    readingTime: "12 min read",
+    category: "Cost Threshold",
+  },
+  {
+    slug: "saas-pricing-traps-2026",
+    title: "7 SaaS Pricing Traps That Cost Founders Thousands in 2026",
+    description:
+      "Per-seat cliffs (HubSpot's 4,350% jump), contact counting tricks (Mailchimp billing unsubscribes), task multipliers (Zapier's 5x burn rate), annual lock-ins, fake free plans, add-on stacking, and fair use caps.",
+    readingTime: "15 min read",
+    category: "Cost Threshold",
+  },
+  {
     slug: "creator-toolkit",
     title: "The Creator's Complete Software Toolkit: Every Tool You Need in 2026",
     description:
