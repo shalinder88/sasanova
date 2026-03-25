@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 interface StickyTool {
   name: string;
   slug: string;
@@ -37,7 +39,7 @@ function CtaButton({ tool }: { tool: StickyTool }) {
       rel="noopener noreferrer sponsored"
       className="group flex items-center gap-1.5 rounded-full bg-surface/90 backdrop-blur border border-border px-3 py-1.5 text-xs text-muted transition-all duration-200 hover:border-accent hover:text-foreground hover:scale-105 shadow-sm"
     >
-      <span className="text-[9px] uppercase tracking-wider text-muted/60 font-medium">
+      <span className="text-[8px] uppercase tracking-wider text-muted/40 font-medium">
         Ad
       </span>
       <span className="h-3 w-px bg-border" aria-hidden="true" />
@@ -48,7 +50,18 @@ function CtaButton({ tool }: { tool: StickyTool }) {
 }
 
 export default function StickyComparisonCTAs({ tools }: StickyComparisonCTAsProps) {
-  if (tools.length === 0) return null;
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      setVisible(window.scrollY >= 600);
+    }
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  if (tools.length === 0 || !visible) return null;
 
   const isTwoTools = tools.length === 2;
 

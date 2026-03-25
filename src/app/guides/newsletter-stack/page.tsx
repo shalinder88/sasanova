@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RelatedLinks from "@/components/RelatedLinks";
+import ReviewerByline from "@/components/ReviewerByline";
 
 export const metadata: Metadata = {
   title: "The Newsletter Stack for a One-Person Creator Under $150/Month",
@@ -38,7 +39,13 @@ export default function NewsletterStackGuide() {
           Last updated March 2026 &middot; 14 min read
         </p>
 
-        <div className="prose-sm space-y-8 text-sm leading-relaxed text-muted">
+        <ReviewerByline
+          reviewDate="March 2026"
+          testingNotes="Tested free and paid tiers"
+          sourceCount={3}
+        />
+
+        <div className="prose-sm space-y-8 text-sm leading-relaxed text-muted mt-8">
           <p>
             I&apos;ve watched creators spend $300/month on tools before they have 500 subscribers.
             ConvertKit Creator Pro at $59, a Zapier paid plan at $29.99, Calendly Teams at $16/seat,

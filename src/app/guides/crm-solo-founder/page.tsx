@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RelatedLinks from "@/components/RelatedLinks";
+import ReviewerByline from "@/components/ReviewerByline";
 
 export const metadata: Metadata = {
   title: "The Best CRM Setup for a Solo Founder Who Hates CRMs",
@@ -38,7 +39,13 @@ export default function CRMSoloFounderGuide() {
           Last updated March 2026 &middot; 12 min read
         </p>
 
-        <div className="prose-sm space-y-8 text-sm leading-relaxed text-muted">
+        <ReviewerByline
+          reviewDate="March 2026"
+          testingNotes="Tested free tiers and onboarding flows"
+          sourceCount={3}
+        />
+
+        <div className="prose-sm space-y-8 text-sm leading-relaxed text-muted mt-8">
           <p>
             You&apos;ve tried a CRM before. You signed up, imported some contacts, used it
             for two weeks, then went back to your inbox and a spreadsheet. I know because

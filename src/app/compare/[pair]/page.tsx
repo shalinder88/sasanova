@@ -13,6 +13,7 @@ import {
 import ScoreBar from "@/components/ScoreBar";
 import FeatureMatrix from "@/components/FeatureMatrix";
 import StickyComparisonCTAs from "@/components/StickyComparisonCTAs";
+import ReviewerByline from "@/components/ReviewerByline";
 import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 
 /* ── Static generation ── */
@@ -206,7 +207,59 @@ export default async function ComparisonPage({ params }: PageProps) {
         </div>
       </section>
 
+      <ReviewerByline
+        reviewDate="March 2026"
+        testingNotes="Free and paid tiers"
+        sourceCount={3}
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+        {/* ── Verdict Decision Block (FIRST after hero) ── */}
+        <section className="bg-surface-alt border border-accent/20 rounded-xl p-6">
+          <h2 className="text-xl font-bold mb-4">Our Verdict</h2>
+          {vsMatch && (
+            <div className="mb-4">
+              <VerdictBadge verdict={vsMatch.verdict} toolA={toolA} toolB={toolB} />
+            </div>
+          )}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
+            {/* Choose Tool A if */}
+            <div>
+              <p className="text-sm font-bold mb-2">Choose {toolA.name} if:</p>
+              <ul className="space-y-1.5">
+                {(vsMatch?.chooseAIf ?? toolA.bestFor).map((item) => (
+                  <li key={item} className="text-sm text-muted flex items-start gap-2">
+                    <span className="text-accent shrink-0 mt-0.5">—</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Choose Tool B if */}
+            <div>
+              <p className="text-sm font-bold mb-2">Choose {toolB.name} if:</p>
+              <ul className="space-y-1.5">
+                {(vsMatch?.chooseBIf ?? toolB.bestFor).map((item) => (
+                  <li key={item} className="text-sm text-muted flex items-start gap-2">
+                    <span className="text-accent shrink-0 mt-0.5">—</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Biggest difference */}
+          <p className="text-sm text-foreground leading-relaxed border-t border-accent/10 pt-4">
+            <strong>The biggest difference:</strong>{" "}
+            {vsMatch?.biggestDifference ??
+              (vsMatch?.summary ??
+                `${toolA.name} scores ${scoreA}/10 while ${toolB.name} scores ${scoreB}/10.`)}
+          </p>
+        </section>
+
         {/* AEO Answer Block */}
         <div className="bg-surface-alt border border-border rounded-lg p-4">
           <p className="text-sm text-foreground leading-relaxed">
@@ -460,17 +513,6 @@ export default async function ComparisonPage({ params }: PageProps) {
                 </div>
               ))}
             </div>
-          </section>
-        )}
-
-        {/* ── Verdict ── */}
-        {vsMatch && (
-          <section className="border border-border rounded-xl p-6 bg-surface">
-            <h2 className="text-xl font-bold mb-3">Our Verdict</h2>
-            <div className="mb-3">
-              <VerdictBadge verdict={vsMatch.verdict} toolA={toolA} toolB={toolB} />
-            </div>
-            <p className="text-sm text-muted leading-relaxed">{vsMatch.summary}</p>
           </section>
         )}
 

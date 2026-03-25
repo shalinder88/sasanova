@@ -5,6 +5,7 @@ import { tools, versusPairs, getOverallScore } from "@/data/tools";
 import ScoreBar from "@/components/ScoreBar";
 import PricingCalculator from "@/components/PricingCalculator";
 import StickyToolCTA from "@/components/StickyToolCTA";
+import ReviewerByline from "@/components/ReviewerByline";
 import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 
 /* ---------- Static generation ---------- */
@@ -239,6 +240,12 @@ export default async function ToolProfilePage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      <ReviewerByline
+        reviewDate={new Date(tool.lastVerified).toLocaleDateString("en-US", { year: "numeric", month: "long" })}
+        testingNotes="Free and paid tiers"
+        sourceCount={3}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
         {/* AEO Answer Block */}
