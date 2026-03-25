@@ -1470,4 +1470,125 @@ export const guides: Guide[] = [
     readingTime: "15 min read",
     category: "Pricing Deep Dive",
   },
+  // ── Detailed Comparison Guides ──
+  {
+    slug: "hubspot-vs-salesforce-detailed",
+    title: "HubSpot vs Salesforce: The Complete 2026 Comparison",
+    description:
+      "HubSpot Free Tools vs Salesforce Starter Suite at $25/seat — side-by-side pricing, feature tables, total cost at 5/20/50 users, migration playbook, common mistakes, and FAQ.",
+    readingTime: "28 min read",
+    category: "Detailed Comparison",
+  },
+  {
+    slug: "mailchimp-vs-kit-detailed",
+    title: "Mailchimp vs Kit (ConvertKit): Which Email Platform Wins?",
+    description:
+      "Mailchimp Standard $20/mo vs Kit Creator $39/mo — pricing tables, feature comparison, creator economics, annual cost at 1K/5K/25K subscribers, and migration guide.",
+    readingTime: "25 min read",
+    category: "Detailed Comparison",
+  },
+  {
+    slug: "zapier-vs-make-detailed",
+    title: "Zapier vs Make: The Definitive Pricing and Feature Comparison",
+    description:
+      "Zapier Professional $29.99/mo vs Make Core $10.59/mo — task counting explained, feature tables, cost at three volumes, the multi-step task multiplier trap, and migration guide.",
+    readingTime: "26 min read",
+    category: "Detailed Comparison",
+  },
+  {
+    slug: "notion-vs-obsidian-detailed",
+    title: "Notion vs Obsidian: Cloud Collaboration vs Local-First Knowledge",
+    description:
+      "Notion Plus $12/user/mo vs Obsidian free — philosophy comparison, pricing, features, team vs personal use, hybrid approach, migration pain points, and FAQ.",
+    readingTime: "26 min read",
+    category: "Detailed Comparison",
+  },
+  {
+    slug: "slack-vs-teams-detailed",
+    title: "Slack vs Microsoft Teams: Beyond the Price Tag",
+    description:
+      "Slack Pro $8.75/user/mo vs Teams (included in M365 at $6/user/mo) — integration ecosystems, video conferencing, total cost at 10/50/200 users, and the M365 bundling reality.",
+    readingTime: "24 min read",
+    category: "Detailed Comparison",
+  },
+  {
+    slug: "figma-vs-canva-detailed",
+    title: "Figma vs Canva: When Design Tools Cross Over",
+    description:
+      "Figma Professional $15/editor/mo vs Canva Pro $15/mo flat — target users, feature tables, UI/UX design vs marketing graphics, when to use both, and cost at three team sizes.",
+    readingTime: "24 min read",
+    category: "Detailed Comparison",
+  },
+  {
+    slug: "shopify-vs-woocommerce-detailed",
+    title: "Shopify vs WooCommerce: Hosted Simplicity vs Open Source Control",
+    description:
+      "Shopify Basic $39/mo vs WooCommerce free plugin — real annual cost including hidden fees, feature tables, transaction fees, SEO differences, and migration between platforms.",
+    readingTime: "26 min read",
+    category: "Detailed Comparison",
+  },
+  {
+    slug: "asana-vs-monday-detailed",
+    title: "Asana vs Monday.com: Which PM Tool Fits Your Team?",
+    description:
+      "Asana Starter $13.49/seat/mo vs Monday Standard $14/seat/mo — feature tables, structure vs flexibility, goals/portfolios, time tracking, cost at 5/15/50 seats, and migration guide.",
+    readingTime: "24 min read",
+    category: "Detailed Comparison",
+  },
+  {
+    slug: "pipedrive-vs-close-detailed",
+    title: "Pipedrive vs Close: Two Sales-Focused CRMs, Different Philosophies",
+    description:
+      "Pipedrive Lite $14/seat/mo vs Close Essentials $49/seat/mo — visual pipeline vs built-in calling, feature tables, cost at 3/10/25 reps, and when each sales motion fits.",
+    readingTime: "22 min read",
+    category: "Detailed Comparison",
+  },
+  {
+    slug: "beehiiv-vs-ghost-detailed",
+    title: "beehiiv vs Ghost: Newsletter Platform vs Publishing Platform",
+    description:
+      "beehiiv Scale $49/mo vs Ghost Publisher $35/mo — free tiers, ad network vs memberships, open source vs cloud, cost at 2.5K/10K/50K subscribers, and data ownership comparison.",
+    readingTime: "24 min read",
+    category: "Detailed Comparison",
+  },
+  {
+    slug: "freshsales-vs-zoho-detailed",
+    title: "Freshsales vs Zoho CRM: Freshworks vs Zoho Ecosystem",
+    description:
+      "Freshsales Growth $11/seat/mo vs Zoho Standard $20/seat/mo — AI features, ecosystem breadth, built-in phone, cost at 5/15/50 seats, and when each ecosystem wins.",
+    readingTime: "22 min read",
+    category: "Detailed Comparison",
+  },
+  {
+    slug: "buffer-vs-hootsuite-detailed",
+    title: "Buffer vs Hootsuite: $72/yr vs $1,188/yr for Social Scheduling",
+    description:
+      "Buffer Essentials $6/channel/mo vs Hootsuite Standard $149/mo — the 10-20x price gap explained, feature tables, social listening, cost at three scenarios, and when Hootsuite justifies the premium.",
+    readingTime: "22 min read",
+    category: "Detailed Comparison",
+  },
+  {
+    slug: "vercel-vs-netlify-detailed",
+    title: "Vercel vs Netlify: Which Deployment Platform in 2026?",
+    description:
+      "Vercel Pro $20/user/mo vs Netlify Pro $19/user/mo — Next.js integration, framework support, built-in forms, free tier differences, and cost at 1/5/15 developers.",
+    readingTime: "22 min read",
+    category: "Detailed Comparison",
+  },
+  {
+    slug: "postHog-vs-mixpanel-detailed",
+    title: "PostHog vs Mixpanel: Open Source vs Usage-Based Analytics",
+    description:
+      "PostHog free (1M events) vs Mixpanel free (1M events) — all-in-one platform vs dedicated analytics, per-event cost comparison, feature flags, session replay, and cost at 1M/5M/20M events.",
+    readingTime: "24 min read",
+    category: "Detailed Comparison",
+  },
+  {
+    slug: "calendly-vs-calcom-detailed",
+    title: "Calendly vs Cal.com: Pay vs Self-Host Your Scheduling",
+    description:
+      "Calendly Standard $12/user/mo vs Cal.com free (unlimited) — open source vs proprietary, free tier comparison, self-hosting economics, CRM integrations, and cost at three team sizes.",
+    readingTime: "22 min read",
+    category: "Detailed Comparison",
+  },
 ];
