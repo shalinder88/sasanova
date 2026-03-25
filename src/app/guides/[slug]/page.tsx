@@ -366,6 +366,26 @@ const guideMeta: Record<string, { title: string; category: string }> = {
     title: "CRM Data Migration Checklist: What to Clean Before You Move",
     category: "CRM Migration",
   },
+  "best-free-crm-2026": {
+    title: "Best Free CRM in 2026: What You Actually Get for $0",
+    category: "Pricing Deep Dive",
+  },
+  "best-free-email-tool-2026": {
+    title: "Best Free Email Marketing Tool in 2026: The Real Limits",
+    category: "Pricing Deep Dive",
+  },
+  "cheapest-automation-tool-2026": {
+    title: "Cheapest Automation Tool in 2026: Real Cost at Every Volume",
+    category: "Pricing Deep Dive",
+  },
+  "best-crm-under-20-per-user": {
+    title: "Best CRM Under $20/User/Month: Real Options for Budget Teams",
+    category: "Pricing Deep Dive",
+  },
+  "best-email-tool-under-50-per-month": {
+    title: "Best Email Tool Under $50/Month: Where the Value Actually Is",
+    category: "Pricing Deep Dive",
+  },
 };
 
 export function generateStaticParams() {

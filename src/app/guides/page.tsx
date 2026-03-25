@@ -729,6 +729,46 @@ const guides = [
     readingTime: "19 min read",
     category: "CRM Migration",
   },
+  {
+    slug: "best-free-crm-2026",
+    title: "Best Free CRM in 2026: What You Actually Get for $0",
+    description:
+      "HubSpot Free vs Zoho Free vs Freshsales Free vs Bitrix24 Free compared honestly. Contact limits, feature restrictions, upgrade pressure, and when free is genuinely enough.",
+    readingTime: "16 min read",
+    category: "Pricing Deep Dive",
+  },
+  {
+    slug: "best-free-email-tool-2026",
+    title: "Best Free Email Marketing Tool in 2026: The Real Limits",
+    description:
+      "Mailchimp Free (250 contacts) vs Kit Free (10K subs) vs beehiiv Free (2.5K subs) vs Brevo Free (300 emails/day). What free actually means on each and when it breaks.",
+    readingTime: "15 min read",
+    category: "Pricing Deep Dive",
+  },
+  {
+    slug: "cheapest-automation-tool-2026",
+    title: "Cheapest Automation Tool in 2026: Real Cost at Every Volume",
+    description:
+      "Zapier vs Make vs n8n vs Pipedream at 500, 2K, 5K, 10K, and 50K tasks/month. Normalized task counting, self-hosting costs, and the cheapest answer changes at every volume tier.",
+    readingTime: "18 min read",
+    category: "Pricing Deep Dive",
+  },
+  {
+    slug: "best-crm-under-20-per-user",
+    title: "Best CRM Under $20/User/Month: Real Options for Budget Teams",
+    description:
+      "Pipedrive Essential ($14) vs HubSpot Starter ($20) vs Freshsales Growth ($11) vs Zoho Standard ($14). Feature comparison, hidden costs, and verdicts for 3, 10, and 25-person teams.",
+    readingTime: "16 min read",
+    category: "Pricing Deep Dive",
+  },
+  {
+    slug: "best-email-tool-under-50-per-month",
+    title: "Best Email Tool Under $50/Month: Where the Value Actually Is",
+    description:
+      "Mailchimp Standard vs Kit Creator vs beehiiv Scale vs ActiveCampaign Starter vs Brevo Business compared. What $50/month buys on each platform and the subscriber count where it breaks.",
+    readingTime: "17 min read",
+    category: "Pricing Deep Dive",
+  },
 ];
 
 export default function GuidesHub() {
