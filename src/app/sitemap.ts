@@ -116,7 +116,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "zapier-setup-guide", "pipedrive-setup-guide", "make-setup-guide",
     "best-email-tool-ecommerce", "best-crm-real-estate",
     "best-automation-marketing-teams", "best-newsletter-paid-subscribers",
-    "best-tools-saas-startup",
+    "best-tools-saas-startup", "best-crm-agencies",
+    "email-deliverability-compared", "crm-integrations-that-matter",
+    "hubspot-vs-activecampaign-full-comparison",
+    "mailchimp-vs-hubspot-marketing", "notion-vs-clickup-vs-asana",
+    "zapier-vs-hubspot-workflows", "beehiiv-vs-kit-vs-mailchimp-for-creators",
   ];
   const guidePages: MetadataRoute.Sitemap = guideSlugs.map((slug) => ({
     url: `${BASE}/guides/${slug}`,

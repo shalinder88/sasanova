@@ -469,6 +469,86 @@ const guides = [
     readingTime: "16 min read",
     category: "Implementation Guide",
   },
+  {
+    slug: "best-newsletter-paid-subscribers",
+    title: "Building a Paid Newsletter: Platform Comparison for Monetization",
+    description:
+      "beehiiv vs Substack vs Ghost vs Buttondown for paid newsletters. Revenue share math, Stripe fees, subscriber management, churn tools, and revenue projections at 500 to 10K paid subscribers.",
+    readingTime: "18 min read",
+    category: "Newsletter Monetization",
+  },
+  {
+    slug: "best-tools-saas-startup",
+    title: "The Complete SaaS Startup Stack Under $500/Month",
+    description:
+      "CRM, email, automation, support, and analytics tools for SaaS startups at every budget. Full stack costs at $0, $100, $300, and $500/month with upgrade triggers and what to skip until 10+ customers.",
+    readingTime: "19 min read",
+    category: "Stack Building",
+  },
+  {
+    slug: "best-crm-agencies",
+    title: "CRM for Agencies: Managing 20+ Clients Without Losing Your Mind",
+    description:
+      "HubSpot vs Pipedrive vs Close compared for agency workflows. Multi-pipeline management, white-labeling, per-client cost modeling at 10 to 50 clients, and project management integration.",
+    readingTime: "16 min read",
+    category: "Agency Operations",
+  },
+  {
+    slug: "email-deliverability-compared",
+    title: "Email Deliverability: Which Platforms Actually Land in the Inbox",
+    description:
+      "Shared IPs vs dedicated IPs, SPF/DKIM/DMARC setup by platform, and why no one can give you a reliable deliverability percentage. What actually affects inbox placement vs vendor marketing claims.",
+    readingTime: "15 min read",
+    category: "Email Marketing",
+  },
+  {
+    slug: "crm-integrations-that-matter",
+    title: "CRM Integrations That Actually Matter (And Ones That Don't)",
+    description:
+      "Email sync, calendar sync, form capture, automation connectors, and accounting integrations ranked by impact. Plus integrations that sound good but waste time.",
+    readingTime: "14 min read",
+    category: "CRM",
+  },
+  {
+    slug: "hubspot-vs-activecampaign-full-comparison",
+    title: "HubSpot vs ActiveCampaign: CRM + Email Marketing in One or Separate?",
+    description:
+      "The #1 cross-cluster comparison buyers face. HubSpot as all-in-one vs ActiveCampaign as email+automation specialist. Real pricing at 1K to 25K contacts with CRM seats, and when each wins.",
+    readingTime: "18 min read",
+    category: "Cross-Platform Comparison",
+  },
+  {
+    slug: "mailchimp-vs-hubspot-marketing",
+    title: "Mailchimp vs HubSpot Marketing Hub: When Free Isn't Really Free",
+    description:
+      "Both have free tiers with radically different upgrade paths. Mailchimp Standard at $20/mo vs HubSpot Professional at $890/mo. Who each is built for and when Mailchimp + Pipedrive beats HubSpot.",
+    readingTime: "15 min read",
+    category: "Cross-Platform Comparison",
+  },
+  {
+    slug: "notion-vs-clickup-vs-asana",
+    title: "Notion vs ClickUp vs Asana: The Three-Way Comparison Nobody Gets Right",
+    description:
+      "Different philosophies: Notion (everything tool), ClickUp (features tool), Asana (workflow tool). Cost at 5-50 users, team size sweet spots, migration difficulty, and when you need two of them.",
+    readingTime: "17 min read",
+    category: "Cross-Platform Comparison",
+  },
+  {
+    slug: "zapier-vs-hubspot-workflows",
+    title: "Zapier vs HubSpot Workflows: Do You Need Both?",
+    description:
+      "HubSpot's built-in workflows vs Zapier connecting everything. What each can't do, cost of HubSpot workflows, the hybrid approach most teams use, and when to drop Zapier entirely.",
+    readingTime: "14 min read",
+    category: "Cross-Platform Comparison",
+  },
+  {
+    slug: "beehiiv-vs-kit-vs-mailchimp-for-creators",
+    title: "beehiiv vs Kit vs Mailchimp for Creators: The Definitive 2026 Comparison",
+    description:
+      "The 3 most common platforms creators evaluate. Monetization, growth tools, automation depth, cost at 2.5K to 50K subscribers, and definitive verdict by creator type.",
+    readingTime: "18 min read",
+    category: "Cross-Platform Comparison",
+  },
 ];
 
 export default function GuidesHub() {

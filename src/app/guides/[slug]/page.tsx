@@ -234,6 +234,46 @@ const guideMeta: Record<string, { title: string; category: string }> = {
     title: "Make (Integromat) Setup: Your First Automation Without the Confusion",
     category: "Implementation Guide",
   },
+  "best-newsletter-paid-subscribers": {
+    title: "Building a Paid Newsletter: Platform Comparison for Monetization",
+    category: "Newsletter Monetization",
+  },
+  "best-tools-saas-startup": {
+    title: "The Complete SaaS Startup Stack Under $500/Month",
+    category: "Stack Building",
+  },
+  "best-crm-agencies": {
+    title: "CRM for Agencies: Managing 20+ Clients Without Losing Your Mind",
+    category: "Agency Operations",
+  },
+  "email-deliverability-compared": {
+    title: "Email Deliverability: Which Platforms Actually Land in the Inbox",
+    category: "Email Marketing",
+  },
+  "crm-integrations-that-matter": {
+    title: "CRM Integrations That Actually Matter (And Ones That Don't)",
+    category: "CRM",
+  },
+  "hubspot-vs-activecampaign-full-comparison": {
+    title: "HubSpot vs ActiveCampaign: CRM + Email Marketing in One or Separate?",
+    category: "Cross-Platform Comparison",
+  },
+  "mailchimp-vs-hubspot-marketing": {
+    title: "Mailchimp vs HubSpot Marketing Hub: When Free Isn't Really Free",
+    category: "Cross-Platform Comparison",
+  },
+  "notion-vs-clickup-vs-asana": {
+    title: "Notion vs ClickUp vs Asana: The Three-Way Comparison Nobody Gets Right",
+    category: "Cross-Platform Comparison",
+  },
+  "zapier-vs-hubspot-workflows": {
+    title: "Zapier vs HubSpot Workflows: Do You Need Both?",
+    category: "Cross-Platform Comparison",
+  },
+  "beehiiv-vs-kit-vs-mailchimp-for-creators": {
+    title: "beehiiv vs Kit vs Mailchimp for Creators: The Definitive 2026 Comparison",
+    category: "Cross-Platform Comparison",
+  },
 };
 
 export function generateStaticParams() {
