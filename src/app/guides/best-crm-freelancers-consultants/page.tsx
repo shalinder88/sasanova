@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RelatedLinks from "@/components/RelatedLinks";
+import ReviewerByline from "@/components/ReviewerByline";
 
 export const metadata: Metadata = {
   title: "Best CRM for Freelancers and Consultants (You Don't Need Salesforce)",
@@ -45,7 +46,13 @@ export default function BestCrmFreelancersConsultants() {
           </p>
         </header>
 
-        <div className="prose prose-invert max-w-none">
+        <ReviewerByline
+          reviewDate="March 2026"
+          testingNotes="Tested free tiers and onboarding flows"
+          sourceCount={3}
+        />
+
+        <div className="prose prose-invert max-w-none mt-8">
           <h2 className="text-xl font-bold mt-10 mb-4">Why Most CRMs Are Overkill for Freelancers</h2>
           <p className="text-muted mb-4">
             Enterprise CRMs are built for organizations with sales managers, quotas, territory assignments, and dedicated ops teams. They solve problems you don&apos;t have.

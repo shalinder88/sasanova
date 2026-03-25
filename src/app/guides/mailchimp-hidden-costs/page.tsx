@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RelatedLinks from "@/components/RelatedLinks";
+import ReviewerByline from "@/components/ReviewerByline";
 
 export const metadata: Metadata = {
   title: "The Real Cost of Mailchimp: What the Pricing Page Doesn't Show",
@@ -49,6 +50,14 @@ export default function MailchimpHiddenCostsPage() {
             <span>Updated March 2026</span>
           </div>
         </div>
+      </div>
+
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+        <ReviewerByline
+          reviewDate="March 2026"
+          testingNotes="Verified pricing from vendor pages"
+          sourceCount={3}
+        />
       </div>
 
       <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

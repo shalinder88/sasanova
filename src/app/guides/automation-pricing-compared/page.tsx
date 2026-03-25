@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RelatedLinks from "@/components/RelatedLinks";
+import ReviewerByline from "@/components/ReviewerByline";
 
 export const metadata: Metadata = {
   title: "Zapier vs Make vs n8n Pricing: The Honest Math Nobody Shows You",
@@ -51,6 +52,14 @@ export default function AutomationPricingComparedPage() {
             <span>Updated March 2026</span>
           </div>
         </div>
+      </div>
+
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+        <ReviewerByline
+          reviewDate="March 2026"
+          testingNotes="Compared pricing tiers across all three platforms"
+          sourceCount={3}
+        />
       </div>
 
       {/* Content */}

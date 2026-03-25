@@ -39,11 +39,7 @@ function CtaButton({ tool }: { tool: StickyTool }) {
       rel="noopener noreferrer sponsored"
       className="group flex items-center gap-1.5 rounded-full bg-surface/90 backdrop-blur border border-border px-3 py-1.5 text-xs text-muted transition-all duration-200 hover:border-accent hover:text-foreground hover:scale-105 shadow-sm"
     >
-      <span className="text-[8px] uppercase tracking-wider text-muted/40 font-medium">
-        Ad
-      </span>
-      <span className="h-3 w-px bg-border" aria-hidden="true" />
-      <span>Visit {tool.name}</span>
+      <span>Try {tool.name}</span>
       <ExternalLinkIcon />
     </a>
   );

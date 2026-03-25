@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RelatedLinks from "@/components/RelatedLinks";
+import ReviewerByline from "@/components/ReviewerByline";
 
 export const metadata: Metadata = {
   title: "CRM for Sales Teams of 5-25: HubSpot vs Pipedrive vs Close",
@@ -45,7 +46,13 @@ export default function BestCrmSalesTeams() {
           </p>
         </header>
 
-        <div className="prose prose-invert max-w-none">
+        <ReviewerByline
+          reviewDate="March 2026"
+          testingNotes="Tested free and paid tiers"
+          sourceCount={3}
+        />
+
+        <div className="prose prose-invert max-w-none mt-8">
           <h2 className="text-xl font-bold mt-10 mb-4">Per-Seat Cost Modeling (The Real Numbers)</h2>
           <p className="text-muted mb-4">
             CRM pricing pages are designed to confuse. Here&apos;s what you actually pay at team sizes of 5, 10, 15, and 25 &mdash; on the tier most mid-size sales teams need.

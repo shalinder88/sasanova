@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RelatedLinks from "@/components/RelatedLinks";
+import ReviewerByline from "@/components/ReviewerByline";
 
 export const metadata: Metadata = {
   title: "HubSpot Pricing: What It Actually Costs (Not What the Website Says)",
@@ -45,7 +46,13 @@ export default function HubspotPricingReality() {
           </p>
         </header>
 
-        <div className="prose prose-invert max-w-none">
+        <ReviewerByline
+          reviewDate="March 2026"
+          testingNotes="Verified pricing from vendor pages"
+          sourceCount={3}
+        />
+
+        <div className="prose prose-invert max-w-none mt-8">
           <h2 className="text-xl font-bold mt-10 mb-4">Free Tier Limitations That Actually Matter</h2>
           <p className="text-muted mb-4">
             HubSpot&apos;s free CRM is real. Unlimited contacts, a deal pipeline, email tracking, meeting scheduling, and live chat at $0. That part is genuine. The limitations are strategically placed to create upgrade pressure:

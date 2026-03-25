@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RelatedLinks from "@/components/RelatedLinks";
+import ReviewerByline from "@/components/ReviewerByline";
 
 export const metadata: Metadata = {
   title: "The Best Email Platform for Creators in 2026 (Not What You Think)",
@@ -45,7 +46,13 @@ export default function BestEmailToolCreators() {
           </p>
         </header>
 
-        <div className="prose prose-invert max-w-none">
+        <ReviewerByline
+          reviewDate="March 2026"
+          testingNotes="Tested free and paid tiers"
+          sourceCount={4}
+        />
+
+        <div className="prose prose-invert max-w-none mt-8">
 
           {/* ── The Four Platforms That Matter ── */}
           <h2 className="text-xl font-bold mt-10 mb-4">The Four Platforms That Matter for Creators</h2>
