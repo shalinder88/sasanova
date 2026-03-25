@@ -257,33 +257,25 @@ export default function DisclosurePage() {
           </p>
         </section>
 
-        {/* ── 8. Affiliate Program Partners We Work With ── */}
+        {/* ── 8. Affiliate Program Partners ── */}
         <section>
           <h2 className="text-lg font-bold text-foreground mb-2">
-            8. Affiliate Program Partners We Work With
+            8. Affiliate Programs
           </h2>
           <p>
-            We maintain affiliate relationships with a number of software vendors across the
-            categories we cover. The following is a non-exhaustive list of companies whose affiliate
-            programs we currently participate in:
+            We participate in affiliate programs offered by software vendors. When you click
+            certain links on our site and make a purchase, we may earn a commission. We are
+            currently enrolled in the following programs:
           </p>
           <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-1.5">
-            <span>HubSpot</span>
+            <span>Shopify</span>
             <span>beehiiv</span>
-            <span>Pipedrive</span>
-            <span>Zapier</span>
-            <span>Make</span>
-            <span>Calendly</span>
-            <span>ActiveCampaign</span>
-            <span>Brevo</span>
-            <span>monday.com</span>
-            <span>ClickUp</span>
-            <span>Freshworks</span>
-            <span>Notion</span>
-            <span>Zoho</span>
-            <span>Mailchimp</span>
-            <span>ConvertKit</span>
           </div>
+          <p className="mt-3 text-sm text-muted">
+            We are in the process of applying to additional affiliate programs. This list will be
+            updated as new partnerships are approved. Tools not linked to an affiliate program
+            are included purely for editorial completeness.
+          </p>
           <p className="mt-3">
             This list changes over time as we establish new partnerships and as existing programs
             are modified or discontinued. The presence of a vendor on this list does not guarantee

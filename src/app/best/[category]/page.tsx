@@ -37,7 +37,7 @@ export async function generateMetadata({
     description: `Ranked list of the best ${cat.name.toLowerCase()} software in 2026, scored on value, ease-of-use, and power. Compare pricing, features, and honest ratings.`,
     alternates: { canonical: canonicalUrl(`/best/${category}`) },
     openGraph: {
-      title: `Best ${cat.name} Tools in 2026 | Sasanova`,
+      title: `${bestTitle(cat.name)} | Sasanova`,
       description: `Ranked list of the best ${cat.name.toLowerCase()} software in 2026.`,
       images: [{ url: `/og/best/${category}`, width: 1200, height: 630 }],
     },
@@ -131,7 +131,7 @@ export default async function BestCategoryPage({
           </h1>
           {/* AEO answer-first summary */}
           <p className="text-base text-muted max-w-3xl leading-relaxed">
-            The best {cat.name.toLowerCase()} tool in 2026 is{" "}
+            The top-ranked {cat.name.toLowerCase()} option in 2026 is{" "}
             <strong className="text-foreground">{winner.name}</strong> with an overall score of{" "}
             {winner.overall}/10.
             {runnerUp && (
@@ -146,7 +146,7 @@ export default async function BestCategoryPage({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
         <div className="bg-surface-alt border border-border rounded-lg p-4 mb-8">
           <p className="text-sm text-foreground leading-relaxed">
-            The best {cat.name.toLowerCase()} tool in 2026 is{" "}
+            The top-ranked {cat.name.toLowerCase()} option in 2026 is{" "}
             <strong>{winner.name}</strong> for most users, scoring {winner.overall}/10 overall.{" "}
             {runnerUp
               ? <>{runnerUp.name} is a close runner-up at {runnerUp.overall}/10. </>
