@@ -274,6 +274,18 @@ const guideMeta: Record<string, { title: string; category: string }> = {
     title: "beehiiv vs Kit vs Mailchimp for Creators: The Definitive 2026 Comparison",
     category: "Cross-Platform Comparison",
   },
+  "mailchimp-pricing-history": {
+    title: "Mailchimp Pricing Changes: A Timeline of Every Increase Since 2019",
+    category: "Pricing History",
+  },
+  "zapier-pricing-history": {
+    title: "Zapier Pricing Changes: Why Your Bill Keeps Going Up",
+    category: "Pricing History",
+  },
+  "hubspot-pricing-history": {
+    title: "HubSpot Pricing Evolution: From Startup-Friendly to Enterprise-Priced",
+    category: "Pricing History",
+  },
 };
 
 export function generateStaticParams() {

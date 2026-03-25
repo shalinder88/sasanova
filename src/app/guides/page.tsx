@@ -549,6 +549,30 @@ const guides = [
     readingTime: "18 min read",
     category: "Cross-Platform Comparison",
   },
+  {
+    slug: "mailchimp-pricing-history",
+    title: "Mailchimp Pricing Changes: A Timeline of Every Increase Since 2019",
+    description:
+      "Every documented Mailchimp pricing change from 2019 to 2026. Free plan reductions (2,000 contacts to 250), Intuit acquisition effects, and what the trajectory means for your bill.",
+    readingTime: "16 min read",
+    category: "Pricing History",
+  },
+  {
+    slug: "zapier-pricing-history",
+    title: "Zapier Pricing Changes: Why Your Bill Keeps Going Up",
+    description:
+      "A documented timeline of Zapier pricing changes: free tier reductions, premium app tiers, task-counting changes, and why automation bills grow faster than expected.",
+    readingTime: "15 min read",
+    category: "Pricing History",
+  },
+  {
+    slug: "hubspot-pricing-history",
+    title: "HubSpot Pricing Evolution: From Startup-Friendly to Enterprise-Priced",
+    description:
+      "How HubSpot went from generous free CRM to $890/month Professional tier. Seat-based pricing, the Starter-Professional gap, and what the trajectory suggests for future pricing.",
+    readingTime: "16 min read",
+    category: "Pricing History",
+  },
 ];
 
 export default function GuidesHub() {
