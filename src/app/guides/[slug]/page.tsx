@@ -324,15 +324,15 @@ const guideMeta: Record<string, { title: string; category: string }> = {
   },
   "email-marketing-annual-cost-2026": {
     title: "Email Marketing Costs in 2026: What You'll Actually Pay",
-    category: "Annual Cost Analysis",
+    category: "Annual Cost Comparison",
   },
   "crm-annual-cost-2026": {
     title: "CRM Costs in 2026: Per-Seat Math That Changes Everything",
-    category: "Annual Cost Analysis",
+    category: "Annual Cost Comparison",
   },
   "automation-annual-cost-2026": {
     title: "Automation Tool Costs in 2026: Task Counting Changes Everything",
-    category: "Annual Cost Analysis",
+    category: "Annual Cost Comparison",
   },
 };
 

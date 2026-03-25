@@ -644,23 +644,26 @@ const guides = [
   {
     slug: "email-marketing-annual-cost-2026",
     title: "Email Marketing Costs in 2026: What You'll Actually Pay",
-    description: "Annual cost comparison of Mailchimp vs Kit vs beehiiv vs ActiveCampaign vs Brevo at every subscriber tier from 1K to 100K.",
-    readingTime: "12 min read",
-    category: "Annual Cost Analysis",
+    description:
+      "Annual cost comparison of Mailchimp, Kit, beehiiv, ActiveCampaign, and Brevo at every subscriber tier from 1K to 100K. Real plan names, hidden fees, and best-value verdicts.",
+    readingTime: "16 min read",
+    category: "Annual Cost Comparison",
   },
   {
     slug: "crm-annual-cost-2026",
     title: "CRM Costs in 2026: Per-Seat Math That Changes Everything",
-    description: "Annual cost of HubSpot vs Pipedrive vs Salesforce vs Zoho vs Close at 3 to 50 seats including hidden add-ons.",
-    readingTime: "13 min read",
-    category: "Annual Cost Analysis",
+    description:
+      "Annual cost comparison of HubSpot, Pipedrive, Salesforce, Zoho, Close, and Freshsales at 3 to 50 seats. Real plan names, implementation costs, and total cost of ownership.",
+    readingTime: "18 min read",
+    category: "Annual Cost Comparison",
   },
   {
     slug: "automation-annual-cost-2026",
     title: "Automation Tool Costs in 2026: Task Counting Changes Everything",
-    description: "Annual cost of Zapier vs Make vs n8n vs Pipedream with normalized task counting and self-hosting break-even analysis.",
-    readingTime: "12 min read",
-    category: "Annual Cost Analysis",
+    description:
+      "Annual cost comparison of Zapier, Make, n8n, and Pipedream at 500 to 50K tasks/month. Normalized task counting, self-hosting break-even analysis, and best-value verdicts.",
+    readingTime: "17 min read",
+    category: "Annual Cost Comparison",
   },
 ];
 
