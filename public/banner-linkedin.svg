@@ -1,0 +1,71 @@
+<svg width="1584" height="396" viewBox="0 0 1584 396" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1584" height="396" fill="#0c0c0f"/>
+
+  <!-- Subtle gradient orbs -->
+  <circle cx="200" cy="198" r="300" fill="#818cf8" fill-opacity="0.03"/>
+  <circle cx="1400" cy="198" r="250" fill="#6366f1" fill-opacity="0.04"/>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1584" height="2" fill="url(#banner-grad)"/>
+
+  <!-- Logo icon -->
+  <g transform="translate(120, 138)">
+    <rect width="40" height="40" rx="10" fill="url(#logo-grad2)"/>
+    <path d="M20 7.5L30 20L20 32.5L10 20L20 7.5Z" fill="white" fill-opacity="0.95"/>
+    <path d="M20 7.5L25 20L20 32.5" fill="white" fill-opacity="0.6"/>
+  </g>
+
+  <!-- Brand name -->
+  <text x="180" y="172" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="white" letter-spacing="-0.5">Sasanova</text>
+
+  <!-- Tagline -->
+  <text x="120" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#a1a1aa">Stop overpaying for software.</text>
+
+  <!-- Stats -->
+  <text x="120" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#71717a">148 tools compared</text>
+  <text x="120" y="300" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#71717a">151 head-to-head comparisons</text>
+  <text x="120" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#71717a">Normalized pricing &middot; Switching intelligence &middot; Real cost data</text>
+
+  <!-- Right side: feature highlights -->
+  <g transform="translate(900, 120)">
+    <!-- Card 1 -->
+    <rect x="0" y="0" width="200" height="80" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="16" y="30" font-family="system-ui, sans-serif" font-size="11" fill="#818cf8" font-weight="600">COST CALCULATOR</text>
+    <text x="16" y="52" font-family="system-ui, sans-serif" font-size="13" fill="#e4e4e7">Compare real pricing</text>
+    <text x="16" y="68" font-family="system-ui, sans-serif" font-size="11" fill="#71717a">across every tier</text>
+
+    <!-- Card 2 -->
+    <rect x="220" y="0" width="200" height="80" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="236" y="30" font-family="system-ui, sans-serif" font-size="11" fill="#818cf8" font-weight="600">SWITCHING GUIDES</text>
+    <text x="236" y="52" font-family="system-ui, sans-serif" font-size="13" fill="#e4e4e7">Migration playbooks</text>
+    <text x="236" y="68" font-family="system-ui, sans-serif" font-size="11" fill="#71717a">with real savings math</text>
+
+    <!-- Card 3 -->
+    <rect x="0" y="100" width="200" height="80" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="16" y="130" font-family="system-ui, sans-serif" font-size="11" fill="#818cf8" font-weight="600">HIDDEN COSTS</text>
+    <text x="16" y="152" font-family="system-ui, sans-serif" font-size="13" fill="#e4e4e7">What pricing pages</text>
+    <text x="16" y="168" font-family="system-ui, sans-serif" font-size="11" fill="#71717a">don't tell you</text>
+
+    <!-- Card 4 -->
+    <rect x="220" y="100" width="200" height="80" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="236" y="130" font-family="system-ui, sans-serif" font-size="11" fill="#818cf8" font-weight="600">STACK BUILDER</text>
+    <text x="236" y="152" font-family="system-ui, sans-serif" font-size="13" fill="#e4e4e7">Best tools under</text>
+    <text x="236" y="168" font-family="system-ui, sans-serif" font-size="11" fill="#71717a">your budget</text>
+  </g>
+
+  <!-- URL -->
+  <text x="120" y="370" font-family="system-ui, sans-serif" font-size="14" fill="#818cf8" font-weight="500">sasanova.com</text>
+
+  <defs>
+    <linearGradient id="banner-grad" x1="0" y1="0" x2="1584" y2="0">
+      <stop stop-color="#818cf8"/>
+      <stop offset="0.5" stop-color="#6366f1"/>
+      <stop offset="1" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="logo-grad2" x1="0" y1="0" x2="40" y2="40">
+      <stop stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+</svg>
