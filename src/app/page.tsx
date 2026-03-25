@@ -62,10 +62,13 @@ export default function Home() {
               Compare pricing, calculate switching costs, and find the right stack for your budget.
             </p>
 
-            {/* 3 action CTAs */}
+            {/* 4 action CTAs */}
             <div className="flex flex-wrap justify-center gap-3 mb-12">
               <Link href="/compare" className="px-7 py-3 text-sm font-semibold bg-accent text-white rounded-lg hover:brightness-110 transition-all">
                 Compare Two Tools
+              </Link>
+              <Link href="/calculate" className="px-7 py-3 text-sm font-semibold bg-accent/10 border border-accent text-accent rounded-lg hover:bg-accent/20 transition-all">
+                Calculate Costs
               </Link>
               <Link href="#stacks" className="px-7 py-3 text-sm font-semibold border border-border text-foreground rounded-lg hover:bg-surface transition-colors">
                 Find Your Stack
