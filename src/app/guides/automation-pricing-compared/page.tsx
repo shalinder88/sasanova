@@ -59,6 +59,7 @@ export default function AutomationPricingComparedPage() {
           reviewDate="March 2026"
           testingNotes="Compared pricing tiers across all three platforms"
           sourceCount={3}
+          reviewer="kaur"
         />
       </div>
 

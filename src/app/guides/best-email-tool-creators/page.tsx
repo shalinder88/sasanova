@@ -50,6 +50,7 @@ export default function BestEmailToolCreators() {
           reviewDate="March 2026"
           testingNotes="Tested free and paid tiers"
           sourceCount={4}
+          reviewer="team"
         />
 
         <div className="prose prose-invert max-w-none mt-8">

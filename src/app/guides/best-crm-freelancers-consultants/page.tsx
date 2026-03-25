@@ -50,6 +50,7 @@ export default function BestCrmFreelancersConsultants() {
           reviewDate="March 2026"
           testingNotes="Tested free tiers and onboarding flows"
           sourceCount={3}
+          reviewer="team"
         />
 
         <div className="prose prose-invert max-w-none mt-8">

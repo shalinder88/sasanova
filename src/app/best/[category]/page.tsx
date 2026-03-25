@@ -8,7 +8,6 @@ import {
   getOverallScore,
 } from "@/data/tools";
 import ScoreBar from "@/components/ScoreBar";
-import ReviewerByline from "@/components/ReviewerByline";
 import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 import { generateCategoryThesis } from "@/lib/category-thesis";
 
@@ -181,14 +180,6 @@ export default async function BestCategoryPage({
           </div>
         );
       })()}
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ReviewerByline
-          reviewDate="March 2026"
-          testingNotes="Tested free and paid tiers"
-          sourceCount={3}
-        />
-      </div>
 
       {/* Ranked list */}
       <section className="py-10">

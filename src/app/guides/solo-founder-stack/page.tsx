@@ -338,7 +338,7 @@ export default function SoloFounderStackHub() {
           reviewDate="March 2026"
           testingNotes="Free and paid tiers across all tools"
           sourceCount={22}
-          reviewer="both"
+          reviewer="team"
         />
 
         <div className="prose prose-invert max-w-none mt-10">

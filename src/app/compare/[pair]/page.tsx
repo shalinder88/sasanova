@@ -13,7 +13,6 @@ import {
 import ScoreBar from "@/components/ScoreBar";
 import FeatureMatrix from "@/components/FeatureMatrix";
 import StickyComparisonCTAs from "@/components/StickyComparisonCTAs";
-import ReviewerByline from "@/components/ReviewerByline";
 import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 
 /* ── Static generation ── */
@@ -206,12 +205,6 @@ export default async function ComparisonPage({ params }: PageProps) {
           </div>
         </div>
       </section>
-
-      <ReviewerByline
-        reviewDate="March 2026"
-        testingNotes="Free and paid tiers"
-        sourceCount={3}
-      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
         {/* ── Verdict Decision Block (FIRST after hero) ── */}

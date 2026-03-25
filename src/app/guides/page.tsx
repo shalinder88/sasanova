@@ -9,6 +9,30 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    slug: "creator-toolkit",
+    title: "The Creator's Complete Software Toolkit: Every Tool You Need in 2026",
+    description:
+      "Newsletter, design, scheduling, automation, analytics, and monetization — the full creator stack at $0, $100, and $300/month with links to every comparison and guide.",
+    readingTime: "22 min read",
+    category: "Scenario Hub",
+  },
+  {
+    slug: "solo-founder-stack",
+    title: "The Solo Founder's Operating System: Software Stack for Under $200/Month",
+    description:
+      "CRM, email, automation, PM, support, and analytics for solo founders. Complete stack at $0, $100, and $200/month with upgrade triggers and migration paths.",
+    readingTime: "20 min read",
+    category: "Scenario Hub",
+  },
+  {
+    slug: "agency-operations-stack",
+    title: "Agency Operations Stack: Managing 10+ Clients Without Burning Out",
+    description:
+      "CRM, email, automation, PM, communication, and proposals for agencies. Per-client cost modeling at 10, 20, and 50 clients.",
+    readingTime: "24 min read",
+    category: "Scenario Hub",
+  },
+  {
     slug: "newsletter-stack",
     title: "The Newsletter Stack for a One-Person Creator Under $150/Month",
     description:

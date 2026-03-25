@@ -2,6 +2,18 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 const guideMeta: Record<string, { title: string; category: string }> = {
+  "creator-toolkit": {
+    title: "The Creator's Complete Software Toolkit: Every Tool You Need in 2026",
+    category: "Scenario Hub",
+  },
+  "solo-founder-stack": {
+    title: "The Solo Founder's Operating System: Software Stack for Under $200/Month",
+    category: "Scenario Hub",
+  },
+  "agency-operations-stack": {
+    title: "Agency Operations Stack: Managing 10+ Clients Without Burning Out",
+    category: "Scenario Hub",
+  },
   "newsletter-stack": {
     title: "The Newsletter Stack for a One-Person Creator Under $150/Month",
     category: "Stack Building",

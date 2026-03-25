@@ -50,6 +50,7 @@ export default function BestCrmSalesTeams() {
           reviewDate="March 2026"
           testingNotes="Tested free and paid tiers"
           sourceCount={3}
+          reviewer="team"
         />
 
         <div className="prose prose-invert max-w-none mt-8">

@@ -4,7 +4,7 @@ interface ReviewerBylineProps {
   reviewDate: string;
   testingNotes?: string;
   sourceCount?: number;
-  reviewer?: "singh" | "kaur" | "both";
+  reviewer?: "singh" | "kaur" | "team" | "both";
 }
 
 const reviewers = {
@@ -18,6 +18,11 @@ const reviewers = {
     role: "Co-Founder & Developer",
     bio: "Builds Sasanova's comparison engine, verifies data integrity, and develops the scoring methodology.",
   },
+  team: {
+    name: "Sasanova Team",
+    role: "Editorial",
+    bio: "Independent software comparison team. All data verified from first-party vendor sources.",
+  },
 };
 
 export default function ReviewerByline({
@@ -28,7 +33,7 @@ export default function ReviewerByline({
 }: ReviewerBylineProps) {
   const people = reviewer === "both"
     ? [reviewers.singh, reviewers.kaur]
-    : [reviewers[reviewer]];
+    : [reviewers[reviewer as keyof typeof reviewers]];
 
   return (
     <div className="py-3 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
