@@ -1591,4 +1591,127 @@ export const guides: Guide[] = [
     readingTime: "22 min read",
     category: "Detailed Comparison",
   },
+  // ── Best For Use Case Pages ──
+  {
+    slug: "best-tools-for-remote-onboarding",
+    title: "Remote Employee Onboarding Stack: HR + Docs + Communication",
+    description:
+      "Build a remote onboarding system with BambooHR or Gusto for HR, Notion for docs/wiki, Slack or Discord for chat, and Loom for async video. Exact pricing from verified sources.",
+    readingTime: "14 min read",
+    category: "Use Case Stack",
+  },
+  {
+    slug: "best-tools-for-client-portals",
+    title: "Building Client Portals Without Custom Development",
+    description:
+      "Use Notion as a client portal, ClickUp for shared projects, and HubSpot for client CRM views. Exact pricing and setup strategies for agencies and service businesses.",
+    readingTime: "13 min read",
+    category: "Use Case Stack",
+  },
+  {
+    slug: "best-tools-for-content-marketing",
+    title: "Content Marketing Stack Under $150/Month",
+    description:
+      "Build a complete content marketing stack with Semrush or Mangools for SEO, Grammarly for editing, Notion for planning, Buffer for distribution, and beehiiv for newsletter. Exact pricing.",
+    readingTime: "15 min read",
+    category: "Use Case Stack",
+  },
+  {
+    slug: "best-tools-for-customer-feedback",
+    title: "Customer Feedback Stack: Forms + Analytics + Action",
+    description:
+      "Collect customer feedback with Typeform or Tally for surveys, PostHog or Hotjar for behavior analytics, and Intercom or Crisp for in-app messaging. Exact verified pricing.",
+    readingTime: "14 min read",
+    category: "Use Case Stack",
+  },
+  {
+    slug: "best-tools-for-sales-outreach",
+    title: "Cold Outreach Stack: Prospecting + Email + CRM",
+    description:
+      "Build a sales outreach stack with Apollo.io for prospecting, Lemlist or Instantly for sequences, and Pipedrive or Close for pipeline management. Exact verified pricing.",
+    readingTime: "15 min read",
+    category: "Use Case Stack",
+  },
+  // ── Industry Pricing Report Pages ──
+  {
+    slug: "project-management-pricing-compared-2026",
+    title: "Project Management Pricing Compared: Every Tool at 5/10/25/50 Users (2026)",
+    description:
+      "Side-by-side pricing for Notion, ClickUp, Asana, Monday.com, Basecamp, Trello, Jira, and Linear at 5, 10, 25, and 50 users. Exact plan names and annual totals.",
+    readingTime: "16 min read",
+    category: "Pricing Report",
+  },
+  {
+    slug: "help-desk-pricing-compared-2026",
+    title: "Help Desk Pricing Compared: Every Tool at 3/5/10 Agents (2026)",
+    description:
+      "Side-by-side pricing for Zendesk, Intercom, Freshdesk, Help Scout, and Crisp at 3, 5, and 10 agents. Exact plan names, per-agent costs, and hidden fees.",
+    readingTime: "14 min read",
+    category: "Pricing Report",
+  },
+  {
+    slug: "design-tool-pricing-compared-2026",
+    title: "Design Tool Pricing Compared: Every Tool Per Editor (2026)",
+    description:
+      "Side-by-side pricing for Figma, Canva, Framer, Webflow, and Miro per editor/seat. Free tiers, annual costs, and which plan you actually need.",
+    readingTime: "12 min read",
+    category: "Pricing Report",
+  },
+  {
+    slug: "scheduling-tool-pricing-compared-2026",
+    title: "Scheduling Tool Pricing Compared: Calendly, Cal.com, SavvyCal, TidyCal (2026)",
+    description:
+      "Side-by-side pricing for all scheduling tools at 1, 5, and 10 users. Free tiers, annual costs, and the $29 lifetime deal that beats everything.",
+    readingTime: "11 min read",
+    category: "Pricing Report",
+  },
+  {
+    slug: "analytics-tool-pricing-compared-2026",
+    title: "Analytics Tool Pricing Compared by Event Volume (2026)",
+    description:
+      "Side-by-side pricing for PostHog, Mixpanel, Amplitude, Hotjar, and Plausible by event volume. Free tiers, usage-based costs, and break-even points.",
+    readingTime: "13 min read",
+    category: "Pricing Report",
+  },
+  // ── Decision Quick-Guide Pages ──
+  {
+    slug: "crm-decision-in-5-minutes",
+    title: "Choose Your CRM in 5 Minutes",
+    description:
+      "Answer 5 questions and get a specific CRM recommendation. HubSpot, Pipedrive, Close, Freshsales, or Folk — with exact pricing for each path.",
+    readingTime: "5 min read",
+    category: "Decision Quick-Guide",
+  },
+  {
+    slug: "email-decision-in-5-minutes",
+    title: "Choose Your Email Platform in 5 Minutes",
+    description:
+      "Answer 5 questions and get a specific email marketing recommendation. Mailchimp, Kit, beehiiv, ActiveCampaign, or Brevo — with exact pricing for each path.",
+    readingTime: "5 min read",
+    category: "Decision Quick-Guide",
+  },
+  {
+    slug: "automation-decision-in-5-minutes",
+    title: "Choose Your Automation Tool in 5 Minutes",
+    description:
+      "Answer 5 questions to decide between Zapier, Make, and n8n. Exact pricing, volume breakpoints, and the technical comfort assessment.",
+    readingTime: "5 min read",
+    category: "Decision Quick-Guide",
+  },
+  {
+    slug: "pm-decision-in-5-minutes",
+    title: "Choose Your Project Management Tool in 5 Minutes",
+    description:
+      "Answer 5 questions to pick the right PM tool. Notion, ClickUp, Asana, Monday, Trello, Jira, or Linear — with exact pricing for each path.",
+    readingTime: "5 min read",
+    category: "Decision Quick-Guide",
+  },
+  {
+    slug: "website-builder-decision-in-5-minutes",
+    title: "Choose Your Website Builder in 5 Minutes",
+    description:
+      "Answer 5 questions to pick the right website builder. Squarespace, Wix, Webflow, Framer, Carrd, or WordPress — with exact pricing for each path.",
+    readingTime: "5 min read",
+    category: "Decision Quick-Guide",
+  },
 ];
