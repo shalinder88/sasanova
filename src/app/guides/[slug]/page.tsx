@@ -286,6 +286,26 @@ const guideMeta: Record<string, { title: string; category: string }> = {
     title: "HubSpot Pricing Evolution: From Startup-Friendly to Enterprise-Priced",
     category: "Pricing History",
   },
+  "who-should-not-use-hubspot": {
+    title: "Who Should NOT Use HubSpot (And What to Use Instead)",
+    category: "Anti-Recommendation",
+  },
+  "who-should-not-use-mailchimp": {
+    title: "Who Should NOT Use Mailchimp in 2026",
+    category: "Anti-Recommendation",
+  },
+  "who-should-not-use-zapier": {
+    title: "Who Should NOT Use Zapier (Even Though Everyone Does)",
+    category: "Anti-Recommendation",
+  },
+  "who-should-not-use-notion": {
+    title: "Who Should NOT Use Notion (Despite What Twitter Says)",
+    category: "Anti-Recommendation",
+  },
+  "who-should-not-use-salesforce": {
+    title: "Who Should NOT Use Salesforce (Save Yourself $50K/Year)",
+    category: "Anti-Recommendation",
+  },
 };
 
 export function generateStaticParams() {

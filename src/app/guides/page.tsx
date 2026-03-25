@@ -573,6 +573,46 @@ const guides = [
     readingTime: "16 min read",
     category: "Pricing History",
   },
+  {
+    slug: "who-should-not-use-hubspot",
+    title: "Who Should NOT Use HubSpot (And What to Use Instead)",
+    description:
+      "HubSpot is great — for the right team. Here are 5 situations where HubSpot is the wrong choice, with specific alternatives and real pricing for each case.",
+    readingTime: "12 min read",
+    category: "Anti-Recommendation",
+  },
+  {
+    slug: "who-should-not-use-mailchimp",
+    title: "Who Should NOT Use Mailchimp in 2026",
+    description:
+      "Mailchimp's free tier shrank, pricing climbed, and better alternatives exist for every use case. Here are 4 situations where Mailchimp is the wrong choice.",
+    readingTime: "11 min read",
+    category: "Anti-Recommendation",
+  },
+  {
+    slug: "who-should-not-use-zapier",
+    title: "Who Should NOT Use Zapier (Even Though Everyone Does)",
+    description:
+      "Zapier is the default automation tool — but it's also the most expensive at scale. Here are 4 situations where Zapier is the wrong choice, with real pricing math.",
+    readingTime: "11 min read",
+    category: "Anti-Recommendation",
+  },
+  {
+    slug: "who-should-not-use-notion",
+    title: "Who Should NOT Use Notion (Despite What Twitter Says)",
+    description:
+      "Notion is everywhere — but it's genuinely wrong for 4 common use cases. Here's who should skip Notion, with specific alternatives and real pricing.",
+    readingTime: "12 min read",
+    category: "Anti-Recommendation",
+  },
+  {
+    slug: "who-should-not-use-salesforce",
+    title: "Who Should NOT Use Salesforce (Save Yourself $50K/Year)",
+    description:
+      "Salesforce is the most powerful CRM on the market — and the easiest to waste money on. Here are 5 situations where Salesforce is the wrong choice, with real cost breakdowns.",
+    readingTime: "13 min read",
+    category: "Anti-Recommendation",
+  },
 ];
 
 export default function GuidesHub() {
