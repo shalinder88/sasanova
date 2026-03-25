@@ -79,13 +79,23 @@ function lowestPaidPlan(tool: Tool) {
 
 function comparableAlternative(tool: Tool): {
   alt: Tool;
-  altPlan: ReturnType<typeof highestPaidPlan>;
+  altPlan: ReturnType<typeof lowestPaidPlan>;
 } | null {
+  const toolPlan = lowestPaidPlan(tool);
+  if (!toolPlan) return null;
   for (const slug of tool.alternatives) {
     const alt = getToolBySlug(slug);
     if (!alt) continue;
-    const plan = highestPaidPlan(alt);
-    if (plan) return { alt, altPlan: plan };
+    const plan = lowestPaidPlan(alt);
+    if (!plan) continue;
+    // Skip if billing models are incomparable (per_seat vs flat)
+    const models = [toolPlan.billingModel, plan.billingModel];
+    if (
+      (models.includes("per_seat") && models.includes("flat")) ||
+      (models.includes("per_seat") && models.includes("usage"))
+    )
+      continue;
+    return { alt, altPlan: plan };
   }
   return null;
 }
@@ -100,24 +110,26 @@ function generateLinkedInPosts(): SocialPost[] {
   const posts: SocialPost[] = [];
   let idx = 0;
 
-  // 1) Cost shock posts — tools with high-priced top tiers + cheaper alternatives
+  // 1) Cost shock posts — compare lowest paid (entry-level) tiers for realistic savings
   for (const tool of tools) {
-    const top = highestPaidPlan(tool);
-    if (!top || !top.priceMonthly || top.priceMonthly < 50) continue;
+    const entry = lowestPaidPlan(tool);
+    if (!entry || !entry.priceMonthly || entry.priceMonthly < 10) continue;
     const comp = comparableAlternative(tool);
     if (!comp || !comp.altPlan || !comp.altPlan.priceMonthly) continue;
 
-    const toolAnnual = top.priceMonthly * 12;
-    const altAnnual = comp.altPlan.priceMonthly * 12;
-    const savings = toolAnnual - altAnnual;
+    const toolAnnual = Math.round(entry.priceMonthly * 12);
+    const altAnnual = Math.round(comp.altPlan.priceMonthly * 12);
+    const savings = Math.round(toolAnnual - altAnnual);
     if (savings <= 0) continue;
+    // Sanity check: skip implausibly large savings (likely incomparable products)
+    if (savings > 10000) continue;
 
     posts.push({
       id: `li-cost-${idx++}`,
       platform: "linkedin",
       type: "cost-shock",
       title: `Cost Shock: ${tool.name}`,
-      body: `${tool.name} costs $${fmt(toolAnnual)}/year at the ${top.name} tier.\n\n${comp.alt.name} costs $${fmt(altAnnual)}/year for comparable features. That's $${fmt(savings)}/year in savings.\n\nWe normalized the pricing so you can see the real numbers side by side.\n\n${compareUrl(tool.slug, comp.alt.slug)}`,
+      body: `${tool.name} costs $${fmt(toolAnnual)}/year at the ${entry.name} tier.\n\n${comp.alt.name} costs $${fmt(altAnnual)}/year for comparable features. That's $${fmt(savings)}/year in savings.\n\nWe normalized the pricing so you can see the real numbers side by side.\n\n${compareUrl(tool.slug, comp.alt.slug)}`,
       url: `${compareUrl(tool.slug, comp.alt.slug)}`,
       charCount: 0,
     });
@@ -167,7 +179,7 @@ function generateLinkedInPosts(): SocialPost[] {
       platform: "linkedin",
       type: "hidden-cost",
       title: `Hidden Costs: ${tool.name}`,
-      body: `The real cost of ${tool.name} isn't on the pricing page.\n\nHere's what most people miss:\n${bullets}\n\nWe dug into every line item so you don't have to.\n\n${SITE}/tools/${tool.slug}`,
+      body: `The real cost of ${tool.name} isn't on the pricing page.\n\nHere's what most people miss:\n${bullets}\n\nWe compiled pricing from official vendor pages so you can compare apples to apples.\n\n${SITE}/tools/${tool.slug}`,
       url: `${SITE}/tools/${tool.slug}`,
       charCount: 0,
     });
@@ -183,7 +195,7 @@ function generateLinkedInPosts(): SocialPost[] {
       platform: "linkedin",
       type: "framework",
       title: `How to choose: ${cat.name}`,
-      body: `How to choose ${cat.name.toLowerCase()} without overthinking it.\n\nWe compared ${catTools.length} tools in this category with normalized pricing, real feature checks, and honest scores.\n\nNo affiliate bias. Just data.\n\n${SITE}/best/${cat.slug}`,
+      body: `How to choose ${cat.name.toLowerCase()} without overthinking it.\n\nWe compared ${catTools.length} tools in this category with normalized pricing, real feature checks, and honest scores.\n\nAffiliate links are clearly labeled. Editorial scores are independent of affiliate status.\n\n${SITE}/best/${cat.slug}`,
       url: `${SITE}/best/${cat.slug}`,
       charCount: 0,
     });
@@ -226,8 +238,8 @@ function generateRedditPosts(): SocialPost[] {
       id: `rd-compare-${idx++}`,
       platform: "reddit",
       type: "reddit-comparison",
-      title: `I compared ${toolA.name} vs ${toolB.name} pricing at every tier. Here's what I found.`,
-      body: `I spent time normalizing pricing across ${toolA.name} and ${toolB.name} so you can compare apples to apples.\n\n**Pricing:**\n- ${priceLineA}\n- ${priceLineB}\n\n**Verdict:** ${vs.summary}\n\nI put together a full comparison with normalized annual costs, feature overlap, and switching costs. Affiliate links are clearly labeled. Editorial scores are independent of affiliate status.\n\nFull breakdown: ${SITE}/compare/${vs.slugA}-vs-${vs.slugB}`,
+      title: `We compared ${toolA.name} vs ${toolB.name} pricing at every tier. Here's what we found.`,
+      body: `We normalized pricing across ${toolA.name} and ${toolB.name} so you can compare apples to apples.\n\n**Pricing:**\n- ${priceLineA}\n- ${priceLineB}\n\n**Verdict:** ${vs.summary}\n\nWe put together a full comparison with normalized annual costs, feature overlap, and switching costs. Affiliate links are clearly labeled. Editorial scores are independent of affiliate status.\n\nFull breakdown: ${SITE}/compare/${vs.slugA}-vs-${vs.slugB}`,
       url: `${SITE}/compare/${vs.slugA}-vs-${vs.slugB}`,
       subreddits: subs.slice(0, 3),
       charCount: 0,
@@ -248,7 +260,7 @@ function generateRedditPosts(): SocialPost[] {
       platform: "reddit",
       type: "reddit-hidden-cost",
       title: `Hidden costs of ${tool.name} that nobody talks about`,
-      body: `I've been researching SaaS pricing for a while and ${tool.name} has some costs that aren't obvious from their pricing page:\n\n${bullets}\n\nNone of this is on the main pricing page. I documented this while building a free pricing comparison tool.\n\nMore details: ${SITE}/tools/${tool.slug}`,
+      body: `We've been tracking SaaS pricing from vendor sites and ${tool.name} has some costs that aren't obvious from their pricing page:\n\n${bullets}\n\nNone of this is on the main pricing page. We documented this while building a free pricing comparison tool.\n\nMore details: ${SITE}/tools/${tool.slug}`,
       url: `${SITE}/tools/${tool.slug}`,
       subreddits: ["r/SaaS", "r/startups", "r/Entrepreneur"],
       charCount: 0,
@@ -279,7 +291,7 @@ function generateRedditPosts(): SocialPost[] {
       platform: "reddit",
       type: "reddit-budget",
       title: `Best ${cat.name.toLowerCase()} under $30/month for solo founders`,
-      body: `I'm building a free SaaS pricing comparison site and here are the best affordable ${cat.name.toLowerCase()} I found:\n\n${toolList}\n\nAll pricing verified against vendor sites. Full comparison with scores: ${SITE}/best/${cat.slug}`,
+      body: `We're building a free SaaS pricing comparison site and here are the best affordable ${cat.name.toLowerCase()} we found:\n\n${toolList}\n\nAll pricing verified against vendor sites. Full comparison with scores: ${SITE}/best/${cat.slug}`,
       url: `${SITE}/best/${cat.slug}`,
       subreddits: ["r/SaaS", "r/smallbusiness", "r/SideProject"],
       charCount: 0,
@@ -305,7 +317,7 @@ function generateIndieHackersPosts(): SocialPost[] {
     platform: "indiehackers",
     type: "ih-data",
     title: "We normalized pricing across SaaS tools",
-    body: `I normalized pricing across ${totalTools} SaaS tools so founders can compare real costs.\n\nMost SaaS pricing pages are designed to confuse. Different billing models, hidden fees, usage caps buried in footnotes.\n\nSo I built Sasanova: a free comparison site that normalizes everything to monthly and annual costs, scores each tool on value/ease/power, and flags hidden costs.\n\n${totalCategories} categories. ${totalVersus} head-to-head comparisons. Every price verified against vendor sites.\n\nNo paywall. No gated content.\n\n${SITE}`,
+    body: `We normalized pricing across ${totalTools} SaaS tools so founders can compare real costs.\n\nMost SaaS pricing pages are designed to confuse. Different billing models, hidden fees, usage caps buried in footnotes.\n\nSo we built Sasanova: a free comparison site that normalizes everything to monthly and annual costs, scores each tool on value/ease/power, and flags hidden costs.\n\n${totalCategories} categories. ${totalVersus} head-to-head comparisons. Every price verified against vendor sites.\n\nNo paywall. No gated content.\n\n${SITE}`,
     url: SITE,
     charCount: 0,
   });
@@ -315,7 +327,7 @@ function generateIndieHackersPosts(): SocialPost[] {
     platform: "indiehackers",
     type: "ih-calculator",
     title: "Free SaaS pricing calculator",
-    body: `We built a free SaaS pricing comparison tool. Compare real costs across ${totalTools} tools in ${totalCategories} categories.\n\nEvery price is independently verified. We flag hidden costs that vendors bury in their terms. No affiliate bias in the data itself.\n\nIf you're evaluating software for your startup, this might save you a few hours of tab-juggling.\n\n${SITE}/pricing`,
+    body: `We built a free SaaS pricing comparison tool. Compare real costs across ${totalTools} tools in ${totalCategories} categories.\n\nEvery price is independently verified. We flag hidden costs that vendors bury in their terms. Affiliate links are clearly labeled. Editorial scores are independent of affiliate status.\n\nIf you're evaluating software for your startup, this might save you a few hours of tab-juggling.\n\n${SITE}/pricing`,
     url: `${SITE}/pricing`,
     charCount: 0,
   });
@@ -325,7 +337,7 @@ function generateIndieHackersPosts(): SocialPost[] {
     platform: "indiehackers",
     type: "ih-traps",
     title: "Pricing traps that cost founders thousands",
-    body: `After researching ${totalTools} SaaS tools, here are the pricing traps I keep seeing:\n\n1. Per-seat pricing that doubles cost when you hire\n2. Usage caps that force upgrades at the worst time\n3. Annual lock-in with no monthly option\n4. Feature gating that puts basics behind enterprise tiers\n5. Add-on fees not shown on the pricing page\n6. Price increases buried in renewal terms\n7. "Contact sales" as the only option above mid-tier\n\nI documented every hidden cost I found while building a free comparison tool.\n\n${SITE}/guides/mailchimp-hidden-costs`,
+    body: `After researching ${totalTools} SaaS tools, here are the pricing traps we keep seeing:\n\n1. Per-seat pricing that doubles cost when you hire\n2. Usage caps that force upgrades at the worst time\n3. Annual lock-in with no monthly option\n4. Feature gating that puts basics behind enterprise tiers\n5. Add-on fees not shown on the pricing page\n6. Price increases buried in renewal terms\n7. "Contact sales" as the only option above mid-tier\n\nWe documented every hidden cost we found while building a free comparison tool.\n\n${SITE}/guides/mailchimp-hidden-costs`,
     url: `${SITE}/guides/mailchimp-hidden-costs`,
     charCount: 0,
   });
@@ -343,7 +355,7 @@ function generateIndieHackersPosts(): SocialPost[] {
       platform: "indiehackers",
       type: "ih-category",
       title: `${cat.name} landscape for indie hackers`,
-      body: `I mapped out the ${cat.name.toLowerCase()} landscape for indie hackers and small teams.\n\n${catTools.length} tools compared. ${freeCount} have free tiers. Every price verified.\n\nInstead of reading 20 pricing pages, you can see them all normalized in one view.\n\n${SITE}/best/${cat.slug}`,
+      body: `We mapped out the ${cat.name.toLowerCase()} landscape for indie hackers and small teams.\n\n${catTools.length} tools compared. ${freeCount} have free tiers. Every price verified.\n\nInstead of reading 20 pricing pages, you can see them all normalized in one view.\n\n${SITE}/best/${cat.slug}`,
       url: `${SITE}/best/${cat.slug}`,
       charCount: 0,
     });
