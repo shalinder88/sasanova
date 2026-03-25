@@ -616,6 +616,86 @@ export const guides: Guide[] = [
     category: "Migration Guide",
   },
   {
+    slug: "switch-from-asana-to-clickup",
+    title: "Asana to ClickUp: Why Teams Leave and What to Expect",
+    description:
+      "Why teams switch from Asana to ClickUp, what you gain (free plan, feature density), what you lose (simplicity, clean UX), cost comparison at 5/15/25 users, and migration steps.",
+    readingTime: "14 min read",
+    category: "Migration Guide",
+  },
+  {
+    slug: "switch-from-trello-to-notion",
+    title: "Trello to Notion: When Boards Aren't Enough",
+    description:
+      "Why teams outgrow Trello, what Notion adds (docs, wikis, databases), what you lose (simplicity, Power-Ups), cost comparison, and migration steps.",
+    readingTime: "14 min read",
+    category: "Migration Guide",
+  },
+  {
+    slug: "switch-from-zoho-to-pipedrive",
+    title: "Zoho CRM to Pipedrive: When Simplicity Beats Features",
+    description:
+      "Why teams leave Zoho CRM for Pipedrive, what you gain (focused pipeline UX), what you lose (50+ app ecosystem), cost comparison, and data migration steps.",
+    readingTime: "13 min read",
+    category: "Migration Guide",
+  },
+  {
+    slug: "switch-from-freshdesk-to-intercom",
+    title: "Freshdesk to Intercom: When Ticket-Based Support Isn't Enough",
+    description:
+      "Why teams switch from Freshdesk to Intercom, the price jump ($15/agent to $39/seat), when messenger-first support is worth it, and what you lose in the move.",
+    readingTime: "13 min read",
+    category: "Migration Guide",
+  },
+  {
+    slug: "switch-from-mailchimp-to-brevo",
+    title: "Mailchimp to Brevo: The Pay-Per-Send Alternative",
+    description:
+      "Why Brevo's email-based pricing beats Mailchimp's contact-based model, what you gain (unlimited contacts), what you lose (templates, social posting), and cost comparison at 5K/10K/25K contacts.",
+    readingTime: "13 min read",
+    category: "Migration Guide",
+  },
+  {
+    slug: "switch-from-squarespace-to-webflow",
+    title: "Squarespace to Webflow: When Templates Aren't Enough",
+    description:
+      "Why designers outgrow Squarespace, what Webflow offers (full CSS control, CMS, interactions), the learning curve reality, and cost comparison.",
+    readingTime: "14 min read",
+    category: "Migration Guide",
+  },
+  {
+    slug: "switch-from-hootsuite-to-buffer",
+    title: "Hootsuite to Buffer: When Enterprise Pricing Doesn't Match Your Needs",
+    description:
+      "Why teams leave Hootsuite ($149/mo) for Buffer ($6/channel), what you gain (simplicity, affordability), what you lose (analytics depth, social listening), and cost comparison.",
+    readingTime: "12 min read",
+    category: "Migration Guide",
+  },
+  {
+    slug: "switch-from-jira-to-linear",
+    title: "Jira to Linear: When Jira Becomes Too Heavy",
+    description:
+      "Why engineering teams switch from Jira to Linear, what engineers love about Linear (speed, keyboard-first UX), what PMs miss from Jira (custom workflows, roadmaps), and cost comparison.",
+    readingTime: "14 min read",
+    category: "Migration Guide",
+  },
+  {
+    slug: "switch-from-monday-to-asana",
+    title: "Monday.com to Asana: When Structure Matters More Than Flash",
+    description:
+      "Why teams leave Monday.com for Asana, what Asana does better (structured workflows, clean UX), what you lose (colorful boards, flexibility), and cost comparison at 5/15/25 users.",
+    readingTime: "13 min read",
+    category: "Migration Guide",
+  },
+  {
+    slug: "switch-from-grammarly-to-chatgpt",
+    title: "Grammarly to ChatGPT: When AI Writing Replaces Grammar Checking",
+    description:
+      "Why ChatGPT Plus at $20/mo can replace Grammarly Pro at $30/mo for many users, what Grammarly still does better (real-time, browser integration), and who should make the switch.",
+    readingTime: "12 min read",
+    category: "Migration Guide",
+  },
+  {
     slug: "hubspot-crm-setup-guide",
     title: "HubSpot CRM Setup in 30 Minutes: The No-Nonsense Guide",
     description:
@@ -1227,5 +1307,167 @@ export const guides: Guide[] = [
       "Every tool where ALL plans have published prices vs tools that hide behind 'Contact Sales.' Fully transparent (Pipedrive, Make, Todoist), partially transparent (HubSpot, Zapier), and fully opaque (Workato, Tray.io).",
     readingTime: "16 min read",
     category: "Sub-Category",
+  },
+  // ── Persona-Specific Budget Stacks ──
+  {
+    slug: "best-tools-for-consultants",
+    title: "The Consultant's Software Stack: CRM + Scheduling + Invoicing",
+    description:
+      "CRM (Pipedrive Lite $14/seat or HubSpot Free), scheduling (Calendly free or Cal.com free), invoicing (Wave free or FreshBooks $23/mo). Complete stack from $0 to $37/month with verified pricing.",
+    readingTime: "14 min read",
+    category: "Persona Stack",
+  },
+  {
+    slug: "best-tools-for-real-estate-agents",
+    title: "Software Stack for Real Estate Agents Under $50/Month",
+    description:
+      "CRM (Pipedrive Lite $14/seat or HubSpot Free), scheduling (Calendly free), email (Kit free 10K subs), automation (Zapier free). Complete stack from $0 to $14/month — skip the $500/mo real estate CRMs.",
+    readingTime: "13 min read",
+    category: "Persona Stack",
+  },
+  {
+    slug: "best-tools-for-course-creators",
+    title: "Course Creator Stack: Newsletter + Payment + Community",
+    description:
+      "Newsletter (beehiiv free or Kit free), payments (Gumroad 10% fee or Lemon Squeezy 5% fee), community (Discord free), website (Ghost Starter $18/mo). Skip Kajabi and Teachable until you validate.",
+    readingTime: "15 min read",
+    category: "Persona Stack",
+  },
+  {
+    slug: "best-tools-for-ecommerce-startups",
+    title: "E-commerce Startup Stack Under $100/Month",
+    description:
+      "Shopify Basic $39/mo + Brevo Starter $9/mo + Plausible $9/mo + Make Core $10.59/mo = $67.59/mo total. Everything you need from launch through your first $50K in revenue.",
+    readingTime: "14 min read",
+    category: "Persona Stack",
+  },
+  {
+    slug: "best-tools-for-nonprofit",
+    title: "Software for Nonprofits: Free and Discounted Options",
+    description:
+      "HubSpot Free (unlimited contacts), Kit free (10K subs), Notion free, ClickUp free, Tally free, Discord free. Complete $0/mo stack plus nonprofit discount programs from major vendors.",
+    readingTime: "13 min read",
+    category: "Persona Stack",
+  },
+  {
+    slug: "best-tools-for-podcasters",
+    title: "Podcaster's Tech Stack: Recording + Hosting + Growth",
+    description:
+      "Riverside Standard $19/mo or Descript Hobbyist $24/mo for recording, Spotify for Podcasters (free) for hosting, beehiiv free for newsletter, Carrd Pro $19/yr for website. Total: ~$20.58/mo.",
+    readingTime: "13 min read",
+    category: "Persona Stack",
+  },
+  {
+    slug: "best-tools-for-dev-teams",
+    title: "Developer Team Stack: PM + Code + Deploy + Monitor",
+    description:
+      "Linear free (250 issues) or Jira free (10 users), Vercel free or Netlify free, Supabase free (500MB) or PlanetScale $5/mo, PostHog free (1M events). Complete dev stack from $0 to $5/mo.",
+    readingTime: "15 min read",
+    category: "Persona Stack",
+  },
+  {
+    slug: "best-tools-for-coaches",
+    title: "Coaching Business Stack: Scheduling + CRM + Email Under $30/Month",
+    description:
+      "Calendly free + HubSpot free + Kit free (10K subs) + Tally free = $0/mo. Paid upgrade: Calendly Standard $12 + Kit Creator $39 = $51/mo. The exact tools and upgrade triggers.",
+    readingTime: "12 min read",
+    category: "Persona Stack",
+  },
+  {
+    slug: "best-tools-for-writers",
+    title: "Writer's Toolkit: Editing + Publishing + Newsletter",
+    description:
+      "Grammarly free + Notion free for writing, Substack free (10% cut) or Ghost $18/mo for publishing, beehiiv free or Buttondown free for newsletter, ChatGPT free or Claude free for AI assist. $0 to $18/mo.",
+    readingTime: "13 min read",
+    category: "Persona Stack",
+  },
+  {
+    slug: "best-tools-for-small-marketing-teams",
+    title: "Marketing Team Stack for 3-5 People Under $300/Month",
+    description:
+      "ActiveCampaign Starter $15/mo + HubSpot Starter $20/seat x 3 ($60/mo) + Make Core $10.59/mo + Plausible $9/mo + Buffer Essentials $6/channel x 4 ($24/mo) + Canva Pro $15/mo = ~$133.59/mo.",
+    readingTime: "16 min read",
+    category: "Persona Stack",
+  },
+  // ── Pricing Deep Dives (Individual Tool Breakdowns) ──
+  {
+    slug: "pipedrive-pricing-explained",
+    title: "Pipedrive Pricing Explained: Every Tier, Every Add-On",
+    description:
+      "Pipedrive pricing decoded: Lite $14/seat, Growth $39/seat, Premium $49/seat, Ultimate $99/seat. Add-ons (LeadBooster, Web Visitors, Smart Docs), per-seat math at scale, and when each tier makes sense.",
+    readingTime: "14 min read",
+    category: "Pricing Deep Dive",
+  },
+  {
+    slug: "activecampaign-pricing-explained",
+    title: "ActiveCampaign Pricing Explained: Contact Tiers Change Everything",
+    description:
+      "ActiveCampaign pricing decoded: Starter $15/mo, Plus $49/mo, Pro $79/mo, Enterprise $145/mo at 1,000 contacts. How prices scale with contacts, the automation feature gating, and when alternatives are cheaper.",
+    readingTime: "13 min read",
+    category: "Pricing Deep Dive",
+  },
+  {
+    slug: "notion-pricing-explained",
+    title: "Notion Pricing Explained: When Free Stops Being Enough",
+    description:
+      "Notion pricing decoded: Free (unlimited pages, 7-day history), Plus $12/user/mo, Business $24/user/mo, Enterprise custom. Guest access limits, file upload triggers, and the exact upgrade moments.",
+    readingTime: "12 min read",
+    category: "Pricing Deep Dive",
+  },
+  {
+    slug: "clickup-pricing-explained",
+    title: "ClickUp Pricing Explained: Free Is Generous, But Here's the Catch",
+    description:
+      "ClickUp pricing decoded: Free Forever (unlimited tasks/members, 100MB storage), Unlimited $10/member/mo, Business $19/member/mo, Enterprise custom. Storage and integration limits explained.",
+    readingTime: "12 min read",
+    category: "Pricing Deep Dive",
+  },
+  {
+    slug: "asana-pricing-explained",
+    title: "Asana Pricing Explained: Why Free Went from 10 Users to 2",
+    description:
+      "Asana pricing decoded: Free (2 users), Starter $13.49/seat/mo, Advanced $30.49/seat/mo ($24.99 annual), Enterprise custom. The user limit change impact, tier comparison, and per-seat math.",
+    readingTime: "13 min read",
+    category: "Pricing Deep Dive",
+  },
+  {
+    slug: "beehiiv-pricing-explained",
+    title: "beehiiv Pricing Explained: Launch vs Scale vs Max",
+    description:
+      "beehiiv pricing decoded: Launch free (2,500 subs), Scale $49/mo (unlimited subscribers), Max $109/mo (everything). When each tier pays for itself through monetization and the Boost revenue math.",
+    readingTime: "12 min read",
+    category: "Pricing Deep Dive",
+  },
+  {
+    slug: "kit-pricing-explained",
+    title: "Kit (ConvertKit) Pricing Explained: Free for 10K, Then What?",
+    description:
+      "Kit pricing decoded: Newsletter free (10,000 subs), Creator $39/mo, Creator Pro $79/mo. What free walls off (automations, sequences, integrations), subscriber-based scaling, and when paid tiers justify the cost.",
+    readingTime: "12 min read",
+    category: "Pricing Deep Dive",
+  },
+  {
+    slug: "make-pricing-explained",
+    title: "Make Pricing Explained: Operations, Not Tasks",
+    description:
+      "Make pricing decoded: Free (1,000 ops, 2 scenarios), Core $10.59/mo, Pro $18.82/mo, Teams $34.12/mo. How operations are counted vs Zapier tasks, cost comparison at every volume, and when Make saves real money.",
+    readingTime: "13 min read",
+    category: "Pricing Deep Dive",
+  },
+  {
+    slug: "slack-pricing-explained",
+    title: "Slack Pricing Explained: What 90-Day History Actually Costs You",
+    description:
+      "Slack pricing decoded: Free (90-day history, 10 integrations), Pro $8.75/user/mo, Business+ $18/user/mo, Enterprise Grid custom. The knowledge loss calculation, integration limits, and when to pay.",
+    readingTime: "12 min read",
+    category: "Pricing Deep Dive",
+  },
+  {
+    slug: "shopify-pricing-explained",
+    title: "Shopify Pricing Explained: The Real Cost Beyond $39/Month",
+    description:
+      "Shopify pricing decoded: Basic $39/mo, Shopify $105/mo, Advanced $399/mo, Plus $2,300/mo. Transaction fees per tier, theme costs, app costs, and the real monthly total most stores actually pay.",
+    readingTime: "15 min read",
+    category: "Pricing Deep Dive",
   },
 ];
