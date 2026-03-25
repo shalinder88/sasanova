@@ -121,6 +121,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "hubspot-vs-activecampaign-full-comparison",
     "mailchimp-vs-hubspot-marketing", "notion-vs-clickup-vs-asana",
     "zapier-vs-hubspot-workflows", "beehiiv-vs-kit-vs-mailchimp-for-creators",
+    "mailchimp-pricing-history", "zapier-pricing-history", "hubspot-pricing-history",
+    "who-should-not-use-hubspot", "who-should-not-use-mailchimp",
+    "who-should-not-use-zapier", "who-should-not-use-notion",
+    "who-should-not-use-salesforce",
+    "switch-from-mailchimp-to-activecampaign",
+    "switch-from-pipedrive-to-hubspot", "switch-from-kit-to-beehiiv",
+    "switch-from-make-to-zapier", "switch-from-notion-to-clickup",
+    "best-crm-agencies", "email-deliverability-compared",
+    "crm-integrations-that-matter",
   ];
   const guidePages: MetadataRoute.Sitemap = guideSlugs.map((slug) => ({
     url: `${BASE}/guides/${slug}`,
