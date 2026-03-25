@@ -720,6 +720,86 @@ export const guides: Guide[] = [
     category: "Anti-Recommendation",
   },
   {
+    slug: "who-should-not-use-clickup",
+    title: "Who Should NOT Use ClickUp (And What to Use Instead)",
+    description:
+      "ClickUp's free tier is generous, but the tool is overwhelming for most teams. Here are 4 situations where ClickUp is the wrong choice — solo users, tiny teams, and anyone who values simplicity.",
+    readingTime: "12 min read",
+    category: "Anti-Recommendation",
+  },
+  {
+    slug: "who-should-not-use-activecampaign",
+    title: "Who Should NOT Use ActiveCampaign (And What to Use Instead)",
+    description:
+      "ActiveCampaign has the most powerful automation builder in email marketing — and no free tier. Skip it if you just need a newsletter, have under 1,000 contacts, or don't need CRM.",
+    readingTime: "11 min read",
+    category: "Anti-Recommendation",
+  },
+  {
+    slug: "who-should-not-use-asana",
+    title: "Who Should NOT Use Asana (And What to Use Instead)",
+    description:
+      "Asana's free tier now caps at 2 users and paid plans start at $13.49/seat/month. Skip it if you're solo, need docs+PM in one tool, or are watching your budget.",
+    readingTime: "12 min read",
+    category: "Anti-Recommendation",
+  },
+  {
+    slug: "who-should-not-use-slack",
+    title: "Who Should NOT Use Slack (And What to Use Instead)",
+    description:
+      "Slack's free tier hides messages after 90 days and Pro costs $8.75/seat/month. Discord is free with unlimited history. Skip Slack if you're budget-conscious, async-heavy, or under 5 people.",
+    readingTime: "11 min read",
+    category: "Anti-Recommendation",
+  },
+  {
+    slug: "who-should-not-use-shopify",
+    title: "Who Should NOT Use Shopify (And What to Use Instead)",
+    description:
+      "Shopify starts at $39/month with no free tier. Skip it if you sell digital products (use Gumroad), have fewer than 10 products (use Carrd), or create courses (wrong tool entirely).",
+    readingTime: "12 min read",
+    category: "Anti-Recommendation",
+  },
+  {
+    slug: "who-should-not-use-webflow",
+    title: "Who Should NOT Use Webflow (And What to Use Instead)",
+    description:
+      "Webflow is the most powerful no-code website builder — with the steepest learning curve. Skip it if you're non-technical, just need a landing page, or need e-commerce.",
+    readingTime: "11 min read",
+    category: "Anti-Recommendation",
+  },
+  {
+    slug: "who-should-not-use-figma",
+    title: "Who Should NOT Use Figma (And What to Use Instead)",
+    description:
+      "Figma is the industry standard for UI/UX design. If you're not a designer, it's the wrong tool. Skip it for social graphics (Canva), marketing sites (Framer), or presentations.",
+    readingTime: "11 min read",
+    category: "Anti-Recommendation",
+  },
+  {
+    slug: "who-should-not-use-monday",
+    title: "Who Should NOT Use Monday.com (And What to Use Instead)",
+    description:
+      "Monday.com requires 3-seat minimum on paid plans and the free tier is limited to 2 seats. Skip it if you're solo (use Todoist), need docs+PM (use Notion), or need a real CRM (use Pipedrive).",
+    readingTime: "11 min read",
+    category: "Anti-Recommendation",
+  },
+  {
+    slug: "who-should-not-use-intercom",
+    title: "Who Should NOT Use Intercom (And What to Use Instead)",
+    description:
+      "Intercom starts at $39/seat/month with no free tier, plus $0.99 per AI resolution. Skip it if you have a small support team, under 100 customers, or need predictable pricing.",
+    readingTime: "12 min read",
+    category: "Anti-Recommendation",
+  },
+  {
+    slug: "who-should-not-use-semrush",
+    title: "Who Should NOT Use Semrush (And What to Use Instead)",
+    description:
+      "Semrush Pro is $139.95/month. Skip it if you're under 5K monthly visitors, just need keyword research (Mangools at $29.90/mo), or just need backlinks (Ahrefs Lite at $129/mo).",
+    readingTime: "12 min read",
+    category: "Anti-Recommendation",
+  },
+  {
     slug: "mailchimp-hidden-costs",
     title: "The Real Cost of Mailchimp: What the Pricing Page Doesn't Show",
     description: "Contact counting traps, overage charges, template limitations, and the Standard plan pricing cliff that catches most users.",
