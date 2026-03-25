@@ -296,11 +296,11 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="text-xs text-muted">Mailchimp → beehiiv</p>
-                  <p className="text-2xl font-extrabold text-success">$3,432/yr</p>
+                  <p className="text-2xl font-extrabold text-success">Save 60%+</p>
                 </div>
               </div>
               <p className="text-xs text-muted leading-relaxed flex-1">
-                At 50K subscribers, Mailchimp Standard costs $385/mo. beehiiv Max is $99/mo. That&apos;s $286/mo back in your pocket.
+                Mailchimp Standard starts at $20/mo for 500 contacts and scales steeply. beehiiv Scale is $49/mo for unlimited subscribers. The gap grows with every thousand contacts you add.
               </p>
               <span className="text-xs text-accent font-medium mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
                 See the full breakdown →
@@ -338,11 +338,11 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="text-xs text-muted">Salesforce → HubSpot</p>
-                  <p className="text-2xl font-extrabold text-success">$7,200/yr</p>
+                  <p className="text-2xl font-extrabold text-success">$9,600/yr</p>
                 </div>
               </div>
               <p className="text-xs text-muted leading-relaxed flex-1">
-                For a 10-person team, Salesforce Professional is $80/seat/mo ($800/mo). HubSpot Starter is $20/seat/mo ($200/mo).
+                For a 10-person team, Salesforce Pro Suite is $100/seat/mo ($1,000/mo). HubSpot Starter is $20/seat/mo ($200/mo). Plus Salesforce requires a $3,000+ onboarding fee.
               </p>
               <span className="text-xs text-accent font-medium mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
                 See the full breakdown →

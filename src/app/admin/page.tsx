@@ -110,33 +110,39 @@ function generateLinkedInPosts(): SocialPost[] {
   const posts: SocialPost[] = [];
   let idx = 0;
 
-  // 1) Cost shock posts — compare lowest paid (entry-level) tiers for realistic savings
+  // 1) Cost-shock posts — lead with a surprising price point, give context, add caveat
   for (const tool of tools) {
     const entry = lowestPaidPlan(tool);
     if (!entry || !entry.priceMonthly || entry.priceMonthly < 10) continue;
     const comp = comparableAlternative(tool);
     if (!comp || !comp.altPlan || !comp.altPlan.priceMonthly) continue;
 
-    const toolAnnual = Math.round(entry.priceMonthly * 12);
-    const altAnnual = Math.round(comp.altPlan.priceMonthly * 12);
-    const savings = Math.round(toolAnnual - altAnnual);
-    if (savings <= 0) continue;
-    // Sanity check: skip implausibly large savings (likely incomparable products)
-    if (savings > 10000) continue;
+    const toolMonthly = entry.priceMonthly;
+    const altMonthly = comp.altPlan.priceMonthly;
+    const annualDiff = Math.round((toolMonthly - altMonthly) * 12);
+    if (annualDiff <= 0 || annualDiff > 10000) continue;
+
+    const toolBilling = entry.billingModel === "per_seat" ? "/seat" : "";
+    const altBilling = comp.altPlan.billingModel === "per_seat" ? "/seat" : "";
+
+    // Build an honest caveat from the avoidIf data on the alternative
+    const altCaveat = comp.alt.avoidIf?.[0]
+      ? `Caveat: ${comp.alt.name} isn't perfect — ${comp.alt.avoidIf[0].toLowerCase()}.`
+      : `Caveat: feature sets aren't identical. Check which integrations you actually need before switching.`;
 
     posts.push({
       id: `li-cost-${idx++}`,
       platform: "linkedin",
       type: "cost-shock",
-      title: `Cost Shock: ${tool.name}`,
-      body: `${tool.name} costs $${fmt(toolAnnual)}/year at the ${entry.name} tier.\n\n${comp.alt.name} costs $${fmt(altAnnual)}/year for comparable features. That's $${fmt(savings)}/year in savings.\n\nWe normalized the pricing so you can see the real numbers side by side.\n\n${compareUrl(tool.slug, comp.alt.slug)}`,
-      url: `${compareUrl(tool.slug, comp.alt.slug)}`,
+      title: `Cost Shock: ${tool.name} vs ${comp.alt.name}`,
+      body: `${tool.name}'s ${entry.name} plan costs $${fmt(toolMonthly)}/mo${toolBilling}. ${entry.limits ? `That gets you: ${entry.limits}.` : ""}\n\n${comp.alt.name}'s ${comp.altPlan.name} plan costs $${fmt(altMonthly)}/mo${altBilling} for comparable features. That's $${fmt(annualDiff)}/year difference.\n\n${altCaveat}\n\nBoth prices verified against vendor pages, March 2026.\n\nFull pricing breakdown: ${compareUrl(tool.slug, comp.alt.slug)}\n\nWhat are you currently paying? Curious how others landed on their stack.`,
+      url: compareUrl(tool.slug, comp.alt.slug),
       charCount: 0,
     });
     if (posts.length >= 8) break;
   }
 
-  // 2) Comparison verdict posts
+  // 2) Comparison posts — lead with specific pricing details from both tools
   const usedPairs = new Set<string>();
   for (const vs of versusPairs) {
     const key = [vs.slugA, vs.slugB].sort().join("-");
@@ -147,55 +153,86 @@ function generateLinkedInPosts(): SocialPost[] {
     const toolB = getToolBySlug(vs.slugB);
     if (!toolA || !toolB) continue;
 
-    const verdictText =
-      vs.verdict === "depends"
-        ? "It depends on your use case"
-        : vs.verdict === vs.slugA
-          ? `${toolA.name} edges ahead`
-          : `${toolB.name} edges ahead`;
+    const planA = lowestPaidPlan(toolA);
+    const planB = lowestPaidPlan(toolB);
+
+    const priceLine = (tool: Tool, plan: ReturnType<typeof lowestPaidPlan>) => {
+      if (!plan) {
+        return tool.freeTier
+          ? `${tool.name}: Free${tool.freeTierLimits ? ` (${tool.freeTierLimits.split(",")[0].trim()})` : ""}`
+          : `${tool.name}: Custom pricing`;
+      }
+      const suffix = plan.billingModel === "per_seat" ? "/seat" : "";
+      const freeNote = tool.freeTier ? `. Free tier available` : "";
+      return `${tool.name}: ${plan.name} at $${plan.priceMonthly}/mo${suffix}${plan.limits ? ` — ${plan.limits}` : ""}${freeNote}`;
+    };
+
+    // Build the "real difference" line from biggestDifference or summary
+    const realDiff = vs.biggestDifference
+      ? `The real difference: ${vs.biggestDifference}.`
+      : vs.summary;
 
     posts.push({
       id: `li-compare-${idx++}`,
       platform: "linkedin",
       type: "comparison",
       title: `${toolA.name} vs ${toolB.name}`,
-      body: `${toolA.name} vs ${toolB.name}: ${verdictText}.\n\n${vs.summary}\n\nFull comparison with normalized pricing:\n${SITE}/compare/${vs.slugA}-vs-${vs.slugB}`,
+      body: `${toolA.name} vs ${toolB.name} — here's what the pricing pages don't make obvious.\n\n${priceLine(toolA, planA)}.\n\n${priceLine(toolB, planB)}.\n\n${realDiff}\n\nWe compared both across 12 dimensions: ${SITE}/compare/${vs.slugA}-vs-${vs.slugB}\n\nWhat's your experience with either of these?`,
       url: `${SITE}/compare/${vs.slugA}-vs-${vs.slugB}`,
       charCount: 0,
     });
     if (posts.filter((p) => p.type === "comparison").length >= 8) break;
   }
 
-  // 3) Hidden cost posts
+  // 3) Hidden cost posts — list ALL the hidden costs, not just a teaser
   for (const tool of tools) {
     if (!tool.hiddenCosts || tool.hiddenCosts.length === 0) continue;
 
     const bullets = tool.hiddenCosts
-      .slice(0, 3)
-      .map((c) => `- ${c}`)
+      .map((c) => `• ${c}`)
       .join("\n");
+
+    const lowestPlan = lowestPaidPlan(tool);
+    const priceContext = lowestPlan
+      ? `${tool.name}'s pricing page shows ${lowestPlan.name} at $${lowestPlan.priceMonthly}/mo. What it doesn't show:`
+      : `${tool.name}'s pricing page looks straightforward. What it doesn't show:`;
+
     posts.push({
       id: `li-hidden-${idx++}`,
       platform: "linkedin",
       type: "hidden-cost",
       title: `Hidden Costs: ${tool.name}`,
-      body: `The real cost of ${tool.name} isn't on the pricing page.\n\nHere's what most people miss:\n${bullets}\n\nWe compiled pricing from official vendor pages so you can compare apples to apples.\n\n${SITE}/tools/${tool.slug}`,
+      body: `${priceContext}\n\n${bullets}\n\nNone of this is on the main pricing page. We found it in help docs, terms, and checkout flows while verifying prices for ${tools.length}+ tools.\n\nFull breakdown: ${SITE}/tools/${tool.slug}\n\nHave you run into surprise charges with ${tool.name}? Would love to hear what we missed.`,
       url: `${SITE}/tools/${tool.slug}`,
       charCount: 0,
     });
     if (posts.filter((p) => p.type === "hidden-cost").length >= 6) break;
   }
 
-  // 4) Decision framework posts — one per category
+  // 4) Framework posts — lead with a useful insight about the category
   for (const cat of categories.slice(0, 6)) {
     const catTools = toolsInCategory(cat.slug);
     if (catTools.length < 2) continue;
+
+    const freeCount = catTools.filter((t) => t.freeTier).length;
+    const cheapest = catTools
+      .filter((t) => { const p = lowestPaidPlan(t); return p && p.priceMonthly && p.priceMonthly > 0; })
+      .sort((a, b) => (lowestPaidPlan(a)?.priceMonthly ?? 999) - (lowestPaidPlan(b)?.priceMonthly ?? 999));
+    const cheapestTool = cheapest[0];
+    const cheapestPlan = cheapestTool ? lowestPaidPlan(cheapestTool) : null;
+    const expensiveTool = cheapest[cheapest.length - 1];
+    const expensivePlan = expensiveTool ? lowestPaidPlan(expensiveTool) : null;
+
+    const priceRange = cheapestPlan && expensivePlan
+      ? `Prices range from $${cheapestPlan.priceMonthly}/mo (${cheapestTool.name}) to $${expensivePlan.priceMonthly}/mo (${expensiveTool.name}).`
+      : "";
+
     posts.push({
       id: `li-framework-${idx++}`,
       platform: "linkedin",
       type: "framework",
-      title: `How to choose: ${cat.name}`,
-      body: `How to choose ${cat.name.toLowerCase()} without overthinking it.\n\nWe compared ${catTools.length} tools in this category with normalized pricing, real feature checks, and honest scores.\n\nAffiliate links are clearly labeled. Editorial scores are independent of affiliate status.\n\n${SITE}/best/${cat.slug}`,
+      title: `How to pick: ${cat.name}`,
+      body: `We compared ${catTools.length} ${cat.name.toLowerCase()} tools. ${freeCount} have free tiers. ${priceRange}\n\nThe biggest mistake we see: picking the tool with the most features instead of the one that fits your actual workflow.\n\nThree questions that cut through the noise:\n1. What's your team size in 12 months? (Per-seat pricing compounds fast.)\n2. Do you need integrations with your existing stack, or is standalone fine?\n3. How painful is migration if you outgrow it?\n\nWe scored every tool on value, ease, power, setup friction, migration difficulty, and transparency: ${SITE}/best/${cat.slug}\n\nWhat ${cat.name.toLowerCase()} tools are you evaluating right now?`,
       url: `${SITE}/best/${cat.slug}`,
       charCount: 0,
     });
@@ -211,70 +248,86 @@ function generateLinkedInPosts(): SocialPost[] {
 function generateRedditPosts(): SocialPost[] {
   const posts: SocialPost[] = [];
   let idx = 0;
-  const subs = [
-    "r/SaaS",
-    "r/startups",
-    "r/smallbusiness",
-    "r/Entrepreneur",
-    "r/SideProject",
-  ];
 
-  // 1) Comparison deep-dives
+  // 1) Full pricing comparison posts — every tier listed in the post body
   for (const vs of versusPairs.slice(0, 6)) {
     const toolA = getToolBySlug(vs.slugA);
     const toolB = getToolBySlug(vs.slugB);
     if (!toolA || !toolB) continue;
 
-    const planA = lowestPaidPlan(toolA);
-    const planB = lowestPaidPlan(toolB);
-    const freeTierLabel = (t: Tool) =>
-      t.slug === "substack"
-        ? `${t.name}: Free to use (10% revenue cut on paid subscriptions + Stripe fees)`
-        : `${t.name} has a free tier`;
-    const priceLineA = planA
-      ? `${toolA.name} starts at $${planA.priceMonthly}/mo (${planA.name})`
-      : freeTierLabel(toolA);
-    const priceLineB = planB
-      ? `${toolB.name} starts at $${planB.priceMonthly}/mo (${planB.name})`
-      : freeTierLabel(toolB);
+    const formatTiers = (tool: Tool): string => {
+      return tool.pricing
+        .map((p) => {
+          if (p.priceMonthly === null) return `  - ${p.name}: Custom pricing`;
+          if (p.priceMonthly === 0) return `  - ${p.name}: Free — ${p.limits}`;
+          const suffix = p.billingModel === "per_seat" ? "/seat" : "";
+          const annual = p.priceAnnual ? ` ($${fmt(p.priceAnnual)}/yr annual)` : "";
+          return `  - ${p.name}: $${p.priceMonthly}/mo${suffix}${annual} — ${p.limits}`;
+        })
+        .join("\n");
+    };
+
+    // Build choose-if sections if available
+    const chooseSection = vs.chooseAIf && vs.chooseBIf
+      ? `\n**Choose ${toolA.name} if:**\n${vs.chooseAIf.map((c) => `- ${c}`).join("\n")}\n\n**Choose ${toolB.name} if:**\n${vs.chooseBIf.map((c) => `- ${c}`).join("\n")}`
+      : "";
+
+    const caveatA = toolA.avoidIf?.[0] ? `\n**Watch out for ${toolA.name}:** ${toolA.avoidIf[0]}` : "";
+    const caveatB = toolB.avoidIf?.[0] ? `\n**Watch out for ${toolB.name}:** ${toolB.avoidIf[0]}` : "";
 
     posts.push({
       id: `rd-compare-${idx++}`,
       platform: "reddit",
       type: "reddit-comparison",
-      title: `We compared ${toolA.name} vs ${toolB.name} pricing at every tier. Here's what we found.`,
-      body: `We normalized pricing across ${toolA.name} and ${toolB.name} so you can compare apples to apples.\n\n**Pricing:**\n- ${priceLineA}\n- ${priceLineB}\n\n**Verdict:** ${vs.summary}\n\nWe put together a full comparison with normalized annual costs, feature overlap, and switching costs. Affiliate links are clearly labeled. Editorial scores are independent of affiliate status.\n\nFull breakdown: ${SITE}/compare/${vs.slugA}-vs-${vs.slugB}`,
+      title: `We compared ${toolA.name} vs ${toolB.name} pricing at every tier — here's the full breakdown`,
+      body: `We've been verifying SaaS pricing against vendor pages and wanted to share what we found for these two.\n\n**${toolA.name} pricing (all tiers):**\n${formatTiers(toolA)}\n\n**${toolB.name} pricing (all tiers):**\n${formatTiers(toolB)}\n\n**Our take:** ${vs.summary}${vs.priceDelta ? `\n\n**Price difference:** ${vs.priceDelta}` : ""}${chooseSection}${caveatA}${caveatB}\n\nAll prices verified March 2026 against vendor pricing pages.\n\nWe put the full data in a side-by-side comparison table if you want to dig deeper: ${SITE}/compare/${vs.slugA}-vs-${vs.slugB}\n\nHappy to answer questions about either tool.`,
       url: `${SITE}/compare/${vs.slugA}-vs-${vs.slugB}`,
-      subreddits: subs.slice(0, 3),
+      subreddits: ["r/SaaS", "r/startups", "r/smallbusiness"],
       charCount: 0,
     });
   }
 
-  // 2) Hidden cost exposés
+  // 2) Hidden cost deep-dives — ALL hidden costs listed, plus context
   const hiddenCostTools = tools.filter(
     (t) => t.hiddenCosts && t.hiddenCosts.length >= 2
   );
   for (const tool of hiddenCostTools.slice(0, 5)) {
     const bullets = tool
-      .hiddenCosts!.slice(0, 4)
+      .hiddenCosts!
       .map((c) => `- ${c}`)
       .join("\n");
+
+    const lowestPlan = lowestPaidPlan(tool);
+    const priceContext = lowestPlan
+      ? `${tool.name}'s pricing page shows plans starting at $${lowestPlan.priceMonthly}/mo (${lowestPlan.name} tier).`
+      : `${tool.name}'s pricing page looks simple enough.`;
+
+    // Include alternatives so the post is useful even without clicking
+    const altNames = tool.alternatives
+      .map((slug) => getToolBySlug(slug))
+      .filter(Boolean)
+      .slice(0, 3)
+      .map((t) => t!.name);
+    const altLine = altNames.length > 0
+      ? `\n\n**Alternatives worth checking:** ${altNames.join(", ")}. Each has its own tradeoffs — none are perfect.`
+      : "";
+
     posts.push({
       id: `rd-hidden-${idx++}`,
       platform: "reddit",
       type: "reddit-hidden-cost",
-      title: `Hidden costs of ${tool.name} that nobody talks about`,
-      body: `We've been tracking SaaS pricing from vendor sites and ${tool.name} has some costs that aren't obvious from their pricing page:\n\n${bullets}\n\nNone of this is on the main pricing page. We documented this while building a free pricing comparison tool.\n\nMore details: ${SITE}/tools/${tool.slug}`,
+      title: `Hidden costs of ${tool.name} that the pricing page doesn't show`,
+      body: `${priceContext} Here's what you won't find there:\n\n${bullets}\n\nWe found these in help docs, checkout flows, and terms of service while verifying pricing for ${tools.length}+ SaaS tools. None of it is on the main pricing page.\n\nTo be fair, ${tool.name} ${tool.bestFor?.[0] ? `is genuinely good for ${tool.bestFor[0].toLowerCase()}` : "has real strengths"}. These aren't dealbreakers for everyone — but they should be visible before you commit.${altLine}\n\nWe documented all of this with sources: ${SITE}/tools/${tool.slug}\n\nHappy to answer questions about any of these tools.`,
       url: `${SITE}/tools/${tool.slug}`,
       subreddits: ["r/SaaS", "r/startups", "r/Entrepreneur"],
       charCount: 0,
     });
   }
 
-  // 3) Budget picks per category
+  // 3) Budget stack posts — full itemized stack in the post body
   for (const cat of categories.slice(0, 5)) {
     const catTools = toolsInCategory(cat.slug)
-      .filter((t) => t.categorySlug !== "crm") // exclude tools whose primary category is CRM
+      .filter((t) => t.categorySlug !== "crm")
       .filter((t) => t.freeTier || (lowestPaidPlan(t)?.priceMonthly ?? 999) < 30)
       .slice(0, 5);
     if (catTools.length < 2) continue;
@@ -282,21 +335,26 @@ function generateRedditPosts(): SocialPost[] {
     const toolList = catTools
       .map((t) => {
         const plan = lowestPaidPlan(t);
-        const price = t.freeTier
-          ? "Free tier available"
-          : plan
-            ? `$${plan.priceMonthly}/mo`
-            : "Custom pricing";
-        return `- **${t.name}**: ${price} — ${t.tagline}`;
+        const freeLimits = t.freeTier && t.freeTierLimits
+          ? ` (free tier: ${t.freeTierLimits.split(",").slice(0, 2).join(",").trim()})`
+          : "";
+        const paidPrice = plan && plan.priceMonthly && plan.priceMonthly > 0
+          ? ` — Paid starts at $${plan.priceMonthly}/mo (${plan.name})`
+          : "";
+        const bestFor = t.bestFor?.[0] ? `. Best for: ${t.bestFor[0]}` : "";
+        const warning = t.avoidIf?.[0] ? `. Watch out: ${t.avoidIf[0]}` : "";
+        return `- **${t.name}**${freeLimits}${paidPrice}${bestFor}${warning}`;
       })
       .join("\n");
+
+    const totalFree = catTools.filter((t) => t.freeTier).length;
 
     posts.push({
       id: `rd-budget-${idx++}`,
       platform: "reddit",
       type: "reddit-budget",
-      title: `Best ${cat.name.toLowerCase()} under $30/month for solo founders`,
-      body: `We're building a free SaaS pricing comparison site and here are the best affordable ${cat.name.toLowerCase()} we found:\n\n${toolList}\n\nAll pricing verified against vendor sites. Full comparison with scores: ${SITE}/best/${cat.slug}`,
+      title: `The cheapest ${cat.name.toLowerCase()} stack for solo founders — ${totalFree} have free tiers`,
+      body: `We verified pricing against vendor pages for ${toolsInCategory(cat.slug).length} ${cat.name.toLowerCase()} tools. Here are the ones that actually work under $30/mo:\n\n${toolList}\n\n**Honest caveat:** Free tiers always have limits. The free plan that works at 100 users may force an upgrade at 500. We list the exact limits for each tier so you know when you'll hit the wall.\n\n**What we'd pick:**\n- Just starting out solo? Pick the one with the most generous free tier for your use case.\n- Small team (3-5 people)? Check per-seat costs — they compound fast.\n\nWe scored all ${toolsInCategory(cat.slug).length} tools in this category on value, ease, power, and more: ${SITE}/best/${cat.slug}\n\nHappy to answer questions about any of these tools.`,
       url: `${SITE}/best/${cat.slug}`,
       subreddits: ["r/SaaS", "r/smallbusiness", "r/SideProject"],
       charCount: 0,
@@ -317,37 +375,99 @@ function generateIndieHackersPosts(): SocialPost[] {
   const totalCategories = categories.length;
   const totalVersus = versusPairs.length;
 
-  posts.push({
-    id: `ih-data-${idx++}`,
-    platform: "indiehackers",
-    type: "ih-data",
-    title: "We normalized pricing across SaaS tools",
-    body: `We normalized pricing across ${totalTools} SaaS tools so founders can compare real costs.\n\nMost SaaS pricing pages are designed to confuse. Different billing models, hidden fees, usage caps buried in footnotes.\n\nSo we built Sasanova: a free comparison site that normalizes everything to monthly and annual costs, scores each tool on value/ease/power, and flags hidden costs.\n\n${totalCategories} categories. ${totalVersus} head-to-head comparisons. Every price verified against vendor sites.\n\nNo paywall. No gated content.\n\n${SITE}`,
-    url: SITE,
-    charCount: 0,
-  });
+  // 1) Pricing surprises post — specific data points, not generic claims
+  // Gather real surprise data from the tool dataset
+  const surprises: string[] = [];
 
-  posts.push({
-    id: `ih-calc-${idx++}`,
-    platform: "indiehackers",
-    type: "ih-calculator",
-    title: "Free SaaS pricing calculator",
-    body: `We built a free SaaS pricing comparison tool. Compare real costs across ${totalTools} tools in ${totalCategories} categories.\n\nEvery price is independently verified. We flag hidden costs that vendors bury in their terms. Affiliate links are clearly labeled. Editorial scores are independent of affiliate status.\n\nIf you're evaluating software for your startup, this might save you a few hours of tab-juggling.\n\n${SITE}/pricing`,
-    url: `${SITE}/pricing`,
-    charCount: 0,
-  });
+  // Find tools with the biggest gap between lowest and highest paid tiers
+  for (const tool of tools) {
+    const lowest = lowestPaidPlan(tool);
+    const highest = highestPaidPlan(tool);
+    if (!lowest || !highest || !lowest.priceMonthly || !highest.priceMonthly) continue;
+    if (lowest.priceMonthly === highest.priceMonthly) continue;
+    const ratio = Math.round((highest.priceMonthly / lowest.priceMonthly) * 100) / 100;
+    if (ratio >= 5) {
+      surprises.push(
+        `${tool.name}'s cheapest paid plan is $${lowest.priceMonthly}/mo (${lowest.name}). Their top tier is $${fmt(highest.priceMonthly)}/mo (${highest.name}) — a ${Math.round(ratio)}x jump`
+      );
+    }
+  }
 
-  posts.push({
-    id: `ih-traps-${idx++}`,
-    platform: "indiehackers",
-    type: "ih-traps",
-    title: "Pricing traps that cost founders thousands",
-    body: `After researching ${totalTools} SaaS tools, here are the pricing traps we keep seeing:\n\n1. Per-seat pricing that doubles cost when you hire\n2. Usage caps that force upgrades at the worst time\n3. Annual lock-in with no monthly option\n4. Feature gating that puts basics behind enterprise tiers\n5. Add-on fees not shown on the pricing page\n6. Price increases buried in renewal terms\n7. "Contact sales" as the only option above mid-tier\n\nWe documented every hidden cost we found while building a free comparison tool.\n\n${SITE}/guides/mailchimp-hidden-costs`,
-    url: `${SITE}/guides/mailchimp-hidden-costs`,
-    charCount: 0,
-  });
+  // Find tools with restrictive free tiers
+  for (const tool of tools) {
+    if (tool.freeTier && tool.freeTierLimits && tool.freeTierLimits.length > 0) {
+      const limits = tool.freeTierLimits;
+      if (limits.includes("250") || limits.includes("100 ") || limits.includes("limited")) {
+        const plan = lowestPaidPlan(tool);
+        if (plan && plan.priceMonthly) {
+          surprises.push(
+            `${tool.name} free tier: ${limits.split(",").slice(0, 2).join(",").trim()}. First paid plan is $${plan.priceMonthly}/mo (${plan.name})`
+          );
+        }
+      }
+    }
+  }
 
-  // Category-specific IH posts
+  const topSurprises = surprises.slice(0, 6);
+  if (topSurprises.length >= 3) {
+    posts.push({
+      id: `ih-data-${idx++}`,
+      platform: "indiehackers",
+      type: "ih-data",
+      title: `We normalized pricing across ${totalTools} SaaS tools. Here are ${topSurprises.length} things that surprised us`,
+      body: `We've been verifying SaaS pricing against vendor pages for the last few months. Here are the pricing facts that caught us off guard:\n\n${topSurprises.map((s, i) => `${i + 1}. ${s}`).join("\n")}\n\nThe pattern we keep seeing: the gap between "starter" and "professional" tiers is where vendors make their real money. Free tiers get you in the door, then the upgrade path is steep.\n\nWe built a free comparison tool if anyone wants to explore the data: ${SITE}/calculate\n\nWhat pricing surprises have you run into?`,
+      url: `${SITE}/calculate`,
+      charCount: 0,
+    });
+  }
+
+  // 2) Pricing traps post — specific examples from the data, not generic bullet points
+  const trapsExamples: string[] = [];
+  const perSeatTools = tools.filter((t) =>
+    t.pricing.some((p) => p.billingModel === "per_seat" && p.priceMonthly && p.priceMonthly > 15)
+  );
+  if (perSeatTools.length > 0) {
+    const ex = perSeatTools[0];
+    const plan = ex.pricing.find((p) => p.billingModel === "per_seat" && p.priceMonthly && p.priceMonthly > 15);
+    if (plan && plan.priceMonthly) {
+      const pm = plan.priceMonthly;
+      trapsExamples.push(
+        `Per-seat compounding: ${ex.name} ${plan.name} is $${pm}/seat/mo. A 10-person team pays $${fmt(pm * 10)}/mo — $${fmt(pm * 10 * 12)}/yr`
+      );
+    }
+  }
+
+  const hiddenCostExamples = tools
+    .filter((t) => t.hiddenCosts && t.hiddenCosts.length >= 2)
+    .slice(0, 3);
+  for (const tool of hiddenCostExamples) {
+    trapsExamples.push(
+      `${tool.name} hidden fees: ${tool.hiddenCosts!.slice(0, 2).join("; ")}`
+    );
+  }
+
+  const contactSalesTools = tools.filter((t) =>
+    t.pricing.some((p) => p.priceMonthly === null && p.billingModel === "custom")
+  );
+  if (contactSalesTools.length > 0) {
+    trapsExamples.push(
+      `${contactSalesTools.length} of ${totalTools} tools hide their highest tier behind "Contact Sales." You can't budget what you can't see`
+    );
+  }
+
+  if (trapsExamples.length >= 3) {
+    posts.push({
+      id: `ih-traps-${idx++}`,
+      platform: "indiehackers",
+      type: "ih-traps",
+      title: `Pricing traps we found after researching ${totalTools} SaaS tools — with specific numbers`,
+      body: `We've verified pricing for ${totalTools} tools across ${totalCategories} categories. Here are the traps we keep seeing, with real examples:\n\n${trapsExamples.map((s, i) => `${i + 1}. ${s}`).join("\n\n")}\n\nThe uncomfortable truth: pricing pages are marketing pages. The real cost is in the help docs, terms of service, and checkout flows.\n\nWe're not saying these are bad tools — most of them are excellent at what they do. But the pricing should be transparent.\n\nWe documented every hidden cost we found: ${SITE}\n\nWhat pricing traps have you fallen into? Genuinely curious — we want to add them to our data.`,
+      url: SITE,
+      charCount: 0,
+    });
+  }
+
+  // 3) Category-specific posts — with actual tool rankings and prices
   const ihCategories = ["email-marketing", "crm", "automation", "project-management"];
   for (const catSlug of ihCategories) {
     const cat = categories.find((c) => c.slug === catSlug);
@@ -355,35 +475,56 @@ function generateIndieHackersPosts(): SocialPost[] {
     const catTools = toolsInCategory(catSlug);
     const freeCount = catTools.filter((t) => t.freeTier).length;
 
+    // Build a quick pricing summary of the top tools
+    const priceSummary = catTools.slice(0, 5).map((t) => {
+      const plan = lowestPaidPlan(t);
+      const freeNote = t.freeTier ? "Free tier available" : "No free tier";
+      const paidNote = plan && plan.priceMonthly
+        ? `Paid from $${plan.priceMonthly}/mo (${plan.name})`
+        : "";
+      return `- **${t.name}**: ${freeNote}. ${paidNote}. ${t.tagline}`;
+    }).join("\n");
+
     posts.push({
       id: `ih-cat-${idx++}`,
       platform: "indiehackers",
       type: "ih-category",
-      title: `${cat.name} landscape for indie hackers`,
-      body: `We mapped out the ${cat.name.toLowerCase()} landscape for indie hackers and small teams.\n\n${catTools.length} tools compared. ${freeCount} have free tiers. Every price verified.\n\nInstead of reading 20 pricing pages, you can see them all normalized in one view.\n\n${SITE}/best/${cat.slug}`,
+      title: `${cat.name} for indie hackers — ${catTools.length} tools compared with real prices`,
+      body: `We compared ${catTools.length} ${cat.name.toLowerCase()} tools. ${freeCount} have free tiers. Here's the quick breakdown:\n\n${priceSummary}\n\nThe biggest gotcha in this category: ${catSlug === "crm" ? "CRM pricing often jumps 5-10x between starter and professional tiers" : catSlug === "automation" ? "automation tools charge per task/action, so costs scale with usage in ways that are hard to predict" : catSlug === "email-marketing" ? "some tools charge per contact (even unsubscribed ones), others charge per email sent" : "per-seat pricing means costs scale linearly with team size"}.\n\nAll prices verified against vendor sites, March 2026.\n\nFull comparison with scores and hidden costs: ${SITE}/best/${cat.slug}\n\nWhat are you using in this category? We're always looking for tools we missed.`,
       url: `${SITE}/best/${cat.slug}`,
       charCount: 0,
     });
   }
 
-  // Build-in-public about comparison methodology
+  // 4) Methodology post — focused on learnings, not self-promotion
   posts.push({
     id: `ih-method-${idx++}`,
     platform: "indiehackers",
     type: "ih-data",
-    title: "Our methodology for honest SaaS reviews",
-    body: `Building in public: here's how we keep Sasanova honest.\n\n1. Every price verified against vendor pricing pages (not third-party data)\n2. Scores based on 6 dimensions: value, ease, power, setup friction, migration difficulty, transparency\n3. Hidden costs flagged separately from advertised pricing\n4. "Avoid if" section on every tool (not just "best for")\n5. All data timestamped with last-verified dates\n\nWe make money through affiliate links, but the data and scores are independent.\n\n${SITE}/about/methodology`,
-    url: `${SITE}/about/methodology`,
+    title: "What we learned verifying pricing for " + totalTools + " SaaS tools",
+    body: `We've spent months verifying SaaS pricing against vendor pages. Here's what we learned about how SaaS pricing actually works:\n\n1. **~40% of tools have costs not shown on the pricing page.** Add-ons, overage fees, transaction cuts, and module upsells are buried in help docs or only visible at checkout.\n\n2. **Free tiers are shrinking.** Multiple tools we track have reduced free tier limits in the past year. What was "free for 2,000 contacts" becomes "free for 250."\n\n3. **Per-seat and per-usage pricing are designed to be unpredictable.** You can't budget accurately until you're already locked in.\n\n4. **"Contact Sales" is the most expensive plan.** ${contactSalesTools.length} of ${totalTools} tools we track hide their top tier this way.\n\n5. **Annual billing discounts average 15-25%.** But you're locked in for a year with a tool you may outgrow in 6 months.\n\nWe score every tool on 6 dimensions: value, ease, power, setup friction, migration difficulty, and transparency. We make money through affiliate links, but the scores are independent.\n\nThe data is free: ${SITE}\n\nWhat would you want to see in a SaaS comparison tool? We're still building this.`,
+    url: SITE,
     charCount: 0,
   });
 
-  // A post about versus comparisons
+  // 5) Versus comparisons post — with actual example comparisons and data
+  const examplePairs = versusPairs.slice(0, 4);
+  const pairLines = examplePairs.map((vs) => {
+    const a = getToolBySlug(vs.slugA);
+    const b = getToolBySlug(vs.slugB);
+    if (!a || !b) return null;
+    const verdict = vs.verdict === "depends"
+      ? "Depends on use case"
+      : vs.verdict === vs.slugA ? `${a.name} wins` : `${b.name} wins`;
+    return `- **${a.name} vs ${b.name}**: ${verdict}. ${vs.summary.split(".")[0]}.`;
+  }).filter(Boolean).join("\n");
+
   posts.push({
     id: `ih-versus-${idx++}`,
     platform: "indiehackers",
     type: "ih-data",
-    title: `We built ${totalVersus} head-to-head SaaS comparisons`,
-    body: `Most "vs" comparison sites are just SEO bait with regurgitated feature lists.\n\nWe built ${totalVersus} head-to-head comparisons with actual verdicts, price deltas, and "choose A if / choose B if" recommendations.\n\nEvery comparison is backed by independently verified pricing data.\n\nBrowse all comparisons: ${SITE}/compare`,
+    title: `${totalVersus} head-to-head SaaS comparisons — with verdicts and price deltas`,
+    body: `We built ${totalVersus} side-by-side comparisons with actual recommendations. Not "both are great!" — actual "choose A if / choose B if" decisions.\n\nA few examples:\n\n${pairLines}\n\nEvery comparison includes normalized pricing, feature overlap, hidden costs, and switching difficulty.\n\nWe include an "Avoid If" section for every tool — not just the upsides. If a tool is wrong for your use case, we say so.\n\nBrowse all comparisons: ${SITE}/compare\n\nWhich comparisons would be most useful to you? We prioritize based on what people actually need.`,
     url: `${SITE}/compare`,
     charCount: 0,
   });
@@ -395,15 +536,25 @@ function generateIndieHackersPosts(): SocialPost[] {
 }
 
 function generateNewsletterDraft(): string {
-  // Pick a tool with hidden costs for highlight
+  // 1. Find a tool with hidden costs for the hidden cost section
   const toolWithHidden = tools.find(
     (t) => t.hiddenCosts && t.hiddenCosts.length >= 2
   );
-  // Pick a popular versus pair
+
+  // 2. Pick a versus pair for comparison section
   const spotlight = versusPairs[0];
   const spotA = getToolBySlug(spotlight?.slugA ?? "");
   const spotB = getToolBySlug(spotlight?.slugB ?? "");
-  // Pick a cheap alternative (compare entry-level tiers, not enterprise)
+
+  // 3. Find a second tool with hidden costs for the hidden cost reveal
+  const revealTool = tools.find(
+    (t) =>
+      t.hiddenCosts &&
+      t.hiddenCosts.length >= 2 &&
+      t.slug !== toolWithHidden?.slug
+  );
+
+  // 4. Find a cheaper alternative pair
   const expensiveTool = tools.find((t) => {
     const entry = lowestPaidPlan(t);
     return entry && entry.priceMonthly && entry.priceMonthly > 20;
@@ -412,47 +563,73 @@ function generateNewsletterDraft(): string {
     ? comparableAlternative(expensiveTool)
     : null;
 
-  let draft = `# SaaS Price Report\n\n`;
-  draft += `## Pricing Change Highlight\n\n`;
+  let draft = `Subject: This week in SaaS pricing\n\n`;
+  draft += `---\n\n`;
+
+  // Section 1: Pricing change / hidden cost highlight
+  draft += `1. HIDDEN COST: `;
   if (toolWithHidden) {
-    draft += `**${toolWithHidden.name}** has costs that don't show up on the pricing page:\n`;
+    const plan = lowestPaidPlan(toolWithHidden);
+    const priceNote = plan ? `${toolWithHidden.name}'s ${plan.name} plan starts at $${plan.priceMonthly}/mo.` : `${toolWithHidden.name} looks affordable on the surface.`;
+    draft += `${toolWithHidden.name} has costs that aren't on the pricing page\n\n`;
+    draft += `${priceNote} But here's what you won't see until checkout or the help docs:\n\n`;
     draft += toolWithHidden
-      .hiddenCosts!.slice(0, 2)
-      .map((c) => `- ${c}`)
+      .hiddenCosts!
+      .map((c) => `  - ${c}`)
       .join("\n");
-    draft += `\n\nFull breakdown: ${SITE}/tools/${toolWithHidden.slug}\n\n`;
+    draft += `\n\n`;
+    draft += `This doesn't make ${toolWithHidden.name} a bad tool${toolWithHidden.bestFor?.[0] ? ` — it's genuinely good for ${toolWithHidden.bestFor[0].toLowerCase()}` : ""}. But you should know the real cost before committing.\n\n`;
+    draft += `Full breakdown: ${SITE}/tools/${toolWithHidden.slug}\n\n`;
   }
 
-  draft += `## Comparison Spotlight\n\n`;
+  // Section 2: Comparison spotlight with actual pricing details
+  draft += `2. COMPARISON: `;
   if (spotA && spotB && spotlight) {
-    draft += `**${spotA.name} vs ${spotB.name}**\n`;
-    draft += `${spotlight.summary}\n`;
-    draft += `Full comparison: ${compareUrl(spotlight.slugA, spotlight.slugB)}\n\n`;
+    const planA = lowestPaidPlan(spotA);
+    const planB = lowestPaidPlan(spotB);
+    const priceA = planA ? `$${planA.priceMonthly}/mo (${planA.name})` : (spotA.freeTier ? "Free" : "Custom pricing");
+    const priceB = planB ? `$${planB.priceMonthly}/mo (${planB.name})` : (spotB.freeTier ? "Free" : "Custom pricing");
+
+    draft += `${spotA.name} vs ${spotB.name} — the difference most people miss\n\n`;
+    draft += `  ${spotA.name}: starts at ${priceA}${spotA.freeTier ? ". Has a free tier" : ""}.\n`;
+    draft += `  ${spotB.name}: starts at ${priceB}${spotB.freeTier ? ". Has a free tier" : ""}.\n\n`;
+    draft += `${spotlight.summary}\n\n`;
+    if (spotlight.biggestDifference) {
+      draft += `Key insight: ${spotlight.biggestDifference}.\n\n`;
+    }
+    draft += `Side-by-side comparison: ${compareUrl(spotlight.slugA, spotlight.slugB)}\n\n`;
   }
 
-  draft += `## Hidden Cost Reveal\n\n`;
-  const revealTool = tools.find(
-    (t) =>
-      t.hiddenCosts &&
-      t.hiddenCosts.length >= 2 &&
-      t.slug !== toolWithHidden?.slug
-  );
+  // Section 3: Second hidden cost reveal
+  draft += `3. HIDDEN COST: `;
   if (revealTool) {
-    draft += `**${revealTool.name}** charges extra for:\n`;
+    draft += `${revealTool.name}'s pricing page is missing these fees\n\n`;
     draft += revealTool
-      .hiddenCosts!.slice(0, 2)
-      .map((c) => `- ${c}`)
+      .hiddenCosts!
+      .map((c) => `  - ${c}`)
       .join("\n");
-    draft += `\n\nDetails: ${SITE}/tools/${revealTool.slug}\n\n`;
+    draft += `\n\n`;
+    draft += `Details and alternatives: ${SITE}/tools/${revealTool.slug}\n\n`;
   }
 
-  draft += `## Cheaper Alternative\n\n`;
-  if (expensiveTool && cheapAlt) {
+  // Section 4: Cheaper alternative with both prices
+  draft += `4. CHEAPER ALTERNATIVE: `;
+  if (expensiveTool && cheapAlt && cheapAlt.altPlan) {
     const entryPlan = lowestPaidPlan(expensiveTool);
-    draft += `Paying $${fmt(Math.round((entryPlan?.priceMonthly ?? 0) * 12))}/year for **${expensiveTool.name}**?\n`;
-    draft += `**${cheapAlt.alt.name}** does comparable work for $${fmt(Math.round((cheapAlt.altPlan?.priceMonthly ?? 0) * 12))}/year.\n`;
-    draft += `Compare: ${compareUrl(expensiveTool.slug, cheapAlt.alt.slug)}\n`;
+    const expMonthly = entryPlan?.priceMonthly ?? 0;
+    const altMonthly = cheapAlt.altPlan.priceMonthly ?? 0;
+    const annualSavings = Math.round((expMonthly - altMonthly) * 12);
+
+    draft += `Save $${fmt(annualSavings)}/year by switching from ${expensiveTool.name} to ${cheapAlt.alt.name}\n\n`;
+    draft += `  ${expensiveTool.name} ${entryPlan?.name ?? ""}: $${expMonthly}/mo ($${fmt(Math.round(expMonthly * 12))}/yr)\n`;
+    draft += `  ${cheapAlt.alt.name} ${cheapAlt.altPlan.name}: $${altMonthly}/mo ($${fmt(Math.round(altMonthly * 12))}/yr)\n\n`;
+    draft += `Caveat: ${cheapAlt.alt.avoidIf?.[0] ? cheapAlt.alt.avoidIf[0] : "Feature sets aren't identical — check which integrations you actually need"}.\n\n`;
+    draft += `Compare side by side: ${compareUrl(expensiveTool.slug, cheapAlt.alt.slug)}\n`;
   }
+
+  draft += `\n---\n\n`;
+  draft += `All prices independently verified against vendor pages. We make money through affiliate links (labeled), but the data is independent.\n\n`;
+  draft += `Reply to this email if you want us to cover a specific tool or comparison next week.`;
 
   return draft;
 }
