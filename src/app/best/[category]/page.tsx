@@ -13,7 +13,8 @@ import { generateCategoryThesis } from "@/lib/category-thesis";
 
 /** Avoid titles like "Best Automation Tools Tools in 2026" */
 function bestTitle(name: string): string {
-  if (/tools$/i.test(name) || /software$/i.test(name)) {
+  const lower = name.toLowerCase();
+  if (lower.includes("tools") || lower.includes("software") || lower.includes("management") || lower.includes("builders") || lower.includes("platforms") || lower.includes("assistants") || lower.includes("storage")) {
     return `Best ${name} in 2026`;
   }
   return `Best ${name} Tools in 2026`;
