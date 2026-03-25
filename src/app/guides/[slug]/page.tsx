@@ -306,6 +306,34 @@ const guideMeta: Record<string, { title: string; category: string }> = {
     title: "Who Should NOT Use Salesforce (Save Yourself $50K/Year)",
     category: "Anti-Recommendation",
   },
+  "mailchimp-hidden-costs": {
+    title: "The Real Cost of Mailchimp: What the Pricing Page Doesn't Show",
+    category: "Hidden Costs",
+  },
+  "zapier-hidden-costs": {
+    title: "Zapier's Hidden Costs: Why Your $20/Month Plan Becomes $100",
+    category: "Hidden Costs",
+  },
+  "best-email-tool-ecommerce": {
+    title: "Best Email Marketing Tool for E-commerce (Not Mailchimp)",
+    category: "Persona Guide",
+  },
+  "best-crm-real-estate": {
+    title: "Best CRM for Real Estate Agents (Skip the Enterprise Tools)",
+    category: "Persona Guide",
+  },
+  "email-marketing-annual-cost-2026": {
+    title: "Email Marketing Costs in 2026: What You'll Actually Pay",
+    category: "Annual Cost Analysis",
+  },
+  "crm-annual-cost-2026": {
+    title: "CRM Costs in 2026: Per-Seat Math That Changes Everything",
+    category: "Annual Cost Analysis",
+  },
+  "automation-annual-cost-2026": {
+    title: "Automation Tool Costs in 2026: Task Counting Changes Everything",
+    category: "Annual Cost Analysis",
+  },
 };
 
 export function generateStaticParams() {

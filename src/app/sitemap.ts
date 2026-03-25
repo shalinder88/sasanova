@@ -82,7 +82,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Guide pages: /guides/[slug] — read from guides hub data
-  const guideSlugs = [
+  // Deduplicated guide slugs — every guide page on the site
+  const guideSlugs = [...new Set([
+    // Original guides
     "newsletter-stack", "ai-research-workflow", "automate-lead-capture",
     "crm-solo-founder", "project-management-small-team",
     "email-marketing-ecommerce", "automation-zapier-vs-make-vs-n8n",
@@ -97,40 +99,45 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "website-builder-for-business", "cloud-storage-teams",
     "best-webinar-platform", "landing-page-builder-comparison",
     "seo-tools-for-small-sites", "proposal-software-freelancers",
-    "customer-success-tools", "migrate-mailchimp-to-kit",
-    "migrate-mailchimp-to-beehiiv", "migrate-substack-to-beehiiv",
-    "best-email-tool-creators", "best-email-tool-agencies",
-    "migrate-salesforce-to-hubspot", "migrate-spreadsheet-to-crm",
-    "best-crm-freelancers-consultants", "best-crm-sales-teams",
-    "hubspot-pricing-reality", "migrate-zapier-to-make",
-    "migrate-zapier-to-n8n", "best-automation-tool-agencies",
-    "best-automation-tool-solopreneurs", "automation-pricing-compared",
-    "mailchimp-hidden-costs", "zapier-hidden-costs",
-    "best-crm-real-estate", "best-email-tool-ecommerce",
-    "salesforce-hidden-costs", "switch-from-hubspot-to-pipedrive",
-    "best-automation-marketing-teams",
-    "switch-from-mailchimp-to-activecampaign", "hubspot-crm-setup-guide",
+    "customer-success-tools",
+    // Migration guides
+    "migrate-mailchimp-to-kit", "migrate-mailchimp-to-beehiiv",
+    "migrate-substack-to-beehiiv", "migrate-salesforce-to-hubspot",
+    "migrate-spreadsheet-to-crm", "migrate-zapier-to-make",
+    "migrate-zapier-to-n8n",
+    // Switching guides
+    "switch-from-hubspot-to-pipedrive", "switch-from-mailchimp-to-activecampaign",
     "switch-from-pipedrive-to-hubspot", "switch-from-kit-to-beehiiv",
     "switch-from-make-to-zapier", "switch-from-notion-to-clickup",
+    // Persona guides
+    "best-email-tool-creators", "best-email-tool-agencies",
+    "best-email-tool-ecommerce", "best-crm-freelancers-consultants",
+    "best-crm-sales-teams", "best-crm-real-estate", "best-crm-agencies",
+    "best-automation-tool-agencies", "best-automation-tool-solopreneurs",
+    "best-automation-marketing-teams", "best-newsletter-paid-subscribers",
+    "best-tools-saas-startup",
+    // Setup guides
     "hubspot-crm-setup-guide", "beehiiv-setup-guide",
     "zapier-setup-guide", "pipedrive-setup-guide", "make-setup-guide",
-    "best-email-tool-ecommerce", "best-crm-real-estate",
-    "best-automation-marketing-teams", "best-newsletter-paid-subscribers",
-    "best-tools-saas-startup", "best-crm-agencies",
-    "email-deliverability-compared", "crm-integrations-that-matter",
+    // Pricing deep dives
+    "hubspot-pricing-reality", "automation-pricing-compared",
+    "mailchimp-hidden-costs", "zapier-hidden-costs", "salesforce-hidden-costs",
+    // Pricing history
+    "mailchimp-pricing-history", "zapier-pricing-history", "hubspot-pricing-history",
+    // Annual cost analysis
+    "email-marketing-annual-cost-2026", "crm-annual-cost-2026",
+    "automation-annual-cost-2026",
+    // Cross-cluster comparisons
     "hubspot-vs-activecampaign-full-comparison",
     "mailchimp-vs-hubspot-marketing", "notion-vs-clickup-vs-asana",
     "zapier-vs-hubspot-workflows", "beehiiv-vs-kit-vs-mailchimp-for-creators",
-    "mailchimp-pricing-history", "zapier-pricing-history", "hubspot-pricing-history",
+    // Who should NOT use
     "who-should-not-use-hubspot", "who-should-not-use-mailchimp",
     "who-should-not-use-zapier", "who-should-not-use-notion",
     "who-should-not-use-salesforce",
-    "switch-from-mailchimp-to-activecampaign",
-    "switch-from-pipedrive-to-hubspot", "switch-from-kit-to-beehiiv",
-    "switch-from-make-to-zapier", "switch-from-notion-to-clickup",
-    "best-crm-agencies", "email-deliverability-compared",
-    "crm-integrations-that-matter",
-  ];
+    // Other
+    "email-deliverability-compared", "crm-integrations-that-matter",
+  ])];
   const guidePages: MetadataRoute.Sitemap = guideSlugs.map((slug) => ({
     url: `${BASE}/guides/${slug}`,
     lastModified: now,

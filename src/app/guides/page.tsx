@@ -613,6 +613,55 @@ const guides = [
     readingTime: "13 min read",
     category: "Anti-Recommendation",
   },
+  {
+    slug: "mailchimp-hidden-costs",
+    title: "The Real Cost of Mailchimp: What the Pricing Page Doesn't Show",
+    description: "Contact counting traps, overage charges, template limitations, and the Standard plan pricing cliff that catches most users.",
+    readingTime: "14 min read",
+    category: "Hidden Costs",
+  },
+  {
+    slug: "zapier-hidden-costs",
+    title: "Zapier's Hidden Costs: Why Your $20/Month Plan Becomes $100",
+    description: "Multi-step task counting, premium app pricing, the 750-task reality, and when Make actually saves money.",
+    readingTime: "13 min read",
+    category: "Hidden Costs",
+  },
+  {
+    slug: "best-email-tool-ecommerce",
+    title: "Best Email Marketing Tool for E-commerce (Not Mailchimp)",
+    description: "Klaviyo vs Mailchimp vs ActiveCampaign vs Brevo for e-commerce — revenue attribution, cart abandonment, and real cost at scale.",
+    readingTime: "15 min read",
+    category: "Persona Guide",
+  },
+  {
+    slug: "best-crm-real-estate",
+    title: "Best CRM for Real Estate Agents (Skip the Enterprise Tools)",
+    description: "Follow Up Boss vs Pipedrive vs HubSpot Free vs Folk — contact-to-deal workflows, mobile quality, and monthly cost for solo agents.",
+    readingTime: "14 min read",
+    category: "Persona Guide",
+  },
+  {
+    slug: "email-marketing-annual-cost-2026",
+    title: "Email Marketing Costs in 2026: What You'll Actually Pay",
+    description: "Annual cost comparison of Mailchimp vs Kit vs beehiiv vs ActiveCampaign vs Brevo at every subscriber tier from 1K to 100K.",
+    readingTime: "12 min read",
+    category: "Annual Cost Analysis",
+  },
+  {
+    slug: "crm-annual-cost-2026",
+    title: "CRM Costs in 2026: Per-Seat Math That Changes Everything",
+    description: "Annual cost of HubSpot vs Pipedrive vs Salesforce vs Zoho vs Close at 3 to 50 seats including hidden add-ons.",
+    readingTime: "13 min read",
+    category: "Annual Cost Analysis",
+  },
+  {
+    slug: "automation-annual-cost-2026",
+    title: "Automation Tool Costs in 2026: Task Counting Changes Everything",
+    description: "Annual cost of Zapier vs Make vs n8n vs Pipedream with normalized task counting and self-hosting break-even analysis.",
+    readingTime: "12 min read",
+    category: "Annual Cost Analysis",
+  },
 ];
 
 export default function GuidesHub() {
