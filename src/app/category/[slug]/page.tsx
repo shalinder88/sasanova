@@ -169,7 +169,7 @@ export default async function CategoryPage({ params }: Props) {
         {/* AEO Answer Block */}
         <div className="bg-surface-alt border border-border rounded-lg p-4 mb-8">
           <p className="text-sm text-foreground leading-relaxed">
-            The best {cat.name.toLowerCase()} tool in 2026 is{" "}
+            The best {cat.name.toLowerCase()} option in 2026 is{" "}
             <strong>{winner.name}</strong> with an overall score of {winner.overall}/10.{" "}
             {winner.tagline}.{" "}
             {winner.freeTier

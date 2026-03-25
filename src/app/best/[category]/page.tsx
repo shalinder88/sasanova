@@ -14,7 +14,9 @@ import { generateCategoryThesis } from "@/lib/category-thesis";
 /** Avoid titles like "Best Automation Tools Tools in 2026" */
 function bestTitle(name: string): string {
   const lower = name.toLowerCase();
-  if (lower.includes("tools") || lower.includes("software") || lower.includes("management") || lower.includes("builders") || lower.includes("platforms") || lower.includes("assistants") || lower.includes("storage")) {
+  // If the name already ends with a product-type word, don't append "Tools"
+  const productSuffixes = /\b(tools|software|platforms|builders|assistants|storage|management|solutions|apps|services|suites|surveys|contracts|commerce)$/i;
+  if (productSuffixes.test(lower.trim())) {
     return `Best ${name} in 2026`;
   }
   return `Best ${name} Tools in 2026`;

@@ -373,7 +373,7 @@ export default async function ComparisonPage({ params }: PageProps) {
               <span className="w-1.5 h-1.5 rounded-full bg-success" />
               Data independently verified
             </span>
-            <span>Last verified: {toolA.lastVerified}</span>
+            <span>Last verified: {new Date(toolA.lastVerified).toLocaleDateString("en-US", { month: "long", year: "numeric" })}</span>
             <a href="/about/methodology" className="text-accent hover:underline">Scoring methodology →</a>
             <a href="/about/source-policy" className="text-accent hover:underline">Source policy →</a>
           </div>

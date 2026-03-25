@@ -334,7 +334,7 @@ export default async function PricingDetailPage({
         <section className="mb-10">
           <div className="flex flex-wrap items-center gap-3 text-sm">
             <span className="text-muted">Last verified:</span>
-            <span className="font-medium">{tool.lastVerified}</span>
+            <span className="font-medium">{new Date(tool.lastVerified).toLocaleDateString("en-US", { month: "long", year: "numeric" })}</span>
             <span className={`inline-flex items-center text-[11px] font-semibold px-2.5 py-1 rounded-full ${provenanceColor}`}>
               {provenanceLabel}
             </span>

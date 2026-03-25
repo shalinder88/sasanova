@@ -11,7 +11,7 @@ export function GET() {
       title: `${tool.name} — profile verified`,
       summary: `${tool.name} data independently verified. Scores, pricing, and features confirmed current.`,
       date_published: new Date(tool.lastVerified).toISOString(),
-      content_text: `${tool.name} (${tool.vendor}) was independently verified on ${tool.lastVerified}. Category: ${tool.categorySlug}. Provenance: ${tool.provenanceLevel}.`,
+      content_text: `${tool.name} (${tool.vendor}) was independently verified in ${new Date(tool.lastVerified).toLocaleDateString("en-US", { month: "long", year: "numeric" })}. Category: ${tool.categorySlug}. Provenance: ${tool.provenanceLevel}.`,
       _sasanova: {
         tool_slug: tool.slug,
         tool_name: tool.name,
