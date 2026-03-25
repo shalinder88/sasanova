@@ -386,6 +386,18 @@ const guideMeta: Record<string, { title: string; category: string }> = {
     title: "Best Email Tool Under $50/Month: Where the Value Actually Is",
     category: "Pricing Deep Dive",
   },
+  "email-marketing-faq": {
+    title: "Email Marketing Questions Answered: 30 Things Buyers Actually Ask",
+    category: "FAQ",
+  },
+  "crm-faq": {
+    title: "CRM Questions Answered: 25 Things Small Teams Actually Ask",
+    category: "FAQ",
+  },
+  "automation-faq": {
+    title: "Automation Questions Answered: 20 Things Buyers Actually Ask",
+    category: "FAQ",
+  },
 };
 
 export function generateStaticParams() {

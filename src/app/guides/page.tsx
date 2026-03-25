@@ -769,6 +769,30 @@ const guides = [
     readingTime: "17 min read",
     category: "Pricing Deep Dive",
   },
+  {
+    slug: "email-marketing-faq",
+    title: "Email Marketing Questions Answered: 30 Things Buyers Actually Ask",
+    description:
+      "Direct answers to 30 real email marketing questions. Specific tool names, real prices, and definitive recommendations for Mailchimp, Kit, beehiiv, ActiveCampaign, and Brevo.",
+    readingTime: "12 min read",
+    category: "FAQ",
+  },
+  {
+    slug: "crm-faq",
+    title: "CRM Questions Answered: 25 Things Small Teams Actually Ask",
+    description:
+      "Direct answers to 25 real CRM questions. Specific per-seat prices, definitive recommendations for HubSpot, Pipedrive, Salesforce, Freshsales, and Zoho, and when you don't need a CRM at all.",
+    readingTime: "10 min read",
+    category: "FAQ",
+  },
+  {
+    slug: "automation-faq",
+    title: "Automation Questions Answered: 20 Things Buyers Actually Ask",
+    description:
+      "Direct answers to 20 real automation questions. Task counting math, Zapier vs Make vs n8n pricing, self-hosting costs, and when automation tools are worth paying for.",
+    readingTime: "9 min read",
+    category: "FAQ",
+  },
 ];
 
 export default function GuidesHub() {
