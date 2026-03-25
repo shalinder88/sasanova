@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "HR and Payroll Software for Small Businesses: The Honest Comparison",
@@ -328,6 +329,15 @@ export default function HrPayrollGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["gusto", "rippling", "bamboohr", "deel"]}
+            comparisons={["gusto-vs-rippling", "bamboohr-vs-gusto", "bamboohr-vs-rippling", "gusto-vs-deel"]}
+            guides={[
+              "best-free-tools-startups",
+              "best-tools-saas-startup",
+            ]}
+          />
         </div>
       </div>
     </>

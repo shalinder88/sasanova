@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Calendly vs Cal.com: Pay $192/Year or Self-Host for Free",
@@ -464,6 +465,16 @@ export default function SchedulingToolComparisonPage() {
             </div>
           </section>
 
+
+          <RelatedLinks
+            tools={["calendly", "cal-com", "savvycal", "tidycal", "reclaim-ai", "acuity-scheduling"]}
+            comparisons={["calendly-vs-cal-com", "calendly-vs-tidycal"]}
+            guides={[
+              "best-free-tools-startups",
+              "automate-lead-capture",
+              "remote-team-communication",
+            ]}
+          />
         </div>
       </article>
     </>

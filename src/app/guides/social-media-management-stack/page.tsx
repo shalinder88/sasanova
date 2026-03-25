@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Social Media Management Without the $300/Month Bill",
@@ -317,6 +318,16 @@ export default function SocialMediaManagementGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["buffer", "hootsuite", "later", "sprout-social"]}
+            comparisons={["buffer-vs-hootsuite", "buffer-vs-later", "buffer-vs-sprout-social", "sprout-social-vs-hootsuite", "later-vs-sprout-social"]}
+            guides={[
+              "design-tools-non-designers",
+              "remote-team-communication",
+              "seo-tools-for-small-sites",
+            ]}
+          />
         </div>
       </div>
     </>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "SEO Tools for Sites Under 10K Monthly Visitors",
@@ -341,6 +342,16 @@ export default function SeoToolsGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["ahrefs", "semrush", "mangools", "surfer-seo", "se-ranking"]}
+            comparisons={["ahrefs-vs-semrush", "ahrefs-vs-mangools", "surfer-seo-vs-semrush"]}
+            guides={[
+              "choosing-analytics-tool",
+              "website-builder-for-business",
+              "social-media-management-stack",
+            ]}
+          />
         </div>
       </div>
     </>

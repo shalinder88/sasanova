@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "How to Choose an Analytics Tool Without Drowning in Data",
@@ -332,6 +333,15 @@ export default function ChoosingAnalyticsToolGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["posthog", "mixpanel", "amplitude", "plausible", "hotjar"]}
+            comparisons={["posthog-vs-mixpanel", "mixpanel-vs-amplitude", "posthog-vs-amplitude", "hotjar-vs-posthog"]}
+            guides={[
+              "best-tools-saas-startup",
+              "seo-tools-for-small-sites",
+            ]}
+          />
         </div>
       </div>
     </>

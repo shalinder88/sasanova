@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Setting Up Communication Tools for a Remote Team of 5-50",
@@ -397,6 +398,16 @@ export default function RemoteTeamCommunicationGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["slack", "discord", "microsoft-teams", "zoom", "loom"]}
+            comparisons={["slack-vs-discord", "slack-vs-microsoft-teams", "loom-vs-slack"]}
+            guides={[
+              "project-management-small-team",
+              "meeting-recording-comparison",
+              "cloud-storage-teams",
+            ]}
+          />
         </div>
       </div>
     </>

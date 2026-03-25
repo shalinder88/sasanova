@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Notion vs Obsidian: The Decision That Reveals How You Think",
@@ -425,6 +426,16 @@ export default function NotionVsObsidianPage() {
             </div>
           </section>
 
+
+          <RelatedLinks
+            tools={["notion", "obsidian"]}
+            comparisons={["obsidian-vs-notion"]}
+            guides={[
+              "building-knowledge-base",
+              "notion-vs-clickup-vs-asana",
+              "who-should-not-use-notion",
+            ]}
+          />
         </div>
       </article>
     </>

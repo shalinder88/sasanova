@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Notion vs ClickUp vs Asana: The Three-Way Comparison Nobody Gets Right",
@@ -448,6 +449,16 @@ export default function NotionVsClickUpVsAsanaPage() {
               </Link>
             </div>
           </div>
+
+          <RelatedLinks
+            tools={["notion", "clickup", "asana"]}
+            comparisons={["notion-vs-clickup", "clickup-vs-asana", "notion-vs-asana"]}
+            guides={[
+              "project-management-small-team",
+              "switch-from-notion-to-clickup",
+              "who-should-not-use-notion",
+            ]}
+          />
         </div>
       </article>
     </>

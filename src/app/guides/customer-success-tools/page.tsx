@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Customer Success Tools: When Spreadsheets Stop Working",
@@ -393,6 +394,16 @@ export default function CustomerSuccessToolsGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["gainsight", "vitally", "totango", "churnzero", "custify"]}
+            comparisons={["gainsight-vs-churnzero"]}
+            guides={[
+              "customer-support-stack",
+              "best-crm-sales-teams",
+              "crm-integrations-that-matter",
+            ]}
+          />
         </div>
       </div>
     </>

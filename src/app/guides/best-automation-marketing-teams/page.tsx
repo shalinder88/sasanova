@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Marketing Automation on a Budget: What Actually Moves the Needle",
@@ -408,6 +409,16 @@ export default function BestAutomationMarketingTeams() {
               </Link>
             </div>
           </div>
+
+          <RelatedLinks
+            tools={["hubspot-crm", "activecampaign", "brevo", "convertkit"]}
+            comparisons={["activecampaign-vs-hubspot-crm", "activecampaign-vs-brevo", "activecampaign-vs-mailchimp"]}
+            guides={[
+              "automation-pricing-compared",
+              "best-automation-tool-agencies",
+              "hubspot-vs-activecampaign-full-comparison",
+            ]}
+          />
         </div>
       </article>
     </>

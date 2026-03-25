@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Design Tools for People Who Can't Design: A Practical Guide",
@@ -363,6 +364,16 @@ export default function DesignToolsNonDesignersGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["canva", "figma", "framer"]}
+            comparisons={["figma-vs-canva", "webflow-vs-framer"]}
+            guides={[
+              "website-builder-for-business",
+              "landing-page-builder-comparison",
+              "social-media-management-stack",
+            ]}
+          />
         </div>
       </div>
     </>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Customer Support Software for Teams Under 20: What You Actually Need",
@@ -166,6 +167,16 @@ export default function CustomerSupportStack() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["zendesk", "intercom", "freshdesk", "help-scout", "crisp"]}
+            comparisons={["zendesk-vs-intercom", "freshdesk-vs-zendesk", "help-scout-vs-intercom", "help-scout-vs-freshdesk"]}
+            guides={[
+              "customer-success-tools",
+              "remote-team-communication",
+              "best-tools-saas-startup",
+            ]}
+          />
         </div>
       </article>
     </>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Recording Setup for Remote Podcasts and Video: What Actually Works",
@@ -357,6 +358,15 @@ export default function VideoPodcastRecordingGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["riverside", "descript", "streamyard", "zoom", "loom"]}
+            comparisons={["descript-vs-riverside"]}
+            guides={[
+              "meeting-recording-comparison",
+              "remote-team-communication",
+            ]}
+          />
         </div>
       </div>
     </>

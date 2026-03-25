@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "CRM Integrations That Actually Matter (And Ones That Don't)",
@@ -474,6 +475,16 @@ export default function CrmIntegrationsThatMatter() {
               </Link>
             </div>
           </div>
+
+          <RelatedLinks
+            tools={["hubspot-crm", "pipedrive", "salesforce", "zapier", "make"]}
+            comparisons={["hubspot-crm-vs-pipedrive", "salesforce-vs-hubspot-crm", "zapier-vs-make"]}
+            guides={[
+              "crm-annual-cost-2026",
+              "automate-lead-capture",
+              "best-crm-sales-teams",
+            ]}
+          />
         </div>
       </article>
     </>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Stop Sending PDFs: Proposal Software That Actually Closes Deals",
@@ -378,6 +379,15 @@ export default function ProposalSoftwareGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["pandadoc", "proposify", "docusign", "better-proposals", "qwilr"]}
+            comparisons={["pandadoc-vs-docusign", "proposify-vs-pandadoc"]}
+            guides={[
+              "accounting-freelancers",
+              "best-crm-freelancers-consultants",
+            ]}
+          />
         </div>
       </div>
     </>

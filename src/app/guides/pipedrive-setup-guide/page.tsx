@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Pipedrive Setup for Sales Teams: Pipeline to First Deal",
@@ -312,6 +313,16 @@ export default function PipedriveSetupGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["pipedrive", "hubspot-crm", "zapier"]}
+            comparisons={["hubspot-crm-vs-pipedrive", "close-crm-vs-pipedrive", "pipedrive-vs-zoho-crm"]}
+            guides={[
+              "best-crm-sales-teams",
+              "switch-from-hubspot-to-pipedrive",
+              "crm-annual-cost-2026",
+            ]}
+          />
         </div>
       </article>
     </>

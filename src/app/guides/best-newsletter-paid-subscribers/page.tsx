@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Building a Paid Newsletter: Platform Comparison for Monetization",
@@ -398,6 +399,16 @@ export default function BestNewsletterPaidSubscribers() {
               </Link>
             </div>
           </div>
+
+          <RelatedLinks
+            tools={["beehiiv", "substack", "ghost", "convertkit"]}
+            comparisons={["beehiiv-vs-substack", "ghost-vs-substack", "beehiiv-vs-convertkit"]}
+            guides={[
+              "newsletter-stack",
+              "best-email-tool-creators",
+              "beehiiv-setup-guide",
+            ]}
+          />
         </div>
       </article>
     </>

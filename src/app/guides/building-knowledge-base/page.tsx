@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Building a Knowledge Base That Your Team Actually Uses",
@@ -164,6 +165,16 @@ export default function BuildingKnowledgeBase() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["notion", "slite", "coda", "obsidian"]}
+            comparisons={["obsidian-vs-notion", "notion-vs-clickup"]}
+            guides={[
+              "notion-vs-obsidian-decision",
+              "project-management-small-team",
+              "ai-research-workflow",
+            ]}
+          />
         </div>
       </article>
     </>

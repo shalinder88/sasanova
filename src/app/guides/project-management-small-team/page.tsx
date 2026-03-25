@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Choosing Project Management Software Without Losing Your Mind",
@@ -409,6 +410,16 @@ export default function ProjectManagementGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["notion", "clickup", "asana", "trello", "monday", "basecamp"]}
+            comparisons={["notion-vs-clickup", "clickup-vs-asana", "monday-vs-asana", "trello-vs-asana"]}
+            guides={[
+              "notion-vs-clickup-vs-asana",
+              "remote-team-communication",
+              "building-knowledge-base",
+            ]}
+          />
         </div>
       </div>
     </>

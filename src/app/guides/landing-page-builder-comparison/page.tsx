@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Landing Page Builders: When to Pay $99/Month and When $0 Works",
@@ -302,6 +303,16 @@ export default function LandingPageBuilderGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["unbounce", "leadpages", "instapage", "carrd", "webflow"]}
+            comparisons={["leadpages-vs-unbounce", "unbounce-vs-instapage", "webflow-vs-framer"]}
+            guides={[
+              "website-builder-for-business",
+              "design-tools-non-designers",
+              "automate-lead-capture",
+            ]}
+          />
         </div>
       </div>
     </>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Cloud Storage for Teams: Dropbox vs Google Workspace vs Box",
@@ -388,6 +389,16 @@ export default function CloudStorageTeamsGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["dropbox", "google-workspace", "box"]}
+            comparisons={["dropbox-vs-google-workspace", "dropbox-vs-box", "google-workspace-vs-box"]}
+            guides={[
+              "remote-team-communication",
+              "building-knowledge-base",
+              "project-management-small-team",
+            ]}
+          />
         </div>
       </div>
     </>

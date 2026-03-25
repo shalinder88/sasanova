@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Choosing a Website Builder in 2026: Beyond the Marketing Pages",
@@ -412,6 +413,16 @@ export default function WebsiteBuilderGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["webflow", "squarespace", "wix", "framer", "wordpress-com", "carrd"]}
+            comparisons={["webflow-vs-framer", "squarespace-vs-wix"]}
+            guides={[
+              "landing-page-builder-comparison",
+              "design-tools-non-designers",
+              "ecommerce-stack-solo-creator",
+            ]}
+          />
         </div>
       </div>
     </>

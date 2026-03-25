@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "How to Automate Lead Capture Without Spending $500/Month on HubSpot",
@@ -334,6 +335,16 @@ export default function AutomateLeadCaptureGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["zapier", "make", "pipedrive", "hubspot-crm", "tally", "beehiiv"]}
+            comparisons={["zapier-vs-make", "hubspot-crm-vs-pipedrive"]}
+            guides={[
+              "zapier-setup-guide",
+              "make-setup-guide",
+              "crm-integrations-that-matter",
+            ]}
+          />
         </div>
       </div>
     </>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Zapier vs HubSpot Workflows: Do You Need Both?",
@@ -330,6 +331,16 @@ export default function ZapierVsHubSpotWorkflowsPage() {
               </Link>
             </div>
           </div>
+
+          <RelatedLinks
+            tools={["zapier", "hubspot-crm", "make"]}
+            comparisons={["zapier-vs-make", "hubspot-crm-vs-pipedrive"]}
+            guides={[
+              "zapier-setup-guide",
+              "hubspot-crm-setup-guide",
+              "automation-annual-cost-2026",
+            ]}
+          />
         </div>
       </article>
     </>

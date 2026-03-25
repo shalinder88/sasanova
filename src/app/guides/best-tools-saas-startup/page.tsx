@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "The Complete SaaS Startup Stack Under $500/Month",
@@ -436,6 +437,16 @@ export default function BestToolsSaasStartup() {
               </Link>
             </div>
           </div>
+
+          <RelatedLinks
+            tools={["hubspot-crm", "notion", "zapier", "intercom", "posthog"]}
+            comparisons={["hubspot-crm-vs-pipedrive", "zapier-vs-make", "posthog-vs-mixpanel"]}
+            guides={[
+              "best-free-tools-startups",
+              "crm-solo-founder",
+              "automate-lead-capture",
+            ]}
+          />
         </div>
       </article>
     </>

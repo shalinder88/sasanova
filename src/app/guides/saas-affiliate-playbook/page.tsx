@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "How SaaS Affiliate Programs Actually Work: A Realistic Guide for Content Sites",
@@ -165,6 +166,14 @@ export default function SaasAffiliatePlaybook() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            guides={[
+              "best-tools-saas-startup",
+              "newsletter-stack",
+              "seo-tools-for-small-sites",
+            ]}
+          />
         </div>
       </article>
     </>

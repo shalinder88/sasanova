@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Going Back to Zapier from Make: When Simplicity Wins",
@@ -357,6 +358,16 @@ export default function SwitchMakeToZapierPage() {
               </Link>
             </div>
           </div>
+
+          <RelatedLinks
+            tools={["make", "zapier"]}
+            comparisons={["zapier-vs-make"]}
+            guides={[
+              "zapier-setup-guide",
+              "automation-annual-cost-2026",
+              "migrate-zapier-to-make",
+            ]}
+          />
         </div>
       </article>
     </>

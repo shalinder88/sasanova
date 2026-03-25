@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Accounting Software for Freelancers: Stop Overpaying",
@@ -427,6 +428,15 @@ export default function AccountingFreelancersGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["quickbooks-online", "wave", "freshbooks", "xero"]}
+            comparisons={["quickbooks-online-vs-xero"]}
+            guides={[
+              "best-free-tools-startups",
+              "proposal-software-freelancers",
+            ]}
+          />
         </div>
       </div>
     </>

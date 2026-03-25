@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Make (Integromat) Setup: Your First Automation Without the Confusion",
@@ -347,6 +348,16 @@ export default function MakeSetupGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["make", "zapier", "n8n"]}
+            comparisons={["zapier-vs-make", "make-vs-n8n"]}
+            guides={[
+              "migrate-zapier-to-make",
+              "automation-annual-cost-2026",
+              "automation-pricing-compared",
+            ]}
+          />
         </div>
       </article>
     </>

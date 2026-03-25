@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Your Spreadsheet CRM is Costing You Deals: When and How to Switch",
@@ -297,6 +298,16 @@ export default function MigrateSpreadsheetToCrm() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["hubspot-crm", "pipedrive", "close-crm", "zoho-crm"]}
+            comparisons={["hubspot-crm-vs-pipedrive", "close-crm-vs-pipedrive", "zoho-crm-vs-hubspot-crm"]}
+            guides={[
+              "crm-solo-founder",
+              "best-crm-freelancers-consultants",
+              "pipedrive-setup-guide",
+            ]}
+          />
         </div>
       </article>
     </>

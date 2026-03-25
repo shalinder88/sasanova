@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "How to Build an AI Research Workflow That Actually Saves Time",
@@ -323,6 +324,15 @@ export default function AIResearchWorkflowGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["chatgpt", "claude-ai", "perplexity", "notion"]}
+            comparisons={["chatgpt-vs-claude-ai", "claude-ai-vs-perplexity", "perplexity-vs-chatgpt"]}
+            guides={[
+              "building-knowledge-base",
+              "best-tools-saas-startup",
+            ]}
+          />
         </div>
       </div>
     </>

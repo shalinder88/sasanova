@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "HubSpot vs ActiveCampaign: CRM + Email Marketing in One or Separate?",
@@ -382,6 +383,16 @@ export default function HubSpotVsActiveCampaignPage() {
               </Link>
             </div>
           </div>
+
+          <RelatedLinks
+            tools={["hubspot-crm", "activecampaign"]}
+            comparisons={["activecampaign-vs-hubspot-crm", "activecampaign-vs-mailchimp", "mailchimp-vs-hubspot-crm"]}
+            guides={[
+              "hubspot-pricing-reality",
+              "best-automation-marketing-teams",
+              "best-email-tool-agencies",
+            ]}
+          />
         </div>
       </article>
     </>

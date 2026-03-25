@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "AI Meeting Assistants: What Actually Works and What's Marketing Hype",
@@ -366,6 +367,16 @@ export default function MeetingRecordingComparisonPage() {
             </div>
           </section>
 
+
+          <RelatedLinks
+            tools={["otter-ai", "fireflies-ai", "grain", "tldv", "loom"]}
+            comparisons={["otter-ai-vs-fireflies-ai", "loom-vs-grain"]}
+            guides={[
+              "remote-team-communication",
+              "video-podcast-recording",
+              "best-tools-saas-startup",
+            ]}
+          />
         </div>
       </article>
     </>

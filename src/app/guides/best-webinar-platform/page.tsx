@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Choosing a Webinar Platform Without Overpaying",
@@ -323,6 +324,16 @@ export default function WebinarPlatformGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["demio", "livestorm", "zoom"]}
+            comparisons={["demio-vs-livestorm", "zoom-vs-demio"]}
+            guides={[
+              "meeting-recording-comparison",
+              "video-podcast-recording",
+              "remote-team-communication",
+            ]}
+          />
         </div>
       </div>
     </>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Your First 5 Zapier Automations: A Practical Setup Guide",
@@ -277,6 +278,17 @@ export default function ZapierSetupGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["zapier", "make", "n8n"]}
+            comparisons={["zapier-vs-make", "n8n-vs-zapier"]}
+            guides={[
+              "automation-annual-cost-2026",
+              "automation-pricing-compared",
+              "zapier-hidden-costs",
+              "who-should-not-use-zapier",
+            ]}
+          />
         </div>
       </article>
     </>

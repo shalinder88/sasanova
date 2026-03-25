@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "beehiiv vs Kit vs Mailchimp for Creators: The Definitive 2026 Comparison",
@@ -499,6 +500,16 @@ export default function BeehiivVsKitVsMailchimpCreatorsPage() {
               </Link>
             </div>
           </div>
+
+          <RelatedLinks
+            tools={["beehiiv", "convertkit", "mailchimp"]}
+            comparisons={["beehiiv-vs-convertkit", "mailchimp-vs-convertkit", "mailchimp-vs-beehiiv"]}
+            guides={[
+              "best-email-tool-creators",
+              "newsletter-stack",
+              "best-newsletter-paid-subscribers",
+            ]}
+          />
         </div>
       </article>
     </>

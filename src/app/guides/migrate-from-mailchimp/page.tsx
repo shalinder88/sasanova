@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "How to Leave Mailchimp Without Losing Your List: A Step-by-Step Migration Guide",
@@ -172,6 +173,17 @@ export default function MigrateFromMailchimp() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["mailchimp", "beehiiv", "convertkit", "activecampaign", "brevo"]}
+            comparisons={["mailchimp-vs-convertkit", "mailchimp-vs-beehiiv", "mailchimp-vs-brevo", "activecampaign-vs-mailchimp"]}
+            guides={[
+              "migrate-mailchimp-to-beehiiv",
+              "migrate-mailchimp-to-kit",
+              "mailchimp-hidden-costs",
+              "who-should-not-use-mailchimp",
+            ]}
+          />
         </div>
       </article>
     </>

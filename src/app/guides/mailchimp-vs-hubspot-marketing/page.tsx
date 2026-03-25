@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Mailchimp vs HubSpot Marketing Hub: When Free Isn't Really Free",
@@ -409,6 +410,16 @@ export default function MailchimpVsHubSpotMarketingPage() {
               </Link>
             </div>
           </div>
+
+          <RelatedLinks
+            tools={["mailchimp", "hubspot-crm"]}
+            comparisons={["mailchimp-vs-hubspot-crm", "activecampaign-vs-hubspot-crm", "activecampaign-vs-mailchimp"]}
+            guides={[
+              "mailchimp-hidden-costs",
+              "hubspot-pricing-reality",
+              "email-marketing-annual-cost-2026",
+            ]}
+          />
         </div>
       </article>
     </>

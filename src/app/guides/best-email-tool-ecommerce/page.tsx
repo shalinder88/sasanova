@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Best Email Marketing Tool for E-commerce (Not Mailchimp)",
@@ -390,6 +391,16 @@ export default function BestEmailToolEcommerce() {
               </Link>
             </div>
           </div>
+
+          <RelatedLinks
+            tools={["mailchimp", "activecampaign", "brevo", "convertkit"]}
+            comparisons={["activecampaign-vs-mailchimp", "mailchimp-vs-brevo", "activecampaign-vs-brevo"]}
+            guides={[
+              "email-marketing-ecommerce",
+              "email-marketing-annual-cost-2026",
+              "mailchimp-hidden-costs",
+            ]}
+          />
         </div>
       </article>
     </>

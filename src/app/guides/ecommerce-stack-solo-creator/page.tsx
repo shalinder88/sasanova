@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "The Complete E-commerce Stack for Solo Creators Under $100/Month",
@@ -387,6 +388,16 @@ export default function EcommerceStackGuide() {
               </div>
             </div>
           </section>
+
+          <RelatedLinks
+            tools={["shopify", "gumroad", "lemonsqueezy", "beehiiv", "zapier"]}
+            comparisons={["shopify-vs-woocommerce", "gumroad-vs-lemonsqueezy", "gumroad-vs-shopify"]}
+            guides={[
+              "email-marketing-ecommerce",
+              "best-email-tool-ecommerce",
+              "newsletter-stack",
+            ]}
+          />
         </div>
       </div>
     </>
