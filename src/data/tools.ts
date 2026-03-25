@@ -5494,15 +5494,17 @@ export function getAlternatives(tool: Tool): Tool[] {
     .filter((t): t is Tool => t !== undefined);
 }
 
+export { SCORING_WEIGHTS, SCORING_LABELS, SCORING_DESCRIPTIONS, weightsSummary } from "@/lib/scoring-config";
+import { SCORING_WEIGHTS } from "@/lib/scoring-config";
+
 export function getOverallScore(scores: ToolScore): number {
-  const weights = { value: 0.25, ease: 0.15, power: 0.2, setupFriction: 0.1, migrationDifficulty: 0.1, transparency: 0.2 };
   return Math.round(
-    (scores.value * weights.value +
-      scores.ease * weights.ease +
-      scores.power * weights.power +
-      scores.setupFriction * weights.setupFriction +
-      scores.migrationDifficulty * weights.migrationDifficulty +
-      scores.transparency * weights.transparency) * 10
+    (scores.value * SCORING_WEIGHTS.value +
+      scores.ease * SCORING_WEIGHTS.ease +
+      scores.power * SCORING_WEIGHTS.power +
+      scores.setupFriction * SCORING_WEIGHTS.setupFriction +
+      scores.migrationDifficulty * SCORING_WEIGHTS.migrationDifficulty +
+      scores.transparency * SCORING_WEIGHTS.transparency) * 10
   ) / 10;
 }
 

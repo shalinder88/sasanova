@@ -1,5 +1,6 @@
 import type { Tool } from "@/data/tools";
 import { getOverallScore } from "@/data/tools";
+import { weightsSummary } from "@/lib/scoring-config";
 
 export interface CategoryThesis {
   heading: string;
@@ -161,7 +162,7 @@ export function generateCategoryThesis(
   if (bestValue && bestPower && bestValue.slug !== bestPower.slug) {
     p2 += ` If value-for-money is your priority, ${bestValue.name} scores highest. If you need maximum feature depth, ${bestPower.name} pulls ahead.`;
   }
-  p2 += ` Don't assume the top-ranked tool is the right one for you — our overall score weights six factors (Value 25%, Power 20%, Transparency 20%, Ease 15%, Setup Friction 10%, Migration Difficulty 10%), and your priorities may differ.`;
+  p2 += ` Don't assume the top-ranked tool is the right one for you — our overall score weights six factors (${weightsSummary()}), and your priorities may differ.`;
   paragraphs.push(p2);
 
   // Mistakes
