@@ -9,6 +9,7 @@ import {
 } from "@/data/tools";
 import ScoreBar from "@/components/ScoreBar";
 import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
+import { generateCategoryThesis } from "@/lib/category-thesis";
 
 /** Avoid titles like "Best Automation Tools Tools in 2026" */
 function bestTitle(name: string): string {
@@ -153,6 +154,32 @@ export default async function BestCategoryPage({
           </p>
         </div>
       </div>
+
+      {/* Category Thesis */}
+      {(() => {
+        const thesis = generateCategoryThesis(category, cat.name, toolsInCategory);
+        return (
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-surface-alt border border-border rounded-xl p-6 mb-8">
+              <h2 className="text-xl font-bold mb-4">{thesis.heading}</h2>
+              {thesis.paragraphs.map((p, i) => (
+                <p key={i} className="text-sm text-muted leading-relaxed mb-3 last:mb-0">
+                  {p}
+                </p>
+              ))}
+              <h3 className="text-base font-semibold mt-5 mb-3">Common Mistakes</h3>
+              <ul className="space-y-2">
+                {thesis.mistakes.map((m, i) => (
+                  <li key={i} className="text-sm text-muted leading-relaxed flex gap-2">
+                    <span className="shrink-0 text-accent font-bold">&bull;</span>
+                    <span>{m}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        );
+      })()}
 
       {/* Ranked list */}
       <section className="py-10">

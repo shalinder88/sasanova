@@ -2,16 +2,7 @@ import Link from "next/link";
 import { tools, versusPairs, categories, getOverallScore, getToolsByCategory, getActiveCategoryCount, getLatestVerifiedDate, formatVerifiedShort, formatVerifiedLong, type Tool, type ToolScore } from "@/data/tools";
 import EmailCapture from "@/components/EmailCapture";
 
-/* ── Mini score bar (inline) ── */
-function MiniBar({ value, max = 10, color = "bg-accent" }: { value: number; max?: number; color?: string }) {
-  return (
-    <div className="w-full h-1 bg-surface-alt rounded-full overflow-hidden">
-      <div className={`h-full rounded-full ${color}`} style={{ width: `${(value / max) * 100}%` }} />
-    </div>
-  );
-}
-
-/* ── Score axis row ── */
+/* ── Score axis row (kept for comparison cards) ── */
 function ScoreAxis({ label, a, b }: { label: string; a: number; b: number }) {
   return (
     <div className="grid grid-cols-[1fr_80px_1fr] items-center gap-2 text-xs">
@@ -33,12 +24,7 @@ function ScoreAxis({ label, a, b }: { label: string; a: number; b: number }) {
 }
 
 export default function Home() {
-  /* ── Use static data directly for consistency across all pages ── */
-  // Previously used hybrid Supabase layer, but caused count mismatches
-  // between homepage (Supabase: 19) and About page (static: 123).
-  // Static data is the source of truth until Supabase is fully synced.
-
-  /* ── Derived data ── */
+  /* ── Derived data (unchanged) ── */
   const topTools = [...tools].sort((a, b) => getOverallScore(b.scores) - getOverallScore(a.scores));
   const featuredVs = versusPairs.slice(0, 3).map((vs) => ({
     ...vs,
@@ -51,238 +37,156 @@ export default function Home() {
   return (
     <>
       {/* ═══════════════════════════════════════════════════════
-          SECTION 1 — HERO (centered, clean, orbital animation)
+          HERO — Decision-first framing
           ═══════════════════════════════════════════════════════ */}
       <section className="hero-mesh border-b border-border relative overflow-hidden">
         {/* Subtle orbital animation behind text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
-          {/* Outer orbit */}
           <div className="w-[500px] h-[500px] lg:w-[600px] lg:h-[600px] rounded-full border border-border/40 animate-orbit">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-accent/40 animate-pulse-soft" />
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-1.5 h-1.5 rounded-full bg-cyan/30 animate-pulse-soft" />
           </div>
-          {/* Inner orbit */}
           <div className="absolute w-[300px] h-[300px] lg:w-[380px] lg:h-[380px] rounded-full border border-border/20 animate-orbit-reverse">
             <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-success/30 animate-pulse-soft" />
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-24 pb-0 relative z-10">
-          {/* Centered headline — minimal text */}
-          <div className="text-center max-w-3xl mx-auto mb-8">
-            <h1 className="text-[2.75rem] sm:text-[3.5rem] lg:text-[4.5rem] font-extrabold leading-[1.0] tracking-[-0.03em] mb-16 lg:mb-20">
-              Software decisions,
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-24 pb-16 lg:pb-24 relative z-10">
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-[2.75rem] sm:text-[3.5rem] lg:text-[4.5rem] font-extrabold leading-[1.0] tracking-[-0.03em] mb-6">
+              Stop overpaying
               <br />
-              <span className="text-muted">made with evidence.</span>
+              <span className="text-muted">for software.</span>
             </h1>
+            <p className="text-base sm:text-lg text-muted leading-relaxed max-w-xl mx-auto mb-10">
+              Compare pricing, calculate switching costs, and find the right stack for your budget.
+            </p>
 
-            {/* Live stat trackers — pushed lower with breathing room */}
-            <div className="flex flex-wrap justify-center gap-6 mb-10">
+            {/* 3 action CTAs */}
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
+              <Link href="/compare" className="px-7 py-3 text-sm font-semibold bg-accent text-white rounded-lg hover:brightness-110 transition-all">
+                Compare Two Tools
+              </Link>
+              <Link href="#stacks" className="px-7 py-3 text-sm font-semibold border border-border text-foreground rounded-lg hover:bg-surface transition-colors">
+                Find Your Stack
+              </Link>
+              <Link href="#switching" className="px-7 py-3 text-sm font-semibold border border-border text-foreground rounded-lg hover:bg-surface transition-colors">
+                See Switching Costs
+              </Link>
+            </div>
+
+            {/* Stats bar — secondary, smaller */}
+            <div className="flex flex-wrap justify-center gap-6 text-sm">
               <div className="text-center">
-                <p className="text-2xl lg:text-3xl font-extrabold text-accent">{tools.length}</p>
-                <p className="text-xs text-muted uppercase tracking-wider">Tools Tracked*</p>
+                <p className="text-lg font-extrabold text-accent">{tools.length}</p>
+                <p className="text-[10px] text-muted uppercase tracking-wider">Tools Tracked</p>
               </div>
-              <div className="w-px h-10 bg-border" />
+              <div className="w-px h-8 bg-border" />
               <div className="text-center">
-                <p className="text-2xl lg:text-3xl font-extrabold text-cyan">{versusPairs.length}</p>
-                <p className="text-xs text-muted uppercase tracking-wider">Comparisons*</p>
+                <p className="text-lg font-extrabold text-cyan">{versusPairs.length}</p>
+                <p className="text-[10px] text-muted uppercase tracking-wider">Comparisons</p>
               </div>
-              <div className="w-px h-10 bg-border" />
+              <div className="w-px h-8 bg-border" />
               <div className="text-center">
-                <p className="text-2xl lg:text-3xl font-extrabold text-success">{getActiveCategoryCount()}</p>
-                <p className="text-xs text-muted uppercase tracking-wider">Categories*</p>
+                <p className="text-lg font-extrabold text-success">{getActiveCategoryCount()}</p>
+                <p className="text-[10px] text-muted uppercase tracking-wider">Categories</p>
               </div>
-              <div className="w-px h-10 bg-border" />
+              <div className="w-px h-8 bg-border" />
               <div className="text-center">
                 <div className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-success" />
-                  <p className="text-lg lg:text-xl font-extrabold text-foreground">{formatVerifiedShort(getLatestVerifiedDate())}</p>
+                  <p className="text-base font-extrabold text-foreground">{formatVerifiedShort(getLatestVerifiedDate())}</p>
                 </div>
-                <p className="text-xs text-muted uppercase tracking-wider">Data Verified*</p>
+                <p className="text-[10px] text-muted uppercase tracking-wider">Data Verified</p>
               </div>
             </div>
-
-            {/* CTAs — pushed lower */}
-            <div className="flex flex-wrap justify-center gap-3 mb-6">
-              <Link href="/tools" className="px-7 py-3 text-sm font-semibold bg-accent text-white rounded-lg hover:brightness-110 transition-all">
-                Explore {tools.length} tools
-              </Link>
-              <Link href="/compare" className="px-7 py-3 text-sm font-semibold border border-border text-foreground rounded-lg hover:bg-surface transition-colors">
-                Compare tools
-              </Link>
-            </div>
           </div>
-
-          {/* ── Embedded product preview: live comparison widget ── */}
-          <div className="border border-border rounded-t-xl bg-surface overflow-hidden shadow-sm">
-            {/* Tab bar */}
-            <div className="flex items-center gap-0 border-b border-border bg-surface text-xs">
-              <span className="px-4 py-2.5 font-medium border-b-2 border-accent text-accent bg-surface">Top Tools</span>
-              <Link href="/compare" className="px-4 py-2.5 text-muted hover:text-foreground transition-colors">Comparisons</Link>
-              <Link href="/pricing" className="px-4 py-2.5 text-muted hover:text-foreground transition-colors">Pricing</Link>
-              <Link href="/alternatives" className="px-4 py-2.5 text-muted hover:text-foreground transition-colors">Alternatives</Link>
-              <div className="ml-auto px-4 py-2.5 text-muted">
-                <span className="flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-success" />
-                  Verified {formatVerifiedShort(getLatestVerifiedDate())}
-                </span>
-              </div>
-            </div>
-            {/* Content: top tools table */}
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-border">
-                    <th className="text-left py-2 px-4 font-medium text-muted text-xs w-8">#</th>
-                    <th className="text-left py-2 px-4 font-medium text-muted text-xs">Tool</th>
-                    <th className="text-left py-2 px-4 font-medium text-muted text-xs hidden sm:table-cell">Category</th>
-                    <th className="text-center py-2 px-4 font-medium text-muted text-xs w-16">Score</th>
-                    <th className="text-left py-2 px-4 font-medium text-muted text-xs hidden md:table-cell w-40">Value · Ease · Power</th>
-                    <th className="text-left py-2 px-4 font-medium text-muted text-xs hidden lg:table-cell">Starts at</th>
-                    <th className="text-center py-2 px-4 font-medium text-muted text-xs w-12">Free</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {topTools.slice(0, 6).map((tool, i) => {
-                    const cat = categories.find((c) => c.slug === tool.categorySlug);
-                    const cheapest = tool.pricing.find((p) => p.priceMonthly && p.priceMonthly > 0);
-                    return (
-                      <tr key={tool.slug} className={`table-row-hover border-b border-border last:border-0 hover:bg-surface/60 transition-colors cursor-pointer relative ${i === 0 ? "bg-accent-light/30" : ""}`}>
-                        <td className="py-2.5 px-4 text-xs text-muted font-mono">{i + 1}</td>
-                        <td className="py-2.5 px-4">
-                          <Link href={`/tools/${tool.slug}`} className="group after:absolute after:inset-0 after:content-['']">
-                            <span className="text-sm font-semibold group-hover:text-accent transition-colors">{tool.name}</span>
-                            {tool.badge && <span className="ml-1.5 text-[9px] font-medium text-accent bg-accent-light px-1.5 py-0.5 rounded">{tool.badge}</span>}
-                            <p className="text-xs text-muted leading-tight">{tool.vendor}</p>
-                          </Link>
-                        </td>
-                        <td className="py-2.5 px-4 text-xs text-muted hidden sm:table-cell">{cat?.name}</td>
-                        <td className="py-2.5 px-4 text-center">
-                          <span className="text-base font-extrabold">{getOverallScore(tool.scores)}</span>
-                        </td>
-                        <td className="py-2.5 px-4 hidden md:table-cell">
-                          <div className="flex gap-2 items-center">
-                            {[
-                              { v: tool.scores.value, c: "bg-success" },
-                              { v: tool.scores.ease, c: "bg-accent" },
-                              { v: tool.scores.power, c: "bg-cyan" },
-                            ].map((s, j) => (
-                              <div key={j} className="flex items-center gap-1">
-                                <div className="w-8 h-1 bg-surface-alt rounded-full overflow-hidden">
-                                  <div className={`h-full rounded-full ${s.c}`} style={{ width: `${s.v * 10}%` }} />
-                                </div>
-                                <span className="text-xs font-mono text-muted w-3">{s.v}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </td>
-                        <td className="py-2.5 px-4 text-xs hidden lg:table-cell">{cheapest ? `$${cheapest.priceMonthly}/mo` : "Free"}</td>
-                        <td className="py-2.5 px-4 text-center text-xs">
-                          {tool.freeTier ? <span className="text-success">✓</span> : <span className="text-muted">—</span>}
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
-            <Link href="/tools" className="block text-center py-2.5 text-xs text-accent font-medium border-t border-border hover:bg-surface/50 transition-colors">
-              View all {tools.length} tools →
-            </Link>
-          </div>
-
-          {/* Metric footnote */}
-          <p className="text-[10px] text-muted/40 text-center mt-8">
-            *Tools tracked = live reviewed entries in our directory. Comparisons = published head-to-head pages. Categories = active browseable clusters with 2+ tools. Data verified = last global verification sweep.
-          </p>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          SECTION 2 — LIVE COMPARISON PREVIEW
-          Show product working, not just describe it
+          SECTION 1 — Decision Scenarios
+          Route users by intent, not by browsing
           ═══════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 border-b border-border">
+      <section className="py-20 lg:py-28 border-b border-border bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section header — Linear style: big left, description right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-12">
             <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
-              Head-to-head
+              What are you
               <br />
-              <span className="text-muted">comparisons</span>
+              <span className="text-muted">trying to decide?</span>
             </h2>
             <p className="text-base text-muted leading-relaxed lg:pt-2">
-              Side-by-side scoring across 6 axes. Pricing breakdowns. Feature overlap analysis. Switching guidance. Every claim cites a first-party source.
+              Skip the browsing. Start with your actual question and we&apos;ll get you to the answer faster.
             </p>
           </div>
 
-          {/* Live comparison cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            {featuredVs.map((vs) => {
-              const scoreA = getOverallScore(vs.toolA.scores);
-              const scoreB = getOverallScore(vs.toolB.scores);
-              return (
-                <Link
-                  key={`${vs.slugA}-${vs.slugB}`}
-                  href={`/compare/${vs.slugA}-vs-${vs.slugB}`}
-                  className="group border border-border rounded-xl overflow-hidden bg-surface hover-glow"
-                >
-                  {/* Header */}
-                  <div className="px-5 py-4 border-b border-border bg-surface">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm font-bold">{vs.toolA.name}</span>
-                        <span className="text-xs text-muted px-1.5 py-0.5 bg-surface-alt rounded">vs</span>
-                        <span className="text-sm font-bold">{vs.toolB.name}</span>
-                      </div>
-                      <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${vs.verdict === "depends" ? "bg-warning-light text-warning" : "bg-success-light text-success"}`}>
-                        {vs.verdict === "depends" ? "Different jobs" : `${tools.find(t => t.slug === vs.verdict)?.name ?? vs.verdict} for most`}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Score comparison */}
-                  <div className="px-5 py-4">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="text-center">
-                        <p className="text-2xl font-extrabold">{scoreA}</p>
-                        <p className="text-xs text-muted">/ 10</p>
-                      </div>
-                      <div className="flex-1 px-4 space-y-1.5">
-                        <ScoreAxis label="Value" a={vs.toolA.scores.value} b={vs.toolB.scores.value} />
-                        <ScoreAxis label="Ease" a={vs.toolA.scores.ease} b={vs.toolB.scores.ease} />
-                        <ScoreAxis label="Power" a={vs.toolA.scores.power} b={vs.toolB.scores.power} />
-                      </div>
-                      <div className="text-center">
-                        <p className="text-2xl font-extrabold">{scoreB}</p>
-                        <p className="text-xs text-muted">/ 10</p>
-                      </div>
-                    </div>
-
-                    <p className="text-xs text-muted line-clamp-2 mb-3">{vs.summary}</p>
-
-                    <span className="text-xs text-accent font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                      Full comparison →
-                    </span>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-
-          <div className="text-center mt-6">
-            <Link href="/compare" className="text-sm text-accent font-medium hover:underline">
-              View all {versusPairs.length} comparisons →
-            </Link>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                title: "Choose between two tools",
+                desc: "Side-by-side scoring, pricing, and switching analysis for any pair.",
+                href: "/compare",
+                icon: (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Build a stack under budget",
+                desc: "Pre-built tool combinations with specific plans, prices, and limits.",
+                href: "#stacks",
+                icon: (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Switch from a tool I use",
+                desc: "Migration guides, switching costs, and savings calculators.",
+                href: "#switching",
+                icon: (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Find the cheapest in a category",
+                desc: "Normalized pricing across every tool so you compare apples to apples.",
+                href: "/pricing",
+                icon: (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ),
+              },
+            ].map((card) => (
+              <Link
+                key={card.href}
+                href={card.href}
+                className="group border border-border rounded-xl p-5 bg-surface hover-glow flex flex-col"
+              >
+                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-4">
+                  {card.icon}
+                </div>
+                <h3 className="text-sm font-bold mb-1.5 group-hover:text-accent transition-colors">{card.title}</h3>
+                <p className="text-xs text-muted leading-relaxed flex-1">{card.desc}</p>
+                <span className="text-xs text-accent font-medium mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                  Get started →
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          SECTION 2b — POPULAR TOOL STACKS
-          Curated guide stacks with cost badges
+          SECTION 2 — Popular Tool Stacks (promoted higher)
           ═══════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 border-b border-border bg-surface">
+      <section id="stacks" className="py-20 lg:py-28 border-b border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-12">
             <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
@@ -363,190 +267,243 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          SECTION 2c — SAVINGS CALCULATOR CALLOUT
-          Data-driven migration nudge
+          SECTION 3 — Switching Savings (promoted, expanded)
           ═══════════════════════════════════════════════════════ */}
-      <section className="border-b border-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <Link href="/guides/migrate-mailchimp-to-beehiiv" className="group flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 border border-border rounded-xl bg-surface hover:border-accent/30 transition-all">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-success/10 flex items-center justify-center shrink-0">
-                <svg className="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-sm font-bold group-hover:text-accent transition-colors">
-                  Switching from Mailchimp to beehiiv? Save up to $3,432/year.
-                </p>
-                <p className="text-xs text-muted mt-0.5">
-                  At 50K subscribers, Mailchimp Standard costs $385/mo. beehiiv Max is $99/mo. That&apos;s $286/mo back in your pocket — verified with live pricing data.
-                </p>
-              </div>
-            </div>
-            <span className="text-xs text-accent font-medium whitespace-nowrap shrink-0 opacity-80 group-hover:opacity-100 transition-opacity">
-              See the full breakdown →
-            </span>
-          </Link>
-        </div>
-      </section>
+      <section id="switching" className="border-b border-border bg-surface">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-10">
+            <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
+              Switching
+              <br />
+              <span className="text-muted">saves real money</span>
+            </h2>
+            <p className="text-base text-muted leading-relaxed lg:pt-2">
+              We calculated the annual savings for common tool switches using verified pricing data. These are real numbers, not estimates.
+            </p>
+          </div>
 
-      {/* ═══════════════════════════════════════════════════════
-          SECTION 3 — CATEGORIES + FEATURED PICK
-          Two-column: browse left, spotlight right
-          ═══════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 border-b border-border bg-surface">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-            {/* Left: categories */}
-            <div className="lg:col-span-3">
-              <h2 className="text-2xl font-extrabold tracking-tight mb-1">Browse categories</h2>
-              <p className="text-sm text-muted mb-6">Find the best tools for your use case</p>
-
-              <div className="grid grid-cols-2 gap-2">
-                {categories.filter((cat) => getToolsByCategory(cat.slug).length >= 2).map((cat) => {
-                  const catTools = getToolsByCategory(cat.slug);
-                  const top = catTools.sort((a, b) => getOverallScore(b.scores) - getOverallScore(a.scores))[0];
-                  return (
-                    <Link
-                      key={cat.slug}
-                      href={`/best/${cat.slug}`}
-                      className="group flex items-center justify-between p-3 border border-border rounded-lg bg-surface hover:border-accent/30 transition-all"
-                    >
-                      <div className="min-w-0">
-                        <p className="text-sm font-semibold group-hover:text-accent transition-colors truncate">{cat.name}</p>
-                        <p className="text-xs text-muted">{catTools.length} tools · #1 {top?.name}</p>
-                      </div>
-                      <svg className="w-4 h-4 text-muted group-hover:text-accent shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Right: featured tool spotlight */}
-            <div className="lg:col-span-2">
-              <h2 className="text-2xl font-extrabold tracking-tight mb-1">This week&apos;s pick</h2>
-              <p className="text-sm text-muted mb-6">Hand-selected by our editorial team</p>
-
-              <div className="border border-border rounded-xl bg-surface p-6">
-                {top1.badge && (
-                  <span className="inline-block text-xs font-semibold text-accent bg-accent-light px-2 py-0.5 rounded mb-3">{top1.badge}</span>
-                )}
-                <h3 className="text-xl font-bold mb-1">{top1.name}</h3>
-                <p className="text-xs text-muted mb-4">{top1.tagline}</p>
-
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="text-center">
-                    <p className="text-3xl font-extrabold text-accent">{getOverallScore(top1.scores)}</p>
-                    <p className="text-xs text-muted">Overall</p>
-                  </div>
-                  <div className="flex-1 space-y-1.5">
-                    {(["value", "ease", "power", "transparency"] as (keyof ToolScore)[]).map((key) => (
-                      <div key={key} className="flex items-center gap-2">
-                        <span className="w-20 text-xs text-muted capitalize">{key === "transparency" ? "Trust" : key}</span>
-                        <MiniBar value={top1.scores[key]} color={top1.scores[key] >= 8 ? "bg-success" : "bg-accent"} />
-                        <span className="text-xs font-mono w-4">{top1.scores[key]}</span>
-                      </div>
-                    ))}
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Mailchimp → beehiiv */}
+            <Link href="/guides/migrate-mailchimp-to-beehiiv" className="group flex flex-col p-5 border border-border rounded-xl bg-surface hover:border-accent/30 transition-all">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-10 h-10 rounded-lg bg-success/10 flex items-center justify-center shrink-0">
+                  <svg className="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                 </div>
-
-                <div className="space-y-1.5 mb-5">
-                  {top1.bestFor.slice(0, 2).map((b) => (
-                    <div key={b} className="flex items-start gap-1.5 text-xs">
-                      <svg className="w-3 h-3 text-success shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-muted">{b}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex items-center justify-between text-xs text-muted mb-4 pt-3 border-t border-border">
-                  <span>{top1.freeTier ? "Free tier available" : `From $${top1.pricing.find(p => p.priceMonthly && p.priceMonthly > 0)?.priceMonthly}/mo`}</span>
-                  <span className="flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-success" />
-                    Independently verified
-                  </span>
-                </div>
-
-                <div className="flex gap-2">
-                  <Link href={`/tools/${top1.slug}`} className="flex-1 text-center py-2 text-xs font-semibold bg-foreground text-background rounded-lg hover:opacity-90 transition-opacity">
-                    Full review
-                  </Link>
-                  <Link href={`/alternatives/${top1.slug}`} className="flex-1 text-center py-2 text-xs font-semibold border border-border rounded-lg hover:bg-surface transition-colors">
-                    See alternatives
-                  </Link>
+                <div>
+                  <p className="text-xs text-muted">Mailchimp → beehiiv</p>
+                  <p className="text-2xl font-extrabold text-success">$3,432/yr</p>
                 </div>
               </div>
-            </div>
+              <p className="text-xs text-muted leading-relaxed flex-1">
+                At 50K subscribers, Mailchimp Standard costs $385/mo. beehiiv Max is $99/mo. That&apos;s $286/mo back in your pocket.
+              </p>
+              <span className="text-xs text-accent font-medium mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                See the full breakdown →
+              </span>
+            </Link>
+
+            {/* Zapier → Make */}
+            <Link href="/guides/migrate-zapier-to-make" className="group flex flex-col p-5 border border-border rounded-xl bg-surface hover:border-accent/30 transition-all">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-10 h-10 rounded-lg bg-success/10 flex items-center justify-center shrink-0">
+                  <svg className="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-xs text-muted">Zapier → Make</p>
+                  <p className="text-2xl font-extrabold text-success">$1,114/yr</p>
+                </div>
+              </div>
+              <p className="text-xs text-muted leading-relaxed flex-1">
+                At 2,000 tasks/mo, Zapier Team is $103.50/mo. Make Core handles 10K ops for $10.59/mo. Save $92.91/mo with more capacity.
+              </p>
+              <span className="text-xs text-accent font-medium mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                See the full breakdown →
+              </span>
+            </Link>
+
+            {/* Salesforce → HubSpot */}
+            <Link href="/guides/migrate-salesforce-to-hubspot" className="group flex flex-col p-5 border border-border rounded-xl bg-surface hover:border-accent/30 transition-all">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-10 h-10 rounded-lg bg-success/10 flex items-center justify-center shrink-0">
+                  <svg className="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-xs text-muted">Salesforce → HubSpot</p>
+                  <p className="text-2xl font-extrabold text-success">$7,200/yr</p>
+                </div>
+              </div>
+              <p className="text-xs text-muted leading-relaxed flex-1">
+                For a 10-person team, Salesforce Professional is $80/seat/mo ($800/mo). HubSpot Starter is $20/seat/mo ($200/mo).
+              </p>
+              <span className="text-xs text-accent font-medium mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                See the full breakdown →
+              </span>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          SECTION 4 — HOW WE'RE DIFFERENT
-          Numbered features, Linear style
+          SECTION 4 — Featured Comparisons (reframed)
+          "Decisions people are making right now"
           ═══════════════════════════════════════════════════════ */}
       <section className="py-20 lg:py-28 border-b border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-2">
-            Not another review site.
-          </h2>
-          <p className="text-base text-muted mb-12 max-w-xl">
-            Too many comparison sites optimize for monetization, not decision quality. We built Sasanova to fix that.
-          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-12">
+            <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
+              Decisions people are
+              <br />
+              <span className="text-muted">making right now</span>
+            </h2>
+            <p className="text-base text-muted leading-relaxed lg:pt-2">
+              Side-by-side scoring across 6 axes. Pricing breakdowns. Feature overlap analysis. Switching guidance. Every claim cites a first-party source.
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { n: "01", title: "6-axis scoring", desc: "Value, ease, power, setup friction, migration difficulty, and transparency. Not a single star rating." },
-              { n: "02", title: "Normalized pricing", desc: "Monthly, annual, per-seat, flat — all standardized so you can actually compare apples to apples." },
-              { n: "03", title: "Switching intelligence", desc: "What triggers people to leave. What blocks them from switching. Migration difficulty scored per tool." },
-              { n: "04", title: "Evidence-backed claims", desc: "Every material claim links to a first-party source. Provenance tagged: verified, vendor-claimed, or community-reported." },
-              { n: "05", title: "Editorial independence", desc: "Rankings never change based on affiliate status. Tools without affiliate programs are reviewed with the same rigor." },
-              { n: "06", title: "Live updated", desc: "Software changes fast. We monitor pricing pages, changelogs, and feature updates — not just publish and forget." },
-            ].map((f) => (
-              <div key={f.n} className="group">
-                <span className="text-xs font-mono text-muted">{f.n}</span>
-                <h3 className="text-base font-bold mt-1 mb-2">{f.title}</h3>
-                <p className="text-sm text-muted leading-relaxed">{f.desc}</p>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            {featuredVs.map((vs) => {
+              const scoreA = getOverallScore(vs.toolA.scores);
+              const scoreB = getOverallScore(vs.toolB.scores);
+              return (
+                <Link
+                  key={`${vs.slugA}-${vs.slugB}`}
+                  href={`/compare/${vs.slugA}-vs-${vs.slugB}`}
+                  className="group border border-border rounded-xl overflow-hidden bg-surface hover-glow"
+                >
+                  <div className="px-5 py-4 border-b border-border bg-surface">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm font-bold">{vs.toolA.name}</span>
+                        <span className="text-xs text-muted px-1.5 py-0.5 bg-surface-alt rounded">vs</span>
+                        <span className="text-sm font-bold">{vs.toolB.name}</span>
+                      </div>
+                      <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${vs.verdict === "depends" ? "bg-warning-light text-warning" : "bg-success-light text-success"}`}>
+                        {vs.verdict === "depends" ? "Different jobs" : `${tools.find(t => t.slug === vs.verdict)?.name ?? vs.verdict} for most`}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="px-5 py-4">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="text-center">
+                        <p className="text-2xl font-extrabold">{scoreA}</p>
+                        <p className="text-xs text-muted">/ 10</p>
+                      </div>
+                      <div className="flex-1 px-4 space-y-1.5">
+                        <ScoreAxis label="Value" a={vs.toolA.scores.value} b={vs.toolB.scores.value} />
+                        <ScoreAxis label="Ease" a={vs.toolA.scores.ease} b={vs.toolB.scores.ease} />
+                        <ScoreAxis label="Power" a={vs.toolA.scores.power} b={vs.toolB.scores.power} />
+                      </div>
+                      <div className="text-center">
+                        <p className="text-2xl font-extrabold">{scoreB}</p>
+                        <p className="text-xs text-muted">/ 10</p>
+                      </div>
+                    </div>
+
+                    <p className="text-xs text-muted line-clamp-2 mb-3">{vs.summary}</p>
+
+                    <span className="text-xs text-accent font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                      Full comparison →
+                    </span>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className="text-center mt-6">
+            <Link href="/compare" className="text-sm text-accent font-medium hover:underline">
+              View all {versusPairs.length} comparisons →
+            </Link>
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          SECTION 5 — EDITORIAL PICKS (real content)
+          SECTION 5 — Tools by Category (demoted lower)
+          SEO internal linking, not primary experience
           ═══════════════════════════════════════════════════════ */}
       <section className="py-20 lg:py-28 border-b border-border bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-extrabold tracking-tight mb-1">Editor&apos;s picks</h2>
-          <p className="text-sm text-muted mb-8">Deep-dives our team recommends right now</p>
+          <h2 className="text-2xl font-extrabold tracking-tight mb-1">Browse by category</h2>
+          <p className="text-sm text-muted mb-6">Find the best tools for your use case</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            {categories.filter((cat) => getToolsByCategory(cat.slug).length >= 2).map((cat) => {
+              const catTools = getToolsByCategory(cat.slug);
+              const top = catTools.sort((a, b) => getOverallScore(b.scores) - getOverallScore(a.scores))[0];
+              return (
+                <Link
+                  key={cat.slug}
+                  href={`/best/${cat.slug}`}
+                  className="group flex items-center justify-between p-3 border border-border rounded-lg bg-surface hover:border-accent/30 transition-all"
+                >
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold group-hover:text-accent transition-colors truncate">{cat.name}</p>
+                    <p className="text-xs text-muted">{catTools.length} tools · #1 {top?.name}</p>
+                  </div>
+                  <svg className="w-4 h-4 text-muted group-hover:text-accent shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          SECTION 6 — Guides (new)
+          High-intent editorial content
+          ═══════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 border-b border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-12">
+            <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
+              Guides that save
+              <br />
+              <span className="text-muted">you money</span>
+            </h2>
+            <p className="text-base text-muted leading-relaxed lg:pt-2">
+              Deep dives into hidden costs, pricing reality, and migration playbooks. Written to help you make better decisions, not sell you something.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { tag: "Best Of", title: "Best Newsletter Platform in 2026", desc: "beehiiv leads at 8.4/10. Free tier with unlimited sends, built-in ad network, and referral program. Substack's 10% cut makes it expensive at scale. ConvertKit (now Kit) excels for creators selling digital products.", href: "/best/newsletter-platforms" },
-              { tag: "Compare", title: "ChatGPT vs Claude: Which AI Wins?", desc: "ChatGPT (8.0) wins on ecosystem — GPTs, plugins, DALL-E, browsing. Claude (8.5) wins on reasoning depth, 200K context, and careful analysis. For coding: Claude. For variety: ChatGPT.", href: "/compare/chatgpt-vs-claude-ai" },
-              { tag: "Pricing", title: "The Hidden Cost of Mailchimp", desc: "Free tier caps at 500 contacts. Standard jumps to $20/mo. At 10K contacts you're paying $100+/mo. Brevo charges by emails sent — not contacts — making it 40-60% cheaper at scale.", href: "/pricing/mailchimp" },
-            ].map((p) => (
-              <Link key={p.href} href={p.href} className="group border border-border rounded-xl p-5 bg-surface hover-glow">
-                <span className="inline-block text-xs font-semibold text-accent bg-accent-light px-2 py-0.5 rounded mb-3">{p.tag}</span>
-                <h3 className="text-sm font-bold mb-2 group-hover:text-accent transition-colors leading-snug">{p.title}</h3>
-                <p className="text-xs text-muted leading-relaxed">{p.desc}</p>
+              { tag: "Hidden Costs", title: "The Hidden Cost of Mailchimp", href: "/guides/mailchimp-hidden-costs", desc: "Free tier caps at 500 contacts. At 10K contacts you're paying $100+/mo. Here's what they don't tell you upfront." },
+              { tag: "Hidden Costs", title: "Salesforce: What You'll Actually Pay", href: "/guides/salesforce-hidden-costs", desc: "The sticker price is just the start. Implementation, admin, and add-ons can triple your real cost." },
+              { tag: "Hidden Costs", title: "Zapier's Real Cost at Scale", href: "/guides/zapier-hidden-costs", desc: "Zapier is cheap for 5 Zaps. At 2,000+ tasks/mo, cheaper alternatives exist with more capacity." },
+              { tag: "Pricing Reality", title: "HubSpot Pricing: The Full Picture", href: "/guides/hubspot-pricing-reality", desc: "Free CRM is great. But the jump to Professional at $890/mo catches many teams off guard." },
+              { tag: "Migration", title: "Migrate Mailchimp to beehiiv", href: "/guides/migrate-mailchimp-to-beehiiv", desc: "Step-by-step migration guide with subscriber export, template recreation, and DNS setup." },
+              { tag: "Migration", title: "Migrate Zapier to Make", href: "/guides/migrate-zapier-to-make", desc: "How to rebuild your Zaps as Make scenarios, map your integrations, and cut your automation bill." },
+            ].map((guide) => (
+              <Link key={guide.href} href={guide.href} className="group border border-border rounded-xl p-5 bg-surface hover-glow">
+                <span className="inline-block text-xs font-semibold text-accent bg-accent-light px-2 py-0.5 rounded mb-3">{guide.tag}</span>
+                <h3 className="text-sm font-bold mb-2 group-hover:text-accent transition-colors leading-snug">{guide.title}</h3>
+                <p className="text-xs text-muted leading-relaxed">{guide.desc}</p>
               </Link>
             ))}
           </div>
+
+          <div className="text-center mt-6">
+            <Link href="/guides" className="text-sm text-accent font-medium hover:underline">
+              View all guides →
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          SECTION 6 — NEWSLETTER
+          SECTION 7 — Email Capture (kept at bottom)
           ═══════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 border-b border-border">
+      <section className="py-20 lg:py-28 border-b border-border bg-surface">
         <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl font-extrabold tracking-tight mb-2">Stay sharp</h2>
           <p className="text-sm text-muted mb-6">New reviews, pricing changes, and comparison updates — every Tuesday.</p>
@@ -556,7 +513,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          SECTION 7 — TRUST BAR
+          TRUST BAR
           ═══════════════════════════════════════════════════════ */}
       <section className="py-6 bg-surface border-b border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
