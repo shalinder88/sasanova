@@ -819,7 +819,7 @@ export default function GuidesHub() {
               <Link
                 key={guide.slug}
                 href={`/guides/${guide.slug}`}
-                className="group border border-border rounded-xl p-6 hover:border-accent/30 transition-all bg-background"
+                className="group border border-border rounded-xl p-6 hover-glow hover:border-accent/30 transition-all bg-background"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="min-w-0">

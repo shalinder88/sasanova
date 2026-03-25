@@ -553,7 +553,7 @@ export const tools: Tool[] = [
     scores: { value: 9, ease: 7, power: 8, setupFriction: 7, migrationDifficulty: 7, transparency: 10 },
     pricing: [
       { name: "Free", priceMonthly: 0, priceAnnual: 0, billingModel: "flat", limits: "1 user, unlimited event types, unlimited bookings" },
-      { name: "Team", priceMonthly: 12, priceAnnual: 144, billingModel: "per_seat", limits: "Team scheduling, round robin, collective bookings", highlighted: true },
+      { name: "Team", priceMonthly: 15, priceAnnual: 144, billingModel: "per_seat", limits: "Team scheduling, round robin, collective bookings", highlighted: true },
       { name: "Organization", priceMonthly: 37, priceAnnual: 444, billingModel: "per_seat", limits: "SSO, SCIM, org-wide settings, advanced routing" },
     ],
     pricingUrl: "https://cal.com/pricing",
@@ -661,7 +661,7 @@ export const tools: Tool[] = [
     pricing: [
       { name: "Free", priceMonthly: 0, priceAnnual: 0, billingModel: "flat", limits: "Unlimited pages, 7-day page history, 10 guest collaborators" },
       { name: "Plus", priceMonthly: 12, priceAnnual: 120, billingModel: "per_seat", limits: "Unlimited file uploads, 30-day history, custom automations", highlighted: true },
-      { name: "Business", priceMonthly: 18, priceAnnual: 216, billingModel: "per_seat", limits: "90-day history, advanced permissions, bulk PDF export" },
+      { name: "Business", priceMonthly: 24, priceAnnual: 240, billingModel: "per_seat", limits: "$24/user/mo monthly, $20/user/mo annual — 90-day history, advanced permissions, bulk PDF export" },
       { name: "Enterprise", priceMonthly: null, priceAnnual: null, billingModel: "custom", limits: "Unlimited history, SCIM, audit logs, custom contracts" },
     ],
     pricingUrl: "https://www.notion.com/pricing",
@@ -734,7 +734,7 @@ export const tools: Tool[] = [
     pricing: [
       { name: "Personal", priceMonthly: 0, priceAnnual: 0, billingModel: "flat", limits: "Up to 10 users, unlimited tasks/projects, basic views" },
       { name: "Starter", priceMonthly: 13.49, priceAnnual: 131.88, billingModel: "per_seat", limits: "Timeline, workflow builder, forms, unlimited dashboards", highlighted: true },
-      { name: "Advanced", priceMonthly: 30.49, priceAnnual: 359.88, billingModel: "per_seat", limits: "Portfolios, goals, custom rules, approvals, proofing" },
+      { name: "Advanced", priceMonthly: 30.49, priceAnnual: 299.88, billingModel: "per_seat", limits: "Portfolios, goals, custom rules, approvals, proofing" },
       { name: "Enterprise", priceMonthly: null, priceAnnual: null, billingModel: "custom", limits: "SAML, data loss prevention, custom branding, audit logs" },
     ],
     pricingUrl: "https://asana.com/pricing",
@@ -806,7 +806,8 @@ export const tools: Tool[] = [
     pricing: [
       { name: "Free", priceMonthly: 0, priceAnnual: 0, billingModel: "flat", limits: "Claude Sonnet, limited messages per day" },
       { name: "Pro", priceMonthly: 20, priceAnnual: 240, billingModel: "flat", limits: "Claude Opus + Sonnet, 5x more messages, Projects, priority access", highlighted: true },
-      { name: "Max", priceMonthly: 100, priceAnnual: 1200, billingModel: "flat", limits: "20x more usage than Pro, 1M token context, Claude Code included, extended thinking" },
+      { name: "Max", priceMonthly: 100, priceAnnual: 1200, billingModel: "flat", limits: "5x Pro usage, extended thinking, higher rate limits" },
+      { name: "Max (20x)", priceMonthly: 200, priceAnnual: 2400, billingModel: "flat", limits: "20x Pro usage, highest rate limits, maximum context window" },
       { name: "Team", priceMonthly: 30, priceAnnual: 300, billingModel: "per_seat", limits: "Higher limits, admin dashboard, team collaboration, 200K context" },
       { name: "Enterprise", priceMonthly: null, priceAnnual: null, billingModel: "custom", limits: "SSO, SCIM, audit logs, extended context, custom retention, dedicated support" },
     ],
@@ -1732,7 +1733,7 @@ export const tools: Tool[] = [
     scores: { value: 8, ease: 8, power: 10, setupFriction: 9, migrationDifficulty: 4, transparency: 7 },
     pricing: [
       { name: "Starter", priceMonthly: 0, priceAnnual: 0, billingModel: "flat", limits: "3 Figma design files, 3 FigJam boards, unlimited viewers" },
-      { name: "Professional", priceMonthly: 20, priceAnnual: 192, billingModel: "per_seat", limits: "Unlimited files, shared libraries, branching, Dev Mode", highlighted: true },
+      { name: "Professional", priceMonthly: 15, priceAnnual: 144, billingModel: "per_seat", limits: "$15/editor/mo monthly, $12/editor/mo annual — Unlimited files, shared libraries, branching, Dev Mode", highlighted: true },
       { name: "Organization", priceMonthly: null, priceAnnual: 540, billingModel: "per_seat", limits: "Design systems, branching & merging, centralized teams, org-wide libraries" },
       { name: "Enterprise", priceMonthly: null, priceAnnual: 1080, billingModel: "per_seat", limits: "SSO, advanced security, dedicated support, guest access controls, analytics" },
     ],
@@ -4940,9 +4941,9 @@ export const tools: Tool[] = [
     categories: ["seo-tools", "analytics"],
     scores: { value: 7, ease: 7, power: 10, setupFriction: 7, migrationDifficulty: 6, transparency: 7 },
     pricing: [
-      { name: "Lite", priceMonthly: 129, priceAnnual: 1308, billingModel: "per_seat", limits: "5 projects, 6 months history, 1 user, 500 credits/mo" },
-      { name: "Standard", priceMonthly: 249, priceAnnual: 2508, billingModel: "per_seat", limits: "20 projects, 2 years history, 1 user, unlimited credits", highlighted: true },
-      { name: "Advanced", priceMonthly: 449, priceAnnual: 4548, billingModel: "per_seat", limits: "50 projects, 5 years history, 1 user, Looker Studio integration" },
+      { name: "Lite", priceMonthly: 129, priceAnnual: 1296, billingModel: "per_seat", limits: "5 projects, 6 months history, 1 user, 500 credits/mo" },
+      { name: "Standard", priceMonthly: 249, priceAnnual: 2496, billingModel: "per_seat", limits: "20 projects, 2 years history, 1 user, unlimited credits", highlighted: true },
+      { name: "Advanced", priceMonthly: 449, priceAnnual: 4488, billingModel: "per_seat", limits: "50 projects, 5 years history, 1 user, Looker Studio integration" },
       { name: "Enterprise", priceMonthly: null, priceAnnual: null, billingModel: "custom", limits: "Unlimited projects, unlimited history, SSO, API" },
     ],
     pricingUrl: "https://ahrefs.com/pricing",

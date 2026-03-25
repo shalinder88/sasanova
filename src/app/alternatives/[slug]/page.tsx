@@ -173,7 +173,7 @@ export default async function AlternativesPage({
               {tool.switchingTriggers.map((trigger) => (
                 <span
                   key={trigger}
-                  className="px-3 py-1.5 text-xs bg-surface-alt border border-border rounded-full text-muted hover-item"
+                  className="px-3 py-1.5 text-xs bg-surface-alt border border-border rounded-full text-muted hover-pill"
                 >
                   {trigger}
                 </span>
@@ -287,7 +287,7 @@ export default async function AlternativesPage({
                         <span>{pricingSummary(alt)}</span>
                         <span className="w-px h-3 bg-border" />
                         {alt.bestFor[0] && (
-                          <span className="px-2 py-0.5 bg-surface-alt rounded-full hover-item">
+                          <span className="px-2 py-0.5 bg-surface-alt rounded-full hover-pill">
                             Best for: {alt.bestFor[0]}
                           </span>
                         )}

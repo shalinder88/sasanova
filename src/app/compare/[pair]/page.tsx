@@ -222,7 +222,7 @@ export default async function ComparisonPage({ params }: PageProps) {
               <p className="text-sm font-bold mb-2">Choose {toolA.name} if:</p>
               <ul className="space-y-1.5">
                 {(vsMatch?.chooseAIf ?? toolA.bestFor).map((item) => (
-                  <li key={item} className="text-sm text-muted flex items-start gap-2">
+                  <li key={item} className="hover-item text-sm text-muted flex items-start gap-2">
                     <span className="text-accent shrink-0 mt-0.5">—</span>
                     {item}
                   </li>
@@ -235,7 +235,7 @@ export default async function ComparisonPage({ params }: PageProps) {
               <p className="text-sm font-bold mb-2">Choose {toolB.name} if:</p>
               <ul className="space-y-1.5">
                 {(vsMatch?.chooseBIf ?? toolB.bestFor).map((item) => (
-                  <li key={item} className="text-sm text-muted flex items-start gap-2">
+                  <li key={item} className="hover-item text-sm text-muted flex items-start gap-2">
                     <span className="text-accent shrink-0 mt-0.5">—</span>
                     {item}
                   </li>
@@ -401,7 +401,7 @@ export default async function ComparisonPage({ params }: PageProps) {
                   {tool.pricing.map((plan) => (
                     <div
                       key={plan.name}
-                      className={`px-5 py-3 ${plan.highlighted ? "bg-accent-light/30" : ""}`}
+                      className={`hover-item px-5 py-3 ${plan.highlighted ? "bg-accent-light/30" : ""}`}
                     >
                       <div className="flex items-center justify-between mb-1">
                         <span className="text-sm font-semibold">
@@ -482,7 +482,7 @@ export default async function ComparisonPage({ params }: PageProps) {
                       <p className="text-xs font-semibold text-muted mb-1.5">Common triggers to leave:</p>
                       <ul className="space-y-1">
                         {tool.switchingTriggers.map((t) => (
-                          <li key={t} className="text-xs text-muted flex items-start gap-1.5">
+                          <li key={t} className="hover-item text-xs text-muted flex items-start gap-1.5">
                             <span className="text-amber-500 shrink-0">&#x2022;</span>
                             {t}
                           </li>
@@ -495,7 +495,7 @@ export default async function ComparisonPage({ params }: PageProps) {
                       <p className="text-xs font-semibold text-muted mb-1.5">Potential blockers:</p>
                       <ul className="space-y-1">
                         {tool.switchingBlockers.map((b) => (
-                          <li key={b} className="text-xs text-muted flex items-start gap-1.5">
+                          <li key={b} className="hover-item text-xs text-muted flex items-start gap-1.5">
                             <span className="text-danger shrink-0">&#x2022;</span>
                             {b}
                           </li>
@@ -542,7 +542,7 @@ export default async function ComparisonPage({ params }: PageProps) {
               <Link
                 key={`review-${tool.slug}`}
                 href={`/tools/${tool.slug}`}
-                className="border border-border rounded-lg p-3 hover:border-accent/30 transition-all text-sm"
+                className="hover-glow border border-border rounded-lg p-3 hover:border-accent/30 transition-all text-sm"
               >
                 <span className="font-semibold hover:text-accent">{tool.name} Review</span>
                 <span className="block text-xs text-muted mt-0.5">{getOverallScore(tool.scores)}/10 overall score</span>
@@ -552,7 +552,7 @@ export default async function ComparisonPage({ params }: PageProps) {
               <Link
                 key={`alt-${tool.slug}`}
                 href={`/alternatives/${tool.slug}`}
-                className="border border-border rounded-lg p-3 hover:border-accent/30 transition-all text-sm"
+                className="hover-glow border border-border rounded-lg p-3 hover:border-accent/30 transition-all text-sm"
               >
                 <span className="font-semibold hover:text-accent">{tool.name} Alternatives</span>
                 <span className="block text-xs text-muted mt-0.5">Compare top alternatives</span>
@@ -562,7 +562,7 @@ export default async function ComparisonPage({ params }: PageProps) {
               <Link
                 key={`pricing-${tool.slug}`}
                 href={`/pricing/${tool.slug}`}
-                className="border border-border rounded-lg p-3 hover:border-accent/30 transition-all text-sm"
+                className="hover-glow border border-border rounded-lg p-3 hover:border-accent/30 transition-all text-sm"
               >
                 <span className="font-semibold hover:text-accent">{tool.name} Pricing</span>
                 <span className="block text-xs text-muted mt-0.5">Full plan breakdown</span>
