@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Notion to ClickUp: When You Need a Real Project Manager",
@@ -327,6 +328,12 @@ export default function SwitchNotionToClickupPage() {
             </div>
           </div>
         </div>
+
+        <RelatedLinks
+          tools={["notion", "clickup"]}
+          comparisons={["notion-vs-clickup"]}
+          guides={["project-management-small-team"]}
+        />
       </article>
     </>
   );

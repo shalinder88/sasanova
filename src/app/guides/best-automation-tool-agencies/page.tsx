@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Automation Tools for Agencies: Managing Client Workflows at Scale",
@@ -420,6 +421,12 @@ export default function BestAutomationToolAgenciesPage() {
           </section>
 
         </div>
+
+        <RelatedLinks
+          tools={["zapier", "make", "n8n"]}
+          comparisons={["zapier-vs-make", "make-vs-n8n"]}
+          guides={["automation-pricing-compared", "migrate-zapier-to-make"]}
+        />
       </article>
     </>
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Migrating from Salesforce to HubSpot: What Actually Happens",
@@ -310,6 +311,12 @@ export default function MigrateSalesforceToHubspot() {
             </div>
           </section>
         </div>
+
+        <RelatedLinks
+          tools={["salesforce", "hubspot-crm"]}
+          comparisons={["hubspot-crm-vs-salesforce"]}
+          guides={["salesforce-hidden-costs", "hubspot-pricing-reality"]}
+        />
       </article>
     </>
   );

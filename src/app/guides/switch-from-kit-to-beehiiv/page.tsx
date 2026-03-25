@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Kit to beehiiv: The Creator Newsletter Migration",
@@ -301,6 +302,12 @@ export default function SwitchKitToBeehiivPage() {
             </div>
           </div>
         </div>
+
+        <RelatedLinks
+          tools={["convertkit", "beehiiv"]}
+          comparisons={["convertkit-vs-beehiiv"]}
+          guides={["best-email-tool-creators", "best-newsletter-paid-subscribers"]}
+        />
       </article>
     </>
   );

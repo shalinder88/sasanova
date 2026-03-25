@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "How to Migrate from Mailchimp to Kit (ConvertKit) Without Losing Subscribers",
@@ -349,6 +350,12 @@ export default function MigrateMailchimpToKit() {
             </div>
           </div>
         </div>
+
+        <RelatedLinks
+          tools={["mailchimp", "convertkit"]}
+          comparisons={["mailchimp-vs-convertkit"]}
+          guides={["mailchimp-hidden-costs", "best-email-tool-creators"]}
+        />
       </article>
     </>
   );

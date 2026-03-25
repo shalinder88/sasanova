@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Leaving Mailchimp for beehiiv: The Complete Migration Playbook",
@@ -313,6 +314,12 @@ export default function MigrateMailchimpToBeehiiv() {
             </div>
           </div>
         </div>
+
+        <RelatedLinks
+          tools={["mailchimp", "beehiiv"]}
+          comparisons={["mailchimp-vs-beehiiv"]}
+          guides={["mailchimp-hidden-costs", "best-email-tool-creators"]}
+        />
       </article>
     </>
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Mailchimp to ActiveCampaign: When You Need Real Automation",
@@ -398,6 +399,12 @@ export default function SwitchMailchimpToActiveCampaignPage() {
             </div>
           </div>
         </div>
+
+        <RelatedLinks
+          tools={["mailchimp", "activecampaign"]}
+          comparisons={["activecampaign-vs-mailchimp"]}
+          guides={["mailchimp-hidden-costs"]}
+        />
       </article>
     </>
   );

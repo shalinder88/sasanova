@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "HubSpot CRM Setup in 30 Minutes: The No-Nonsense Guide",
@@ -306,6 +307,12 @@ export default function HubspotCrmSetupGuide() {
             </div>
           </section>
         </div>
+
+        <RelatedLinks
+          tools={["hubspot-crm"]}
+          comparisons={["hubspot-crm-vs-pipedrive"]}
+          guides={["hubspot-pricing-reality", "best-crm-sales-teams"]}
+        />
       </article>
     </>
   );

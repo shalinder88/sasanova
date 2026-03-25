@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Automation for One-Person Businesses: What's Worth Paying For",
@@ -448,6 +449,12 @@ export default function BestAutomationToolSolopreneursPage() {
           </section>
 
         </div>
+
+        <RelatedLinks
+          tools={["zapier", "make", "bardeen"]}
+          comparisons={["zapier-vs-make", "zapier-vs-bardeen"]}
+          guides={["zapier-hidden-costs", "automation-pricing-compared"]}
+        />
       </article>
     </>
   );

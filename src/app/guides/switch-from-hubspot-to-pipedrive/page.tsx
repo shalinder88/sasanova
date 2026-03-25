@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Switching from HubSpot to Pipedrive: A Smaller CRM That Actually Gets Used",
@@ -389,6 +390,12 @@ export default function SwitchHubspotToPipedrivePage() {
           </section>
 
         </div>
+
+        <RelatedLinks
+          tools={["hubspot-crm", "pipedrive"]}
+          comparisons={["hubspot-crm-vs-pipedrive"]}
+          guides={["hubspot-pricing-reality", "best-crm-sales-teams"]}
+        />
       </article>
     </>
   );

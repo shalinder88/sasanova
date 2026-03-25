@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Substack to beehiiv: Why Creators Switch and How to Do It",
@@ -323,6 +324,12 @@ export default function MigrateSubstackToBeehiiv() {
             </div>
           </div>
         </div>
+
+        <RelatedLinks
+          tools={["substack", "beehiiv"]}
+          comparisons={["beehiiv-vs-substack"]}
+          guides={["best-newsletter-paid-subscribers"]}
+        />
       </article>
     </>
   );

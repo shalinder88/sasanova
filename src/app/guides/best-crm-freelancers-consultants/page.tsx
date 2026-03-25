@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Best CRM for Freelancers and Consultants (You Don't Need Salesforce)",
@@ -282,6 +283,12 @@ export default function BestCrmFreelancersConsultants() {
             </div>
           </section>
         </div>
+
+        <RelatedLinks
+          tools={["pipedrive", "hubspot-crm"]}
+          comparisons={["hubspot-crm-vs-pipedrive"]}
+          guides={["crm-solo-founder", "migrate-spreadsheet-to-crm"]}
+        />
       </article>
     </>
   );

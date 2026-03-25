@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Self-Hosting Your Automations: Zapier to n8n Migration Guide",
@@ -502,6 +503,12 @@ export default function MigrateZapierToN8nPage() {
           </section>
 
         </div>
+
+        <RelatedLinks
+          tools={["zapier", "n8n"]}
+          comparisons={["zapier-vs-n8n"]}
+          guides={["zapier-hidden-costs", "automation-pricing-compared"]}
+        />
       </article>
     </>
   );
