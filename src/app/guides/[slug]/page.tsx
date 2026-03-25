@@ -346,6 +346,26 @@ const guideMeta: Record<string, { title: string; category: string }> = {
     title: "Automation Tool Costs in 2026: Task Counting Changes Everything",
     category: "Annual Cost Comparison",
   },
+  "email-automation-sequences-compared": {
+    title: "Email Automation Sequences: Which Platform Does It Best?",
+    category: "Email Marketing",
+  },
+  "crm-reporting-compared": {
+    title: "CRM Reporting: What You Actually Get vs What Vendors Promise",
+    category: "CRM",
+  },
+  "automation-error-handling": {
+    title: "Automation Error Handling: The Feature That Separates Amateurs from Pros",
+    category: "Automation",
+  },
+  "email-list-health-guide": {
+    title: "Email List Health: The Metrics Nobody Talks About Until Deliverability Tanks",
+    category: "Email Marketing",
+  },
+  "crm-data-migration-checklist": {
+    title: "CRM Data Migration Checklist: What to Clean Before You Move",
+    category: "CRM Migration",
+  },
 };
 
 export function generateStaticParams() {

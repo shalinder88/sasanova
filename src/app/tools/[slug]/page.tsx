@@ -217,8 +217,7 @@ export default async function ToolProfilePage({ params }: Props) {
                   Last verified:{" "}
                   {new Date(tool.lastVerified).toLocaleDateString("en-US", {
                     year: "numeric",
-                    month: "short",
-                    day: "numeric",
+                    month: "long",
                   })}
                 </span>
               </div>

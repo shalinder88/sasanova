@@ -168,8 +168,7 @@ export default async function PricingDetailPage({
               Pricing independently verified as of{" "}
               {new Date(tool.lastVerified).toLocaleDateString("en-US", {
                 year: "numeric",
-                month: "short",
-                day: "numeric",
+                month: "long",
               })}.
             </span>
           </p>

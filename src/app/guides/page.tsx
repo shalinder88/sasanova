@@ -689,6 +689,46 @@ const guides = [
     readingTime: "17 min read",
     category: "Annual Cost Comparison",
   },
+  {
+    slug: "email-automation-sequences-compared",
+    title: "Email Automation Sequences: Which Platform Does It Best?",
+    description:
+      "Compare automation builders across ActiveCampaign, Kit, Mailchimp, beehiiv, and Brevo. Visual builders vs rules vs basic sequences, welcome series, cart abandonment, and which platforms gate automation behind paid tiers.",
+    readingTime: "18 min read",
+    category: "Email Marketing",
+  },
+  {
+    slug: "crm-reporting-compared",
+    title: "CRM Reporting: What You Actually Get vs What Vendors Promise",
+    description:
+      "HubSpot, Pipedrive, Salesforce, and Close reporting compared by tier. The 3 reports that matter for small teams, what's gated behind paid plans, and when a spreadsheet pivot table is better.",
+    readingTime: "16 min read",
+    category: "CRM",
+  },
+  {
+    slug: "automation-error-handling",
+    title: "Automation Error Handling: The Feature That Separates Amateurs from Pros",
+    description:
+      "Why automations break, how Zapier, Make, and n8n handle errors differently. Retry logic, error routes, try/catch nodes, monitoring setup, and the real time cost of automation maintenance.",
+    readingTime: "17 min read",
+    category: "Automation",
+  },
+  {
+    slug: "email-list-health-guide",
+    title: "Email List Health: The Metrics Nobody Talks About Until Deliverability Tanks",
+    description:
+      "Open rate benchmarks by platform (they count differently), bounce rate management, sunset policies for inactive subscribers, re-engagement sequences, and the real cost of a dirty list.",
+    readingTime: "16 min read",
+    category: "Email Marketing",
+  },
+  {
+    slug: "crm-data-migration-checklist",
+    title: "CRM Data Migration Checklist: What to Clean Before You Move",
+    description:
+      "Pre-migration data audit, field mapping between HubSpot/Pipedrive/Salesforce/Zoho, what transfers cleanly vs what breaks, timeline by CRM size, and the 3 things everyone forgets.",
+    readingTime: "19 min read",
+    category: "CRM Migration",
+  },
 ];
 
 export default function GuidesHub() {
