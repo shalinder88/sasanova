@@ -162,7 +162,7 @@ export function generateCategoryThesis(
   if (bestValue && bestPower && bestValue.slug !== bestPower.slug) {
     p2 += ` If value-for-money is your priority, ${bestValue.name} scores highest. If you need maximum feature depth, ${bestPower.name} pulls ahead.`;
   }
-  p2 += ` Don't assume the top-ranked tool is the right one for you — our overall score weights six factors (${weightsSummary()}), and your priorities may differ.`;
+  p2 += ` Don't assume the highest-scoring tool is the right one for you — our overall score weights six factors (${weightsSummary()}), and your priorities may differ.`;
   paragraphs.push(p2);
 
   // Mistakes

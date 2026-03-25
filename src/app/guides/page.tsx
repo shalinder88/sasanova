@@ -988,6 +988,87 @@ const guides = [
     readingTime: "15 min read",
     category: "SEO",
   },
+  // ── Sub-Category Pages (Commercial Intent) ──
+  {
+    slug: "best-free-newsletter-platform-2026",
+    title: "Best Free Newsletter Platform in 2026 (Real Free, Not Trial)",
+    description:
+      "Kit (10,000 subs), beehiiv (2,500 subs), Substack (unlimited, 10% cut), Buttondown (100 subs), and Mailchimp (250 contacts) compared with exact free tier limits and what each actually gives you for $0.",
+    readingTime: "14 min read",
+    category: "Sub-Category",
+  },
+  {
+    slug: "best-email-tool-under-25-per-month",
+    title: "Best Email Marketing Tool Under $25/Month",
+    description:
+      "Brevo Starter $9/mo, Buttondown Basic $9/mo, Mailchimp Essentials $13/mo, ActiveCampaign Starter $15/mo, and Brevo Standard $18/mo. Exact plan names and verified prices for every email tool under $25.",
+    readingTime: "12 min read",
+    category: "Sub-Category",
+  },
+  {
+    slug: "best-free-crm-comparison-2026",
+    title: "Every Free CRM Compared: What You Actually Get for $0",
+    description:
+      "HubSpot (unlimited contacts), Zoho (3 users, 5,000 records), Freshsales (3 users, built-in phone), and Attio (3 seats, 50,000 records). What each free CRM walls off behind paid plans.",
+    readingTime: "14 min read",
+    category: "Sub-Category",
+  },
+  {
+    slug: "best-crm-under-25-per-seat",
+    title: "Best CRM Under $25/Seat/Month",
+    description:
+      "Freshsales Growth $11/seat, Pipedrive Lite $14/seat, HubSpot Starter $20/seat, and Zoho Standard $20/seat. Verified prices, plan names, and the exact features each tier includes.",
+    readingTime: "12 min read",
+    category: "Sub-Category",
+  },
+  {
+    slug: "best-free-automation-tool-2026",
+    title: "Best Free Automation Tool in 2026: Zapier vs Make vs n8n",
+    description:
+      "Zapier free (100 tasks, two-step only), Make free (1,000 ops, 2 scenarios), n8n (unlimited self-hosted). Plus Pipedream and Bardeen free tiers. Exact limits and which free tier actually works.",
+    readingTime: "13 min read",
+    category: "Sub-Category",
+  },
+  {
+    slug: "best-automation-under-20-per-month",
+    title: "Best Automation Tool Under $20/Month",
+    description:
+      "Make Core at $10.59/mo is the clear winner. Make Pro at $18.82/mo stays under budget. n8n Starter at ~$22/mo (EUR) is just over. Zapier Professional at $29.99/mo is out. Exact prices compared.",
+    readingTime: "11 min read",
+    category: "Sub-Category",
+  },
+  {
+    slug: "complete-free-saas-stack-guide",
+    title: "The Complete $0/Month SaaS Stack: Every Free Tier Ranked",
+    description:
+      "Every tool with a genuine free tier from our database, organized by category (CRM, Email, Automation, PM, Analytics, Chat, Design, Scheduling, Forms). Ranked by free tier generosity with exact limits.",
+    readingTime: "20 min read",
+    category: "Sub-Category",
+  },
+  {
+    slug: "best-saas-stack-under-100",
+    title: "Best SaaS Stack Under $100/Month: Every Tool Itemized",
+    description:
+      "Freshsales Growth + Brevo Standard + Make Core + ClickUp Unlimited + PostHog Free = $91.59/mo for 3 seats. Plus a solo founder stack at $49.59/mo. Every price verified.",
+    readingTime: "14 min read",
+    category: "Sub-Category",
+  },
+  {
+    slug: "best-saas-stack-under-200",
+    title: "Best SaaS Stack Under $200/Month for Growing Teams",
+    description:
+      "A 5-seat stack with CRM, email, automation, PM, analytics, scheduling, forms, help desk, and chat for $180.82/mo. Plus a premium solo/duo stack at $194.12/mo. Every tool itemized.",
+    readingTime: "14 min read",
+    category: "Sub-Category",
+  },
+  {
+    slug: "tools-with-transparent-pricing-2026",
+    title: "SaaS Tools With Fully Transparent Pricing (No 'Contact Sales')",
+    description:
+      "Every tool where ALL plans have published prices vs tools that hide behind 'Contact Sales.' Fully transparent (Pipedrive, Make, Todoist), partially transparent (HubSpot, Zapier), and fully opaque (Workato, Tray.io).",
+    readingTime: "16 min read",
+    category: "Sub-Category",
+  },
 ];
 
 export default function GuidesHub() {

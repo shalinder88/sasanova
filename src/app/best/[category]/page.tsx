@@ -19,16 +19,14 @@ const CUSTOM_TITLES: Record<string, string> = {
   automation: "Best Automation Tools for Small Business in 2026",
 };
 
+/** Strip trailing product-type words so we never produce "Tools Tools" or "Assistants tool" */
+function cleanName(name: string): string {
+  return name.replace(/\s+(Tools?|Software|Platforms?|Apps?|Solutions?|Suites?|Builders?|Assistants?|Storage|Management|Services?|Surveys?|Contracts?|Commerce)$/i, '');
+}
+
 function bestTitle(name: string, slug?: string): string {
   if (slug && CUSTOM_TITLES[slug]) return CUSTOM_TITLES[slug];
-
-  const lower = name.toLowerCase();
-  // If the name already ends with a product-type word, don't append "Tools"
-  const productSuffixes = /\b(tools|software|platforms|builders|assistants|storage|management|solutions|apps|services|suites|surveys|contracts|commerce)$/i;
-  if (productSuffixes.test(lower.trim())) {
-    return `Best ${name} for Small Teams in 2026`;
-  }
-  return `Best ${name} Tools for Small Business in 2026`;
+  return `Best ${cleanName(name)} Tools for Small Business in 2026`;
 }
 
 export async function generateStaticParams() {
@@ -45,11 +43,11 @@ export async function generateMetadata({
   if (!cat) return {};
   return {
     title: `${bestTitle(cat.name, cat.slug)}`,
-    description: `Ranked list of the best ${cat.name.toLowerCase()} software in 2026, scored on value, ease-of-use, and power. Compare pricing, features, and honest ratings.`,
+    description: `Ranked list of the best ${cleanName(cat.name).toLowerCase()} tools in 2026, scored on value, ease-of-use, and power. Compare pricing, features, and honest ratings.`,
     alternates: { canonical: canonicalUrl(`/best/${category}`) },
     openGraph: {
       title: `${bestTitle(cat.name, cat.slug)} | Sasanova`,
-      description: `Ranked list of the best ${cat.name.toLowerCase()} software in 2026.`,
+      description: `Ranked list of the best ${cleanName(cat.name).toLowerCase()} tools in 2026.`,
       images: [{ url: `/og/best/${category}`, width: 1200, height: 630 }],
     },
   };
@@ -142,7 +140,7 @@ export default async function BestCategoryPage({
           </h1>
           {/* AEO answer-first summary — single definitive sentence */}
           <p className="text-base text-muted max-w-3xl leading-relaxed">
-            The top-ranked {cat.name.toLowerCase()} tool in 2026 is{" "}
+            The highest-scoring option in 2026 is{" "}
             <strong className="text-foreground">{winner.name}</strong> ({winner.overall}/10){runnerUp ? <>, followed by {runnerUp.name} ({runnerUp.overall}/10)</> : null}.
           </p>
         </div>

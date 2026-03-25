@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "All Tools — Software Directory",
   description:
     "Browse and compare software tools with honest multi-axis scoring, normalized pricing, and evidence-backed reviews.",
+  alternates: {
+    canonical: "https://sasanova.com/tools",
+  },
   openGraph: {
     title: "All Tools — Sasanova Software Directory",
     description:

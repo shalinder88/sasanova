@@ -30,13 +30,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!cat) return {};
   const toolCount = getToolsByCategory(slug).length;
   return {
-    title: `Best ${cat.name} Tools (2026) — Compare ${toolCount} Options`,
-    description: `${cat.description} Compare the ${toolCount} best ${cat.name.toLowerCase()} tools in 2026 with honest scores, pricing, and feature breakdowns.`,
+    title: `Best ${cleanCategoryName(cat.name)} Tools (2026) — Compare ${toolCount} Options`,
+    description: `${cat.description} Compare the ${toolCount} best ${cleanCategoryName(cat.name).toLowerCase()} tools in 2026 with honest scores, pricing, and feature breakdowns.`,
     alternates: { canonical: canonicalUrl(`/category/${slug}`) },
   };
 }
 
 /* ---------- Helpers ---------- */
+
+/** Strip trailing product-type words so we never produce "Tools Tools" or "Assistants tool" */
+function cleanCategoryName(name: string): string {
+  return name.replace(/\s+(Tools?|Software|Platforms?|Apps?|Solutions?|Suites?|Builders?|Assistants?|Storage|Management|Services?|Surveys?|Contracts?|Commerce)$/i, '');
+}
 
 function pricingSummary(tool: Tool): string {
   if (tool.freeTier) return "Free tier available";
@@ -113,7 +118,7 @@ export default async function CategoryPage({ params }: Props) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: `Best ${cat.name} Tools (2026)`,
+    name: `Best ${cleanCategoryName(cat.name)} Tools (2026)`,
     description: cat.description,
     itemListOrder: "https://schema.org/ItemListOrderDescending",
     numberOfItems: sorted.length,
@@ -183,7 +188,7 @@ export default async function CategoryPage({ params }: Props) {
         {/* AEO Answer Block — single definitive sentence, distinct from hero description */}
         <div className="bg-surface-alt border border-border rounded-lg p-4 mb-8">
           <p className="text-sm text-foreground leading-relaxed">
-            The top-ranked {cat.name.toLowerCase()} tool in 2026 is{" "}
+            The highest-scoring {cleanCategoryName(cat.name).toLowerCase()} tool in 2026 is{" "}
             <strong>{winner.name}</strong> ({winner.overall}/10).{" "}
             {winner.freeTier
               ? "It offers a free tier to get started."
@@ -275,7 +280,7 @@ export default async function CategoryPage({ params }: Props) {
         {/* Tool Grid (sorted by score) */}
         <section>
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold">All {cat.name} Tools</h2>
+            <h2 className="text-xl font-bold">All {cleanCategoryName(cat.name)} Tools</h2>
             <Link
               href={`/best/${cat.slug}`}
               className="text-xs font-semibold text-accent hover:underline"
@@ -358,7 +363,7 @@ export default async function CategoryPage({ params }: Props) {
             href={`/best/${cat.slug}`}
             className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-xl hover:bg-accent/90 transition-colors text-sm"
           >
-            See Full Ranked List: Best {cat.name} Tools
+            See Full Ranked List: Best {cleanCategoryName(cat.name)} Tools
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>

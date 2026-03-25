@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/monetization-guide", "/compare/shortlist", "/api/"],
+      disallow: ["/monetization-guide", "/compare/shortlist", "/api/", "/tools?*", "/search?*"],
     },
     sitemap: "https://sasanova.com/sitemap.xml",
   };

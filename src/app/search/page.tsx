@@ -342,6 +342,7 @@ export default function SearchPage() {
   return (
     <>
       <title>Search — Sasanova</title>
+      <link rel="canonical" href="https://sasanova.com/search" />
       <section className="border-b border-border bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <h1 className="text-2xl font-extrabold tracking-tight">Search</h1>
