@@ -221,6 +221,14 @@ export default async function ToolProfilePage({ params }: Props) {
                   })}
                 </span>
               </div>
+              {alternatives.length > 0 && (
+                <Link
+                  href={`/alternatives/${slug}`}
+                  className="inline-flex items-center gap-1.5 mt-3 text-sm font-semibold text-accent hover:underline transition-colors"
+                >
+                  See {alternatives.length} alternatives to {tool.name} →
+                </Link>
+              )}
             </div>
 
             {/* Score circle */}

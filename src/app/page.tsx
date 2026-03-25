@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { tools, versusPairs, categories, getOverallScore, getToolsByCategory, getActiveCategoryCount, getLatestVerifiedDate, formatVerifiedShort, formatVerifiedLong } from "@/data/tools";
+import { tools, versusPairs, categories, getOverallScore, getToolsByCategory, getActiveCategoryCount, getLatestVerifiedDate, formatVerifiedShort, formatVerifiedLong, getToolBySlug, getAlternatives } from "@/data/tools";
 import EmailCapture from "@/components/EmailCapture";
 
 /* ── Score axis row (kept for comparison cards) ── */
@@ -423,6 +423,62 @@ export default function Home() {
           <div className="text-center mt-6">
             <Link href="/compare" className="text-sm text-accent font-medium hover:underline">
               View all {versusPairs.length} comparisons →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          SECTION 4b — Popular Alternatives
+          Commercial-intent search entry points
+          ═══════════════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 border-b border-border bg-surface">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-12">
+            <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
+              Popular
+              <br />
+              <span className="text-muted">alternatives</span>
+            </h2>
+            <p className="text-base text-muted leading-relaxed lg:pt-2">
+              Outgrown your current tool? Compare the top alternatives with honest scoring, real pricing, and switching guidance.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {([
+              { slug: "mailchimp", label: "Mailchimp" },
+              { slug: "zapier", label: "Zapier" },
+              { slug: "salesforce", label: "Salesforce" },
+              { slug: "hubspot-crm", label: "HubSpot" },
+              { slug: "notion", label: "Notion" },
+              { slug: "slack", label: "Slack" },
+            ] as const).map((item) => {
+              const tool = getToolBySlug(item.slug);
+              const altCount = tool ? getAlternatives(tool).length : 0;
+              return (
+                <Link
+                  key={item.slug}
+                  href={`/alternatives/${item.slug}`}
+                  className="group bg-surface border border-border rounded-xl p-5 hover-glow hover:border-accent/30 transition-all"
+                >
+                  <h3 className="text-sm font-bold group-hover:text-accent transition-colors">
+                    {item.label} Alternatives
+                  </h3>
+                  <p className="text-xs text-muted mt-1">
+                    {altCount} alternatives compared
+                  </p>
+                  <span className="text-xs text-accent font-medium mt-3 inline-block opacity-0 group-hover:opacity-100 transition-opacity">
+                    View alternatives →
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className="text-center mt-6">
+            <Link href="/alternatives" className="text-sm text-accent font-medium hover:underline">
+              Browse all alternatives →
             </Link>
           </div>
         </div>

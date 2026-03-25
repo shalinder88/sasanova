@@ -251,7 +251,12 @@ function SearchContent() {
                         <span>
                           {tool.freeTier
                             ? "Free tier available"
-                            : `From $${tool.pricing[0]?.priceMonthly ?? "?"}/mo`}
+                            : (() => {
+                                const paid = tool.pricing.filter((p) => p.priceMonthly !== null && p.priceMonthly > 0);
+                                return paid.length > 0
+                                  ? `From $${Math.min(...paid.map((p) => p.priceMonthly as number))}/mo`
+                                  : "Contact sales";
+                              })()}
                         </span>
                         <span className="flex items-center gap-1">
                           <span

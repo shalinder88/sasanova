@@ -34,6 +34,17 @@ const footerSections = [
     ],
   },
   {
+    title: "Popular Alternatives",
+    links: [
+      { href: "/alternatives/mailchimp", label: "Mailchimp Alternatives" },
+      { href: "/alternatives/zapier", label: "Zapier Alternatives" },
+      { href: "/alternatives/salesforce", label: "Salesforce Alternatives" },
+      { href: "/alternatives/hubspot-crm", label: "HubSpot Alternatives" },
+      { href: "/alternatives/notion", label: "Notion Alternatives" },
+      { href: "/alternatives/slack", label: "Slack Alternatives" },
+    ],
+  },
+  {
     title: "Top Comparisons",
     links: [
       { href: "/compare/mailchimp-vs-convertkit", label: "Mailchimp vs Kit" },

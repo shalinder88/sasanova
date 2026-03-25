@@ -11,15 +11,24 @@ import ScoreBar from "@/components/ScoreBar";
 import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 import { generateCategoryThesis } from "@/lib/category-thesis";
 
-/** Avoid titles like "Best Automation Tools Tools in 2026" */
-function bestTitle(name: string): string {
+/** CTR-optimised titles: specific, searcher-friendly phrasing per category */
+const CUSTOM_TITLES: Record<string, string> = {
+  "newsletter-platforms": "Best Newsletter Platforms for Creators in 2026",
+  "email-marketing": "Best Email Marketing Tools for Small Business in 2026",
+  crm: "Best CRM Software for Small Teams in 2026",
+  automation: "Best Automation Tools for Small Business in 2026",
+};
+
+function bestTitle(name: string, slug?: string): string {
+  if (slug && CUSTOM_TITLES[slug]) return CUSTOM_TITLES[slug];
+
   const lower = name.toLowerCase();
   // If the name already ends with a product-type word, don't append "Tools"
   const productSuffixes = /\b(tools|software|platforms|builders|assistants|storage|management|solutions|apps|services|suites|surveys|contracts|commerce)$/i;
   if (productSuffixes.test(lower.trim())) {
-    return `Best ${name} in 2026`;
+    return `Best ${name} for Small Teams in 2026`;
   }
-  return `Best ${name} Tools in 2026`;
+  return `Best ${name} Tools for Small Business in 2026`;
 }
 
 export async function generateStaticParams() {
@@ -35,11 +44,11 @@ export async function generateMetadata({
   const cat = getCategoryBySlug(category);
   if (!cat) return {};
   return {
-    title: `${bestTitle(cat.name)}`,
+    title: `${bestTitle(cat.name, cat.slug)}`,
     description: `Ranked list of the best ${cat.name.toLowerCase()} software in 2026, scored on value, ease-of-use, and power. Compare pricing, features, and honest ratings.`,
     alternates: { canonical: canonicalUrl(`/best/${category}`) },
     openGraph: {
-      title: `${bestTitle(cat.name)} | Sasanova`,
+      title: `${bestTitle(cat.name, cat.slug)} | Sasanova`,
       description: `Ranked list of the best ${cat.name.toLowerCase()} software in 2026.`,
       images: [{ url: `/og/best/${category}`, width: 1200, height: 630 }],
     },
@@ -75,7 +84,7 @@ export default async function BestCategoryPage({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: `${bestTitle(cat.name)}`,
+    name: `${bestTitle(cat.name, cat.slug)}`,
     itemListOrder: "https://schema.org/ItemListOrderDescending",
     numberOfItems: toolsInCategory.length,
     itemListElement: toolsInCategory.map((tool, i) => ({
@@ -129,7 +138,7 @@ export default async function BestCategoryPage({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-2">Best Of</p>
           <h1 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-3">
-            {bestTitle(cat.name)}
+            {bestTitle(cat.name, cat.slug)}
           </h1>
           {/* AEO answer-first summary — single definitive sentence */}
           <p className="text-base text-muted max-w-3xl leading-relaxed">

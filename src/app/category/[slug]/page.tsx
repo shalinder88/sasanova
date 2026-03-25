@@ -166,18 +166,19 @@ export default async function CategoryPage({ params }: Props) {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
-        {/* AEO Answer Block */}
+        {/* AEO Answer Block — single definitive sentence, distinct from hero description */}
         <div className="bg-surface-alt border border-border rounded-lg p-4 mb-8">
           <p className="text-sm text-foreground leading-relaxed">
-            The best {cat.name.toLowerCase()} option in 2026 is{" "}
-            <strong>{winner.name}</strong> with an overall score of {winner.overall}/10.{" "}
-            {winner.tagline}.{" "}
+            The top-ranked {cat.name.toLowerCase()} tool in 2026 is{" "}
+            <strong>{winner.name}</strong> ({winner.overall}/10).{" "}
             {winner.freeTier
               ? "It offers a free tier to get started."
-              : `Paid plans start at $${Math.min(...winner.pricing.filter((p) => p.priceMonthly !== null && p.priceMonthly > 0).map((p) => p.priceMonthly as number))}/mo.`}{" "}
-            <span className="text-muted">
-              Rankings are based on our 6-axis scoring methodology covering value, ease-of-use, power, and transparency.
-            </span>
+              : (() => {
+                  const paid = winner.pricing.filter((p) => p.priceMonthly !== null && p.priceMonthly > 0);
+                  return paid.length > 0
+                    ? `Paid plans start at $${Math.min(...paid.map((p) => p.priceMonthly as number))}/mo.`
+                    : "Contact the vendor for pricing.";
+                })()}
           </p>
         </div>
 

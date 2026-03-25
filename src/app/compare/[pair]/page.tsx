@@ -253,21 +253,6 @@ export default async function ComparisonPage({ params }: PageProps) {
           </p>
         </section>
 
-        {/* AEO Answer Block */}
-        <div className="bg-surface-alt border border-border rounded-lg p-4">
-          <p className="text-sm text-foreground leading-relaxed">
-            Between <strong>{toolA.name}</strong> and <strong>{toolB.name}</strong>,{" "}
-            {vsMatch
-              ? vsMatch.verdict === "depends"
-                ? "these tools serve different jobs — the right choice depends on your specific workflow"
-                : `${vsMatch.verdict === toolA.slug ? toolA.name : toolB.name} is the stronger pick for most users`
-              : "both are strong options"}.{" "}
-            {toolA.name} scores {scoreA}/10, {toolB.name} scores {scoreB}/10.{" "}
-            Choose {toolA.name} if {toolA.bestFor[0]?.toLowerCase()}.{" "}
-            Choose {toolB.name} if {toolB.bestFor[0]?.toLowerCase()}.
-          </p>
-        </div>
-
         {/* ── Side-by-Side Comparison Table ── */}
         <section>
           <h2 className="text-xl font-bold mb-6">Side-by-Side Comparison</h2>
@@ -524,7 +509,12 @@ export default async function ComparisonPage({ params }: PageProps) {
                 <p className="text-xs text-muted mt-0.5">
                   {tool.freeTier
                     ? "Start free — no credit card required"
-                    : `Plans from $${tool.pricing.find((p) => p.priceMonthly && p.priceMonthly > 0)?.priceMonthly ?? "?"}/mo`}
+                    : (() => {
+                        const paid = tool.pricing.filter((p) => p.priceMonthly !== null && p.priceMonthly > 0);
+                        return paid.length > 0
+                          ? `Plans from $${Math.min(...paid.map((p) => p.priceMonthly as number))}/mo`
+                          : "Contact sales for pricing";
+                      })()}
                 </p>
               </div>
               <svg className="w-5 h-5 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
