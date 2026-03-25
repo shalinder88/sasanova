@@ -1714,4 +1714,116 @@ export const guides: Guide[] = [
     readingTime: "5 min read",
     category: "Decision Quick-Guide",
   },
+  {
+    slug: "crm-cost-over-3-years",
+    title: "3-Year CRM Cost as Your Team Grows: HubSpot vs Pipedrive vs Salesforce",
+    description:
+      "Exact 3-year cost projection as your team grows from 3 to 8 to 15 seats. HubSpot Starter ($20/seat) vs Pipedrive Growth ($39/seat) vs Salesforce Pro Suite ($100/seat). The HubSpot Professional cliff at $890/mo flat.",
+    readingTime: "14 min read",
+    category: "Year-Over-Year Cost",
+  },
+  {
+    slug: "automation-cost-over-3-years",
+    title: "3-Year Automation Cost as Volume Grows: Zapier vs Make vs n8n",
+    description:
+      "Exact 3-year cost as automation volume grows from 500 to 2,000 to 10,000 tasks/month. Zapier ($29.99–$103.50/mo) vs Make Core ($10.59/mo) vs n8n Cloud ($20–$50/mo). Task counting normalization included.",
+    readingTime: "13 min read",
+    category: "Year-Over-Year Cost",
+  },
+  {
+    slug: "pm-tool-cost-over-3-years",
+    title: "3-Year PM Tool Cost as Your Team Grows: Asana vs ClickUp vs Notion",
+    description:
+      "Exact 3-year cost as your team grows from 3 to 10 to 25 members. Asana Starter ($13.49/seat) vs ClickUp Unlimited ($10/seat) vs Notion Plus ($12/seat). Upper-tier upgrade triggers included.",
+    readingTime: "12 min read",
+    category: "Year-Over-Year Cost",
+  },
+  {
+    slug: "support-tool-cost-over-3-years",
+    title: "3-Year Support Tool Cost as Your Team Grows: Zendesk vs Freshdesk vs Intercom",
+    description:
+      "Exact 3-year cost as your support team grows from 2 to 5 to 10 agents. Zendesk Suite Team ($69/agent) vs Freshdesk Growth ($15/agent) vs Intercom Essential ($39/seat + $0.99/AI resolution).",
+    readingTime: "13 min read",
+    category: "Year-Over-Year Cost",
+  },
+  {
+    slug: "hubspot-lock-in-analysis",
+    title: "HubSpot Lock-In Analysis: What Exports, What Doesn't, and the Real Exit Cost",
+    description:
+      "Complete HubSpot vendor lock-in audit. Contacts and deals export cleanly. Workflows, templates, and reports don't. Exit timeline: 4–8 weeks. Alternatives: Pipedrive Growth ($39/seat), ActiveCampaign Plus ($49/mo).",
+    readingTime: "14 min read",
+    category: "Vendor Lock-In Analysis",
+  },
+  {
+    slug: "salesforce-lock-in-analysis",
+    title: "Salesforce Lock-In Analysis: AppExchange Dependencies, Custom Code, and Exit Timeline",
+    description:
+      "Complete Salesforce vendor lock-in audit. Apex code is proprietary. AppExchange apps don't transfer. Exit timeline: 6 weeks to 6 months. Alternatives: HubSpot Starter ($20/seat), Pipedrive Growth ($39/seat).",
+    readingTime: "15 min read",
+    category: "Vendor Lock-In Analysis",
+  },
+  {
+    slug: "mailchimp-lock-in-analysis",
+    title: "Mailchimp Lock-In Analysis: Contact Export, Template Loss, and Automation Rebuild Time",
+    description:
+      "Complete Mailchimp vendor lock-in audit. Subscriber list exports cleanly. Templates, automations, and landing pages don't. Exit timeline: 2–4 weeks. Alternatives: beehiiv Scale ($49/mo), Brevo Standard ($18/mo).",
+    readingTime: "12 min read",
+    category: "Vendor Lock-In Analysis",
+  },
+  {
+    slug: "zapier-lock-in-analysis",
+    title: "Zapier Lock-In Analysis: Zap Rebuild Effort, Integration Dependencies, and Exit Costs",
+    description:
+      "Complete Zapier vendor lock-in audit. Zaps must be manually rebuilt (15 min to 3 hours each). 7,000+ integrations vs Make's 1,800+ and n8n's 400+. Alternatives: Make Core ($10.59/mo), n8n Cloud ($20/mo).",
+    readingTime: "11 min read",
+    category: "Vendor Lock-In Analysis",
+  },
+  {
+    slug: "notion-lock-in-analysis",
+    title: "Notion Lock-In Analysis: Export Quality, Database Limitations, and Real Alternatives",
+    description:
+      "Complete Notion vendor lock-in audit. Pages export as Markdown (lossy). Database relations and views don't export. Exit timeline: 2–6 weeks. Alternatives: ClickUp Unlimited ($10/seat), Obsidian ($0).",
+    readingTime: "12 min read",
+    category: "Vendor Lock-In Analysis",
+  },
+  {
+    slug: "crm-roi-calculator",
+    title: "CRM ROI Calculator: Revenue Per Deal vs CRM Cost — Break-Even Analysis",
+    description:
+      "Calculate CRM ROI with exact math. At $2,000/deal, HubSpot Starter ($1,200/yr for 5 seats) breaks even with less than 1 extra deal/year. Pipedrive Growth ($2,340/yr) needs 1.2 deals. Full break-even tables by deal size.",
+    readingTime: "11 min read",
+    category: "ROI Calculator",
+  },
+  {
+    slug: "email-marketing-roi-calculator",
+    title: "Email Marketing ROI Calculator: Revenue Per Subscriber vs Platform Cost",
+    description:
+      "Calculate email marketing ROI at every list size. At 5,000 subscribers, Brevo Standard costs $0.04/sub/year. beehiiv Scale costs $0.12/sub/year. Mailchimp Standard costs $0.18/sub/year. Break-even revenue tables included.",
+    readingTime: "12 min read",
+    category: "ROI Calculator",
+  },
+  {
+    slug: "automation-roi-calculator",
+    title: "Automation ROI Calculator: Hours Saved vs Subscription Cost",
+    description:
+      "Calculate automation ROI with exact break-even hours. At $50/hr, Make Core ($10.59/mo) pays for itself with 12 minutes saved per month. Zapier Professional ($29.99/mo) needs 36 minutes. Real workflow examples included.",
+    readingTime: "11 min read",
+    category: "ROI Calculator",
+  },
+  {
+    slug: "seo-tool-roi-calculator",
+    title: "SEO Tool ROI Calculator: Traffic Value vs Semrush and Ahrefs Cost",
+    description:
+      "Calculate SEO tool ROI using traffic value. At $2.50 CPC, Semrush Pro ($139.95/mo) breaks even at 56 clicks/month. Ahrefs Lite ($129/mo) at 52 clicks. One ranking page can generate 10x+ the tool cost in traffic value.",
+    readingTime: "12 min read",
+    category: "ROI Calculator",
+  },
+  {
+    slug: "support-tool-roi-calculator",
+    title: "Support Tool ROI Calculator: Ticket Volume x Resolution Time vs Agent + Tool Cost",
+    description:
+      "Calculate support tool ROI from faster resolution and self-service deflection. 500 tickets/month with 5 min saved/ticket = $10,000/year value. Zendesk ($69/agent), Freshdesk ($15/agent), Intercom ($39/seat + AI).",
+    readingTime: "13 min read",
+    category: "ROI Calculator",
+  },
 ];
