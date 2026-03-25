@@ -57,7 +57,7 @@ export default function ProjectManagementGuide() {
             <div className="rounded-lg border border-border bg-surface p-5 mt-3 space-y-4">
               <div>
                 <p className="font-semibold text-foreground">Under 5 people, simple projects</p>
-                <p>&rarr; <strong className="text-foreground">Todoist Business ($5/user/mo)</strong> or <strong className="text-foreground">Basecamp ($15/user/mo)</strong></p>
+                <p>&rarr; <strong className="text-foreground">Todoist Pro ($7/user/mo)</strong> or <strong className="text-foreground">Basecamp ($15/user/mo)</strong></p>
               </div>
               <div className="border-t border-border pt-4">
                 <p className="font-semibold text-foreground">5&ndash;15 people, mixed workflows</p>
@@ -81,7 +81,7 @@ export default function ProjectManagementGuide() {
               list that everyone actually checks. The simpler the tool, the higher the adoption rate.
             </p>
 
-            <h3 className="text-base font-bold text-foreground mt-6 mb-2">Todoist Business &mdash; $5/user/month</h3>
+            <h3 className="text-base font-bold text-foreground mt-6 mb-2">Todoist Pro &mdash; $7/user/month</h3>
             <p>
               Todoist is a task manager, not a project management suite. That&apos;s exactly why
               it works for small teams. You create projects, add tasks with due dates and
@@ -89,7 +89,7 @@ export default function ProjectManagementGuide() {
               No workflow automations. Just tasks.
             </p>
             <p>
-              The Business plan ($5/user/month, billed annually, or $8/user monthly) adds team
+              The Pro plan ($7/user/month, billed annually, or $10/user monthly) adds team
               workspaces, admin controls, team activity logs, and priority support. The free plan
               works for personal use but caps at 5 active projects and 5 collaborators per project.
             </p>
@@ -256,7 +256,7 @@ export default function ProjectManagementGuide() {
                 <strong className="text-foreground">Trello</strong> &mdash; Free and intuitive,
                 but hits a wall fast. No timeline view on free. No custom fields on free. The
                 Standard plan ($5/user/month) adds these, but at that price point, Todoist
-                Business is cleaner for task management and Asana Free is more capable for
+                Pro is cleaner for task management and Asana Personal is more capable for
                 project management.
               </li>
               <li>
@@ -311,8 +311,8 @@ export default function ProjectManagementGuide() {
                 end of sprint cycle, project completion. Migration during active work creates chaos.
               </li>
               <li>
-                <strong className="text-foreground">Ignoring the free tiers.</strong> Asana Free
-                (10 users), ClickUp Free (unlimited users), Linear Free (250 issues), Jira Free
+                <strong className="text-foreground">Ignoring the free tiers.</strong> Asana Personal
+                (2 users), ClickUp Free (unlimited users), Linear Free (250 issues), Jira Free
                 (10 users). Every major PM tool has a usable free plan. Start there. Pay only when
                 you hit a specific limitation.
               </li>
@@ -341,8 +341,8 @@ export default function ProjectManagementGuide() {
                   <tr>
                     <td className="px-4 py-2.5 font-medium text-foreground">Todoist</td>
                     <td className="px-4 py-2.5">5 projects, 5 collaborators</td>
-                    <td className="px-4 py-2.5">$5&ndash;8</td>
-                    <td className="px-4 py-2.5">$25&ndash;40/mo</td>
+                    <td className="px-4 py-2.5">$7&ndash;10</td>
+                    <td className="px-4 py-2.5">$35&ndash;50/mo</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-2.5 font-medium text-foreground">Basecamp</td>

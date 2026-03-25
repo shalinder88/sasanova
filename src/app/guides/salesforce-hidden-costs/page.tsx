@@ -89,9 +89,9 @@ export default function SalesforceHiddenCostsPage() {
                     <td className="px-4 py-2.5 text-muted">Basic CRM, email integration</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-2.5 font-medium text-foreground">Professional</td>
-                    <td className="px-4 py-2.5 text-muted">$80</td>
-                    <td className="px-4 py-2.5 text-muted">$9,600</td>
+                    <td className="px-4 py-2.5 font-medium text-foreground">Pro Suite</td>
+                    <td className="px-4 py-2.5 text-muted">$100</td>
+                    <td className="px-4 py-2.5 text-muted">$12,000</td>
                     <td className="px-4 py-2.5 text-muted">Forecasting, quotes, dashboards</td>
                   </tr>
                   <tr className="bg-surface-alt/50">
@@ -266,7 +266,7 @@ export default function SalesforceHiddenCostsPage() {
             <div className="rounded-lg border border-border bg-surface p-5 my-6">
               <p className="text-sm font-semibold text-foreground mb-2">The hidden comparison</p>
               <p className="text-sm text-muted">
-                HubSpot Professional and Pipedrive Professional don&apos;t require a dedicated
+                HubSpot Professional and Pipedrive Premium don&apos;t require a dedicated
                 admin. Any reasonably technical team member can manage them. This $50,000&ndash;$120,000
                 annual admin cost is a Salesforce-specific expense that doesn&apos;t appear on
                 any pricing page.
@@ -318,7 +318,7 @@ export default function SalesforceHiddenCostsPage() {
             <ul className="list-disc pl-5 space-y-2 text-muted mb-4">
               <li>
                 <strong className="text-foreground">No monthly billing option.</strong> Unlike HubSpot,
-                Pipedrive, or Zoho (all of which offer monthly billing), Salesforce Professional
+                Pipedrive, or Zoho (all of which offer monthly billing), Salesforce Pro Suite
                 and above require annual commitment. You pay the full year upfront or in
                 quarterly installments.
               </li>
@@ -468,10 +468,10 @@ export default function SalesforceHiddenCostsPage() {
             <h2 className="text-xl font-bold mb-3">Common Mistakes</h2>
             <ul className="list-disc pl-5 space-y-2 text-muted mb-4">
               <li>
-                <strong className="text-foreground">Buying Enterprise when Professional is enough.</strong> The
-                jump from Professional ($80/user) to Enterprise ($165/user) doubles the license
-                cost. Enterprise adds workflow automation and API access. If you don&apos;t
-                need advanced automation or custom integrations, Professional saves $85/user/month.
+                <strong className="text-foreground">Buying Enterprise when Pro Suite is enough.</strong> The
+                jump from Pro Suite ($100/user) to Enterprise ($165/user) increases the license
+                cost significantly. Enterprise adds workflow automation and API access. If you don&apos;t
+                need advanced automation or custom integrations, Pro Suite saves $65/user/month.
               </li>
               <li>
                 <strong className="text-foreground">Not budgeting for the admin.</strong> The single

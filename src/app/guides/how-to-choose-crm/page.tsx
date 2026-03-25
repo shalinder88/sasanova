@@ -26,7 +26,7 @@ const teamSizeMatrix = [
   {
     size: "2-5 people (small team)",
     needs: "Shared pipeline, deal stages, activity tracking, basic reporting",
-    recommendation: "Pipedrive Essential ($14/seat) or HubSpot Starter ($20/mo for 2 seats)",
+    recommendation: "Pipedrive Lite ($14/seat) or HubSpot Starter ($20/mo for 2 seats)",
     monthlyBudget: "$28-100",
     reasoning:
       "At this size, you need everyone seeing the same pipeline. Pipedrive is fastest to adopt. HubSpot Starter bundles 2 seats with marketing tools.",
@@ -332,7 +332,7 @@ export default function HowToChooseCRM() {
             <p className="text-sm text-muted">
               Free CRMs are fine for solo founders and teams under 3. But if you
               know you will need automation and reporting within 12 months,
-              starting on a $14/seat paid plan (Pipedrive Essential) avoids
+              starting on a $14/seat paid plan (Pipedrive Lite) avoids
               retraining your team when you hit the upgrade cliff. The cost of
               re-adoption is higher than the cost of $14/month.
             </p>
@@ -397,7 +397,7 @@ export default function HowToChooseCRM() {
               <strong className="text-foreground">
                 The real cost is 3-5x the per-seat price.
               </strong>{" "}
-              Salesforce Professional is $80/user/month. Add an admin ($60-90K
+              Salesforce Pro Suite is $100/user/month. Add an admin ($60-90K
               salary or $150/hr consultant), implementation ($10-50K), add-ons
               (CPQ, Pardot, Einstein), and your real cost is $300-500 per user
               per month. See{" "}
@@ -522,11 +522,11 @@ export default function HowToChooseCRM() {
             </div>
             <div className="border border-border rounded-xl p-5 bg-surface">
               <p className="text-sm font-bold text-foreground mb-1">
-                HubSpot Free vs Pipedrive Essential — which one?
+                HubSpot Free vs Pipedrive Lite — which one?
               </p>
               <p className="text-sm text-muted">
                 HubSpot Free if you want $0 cost and plan to add marketing
-                tools later. Pipedrive Essential ($14/seat/mo) if you want a
+                tools later. Pipedrive Lite ($14/seat/mo) if you want a
                 faster, cleaner pipeline-focused experience. See{" "}
                 <Link
                   href="/compare/hubspot-crm-vs-pipedrive"
@@ -555,7 +555,7 @@ export default function HowToChooseCRM() {
               </p>
               <p className="text-sm text-muted">
                 Follow Up Boss is purpose-built for real estate. But
-                Pipedrive Essential ($14/seat/mo) works well for solo agents who
+                Pipedrive Lite ($14/seat/mo) works well for solo agents who
                 want a simpler and cheaper option. See{" "}
                 <Link
                   href="/guides/best-crm-real-estate"

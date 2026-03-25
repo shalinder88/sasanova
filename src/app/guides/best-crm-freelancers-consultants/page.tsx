@@ -42,7 +42,7 @@ export default function BestCrmFreelancersConsultants() {
             Best CRM for Freelancers and Consultants (You Don&apos;t Need Salesforce)
           </h1>
           <p className="text-lg text-muted">
-            Salesforce costs $80/user/month for Professional. HubSpot Professional is $890/month. Neither is designed for someone who works alone, manages 50&ndash;500 contacts, and bills by the project. Here&apos;s what actually works for one-person operations &mdash; and a genuine argument for when you don&apos;t need a CRM at all.
+            Salesforce costs $100/user/month for Pro Suite. HubSpot Professional is $890/month. Neither is designed for someone who works alone, manages 50&ndash;500 contacts, and bills by the project. Here&apos;s what actually works for one-person operations &mdash; and a genuine argument for when you don&apos;t need a CRM at all.
           </p>
         </header>
 

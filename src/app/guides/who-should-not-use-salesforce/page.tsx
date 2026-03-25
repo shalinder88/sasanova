@@ -62,7 +62,7 @@ export default function WhoShouldNotUseSalesforce() {
               <li>Annual contract (no monthly option on most plans)</li>
             </ul>
             <p className="text-sm text-muted mt-2">
-              A 20-person team on Professional Edition ($80/user/month) with implementation and one part-time admin: ~$50,000/year. That&apos;s before any add-ons or customization.
+              A 20-person team on Pro Suite ($100/user/month) with implementation and one part-time admin: ~$58,000/year. That&apos;s before any add-ons or customization.
             </p>
           </div>
 
@@ -84,8 +84,8 @@ export default function WhoShouldNotUseSalesforce() {
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="px-4 py-2.5 font-medium text-foreground">Salesforce Professional</td>
-                  <td className="px-4 py-2.5">$9,600/yr + $10K&ndash;$30K impl.</td>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Salesforce Pro Suite</td>
+                  <td className="px-4 py-2.5">$12,000/yr + $10K&ndash;$30K impl.</td>
                   <td className="px-4 py-2.5">4&ndash;12 weeks</td>
                   <td className="px-4 py-2.5">Yes (part-time minimum)</td>
                 </tr>
@@ -96,7 +96,7 @@ export default function WhoShouldNotUseSalesforce() {
                   <td className="px-4 py-2.5">No (self-service)</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2.5 font-medium text-foreground">Pipedrive Advanced</td>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Pipedrive Growth</td>
                   <td className="px-4 py-2.5">$3,480/yr</td>
                   <td className="px-4 py-2.5">1&ndash;2 days</td>
                   <td className="px-4 py-2.5">No</td>
@@ -181,7 +181,7 @@ export default function WhoShouldNotUseSalesforce() {
           {/* ── Case 5: Annual Contract ── */}
           <h2 className="text-xl font-bold mt-10 mb-4">5. The Annual Contract Lock-In</h2>
           <p className="text-muted mb-4">
-            Most Salesforce editions require annual contracts with no monthly billing option. Professional Edition ($80/user/month) for 20 users is a $19,200 annual commitment &mdash; paid upfront or in annual installments, but locked in regardless. If you realize after 3 months that Salesforce isn&apos;t working, you&apos;re paying for the remaining 9 months anyway.
+            Most Salesforce editions require annual contracts with no monthly billing option. Pro Suite ($100/user/month) for 20 users is a $24,000 annual commitment &mdash; paid upfront or in annual installments, but locked in regardless. If you realize after 3 months that Salesforce isn&apos;t working, you&apos;re paying for the remaining 9 months anyway.
           </p>
           <p className="text-muted mb-4">
             Salesforce&apos;s Starter Suite ($25/user/month) does offer monthly billing, but it&apos;s a stripped-down version that lacks the customization, automation, and reporting that make Salesforce worth using. It&apos;s essentially HubSpot Free with a Salesforce logo and a higher price.
@@ -224,7 +224,7 @@ export default function WhoShouldNotUseSalesforce() {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Is Salesforce Starter Suite worth it?</h3>
-                <p className="text-muted">At $25/user/month with monthly billing, Starter Suite is a reasonable entry point. But it lacks most of what makes Salesforce powerful: custom objects, advanced automation (Flows), approval processes, and deep reporting. It&apos;s essentially a contact manager with the Salesforce name. HubSpot Free or Pipedrive Essential offer more functionality at a lower (or zero) price.</p>
+                <p className="text-muted">At $25/user/month with monthly billing, Starter Suite is a reasonable entry point. But it lacks most of what makes Salesforce powerful: custom objects, advanced automation (Flows), approval processes, and deep reporting. It&apos;s essentially a contact manager with the Salesforce name. HubSpot Free or Pipedrive Lite offer more functionality at a lower (or zero) price.</p>
               </div>
             </div>
           </section>

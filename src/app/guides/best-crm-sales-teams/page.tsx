@@ -64,7 +64,7 @@ export default function BestCrmSalesTeams() {
                 <tr className="bg-surface-alt text-left">
                   <th className="px-4 py-2.5 font-semibold text-foreground">Team Size</th>
                   <th className="px-4 py-2.5 font-semibold text-foreground">HubSpot Sales Hub Pro ($890/mo base + $20/seat)</th>
-                  <th className="px-4 py-2.5 font-semibold text-foreground">Pipedrive Advanced ($39/seat/mo)</th>
+                  <th className="px-4 py-2.5 font-semibold text-foreground">Pipedrive Growth ($39/seat/mo)</th>
                   <th className="px-4 py-2.5 font-semibold text-foreground">Close Professional ($109/seat/mo)</th>
                 </tr>
               </thead>
@@ -100,7 +100,7 @@ export default function BestCrmSalesTeams() {
             <strong className="text-foreground">The HubSpot cost structure is unusual.</strong> Sales Hub Professional has a flat $890/month base that includes 5 seats. Additional seats are just $20/month each. This means HubSpot is expensive at small team sizes (5 reps = $178/seat effective) but gets cheaper per seat as you scale (25 reps = $52/seat effective). Pipedrive stays linear. Close is the most expensive per-seat but includes built-in calling.
           </p>
           <p className="text-muted mb-4">
-            <strong className="text-foreground">Why not use cheaper tiers?</strong> HubSpot Starter ($20/seat) lacks workflow automation, custom reporting, and sequences &mdash; the features sales teams actually need. Pipedrive Essential ($14/seat) lacks email automation and workflow triggers. Close Startup ($59/seat) is limited to 3 users. The tiers above are the minimum viable plans for a real sales team.
+            <strong className="text-foreground">Why not use cheaper tiers?</strong> HubSpot Starter ($20/seat) lacks workflow automation, custom reporting, and sequences &mdash; the features sales teams actually need. Pipedrive Lite ($14/seat) lacks email automation and workflow triggers. Close Essentials ($59/seat) is limited to 3 users. The tiers above are the minimum viable plans for a real sales team.
           </p>
 
           <h2 className="text-xl font-bold mt-10 mb-4">Deal Pipeline Features That Actually Matter</h2>
@@ -113,7 +113,7 @@ export default function BestCrmSalesTeams() {
                 <tr className="bg-surface-alt text-left">
                   <th className="px-4 py-2.5 font-semibold text-foreground">Pipeline Feature</th>
                   <th className="px-4 py-2.5 font-semibold text-foreground">HubSpot Pro</th>
-                  <th className="px-4 py-2.5 font-semibold text-foreground">Pipedrive Advanced</th>
+                  <th className="px-4 py-2.5 font-semibold text-foreground">Pipedrive Growth</th>
                   <th className="px-4 py-2.5 font-semibold text-foreground">Close Professional</th>
                 </tr>
               </thead>
@@ -171,7 +171,7 @@ export default function BestCrmSalesTeams() {
                 <tr className="bg-surface-alt text-left">
                   <th className="px-4 py-2.5 font-semibold text-foreground">Email Feature</th>
                   <th className="px-4 py-2.5 font-semibold text-foreground">HubSpot Pro</th>
-                  <th className="px-4 py-2.5 font-semibold text-foreground">Pipedrive Advanced</th>
+                  <th className="px-4 py-2.5 font-semibold text-foreground">Pipedrive Growth</th>
                   <th className="px-4 py-2.5 font-semibold text-foreground">Close Professional</th>
                 </tr>
               </thead>
@@ -235,7 +235,7 @@ export default function BestCrmSalesTeams() {
                 <tr className="bg-surface-alt text-left">
                   <th className="px-4 py-2.5 font-semibold text-foreground">Report Type</th>
                   <th className="px-4 py-2.5 font-semibold text-foreground">HubSpot Pro</th>
-                  <th className="px-4 py-2.5 font-semibold text-foreground">Pipedrive Advanced</th>
+                  <th className="px-4 py-2.5 font-semibold text-foreground">Pipedrive Growth</th>
                   <th className="px-4 py-2.5 font-semibold text-foreground">Close Professional</th>
                 </tr>
               </thead>
@@ -284,7 +284,7 @@ export default function BestCrmSalesTeams() {
                 <tr className="bg-surface-alt text-left">
                   <th className="px-4 py-2.5 font-semibold text-foreground">Phase</th>
                   <th className="px-4 py-2.5 font-semibold text-foreground">HubSpot Pro</th>
-                  <th className="px-4 py-2.5 font-semibold text-foreground">Pipedrive Advanced</th>
+                  <th className="px-4 py-2.5 font-semibold text-foreground">Pipedrive Growth</th>
                   <th className="px-4 py-2.5 font-semibold text-foreground">Close Professional</th>
                 </tr>
               </thead>
@@ -338,7 +338,7 @@ export default function BestCrmSalesTeams() {
               <strong className="text-foreground">Choose HubSpot Sales Hub Professional if:</strong> You need reporting for executives, plan to add marketing automation later, have someone to administer the CRM, and want the most complete feature set. The $890/month base pays for itself at 15+ seats when you compare effective per-seat cost.
             </p>
             <p className="text-sm text-muted mb-3">
-              <strong className="text-foreground">Choose Pipedrive Advanced if:</strong> Your team is sales-focused (not marketing-driven), wants the fastest setup, prefers a clean pipeline view over feature density, and doesn&apos;t need enterprise-grade reporting. At $39/seat it&apos;s the best value for pure sales teams.
+              <strong className="text-foreground">Choose Pipedrive Growth if:</strong> Your team is sales-focused (not marketing-driven), wants the fastest setup, prefers a clean pipeline view over feature density, and doesn&apos;t need enterprise-grade reporting. At $39/seat it&apos;s the best value for pure sales teams.
             </p>
             <p className="text-sm text-muted">
               <strong className="text-foreground">Choose Close Professional if:</strong> Your team does high-volume outbound with phone, email, and SMS. The built-in Power Dialer and call recording justify the $109/seat price if it replaces a separate calling tool ($50&ndash;$100/seat). If you don&apos;t make calls, Close is overpriced for what it offers on pipeline and reporting.
@@ -348,7 +348,7 @@ export default function BestCrmSalesTeams() {
           <h2 className="text-xl font-bold mt-10 mb-4">Who Should NOT Use These CRMs</h2>
           <ul className="list-disc pl-5 space-y-2 text-muted mb-4">
             <li><strong className="text-foreground">Teams over 50 reps.</strong> At this scale, Salesforce&apos;s territory management, forecasting depth, and ecosystem start to justify the cost. HubSpot and Pipedrive work above 50, but the power gap becomes noticeable.</li>
-            <li><strong className="text-foreground">Solo founders or freelancers.</strong> You don&apos;t need $39&ndash;$890/month in CRM features. Folk at $20/month or Pipedrive Essential at $14/month covers your needs.</li>
+            <li><strong className="text-foreground">Solo founders or freelancers.</strong> You don&apos;t need $39&ndash;$890/month in CRM features. Folk at $20/month or Pipedrive Lite at $14/month covers your needs.</li>
             <li><strong className="text-foreground">Companies that primarily need marketing automation.</strong> If your priority is lead nurturing, email campaigns, and content marketing with some sales pipeline on the side, evaluate HubSpot as a marketing platform first, not a sales CRM.</li>
             <li><strong className="text-foreground">Teams with no defined sales process.</strong> A CRM can&apos;t create a sales process. If your team doesn&apos;t have clear stages, qualification criteria, and handoff rules, fix that before buying software. The CRM enforces a process; it doesn&apos;t invent one.</li>
           </ul>
@@ -359,7 +359,7 @@ export default function BestCrmSalesTeams() {
               <strong className="text-foreground">Starting on HubSpot Free and expecting a smooth upgrade.</strong> HubSpot Free to Professional is a $890/month jump with a completely different feature set. It&apos;s not an upgrade &mdash; it&apos;s a new product. Budget for Professional from day one or start elsewhere.
             </li>
             <li>
-              <strong className="text-foreground">Picking Pipedrive when you need reporting.</strong> Pipedrive&apos;s Advanced plan reporting is basic. If your CEO asks for a custom revenue forecast dashboard, you either need Pipedrive Professional ($49/seat) or a BI tool like Databox or Geckoboard on top.
+              <strong className="text-foreground">Picking Pipedrive when you need reporting.</strong> Pipedrive&apos;s Advanced plan reporting is basic. If your CEO asks for a custom revenue forecast dashboard, you either need Pipedrive Premium ($49/seat) or a BI tool like Databox or Geckoboard on top.
             </li>
             <li>
               <strong className="text-foreground">Choosing Close when you don&apos;t make calls.</strong> Close&apos;s premium pricing is justified by the built-in dialer. If your sales process is primarily email and meetings, Pipedrive at $39/seat gives you a better pipeline experience for less money.
@@ -374,7 +374,7 @@ export default function BestCrmSalesTeams() {
 
           <h2 className="text-xl font-bold mt-10 mb-4">The Bottom Line</h2>
           <p className="text-muted mb-6">
-            For sales teams of 5&ndash;25, Pipedrive Advanced at $39/seat is the best default choice. It&apos;s the fastest to set up, the easiest for reps to adopt, and the most focused on what sales teams actually do. HubSpot Sales Hub Professional makes sense when you need strong reporting and plan to use HubSpot&apos;s marketing tools &mdash; but only if you have admin capacity. Close earns its premium when your team lives on the phone. Pick based on how your team sells, not on feature count.
+            For sales teams of 5&ndash;25, Pipedrive Growth at $39/seat is the best default choice. It&apos;s the fastest to set up, the easiest for reps to adopt, and the most focused on what sales teams actually do. HubSpot Sales Hub Professional makes sense when you need strong reporting and plan to use HubSpot&apos;s marketing tools &mdash; but only if you have admin capacity. Close earns its premium when your team lives on the phone. Pick based on how your team sells, not on feature count.
           </p>
 
           <section className="border-t border-border pt-8 mt-8">
@@ -382,7 +382,7 @@ export default function BestCrmSalesTeams() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">What is the best CRM for a sales team of 10?</h3>
-                <p className="text-muted">Pipedrive Advanced ($390/month for 10 seats) is the best value for a sales team of 10 focused on pipeline management. HubSpot Sales Hub Professional ($990/month for 10 seats) is better if you need custom reporting and marketing integration. Close Professional ($1,090/month for 10 seats) is best for teams doing heavy outbound calling.</p>
+                <p className="text-muted">Pipedrive Growth ($390/month for 10 seats) is the best value for a sales team of 10 focused on pipeline management. HubSpot Sales Hub Professional ($990/month for 10 seats) is better if you need custom reporting and marketing integration. Close Professional ($1,090/month for 10 seats) is best for teams doing heavy outbound calling.</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Is HubSpot Sales Hub worth the $890/month base fee?</h3>

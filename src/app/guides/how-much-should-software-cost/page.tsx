@@ -24,7 +24,7 @@ const stages = [
     description:
       "You are pre-revenue or early revenue. Every dollar matters. Your stack should cost less than a nice dinner.",
     allocations: [
-      { category: "CRM", budget: "$0-14", percentage: "0-14%", tool: "HubSpot Free or Pipedrive Essential ($14/seat)", toolSlug: "hubspot-crm" },
+      { category: "CRM", budget: "$0-14", percentage: "0-14%", tool: "HubSpot Free or Pipedrive Lite ($14/seat)", toolSlug: "hubspot-crm" },
       { category: "Email Marketing", budget: "$0-29", percentage: "0-29%", tool: "Kit Free or beehiiv Launch (free), Kit Creator ($29/mo) if you need automation", toolSlug: "convertkit" },
       { category: "Automation", budget: "$0-11", percentage: "0-11%", tool: "Make Free or Make Core ($10.59/mo)", toolSlug: "make" },
       { category: "Project Management", budget: "$0", percentage: "0%", tool: "Notion Free or ClickUp Free", toolSlug: "notion" },
@@ -42,7 +42,7 @@ const stages = [
     description:
       "You have customers and revenue. Coordination costs start to matter. Tools need to support collaboration, not just individual productivity.",
     allocations: [
-      { category: "CRM", budget: "$28-100", percentage: "15-25%", tool: "Pipedrive Essential ($14/seat x 2-5) or HubSpot Starter ($20/mo + $20/seat)", toolSlug: "pipedrive" },
+      { category: "CRM", budget: "$28-100", percentage: "15-25%", tool: "Pipedrive Lite ($14/seat x 2-5) or HubSpot Starter ($20/mo + $20/seat)", toolSlug: "pipedrive" },
       { category: "Email Marketing", budget: "$29-49", percentage: "10-15%", tool: "Kit Creator ($29/mo) or ActiveCampaign Starter ($15-49/mo)", toolSlug: "activecampaign" },
       { category: "Automation", budget: "$11-19", percentage: "5-10%", tool: "Make Core ($10.59/mo) or Make Pro ($18.82/mo)", toolSlug: "make" },
       { category: "Project Management", budget: "$0-60", percentage: "0-15%", tool: "Notion Free (still works) or ClickUp Business ($12/seat)", toolSlug: "clickup" },
@@ -60,7 +60,7 @@ const stages = [
     description:
       "You need real reporting, automation, and process. Individual tools need to talk to each other. Integration quality matters more than individual tool features.",
     allocations: [
-      { category: "CRM", budget: "$100-500", percentage: "20-30%", tool: "HubSpot Professional ($100/mo + $50/seat) or Pipedrive Advanced ($39/seat)", toolSlug: "hubspot-crm" },
+      { category: "CRM", budget: "$100-500", percentage: "20-30%", tool: "HubSpot Professional ($100/mo + $50/seat) or Pipedrive Growth ($39/seat)", toolSlug: "hubspot-crm" },
       { category: "Email Marketing", budget: "$49-200", percentage: "10-15%", tool: "ActiveCampaign Plus ($49-149/mo) or Klaviyo ($45-150/mo for e-commerce)", toolSlug: "activecampaign" },
       { category: "Automation", budget: "$19-100", percentage: "5-10%", tool: "Make Pro ($18.82/mo) or Make Teams ($34.12/mo)", toolSlug: "make" },
       { category: "Project Management", budget: "$60-300", percentage: "10-15%", tool: "ClickUp Business ($12/seat) or Asana Business ($30.49/seat)", toolSlug: "clickup" },
@@ -70,7 +70,7 @@ const stages = [
     ],
     totalRecommended: "$367-1,670/month",
     keyInsight:
-      "At this stage, the CRM and communication tools dominate your budget. Per-seat costs compound fast: 15 people on Slack Pro + Pipedrive Advanced + ClickUp Business = $876/month just for those three. Audit seat counts quarterly.",
+      "At this stage, the CRM and communication tools dominate your budget. Per-seat costs compound fast: 15 people on Slack Pro + Pipedrive Growth + ClickUp Business = $876/month just for those three. Audit seat counts quarterly.",
   },
 ];
 

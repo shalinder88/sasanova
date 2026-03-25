@@ -51,7 +51,7 @@ export default function MigrateSalesforceToHubspot() {
             The reasons are consistent across almost every company we&apos;ve talked to. They boil down to four triggers.
           </p>
           <p className="text-muted mb-4">
-            <strong className="text-foreground">Cost.</strong> Salesforce Professional is $80/user/month. Enterprise is $165/user/month. A 25-person sales team on Professional pays $24,000/year before add-ons. Factor in a Salesforce admin ($70K&ndash;$110K salary), AppExchange subscriptions (typically $5K&ndash;$20K/year), and implementation consulting ($15K&ndash;$50K for mid-market), and the total cost of ownership is 3&ndash;5x the license fees.
+            <strong className="text-foreground">Cost.</strong> Salesforce Pro Suite is $100/user/month. Enterprise is $165/user/month. A 25-person sales team on Pro Suite pays $30,000/year before add-ons. Factor in a Salesforce admin ($70K&ndash;$110K salary), AppExchange subscriptions (typically $5K&ndash;$20K/year), and implementation consulting ($15K&ndash;$50K for mid-market), and the total cost of ownership is 3&ndash;5x the license fees.
           </p>
           <p className="text-muted mb-4">
             <strong className="text-foreground">Complexity.</strong> Every Salesforce org accumulates technical debt. Custom objects, Apex triggers, validation rules, flows that nobody remembers building. After 2&ndash;3 years, most mid-market Salesforce instances need a certified admin to make changes. Small teams don&apos;t have that person. They have a marketing manager who learned SFDC basics on YouTube.
@@ -132,7 +132,7 @@ export default function MigrateSalesforceToHubspot() {
             <li><strong className="text-foreground">Advanced reporting.</strong> Salesforce reporting with cross-object formulas, bucket fields, and joined reports is significantly more powerful than HubSpot&apos;s. HubSpot&apos;s custom report builder (Professional+) covers 70% of use cases. The other 30% requires workarounds or third-party BI tools.</li>
             <li><strong className="text-foreground">AppExchange depth.</strong> Salesforce has 7,000+ apps on AppExchange. HubSpot&apos;s marketplace has ~1,500. If you depend on niche integrations (CPQ, territory planning, commission tracking), check HubSpot&apos;s marketplace before committing.</li>
             <li><strong className="text-foreground">Granular permissions.</strong> Salesforce&apos;s permission model (profiles, permission sets, field-level security, record-level sharing rules) is more granular than HubSpot&apos;s. If you have complex data access requirements, HubSpot may not satisfy compliance or security needs without Enterprise.</li>
-            <li><strong className="text-foreground">Multi-currency and territory management.</strong> Native in Salesforce Professional. HubSpot requires Enterprise ($3,600/mo) for full territory support.</li>
+            <li><strong className="text-foreground">Multi-currency and territory management.</strong> Native in Salesforce Pro Suite. HubSpot requires Enterprise ($3,600/mo) for full territory support.</li>
             <li><strong className="text-foreground">Custom object flexibility.</strong> Salesforce lets you create unlimited custom objects on any paid tier. HubSpot limits custom objects to Enterprise and caps them at 10.</li>
           </ul>
 
@@ -196,7 +196,7 @@ export default function MigrateSalesforceToHubspot() {
               <tbody className="divide-y divide-border">
                 <tr>
                   <td className="px-4 py-2.5 font-medium text-foreground">10 users</td>
-                  <td className="px-4 py-2.5">$9,600/yr licenses + ~$5K admin/consulting = ~$14,600/yr</td>
+                  <td className="px-4 py-2.5">$12,000/yr licenses + ~$5K admin/consulting = ~$17,000/yr</td>
                   <td className="px-4 py-2.5">$10,680/yr (platform) + $600/yr (extra seats at $20/mo each) = ~$11,280/yr</td>
                   <td className="px-4 py-2.5">$2,400/yr (10 seats at $20/mo)</td>
                 </tr>
@@ -298,7 +298,7 @@ export default function MigrateSalesforceToHubspot() {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Is HubSpot really cheaper than Salesforce?</h3>
-                <p className="text-muted">For most teams under 50 users, yes. HubSpot Sales Hub Professional at $890/month plus $20/seat is significantly cheaper than Salesforce Professional at $80/seat. But you need to account for HubSpot&apos;s contact tier pricing if using Marketing Hub, and the fact that HubSpot Starter ($20/seat) lacks the automation features most Salesforce users expect.</p>
+                <p className="text-muted">For most teams under 50 users, yes. HubSpot Sales Hub Professional at $890/month plus $20/seat is significantly cheaper than Salesforce Pro Suite at $100/seat. But you need to account for HubSpot&apos;s contact tier pricing if using Marketing Hub, and the fact that HubSpot Starter ($20/seat) lacks the automation features most Salesforce users expect.</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Can I migrate Salesforce custom objects to HubSpot?</h3>

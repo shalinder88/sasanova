@@ -187,8 +187,8 @@ export default function BestCrmAgencies() {
                   <th className="px-4 py-2.5 font-semibold text-foreground">Clients</th>
                   <th className="px-4 py-2.5 font-semibold text-foreground">Seats needed</th>
                   <th className="px-4 py-2.5 font-semibold text-foreground">HubSpot Starter</th>
-                  <th className="px-4 py-2.5 font-semibold text-foreground">Pipedrive Essential</th>
-                  <th className="px-4 py-2.5 font-semibold text-foreground">Close Startup</th>
+                  <th className="px-4 py-2.5 font-semibold text-foreground">Pipedrive Lite</th>
+                  <th className="px-4 py-2.5 font-semibold text-foreground">Close Essentials</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
@@ -217,7 +217,7 @@ export default function BestCrmAgencies() {
             </table>
           </div>
           <p className="text-muted mb-4">
-            <strong className="text-foreground">Pipedrive is the cheapest per-seat at scale.</strong> At 8 seats, Pipedrive Essential costs $112/month vs HubSpot Starter at $140/month vs Close at $392/month. But if you need email sequences, Pipedrive Advanced at $39/seat ($312/month for 8 seats) closes the gap with HubSpot Sales Hub Professional, which starts at $100/seat ($800/month for 8 seats). Close includes sequences on all plans, making it the better value for outbound-heavy agencies despite the higher per-seat base price.
+            <strong className="text-foreground">Pipedrive is the cheapest per-seat at scale.</strong> At 8 seats, Pipedrive Lite costs $112/month vs HubSpot Starter at $140/month vs Close at $392/month. But if you need email sequences, Pipedrive Growth at $39/seat ($312/month for 8 seats) closes the gap with HubSpot Sales Hub Professional, which starts at $100/seat ($800/month for 8 seats). Close includes sequences on all plans, making it the better value for outbound-heavy agencies despite the higher per-seat base price.
           </p>
 
           {/* ── White-Labeling and Client-Facing Portals ── */}
@@ -260,7 +260,7 @@ export default function BestCrmAgencies() {
             </div>
           </div>
           <p className="text-muted mb-4">
-            <strong className="text-foreground">HubSpot Professional</strong> handles both views well with custom dashboards and filtered views. The catch: Professional costs $100/seat/month. <strong className="text-foreground">Pipedrive Professional</strong> ($49/seat) offers Insights dashboards that cover most owner-level metrics. <strong className="text-foreground">Close</strong> has solid built-in reports for sales activity but weaker custom reporting for client delivery metrics.
+            <strong className="text-foreground">HubSpot Professional</strong> handles both views well with custom dashboards and filtered views. The catch: Professional costs $100/seat/month. <strong className="text-foreground">Pipedrive Premium</strong> ($49/seat) offers Insights dashboards that cover most owner-level metrics. <strong className="text-foreground">Close</strong> has solid built-in reports for sales activity but weaker custom reporting for client delivery metrics.
           </p>
 
           {/* ── PM Tool Integration ── */}
@@ -314,7 +314,7 @@ export default function BestCrmAgencies() {
           <h2 className="text-xl font-bold mt-10 mb-4">The Opinionated Verdict</h2>
           <div className="rounded-lg border border-border bg-surface p-5 my-6">
             <p className="text-sm text-muted mb-3">
-              <strong className="text-foreground">For agencies under 20 clients focused on cost efficiency</strong> &mdash; Pipedrive Essential at $14/seat. The visual pipeline, unlimited pipelines on all plans, and low per-seat cost make it the default. Upgrade to Advanced ($39/seat) when you need email sequences and workflow automation.
+              <strong className="text-foreground">For agencies under 20 clients focused on cost efficiency</strong> &mdash; Pipedrive Lite at $14/seat. The visual pipeline, unlimited pipelines on all plans, and low per-seat cost make it the default. Upgrade to Advanced ($39/seat) when you need email sequences and workflow automation.
             </p>
             <p className="text-sm text-muted mb-3">
               <strong className="text-foreground">For agencies that also run marketing for clients</strong> &mdash; HubSpot. The Sales + Marketing Hub combination is unmatched if you need both CRM and marketing automation in one platform. Start with Starter ($20/month for 2 seats), but budget for the Professional jump ($100/seat) when reporting needs grow.
@@ -330,7 +330,7 @@ export default function BestCrmAgencies() {
           {/* ── Who Should NOT Use These ── */}
           <h2 className="text-xl font-bold mt-10 mb-4">Who Should NOT Use This Guide</h2>
           <ul className="list-disc pl-5 space-y-2 text-muted mb-4">
-            <li><strong className="text-foreground">Solo consultants with 3&ndash;5 clients.</strong> You don&apos;t need multi-pipeline management or team permissions. Use Folk ($20/month) or Pipedrive Essential ($14/month) for simple contact tracking. See our freelancer CRM guide instead.</li>
+            <li><strong className="text-foreground">Solo consultants with 3&ndash;5 clients.</strong> You don&apos;t need multi-pipeline management or team permissions. Use Folk ($20/month) or Pipedrive Lite ($14/month) for simple contact tracking. See our freelancer CRM guide instead.</li>
             <li><strong className="text-foreground">Agencies with 100+ clients and dedicated ops teams.</strong> At this scale you need Salesforce or HubSpot Enterprise with custom objects, advanced workflows, and dedicated admin support. The tools in this guide are built for the 10&ndash;50 client range.</li>
             <li><strong className="text-foreground">Agencies where the CRM is the PM tool.</strong> If you want to manage project delivery inside your CRM, none of these are the right choice. Use ClickUp or Monday.com with CRM features, or accept that CRM and PM are separate tools connected by automation.</li>
           </ul>
@@ -358,7 +358,7 @@ export default function BestCrmAgencies() {
           {/* ── The Bottom Line ── */}
           <h2 className="text-xl font-bold mt-10 mb-4">The Bottom Line</h2>
           <p className="text-muted mb-6">
-            Pipedrive Essential at $14/seat is the default agency CRM for cost-conscious teams managing 10&ndash;50 clients. HubSpot is the growth path for agencies that need marketing + sales in one platform. Close is the pick for outbound-heavy new business development. Whichever you choose, use shared pipelines with client tags, set up role-based permissions early, and automate the CRM-to-PM handoff from day one.
+            Pipedrive Lite at $14/seat is the default agency CRM for cost-conscious teams managing 10&ndash;50 clients. HubSpot is the growth path for agencies that need marketing + sales in one platform. Close is the pick for outbound-heavy new business development. Whichever you choose, use shared pipelines with client tags, set up role-based permissions early, and automate the CRM-to-PM handoff from day one.
           </p>
 
           {/* ── FAQ ── */}
@@ -367,7 +367,7 @@ export default function BestCrmAgencies() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">What is the best CRM for a marketing agency?</h3>
-                <p className="text-muted">Pipedrive Essential ($14/seat) for agencies focused on client management and deal tracking. HubSpot for agencies that also run marketing campaigns and need the CRM + marketing automation in one platform. Close ($49/seat) for agencies where new business comes primarily from cold outreach.</p>
+                <p className="text-muted">Pipedrive Lite ($14/seat) for agencies focused on client management and deal tracking. HubSpot for agencies that also run marketing campaigns and need the CRM + marketing automation in one platform. Close ($49/seat) for agencies where new business comes primarily from cold outreach.</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Should agencies use one pipeline or multiple pipelines?</h3>
@@ -375,7 +375,7 @@ export default function BestCrmAgencies() {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">How much does a CRM cost for an 8-person agency?</h3>
-                <p className="text-muted">Pipedrive Essential: $112/month (8 seats &times; $14). HubSpot Starter: approximately $140/month. Close Startup: $392/month (8 seats &times; $49). Per-seat pricing means agency CRM costs scale linearly with team size, not client count.</p>
+                <p className="text-muted">Pipedrive Lite: $112/month (8 seats &times; $14). HubSpot Starter: approximately $140/month. Close Essentials: $392/month (8 seats &times; $49). Per-seat pricing means agency CRM costs scale linearly with team size, not client count.</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Can I use HubSpot Free for an agency?</h3>

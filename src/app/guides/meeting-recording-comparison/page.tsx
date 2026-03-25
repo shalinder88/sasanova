@@ -159,7 +159,7 @@ export default function MeetingRecordingComparisonPage() {
               it better.
             </p>
             <p className="text-muted leading-relaxed">
-              The paid tiers ($32/user/month for Standard, $39/user/month for Pro) add CRM
+              The paid tiers ($20/user/month for Premium, $39/user/month for Pro) add CRM
               integration, team features, and workflow automations. Fathom is younger and
               smaller than Otter or Fireflies, which means two things: the product iterates
               fast, and the long-term bet is less certain. Their recent Series B gives them
@@ -222,7 +222,7 @@ export default function MeetingRecordingComparisonPage() {
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">Fathom</td>
                     <td className="px-4 py-2.5 text-muted">Unlimited</td>
-                    <td className="px-4 py-2.5 text-muted">$32/mo</td>
+                    <td className="px-4 py-2.5 text-muted">$20/mo</td>
                     <td className="px-4 py-2.5 text-muted">$39/mo</td>
                     <td className="px-4 py-2.5 text-muted">Paid plans</td>
                   </tr>

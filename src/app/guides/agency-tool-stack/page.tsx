@@ -22,7 +22,7 @@ const categories = [
     name: "Client Management (CRM)",
     subtitle: "HubSpot vs Pipedrive for Agency Pipeline",
     why: "Agencies manage multiple clients, multiple contacts per client, and deals at different stages across service lines. Your CRM is the nervous system of the operation.",
-    recommended: "Pipedrive Advanced",
+    recommended: "Pipedrive Growth",
     recommendedSlug: "pipedrive",
     alternateRec: "HubSpot Starter ($20/mo)",
     alternateSlug: "hubspot-crm",
@@ -223,7 +223,7 @@ const clientTiers = [
     teamSize: "3-person agency",
     tools: [
       {
-        name: "Pipedrive Essential (2 seats)",
+        name: "Pipedrive Lite (2 seats)",
         cost: "$28",
         perClient: "$2.80",
         note: "Visual pipeline, deal tracking",
@@ -273,7 +273,7 @@ const clientTiers = [
     teamSize: "6-person agency",
     tools: [
       {
-        name: "Pipedrive Advanced (3 seats)",
+        name: "Pipedrive Growth (3 seats)",
         cost: "$117",
         perClient: "$4.68",
         note: "Multi-pipeline, workflow automation",
@@ -390,7 +390,7 @@ const consolidationSteps = [
 const faqItems = [
   {
     q: "HubSpot or Pipedrive for an agency?",
-    a: "Pipedrive for agencies under 30 clients focused on deal closing. HubSpot for agencies that also handle marketing for clients and need attribution reporting. Pipedrive Advanced ($39/seat) gives you multi-pipeline and workflow automation. HubSpot Professional ($890/mo) adds marketing automation, custom objects, and reporting — but costs 5-10x more.",
+    a: "Pipedrive for agencies under 30 clients focused on deal closing. HubSpot for agencies that also handle marketing for clients and need attribution reporting. Pipedrive Growth ($39/seat) gives you multi-pipeline and workflow automation. HubSpot Professional ($890/mo) adds marketing automation, custom objects, and reporting — but costs 5-10x more.",
   },
   {
     q: "How do I manage email marketing for multiple clients?",
@@ -718,7 +718,7 @@ export default function AgencyToolStack() {
                 Buying HubSpot Professional too early.
               </strong>{" "}
               The jump from $20/mo to $890/mo is the biggest cliff in SaaS.
-              Most agencies under 25 clients do not need it. Pipedrive Advanced
+              Most agencies under 25 clients do not need it. Pipedrive Growth
               at $39/seat covers everything until then.{" "}
               <Link
                 href="/guides/who-should-not-use-hubspot"

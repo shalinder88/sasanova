@@ -87,7 +87,7 @@ const stages = [
         slug: "convertkit",
       },
       {
-        name: "Pipedrive Essential",
+        name: "Pipedrive Lite",
         cost: "$14",
         category: "CRM",
         note: "Visual pipeline, deal tracking, email integration",
@@ -262,7 +262,7 @@ const stages = [
 const faqItems = [
   {
     q: "Should I start with HubSpot or Pipedrive?",
-    a: "Start with HubSpot Free CRM at pre-launch for the free tier. Switch to Pipedrive Essential ($14/seat/mo) post-launch when you need a visual pipeline focused on deal closing. Switch back to HubSpot Starter ($20/mo) when you need email sequences alongside CRM.",
+    a: "Start with HubSpot Free CRM at pre-launch for the free tier. Switch to Pipedrive Lite ($14/seat/mo) post-launch when you need a visual pipeline focused on deal closing. Switch back to HubSpot Starter ($20/mo) when you need email sequences alongside CRM.",
   },
   {
     q: "When should I switch from beehiiv to Kit (or vice versa)?",

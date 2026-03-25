@@ -208,14 +208,14 @@ export default function SasPricingModelsExplainedPage() {
                     <td className="px-4 py-2.5 font-medium text-foreground">1,000</td>
                     <td className="px-4 py-2.5 text-muted">$20/mo</td>
                     <td className="px-4 py-2.5 text-muted">$15/mo</td>
-                    <td className="px-4 py-2.5 text-muted">$33/mo</td>
+                    <td className="px-4 py-2.5 text-muted">$39/mo</td>
                     <td className="px-4 py-2.5 text-accent font-semibold">$49/mo (flat)</td>
                   </tr>
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">5,000</td>
                     <td className="px-4 py-2.5 text-muted">$75/mo</td>
                     <td className="px-4 py-2.5 text-muted">$49/mo</td>
-                    <td className="px-4 py-2.5 text-muted">$66/mo</td>
+                    <td className="px-4 py-2.5 text-muted">$79/mo</td>
                     <td className="px-4 py-2.5 text-accent font-semibold">$49/mo (flat)</td>
                   </tr>
                   <tr className="hover:bg-surface transition-colors">

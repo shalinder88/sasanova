@@ -113,7 +113,7 @@ export default function WhoShouldNotUseNotion() {
             <p className="text-sm font-semibold text-foreground mb-2">Use Instead</p>
             <ul className="text-sm text-muted space-y-2 list-none pl-0">
               <li><strong className="text-foreground">ClickUp</strong> &mdash; Free tier available. Unlimited plan at $7/member/month. The most feature-dense PM tool on the market. Gantt charts, time tracking, sprints, goals, whiteboards, and docs in one platform. <Link href="/tools/clickup" className="text-accent hover:underline">See ClickUp review</Link></li>
-              <li><strong className="text-foreground">Asana</strong> &mdash; Free for up to 10 users. Premium at $10.99/user/month. Cleaner UX than ClickUp, better workflow automation (Rules), and strong for cross-functional teams that need process standardization. <Link href="/tools/asana" className="text-accent hover:underline">See Asana review</Link></li>
+              <li><strong className="text-foreground">Asana</strong> &mdash; Free for up to 2 users. Premium at $10.99/user/month. Cleaner UX than ClickUp, better workflow automation (Rules), and strong for cross-functional teams that need process standardization. <Link href="/tools/asana" className="text-accent hover:underline">See Asana review</Link></li>
             </ul>
           </div>
 

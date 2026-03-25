@@ -23,7 +23,7 @@ const categories = [
     why: "Multiple clients, multiple contacts per client, different deal stages. Your CRM is the single source of truth for every client relationship.",
     recommended: "HubSpot CRM",
     recommendedSlug: "hubspot-crm",
-    alternateRec: "Pipedrive Advanced ($39/seat/mo)",
+    alternateRec: "Pipedrive Growth ($39/seat/mo)",
     alternateSlug: "pipedrive",
     monthly: "$0 – $890",
     toolPage: "/tools/hubspot-crm",
@@ -61,9 +61,9 @@ const categories = [
       },
     ],
     decision:
-      "Start with HubSpot Free for under 10 clients. The free CRM handles unlimited contacts with basic pipeline. When you need multi-pipeline management (one per service line) and email sequences, HubSpot Starter ($20/mo) covers small agencies. For agencies doing complex deal tracking across 20+ clients, Pipedrive Advanced ($39/seat/mo) gives you workflow automation, better pipeline visibility, and costs less per seat than HubSpot Professional ($890/mo).",
+      "Start with HubSpot Free for under 10 clients. The free CRM handles unlimited contacts with basic pipeline. When you need multi-pipeline management (one per service line) and email sequences, HubSpot Starter ($20/mo) covers small agencies. For agencies doing complex deal tracking across 20+ clients, Pipedrive Growth ($39/seat/mo) gives you workflow automation, better pipeline visibility, and costs less per seat than HubSpot Professional ($890/mo).",
     clientScaling:
-      "HubSpot Free: $0 regardless of client count. Pipedrive Advanced: $39/seat, so 3 account managers = $117/mo. HubSpot Professional: $890/mo flat + $50/additional seat — only justified above 20 clients with complex automation needs.",
+      "HubSpot Free: $0 regardless of client count. Pipedrive Growth: $39/seat, so 3 account managers = $117/mo. HubSpot Professional: $890/mo flat + $50/additional seat — only justified above 20 clients with complex automation needs.",
   },
   {
     icon: "📧",
@@ -281,7 +281,7 @@ const clientTiers = [
     teamSize: "5-person agency",
     tools: [
       {
-        name: "Pipedrive Advanced (3 seats)",
+        name: "Pipedrive Growth (3 seats)",
         cost: "$117",
         perClient: "$5.85",
         note: "Multi-pipeline",

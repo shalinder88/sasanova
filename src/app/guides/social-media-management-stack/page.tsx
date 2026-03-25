@@ -105,7 +105,7 @@ export default function SocialMediaManagementGuide() {
                     <td className="px-4 py-2.5 font-medium text-foreground">Later</td>
                     <td className="px-4 py-2.5">1 social set, 5 posts/profile</td>
                     <td className="px-4 py-2.5">$25/mo (Starter, 1 user)</td>
-                    <td className="px-4 py-2.5">$45/mo (Growth, 3 users)</td>
+                    <td className="px-4 py-2.5">$50/mo (Growth, 3 users)</td>
                     <td className="px-4 py-2.5">Per plan tier</td>
                   </tr>
                   <tr>

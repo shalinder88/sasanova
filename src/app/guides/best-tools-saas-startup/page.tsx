@@ -73,7 +73,7 @@ export default function BestToolsSaasStartup() {
                   <td className="px-4 py-2.5">Need email sequences or more than 5 templates</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2.5 font-medium text-foreground">Pipedrive Essential</td>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Pipedrive Lite</td>
                   <td className="px-4 py-2.5">$14/seat/mo</td>
                   <td className="px-4 py-2.5">Deal-focused teams, visual pipeline</td>
                   <td className="px-4 py-2.5">Need workflow automation (Advanced at $39/seat)</td>
@@ -88,7 +88,7 @@ export default function BestToolsSaasStartup() {
             </table>
           </div>
           <p className="text-muted mb-4">
-            <strong className="text-foreground">Start with HubSpot Free.</strong> It handles unlimited contacts, a basic pipeline, and email logging for $0. The first real decision point is email sequences &mdash; if you&apos;re doing outbound and need automated follow-up, either upgrade to HubSpot Starter ($20/month) or switch to Pipedrive Essential ($14/seat). Pipedrive is more focused on deal management. HubSpot is better if you plan to add marketing later.
+            <strong className="text-foreground">Start with HubSpot Free.</strong> It handles unlimited contacts, a basic pipeline, and email logging for $0. The first real decision point is email sequences &mdash; if you&apos;re doing outbound and need automated follow-up, either upgrade to HubSpot Starter ($20/month) or switch to Pipedrive Lite ($14/seat). Pipedrive is more focused on deal management. HubSpot is better if you plan to add marketing later.
           </p>
 
           {/* ── Email Tier ── */}
@@ -266,8 +266,8 @@ export default function BestToolsSaasStartup() {
                 <tr>
                   <td className="px-4 py-2.5 font-medium text-foreground">CRM</td>
                   <td className="px-4 py-2.5">HubSpot Free ($0)</td>
-                  <td className="px-4 py-2.5">Pipedrive Essential ($14)</td>
-                  <td className="px-4 py-2.5">Pipedrive Advanced ($39)</td>
+                  <td className="px-4 py-2.5">Pipedrive Lite ($14)</td>
+                  <td className="px-4 py-2.5">Pipedrive Growth ($39)</td>
                   <td className="px-4 py-2.5">HubSpot Starter ($20) + 3 seats</td>
                 </tr>
                 <tr>

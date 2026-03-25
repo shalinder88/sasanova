@@ -178,7 +178,7 @@ export default function WhenFreeCrmCostsMore() {
               <strong className="text-foreground">The math:</strong> 2 hours/week &times; $50/hr &times; 52 weeks = <strong className="text-foreground">$5,200/year</strong> in hidden labor costs.
             </p>
             <p className="text-sm text-muted">
-              <strong className="text-foreground">For comparison:</strong> Pipedrive Essential is $14/seat/month = <strong className="text-foreground">$168/year</strong> for one user. Even Pipedrive Professional at $49/seat/month = $588/year &mdash; still 89% cheaper than the manual work.
+              <strong className="text-foreground">For comparison:</strong> Pipedrive Lite is $14/seat/month = <strong className="text-foreground">$168/year</strong> for one user. Even Pipedrive Premium at $49/seat/month = $588/year &mdash; still 89% cheaper than the manual work.
             </p>
           </div>
 
@@ -240,8 +240,8 @@ export default function WhenFreeCrmCostsMore() {
             <p className="text-sm font-semibold text-foreground mb-3">The decision framework:</p>
             <ul className="list-disc pl-5 space-y-2 text-sm text-muted">
               <li><strong className="text-foreground">If you spend &lt;30 min/week on manual CRM tasks:</strong> Stay on free. The cost isn&apos;t high enough to justify switching.</li>
-              <li><strong className="text-foreground">If you spend 1&ndash;2 hours/week on manual tasks:</strong> Switch to Pipedrive Essential ($14/seat/month). Automation features save 1&ndash;2 hours/week. ROI is positive within the first month. Annual cost: $168/user vs. $2,600&ndash;$5,200 in manual labor.</li>
-              <li><strong className="text-foreground">If you need marketing automation + CRM:</strong> Consider Pipedrive Advanced ($39/seat) + a separate email tool, or evaluate HubSpot Starter ($20/seat) with realistic expectations about the Professional upgrade path.</li>
+              <li><strong className="text-foreground">If you spend 1&ndash;2 hours/week on manual tasks:</strong> Switch to Pipedrive Lite ($14/seat/month). Automation features save 1&ndash;2 hours/week. ROI is positive within the first month. Annual cost: $168/user vs. $2,600&ndash;$5,200 in manual labor.</li>
+              <li><strong className="text-foreground">If you need marketing automation + CRM:</strong> Consider Pipedrive Growth ($39/seat) + a separate email tool, or evaluate HubSpot Starter ($20/seat) with realistic expectations about the Professional upgrade path.</li>
               <li><strong className="text-foreground">Set a 3-month review:</strong> After 3 months on any free CRM, explicitly evaluate: &ldquo;Am I spending time on tasks this CRM could automate if I paid?&rdquo; If yes, switch before you&apos;re 12 months deep with migration pain.</li>
             </ul>
           </div>
@@ -255,11 +255,11 @@ export default function WhenFreeCrmCostsMore() {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">How do I calculate the real cost of my free CRM?</h3>
-                <p className="text-muted">Track your time for one week: how many minutes do you spend on manual follow-ups, data entry, building reports in spreadsheets, and copy-pasting between tools? Multiply weekly hours by your hourly rate, then by 52. Most founders doing 2 hours/week of manual CRM tasks are spending $5,200/year in labor &mdash; Pipedrive Essential costs $168/year per user.</p>
+                <p className="text-muted">Track your time for one week: how many minutes do you spend on manual follow-ups, data entry, building reports in spreadsheets, and copy-pasting between tools? Multiply weekly hours by your hourly rate, then by 52. Most founders doing 2 hours/week of manual CRM tasks are spending $5,200/year in labor &mdash; Pipedrive Lite costs $168/year per user.</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">What&apos;s the cheapest paid CRM worth buying?</h3>
-                <p className="text-muted">Pipedrive Essential at $14/seat/month ($168/year). It includes pipeline management, email sync, basic automation, custom fields, and reporting. For most solo founders and small teams, it eliminates 1&ndash;2 hours/week of manual work. Freshsales Growth at $11/seat/month ($132/year) is cheaper but has fewer integrations.</p>
+                <p className="text-muted">Pipedrive Lite at $14/seat/month ($168/year). It includes pipeline management, email sync, basic automation, custom fields, and reporting. For most solo founders and small teams, it eliminates 1&ndash;2 hours/week of manual work. Freshsales Growth at $11/seat/month ($132/year) is cheaper but has fewer integrations.</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">When should I upgrade from HubSpot Free to paid?</h3>

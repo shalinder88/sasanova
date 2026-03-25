@@ -252,7 +252,7 @@ export default function MailchimpVsHubSpotMarketingPage() {
           <section>
             <h2 className="text-xl font-bold mt-10 mb-4">When Mailchimp + Pipedrive Beats HubSpot All-in-One</h2>
             <p className="text-muted mb-4">
-              This is the configuration that catches HubSpot off guard. Mailchimp Standard for email ($20&ndash;110/mo depending on contacts) plus Pipedrive Professional for CRM ($49/seat/mo). At 5 seats and 10,000 contacts:
+              This is the configuration that catches HubSpot off guard. Mailchimp Standard for email ($20&ndash;110/mo depending on contacts) plus Pipedrive Premium for CRM ($49/seat/mo). At 5 seats and 10,000 contacts:
             </p>
             <div className="overflow-x-auto rounded-lg border border-border mt-4 mb-6">
               <table className="w-full text-sm">

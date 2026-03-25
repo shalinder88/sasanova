@@ -206,7 +206,7 @@ export default function NotionVsClickUpVsAsanaPage() {
               Asana is roughly 2x the cost of Notion and ClickUp at every team size. That premium buys you a more polished experience, better automations, and higher team adoption rates. Whether that&apos;s worth it depends on how much you value &ldquo;people actually use the tool&rdquo; over &ldquo;the tool can technically do everything.&rdquo;
             </p>
             <p className="text-muted mb-4">
-              <strong className="text-foreground">Free tier comparison:</strong> Notion Free is generous for individuals and small teams (unlimited blocks for individuals, limited for teams). ClickUp Free includes everything except advanced reporting and time tracking history. Asana Free supports up to 10 users with basic features. ClickUp&apos;s free tier is the most feature-complete.
+              <strong className="text-foreground">Free tier comparison:</strong> Notion Free is generous for individuals and small teams (unlimited blocks for individuals, limited for teams). ClickUp Free includes everything except advanced reporting and time tracking history. Asana Personal supports up to 2 users with basic features. ClickUp&apos;s free tier is the most feature-complete.
             </p>
           </section>
 
@@ -406,7 +406,7 @@ export default function NotionVsClickUpVsAsanaPage() {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Which tool has the best free tier?</h3>
-                <p className="text-muted">ClickUp. The free tier includes unlimited tasks, unlimited users, docs, goals, whiteboards, and most core features. Notion Free is good for individuals but limits team features. Asana Free caps at 10 users with no timeline, rules, or custom fields. If budget is the primary constraint, ClickUp Free gives you the most.</p>
+                <p className="text-muted">ClickUp. The free tier includes unlimited tasks, unlimited users, docs, goals, whiteboards, and most core features. Notion Free is good for individuals but limits team features. Asana Personal caps at 2 users with no timeline, rules, or custom fields. If budget is the primary constraint, ClickUp Free gives you the most.</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">How long does it take to migrate between these tools?</h3>

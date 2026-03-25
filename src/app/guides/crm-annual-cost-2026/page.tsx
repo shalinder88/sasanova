@@ -101,7 +101,7 @@ export default function CrmAnnualCost2026Page() {
                     <td className="px-4 py-2.5 text-muted">$540/yr<br /><span className="text-xs">Essential ($15/seat/mo)</span></td>
                     <td className="px-4 py-2.5 text-muted">$900/yr<br /><span className="text-xs">Starter ($25/seat/mo)</span></td>
                     <td className="px-4 py-2.5 text-accent font-semibold">$504/yr<br /><span className="text-xs font-normal text-muted">Standard ($14/seat/mo)</span></td>
-                    <td className="px-4 py-2.5 text-muted">$1,764/yr<br /><span className="text-xs">Startup ($49/seat/mo)</span></td>
+                    <td className="px-4 py-2.5 text-muted">$1,764/yr<br /><span className="text-xs">Essentials ($49/seat/mo)</span></td>
                     <td className="px-4 py-2.5 text-muted">$324/yr<br /><span className="text-xs">Growth ($9/seat/mo)</span></td>
                   </tr>
                   <tr className="hover:bg-surface transition-colors">
@@ -110,7 +110,7 @@ export default function CrmAnnualCost2026Page() {
                     <td className="px-4 py-2.5 text-muted">$900/yr<br /><span className="text-xs">Essential</span></td>
                     <td className="px-4 py-2.5 text-muted">$1,500/yr<br /><span className="text-xs">Starter</span></td>
                     <td className="px-4 py-2.5 text-accent font-semibold">$840/yr<br /><span className="text-xs font-normal text-muted">Standard</span></td>
-                    <td className="px-4 py-2.5 text-muted">$2,940/yr<br /><span className="text-xs">Startup</span></td>
+                    <td className="px-4 py-2.5 text-muted">$2,940/yr<br /><span className="text-xs">Essentials</span></td>
                     <td className="px-4 py-2.5 text-muted">$540/yr<br /><span className="text-xs">Growth</span></td>
                   </tr>
                   <tr className="hover:bg-surface transition-colors">
@@ -119,16 +119,16 @@ export default function CrmAnnualCost2026Page() {
                     <td className="px-4 py-2.5 text-muted">$1,800/yr<br /><span className="text-xs">Essential</span></td>
                     <td className="px-4 py-2.5 text-muted">$3,000/yr<br /><span className="text-xs">Starter</span></td>
                     <td className="px-4 py-2.5 text-accent font-semibold">$1,680/yr<br /><span className="text-xs font-normal text-muted">Standard</span></td>
-                    <td className="px-4 py-2.5 text-muted">$5,880/yr<br /><span className="text-xs">Startup</span></td>
+                    <td className="px-4 py-2.5 text-muted">$5,880/yr<br /><span className="text-xs">Essentials</span></td>
                     <td className="px-4 py-2.5 text-muted">$1,080/yr<br /><span className="text-xs">Growth</span></td>
                   </tr>
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">25</td>
                     <td className="px-4 py-2.5 text-muted">$9,000/yr<br /><span className="text-xs">Starter</span></td>
                     <td className="px-4 py-2.5 text-muted">$4,500/yr<br /><span className="text-xs">Advanced ($25/seat/mo)</span></td>
-                    <td className="px-4 py-2.5 text-muted">$24,000/yr<br /><span className="text-xs">Enterprise ($80/seat/mo)</span></td>
+                    <td className="px-4 py-2.5 text-muted">$30,000/yr<br /><span className="text-xs">Pro Suite ($100/seat/mo)</span></td>
                     <td className="px-4 py-2.5 text-accent font-semibold">$4,200/yr<br /><span className="text-xs font-normal text-muted">Standard</span></td>
-                    <td className="px-4 py-2.5 text-muted">$14,700/yr<br /><span className="text-xs">Startup</span></td>
+                    <td className="px-4 py-2.5 text-muted">$14,700/yr<br /><span className="text-xs">Essentials</span></td>
                     <td className="px-4 py-2.5 text-muted">$2,700/yr<br /><span className="text-xs">Growth</span></td>
                   </tr>
                   <tr className="hover:bg-surface transition-colors">
@@ -212,7 +212,7 @@ export default function CrmAnnualCost2026Page() {
                     <td className="px-4 py-2.5 text-red-500">+36%</td>
                   </tr>
                   <tr className="hover:bg-surface transition-colors">
-                    <td className="px-4 py-2.5 font-medium text-foreground">Close<br /><span className="text-xs text-muted">Startup</span></td>
+                    <td className="px-4 py-2.5 font-medium text-foreground">Close<br /><span className="text-xs text-muted">Essentials</span></td>
                     <td className="px-4 py-2.5 text-muted">$5,880/yr</td>
                     <td className="px-4 py-2.5 text-muted">+$0 (calling/SMS built-in)</td>
                     <td className="px-4 py-2.5 text-muted">$0</td>
@@ -339,7 +339,7 @@ export default function CrmAnnualCost2026Page() {
                 <ul className="text-sm text-muted space-y-1.5">
                   <li>&bull; <strong className="text-foreground">Built-in calling costs extra.</strong> Close includes VoIP calling in all plans, but call minutes are billed separately. Heavy phone sales teams can add $500&ndash;$2,000/month in call charges.</li>
                   <li>&bull; <strong className="text-foreground">No marketing features.</strong> Close is 100% sales-focused. No landing pages, no email marketing campaigns, no social media. You need a separate marketing stack.</li>
-                  <li>&bull; <strong className="text-foreground">Higher per-seat floor.</strong> Close starts at $49/seat/month (Startup). For teams that need a basic pipeline and not heavy-duty sales tools, this is expensive compared to alternatives.</li>
+                  <li>&bull; <strong className="text-foreground">Higher per-seat floor.</strong> Close starts at $49/seat/month (Essentials). For teams that need a basic pipeline and not heavy-duty sales tools, this is expensive compared to alternatives.</li>
                 </ul>
               </div>
 
@@ -423,7 +423,7 @@ export default function CrmAnnualCost2026Page() {
               <div className="rounded-lg border border-border p-5">
                 <p className="text-sm font-semibold text-foreground mb-1">3 Seats (Startup / Small Sales Team)</p>
                 <p className="text-sm text-muted">
-                  <strong className="text-accent">HubSpot Free CRM + Pipedrive Essential</strong> are both strong choices.
+                  <strong className="text-accent">HubSpot Free CRM + Pipedrive Lite</strong> are both strong choices.
                   HubSpot Free is $0 with contact management, email tracking, and basic pipeline. It covers most
                   startup needs. If you need better pipeline customization and activity-based selling, Pipedrive
                   Essential ($15/seat/mo) is cleaner and more focused. Freshsales Growth ($9/seat/mo) wins on
@@ -433,7 +433,7 @@ export default function CrmAnnualCost2026Page() {
               <div className="rounded-lg border border-border p-5">
                 <p className="text-sm font-semibold text-foreground mb-1">5&ndash;10 Seats (Growing Sales Team)</p>
                 <p className="text-sm text-muted">
-                  <strong className="text-accent">Pipedrive Advanced</strong> at $25/seat/month offers the best balance of
+                  <strong className="text-accent">Pipedrive Growth</strong> at $25/seat/month offers the best balance of
                   features and cost. It includes automations, email scheduling, group emailing, and a clean
                   pipeline UX that sales reps actually use. HubSpot Starter ($15/seat/mo) is cheaper but
                   lacks workflow automations. Close ($49/seat/mo) is worth the premium only if your team
@@ -486,7 +486,7 @@ export default function CrmAnnualCost2026Page() {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Is Close worth the premium over Pipedrive for sales teams?</h3>
-                <p className="text-sm text-muted">Only if your team does heavy outbound calling. Close&apos;s built-in power dialer, call recording, and SMS messaging are best-in-class and save you from integrating separate tools. If your sales motion is primarily email and demo-based, Pipedrive Advanced covers the same workflows at roughly half the per-seat cost.</p>
+                <p className="text-sm text-muted">Only if your team does heavy outbound calling. Close&apos;s built-in power dialer, call recording, and SMS messaging are best-in-class and save you from integrating separate tools. If your sales motion is primarily email and demo-based, Pipedrive Growth covers the same workflows at roughly half the per-seat cost.</p>
               </div>
             </div>
           </section>

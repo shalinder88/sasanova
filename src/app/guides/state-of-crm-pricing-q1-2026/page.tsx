@@ -163,7 +163,7 @@ export default function StateOfCrmPricingQ12026Page() {
                   </tr>
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">Close</td>
-                    <td className="px-4 py-2.5 text-muted">Startup</td>
+                    <td className="px-4 py-2.5 text-muted">Essentials</td>
                     <td className="px-4 py-2.5 text-foreground font-semibold">$49/mo</td>
                     <td className="px-4 py-2.5 text-muted">$245/mo</td>
                     <td className="px-4 py-2.5 text-muted">$490/mo</td>
@@ -171,17 +171,17 @@ export default function StateOfCrmPricingQ12026Page() {
                   </tr>
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">Salesforce</td>
-                    <td className="px-4 py-2.5 text-muted">Professional</td>
-                    <td className="px-4 py-2.5 text-foreground font-semibold">$80/mo</td>
-                    <td className="px-4 py-2.5 text-muted">$400/mo</td>
-                    <td className="px-4 py-2.5 text-muted">$800/mo</td>
-                    <td className="px-4 py-2.5 text-muted">$2,000/mo</td>
+                    <td className="px-4 py-2.5 text-muted">Pro Suite</td>
+                    <td className="px-4 py-2.5 text-foreground font-semibold">$100/mo</td>
+                    <td className="px-4 py-2.5 text-muted">$500/mo</td>
+                    <td className="px-4 py-2.5 text-muted">$1,000/mo</td>
+                    <td className="px-4 py-2.5 text-muted">$2,500/mo</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <p className="text-xs text-muted">
-              Freshsales is the cheapest per-seat CRM at every team size. Salesforce Professional
+              Freshsales is the cheapest per-seat CRM at every team size. Salesforce Pro Suite
               costs 7x more per seat than Freshsales Growth. HubSpot Starter is moderately priced
               but becomes a trap if you need Professional features (see cliff analysis below).
             </p>
@@ -197,7 +197,7 @@ export default function StateOfCrmPricingQ12026Page() {
                 <p className="text-sm text-muted leading-relaxed">
                   Salesforce increased prices across all Sales Cloud editions by approximately 6%
                   in August 2025. The increase affected new contracts immediately and existing
-                  contracts at renewal. Professional moved from $75 to $80/user/mo. Enterprise
+                  contracts at renewal. Pro Suite moved from $80 to $100/user/mo. Enterprise
                   moved from $155 to $165/user/mo. Unlimited moved from $300 to $330/user/mo.
                   This is the second consecutive annual increase, following a 9% increase in 2024.
                 </p>
@@ -324,9 +324,9 @@ export default function StateOfCrmPricingQ12026Page() {
                 <p className="text-sm font-semibold text-foreground mb-2">Close</p>
                 <p className="text-sm text-muted leading-relaxed mb-2">
                   Close simplified from four plans (Starter/Professional/Business/Enterprise) to
-                  three plans (Startup/Professional/Enterprise). The former Business tier was
-                  eliminated, with its features distributed between Professional and Enterprise.
-                  Startup is positioned as the entry plan at $49/user/mo. The consolidation
+                  three plans (Essentials/Growth/Scale). The former Business tier was
+                  eliminated, with its features distributed between Growth and Scale.
+                  Essentials is positioned as the entry plan at $49/user/mo. The consolidation
                   simplifies the decision but means there is no mid-tier option between $49 and
                   $99/user.
                 </p>
@@ -427,8 +427,8 @@ export default function StateOfCrmPricingQ12026Page() {
                 </thead>
                 <tbody className="divide-y divide-border">
                   <tr className="hover:bg-surface transition-colors">
-                    <td className="px-4 py-2.5 font-medium text-foreground">License fees (Professional)</td>
-                    <td className="px-4 py-2.5 text-muted">$9,600/yr ($80/user/mo &times; 10)</td>
+                    <td className="px-4 py-2.5 font-medium text-foreground">License fees (Pro Suite)</td>
+                    <td className="px-4 py-2.5 text-muted">$12,000/yr ($100/user/mo &times; 10)</td>
                   </tr>
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">Implementation partner</td>
@@ -454,7 +454,7 @@ export default function StateOfCrmPricingQ12026Page() {
               </table>
             </div>
             <p className="text-muted text-sm leading-relaxed">
-              By comparison, Pipedrive Essential for 10 users costs $1,680/yr with zero
+              By comparison, Pipedrive Lite for 10 users costs $1,680/yr with zero
               implementation cost (self-service setup). Even HubSpot Professional at $10,680/yr
               first-year cost (including onboarding) is 3&ndash;10x less than a typical
               Salesforce deployment. Salesforce only makes financial sense for teams that will

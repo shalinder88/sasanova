@@ -346,7 +346,7 @@ export default function CheapestSaasStack2026Page() {
             <h2 className="text-xl font-bold mb-3">Alternative Configurations</h2>
             <p className="text-muted leading-relaxed mb-4">
               <strong className="text-foreground">Creator-focused $50 stack:</strong> Kit Creator
-              ($33/mo) + Notion Free + Cal.com Free + Zapier Free + Google Analytics. Total: $33/mo.
+              ($39/mo) + Notion Free + Cal.com Free + Zapier Free + Google Analytics. Total: $39/mo.
               Best for solo creators who prioritize email automation over CRM.
             </p>
             <p className="text-muted leading-relaxed mb-4">

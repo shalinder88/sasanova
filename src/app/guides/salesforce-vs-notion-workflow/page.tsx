@@ -104,7 +104,7 @@ export default function SalesforceVsNotionWorkflow() {
 
           <h2 className="text-xl font-bold mt-10 mb-4">Who Should NOT Use Salesforce</h2>
           <p className="text-muted mb-4">
-            <strong className="text-foreground">Small businesses on a budget.</strong> Salesforce has no free tier. The cheapest option is $25/user/month, and real implementation costs (setup, consulting, training) can add $10,000&ndash;$50,000. For teams under 10 people, HubSpot Free or Pipedrive Essential are better fits.
+            <strong className="text-foreground">Small businesses on a budget.</strong> Salesforce has no free tier. The cheapest option is $25/user/month, and real implementation costs (setup, consulting, training) can add $10,000&ndash;$50,000. For teams under 10 people, HubSpot Free or Pipedrive Lite are better fits.
           </p>
           <p className="text-muted mb-4">
             <strong className="text-foreground">Teams without a dedicated admin.</strong> Salesforce is powerful but requires ongoing administration. Custom objects, flows, validation rules, and the AppExchange ecosystem demand someone who knows the platform. Without that person, Salesforce becomes an expensive contact list.

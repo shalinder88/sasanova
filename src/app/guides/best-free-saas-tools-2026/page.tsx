@@ -137,7 +137,7 @@ export default function BestFreeSaasTools2026Page() {
                     <td className="px-4 py-2.5 font-medium text-foreground">Kit (ConvertKit)</td>
                     <td className="px-4 py-2.5 text-muted">10,000 subscribers, unlimited sends, landing pages, basic forms</td>
                     <td className="px-4 py-2.5 text-muted">No advanced automations, no integrations, no visual automation builder</td>
-                    <td className="px-4 py-2.5 text-muted">Need automation sequences &rarr; Creator $33/mo</td>
+                    <td className="px-4 py-2.5 text-muted">Need automation sequences &rarr; Creator $39/mo</td>
                   </tr>
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">beehiiv</td>
@@ -246,9 +246,9 @@ export default function BestFreeSaasTools2026Page() {
                   </tr>
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">Asana</td>
-                    <td className="px-4 py-2.5 text-muted">Up to 10 users, unlimited tasks and projects, list and board views</td>
-                    <td className="px-4 py-2.5 text-muted">10-user cap, no timeline/Gantt, no custom fields, no automation</td>
-                    <td className="px-4 py-2.5 text-muted">Need 11+ users or timeline &rarr; Starter $13.49/user/mo</td>
+                    <td className="px-4 py-2.5 text-muted">Up to 2 users, unlimited tasks and projects, list and board views</td>
+                    <td className="px-4 py-2.5 text-muted">2-user cap, no timeline/Gantt, no custom fields, no automation</td>
+                    <td className="px-4 py-2.5 text-muted">Need 3+ users or timeline &rarr; Starter $13.49/user/mo</td>
                   </tr>
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">Trello</td>
@@ -469,7 +469,7 @@ export default function BestFreeSaasTools2026Page() {
                   <tr className="hover:bg-surface transition-colors"><td className="px-4 py-2 text-muted">1</td><td className="px-4 py-2 font-medium text-foreground">HubSpot CRM</td><td className="px-4 py-2 text-muted">CRM</td><td className="px-4 py-2 text-accent">Strong</td><td className="px-4 py-2 text-muted">$20/user/mo</td></tr>
                   <tr className="hover:bg-surface transition-colors"><td className="px-4 py-2 text-muted">2</td><td className="px-4 py-2 font-medium text-foreground">Zoho CRM</td><td className="px-4 py-2 text-muted">CRM</td><td className="px-4 py-2 text-accent">Strong</td><td className="px-4 py-2 text-muted">$14/user/mo</td></tr>
                   <tr className="hover:bg-surface transition-colors"><td className="px-4 py-2 text-muted">3</td><td className="px-4 py-2 font-medium text-foreground">Freshsales</td><td className="px-4 py-2 text-muted">CRM</td><td className="px-4 py-2 text-muted">Basic</td><td className="px-4 py-2 text-muted">$11/user/mo</td></tr>
-                  <tr className="hover:bg-surface transition-colors"><td className="px-4 py-2 text-muted">4</td><td className="px-4 py-2 font-medium text-foreground">Kit (ConvertKit)</td><td className="px-4 py-2 text-muted">Email</td><td className="px-4 py-2 text-accent font-semibold">Excellent</td><td className="px-4 py-2 text-muted">$33/mo</td></tr>
+                  <tr className="hover:bg-surface transition-colors"><td className="px-4 py-2 text-muted">4</td><td className="px-4 py-2 font-medium text-foreground">Kit (ConvertKit)</td><td className="px-4 py-2 text-muted">Email</td><td className="px-4 py-2 text-accent font-semibold">Excellent</td><td className="px-4 py-2 text-muted">$39/mo</td></tr>
                   <tr className="hover:bg-surface transition-colors"><td className="px-4 py-2 text-muted">5</td><td className="px-4 py-2 font-medium text-foreground">beehiiv</td><td className="px-4 py-2 text-muted">Newsletter</td><td className="px-4 py-2 text-accent">Strong</td><td className="px-4 py-2 text-muted">$49/mo</td></tr>
                   <tr className="hover:bg-surface transition-colors"><td className="px-4 py-2 text-muted">6</td><td className="px-4 py-2 font-medium text-foreground">Brevo</td><td className="px-4 py-2 text-muted">Email</td><td className="px-4 py-2 text-accent font-semibold">Excellent</td><td className="px-4 py-2 text-muted">$9/mo</td></tr>
                   <tr className="hover:bg-surface transition-colors"><td className="px-4 py-2 text-muted">7</td><td className="px-4 py-2 font-medium text-foreground">Mailchimp</td><td className="px-4 py-2 text-muted">Email</td><td className="px-4 py-2 text-muted">Weak</td><td className="px-4 py-2 text-muted">$13/mo</td></tr>

@@ -199,7 +199,7 @@ export default function NewsletterStackGuide() {
                   <tr>
                     <td className="px-4 py-2.5 font-medium text-foreground">ConvertKit Creator</td>
                     <td className="px-4 py-2.5">Creator (5K subs)</td>
-                    <td className="px-4 py-2.5">$66/mo</td>
+                    <td className="px-4 py-2.5">$79/mo</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-2.5 font-medium text-foreground">Calendly Standard</td>
@@ -210,8 +210,8 @@ export default function NewsletterStackGuide() {
               </table>
             </div>
             <p className="mt-3 text-xs text-muted">
-              Total: ~$177/month. ConvertKit pricing scales with subscriber count &mdash;
-              Creator plan jumps from $29 at 1K subs to $66 at 5K subs to $100 at 10K.
+              Total: ~$190/month. ConvertKit pricing scales with subscriber count &mdash;
+              Creator plan jumps from $39 at 1K subs to $79 at 5K subs to $100 at 10K.
             </p>
           </section>
 

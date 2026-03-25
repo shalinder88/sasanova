@@ -79,7 +79,7 @@ const guides = [
     slug: "when-free-crm-costs-more",
     title: "When Free CRM Plans Actually Cost You Money",
     description:
-      "HubSpot Free, Zoho Free, and Freshsales Free compared honestly. The time-cost calculator: 2 hours/week of manual CRM work = $5,200/yr. Pipedrive Essential is $168/yr. The switching trap that gets worse every month.",
+      "HubSpot Free, Zoho Free, and Freshsales Free compared honestly. The time-cost calculator: 2 hours/week of manual CRM work = $5,200/yr. Pipedrive Lite is $168/yr. The switching trap that gets worse every month.",
     readingTime: "12 min read",
     category: "Cost Threshold",
   },
@@ -840,7 +840,7 @@ const guides = [
     slug: "best-crm-under-20-per-user",
     title: "Best CRM Under $20/User/Month: Real Options for Budget Teams",
     description:
-      "Pipedrive Essential ($14) vs HubSpot Starter ($20) vs Freshsales Growth ($11) vs Zoho Standard ($14). Feature comparison, hidden costs, and verdicts for 3, 10, and 25-person teams.",
+      "Pipedrive Lite ($14) vs HubSpot Starter ($20) vs Freshsales Growth ($11) vs Zoho Standard ($14). Feature comparison, hidden costs, and verdicts for 3, 10, and 25-person teams.",
     readingTime: "16 min read",
     category: "Pricing Deep Dive",
   },

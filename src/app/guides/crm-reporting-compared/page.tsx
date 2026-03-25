@@ -183,7 +183,7 @@ export default function CrmReportingCompared() {
               <p className="text-sm text-muted">Basic reports and dashboards. Pre-built report types for leads, accounts, contacts, and opportunities. Limited customization. No cross-object formulas or custom report types. Suitable for teams that need standard pipeline visibility without complexity.</p>
             </div>
             <div className="rounded-lg border border-border bg-surface p-5">
-              <h3 className="text-sm font-bold text-foreground mb-2">Professional ($80/mo/user)</h3>
+              <h3 className="text-sm font-bold text-foreground mb-2">Pro Suite ($100/mo/user)</h3>
               <p className="text-sm text-muted">Full report builder with cross-object reporting, custom report types, dashboard filters, and scheduling. This is where Salesforce reporting gets useful. You can build reports that combine opportunity data with account data with activity data. The report builder interface is functional but dated &mdash; expect a learning curve of 2&ndash;4 hours to build your first custom report.</p>
             </div>
             <div className="rounded-lg border border-border bg-surface p-5">
@@ -192,7 +192,7 @@ export default function CrmReportingCompared() {
             </div>
           </div>
           <p className="text-muted mb-4">
-            <strong className="text-foreground">The Salesforce reporting reality:</strong> A 10-person sales team on Professional pays $800/mo. The reporting is world-class if someone configures it properly. The configuration part is what kills it for small teams. Budget 8&ndash;20 hours of admin time (or $2,000&ndash;$5,000 for a consultant) to set up meaningful dashboards. Most Salesforce customers end up with the default dashboards because nobody has time to build custom ones.
+            <strong className="text-foreground">The Salesforce reporting reality:</strong> A 10-person sales team on Pro Suite pays $1,000/mo. The reporting is world-class if someone configures it properly. The configuration part is what kills it for small teams. Budget 8&ndash;20 hours of admin time (or $2,000&ndash;$5,000 for a consultant) to set up meaningful dashboards. Most Salesforce customers end up with the default dashboards because nobody has time to build custom ones.
           </p>
 
           {/* ── Close Reporting ── */}
@@ -262,11 +262,11 @@ export default function CrmReportingCompared() {
           <div className="space-y-4 mb-6">
             <div className="rounded-lg border border-border bg-surface p-5">
               <h3 className="text-sm font-bold text-foreground mb-2">1. Pipeline Velocity Report</h3>
-              <p className="text-sm text-muted"><strong className="text-foreground">What it shows:</strong> How fast deals move through your pipeline stages. Average time in each stage, conversion rate between stages, and total pipeline value by stage. <strong className="text-foreground">Why it matters:</strong> It tells you where deals stall. If deals sit in &ldquo;proposal sent&rdquo; for 21 days on average, that&apos;s where your sales process is broken. <strong className="text-foreground">Which CRMs have it:</strong> All four platforms offer this. HubSpot and Salesforce show it on Professional+ plans. Pipedrive shows it on Advanced+ ($34/mo/seat). Close shows pipeline metrics on Startup ($49/mo/seat).</p>
+              <p className="text-sm text-muted"><strong className="text-foreground">What it shows:</strong> How fast deals move through your pipeline stages. Average time in each stage, conversion rate between stages, and total pipeline value by stage. <strong className="text-foreground">Why it matters:</strong> It tells you where deals stall. If deals sit in &ldquo;proposal sent&rdquo; for 21 days on average, that&apos;s where your sales process is broken. <strong className="text-foreground">Which CRMs have it:</strong> All four platforms offer this. HubSpot and Salesforce show it on Professional+ plans. Pipedrive shows it on Advanced+ ($34/mo/seat). Close shows pipeline metrics on Essentials ($49/mo/seat).</p>
             </div>
             <div className="rounded-lg border border-border bg-surface p-5">
               <h3 className="text-sm font-bold text-foreground mb-2">2. Activity-to-Outcome Report</h3>
-              <p className="text-sm text-muted"><strong className="text-foreground">What it shows:</strong> The relationship between sales activities (calls, emails, meetings) and closed deals. X calls lead to Y meetings lead to Z closed deals. <strong className="text-foreground">Why it matters:</strong> It tells you if your team is doing enough of the right activities. If a rep makes 50 calls and books 1 meeting, the problem is call quality or targeting. If they make 5 calls and book 0, the problem is volume. <strong className="text-foreground">Which CRMs have it:</strong> Close surfaces this natively on all plans. Pipedrive shows activity reports on Advanced+. HubSpot requires Professional ($100/mo/seat). Salesforce has it on Professional ($80/mo/user) but requires custom report configuration.</p>
+              <p className="text-sm text-muted"><strong className="text-foreground">What it shows:</strong> The relationship between sales activities (calls, emails, meetings) and closed deals. X calls lead to Y meetings lead to Z closed deals. <strong className="text-foreground">Why it matters:</strong> It tells you if your team is doing enough of the right activities. If a rep makes 50 calls and books 1 meeting, the problem is call quality or targeting. If they make 5 calls and book 0, the problem is volume. <strong className="text-foreground">Which CRMs have it:</strong> Close surfaces this natively on all plans. Pipedrive shows activity reports on Advanced+. HubSpot requires Professional ($100/mo/seat). Salesforce has it on Pro Suite ($100/mo/user) but requires custom report configuration.</p>
             </div>
             <div className="rounded-lg border border-border bg-surface p-5">
               <h3 className="text-sm font-bold text-foreground mb-2">3. Won/Lost Analysis</h3>
@@ -312,7 +312,7 @@ export default function CrmReportingCompared() {
             </table>
           </div>
           <p className="text-muted mb-4">
-            <strong className="text-foreground">The honest truth:</strong> A team of 3&ndash;5 sales reps can get by with Pipedrive Essential ($14/mo/seat) plus a weekly CSV export into Google Sheets for any custom analysis. That&apos;s $70/mo for 5 seats. The same team on HubSpot Professional paying for custom reports is at $500/mo. The spreadsheet approach costs $430/mo less. It&apos;s less convenient, but until your team is big enough that manual exports don&apos;t scale, the savings are significant.
+            <strong className="text-foreground">The honest truth:</strong> A team of 3&ndash;5 sales reps can get by with Pipedrive Lite ($14/mo/seat) plus a weekly CSV export into Google Sheets for any custom analysis. That&apos;s $70/mo for 5 seats. The same team on HubSpot Professional paying for custom reports is at $500/mo. The spreadsheet approach costs $430/mo less. It&apos;s less convenient, but until your team is big enough that manual exports don&apos;t scale, the savings are significant.
           </p>
 
           {/* ── Common Mistakes ── */}
@@ -341,7 +341,7 @@ export default function CrmReportingCompared() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Which CRM has the best reporting?</h3>
-                <p className="text-muted">Salesforce Professional ($80/mo/user) has the most powerful and customizable reporting engine. But &ldquo;best&rdquo; depends on your team size. For teams under 15, Pipedrive Advanced ($34/mo/seat) or Close Professional ($99/mo/seat) provide better reporting relative to their price and setup effort. HubSpot Professional ($100/mo/seat) is only worth it if you need cross-object marketing + sales reporting.</p>
+                <p className="text-muted">Salesforce Pro Suite ($100/mo/user) has the most powerful and customizable reporting engine. But &ldquo;best&rdquo; depends on your team size. For teams under 15, Pipedrive Growth ($34/mo/seat) or Close Professional ($99/mo/seat) provide better reporting relative to their price and setup effort. HubSpot Professional ($100/mo/seat) is only worth it if you need cross-object marketing + sales reporting.</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Can I get custom reports on HubSpot without Professional?</h3>
@@ -349,11 +349,11 @@ export default function CrmReportingCompared() {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Is Salesforce reporting worth the cost for a small team?</h3>
-                <p className="text-muted">For a team under 10 reps, usually no. Salesforce Professional at $80/mo/user for 10 users is $800/mo, plus $2,000&ndash;$5,000 in initial dashboard configuration. Pipedrive Professional at $49/mo/seat for 10 users is $490/mo with dashboards that work out of the box. Salesforce reporting becomes worth it at 25+ reps when you need the customization depth and cross-object complexity.</p>
+                <p className="text-muted">For a team under 10 reps, usually no. Salesforce Pro Suite at $100/mo/user for 10 users is $1,000/mo, plus $2,000&ndash;$5,000 in initial dashboard configuration. Pipedrive Premium at $49/mo/seat for 10 users is $490/mo with dashboards that work out of the box. Salesforce reporting becomes worth it at 25+ reps when you need the customization depth and cross-object complexity.</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">What&apos;s the cheapest way to get good CRM reporting?</h3>
-                <p className="text-muted">Pipedrive Advanced at $34/mo/seat. It includes custom fields in reports, team reporting, and email tracking. For a 5-person team, that&apos;s $170/mo. Supplement with weekly CSV exports into Google Sheets for any custom analysis the built-in reports don&apos;t cover.</p>
+                <p className="text-muted">Pipedrive Growth at $34/mo/seat. It includes custom fields in reports, team reporting, and email tracking. For a 5-person team, that&apos;s $170/mo. Supplement with weekly CSV exports into Google Sheets for any custom analysis the built-in reports don&apos;t cover.</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Should I use a third-party reporting tool instead of CRM native reporting?</h3>

@@ -308,7 +308,7 @@ export default function MailchimpHiddenCostsPage() {
                   <tr>
                     <td className="px-4 py-2.5 font-medium text-foreground">500</td>
                     <td className="px-4 py-2.5 text-muted">$20/mo</td>
-                    <td className="px-4 py-2.5 text-muted">$33/mo</td>
+                    <td className="px-4 py-2.5 text-muted">$39/mo</td>
                     <td className="px-4 py-2.5 text-muted">$9/mo</td>
                   </tr>
                   <tr>
@@ -320,7 +320,7 @@ export default function MailchimpHiddenCostsPage() {
                   <tr>
                     <td className="px-4 py-2.5 font-medium text-foreground">5,000</td>
                     <td className="px-4 py-2.5 text-muted">$100/mo</td>
-                    <td className="px-4 py-2.5 text-muted">$66/mo</td>
+                    <td className="px-4 py-2.5 text-muted">$79/mo</td>
                     <td className="px-4 py-2.5 text-muted">$18/mo</td>
                   </tr>
                   <tr>

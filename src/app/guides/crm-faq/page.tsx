@@ -78,14 +78,14 @@ export default function CRMFAQPage() {
               <div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">What&apos;s the cheapest CRM per seat?</h3>
                 <p className="text-muted leading-relaxed">
-                  Freshsales Growth at $11/seat/month (billed annually) is the cheapest paid CRM with meaningful features. Zoho Standard at $14/seat/month is next. Pipedrive Essential at $14/seat/month follows. HubSpot Starter begins at $20/seat/month. Salesforce Starter is $25/user/month. These are annual billing prices &mdash; monthly billing adds 20&ndash;30%.
+                  Freshsales Growth at $11/seat/month (billed annually) is the cheapest paid CRM with meaningful features. Zoho Standard at $14/seat/month is next. Pipedrive Lite at $14/seat/month follows. HubSpot Starter begins at $20/seat/month. Salesforce Starter is $25/user/month. These are annual billing prices &mdash; monthly billing adds 20&ndash;30%.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">How much does a CRM actually cost per year?</h3>
                 <p className="text-muted leading-relaxed">
-                  For a 5-person team (annual billing): Freshsales Growth costs $660/year. Pipedrive Essential costs $840/year. HubSpot Starter costs $1,200/year. Salesforce Starter costs $1,500/year. Salesforce Professional costs $4,800/year. The jump from small-business CRMs to Salesforce is dramatic &mdash; factor in implementation costs of $5,000&ndash;$50,000 for Salesforce.
+                  For a 5-person team (annual billing): Freshsales Growth costs $660/year. Pipedrive Lite costs $840/year. HubSpot Starter costs $1,200/year. Salesforce Starter costs $1,500/year. Salesforce Pro Suite costs $6,000/year. The jump from small-business CRMs to Salesforce is dramatic &mdash; factor in implementation costs of $5,000&ndash;$50,000 for Salesforce.
                 </p>
               </div>
             </div>
@@ -99,7 +99,7 @@ export default function CRMFAQPage() {
               <div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">Is Salesforce worth it for small teams?</h3>
                 <p className="text-muted leading-relaxed">
-                  No, unless you have 50+ users or need enterprise-grade customization. Salesforce Professional is $80/user/month and requires a dedicated admin (salary: $70K&ndash;$120K/year). For teams under 25 people, Pipedrive or HubSpot delivers 80% of the functionality at 20% of the cost. Salesforce makes sense when you need complex workflow rules, custom objects, and deep integrations across hundreds of users.
+                  No, unless you have 50+ users or need enterprise-grade customization. Salesforce Pro Suite is $100/user/month and requires a dedicated admin (salary: $70K&ndash;$120K/year). For teams under 25 people, Pipedrive or HubSpot delivers 80% of the functionality at 20% of the cost. Salesforce makes sense when you need complex workflow rules, custom objects, and deep integrations across hundreds of users.
                 </p>
               </div>
 
@@ -113,7 +113,7 @@ export default function CRMFAQPage() {
               <div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">What&apos;s the best CRM for a solo founder?</h3>
                 <p className="text-muted leading-relaxed">
-                  Folk at $20/month for relationship-focused work (consulting, partnerships, networking). Pipedrive Essential at $14/month for deal-focused sales. HubSpot Free if you want $0 and can live with limited features. Most solo founders don&apos;t need a CRM at all until they&apos;re juggling 50+ active relationships or deals.
+                  Folk at $20/month for relationship-focused work (consulting, partnerships, networking). Pipedrive Lite at $14/month for deal-focused sales. HubSpot Free if you want $0 and can live with limited features. Most solo founders don&apos;t need a CRM at all until they&apos;re juggling 50+ active relationships or deals.
                 </p>
               </div>
 
@@ -127,7 +127,7 @@ export default function CRMFAQPage() {
               <div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">What&apos;s the best CRM for agencies?</h3>
                 <p className="text-muted leading-relaxed">
-                  Pipedrive Professional at $49/seat/month for agencies focused on new business development (multiple pipelines, revenue forecasting). HubSpot Starter at $20/seat/month for agencies that also manage client marketing. Close at $59/seat/month for high-volume outbound agencies that need built-in calling and SMS.
+                  Pipedrive Premium at $49/seat/month for agencies focused on new business development (multiple pipelines, revenue forecasting). HubSpot Starter at $20/seat/month for agencies that also manage client marketing. Close at $59/seat/month for high-volume outbound agencies that need built-in calling and SMS.
                 </p>
               </div>
 
@@ -148,7 +148,7 @@ export default function CRMFAQPage() {
               <div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">Which CRM has the best reporting?</h3>
                 <p className="text-muted leading-relaxed">
-                  Salesforce has the most powerful reporting with custom report types, cross-object reporting, and dashboards &mdash; but only on Professional ($80/user/month) and above. HubSpot has good reporting on Professional ($100/seat/month) but limited on Starter. Pipedrive includes solid deal and activity reports on all plans. For small teams, Pipedrive&apos;s built-in reports cover 90% of what you need.
+                  Salesforce has the most powerful reporting with custom report types, cross-object reporting, and dashboards &mdash; but only on Pro Suite ($100/user/month) and above. HubSpot has good reporting on Professional ($100/seat/month) but limited on Starter. Pipedrive includes solid deal and activity reports on all plans. For small teams, Pipedrive&apos;s built-in reports cover 90% of what you need.
                 </p>
               </div>
 
@@ -176,7 +176,7 @@ export default function CRMFAQPage() {
               <div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">Can a CRM replace my project management tool?</h3>
                 <p className="text-muted leading-relaxed">
-                  No. CRMs manage customer relationships and deals. Project management tools manage tasks and deliverables. HubSpot has basic task management, but it&apos;s not a replacement for ClickUp ($7/seat/month), Asana (free for 15 users), or Linear ($8/seat/month). Use a CRM for pre-sale and a PM tool for post-sale delivery.
+                  No. CRMs manage customer relationships and deals. Project management tools manage tasks and deliverables. HubSpot has basic task management, but it&apos;s not a replacement for ClickUp ($7/seat/month), Asana (free for 2 users), or Linear ($8/seat/month). Use a CRM for pre-sale and a PM tool for post-sale delivery.
                 </p>
               </div>
             </div>
@@ -246,7 +246,7 @@ export default function CRMFAQPage() {
               <div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">When should I upgrade from a free CRM?</h3>
                 <p className="text-muted leading-relaxed">
-                  Upgrade when you need: multiple deal pipelines (HubSpot Free has 1), custom reporting, workflow automation, or you&apos;re hitting user limits. For HubSpot, that means upgrading to Starter at $20/seat/month or Pipedrive Essential at $14/seat/month. Don&apos;t upgrade just for features &mdash; upgrade when the free tier is visibly costing you deals.
+                  Upgrade when you need: multiple deal pipelines (HubSpot Free has 1), custom reporting, workflow automation, or you&apos;re hitting user limits. For HubSpot, that means upgrading to Starter at $20/seat/month or Pipedrive Lite at $14/seat/month. Don&apos;t upgrade just for features &mdash; upgrade when the free tier is visibly costing you deals.
                 </p>
               </div>
 

@@ -79,8 +79,8 @@ export default function SasPricingTraps2026() {
                 <tr>
                   <td className="px-4 py-2.5 font-medium text-foreground">Salesforce</td>
                   <td className="px-4 py-2.5">Starter: $25/user/mo</td>
-                  <td className="px-4 py-2.5">Professional: $80/user/mo</td>
-                  <td className="px-4 py-2.5 text-yellow-400 font-bold">220%</td>
+                  <td className="px-4 py-2.5">Pro Suite: $100/user/mo</td>
+                  <td className="px-4 py-2.5 text-yellow-400 font-bold">300%</td>
                 </tr>
               </tbody>
             </table>
@@ -185,7 +185,7 @@ export default function SasPricingTraps2026() {
             </table>
           </div>
           <p className="text-muted mb-4">
-            <strong className="text-foreground">The real cost:</strong> Signing an annual contract on a tool you abandon 4 months in means paying for 8 months of unused software. At HubSpot Professional ($890/mo), that&apos;s $7,120 wasted. At Salesforce Professional for 10 users ($800/mo), that&apos;s $6,400.
+            <strong className="text-foreground">The real cost:</strong> Signing an annual contract on a tool you abandon 4 months in means paying for 8 months of unused software. At HubSpot Professional ($890/mo), that&apos;s $7,120 wasted. At Salesforce Pro Suite for 10 users ($1,000/mo), that&apos;s $8,000.
           </p>
           <p className="text-muted mb-4">
             <strong className="text-foreground">How to avoid it:</strong> Always start monthly, even if it costs 10&ndash;20% more. Three months of monthly billing at a premium is cheaper than 8 months of annual billing on a tool you&apos;ve abandoned. Switch to annual only after you&apos;ve confirmed the tool fits your workflow.
@@ -222,7 +222,7 @@ export default function SasPricingTraps2026() {
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="px-4 py-2.5 font-medium text-foreground">Pipedrive Advanced</td>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Pipedrive Growth</td>
                   <td className="px-4 py-2.5">$39/seat/mo</td>
                   <td className="px-4 py-2.5">LeadBooster ($32.50/mo), Smart Docs ($32.50/mo), Web Visitors ($41/mo)</td>
                   <td className="px-4 py-2.5 text-red-400 font-bold">$145/seat/mo</td>

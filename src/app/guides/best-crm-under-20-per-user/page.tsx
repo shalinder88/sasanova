@@ -5,7 +5,7 @@ import RelatedLinks from "@/components/RelatedLinks";
 export const metadata: Metadata = {
   title: "Best CRM Under $20/User/Month: Real Options for Budget Teams",
   description:
-    "Pipedrive Essential vs HubSpot Starter vs Freshsales Growth vs Zoho Standard compared at the sub-$20 price point. Feature tables, hidden costs, and verdicts for 3, 10, and 25-person teams.",
+    "Pipedrive Lite vs HubSpot Starter vs Freshsales Growth vs Zoho Standard compared at the sub-$20 price point. Feature tables, hidden costs, and verdicts for 3, 10, and 25-person teams.",
 };
 
 export default function BestCrmUnder20PerUserPage() {
@@ -137,7 +137,7 @@ export default function BestCrmUnder20PerUserPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold mb-3">Pipedrive Essential ($14/user/month) &mdash; Best Pipeline Experience</h2>
+            <h2 className="text-xl font-bold mb-3">Pipedrive Lite ($14/user/month) &mdash; Best Pipeline Experience</h2>
             <p className="text-muted leading-relaxed mb-4">
               Pipedrive built its entire product around one thing: the deal pipeline. The
               Essential plan gives you the visual pipeline that sales teams consistently rate
@@ -160,7 +160,7 @@ export default function BestCrmUnder20PerUserPage() {
             <p className="text-muted leading-relaxed mb-4">
               <strong className="text-foreground">Best for:</strong> Small teams that need a
               dead-simple pipeline tracker and don&apos;t need automation or email sequences
-              built into the CRM. Pipedrive Essential pairs well with external tools (Zapier
+              built into the CRM. Pipedrive Lite pairs well with external tools (Zapier
               or Make for automation, Mailchimp or Kit for email). If you plan to upgrade to
               Advanced within 6 months, budget $29/user from the start.
             </p>
@@ -325,7 +325,7 @@ export default function BestCrmUnder20PerUserPage() {
             <p className="text-muted leading-relaxed mb-4">
               <strong className="text-foreground">Monthly vs annual billing.</strong> Every
               price in this guide assumes annual billing. Monthly billing adds 20&ndash;40%:
-              Pipedrive Essential goes from $14 to $24/user/month. Freshsales Growth goes
+              Pipedrive Lite goes from $14 to $24/user/month. Freshsales Growth goes
               from $11 to $15/user/month. If you need monthly flexibility, the sub-$20
               category shrinks significantly.
             </p>
@@ -380,7 +380,7 @@ export default function BestCrmUnder20PerUserPage() {
             <p className="text-muted leading-relaxed mb-4">
               <strong className="text-foreground">3-person team:</strong> Freshsales Growth at
               $396/year. The built-in phone, AI scoring, and automation at $11/user is the
-              strongest value. Pipedrive Essential is worth the $108/year premium if pipeline
+              strongest value. Pipedrive Lite is worth the $108/year premium if pipeline
               UX is your top priority.
             </p>
             <p className="text-muted leading-relaxed mb-4">
@@ -402,9 +402,9 @@ export default function BestCrmUnder20PerUserPage() {
             <h2 className="text-xl font-bold mb-3">Common Mistakes</h2>
             <ul className="list-disc list-inside text-muted mb-4 space-y-3">
               <li><strong className="text-foreground">Choosing HubSpot Starter and hitting the Professional cliff.</strong> HubSpot Starter to Professional is $20 to $100/user/month. If you&apos;ll need sequences, custom reporting, or real automation within 6 months, budget for Professional from the start or pick a platform where those features are cheaper.</li>
-              <li><strong className="text-foreground">Picking Pipedrive for automation.</strong> Pipedrive Essential has zero automation. If automated follow-ups, deal stage triggers, or assignment rules matter to your workflow, Pipedrive is the wrong choice at $14 &mdash; you&apos;ll need Advanced at $29/user.</li>
+              <li><strong className="text-foreground">Picking Pipedrive for automation.</strong> Pipedrive Lite has zero automation. If automated follow-ups, deal stage triggers, or assignment rules matter to your workflow, Pipedrive is the wrong choice at $14 &mdash; you&apos;ll need Advanced at $29/user.</li>
               <li><strong className="text-foreground">Ignoring ecosystem lock-in.</strong> Zoho Standard is a great deal, but it works best inside the Zoho ecosystem. If you use Gmail, Slack, and Mailchimp, Zoho&apos;s integrations are functional but not as tight as Pipedrive&apos;s or HubSpot&apos;s with those same tools.</li>
-              <li><strong className="text-foreground">Comparing annual prices while paying monthly.</strong> Pipedrive Essential is $14/user on annual billing but $24/user on monthly. That&apos;s 71% more expensive. Always compare apples to apples and factor in your actual billing preference.</li>
+              <li><strong className="text-foreground">Comparing annual prices while paying monthly.</strong> Pipedrive Lite is $14/user on annual billing but $24/user on monthly. That&apos;s 71% more expensive. Always compare apples to apples and factor in your actual billing preference.</li>
               <li><strong className="text-foreground">Not considering total cost of ownership.</strong> A CRM that costs $14/user but requires $40/month in Zapier automations and a $30/month email tool might be more expensive than a $20/user CRM that includes basic automation and email templates built in.</li>
             </ul>
           </section>
@@ -414,7 +414,7 @@ export default function BestCrmUnder20PerUserPage() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">What&apos;s the cheapest CRM with real automation?</h3>
-                <p className="text-muted">Freshsales Growth at $11/user/month includes 20 workflow automation rules. Zoho Standard at $14/user/month includes 100 rules per module. Both offer more automation than HubSpot Starter ($20/user) and Pipedrive Essential ($14/user, zero automation).</p>
+                <p className="text-muted">Freshsales Growth at $11/user/month includes 20 workflow automation rules. Zoho Standard at $14/user/month includes 100 rules per module. Both offer more automation than HubSpot Starter ($20/user) and Pipedrive Lite ($14/user, zero automation).</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Is Pipedrive worth $14/user if it has no automation?</h3>

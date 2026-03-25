@@ -67,7 +67,7 @@ export default function SwitchHubspotToPipedrivePage() {
                 Hub Professional costs $890/month (includes 5 seats). That&apos;s $10,680/year
                 before additional seats or contact tier overages. For a 10-person sales team,
                 effective cost is $990/month ($890 base + $100 for 5 extra seats at $20 each).
-                Pipedrive Professional for the same 10 users: $490/month ($49/user). The annual
+                Pipedrive Premium for the same 10 users: $490/month ($49/user). The annual
                 savings: $6,000.
               </li>
               <li>
@@ -172,8 +172,8 @@ export default function SwitchHubspotToPipedrivePage() {
                   <tr className="bg-surface-alt text-left">
                     <th className="px-4 py-2.5 font-semibold text-foreground">Team Size</th>
                     <th className="px-4 py-2.5 font-semibold text-foreground">HubSpot Sales Pro</th>
-                    <th className="px-4 py-2.5 font-semibold text-foreground">Pipedrive Advanced</th>
-                    <th className="px-4 py-2.5 font-semibold text-foreground">Pipedrive Professional</th>
+                    <th className="px-4 py-2.5 font-semibold text-foreground">Pipedrive Growth</th>
+                    <th className="px-4 py-2.5 font-semibold text-foreground">Pipedrive Premium</th>
                     <th className="px-4 py-2.5 font-semibold text-foreground">Annual Savings (vs HubSpot)</th>
                   </tr>
                 </thead>
@@ -219,7 +219,7 @@ export default function SwitchHubspotToPipedrivePage() {
             <div className="rounded-lg border border-border bg-surface p-5 my-6">
               <p className="text-sm font-semibold text-foreground mb-2">If you also need marketing automation</p>
               <p className="text-sm text-muted">
-                Pipedrive Professional ($49/user) + ActiveCampaign Starter ($15/mo for 1,000
+                Pipedrive Premium ($49/user) + ActiveCampaign Starter ($15/mo for 1,000
                 contacts) = $505/month for 10 users. Still cheaper than HubSpot Professional at
                 $990/month, and you get better email automation from ActiveCampaign than from
                 HubSpot&apos;s Sales Hub alone.
@@ -330,7 +330,7 @@ export default function SwitchHubspotToPipedrivePage() {
                 companies, and close dead deals. Start Pipedrive with clean data.
               </li>
               <li>
-                <strong className="text-foreground">Choosing Pipedrive Essential when you need
+                <strong className="text-foreground">Choosing Pipedrive Lite when you need
                 Advanced.</strong> Essential ($14/user) lacks email sync, workflow automation, and
                 the scheduler. Most teams switching from HubSpot need Advanced ($39/user) minimum.
                 Don&apos;t choose the cheapest tier and then complain about missing features.
@@ -355,7 +355,7 @@ export default function SwitchHubspotToPipedrivePage() {
             <p className="text-muted leading-relaxed mb-3">
               If you&apos;re on HubSpot Professional because you needed automation and
               reporting, but your team mostly uses the deal pipeline, you are overpaying.
-              Pipedrive Advanced or Professional gives you the CRM features at 40&ndash;80%
+              Pipedrive Growth or Professional gives you the CRM features at 40&ndash;80%
               less cost.
             </p>
             <p className="text-muted leading-relaxed">
@@ -380,11 +380,11 @@ export default function SwitchHubspotToPipedrivePage() {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Does Pipedrive have email sequences like HubSpot?</h3>
-                <p className="text-muted">Pipedrive Advanced ($39/user) includes email sync and basic automation. For full email sequences comparable to HubSpot&apos;s, you need Pipedrive&apos;s Campaigns add-on or a separate email tool. Pipedrive&apos;s built-in email features are more basic than HubSpot&apos;s Sales Hub sequences.</p>
+                <p className="text-muted">Pipedrive Growth ($39/user) includes email sync and basic automation. For full email sequences comparable to HubSpot&apos;s, you need Pipedrive&apos;s Campaigns add-on or a separate email tool. Pipedrive&apos;s built-in email features are more basic than HubSpot&apos;s Sales Hub sequences.</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">What Pipedrive plan should I choose coming from HubSpot Professional?</h3>
-                <p className="text-muted">Pipedrive Advanced ($39/user) for most teams. It includes automation, email sync, scheduler, and workflow automation. Choose Professional ($49/user) if you need revenue forecasting, e-signatures, or advanced custom reporting. Essential ($14/user) is too limited for teams accustomed to HubSpot Professional features.</p>
+                <p className="text-muted">Pipedrive Growth ($39/user) for most teams. It includes automation, email sync, scheduler, and workflow automation. Choose Professional ($49/user) if you need revenue forecasting, e-signatures, or advanced custom reporting. Essential ($14/user) is too limited for teams accustomed to HubSpot Professional features.</p>
               </div>
             </div>
           </section>

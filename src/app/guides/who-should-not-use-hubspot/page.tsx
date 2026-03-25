@@ -93,7 +93,7 @@ export default function WhoShouldNotUseHubspot() {
                   <td className="px-4 py-2.5">Full automation, sequences, reporting</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-2.5 font-medium text-foreground">Pipedrive Essential</td>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Pipedrive Lite</td>
                   <td className="px-4 py-2.5">$14/mo</td>
                   <td className="px-4 py-2.5">Full CRM + visual pipeline + email sync</td>
                 </tr>
@@ -112,13 +112,13 @@ export default function WhoShouldNotUseHubspot() {
             If your team is 2&ndash;4 people and your primary need is tracking deals and contacts &mdash; not running email campaigns, building landing pages, or scoring leads &mdash; HubSpot&apos;s value proposition collapses. The CRM is free, sure, but it&apos;s also limited. And the paid plans are priced for companies that use HubSpot&apos;s marketing features, which you won&apos;t.
           </p>
           <p className="text-muted mb-4">
-            At 3 seats on Pipedrive Advanced ($29/seat/month = $87/month total), you get email automation, workflow automation, and a clean pipeline UI. The equivalent in HubSpot requires Professional at $890/month plus $45/additional seat. For a 3-person sales team: HubSpot Professional costs $980/month vs Pipedrive Advanced at $87/month. That&apos;s an 11x price difference.
+            At 3 seats on Pipedrive Growth ($29/seat/month = $87/month total), you get email automation, workflow automation, and a clean pipeline UI. The equivalent in HubSpot requires Professional at $890/month plus $45/additional seat. For a 3-person sales team: HubSpot Professional costs $980/month vs Pipedrive Growth at $87/month. That&apos;s an 11x price difference.
           </p>
 
           <div className="rounded-lg border border-border bg-surface p-5 my-6">
             <p className="text-sm font-semibold text-foreground mb-2">Use Instead</p>
             <ul className="text-sm text-muted space-y-2 list-none pl-0">
-              <li><strong className="text-foreground">Pipedrive Advanced</strong> &mdash; $29/seat/month. Email automation, workflow builder, 2-way email sync, custom fields, and integrations with most tools. Purpose-built for sales teams. <Link href="/tools/pipedrive" className="text-accent hover:underline">See Pipedrive review</Link></li>
+              <li><strong className="text-foreground">Pipedrive Growth</strong> &mdash; $29/seat/month. Email automation, workflow builder, 2-way email sync, custom fields, and integrations with most tools. Purpose-built for sales teams. <Link href="/tools/pipedrive" className="text-accent hover:underline">See Pipedrive review</Link></li>
             </ul>
           </div>
 

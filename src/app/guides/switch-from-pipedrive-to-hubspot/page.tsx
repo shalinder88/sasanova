@@ -83,14 +83,14 @@ export default function SwitchPipedriveToHubspotPage() {
               <strong className="text-foreground">Professional ($100/mo per seat for Sales Hub, $890/mo for Marketing Hub):</strong> This is the cliff. Sales Hub Professional adds sequences, forecasting, custom reporting, and required fields. Marketing Hub Professional adds marketing automation, lead scoring, blog, landing pages, A/B testing, and attribution. That Marketing Hub price is per account, not per seat &mdash; but it&apos;s $890/mo with a $3,000 onboarding fee. Annual commitment required.
             </p>
             <p className="text-muted mb-4">
-              <strong className="text-foreground">The math that catches teams:</strong> A team of 10 on Pipedrive Advanced ($28/seat/mo) pays $280/mo. Moving to HubSpot Sales Hub Professional ($100/seat/mo) is $1,000/mo. Add Marketing Hub Professional at $890/mo and you&apos;re at $1,890/mo. That&apos;s 6.75x what you were paying Pipedrive. And you haven&apos;t added Service Hub or Content Hub yet.
+              <strong className="text-foreground">The math that catches teams:</strong> A team of 10 on Pipedrive Growth ($28/seat/mo) pays $280/mo. Moving to HubSpot Sales Hub Professional ($100/seat/mo) is $1,000/mo. Add Marketing Hub Professional at $890/mo and you&apos;re at $1,890/mo. That&apos;s 6.75x what you were paying Pipedrive. And you haven&apos;t added Service Hub or Content Hub yet.
             </p>
             <div className="overflow-x-auto rounded-lg border border-border mt-4 mb-6">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-surface-alt text-left">
                     <th className="px-4 py-2.5 font-semibold text-foreground">Users</th>
-                    <th className="px-4 py-2.5 font-semibold text-foreground">Pipedrive Advanced</th>
+                    <th className="px-4 py-2.5 font-semibold text-foreground">Pipedrive Growth</th>
                     <th className="px-4 py-2.5 font-semibold text-foreground">HubSpot Starter Bundle</th>
                     <th className="px-4 py-2.5 font-semibold text-foreground">HubSpot Professional (Sales + Mkt)</th>
                   </tr>
@@ -118,7 +118,7 @@ export default function SwitchPipedriveToHubspotPage() {
               </table>
             </div>
             <p className="text-muted mb-4">
-              <strong className="text-foreground">HubSpot Starter is the sweet spot &mdash; if it has enough features.</strong> At 15 users, HubSpot Starter Bundle ($300/mo) is cheaper than Pipedrive Advanced ($420/mo). But Starter doesn&apos;t include marketing automation sequences, lead scoring, custom reporting, or forecasting. If those are why you&apos;re switching, you need Professional, and Professional is 5&ndash;8x the price.
+              <strong className="text-foreground">HubSpot Starter is the sweet spot &mdash; if it has enough features.</strong> At 15 users, HubSpot Starter Bundle ($300/mo) is cheaper than Pipedrive Growth ($420/mo). But Starter doesn&apos;t include marketing automation sequences, lead scoring, custom reporting, or forecasting. If those are why you&apos;re switching, you need Professional, and Professional is 5&ndash;8x the price.
             </p>
           </section>
 
@@ -203,15 +203,15 @@ export default function SwitchPipedriveToHubspotPage() {
                     <td className="px-4 py-2.5">~$2,390/mo</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-2.5 font-medium text-foreground">Pipedrive Advanced + ActiveCampaign Plus</td>
+                    <td className="px-4 py-2.5 font-medium text-foreground">Pipedrive Growth + ActiveCampaign Plus</td>
                     <td className="px-4 py-2.5">~$560/mo ($420 + $139)</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-2.5 font-medium text-foreground">Pipedrive Advanced + Brevo Business</td>
+                    <td className="px-4 py-2.5 font-medium text-foreground">Pipedrive Growth + Brevo Business</td>
                     <td className="px-4 py-2.5">~$485/mo ($420 + $65)</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-2.5 font-medium text-foreground">Pipedrive Advanced + Kit Creator Pro</td>
+                    <td className="px-4 py-2.5 font-medium text-foreground">Pipedrive Growth + Kit Creator Pro</td>
                     <td className="px-4 py-2.5">~$587/mo ($420 + $167)</td>
                   </tr>
                 </tbody>
@@ -297,8 +297,8 @@ export default function SwitchPipedriveToHubspotPage() {
                 <p className="text-muted">If you need marketing automation sequences, lead scoring, custom reporting, blog tools, or A/B testing, you need Professional. If you need basic CRM with email tracking and a simple pipeline, Starter works. The feature gap between Starter and Professional is massive &mdash; bigger than the gap between Pipedrive and HubSpot Starter.</p>
               </div>
               <div>
-                <h3 className="text-sm font-bold text-foreground mb-1">What about Pipedrive Professional vs HubSpot Professional?</h3>
-                <p className="text-muted">Pipedrive Professional ($50/seat/mo) adds revenue forecasting, team management, and custom dashboards. It&apos;s a solid upgrade from Advanced. But it still doesn&apos;t include marketing automation, content tools, or full-funnel attribution. If those are what you need, Pipedrive Professional doesn&apos;t close the gap.</p>
+                <h3 className="text-sm font-bold text-foreground mb-1">What about Pipedrive Premium vs HubSpot Professional?</h3>
+                <p className="text-muted">Pipedrive Premium ($50/seat/mo) adds revenue forecasting, team management, and custom dashboards. It&apos;s a solid upgrade from Advanced. But it still doesn&apos;t include marketing automation, content tools, or full-funnel attribution. If those are what you need, Pipedrive Premium doesn&apos;t close the gap.</p>
               </div>
             </div>
           </section>

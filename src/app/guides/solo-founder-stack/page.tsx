@@ -23,7 +23,7 @@ const categories = [
     why: "You have 20 conversations happening at once — leads, partners, investors, customers. Without a system, deals slip through the cracks.",
     recommended: "HubSpot Free CRM",
     recommendedSlug: "hubspot-crm",
-    alternateRec: "Pipedrive Essential ($14/seat/mo)",
+    alternateRec: "Pipedrive Lite ($14/seat/mo)",
     alternateSlug: "pipedrive",
     monthly: "$0 – $14",
     toolPage: "/tools/hubspot-crm",
@@ -57,7 +57,7 @@ const categories = [
       },
     ],
     decision:
-      "Start with HubSpot Free CRM. It handles unlimited contacts, a basic pipeline, email logging, and meeting scheduling for $0. If you close deals through a visual pipeline and want something laser-focused on sales, Pipedrive Essential ($14/seat/mo) is simpler and faster. Switch to Pipedrive when HubSpot feels bloated; switch to HubSpot Starter ($20/mo) when you need email sequences.",
+      "Start with HubSpot Free CRM. It handles unlimited contacts, a basic pipeline, email logging, and meeting scheduling for $0. If you close deals through a visual pipeline and want something laser-focused on sales, Pipedrive Lite ($14/seat/mo) is simpler and faster. Switch to Pipedrive when HubSpot feels bloated; switch to HubSpot Starter ($20/mo) when you need email sequences.",
   },
   {
     icon: "📧",
@@ -249,7 +249,7 @@ const priceTiers = [
     color: "text-amber-400",
     tools: [
       {
-        name: "Pipedrive Essential",
+        name: "Pipedrive Lite",
         cost: "$14",
         note: "Visual pipeline CRM",
       },
@@ -268,7 +268,7 @@ const priceTiers = [
     color: "text-purple-400",
     tools: [
       {
-        name: "Pipedrive Advanced",
+        name: "Pipedrive Growth",
         cost: "$39",
         note: "Workflow automation",
       },
@@ -507,7 +507,7 @@ export default function SoloFounderStackHub() {
           <div className="border border-border rounded-xl p-5 bg-surface mb-8 space-y-3 text-sm text-muted">
             <p>
               <strong className="text-foreground">CRM:</strong> Switch from
-              HubSpot Free to Pipedrive Essential when you have 20+ active deals
+              HubSpot Free to Pipedrive Lite when you have 20+ active deals
               and need a visual pipeline. Switch to HubSpot Starter when you need
               email sequences.{" "}
               <Link

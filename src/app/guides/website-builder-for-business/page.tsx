@@ -162,7 +162,7 @@ export default function WebsiteBuilderGuide() {
               and professional templates.
             </p>
             <p>
-              <strong className="text-foreground">Upgrade to Business ($33/month) if:</strong> you need
+              <strong className="text-foreground">Upgrade to Business ($25/month) if:</strong> you need
               e-commerce (basic, with a 3% transaction fee), custom CSS/JavaScript injection, pop-ups,
               or advanced analytics. For serious e-commerce, skip to the Basic Commerce plan ($36/month)
               which removes the transaction fee.

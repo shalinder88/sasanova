@@ -104,7 +104,7 @@ export default function AutomateLeadCaptureGuide() {
               domains and Tally branding on the form.
             </p>
             <p>
-              <strong className="text-foreground">Pipedrive Essential</strong> at $14/user/month
+              <strong className="text-foreground">Pipedrive Lite</strong> at $14/user/month
               gives you a visual deal pipeline, email integration, activity reminders, and a
               mobile app. It&apos;s purpose-built for closing deals, not for marketing automation.
               That&apos;s a feature, not a bug. You want your CRM focused on revenue, not on

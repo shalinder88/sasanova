@@ -36,7 +36,7 @@ const switchingTriggers = [
   {
     trigger: "Your team refuses to use it",
     example:
-      "You bought Salesforce. Your sales team logs deals in spreadsheets anyway because Salesforce takes too long. A CRM with 0% adoption is worth $0 regardless of its features. Pipedrive at $14/seat with 90% adoption beats Salesforce at $80/seat with 20% adoption.",
+      "You bought Salesforce. Your sales team logs deals in spreadsheets anyway because Salesforce takes too long. A CRM with 0% adoption is worth $0 regardless of its features. Pipedrive at $14/seat with 90% adoption beats Salesforce at $100/seat with 20% adoption.",
     test: "Check actual usage data (not what people say in meetings). If fewer than 50% of intended users log in weekly, the tool has failed.",
   },
   {

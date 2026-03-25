@@ -89,7 +89,7 @@ export default function CrmIntegrationsThatMatter() {
                   <td className="px-4 py-2.5 text-green-400">Full 2-way (Einstein)</td>
                   <td className="px-4 py-2.5 text-green-400">Full 2-way</td>
                   <td className="px-4 py-2.5">Auto-log, Einstein activity capture, sidebar</td>
-                  <td className="px-4 py-2.5">Professional ($80/user/mo)</td>
+                  <td className="px-4 py-2.5">Pro Suite ($100/user/mo)</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-2.5 font-medium text-foreground">Zoho CRM</td>
@@ -102,7 +102,7 @@ export default function CrmIntegrationsThatMatter() {
             </table>
           </div>
           <p className="text-muted mb-4">
-            <strong className="text-foreground">HubSpot wins on email sync accessibility</strong> &mdash; it&apos;s available on the free plan. Pipedrive and Zoho require their entry-level paid plans. Salesforce requires Professional, which is $80/user/month. All four handle 2-way sync well once set up.
+            <strong className="text-foreground">HubSpot wins on email sync accessibility</strong> &mdash; it&apos;s available on the free plan. Pipedrive and Zoho require their entry-level paid plans. Salesforce requires Pro Suite, which is $100/user/month. All four handle 2-way sync well once set up.
           </p>
 
           {/* ── #2 Calendar Sync ── */}

@@ -170,7 +170,7 @@ export default function VideoPodcastRecordingGuide() {
                     <td className="px-4 py-2.5 font-medium text-foreground">Descript</td>
                     <td className="px-4 py-2.5">1 hr transcription, watermark on exports</td>
                     <td className="px-4 py-2.5">$24/mo (Hobbyist) &mdash; 10 hrs transcription</td>
-                    <td className="px-4 py-2.5">$33/mo (Business) &mdash; 30 hrs, AI features</td>
+                    <td className="px-4 py-2.5">$55/mo (Business) &mdash; 30 hrs, AI features</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-2.5 font-medium text-foreground">StreamYard</td>

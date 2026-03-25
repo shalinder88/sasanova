@@ -152,7 +152,7 @@ export default function HubSpotVsActiveCampaignPage() {
               This is where the conversation gets honest. HubSpot&apos;s pricing has layers: Marketing Hub tier, contact tier overages, per-seat costs for Sales Hub, add-on fees for reporting and content. ActiveCampaign prices by contacts and tier. To compare fairly, you need to account for what you&apos;d actually use.
             </p>
             <p className="text-muted mb-4">
-              <strong className="text-foreground">Scenario:</strong> A marketing team that needs email campaigns, automation, lead scoring, CRM, and basic landing pages. HubSpot requires Marketing Hub Professional + Sales Hub Starter. ActiveCampaign requires Plus tier + a separate CRM (Pipedrive Professional at $49/seat/mo).
+              <strong className="text-foreground">Scenario:</strong> A marketing team that needs email campaigns, automation, lead scoring, CRM, and basic landing pages. HubSpot requires Marketing Hub Professional + Sales Hub Starter. ActiveCampaign requires Plus tier + a separate CRM (Pipedrive Premium at $49/seat/mo).
             </p>
             <div className="overflow-x-auto rounded-lg border border-border mt-4 mb-6">
               <table className="w-full text-sm">

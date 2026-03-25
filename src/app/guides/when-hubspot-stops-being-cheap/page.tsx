@@ -219,7 +219,7 @@ export default function WhenHubspotStopsBeingCheap() {
                 <tr>
                   <td className="px-4 py-2.5 font-medium text-foreground">CRM + Pipeline</td>
                   <td className="px-4 py-2.5">Included in $890/mo</td>
-                  <td className="px-4 py-2.5">Pipedrive Advanced: $39/seat/mo</td>
+                  <td className="px-4 py-2.5">Pipedrive Growth: $39/seat/mo</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-2.5 font-medium text-foreground">Marketing Automation</td>
@@ -253,7 +253,7 @@ export default function WhenHubspotStopsBeingCheap() {
             <p className="text-sm font-semibold text-foreground mb-3">If you&apos;re on HubSpot Free or Starter and approaching the Professional cliff:</p>
             <ul className="list-disc pl-5 space-y-2 text-sm text-muted">
               <li><strong className="text-foreground">Audit what you actually need.</strong> Is it really workflow automation, or just better email sequences? Starter sequences may be enough if you configure them well.</li>
-              <li><strong className="text-foreground">Consider a split stack.</strong> Pipedrive Advanced ($39/seat) for CRM + ActiveCampaign Plus ($49/mo) for marketing automation. Total for 1 user: $88/mo vs. $890/mo.</li>
+              <li><strong className="text-foreground">Consider a split stack.</strong> Pipedrive Growth ($39/seat) for CRM + ActiveCampaign Plus ($49/mo) for marketing automation. Total for 1 user: $88/mo vs. $890/mo.</li>
               <li><strong className="text-foreground">If you must go Professional,</strong> negotiate. HubSpot&apos;s list price is negotiable, especially at the end of quarters. Ask for the onboarding fee to be waived or reduced. Get multi-year discounts in writing.</li>
               <li><strong className="text-foreground">Set a migration trigger before you start.</strong> Decide now: &ldquo;If our monthly HubSpot bill exceeds $X, we evaluate alternatives.&rdquo; Having a predetermined exit point prevents boiling-frog pricing.</li>
             </ul>
@@ -276,7 +276,7 @@ export default function WhenHubspotStopsBeingCheap() {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Is Pipedrive + ActiveCampaign really comparable to HubSpot Professional?</h3>
-                <p className="text-muted">For CRM pipeline management and marketing automation, yes. Pipedrive Advanced handles deals, contacts, email sync, and basic reporting. ActiveCampaign handles email sequences, automation workflows, lead scoring, and A/B testing. What you lose is the single-platform experience &mdash; unified reporting, one login, and native data flow. For many small teams, that tradeoff saves $7,000&ndash;$9,000/year.</p>
+                <p className="text-muted">For CRM pipeline management and marketing automation, yes. Pipedrive Growth handles deals, contacts, email sync, and basic reporting. ActiveCampaign handles email sequences, automation workflows, lead scoring, and A/B testing. What you lose is the single-platform experience &mdash; unified reporting, one login, and native data flow. For many small teams, that tradeoff saves $7,000&ndash;$9,000/year.</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">At what team size does HubSpot Professional become cost-effective?</h3>

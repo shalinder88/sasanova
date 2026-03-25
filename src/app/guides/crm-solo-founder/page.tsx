@@ -181,8 +181,8 @@ export default function CRMSoloFounderGuide() {
           <section>
             <h2 className="text-xl font-bold text-foreground mb-3">Why NOT Salesforce</h2>
             <p>
-              Salesforce Essentials starts at $25/user/month and goes up to $80/user/month
-              for Professional. It requires an implementation consultant for anything beyond
+              Salesforce Starter Suite starts at $25/user/month and goes up to $100/user/month
+              for Pro Suite. It requires an implementation consultant for anything beyond
               basic setup. The average Salesforce deployment takes 3&ndash;6 months for a
               mid-size company. For a solo founder, you&apos;ll spend more time configuring
               Salesforce than actually selling.
