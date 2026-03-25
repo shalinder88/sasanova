@@ -945,6 +945,49 @@ const guides = [
     readingTime: "17 min read",
     category: "Decision Framework",
   },
+  {
+    slug: "notion-vs-trello-vs-clickup-for-small-teams",
+    title:
+      "Notion vs Trello vs ClickUp: Which Free Tier Actually Works for Small Teams?",
+    description:
+      "Side-by-side comparison of Notion, Trello, and ClickUp free tiers with exact limits, paid upgrade prices, and honest verdicts for teams under 10 people.",
+    readingTime: "16 min read",
+    category: "Comparison",
+  },
+  {
+    slug: "grammarly-vs-chatgpt-for-writing",
+    title: "Grammarly vs ChatGPT for Writing: Different Tools, Different Jobs",
+    description:
+      "Grammarly checks your writing. ChatGPT generates writing. Exact pricing from both, when you need each, and when you need both.",
+    readingTime: "13 min read",
+    category: "Comparison",
+  },
+  {
+    slug: "discord-vs-slack-for-communities",
+    title:
+      "Discord vs Slack for Team Communication: The Real Differences Beyond Price",
+    description:
+      "Discord is free for most features. Slack hides messages after 90 days on free. Exact pricing, real feature differences, and when each one makes sense.",
+    readingTime: "15 min read",
+    category: "Comparison",
+  },
+  {
+    slug: "salesforce-vs-notion-workflow",
+    title:
+      "Why Some Teams Use Salesforce AND Notion (And How to Decide)",
+    description:
+      "Salesforce for CRM and pipeline. Notion for docs and wiki. They complement each other. Exact pricing, when you need both, and when one handles everything.",
+    readingTime: "14 min read",
+    category: "Workflow",
+  },
+  {
+    slug: "semrush-for-saas-companies",
+    title: "Is Semrush Worth $140/Month for a SaaS Company?",
+    description:
+      "Semrush Pro costs $139.95/month. What you actually get at the Pro tier, when it pays for itself, and cheaper alternatives for companies under 10K monthly visitors.",
+    readingTime: "15 min read",
+    category: "SEO",
+  },
 ];
 
 export default function GuidesHub() {
