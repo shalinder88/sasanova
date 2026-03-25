@@ -51,6 +51,18 @@ function fmt(n: number): string {
   return n.toLocaleString("en-US");
 }
 
+/** Find the correct compare URL for two tool slugs by looking up versusPairs */
+function compareUrl(slugX: string, slugY: string): string {
+  const match = versusPairs.find(
+    (vs) =>
+      (vs.slugA === slugX && vs.slugB === slugY) ||
+      (vs.slugA === slugY && vs.slugB === slugX)
+  );
+  if (match) return `${SITE}/compare/${match.slugA}-vs-${match.slugB}`;
+  // Fallback: use slugA-vs-slugB order (may 404 if no pair exists)
+  return `${SITE}/compare/${slugX}-vs-${slugY}`;
+}
+
 function highestPaidPlan(tool: Tool) {
   const paid = tool.pricing.filter(
     (p) => p.priceMonthly !== null && p.priceMonthly > 0
@@ -105,8 +117,8 @@ function generateLinkedInPosts(): SocialPost[] {
       platform: "linkedin",
       type: "cost-shock",
       title: `Cost Shock: ${tool.name}`,
-      body: `${tool.name} costs $${fmt(toolAnnual)}/year at the ${top.name} tier.\n\n${comp.alt.name} costs $${fmt(altAnnual)}/year for comparable features. That's $${fmt(savings)}/year in savings.\n\nWe normalized the pricing so you can see the real numbers side by side.\n\n${SITE}/compare/${[tool.slug, comp.alt.slug].sort().join("-vs-")}`,
-      url: `${SITE}/compare/${[tool.slug, comp.alt.slug].sort().join("-vs-")}`,
+      body: `${tool.name} costs $${fmt(toolAnnual)}/year at the ${top.name} tier.\n\n${comp.alt.name} costs $${fmt(altAnnual)}/year for comparable features. That's $${fmt(savings)}/year in savings.\n\nWe normalized the pricing so you can see the real numbers side by side.\n\n${compareUrl(tool.slug, comp.alt.slug)}`,
+      url: `${compareUrl(tool.slug, comp.alt.slug)}`,
       charCount: 0,
     });
     if (posts.length >= 8) break;
@@ -135,8 +147,8 @@ function generateLinkedInPosts(): SocialPost[] {
       platform: "linkedin",
       type: "comparison",
       title: `${toolA.name} vs ${toolB.name}`,
-      body: `${toolA.name} vs ${toolB.name}: ${verdictText}.\n\n${vs.summary}\n\nFull comparison with normalized pricing:\n${SITE}/compare/${[vs.slugA, vs.slugB].sort().join("-vs-")}`,
-      url: `${SITE}/compare/${[vs.slugA, vs.slugB].sort().join("-vs-")}`,
+      body: `${toolA.name} vs ${toolB.name}: ${verdictText}.\n\n${vs.summary}\n\nFull comparison with normalized pricing:\n${SITE}/compare/${vs.slugA}-vs-${vs.slugB}`,
+      url: `${SITE}/compare/${vs.slugA}-vs-${vs.slugB}`,
       charCount: 0,
     });
     if (posts.filter((p) => p.type === "comparison").length >= 8) break;
@@ -215,8 +227,8 @@ function generateRedditPosts(): SocialPost[] {
       platform: "reddit",
       type: "reddit-comparison",
       title: `I compared ${toolA.name} vs ${toolB.name} pricing at every tier. Here's what I found.`,
-      body: `I spent time normalizing pricing across ${toolA.name} and ${toolB.name} so you can compare apples to apples.\n\n**Pricing:**\n- ${priceLineA}\n- ${priceLineB}\n\n**Verdict:** ${vs.summary}\n\nI put together a full comparison with normalized annual costs, feature overlap, and switching costs. No affiliate links in the comparison itself.\n\nFull breakdown: ${SITE}/compare/${[vs.slugA, vs.slugB].sort().join("-vs-")}`,
-      url: `${SITE}/compare/${[vs.slugA, vs.slugB].sort().join("-vs-")}`,
+      body: `I spent time normalizing pricing across ${toolA.name} and ${toolB.name} so you can compare apples to apples.\n\n**Pricing:**\n- ${priceLineA}\n- ${priceLineB}\n\n**Verdict:** ${vs.summary}\n\nI put together a full comparison with normalized annual costs, feature overlap, and switching costs. Affiliate links are clearly labeled. Editorial scores are independent of affiliate status.\n\nFull breakdown: ${SITE}/compare/${vs.slugA}-vs-${vs.slugB}`,
+      url: `${SITE}/compare/${vs.slugA}-vs-${vs.slugB}`,
       subreddits: subs.slice(0, 3),
       charCount: 0,
     });
