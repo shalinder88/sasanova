@@ -900,6 +900,51 @@ const guides = [
     readingTime: "20 min read",
     category: "Quarterly Pricing Report",
   },
+  {
+    slug: "best-free-saas-tools-2026",
+    title:
+      "The 25 Best Free SaaS Tools in 2026 (Actually Free, Not Trial-Free)",
+    description:
+      "Only tools with REAL free tiers — no 14-day trials. Organized by category: CRM, Email, Automation, PM, Analytics, Support, Scheduling. For each: what free gets you, what the catch is, when you'll need to pay.",
+    readingTime: "22 min read",
+    category: "Stack Building",
+  },
+  {
+    slug: "cheapest-saas-stack-2026",
+    title:
+      "The Cheapest Possible SaaS Stack That Actually Works in 2026",
+    description:
+      "Complete stacks at $0/mo (all free tiers), $50/mo (cheapest paid tiers), and $100/mo (best value paid tiers). Itemized cost breakdowns with real plan names and what you sacrifice at each price point.",
+    readingTime: "20 min read",
+    category: "Stack Building",
+  },
+  {
+    slug: "saas-pricing-changes-2026",
+    title:
+      "Every Major SaaS Pricing Change in 2026 (Running List)",
+    description:
+      "Bardeen's 890% price jump, Ghost's plan restructure, Salesforce's 6% increase, Pipedrive's rebranding, Close CRM's restructuring, Mailchimp's free tier death spiral. Date, tool, what changed, who it affects, what to do instead.",
+    readingTime: "14 min read",
+    category: "Pricing Intelligence",
+  },
+  {
+    slug: "software-switching-cost-guide",
+    title:
+      "The Complete Guide to Software Switching Costs (2026)",
+    description:
+      "What switching actually costs: time, data migration, retraining, productivity dip. Switching cost by category (scheduling: low, CRM: high, automation: very high). The parallel-run strategy and hidden costs nobody warns about.",
+    readingTime: "18 min read",
+    category: "Decision Framework",
+  },
+  {
+    slug: "saas-pricing-models-explained",
+    title:
+      "SaaS Pricing Models Explained: Per-Seat, Per-Contact, Usage-Based, and Why It Matters",
+    description:
+      "Per-seat (Pipedrive, Salesforce), per-contact (Mailchimp, ActiveCampaign), per-usage (Zapier tasks, Make operations), flat rate (beehiiv, Basecamp), and freemium. Which model is cheapest at each scale and which is secretly most expensive.",
+    readingTime: "17 min read",
+    category: "Decision Framework",
+  },
 ];
 
 export default function GuidesHub() {
