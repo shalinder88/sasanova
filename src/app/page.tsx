@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { tools, versusPairs, categories, getOverallScore, getToolsByCategory, getActiveCategoryCount, getLatestVerifiedDate, formatVerifiedShort, formatVerifiedLong, type Tool, type ToolScore } from "@/data/tools";
+import { tools, versusPairs, categories, getOverallScore, getToolsByCategory, getActiveCategoryCount, getLatestVerifiedDate, formatVerifiedShort, formatVerifiedLong } from "@/data/tools";
 import EmailCapture from "@/components/EmailCapture";
 
 /* ── Score axis row (kept for comparison cards) ── */
