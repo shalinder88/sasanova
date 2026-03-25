@@ -2,6 +2,29 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 const guideMeta: Record<string, { title: string; category: string }> = {
+  "how-to-choose-email-platform": {
+    title:
+      "How to Choose an Email Marketing Platform in 2026: A Decision Framework",
+    category: "Decision Framework",
+  },
+  "how-to-choose-crm": {
+    title: "How to Choose a CRM Without Overthinking It",
+    category: "Decision Framework",
+  },
+  "how-to-choose-automation-tool": {
+    title:
+      "Zapier vs Make vs n8n: A Decision Framework (Not a Feature List)",
+    category: "Decision Framework",
+  },
+  "how-much-should-software-cost": {
+    title:
+      "How Much Should Your Software Stack Cost? Benchmarks by Business Stage",
+    category: "Decision Framework",
+  },
+  "when-to-switch-software": {
+    title: "When to Switch Software (And When to Just Live With It)",
+    category: "Decision Framework",
+  },
   "creator-toolkit": {
     title: "The Creator's Complete Software Toolkit: Every Tool You Need in 2026",
     category: "Scenario Hub",

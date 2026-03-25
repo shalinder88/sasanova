@@ -9,6 +9,49 @@ export const metadata: Metadata = {
 
 const guides = [
   {
+    slug: "how-to-choose-email-platform",
+    title:
+      "How to Choose an Email Marketing Platform in 2026: A Decision Framework",
+    description:
+      "Answer 3 questions, follow the decision tree, and stop comparing 50 tools. Budget matrix at $0, $50, and $200/month. The 5 features that matter vs the 10 that don't. Red flags on vendor pricing pages.",
+    readingTime: "18 min read",
+    category: "Decision Framework",
+  },
+  {
+    slug: "how-to-choose-crm",
+    title: "How to Choose a CRM Without Overthinking It",
+    description:
+      "One question decides your CRM: relationship-driven or deal-driven? Team size matrix, the free tier trap, 3-integration checklist, and the Salesforce reality check.",
+    readingTime: "16 min read",
+    category: "Decision Framework",
+  },
+  {
+    slug: "how-to-choose-automation-tool",
+    title:
+      "Zapier vs Make vs n8n: A Decision Framework (Not a Feature List)",
+    description:
+      "The real decision axis: simplicity vs cost vs control. Technical comfort assessment, volume-based decision tree with exact breakpoints, and when switching costs more than staying.",
+    readingTime: "15 min read",
+    category: "Decision Framework",
+  },
+  {
+    slug: "how-much-should-software-cost",
+    title:
+      "How Much Should Your Software Stack Cost? Benchmarks by Business Stage",
+    description:
+      "Solo founder: $0-100/mo. Small team: $100-500/mo. Growing team: $500-2,000/mo. Specific tool allocations, the tool creep problem, quarterly audit framework, and when free tools cost more than paid ones.",
+    readingTime: "16 min read",
+    category: "Decision Framework",
+  },
+  {
+    slug: "when-to-switch-software",
+    title: "When to Switch Software (And When to Just Live With It)",
+    description:
+      "5 switching triggers that justify the pain. 5 situations where switching wastes time. Switching cost calculator, parallel run strategy, and 12-month cost comparison framework.",
+    readingTime: "14 min read",
+    category: "Decision Framework",
+  },
+  {
     slug: "creator-toolkit",
     title: "The Creator's Complete Software Toolkit: Every Tool You Need in 2026",
     description:
