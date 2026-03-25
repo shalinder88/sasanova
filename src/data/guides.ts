@@ -1826,4 +1826,127 @@ export const guides: Guide[] = [
     readingTime: "13 min read",
     category: "ROI Calculator",
   },
+  // ── Integration Guide Pages ──
+  {
+    slug: "hubspot-integrations-guide",
+    title: "HubSpot Integrations That Matter: What to Connect and What to Skip",
+    description:
+      "HubSpot connects to everything — but not everything is worth connecting. Native email with Gmail/Outlook, Zapier at $29.99/mo for middleware, Intercom at $39/seat for support, and which add-ons justify their cost.",
+    readingTime: "16 min read",
+    category: "Integration Guide",
+  },
+  {
+    slug: "zapier-vs-native-integrations",
+    title: "Zapier vs Native Integrations: When to Pay for Middleware",
+    description:
+      "5 common workflows compared: native integrations vs Zapier ($29.99/mo) vs Make ($10.59/mo). When middleware is unnecessary, when it saves you from a $890/mo HubSpot upgrade, and the exact cost per workflow.",
+    readingTime: "14 min read",
+    category: "Integration Guide",
+  },
+  {
+    slug: "notion-integrations-guide",
+    title: "Notion Integrations: What Works Natively and What Needs Zapier",
+    description:
+      "Notion connects to Slack and GitHub natively, but CRM, email, and calendar require Zapier ($29.99/mo) or Make ($10.59/mo). Complete integration map with exact costs for every connection method.",
+    readingTime: "14 min read",
+    category: "Integration Guide",
+  },
+  {
+    slug: "pipedrive-integrations-guide",
+    title: "Pipedrive Integrations: Building Your Sales Stack",
+    description:
+      "Pipedrive Lite ($14/seat) has basic email sync. Growth ($39/seat) unlocks automation. Here's what connects natively, what needs the marketplace, and what requires Zapier ($29.99/mo) or Make ($10.59/mo).",
+    readingTime: "15 min read",
+    category: "Integration Guide",
+  },
+  {
+    slug: "shopify-integrations-guide",
+    title: "Shopify Integrations: Essential Apps and Their Real Cost",
+    description:
+      "Shopify Basic ($39/mo) plus essential apps can double your bill. Email (Brevo free vs Mailchimp $13/mo), analytics (Plausible $9/mo vs PostHog free), CRM (HubSpot free), and the apps worth paying for.",
+    readingTime: "15 min read",
+    category: "Integration Guide",
+  },
+  // ── Feature Deep-Dive Pages ──
+  {
+    slug: "email-automation-builders-ranked",
+    title: "Email Automation Builders Ranked: ActiveCampaign vs Kit vs Mailchimp vs beehiiv",
+    description:
+      "Visual automation builder quality compared across 4 platforms. ActiveCampaign Pro ($79/mo) leads. Kit Creator ($39/mo) is simplest. Mailchimp Standard ($20/mo) is limited. beehiiv Scale ($49/mo) has none.",
+    readingTime: "14 min read",
+    category: "Feature Deep-Dive",
+  },
+  {
+    slug: "crm-reporting-features-ranked",
+    title: "CRM Reporting Ranked: What You Actually Get at Each Price Tier",
+    description:
+      "HubSpot Free gets basic dashboards. Starter ($20/seat) adds email health. Professional ($890/mo) unlocks custom reports. Pipedrive by tier. Salesforce by tier. What's useful vs marketing fluff.",
+    readingTime: "15 min read",
+    category: "Feature Deep-Dive",
+  },
+  {
+    slug: "project-management-views-compared",
+    title: "PM Views Compared: Kanban, Gantt, Timeline, Calendar Across 5 Tools",
+    description:
+      "Which PM views each tool offers at which tier. Asana locks Timeline behind Starter ($13.49/seat). ClickUp Free has boards. Monday Standard ($14/seat) adds Gantt. Linear has no Gantt. Notion has everything free.",
+    readingTime: "13 min read",
+    category: "Feature Deep-Dive",
+  },
+  {
+    slug: "free-tier-limits-that-matter",
+    title: "The Free Tier Limits That Actually Matter (And the Ones That Don't)",
+    description:
+      "Across 15+ tools: which free tier limits hit first (Mailchimp 250 contacts, ClickUp 100MB, Zapier 100 tasks) and which rarely matter (Notion 7-day history, Grammarly 100 AI prompts). Exact upgrade costs.",
+    readingTime: "16 min read",
+    category: "Feature Deep-Dive",
+  },
+  {
+    slug: "ai-features-in-saas-compared",
+    title: "AI Features in SaaS Tools: What's Real vs What's Marketing",
+    description:
+      "Notion AI ($10/user add-on). ClickUp Brain ($7/member). Grammarly AI (100 free prompts/mo). HubSpot AI (bundled). ChatGPT Plus ($20/mo). Claude Pro ($20/mo). What actually works and what's a checkbox feature.",
+    readingTime: "15 min read",
+    category: "Feature Deep-Dive",
+  },
+  // ── Buyer Mistake Pages ──
+  {
+    slug: "biggest-crm-buying-mistakes",
+    title: "The 7 Biggest CRM Buying Mistakes (And How to Avoid Them)",
+    description:
+      "Starting with HubSpot Professional ($890/mo) when Starter ($20/seat) is enough. Choosing Salesforce for a 5-person team. Ignoring switching costs. Real prices, real math, 'What to Do Instead' for each mistake.",
+    readingTime: "14 min read",
+    category: "Buyer Mistakes",
+  },
+  {
+    slug: "biggest-email-marketing-mistakes",
+    title: "The 7 Biggest Email Marketing Platform Mistakes",
+    description:
+      "Defaulting to Mailchimp ($20/mo) when beehiiv Launch is free. Paying for inactive contacts. Annual billing before validation. Contact tier scaling traps. Exact prices and savings for each mistake.",
+    readingTime: "14 min read",
+    category: "Buyer Mistakes",
+  },
+  {
+    slug: "biggest-automation-mistakes",
+    title: "The 7 Biggest Automation Tool Mistakes",
+    description:
+      "Staying on Zapier Professional ($29.99/mo) when Make Core ($10.59/mo) handles 13x more tasks. The multi-step task burn trap. Self-hosting n8n before you're ready. Exact pricing and what to do instead.",
+    readingTime: "13 min read",
+    category: "Buyer Mistakes",
+  },
+  {
+    slug: "biggest-pm-tool-mistakes",
+    title: "The 7 Biggest Project Management Tool Mistakes",
+    description:
+      "Paying Monday Standard ($14/seat) when ClickUp Free has unlimited tasks. Using Notion as PM past 10 people. Buying enterprise tiers for small teams. Per-seat math at 5, 10, and 50 users.",
+    readingTime: "13 min read",
+    category: "Buyer Mistakes",
+  },
+  {
+    slug: "biggest-website-builder-mistakes",
+    title: "The 7 Biggest Website Builder Mistakes",
+    description:
+      "Paying Squarespace Core ($36/mo) for a one-page site when Carrd costs $19/year. Choosing Wix then trying to migrate (you can't export). Real 12-month costs including domain for every builder.",
+    readingTime: "14 min read",
+    category: "Buyer Mistakes",
+  },
 ];
