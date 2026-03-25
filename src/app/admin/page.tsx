@@ -227,12 +227,16 @@ function generateRedditPosts(): SocialPost[] {
 
     const planA = lowestPaidPlan(toolA);
     const planB = lowestPaidPlan(toolB);
+    const freeTierLabel = (t: Tool) =>
+      t.slug === "substack"
+        ? `${t.name}: Free to use (10% revenue cut on paid subscriptions + Stripe fees)`
+        : `${t.name} has a free tier`;
     const priceLineA = planA
       ? `${toolA.name} starts at $${planA.priceMonthly}/mo (${planA.name})`
-      : `${toolA.name} has a free tier`;
+      : freeTierLabel(toolA);
     const priceLineB = planB
       ? `${toolB.name} starts at $${planB.priceMonthly}/mo (${planB.name})`
-      : `${toolB.name} has a free tier`;
+      : freeTierLabel(toolB);
 
     posts.push({
       id: `rd-compare-${idx++}`,
@@ -270,6 +274,7 @@ function generateRedditPosts(): SocialPost[] {
   // 3) Budget picks per category
   for (const cat of categories.slice(0, 5)) {
     const catTools = toolsInCategory(cat.slug)
+      .filter((t) => t.categorySlug !== "crm") // exclude tools whose primary category is CRM
       .filter((t) => t.freeTier || (lowestPaidPlan(t)?.priceMonthly ?? 999) < 30)
       .slice(0, 5);
     if (catTools.length < 2) continue;
@@ -398,10 +403,10 @@ function generateNewsletterDraft(): string {
   const spotlight = versusPairs[0];
   const spotA = getToolBySlug(spotlight?.slugA ?? "");
   const spotB = getToolBySlug(spotlight?.slugB ?? "");
-  // Pick a cheap alternative
+  // Pick a cheap alternative (compare entry-level tiers, not enterprise)
   const expensiveTool = tools.find((t) => {
-    const top = highestPaidPlan(t);
-    return top && top.priceMonthly && top.priceMonthly > 100;
+    const entry = lowestPaidPlan(t);
+    return entry && entry.priceMonthly && entry.priceMonthly > 20;
   });
   const cheapAlt = expensiveTool
     ? comparableAlternative(expensiveTool)
@@ -422,7 +427,7 @@ function generateNewsletterDraft(): string {
   if (spotA && spotB && spotlight) {
     draft += `**${spotA.name} vs ${spotB.name}**\n`;
     draft += `${spotlight.summary}\n`;
-    draft += `Full comparison: ${SITE}/compare/${[spotlight.slugA, spotlight.slugB].sort().join("-vs-")}\n\n`;
+    draft += `Full comparison: ${compareUrl(spotlight.slugA, spotlight.slugB)}\n\n`;
   }
 
   draft += `## Hidden Cost Reveal\n\n`;
@@ -443,10 +448,10 @@ function generateNewsletterDraft(): string {
 
   draft += `## Cheaper Alternative\n\n`;
   if (expensiveTool && cheapAlt) {
-    const topPlan = highestPaidPlan(expensiveTool);
-    draft += `Paying $${fmt((topPlan?.priceMonthly ?? 0) * 12)}/year for **${expensiveTool.name}**?\n`;
-    draft += `**${cheapAlt.alt.name}** does comparable work for $${fmt((cheapAlt.altPlan?.priceMonthly ?? 0) * 12)}/year.\n`;
-    draft += `Compare: ${SITE}/compare/${[expensiveTool.slug, cheapAlt.alt.slug].sort().join("-vs-")}\n`;
+    const entryPlan = lowestPaidPlan(expensiveTool);
+    draft += `Paying $${fmt(Math.round((entryPlan?.priceMonthly ?? 0) * 12))}/year for **${expensiveTool.name}**?\n`;
+    draft += `**${cheapAlt.alt.name}** does comparable work for $${fmt(Math.round((cheapAlt.altPlan?.priceMonthly ?? 0) * 12))}/year.\n`;
+    draft += `Compare: ${compareUrl(expensiveTool.slug, cheapAlt.alt.slug)}\n`;
   }
 
   return draft;
