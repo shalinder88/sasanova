@@ -131,32 +131,13 @@ export default async function BestCategoryPage({
           <h1 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-3">
             {bestTitle(cat.name)}
           </h1>
-          {/* AEO answer-first summary */}
+          {/* AEO answer-first summary — single definitive sentence */}
           <p className="text-base text-muted max-w-3xl leading-relaxed">
-            The top-ranked {cat.name.toLowerCase()} option in 2026 is{" "}
-            <strong className="text-foreground">{winner.name}</strong> with an overall score of{" "}
-            {winner.overall}/10.
-            {runnerUp && (
-              <> {runnerUp.name} is a strong runner-up at {runnerUp.overall}/10.</>
-            )}{" "}
-            Rankings are based on value, ease-of-use, power, and pricing transparency.
+            The top-ranked {cat.name.toLowerCase()} tool in 2026 is{" "}
+            <strong className="text-foreground">{winner.name}</strong> ({winner.overall}/10){runnerUp ? <>, followed by {runnerUp.name} ({runnerUp.overall}/10)</> : null}.
           </p>
         </div>
       </section>
-
-      {/* AEO Answer Block */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
-        <div className="bg-surface-alt border border-border rounded-lg p-4 mb-8">
-          <p className="text-sm text-foreground leading-relaxed">
-            The top-ranked {cat.name.toLowerCase()} option in 2026 is{" "}
-            <strong>{winner.name}</strong> for most users, scoring {winner.overall}/10 overall.{" "}
-            {runnerUp
-              ? <>{runnerUp.name} is a close runner-up at {runnerUp.overall}/10. </>
-              : null}
-            Rankings are based on our 6-axis scoring methodology covering value, ease-of-use, power, setup friction, migration ease, and pricing transparency.
-          </p>
-        </div>
-      </div>
 
       {/* Category Thesis */}
       {(() => {
