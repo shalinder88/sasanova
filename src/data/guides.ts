@@ -3060,4 +3060,84 @@ export const guides: Guide[] = [
     readingTime: "18 min read",
     category: "Pricing Deep Dive",
   },
+  {
+    slug: "hubspot-growth-path",
+    title: "HubSpot Growth Path: Free → Starter → Professional — When to Move Up",
+    description:
+      "Exact upgrade triggers for every HubSpot tier. Free CRM limits that matter, Starter at $20/seat, Professional at $890/mo flat. The 4,350% price jump math, alternative stack comparison, and when each tier pays for itself.",
+    readingTime: "14 min read",
+    category: "Tool Maturity",
+  },
+  {
+    slug: "pipedrive-growth-path",
+    title: "Pipedrive Growth Path: Lite → Growth → Premium → Ultimate",
+    description:
+      "What each Pipedrive tier adds and when each upgrade pays for itself. Lite $14/seat, Growth $39/seat (automations, email sync), Premium $49/seat (reporting, e-signatures), Ultimate $99/seat. ROI math at every stage.",
+    readingTime: "13 min read",
+    category: "Tool Maturity",
+  },
+  {
+    slug: "beehiiv-growth-path",
+    title: "beehiiv Growth Path: Launch → Scale → Max — Revenue-Based Decisions",
+    description:
+      "beehiiv pricing decoded: Free Launch (2,500 subs), Scale $49/mo (unlimited subs, Boosts ad network, referral program), Max $109/mo (API, advanced analytics). When Boosts revenue covers your Scale cost.",
+    readingTime: "12 min read",
+    category: "Tool Maturity",
+  },
+  {
+    slug: "zapier-growth-path",
+    title: "Zapier Growth Path: Free → Professional → Team — Volume-Based Decisions",
+    description:
+      "Zapier pricing by volume: Free (100 tasks/mo, two-step only), Professional $29.99/mo (750 tasks, multi-step), Team $103.50/mo (2,000 tasks). The multi-step task trap, cost-per-task math, and when Make saves money.",
+    readingTime: "13 min read",
+    category: "Tool Maturity",
+  },
+  {
+    slug: "notion-growth-path",
+    title: "Notion Growth Path: Free → Plus → Business — Team-Size Decisions",
+    description:
+      "Notion pricing by team size: Free (unlimited pages, 10 guests, 7-day history), Plus $12/user/mo (unlimited guests, 30-day history), Business $24/user/mo (SAML SSO, 90-day history). Exact triggers at every stage.",
+    readingTime: "12 min read",
+    category: "Tool Maturity",
+  },
+  {
+    slug: "best-tool-for-email-deliverability",
+    title: "Which Email Platform Has the Best Deliverability?",
+    description:
+      "Dedicated IP requirements per platform (Brevo Professional $499/mo, Buttondown Advanced $139/mo). Authentication setup (SPF/DKIM/DMARC) by tier. Reputation management compared across Mailchimp, ActiveCampaign, Brevo, Kit, and beehiiv.",
+    readingTime: "15 min read",
+    category: "Comparison for Specific Needs",
+  },
+  {
+    slug: "best-crm-for-email-tracking",
+    title: "Which CRM Has the Best Email Tracking?",
+    description:
+      "Email tracking compared across CRM tiers: HubSpot Free (basic), Starter $20/seat (sequences), Pipedrive Growth $39/seat (full sync), Close Essentials $49/seat (built-in calling+email), Freshsales Growth $11/seat (AI scoring).",
+    readingTime: "14 min read",
+    category: "Comparison for Specific Needs",
+  },
+  {
+    slug: "best-automation-for-non-technical-teams",
+    title: "Best Automation Tool for Non-Technical Teams",
+    description:
+      "Automation tools ranked by simplicity: Zapier (easiest, $29.99/mo Pro, 750 tasks), Make (cheapest, $10.59/mo Core, 10,000 ops), Bardeen ($99/mo for browser automation). Learning curve comparison and exact pricing.",
+    readingTime: "14 min read",
+    category: "Comparison for Specific Needs",
+  },
+  {
+    slug: "best-pm-tool-with-time-tracking",
+    title: "Which PM Tool Has Built-In Time Tracking?",
+    description:
+      "Native time tracking comparison: ClickUp Unlimited $10/member (full timer, billable tagging), Monday.com Pro $27/seat (time column), Notion (none natively). Plus Toggl Track and Harvest integration costs.",
+    readingTime: "13 min read",
+    category: "Comparison for Specific Needs",
+  },
+  {
+    slug: "best-newsletter-for-paid-content",
+    title: "Best Newsletter Platform for Paid Subscriptions",
+    description:
+      "Ghost ($18–$239/mo, 0% fee), beehiiv ($49–$109/mo, 0% fee), Substack ($0, 10% fee), Buttondown ($9–$79/mo, 0% fee). Revenue comparison at 500, 2,000, and 5,000 paid subscribers showing Substack's 10% costs $6K–$60K/yr.",
+    readingTime: "16 min read",
+    category: "Comparison for Specific Needs",
+  },
 ];
