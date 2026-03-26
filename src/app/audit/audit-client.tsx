@@ -1536,6 +1536,36 @@ export default function AuditClient() {
                   )}
                 </div>
 
+                {/* ── Expert Audit CTA ── */}
+                <div className="border border-accent/30 rounded-xl p-6 bg-accent/5">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center shrink-0">
+                      <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-base font-bold text-foreground mb-1">Want Us to Do This For You?</h3>
+                      <p className="text-sm text-muted mb-3">
+                        Our team will audit your full stack, research alternatives, estimate switching costs,
+                        and deliver a complete savings plan with step-by-step migration recommendations.
+                      </p>
+                      <div className="flex flex-col sm:flex-row gap-3 items-start">
+                        <a
+                          href="mailto:sasanovatools@gmail.com?subject=Expert%20SaaS%20Stack%20Audit&body=Hi%2C%20I%20ran%20a%20free%20audit%20and%20would%20like%20an%20expert%20review%20of%20my%20stack.%20My%20current%20monthly%20SaaS%20spend%20is%20approximately%20%24___."
+                          className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold bg-accent text-white rounded-lg hover:brightness-110 transition-all"
+                        >
+                          Get Expert Audit — $299
+                        </a>
+                        <div className="text-xs text-muted">
+                          <p>Includes: full stack review, replacement plan, switching cost estimates, migration roadmap.</p>
+                          <p className="mt-0.5">Delivered within 48 hours. 100% money-back if no savings found.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Pro upsell */}
                 <ProNudge
                   feature="Get unlimited saved audits + monthly re-audit reminders with Pro"
