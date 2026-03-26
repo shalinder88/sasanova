@@ -2195,4 +2195,288 @@ export const guides: Guide[] = [
     readingTime: "12 min read",
     category: "Comparison Matrix",
   },
+  // ── Tool vs Category Pages ──
+  {
+    slug: "best-crm-for-5-person-team",
+    title: "Best CRM for a 5-Person Team in 2026",
+    description:
+      "Pipedrive Lite at $14/seat vs Freshsales Growth at $11/seat vs HubSpot Starter at $20/seat. Annual cost comparison, feature trade-offs, and a clear verdict for teams of 5.",
+    readingTime: "12 min read",
+    category: "Tool vs Category",
+  },
+  {
+    slug: "best-crm-for-25-person-team",
+    title: "Best CRM for a 25-Person Team in 2026",
+    description:
+      "HubSpot Starter at $20/seat vs Pipedrive Growth at $39/seat vs Salesforce Pro Suite at $100/seat. Annual cost comparison at 25 seats with real pricing.",
+    readingTime: "14 min read",
+    category: "Tool vs Category",
+  },
+  {
+    slug: "best-email-tool-for-10k-subscribers",
+    title: "Best Email Tool for 10,000 Subscribers in 2026",
+    description:
+      "beehiiv Scale at $49/mo vs Kit Creator at $39/mo vs Mailchimp Standard at $100/mo. Annual cost comparison at 10K subscribers with exact tier pricing.",
+    readingTime: "13 min read",
+    category: "Tool vs Category",
+  },
+  {
+    slug: "best-email-tool-for-50k-subscribers",
+    title: "Best Email Tool for 50,000 Subscribers in 2026",
+    description:
+      "beehiiv Scale at $49/mo (flat) vs Mailchimp Standard at ~$385/mo vs Brevo Standard at $18/mo (by sends). Annual cost at 50K subscribers compared.",
+    readingTime: "13 min read",
+    category: "Tool vs Category",
+  },
+  {
+    slug: "best-automation-for-500-tasks",
+    title: "Best Automation Tool for 500 Tasks/Month in 2026",
+    description:
+      "Make Core at $10.59/mo (10K ops) vs Zapier Free (100 tasks) vs n8n Community (unlimited). Cost comparison for low-volume automation.",
+    readingTime: "12 min read",
+    category: "Tool vs Category",
+  },
+  {
+    slug: "best-automation-for-10k-tasks",
+    title: "Best Automation Tool for 10,000 Tasks/Month in 2026",
+    description:
+      "Make Core at $10.59/mo handles 10K ops. Zapier Team at $103.50/mo covers 2K tasks. n8n Pro at $50/mo gives 10K executions. Cost comparison at high volume.",
+    readingTime: "13 min read",
+    category: "Tool vs Category",
+  },
+  {
+    slug: "best-pm-tool-for-remote-teams",
+    title: "Best Project Management Tool for Remote Teams in 2026",
+    description:
+      "ClickUp Unlimited at $10/member vs Notion Plus at $12/user vs Asana Starter at $13.49/seat. Async features, time zones, and cost compared for distributed teams.",
+    readingTime: "14 min read",
+    category: "Tool vs Category",
+  },
+  {
+    slug: "best-pm-tool-for-engineering-teams",
+    title: "Best Project Management Tool for Engineering Teams in 2026",
+    description:
+      "Linear Standard at $8/seat vs Jira Standard at $8.15/seat vs ClickUp Unlimited at $10/seat. Sprint support, GitHub integration, and developer UX compared.",
+    readingTime: "14 min read",
+    category: "Tool vs Category",
+  },
+  {
+    slug: "best-support-tool-for-startups",
+    title: "Best Support Tool for Startups in 2026",
+    description:
+      "Freshdesk Growth at $15/agent vs Help Scout Standard at $55/mo (unlimited users) vs Crisp Essentials at $95/mo (10 seats). Cost and features for early-stage support.",
+    readingTime: "13 min read",
+    category: "Tool vs Category",
+  },
+  {
+    slug: "best-analytics-for-saas-products",
+    title: "Best Analytics Tool for SaaS Products in 2026",
+    description:
+      "PostHog free (1M events) vs Mixpanel free (1M events) vs Amplitude Starter (10M events). Product analytics for SaaS teams with exact free tier limits.",
+    readingTime: "14 min read",
+    category: "Tool vs Category",
+  },
+  // ── Quick Answer Pages ──
+  {
+    slug: "is-hubspot-free-really-free",
+    title: "Is HubSpot Free Really Free? (Yes, With Limits)",
+    description:
+      "HubSpot Free CRM is genuinely free with unlimited contacts. But 2,000 email sends/month, HubSpot branding, and basic reporting. The real cost is the $890/mo Professional upgrade.",
+    readingTime: "8 min read",
+    category: "Quick Answer",
+  },
+  {
+    slug: "is-notion-free-enough",
+    title: "Is Notion Free Enough? (Yes, for Most Individuals)",
+    description:
+      "Notion Free gives unlimited pages but only 7-day history and 10 guests. Plus is $12/user/mo. For solo users and small teams under 5, free is genuinely enough.",
+    readingTime: "7 min read",
+    category: "Quick Answer",
+  },
+  {
+    slug: "is-zapier-worth-the-price",
+    title: "Is Zapier Worth the Price? (Depends on Volume)",
+    description:
+      "Zapier Professional costs $29.99/mo for 750 tasks. Make Core costs $10.59/mo for 10,000 ops. Zapier is worth it below 750 simple tasks; above that, Make saves money.",
+    readingTime: "8 min read",
+    category: "Quick Answer",
+  },
+  {
+    slug: "is-mailchimp-still-good",
+    title: "Is Mailchimp Still Good in 2026? (For Some, Not Most)",
+    description:
+      "Mailchimp Free shrank to 250 contacts. Standard starts at $20/mo. beehiiv Scale is $49/mo for unlimited subscribers. Mailchimp is still good for e-commerce; not for newsletters.",
+    readingTime: "7 min read",
+    category: "Quick Answer",
+  },
+  {
+    slug: "is-salesforce-worth-it-for-small-business",
+    title: "Is Salesforce Worth It for Small Business? (Almost Never)",
+    description:
+      "Salesforce Starter Suite costs $25/seat. Pro Suite is $100/seat. Plus implementation costs of $10K-$50K. For teams under 25, HubSpot Starter ($20/seat) or Pipedrive Lite ($14/seat) are better.",
+    readingTime: "8 min read",
+    category: "Quick Answer",
+  },
+  {
+    slug: "is-clickup-better-than-asana",
+    title: "Is ClickUp Better Than Asana? (For Features, Yes. For Simplicity, No.)",
+    description:
+      "ClickUp Unlimited at $10/seat has more features than Asana Starter at $13.49/seat. But Asana is cleaner, faster, and easier to adopt. The right choice depends on your team.",
+    readingTime: "8 min read",
+    category: "Quick Answer",
+  },
+  {
+    slug: "is-make-better-than-zapier",
+    title: "Is Make Better Than Zapier? (For Power and Price, Yes)",
+    description:
+      "Make Core ($10.59/mo, 10K ops) beats Zapier Professional ($29.99/mo, 750 tasks) on price and power. Zapier wins on simplicity and integration count (7,000+ vs 1,800+).",
+    readingTime: "7 min read",
+    category: "Quick Answer",
+  },
+  {
+    slug: "is-beehiiv-better-than-substack",
+    title: "Is beehiiv Better Than Substack? (For Growth and Control, Yes)",
+    description:
+      "beehiiv Scale at $49/mo gives you custom domains, ad network, and referral program. Substack is free but takes 10% of paid subscription revenue. beehiiv wins for serious operators.",
+    readingTime: "8 min read",
+    category: "Quick Answer",
+  },
+  {
+    slug: "is-pipedrive-good-for-startups",
+    title: "Is Pipedrive Good for Startups? (Yes, Especially for Sales-Led)",
+    description:
+      "Pipedrive Lite at $14/seat is the best pure sales CRM for startups. No free tier, but the pipeline UX is best-in-class. Growth at $39/seat adds email sync and automations.",
+    readingTime: "7 min read",
+    category: "Quick Answer",
+  },
+  {
+    slug: "is-shopify-worth-39-per-month",
+    title: "Is Shopify Worth $39/Month? (For Physical Products, Yes)",
+    description:
+      "Shopify Basic at $39/mo is worth it for physical product e-commerce. For digital products, Gumroad or Lemon Squeezy are cheaper. The real cost is $39 + apps + transaction fees.",
+    readingTime: "8 min read",
+    category: "Quick Answer",
+  },
+  // ── Hidden Feature Pages ──
+  {
+    slug: "hubspot-features-most-people-miss",
+    title: "7 HubSpot Features Most People Miss",
+    description:
+      "HubSpot Free includes meeting scheduling, document tracking, and email templates. Starter ($20/seat) adds email health reporting. Professional ($890/mo) unlocks calculated properties and playbooks.",
+    readingTime: "11 min read",
+    category: "Hidden Features",
+  },
+  {
+    slug: "notion-features-most-people-miss",
+    title: "6 Notion Features Most People Miss",
+    description:
+      "Notion Free includes database relations, synced blocks, and API access. Plus ($12/user/mo) unlocks automations. Most users barely scratch the surface of what Notion can do.",
+    readingTime: "10 min read",
+    category: "Hidden Features",
+  },
+  {
+    slug: "zapier-features-most-people-miss",
+    title: "6 Zapier Features Most People Miss",
+    description:
+      "Zapier includes Tables, Interfaces, Formatter, and Paths that most users never discover. Available on Professional ($29.99/mo). Hidden features that reduce the need for other tools.",
+    readingTime: "10 min read",
+    category: "Hidden Features",
+  },
+  {
+    slug: "clickup-features-most-people-miss",
+    title: "6 ClickUp Features Most People Miss",
+    description:
+      "ClickUp Free includes Docs, Whiteboards, and unlimited members. Unlimited ($10/seat) adds Gantt, time tracking, and dashboards. Hidden power features most teams overlook.",
+    readingTime: "10 min read",
+    category: "Hidden Features",
+  },
+  {
+    slug: "pipedrive-features-most-people-miss",
+    title: "5 Pipedrive Features Most People Miss",
+    description:
+      "Pipedrive Lite ($14/seat) includes web forms and chatbot. Growth ($39/seat) adds automations, scheduler, and group email. Hidden features that boost sales productivity.",
+    readingTime: "9 min read",
+    category: "Hidden Features",
+  },
+  {
+    slug: "mailchimp-features-most-people-miss",
+    title: "5 Mailchimp Features Most People Miss",
+    description:
+      "Mailchimp Free includes landing pages and postcards. Standard ($20/mo) adds customer journey builder and content optimizer. Hidden features beyond basic email campaigns.",
+    readingTime: "10 min read",
+    category: "Hidden Features",
+  },
+  {
+    slug: "make-features-most-people-miss",
+    title: "5 Make Features Most People Miss",
+    description:
+      "Make Core ($10.59/mo) includes data stores, error handling routes, and custom functions. Hidden power features that justify switching from Zapier.",
+    readingTime: "10 min read",
+    category: "Hidden Features",
+  },
+  {
+    slug: "asana-features-most-people-miss",
+    title: "5 Asana Features Most People Miss",
+    description:
+      "Asana Starter ($13.49/seat) includes workflow builder and forms. Advanced ($30.49/seat) adds portfolios, goals, and approvals. Underused features that boost team productivity.",
+    readingTime: "10 min read",
+    category: "Hidden Features",
+  },
+  {
+    slug: "beehiiv-features-most-people-miss",
+    title: "5 beehiiv Features Most People Miss",
+    description:
+      "beehiiv Scale ($49/mo) includes Boost ad network, referral program, and 3D analytics. Launch (free) includes custom domains. Growth features most creators overlook.",
+    readingTime: "10 min read",
+    category: "Hidden Features",
+  },
+  {
+    slug: "slack-features-most-people-miss",
+    title: "6 Slack Features Most People Miss",
+    description:
+      "Slack Pro ($8.75/user/mo) includes Workflow Builder, Huddles, Canvas, and Clips. Free includes unlimited messages (90-day limit). Productivity features beyond basic chat.",
+    readingTime: "10 min read",
+    category: "Hidden Features",
+  },
+  // ── Year in Review Pages ──
+  {
+    slug: "email-marketing-year-in-review-2025",
+    title: "Email Marketing Year in Review: 2025",
+    description:
+      "Mailchimp free tier shrank to 250 contacts. beehiiv became the creator default. Kit rebranded from ConvertKit. Ghost restructured pricing. Every major change and what it means for 2026.",
+    readingTime: "16 min read",
+    category: "Year in Review",
+  },
+  {
+    slug: "crm-year-in-review-2025",
+    title: "CRM Year in Review: 2025",
+    description:
+      "Salesforce raised prices 6%. HubSpot's $20-to-$890 cliff remained. Attio and Folk emerged as modern alternatives. Close restructured tiers. Every major CRM change in 2025.",
+    readingTime: "16 min read",
+    category: "Year in Review",
+  },
+  {
+    slug: "automation-year-in-review-2025",
+    title: "Automation Tools Year in Review: 2025",
+    description:
+      "Zapier Professional held at $29.99/mo. Make Core stayed at $10.59/mo. n8n expanded cloud plans. Bardeen jumped 890%. Every major automation pricing change in 2025.",
+    readingTime: "14 min read",
+    category: "Year in Review",
+  },
+  {
+    slug: "pm-tools-year-in-review-2025",
+    title: "Project Management Tools Year in Review: 2025",
+    description:
+      "Asana free tier shrank to 2 users. ClickUp added AI. Linear grew with engineering teams. Monday.com raised minimum seats. Every major PM tool change in 2025.",
+    readingTime: "14 min read",
+    category: "Year in Review",
+  },
+  {
+    slug: "saas-pricing-year-in-review-2025",
+    title: "SaaS Pricing Year in Review: 2025",
+    description:
+      "Bardeen +890%, Ghost +100%, Salesforce +6%, Typeform +56%, Close +96%. Free tiers shrank across the board. The complete SaaS pricing landscape review for 2025.",
+    readingTime: "18 min read",
+    category: "Year in Review",
+  },
 ];
