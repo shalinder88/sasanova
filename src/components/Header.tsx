@@ -49,6 +49,12 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
+            <Link
+              href="/pro"
+              className="ml-1 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider bg-accent/15 text-accent border border-accent/25 rounded-md hover:bg-accent/25 transition-colors"
+            >
+              Pro
+            </Link>
           </div>
 
           {/* CTA + Mobile toggle */}
@@ -88,6 +94,13 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
+            <Link
+              href="/pro"
+              className="block px-3 py-2 text-sm font-semibold text-accent hover:bg-surface rounded-md transition-colors"
+              onClick={() => setOpen(false)}
+            >
+              Pro
+            </Link>
           </div>
         )}
       </nav>

@@ -10,6 +10,8 @@ import {
   type Tool,
   type Category,
 } from "@/data/tools";
+import { isProUser } from "@/lib/pro";
+import { ProNudge } from "@/components/ProGate";
 
 /* ═══════════════════════════════════════════════════════════════
    TYPES
@@ -759,6 +761,9 @@ export default function RecommendPage() {
                 </span>
               </button>
             </div>
+            {!isProUser() && (
+              <ProNudge feature="Save, share, and export your stack as a report with Pro" />
+            )}
           </div>
         )}
       </div>

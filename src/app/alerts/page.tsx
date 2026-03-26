@@ -4,6 +4,8 @@ import { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
 import { tools, categories } from "@/data/tools";
 import { subscribeToAlerts } from "@/lib/alerts";
+import { getLimit } from "@/lib/pro";
+import { ProNudge } from "@/components/ProGate";
 
 const WATCHLIST_KEY = "sasanova_price_watchlist";
 const WATCHLIST_META_KEY = "sasanova_price_watchlist_meta";
@@ -120,8 +122,11 @@ export default function AlertsPage() {
     );
   }, [search]);
 
+  const alertLimit = getLimit("alertTools");
+
   function addTool(slug: string) {
     if (watchlist.includes(slug)) return;
+    if (watchlist.length >= alertLimit) return;
     const updated = [...watchlist, slug];
     setWatchlist(updated);
     saveWatchlist(updated);
@@ -505,6 +510,9 @@ export default function AlertsPage() {
                 </span>
               ))}
             </div>
+            {watchlist.length >= alertLimit && alertLimit !== Infinity && (
+              <ProNudge feature="Watch unlimited tools with Pro" />
+            )}
           </div>
         )}
 

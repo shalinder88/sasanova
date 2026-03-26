@@ -60,6 +60,13 @@ const footerSections = [
     ],
   },
   {
+    title: "For Vendors",
+    links: [
+      { href: "/vendors", label: "Claim Your Profile" },
+      { href: "/vendors/claim", label: "Submit an Update" },
+    ],
+  },
+  {
     title: "Trust",
     links: [
       { href: "/about", label: "About Sasanova" },
@@ -104,7 +111,20 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-8 pt-6 border-t border-border">
+        {/* Pro CTA */}
+        <div className="mt-8 pt-6 border-t border-border flex justify-center">
+          <Link
+            href="/pro"
+            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold bg-accent/10 text-accent border border-accent/20 rounded-lg hover:bg-accent/20 transition-colors"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            Upgrade to Pro — $9/month
+          </Link>
+        </div>
+
+        <div className="mt-6 pt-6 border-t border-border">
           <div className="bg-surface-alt rounded-lg p-3 mb-4">
             <p className="text-[11px] text-muted leading-relaxed">
               <strong className="text-foreground">Disclosure:</strong> Sasanova is an independent, editorially driven comparison service. We may earn commissions when you click affiliate links or purchase through our site. This never influences our rankings or editorial scoring. All tools are evaluated using the same methodology regardless of affiliate status. <Link href="/disclosure" className="text-accent hover:underline">Learn more</Link>

@@ -10,6 +10,8 @@ import {
   type Tool,
   type ToolScore,
 } from "@/data/tools";
+import { getLimit } from "@/lib/pro";
+import { ProNudge } from "@/components/ProGate";
 
 /* ═══════════════════════════════════════════════════════════════
    HELPERS
@@ -354,6 +356,7 @@ function PlaygroundContent() {
   const [selectedSlugs, setSelectedSlugs] = useState<string[]>([]);
   const [copied, setCopied] = useState(false);
   const [savedMessage, setSavedMessage] = useState(false);
+  const maxTools = getLimit("playgroundTools");
 
   // Parse URL params on mount
   useEffect(() => {
@@ -393,11 +396,11 @@ function PlaygroundContent() {
 
   const addTool = useCallback(
     (slug: string) => {
-      if (selectedSlugs.length >= 4) return;
+      if (selectedSlugs.length >= maxTools) return;
       if (selectedSlugs.includes(slug)) return;
       setSelectedSlugs((prev) => [...prev, slug]);
     },
-    [selectedSlugs],
+    [selectedSlugs, maxTools],
   );
 
   const removeTool = useCallback((slug: string) => {
@@ -461,15 +464,15 @@ function PlaygroundContent() {
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold text-foreground">
-              Selected Tools ({selectedSlugs.length}/4)
+              Selected Tools ({selectedSlugs.length}/{maxTools})
             </h2>
-            {selectedSlugs.length >= 4 && (
-              <span className="text-xs text-muted">Maximum 4 tools reached</span>
+            {selectedSlugs.length >= maxTools && (
+              <span className="text-xs text-muted">Maximum {maxTools} tools reached</span>
             )}
           </div>
 
           {/* Search input */}
-          {selectedSlugs.length < 4 && (
+          {selectedSlugs.length < maxTools && (
             <div className="mb-6 max-w-md">
               <ToolSearch selectedSlugs={selectedSlugs} onAdd={addTool} />
             </div>
@@ -477,10 +480,15 @@ function PlaygroundContent() {
 
           {/* Selected tool cards */}
           {selectedTools.length > 0 ? (
-            <div className="flex flex-wrap gap-4">
-              {selectedTools.map((tool) => (
-                <ToolCard key={tool.slug} tool={tool} onRemove={() => removeTool(tool.slug)} />
-              ))}
+            <div>
+              <div className="flex flex-wrap gap-4">
+                {selectedTools.map((tool) => (
+                  <ToolCard key={tool.slug} tool={tool} onRemove={() => removeTool(tool.slug)} />
+                ))}
+              </div>
+              {selectedSlugs.length >= maxTools && maxTools < 4 && (
+                <ProNudge feature="Compare up to 4 tools with Pro" />
+              )}
             </div>
           ) : (
             <div className="text-center py-12 border border-dashed border-border rounded-xl bg-surface">

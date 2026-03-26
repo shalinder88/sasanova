@@ -11,6 +11,8 @@ import {
   type PricingPlan,
   type Category,
 } from "@/data/tools";
+import { getLimit } from "@/lib/pro";
+import { ProNudge } from "@/components/ProGate";
 
 /* ═══════════════════════════════════════════════════════════════
    HELPER: calculate cost for a tool at a given scale
@@ -109,7 +111,7 @@ interface SavedScenario {
   hourlyRate?: number;
 }
 
-const MAX_SCENARIOS = 10;
+const MAX_SCENARIOS_HARD = 100; // absolute storage cap
 const STORAGE_KEY = "sasanova_calc_scenarios";
 
 function loadScenarios(): SavedScenario[] {
@@ -118,7 +120,7 @@ function loadScenarios(): SavedScenario[] {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return [];
     const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed.slice(0, MAX_SCENARIOS) : [];
+    return Array.isArray(parsed) ? parsed.slice(0, MAX_SCENARIOS_HARD) : [];
   } catch {
     return [];
   }
@@ -126,7 +128,7 @@ function loadScenarios(): SavedScenario[] {
 
 function saveScenarios(scenarios: SavedScenario[]) {
   if (typeof window === "undefined") return;
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(scenarios.slice(0, MAX_SCENARIOS)));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(scenarios.slice(0, MAX_SCENARIOS_HARD)));
 }
 
 function generateScenarioName(scenario: Omit<SavedScenario, "id" | "name" | "date">): string {
@@ -326,7 +328,9 @@ function SavedScenariosPanel({
     <div className="mb-8 bg-surface border border-border rounded-2xl p-5">
       <h2 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2">
         My Saved Scenarios
-        <span className="text-[10px] text-muted font-normal">({scenarios.length}/{MAX_SCENARIOS})</span>
+        <span className="text-[10px] text-muted font-normal">
+          ({scenarios.length}/{getLimit("calculatorScenarios") === Infinity ? "\u221e" : getLimit("calculatorScenarios")})
+        </span>
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {scenarios.map((s) => (
@@ -1335,7 +1339,7 @@ function CalculatePageContent() {
       ...scenarioData,
     };
 
-    const updated = [newScenario, ...scenarios].slice(0, MAX_SCENARIOS);
+    const updated = [newScenario, ...scenarios].slice(0, MAX_SCENARIOS_HARD);
     setScenarios(updated);
     saveScenarios(updated);
   }, [activeTab, compareState, switchingState, stackState, scenarios]);
@@ -1466,8 +1470,11 @@ function CalculatePageContent() {
         <ActionButtons
           onSave={handleSaveScenario}
           shareUrl={shareUrl}
-          canSave={scenarios.length < MAX_SCENARIOS}
+          canSave={scenarios.length < getLimit("calculatorScenarios")}
         />
+        {scenarios.length >= getLimit("calculatorScenarios") && getLimit("calculatorScenarios") !== Infinity && (
+          <ProNudge feature="Save unlimited scenarios with Pro" />
+        )}
       </div>
 
       {/* Footer Note */}
