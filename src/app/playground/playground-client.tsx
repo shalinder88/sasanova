@@ -357,6 +357,7 @@ function PlaygroundContent() {
   const [copied, setCopied] = useState(false);
   const [savedMessage, setSavedMessage] = useState(false);
   const [urlTruncated, setUrlTruncated] = useState(false);
+  const [restoredFromStorage, setRestoredFromStorage] = useState(false);
   const maxTools = getLimit("playgroundTools");
 
   // Parse URL params on mount
@@ -381,16 +382,41 @@ function PlaygroundContent() {
   useEffect(() => {
     if (searchParams.get("tools")) return;
     try {
-      const saved = localStorage.getItem("sasanova-playground-tools");
+      const saved = localStorage.getItem("sasanova_last_comparison");
       if (saved) {
         const slugs = JSON.parse(saved) as string[];
         const valid = slugs.filter((s) => tools.some((t) => t.slug === s)).slice(0, 4);
-        if (valid.length > 0) setSelectedSlugs(valid);
+        if (valid.length > 0) {
+          setSelectedSlugs(valid);
+          setRestoredFromStorage(true);
+        }
+        return;
+      }
+      // Fallback: check old key
+      const oldSaved = localStorage.getItem("sasanova-playground-tools");
+      if (oldSaved) {
+        const slugs = JSON.parse(oldSaved) as string[];
+        const valid = slugs.filter((s) => tools.some((t) => t.slug === s)).slice(0, 4);
+        if (valid.length > 0) {
+          setSelectedSlugs(valid);
+          setRestoredFromStorage(true);
+        }
       }
     } catch {
       // ignore
     }
   }, [searchParams]);
+
+  // Auto-save selected tools to localStorage whenever they change
+  useEffect(() => {
+    if (selectedSlugs.length > 0) {
+      try {
+        localStorage.setItem("sasanova_last_comparison", JSON.stringify(selectedSlugs));
+      } catch {
+        // ignore
+      }
+    }
+  }, [selectedSlugs]);
 
   const selectedTools = useMemo(
     () =>
@@ -430,13 +456,23 @@ function PlaygroundContent() {
 
   const handleSave = useCallback(() => {
     try {
-      localStorage.setItem("sasanova-playground-tools", JSON.stringify(selectedSlugs));
+      localStorage.setItem("sasanova_last_comparison", JSON.stringify(selectedSlugs));
       setSavedMessage(true);
       setTimeout(() => setSavedMessage(false), 2000);
     } catch {
       // ignore
     }
   }, [selectedSlugs]);
+
+  const handleClear = useCallback(() => {
+    setSelectedSlugs([]);
+    setRestoredFromStorage(false);
+    try {
+      localStorage.removeItem("sasanova_last_comparison");
+    } catch {
+      // ignore
+    }
+  }, []);
 
   // Check if exactly 2 tools have a versus pair
   const versusLink = useMemo(() => {
@@ -466,6 +502,25 @@ function PlaygroundContent() {
 
       {/* Main content */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+        {/* Restored from localStorage banner */}
+        {restoredFromStorage && selectedSlugs.length > 0 && (
+          <div className="mb-6 flex items-center justify-between gap-3 px-4 py-3 bg-accent/5 border border-accent/20 rounded-lg">
+            <p className="text-sm text-foreground">
+              <span className="font-medium">Resume your last comparison</span>
+              <span className="text-muted ml-1">
+                — {selectedSlugs.map((s) => tools.find((t) => t.slug === s)?.name ?? s).join(", ")}
+              </span>
+            </p>
+            <button
+              type="button"
+              onClick={handleClear}
+              className="shrink-0 text-xs font-medium text-muted hover:text-foreground border border-border rounded-md px-3 py-1 transition-colors"
+            >
+              Clear
+            </button>
+          </div>
+        )}
+
         {/* Tool selector */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { tools, versusPairs, getOverallScore } from "@/data/tools";
+import RecentComparisons from "@/components/RecentComparisons";
 
 export const metadata: Metadata = {
   title: "Compare Software Tools",
@@ -48,6 +49,9 @@ export default function ComparePage() {
           </p>
         </div>
       </section>
+
+      {/* Recent Comparisons from localStorage */}
+      <RecentComparisons />
 
       {/* Comparison Grid */}
       <section className="py-14">

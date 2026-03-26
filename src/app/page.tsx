@@ -64,11 +64,11 @@ export default function Home() {
 
             {/* Primary CTAs */}
             <div className="flex flex-wrap justify-center gap-3 mb-12">
-              <Link href="/calculate" className="px-7 py-3 text-sm font-semibold bg-accent text-white rounded-lg hover:brightness-110 transition-all">
-                Calculate Costs
-              </Link>
-              <Link href="/audit" className="px-7 py-3 text-sm font-semibold bg-accent/10 border border-accent text-accent rounded-lg hover:bg-accent/20 transition-all">
+              <Link href="/audit" className="px-7 py-3 text-sm font-semibold bg-accent text-white rounded-lg hover:brightness-110 transition-all">
                 Audit Your Stack
+              </Link>
+              <Link href="/calculate" className="px-7 py-3 text-sm font-semibold bg-accent/10 border border-accent text-accent rounded-lg hover:bg-accent/20 transition-all">
+                Calculate Costs
               </Link>
               <Link href="/compare" className="px-7 py-3 text-sm font-semibold border border-border text-foreground rounded-lg hover:bg-surface transition-colors">
                 Compare Tools
@@ -124,32 +124,32 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
               {
+                title: "Audit your stack",
+                desc: "Input your current tools and get a report showing where you're overpaying and what to replace.",
+                href: "/audit",
+                icon: (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Calculate costs",
+                desc: "Calculate the true cost of migrating: time, effort, productivity loss, and break-even.",
+                href: "/calculate",
+                icon: (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                ),
+              },
+              {
                 title: "Compare tools side by side",
                 desc: "Pick 2-4 tools and compare scores, pricing, and features in real time.",
                 href: "/playground",
                 icon: (
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Build a stack under budget",
-                desc: "Pre-built tool combinations with specific plans, prices, and limits.",
-                href: "#stacks",
-                icon: (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Switch from a tool I use",
-                desc: "Migration guides, switching costs, and savings calculators.",
-                href: "#switching",
-                icon: (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                   </svg>
                 ),
               },
@@ -165,11 +165,11 @@ export default function Home() {
               },
               {
                 title: "Estimate switching cost",
-                desc: "Calculate the true cost of migrating: time, effort, productivity loss, and break-even.",
+                desc: "Migration guides, switching costs, and savings calculators.",
                 href: "/migrate",
                 icon: (
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                   </svg>
                 ),
               },
@@ -213,9 +213,9 @@ export default function Home() {
             {[
               {
                 title: "Newsletter Creator Stack",
-                desc: "beehiiv + Notion + Canva — everything a one-person newsletter needs.",
+                desc: "beehiiv Scale + Kit Creator + Zapier Free — pre-filled audit for newsletter creators.",
                 cost: "Under $150/mo",
-                href: "/guides/newsletter-stack",
+                href: "/audit?preset=newsletter",
                 icon: (
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -224,9 +224,9 @@ export default function Home() {
               },
               {
                 title: "Solo Founder CRM",
-                desc: "Folk or Pipedrive + Tally + Zapier — close deals without the overhead.",
+                desc: "Pipedrive Lite + Zapier Free + beehiiv Free — pre-filled audit for solo founders.",
                 cost: "Under $50/mo",
-                href: "/guides/crm-solo-founder",
+                href: "/audit?preset=crm",
                 icon: (
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -235,9 +235,9 @@ export default function Home() {
               },
               {
                 title: "Automation Under $50/mo",
-                desc: "Make + Notion + beehiiv — automate lead capture, email, and ops.",
+                desc: "Make Core + Zapier Pro — pre-filled audit for automation-focused teams.",
                 cost: "Under $50/mo",
-                href: "/guides/best-automation-tool-solopreneurs",
+                href: "/audit?preset=automation",
                 icon: (
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -246,9 +246,9 @@ export default function Home() {
               },
               {
                 title: "Free Startup Stack",
-                desc: "All-free tools that actually scale — no crippled tiers, no bait-and-switch.",
+                desc: "HubSpot Free + Kit Free + Make Free + Notion Free + Plausible Free — pre-filled audit.",
                 cost: "$0/mo",
-                href: "/guides/best-free-tools-startups",
+                href: "/audit?preset=free",
                 icon: (
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
@@ -268,7 +268,7 @@ export default function Home() {
                 <h3 className="text-sm font-bold mb-1.5 group-hover:text-accent transition-colors">{stack.title}</h3>
                 <p className="text-xs text-muted leading-relaxed flex-1">{stack.desc}</p>
                 <span className="text-xs text-accent font-medium mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                  View stack →
+                  Audit this stack →
                 </span>
               </Link>
             ))}

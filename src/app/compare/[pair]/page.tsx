@@ -13,6 +13,7 @@ import {
 import ScoreBar from "@/components/ScoreBar";
 import FeatureMatrix from "@/components/FeatureMatrix";
 import StickyComparisonCTAs from "@/components/StickyComparisonCTAs";
+import { SaveComparisonPair } from "@/components/ComparisonMemory";
 import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 
 /* ── Static generation ── */
@@ -191,6 +192,8 @@ export default async function ComparisonPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLdB).replace(/</g, "\\u003c") }}
       />
+
+      <SaveComparisonPair pair={pair} nameA={toolA.name} nameB={toolB.name} />
 
       <StickyComparisonCTAs
         tools={[

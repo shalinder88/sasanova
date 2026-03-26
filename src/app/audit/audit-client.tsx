@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useMemo, useCallback, useRef } from "react";
+import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import {
   tools,
   categories,
@@ -11,6 +12,7 @@ import {
   type PricingPlan,
 } from "@/data/tools";
 import { ProNudge } from "@/components/ProGate";
+import { ConfidenceBadge, getConfidenceLevel } from "@/components/ConfidenceBadge";
 import { isProUser } from "@/lib/pro";
 
 /* ── Types ── */
@@ -118,6 +120,53 @@ function fmt(n: number): string {
 const STORAGE_KEY = "sasanova_audit";
 const MAX_TOOLS = 15;
 
+/* ── Preset configurations ── */
+
+const PRESETS: Record<string, { tools: { slug: string; plan: string; teamSize: number }[] }> = {
+  newsletter: {
+    tools: [
+      { slug: "beehiiv", plan: "Scale", teamSize: 1 },
+      { slug: "convertkit", plan: "Creator", teamSize: 1 },
+      { slug: "zapier", plan: "Free", teamSize: 1 },
+    ],
+  },
+  crm: {
+    tools: [
+      { slug: "pipedrive", plan: "Lite", teamSize: 1 },
+      { slug: "zapier", plan: "Free", teamSize: 1 },
+      { slug: "beehiiv", plan: "Launch", teamSize: 1 },
+    ],
+  },
+  automation: {
+    tools: [
+      { slug: "make", plan: "Core", teamSize: 1 },
+      { slug: "zapier", plan: "Professional", teamSize: 1 },
+    ],
+  },
+  free: {
+    tools: [
+      { slug: "hubspot-crm", plan: "Free", teamSize: 1 },
+      { slug: "convertkit", plan: "Free", teamSize: 1 },
+      { slug: "make", plan: "Free", teamSize: 1 },
+      { slug: "notion", plan: "Free", teamSize: 1 },
+      { slug: "plausible", plan: "Free", teamSize: 1 },
+    ],
+  },
+};
+
+function presetToEntries(presetKey: string): StackEntry[] | null {
+  const preset = PRESETS[presetKey];
+  if (!preset) return null;
+  return preset.tools
+    .filter((p) => tools.some((t) => t.slug === p.slug))
+    .map((p) => ({
+      id: generateId(),
+      toolSlug: p.slug,
+      planName: p.plan,
+      teamSize: p.teamSize,
+    }));
+}
+
 /* ── Saved audits ── */
 
 interface SavedAudit {
@@ -217,13 +266,22 @@ function getMigrationGuideLink(fromTool: Tool, toTool: Tool): string | null {
    ══════════════════════════════════════════ */
 
 export default function AuditClient() {
+  const searchParams = useSearchParams();
+
   /* ── State ── */
   const [entries, setEntries] = useState<StackEntry[]>(() => {
     // Check URL params on mount
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
+      // Check for shared audit URL
       const s = params.get("s");
       if (s) return decodeAuditFromUrl(s);
+      // Check for preset
+      const preset = params.get("preset");
+      if (preset) {
+        const presetEntries = presetToEntries(preset);
+        if (presetEntries && presetEntries.length > 0) return presetEntries;
+      }
     }
     return [{ id: generateId(), toolSlug: "", planName: "", teamSize: 1 }];
   });
@@ -233,6 +291,19 @@ export default function AuditClient() {
   const [savedNotice, setSavedNotice] = useState("");
   const [shareUrl, setShareUrl] = useState("");
   const resultsRef = useRef<HTMLDivElement>(null);
+
+  /* ── Auto-show results for presets ── */
+  useEffect(() => {
+    const preset = searchParams.get("preset");
+    if (preset && PRESETS[preset]) {
+      // Small delay to ensure entries are set
+      const timer = setTimeout(() => {
+        setShowResults(true);
+        setTimeout(() => resultsRef.current?.scrollIntoView({ behavior: "smooth" }), 100);
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [searchParams]);
 
   /* ── Tool search ── */
   const filteredTools = useMemo(() => {
@@ -629,6 +700,7 @@ export default function AuditClient() {
                 {auditResults.map((result) => {
                   const mBadge = migrationBadge(result.migrationDifficulty);
                   const alt = result.cheaperAlternative;
+                  const confidence = getConfidenceLevel(result.tool);
                   return (
                     <div
                       key={result.entry.id}
@@ -636,7 +708,7 @@ export default function AuditClient() {
                     >
                       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
                         <div>
-                          <div className="flex items-center gap-2 mb-1">
+                          <div className="flex items-center gap-2 flex-wrap mb-1">
                             <h3 className="text-lg font-bold text-foreground">
                               {result.tool.name}
                             </h3>
@@ -645,6 +717,7 @@ export default function AuditClient() {
                             >
                               {overpayLabel(result.overpayLevel)}
                             </span>
+                            <ConfidenceBadge level={confidence} />
                           </div>
                           <p className="text-sm text-muted">
                             {result.plan.name} plan &middot; {result.entry.teamSize}{" "}
@@ -661,32 +734,79 @@ export default function AuditClient() {
                         </div>
                       </div>
 
-                      {/* Alternative recommendation */}
-                      {alt && (
-                        <div className="bg-success/5 border border-success/20 rounded-lg p-4 mb-4">
-                          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                            <div>
-                              <p className="text-sm font-semibold text-success mb-0.5">
-                                Switch to {alt.tool.name} ({alt.plan.name})
-                              </p>
-                              <p className="text-xs text-muted">
-                                {alt.plan.billingModel === "per_seat" ? "Per seat" : "Flat"} pricing
-                                &middot; {fmt(alt.monthlyCost)}/mo at your scale
-                              </p>
+                      {/* Itemized replacement card */}
+                      {alt ? (
+                        <div className="bg-surface border border-border rounded-lg p-4 mb-4 space-y-3">
+                          {/* Header: current tool */}
+                          <div className="flex items-center gap-2">
+                            <span className="w-2.5 h-2.5 rounded-full bg-red-400 shrink-0" />
+                            <p className="text-sm font-bold text-foreground">
+                              {result.tool.name} {result.plan.name} ({fmt(result.monthlyCost)}/mo)
+                            </p>
+                          </div>
+
+                          {/* Replacement recommendation */}
+                          <div className="pl-5 space-y-2">
+                            <p className="text-sm text-muted">
+                              <span className="text-foreground font-medium">Replace with:</span>{" "}
+                              {alt.tool.name} {alt.plan.name} ({fmt(alt.monthlyCost)}/mo)
+                            </p>
+
+                            {/* Cost delta */}
+                            <p className="text-sm">
+                              {alt.monthlySavings > 0 ? (
+                                <span className="text-success font-semibold">
+                                  Save {fmt(alt.monthlySavings)}/mo ({fmt(alt.annualSavings)}/yr)
+                                </span>
+                              ) : (
+                                <span className="text-yellow-400 font-semibold">
+                                  {fmt(Math.abs(alt.monthlySavings))}/mo more
+                                </span>
+                              )}
+                            </p>
+
+                            {/* Switching context from the tool data */}
+                            {result.tool.switchingTriggers && result.tool.switchingTriggers.length > 0 && (
+                              <div className="text-xs text-muted space-y-0.5">
+                                {result.tool.switchingTriggers.slice(0, 2).map((trigger, i) => (
+                                  <p key={i} className="flex items-start gap-1.5">
+                                    <span className="text-accent shrink-0 mt-0.5">&#9654;</span>
+                                    {trigger}
+                                  </p>
+                                ))}
+                              </div>
+                            )}
+
+                            {/* Badges row: migration + confidence */}
+                            <div className="flex flex-wrap items-center gap-2 pt-1">
+                              <span
+                                className={`inline-flex items-center px-2 py-1 rounded-md text-[11px] font-medium ${mBadge.color}`}
+                              >
+                                Migration: {mBadge.label}
+                              </span>
+                              <ConfidenceBadge level={getConfidenceLevel(alt.tool)} />
                             </div>
-                            <div className="text-right">
-                              <p className="text-lg font-extrabold text-success">
-                                Save {fmt(alt.monthlySavings)}/mo
-                              </p>
-                              <p className="text-xs text-success/80">
-                                {fmt(alt.annualSavings)}/yr
-                              </p>
+
+                            {/* Action links */}
+                            <div className="flex flex-wrap items-center gap-3 text-xs pt-1">
+                              <Link
+                                href={getComparisonLink(result.tool, alt.tool)}
+                                className="text-accent hover:underline font-medium"
+                              >
+                                Compare head-to-head &rarr;
+                              </Link>
+                              {getMigrationGuideLink(result.tool, alt.tool) && (
+                                <Link
+                                  href={getMigrationGuideLink(result.tool, alt.tool)!}
+                                  className="text-accent hover:underline font-medium"
+                                >
+                                  Migration guide &rarr;
+                                </Link>
+                              )}
                             </div>
                           </div>
                         </div>
-                      )}
-
-                      {!alt && (
+                      ) : (
                         <div className="bg-success/5 border border-success/20 rounded-lg p-4 mb-4">
                           <p className="text-sm text-success font-medium">
                             This is the most cost-effective option in its category at your scale.
@@ -708,26 +828,6 @@ export default function AuditClient() {
                           <span className="inline-flex items-center px-2 py-1 rounded-md font-medium text-cyan bg-cyan/10">
                             Free Tier Available
                           </span>
-                        )}
-
-                        {/* Links */}
-                        {alt && (
-                          <>
-                            <Link
-                              href={getComparisonLink(result.tool, alt.tool)}
-                              className="text-accent hover:underline"
-                            >
-                              View Comparison
-                            </Link>
-                            {getMigrationGuideLink(result.tool, alt.tool) && (
-                              <Link
-                                href={getMigrationGuideLink(result.tool, alt.tool)!}
-                                className="text-accent hover:underline"
-                              >
-                                Migration Guide
-                              </Link>
-                            )}
-                          </>
                         )}
 
                         <Link

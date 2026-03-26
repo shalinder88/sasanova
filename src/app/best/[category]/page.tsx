@@ -8,6 +8,7 @@ import {
   getOverallScore,
 } from "@/data/tools";
 import ScoreBar from "@/components/ScoreBar";
+import { ConfidenceBadge, getConfidenceLevel } from "@/components/ConfidenceBadge";
 import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 import { generateCategoryThesis } from "@/lib/category-thesis";
 
@@ -253,6 +254,7 @@ export default async function BestCategoryPage({
                                 Top Pick
                               </span>
                             )}
+                            <ConfidenceBadge level={getConfidenceLevel(tool)} />
                           </div>
                           <p className="text-sm text-muted mt-0.5">{tool.tagline}</p>
                         </div>

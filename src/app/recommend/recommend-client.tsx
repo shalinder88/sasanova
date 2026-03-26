@@ -12,6 +12,7 @@ import {
 } from "@/data/tools";
 import { isProUser } from "@/lib/pro";
 import { ProNudge } from "@/components/ProGate";
+import { ConfidenceBadge, getConfidenceLevel } from "@/components/ConfidenceBadge";
 
 /* ═══════════════════════════════════════════════════════════════
    TYPES
@@ -556,7 +557,10 @@ export default function RecommendClient() {
                       <p className="text-xs text-muted uppercase tracking-wider mb-1">
                         {rec.category.name}
                       </p>
-                      <h3 className="text-lg font-bold">{rec.tool.name}</h3>
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <h3 className="text-lg font-bold">{rec.tool.name}</h3>
+                        <ConfidenceBadge level={getConfidenceLevel(rec.tool)} />
+                      </div>
                       <p className="text-sm text-muted mt-1">
                         {rec.tool.tagline}
                       </p>
