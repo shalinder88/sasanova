@@ -6,6 +6,7 @@ import {
   getToolBySlug,
   getAlternatives,
   getOverallScore,
+  versusPairs,
   type Tool,
   type ToolScore,
 } from "@/data/tools";
@@ -310,6 +311,22 @@ export default async function AlternativesPage({
                         >
                           Full review
                         </Link>
+                        {(() => {
+                          const pair = versusPairs.find(
+                            (v) =>
+                              (v.slugA === slug && v.slugB === alt.slug) ||
+                              (v.slugA === alt.slug && v.slugB === slug)
+                          );
+                          if (!pair) return null;
+                          return (
+                            <Link
+                              href={`/compare/${pair.slugA}-vs-${pair.slugB}`}
+                              className="inline-flex items-center px-4 py-2 text-xs font-semibold rounded-lg border border-accent/30 text-accent hover:bg-accent/10 transition-colors"
+                            >
+                              Compare head-to-head &rarr;
+                            </Link>
+                          );
+                        })()}
                       </div>
                     </div>
                   </div>

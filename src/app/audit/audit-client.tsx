@@ -275,6 +275,14 @@ export default function AuditClient() {
   };
 
   const handleSave = () => {
+    const existing = getSavedAudits();
+    const isPro = isProUser();
+    if (!isPro && existing.length >= 1) {
+      const confirmed = window.confirm(
+        "You already have a saved audit. Saving a new one will replace it. Continue?"
+      );
+      if (!confirmed) return;
+    }
     saveAudit(entries);
     setSavedNotice("Audit saved!");
     setTimeout(() => setSavedNotice(""), 3000);

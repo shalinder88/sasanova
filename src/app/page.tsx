@@ -105,33 +105,6 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          DASHBOARD NUDGE — Drive return-visitor engagement
-          ═══════════════════════════════════════════════════════ */}
-      <section className="py-8 border-b border-border bg-accent/5">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/dashboard"
-            className="flex items-center justify-between gap-4 rounded-xl border border-accent/25 bg-background p-5 hover:border-accent/50 transition-colors group"
-          >
-            <div className="flex items-center gap-3">
-              <span className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center">
-                <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </span>
-              <div>
-                <p className="text-sm font-semibold">Track your SaaS spending</p>
-                <p className="text-xs text-muted">Set up your dashboard in 2 minutes — monitor budgets, find savings, and optimize your stack.</p>
-              </div>
-            </div>
-            <svg className="w-5 h-5 text-muted group-hover:text-accent transition-colors flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════
           SECTION 1 — Decision Scenarios
           Route users by intent, not by browsing
           ═══════════════════════════════════════════════════════ */}

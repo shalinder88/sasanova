@@ -57,7 +57,9 @@ function getDataHours(volume: "light" | "medium" | "heavy"): number {
 }
 
 function getOnboardingFee(tool: Tool): number {
-  // Known onboarding fees for specific tools
+  // TODO: These onboarding fees are hardcoded estimates and need periodic
+  // verification against vendor pricing pages. Last verified: 2025-Q4.
+  // Consider moving to tools.ts as an optional `onboardingFee` field.
   const fees: Record<string, number> = {
     "hubspot-crm": 3000,
     salesforce: 5000,
@@ -458,9 +460,17 @@ export default function MigrateClient() {
                 <span className="font-mono">{formatCurrency(results.productivityCost)}</span>
               </div>
               {results.onboardingFee > 0 && (
-                <div className="flex justify-between items-center text-sm">
-                  <span className="text-muted">{toTool.name} onboarding fee</span>
-                  <span className="font-mono">{formatCurrency(results.onboardingFee)}</span>
+                <div>
+                  <div className="flex justify-between items-center text-sm">
+                    <span className="text-muted">{toTool.name} onboarding fee</span>
+                    <span className="font-mono">{formatCurrency(results.onboardingFee)}</span>
+                  </div>
+                  <p className="text-xs text-muted mt-1">
+                    Fees are estimates.{" "}
+                    <a href={`/pricing/${toTool.slug}`} className="text-accent hover:underline">
+                      Verify with vendor.
+                    </a>
+                  </p>
                 </div>
               )}
               <div className="border-t-2 border-accent/30 pt-4 flex justify-between items-center">

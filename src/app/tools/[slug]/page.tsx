@@ -337,18 +337,18 @@ export default async function ToolProfilePage({ params }: Props) {
             <Link href="/about/methodology" className="text-[10px] text-accent hover:underline">How we score →</Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 max-w-2xl">
-            <ScoreBar label="Value" value={tool.scores.value} />
-            <ScoreBar label="Ease of Use" value={tool.scores.ease} />
-            <ScoreBar label="Power" value={tool.scores.power} />
-            <ScoreBar label="Setup Friction" value={tool.scores.setupFriction} />
-            <ScoreBar
+            <div className="hover-score-row"><ScoreBar label="Value" value={tool.scores.value} /></div>
+            <div className="hover-score-row"><ScoreBar label="Ease of Use" value={tool.scores.ease} /></div>
+            <div className="hover-score-row"><ScoreBar label="Power" value={tool.scores.power} /></div>
+            <div className="hover-score-row"><ScoreBar label="Setup Friction" value={tool.scores.setupFriction} /></div>
+            <div className="hover-score-row"><ScoreBar
               label="Migration Ease"
               value={tool.scores.migrationDifficulty}
-            />
-            <ScoreBar
+            /></div>
+            <div className="hover-score-row"><ScoreBar
               label="Transparency"
               value={tool.scores.transparency}
-            />
+            /></div>
           </div>
           <p className="text-[10px] text-muted mt-3">
             Scores are editorial assessments on a 1–10 scale. Overall score uses a weighted formula: Value (25%), Power (20%), Transparency (20%), Ease (15%), Setup (10%), Migration (10%).{" "}
