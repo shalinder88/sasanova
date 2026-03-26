@@ -205,7 +205,7 @@ export default async function PricingDetailPage({
                       key={plan.name}
                       className={`table-row-hover ${plan.highlighted ? "bg-accent-light/50 border-l-2 border-l-accent" : ""}`}
                     >
-                      <td className="px-4 py-3 font-medium whitespace-nowrap">
+                      <td className="px-4 py-3 hover-cell font-medium whitespace-nowrap">
                         {plan.name}
                         {plan.highlighted && (
                           <span className="ml-1.5 text-[10px] font-semibold text-accent bg-accent-light px-1.5 py-0.5 rounded-full">
@@ -213,7 +213,7 @@ export default async function PricingDetailPage({
                           </span>
                         )}
                       </td>
-                      <td className="px-4 py-3 whitespace-nowrap">
+                      <td className="px-4 py-3 hover-cell whitespace-nowrap">
                         {plan.priceMonthly !== null ? (
                           plan.priceMonthly === 0 ? (
                             <span className="text-success font-semibold">Free</span>
@@ -224,7 +224,7 @@ export default async function PricingDetailPage({
                           <span className="text-muted">Contact sales</span>
                         )}
                       </td>
-                      <td className="px-4 py-3 whitespace-nowrap">
+                      <td className="px-4 py-3 hover-cell whitespace-nowrap">
                         {plan.priceAnnual !== null ? (
                           plan.priceAnnual === 0 ? (
                             <span className="text-success font-semibold">Free</span>
@@ -235,15 +235,15 @@ export default async function PricingDetailPage({
                           <span className="text-muted">Custom</span>
                         )}
                       </td>
-                      <td className="px-4 py-3 whitespace-nowrap">
+                      <td className="px-4 py-3 hover-cell whitespace-nowrap">
                         {savings ? (
                           <span className="text-success font-semibold">{savings}</span>
                         ) : (
                           <span className="text-muted">--</span>
                         )}
                       </td>
-                      <td className="px-4 py-3 whitespace-nowrap text-muted">{billingLabel}</td>
-                      <td className="px-4 py-3 text-muted">{plan.limits}</td>
+                      <td className="px-4 py-3 hover-cell whitespace-nowrap text-muted">{billingLabel}</td>
+                      <td className="px-4 py-3 hover-cell text-muted">{plan.limits}</td>
                     </tr>
                   );
                 })}

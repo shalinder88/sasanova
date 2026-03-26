@@ -163,7 +163,7 @@ export default async function BestCategoryPage({
               <h3 className="text-base font-semibold mt-5 mb-3">Common Mistakes</h3>
               <ul className="space-y-2">
                 {thesis.mistakes.map((m, i) => (
-                  <li key={i} className="text-sm text-muted leading-relaxed flex gap-2">
+                  <li key={i} className="text-sm text-muted leading-relaxed flex gap-2 hover-item">
                     <span className="shrink-0 text-accent font-bold">&bull;</span>
                     <span>{m}</span>
                   </li>
