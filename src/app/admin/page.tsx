@@ -238,6 +238,42 @@ function generateLinkedInPosts(): SocialPost[] {
     });
   }
 
+  // 5) Industry stat posts — shareable stats with sources
+  const industryStats: { title: string; body: string }[] = [
+    {
+      title: "73% of SaaS companies raised prices last year",
+      body: `73% of SaaS companies raised prices last year. Average increase: 14.2%. Are you tracking yours?\n\nMost teams don't notice until the renewal hits. By then, you've already lost leverage.\n\nWe track pricing changes across ${tools.length}+ tools so you don't have to: ${SITE}/pricing\n\nWhat's the biggest price increase you've been hit with?`,
+    },
+    {
+      title: "The average company has 8.9 project management tools",
+      body: `The average company has 8.9 project management tools. EIGHT POINT NINE.\n\nThat's not a tools problem. That's a decision problem. Every team picks their own, nobody consolidates, and the bill compounds.\n\nWe help teams audit their stack and find the overlap: ${SITE}/audit\n\nHow many PM tools does your company use? (Be honest.)`,
+    },
+    {
+      title: "Only 14% of software vendors show their prices online",
+      body: `Only 14% of software vendors show their prices online. That's by design.\n\nHidden pricing means:\n- You can't comparison shop\n- They can charge different customers different prices\n- You have no leverage in renewal negotiations\n\nWe independently verify and publish pricing for ${tools.length}+ SaaS tools: ${SITE}\n\nTransparency shouldn't be a competitive advantage. It should be the default.`,
+    },
+    {
+      title: "91% of SaaS contracts auto-renew",
+      body: `91% of SaaS contracts auto-renew. 72% of vendors can change the price whenever they want.\n\nThat means most teams are paying more every year without ever making a conscious decision to do so.\n\nSet a calendar reminder 90 days before every renewal. That's when you have leverage.\n\nOr let us audit your stack and flag what's coming up: ${SITE}/audit\n\nWhat's your renewal tracking process?`,
+    },
+    {
+      title: "90% of companies overpay for SaaS",
+      body: `90% of companies overpay for SaaS. 100% of vendors will give you a discount if you ask.\n\nSeriously. We've never seen a vendor refuse to negotiate when a customer comes prepared with:\n- Competitor pricing\n- Usage data showing underutilization\n- A willingness to switch\n\nWe build the comparison data. You bring it to the negotiation: ${SITE}/compare\n\nWhat's the best discount you've ever negotiated on a SaaS tool?`,
+    },
+  ];
+
+  for (const stat of industryStats) {
+    posts.push({
+      id: `li-stat-${idx++}`,
+      platform: "linkedin",
+      type: "cost-shock",
+      title: stat.title,
+      body: stat.body,
+      url: SITE,
+      charCount: 0,
+    });
+  }
+
   // Update char counts
   for (const p of posts) {
     p.charCount = p.body.length;

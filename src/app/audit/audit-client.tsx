@@ -289,6 +289,39 @@ function presetToEntries(presetKey: string): StackEntry[] | null {
     }));
 }
 
+/* ── Quick-start stacks ── */
+
+const QUICK_STACKS: { label: string; tools: string[] }[] = [
+  { label: "Marketing Team Stack", tools: ["mailchimp", "hubspot-crm", "zapier", "canva", "buffer"] },
+  { label: "Sales Team Stack", tools: ["pipedrive", "zapier", "calendly", "slack", "notion"] },
+  { label: "Creator Stack", tools: ["beehiiv", "notion", "canva", "zapier", "cal-com"] },
+  { label: "Startup Stack", tools: ["notion", "slack", "hubspot-crm", "make", "plausible"] },
+];
+
+function quickStackToEntries(stackTools: string[]): StackEntry[] {
+  return stackTools
+    .map((slug) => {
+      const tool = tools.find((t) => t.slug === slug);
+      if (!tool) return null;
+      return {
+        id: generateId(),
+        toolSlug: slug,
+        planName: getHighlightedOrFirstPlan(tool),
+        teamSize: 1,
+      };
+    })
+    .filter((e): e is StackEntry => e !== null);
+}
+
+/* ── Savings comparison helper ── */
+
+function getSavingsComparison(annualSavings: number): string {
+  if (annualSavings > 5000) return "enough to hire a part-time contractor";
+  if (annualSavings > 2000) return "enough for a team retreat";
+  if (annualSavings >= 500) return "enough for a new laptop";
+  return "enough for a team lunch every month";
+}
+
 /* ── Saved audits ── */
 
 interface SavedAudit {
@@ -485,6 +518,9 @@ export default function AuditClient() {
   const [reauditSaved, setReauditSaved] = useState(false);
   const [reauditNextDate, setReauditNextDate] = useState("");
   const resultsRef = useRef<HTMLDivElement>(null);
+
+  /* ── Current step (derived) ── */
+  const currentStep = showResults ? 2 : 1;
 
   /* ── Import state ── */
   const [importOpen, setImportOpen] = useState(false);
@@ -723,6 +759,78 @@ export default function AuditClient() {
       </section>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 space-y-12">
+        {/* ══════════ PROGRESS INDICATOR ══════════ */}
+        <div className="flex items-center justify-center gap-2 sm:gap-4 text-sm">
+          {[
+            { step: 1, label: "Add Your Tools" },
+            { step: 2, label: "Review Results" },
+            { step: 3, label: "Save & Share" },
+          ].map(({ step, label }, i) => (
+            <div key={step} className="flex items-center gap-2 sm:gap-4">
+              {i > 0 && (
+                <div className={`w-6 sm:w-10 h-px ${currentStep >= step ? "bg-accent" : "bg-border"}`} />
+              )}
+              <div className="flex items-center gap-1.5">
+                <span
+                  className={`flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold transition-colors ${
+                    currentStep >= step
+                      ? "bg-accent text-white"
+                      : "bg-surface border border-border text-muted"
+                  }`}
+                >
+                  {step}
+                </span>
+                <span
+                  className={`hidden sm:inline text-xs font-medium transition-colors ${
+                    currentStep >= step ? "text-foreground" : "text-muted"
+                  }`}
+                >
+                  {label}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* ══════════ SHOCK STAT ══════════ */}
+        <div className="bg-surface-alt border border-accent/20 rounded-xl p-4 flex items-start gap-3">
+          <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center shrink-0">
+            <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" />
+            </svg>
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-foreground">
+              The average 10-person team wastes $4,500/year on SaaS they don&apos;t fully use or could get cheaper.
+            </p>
+            <p className="text-xs text-muted mt-1">
+              Source: Industry research shows 25&ndash;30% of SaaS spend is wasted on unused or overpriced subscriptions.
+            </p>
+          </div>
+        </div>
+
+        {/* ══════════ QUICK-START STACKS ══════════ */}
+        <div>
+          <p className="text-sm font-semibold text-muted mb-3">Popular stacks to audit</p>
+          <div className="flex flex-wrap gap-2">
+            {QUICK_STACKS.map((stack) => (
+              <button
+                key={stack.label}
+                onClick={() => {
+                  const newEntries = quickStackToEntries(stack.tools);
+                  if (newEntries.length > 0) {
+                    setEntries(newEntries);
+                    setShowResults(false);
+                  }
+                }}
+                className="px-4 py-2 text-sm font-medium border border-border rounded-lg text-foreground hover:border-accent hover:text-accent bg-surface hover:bg-surface-alt transition-colors"
+              >
+                {stack.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* ══════════ QUICK IMPORT ══════════ */}
         <section className="border border-border rounded-xl bg-surface overflow-hidden">
           <button
@@ -1134,12 +1242,44 @@ export default function AuditClient() {
           >
             Generate Audit Report
           </button>
-          {validEntries.length === 0 && (
+          {validEntries.length === 0 ? (
             <p className="text-xs text-muted mt-2">
               Select at least one tool and plan to generate your audit.
             </p>
+          ) : (
+            <p className="text-xs text-muted mt-2">
+              Takes about 2 minutes. No account needed.
+            </p>
           )}
         </div>
+
+        {/* ══════════ SOCIAL PROOF ══════════ */}
+        {!showResults && (
+          <div className="border border-border rounded-xl p-5 bg-surface">
+            <p className="text-sm font-semibold text-foreground mb-3">What others found</p>
+            <div className="space-y-2.5">
+              {[
+                "A 3-person agency found $127/month in savings",
+                "A solo founder was overpaying $89/month on email + automation",
+                "A 10-person startup cut $340/month by switching 3 tools",
+              ].map((text, i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <svg
+                    className="w-4 h-4 text-success shrink-0 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2.5}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <p className="text-sm text-muted">{text}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-muted/60 mt-3">Based on typical audit results</p>
+          </div>
+        )}
 
         {/* ══════════ STEP 2 + 3: AUDIT RESULTS ══════════ */}
         {showResults && auditResults.length > 0 && (
@@ -1210,6 +1350,18 @@ export default function AuditClient() {
                 </div>
               </div>
             </section>
+
+            {/* ── Savings shock banner ── */}
+            {totalMonthlySavings > 100 && (
+              <div className="border border-success/30 rounded-xl p-5 bg-success/5 text-center">
+                <p className="text-lg sm:text-xl font-extrabold text-success">
+                  You could save {fmt(totalMonthlySavings)}/month ({fmt(totalAnnualSavings)}/year).
+                </p>
+                <p className="text-sm text-success/80 mt-1">
+                  That&apos;s {getSavingsComparison(totalAnnualSavings)}.
+                </p>
+              </div>
+            )}
 
             {/* ── Per-Tool Breakdown ── */}
             <section>

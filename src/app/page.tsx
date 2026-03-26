@@ -59,7 +59,7 @@ export default function Home() {
               <span className="text-muted">for software.</span>
             </h1>
             <p className="text-base sm:text-lg text-muted leading-relaxed max-w-xl mx-auto mb-10">
-              Compare pricing, calculate switching costs, and find the right stack for your budget.
+              The average 10-person team spends $48,000&ndash;$91,000/year on SaaS &mdash; and wastes up to 30%. We help you find the waste.
             </p>
 
             {/* Primary CTAs */}
@@ -132,7 +132,7 @@ export default function Home() {
             {[
               {
                 title: "Audit your stack",
-                desc: "Audit your SaaS stack and share savings with your team.",
+                desc: "53% of SaaS licenses go unused. Our free audit finds the waste in your stack in 2 minutes.",
                 href: "/audit",
                 icon: (
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>

@@ -211,6 +211,9 @@ export default function ProPage() {
             <p className="text-xs text-muted mt-2">
               $9/mo or $79/yr (save {savingsPercent}%)
             </p>
+            <p className="text-xs text-accent font-medium mt-3 leading-relaxed">
+              Companies that audit their SaaS quarterly save 25&ndash;35%. Pro gives you unlimited audits and monthly re-check reminders.
+            </p>
           </div>
         </div>
       </section>

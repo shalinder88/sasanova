@@ -85,7 +85,7 @@ const steps = [
 const plans = [
   {
     name: "Starter Audit",
-    price: "$299",
+    price: "$149",
     scope: "Up to 10 tools",
     features: [
       "Complete stack analysis",
@@ -180,7 +180,7 @@ export default function ServicesPage() {
           <div className="flex flex-wrap justify-center gap-4 text-sm text-muted mb-10">
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-              $299 &mdash; Full Stack Review
+              $149 &mdash; Full Stack Review
             </span>
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
@@ -197,6 +197,42 @@ export default function ServicesPage() {
           >
             Get Started
           </a>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          WHY THIS MATTERS — data-backed justification
+          ═══════════════════════════════════════════════════════ */}
+      <section className="py-16 lg:py-20 border-b border-border bg-surface">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2 text-center">
+            Why this matters
+          </h2>
+          <p className="text-muted text-sm mb-10 max-w-lg mx-auto text-center">
+            The data behind SaaS overspending is staggering.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="rounded-xl border border-border bg-surface p-5">
+              <p className="text-2xl font-extrabold text-accent mb-2">90%</p>
+              <p className="text-sm text-foreground font-semibold mb-1">of companies overpay for SaaS</p>
+              <p className="text-xs text-muted">Source: Vertice/Everest Group</p>
+            </div>
+            <div className="rounded-xl border border-border bg-surface p-5">
+              <p className="text-2xl font-extrabold text-accent mb-2">12.2%</p>
+              <p className="text-sm text-foreground font-semibold mb-1">SaaS price increase last year &mdash; 5x faster than inflation</p>
+              <p className="text-xs text-muted">Source: Vertice SaaS Inflation Index</p>
+            </div>
+            <div className="rounded-xl border border-border bg-surface p-5">
+              <p className="text-2xl font-extrabold text-accent mb-2">25&ndash;35%</p>
+              <p className="text-sm text-foreground font-semibold mb-1">saved in year one with active SaaS management</p>
+              <p className="text-xs text-muted">Organizations with structured SaaS audits</p>
+            </div>
+            <div className="rounded-xl border border-accent/30 bg-accent/5 p-5">
+              <p className="text-2xl font-extrabold text-success mb-2">$15,000</p>
+              <p className="text-sm text-foreground font-semibold mb-1">in recoverable spend for a 10-person team at $50K/year</p>
+              <p className="text-xs text-muted">That&apos;s the average 30% waste &mdash; 50x the cost of our Starter audit</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -262,8 +298,11 @@ export default function ServicesPage() {
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2">
             Pricing
           </h2>
-          <p className="text-muted text-sm mb-12 max-w-lg">
+          <p className="text-muted text-sm mb-3 max-w-lg">
             One-time payment. No subscription. Money-back guarantee if we don&apos;t find savings.
+          </p>
+          <p className="text-muted text-xs mb-12 max-w-lg">
+            We specialize in email marketing, CRM, and automation tools &mdash; the categories with the highest savings potential.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
