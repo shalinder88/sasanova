@@ -887,12 +887,20 @@ export default function AdminPage() {
             Auto-generated posts from {tools.length} tools,{" "}
             {versusPairs.length} comparisons, {categories.length} categories
           </p>
-          <a
-            href="/admin/expert-audit"
-            className="inline-flex items-center gap-1.5 mt-3 px-4 py-2 text-sm font-medium bg-[var(--accent)] text-white rounded-lg hover:opacity-90 transition-opacity"
-          >
-            Expert Audit Reports &rarr;
-          </a>
+          <div className="flex flex-wrap gap-3 mt-3">
+            <a
+              href="/admin/audit-generator"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium bg-[var(--accent)] text-white rounded-lg hover:opacity-90 transition-opacity"
+            >
+              Audit Report Generator &rarr;
+            </a>
+            <a
+              href="/admin/expert-audit"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium border border-[var(--border)] text-[var(--foreground)] rounded-lg hover:bg-[var(--surface-alt)] transition-colors"
+            >
+              Legacy Audit Tool &rarr;
+            </a>
+          </div>
         </div>
       </header>
 
