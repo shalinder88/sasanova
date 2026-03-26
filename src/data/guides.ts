@@ -2072,4 +2072,127 @@ export const guides: Guide[] = [
     readingTime: "13 min read",
     category: "Seasonal",
   },
+  // ── Workflow Recipe Pages ──
+  {
+    slug: "automate-new-lead-to-crm",
+    title: "Automate New Leads into Your CRM: 3 Methods Compared",
+    description:
+      "Step-by-step recipes for routing form submissions from Typeform or Tally into Pipedrive or HubSpot CRM using Zapier, Make, or native integrations. Exact pricing and step counts for each method.",
+    readingTime: "14 min read",
+    category: "Workflow Recipe",
+  },
+  {
+    slug: "automate-invoice-after-deal-close",
+    title: "Auto-Send Invoices When Deals Close: CRM + Accounting",
+    description:
+      "Step-by-step recipe for triggering invoices in QuickBooks, FreshBooks, or Wave when a deal closes in Pipedrive or HubSpot. Exact pricing for every tool and automation layer.",
+    readingTime: "13 min read",
+    category: "Workflow Recipe",
+  },
+  {
+    slug: "automate-welcome-email-sequence",
+    title: "Set Up a Welcome Email Sequence: 4 Platforms Compared",
+    description:
+      "Build a welcome email sequence on Kit, ActiveCampaign, Mailchimp, or beehiiv. Which tier unlocks automations, exact pricing, and step-by-step setup for each platform.",
+    readingTime: "15 min read",
+    category: "Workflow Recipe",
+  },
+  {
+    slug: "automate-social-from-blog",
+    title: "Auto-Post Blog Content to Social Media: Zapier vs Make vs Buffer",
+    description:
+      "RSS trigger to LinkedIn and X drafts using Zapier, Make, or Buffer. Cost comparison, when Buffer alone is enough, and when you need an automation tool. Exact pricing.",
+    readingTime: "12 min read",
+    category: "Workflow Recipe",
+  },
+  {
+    slug: "automate-meeting-notes-to-crm",
+    title: "Sync Meeting Notes to CRM Automatically",
+    description:
+      "Push meeting transcripts and action items from Grain, Fathom, or Otter.ai into Pipedrive or HubSpot CRM via Zapier, Make, or native integrations. Exact pricing and integration availability.",
+    readingTime: "14 min read",
+    category: "Workflow Recipe",
+  },
+  // ── Industry Benchmark Pages ──
+  {
+    slug: "saas-spending-benchmarks-2026",
+    title: "How Much Do Companies Spend on SaaS? 2026 Benchmarks",
+    description:
+      "SaaS spending benchmarks by business stage: solo founder $0-100/mo, small team $100-500/mo, growing team $500-2K/mo, enterprise $2K+/mo. Backed by verified tool pricing data.",
+    readingTime: "15 min read",
+    category: "Industry Benchmark",
+  },
+  {
+    slug: "email-open-rate-benchmarks-2026",
+    title: "Email Open Rates by Platform: What to Expect in 2026",
+    description:
+      "Email open rate benchmarks by industry and platform. How Apple MPP inflates open rates, platform deliverability differences, and which email tools to choose based on your goals.",
+    readingTime: "13 min read",
+    category: "Industry Benchmark",
+  },
+  {
+    slug: "crm-adoption-rate-benchmarks",
+    title: "CRM Adoption Rates: Why 40% of CRM Projects Fail",
+    description:
+      "CRM adoption benchmarks, common failure reasons, tool complexity correlation, and which CRMs have the highest adoption rates. Includes links to our detailed who-should-NOT analyses.",
+    readingTime: "14 min read",
+    category: "Industry Benchmark",
+  },
+  {
+    slug: "automation-task-volume-benchmarks",
+    title: "How Many Automations Does a Typical Business Run?",
+    description:
+      "Automation task volume benchmarks by business stage: solo 5-20 tasks/week, small team 100-500, growing 1K-5K. Which automation tier you need at each level with exact Zapier, Make, and n8n pricing.",
+    readingTime: "13 min read",
+    category: "Industry Benchmark",
+  },
+  {
+    slug: "saas-churn-by-category",
+    title: "SaaS Tool Churn: Which Categories Have the Highest Switching Rate",
+    description:
+      "SaaS churn analysis by category: email tools have the highest switching rate (pricing sensitivity), CRMs have the lowest (data lock-in), automation tools are in the middle.",
+    readingTime: "13 min read",
+    category: "Industry Benchmark",
+  },
+  // ── Comparison Matrix Pages ──
+  {
+    slug: "all-crm-free-tiers-compared",
+    title: "Every CRM Free Tier in One Table",
+    description:
+      "HubSpot, Zoho CRM, Freshsales, and Attio free tier limits compared side by side. Contact limits, user limits, features included, and what triggers an upgrade. All data from verified sources.",
+    readingTime: "10 min read",
+    category: "Comparison Matrix",
+  },
+  {
+    slug: "all-email-free-tiers-compared",
+    title: "Every Email Platform Free Tier in One Table",
+    description:
+      "Mailchimp, Kit, beehiiv, Brevo, Buttondown, and Substack free tier limits compared. Subscriber limits, send limits, automation availability, and upgrade triggers in one definitive table.",
+    readingTime: "11 min read",
+    category: "Comparison Matrix",
+  },
+  {
+    slug: "all-automation-free-tiers-compared",
+    title: "Every Automation Tool Free Tier in One Table",
+    description:
+      "Zapier, Make, n8n, Pipedream, and Bardeen free tier limits compared. Task/operation counts, active workflow limits, and which free tier gives you the most automation capacity.",
+    readingTime: "11 min read",
+    category: "Comparison Matrix",
+  },
+  {
+    slug: "all-pm-tools-pricing-table",
+    title: "Every PM Tool Pricing at a Glance",
+    description:
+      "Asana, ClickUp, Monday.com, Notion, Linear, Todoist, Basecamp, Trello, and Jira pricing compared in one table. All tiers, all prices, and cost at 10 users for every tool.",
+    readingTime: "12 min read",
+    category: "Comparison Matrix",
+  },
+  {
+    slug: "all-newsletter-platforms-pricing-table",
+    title: "Every Newsletter Platform Pricing at a Glance",
+    description:
+      "Mailchimp, Kit, beehiiv, Substack, Ghost, and Buttondown pricing compared in one table. All tiers, subscriber limits, monetization features, and cost at 1K to 25K subscribers.",
+    readingTime: "12 min read",
+    category: "Comparison Matrix",
+  },
 ];
