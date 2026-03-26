@@ -195,13 +195,13 @@ const rows: RowDef[] = [
     highlight: "high",
   },
   {
-    label: "Setup Friction",
+    label: "Setup Ease (higher = easier)",
     getValue: (t) => t.scores.setupFriction,
     format: (v) => `${v}/10`,
     highlight: "high",
   },
   {
-    label: "Migration Difficulty",
+    label: "Migration Ease (higher = easier)",
     getValue: (t) => t.scores.migrationDifficulty,
     format: (v) => `${v}/10`,
     highlight: "high",
@@ -356,20 +356,26 @@ function PlaygroundContent() {
   const [selectedSlugs, setSelectedSlugs] = useState<string[]>([]);
   const [copied, setCopied] = useState(false);
   const [savedMessage, setSavedMessage] = useState(false);
+  const [urlTruncated, setUrlTruncated] = useState(false);
   const maxTools = getLimit("playgroundTools");
 
   // Parse URL params on mount
   useEffect(() => {
     const param = searchParams.get("tools");
     if (param) {
-      const slugs = param
+      const allSlugs = param
         .split(",")
         .map((s) => s.trim().toLowerCase())
         .filter((s) => tools.some((t) => t.slug === s))
         .slice(0, 4);
-      if (slugs.length > 0) setSelectedSlugs(slugs);
+      if (allSlugs.length > maxTools) {
+        setSelectedSlugs(allSlugs.slice(0, maxTools));
+        setUrlTruncated(true);
+      } else if (allSlugs.length > 0) {
+        setSelectedSlugs(allSlugs);
+      }
     }
-  }, [searchParams]);
+  }, [searchParams, maxTools]);
 
   // Load from localStorage if no URL params
   useEffect(() => {
@@ -486,7 +492,10 @@ function PlaygroundContent() {
                   <ToolCard key={tool.slug} tool={tool} onRemove={() => removeTool(tool.slug)} />
                 ))}
               </div>
-              {selectedSlugs.length >= maxTools && maxTools < 4 && (
+              {urlTruncated && maxTools < 4 && (
+                <ProNudge feature="This comparison was shared with 4 tools. Free accounts can compare 2. Upgrade to Pro to see all 4." />
+              )}
+              {!urlTruncated && selectedSlugs.length >= maxTools && maxTools < 4 && (
                 <ProNudge feature="Compare up to 4 tools with Pro" />
               )}
             </div>

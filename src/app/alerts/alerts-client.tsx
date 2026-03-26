@@ -124,9 +124,25 @@ export default function AlertsClient() {
 
   const alertLimit = getLimit("alertTools");
 
+  /** Count all unique tool slugs covered by both individual watches and category watches */
+  function getTotalWatchedCount(toolSlugs: string[], catSlugs: string[]): number {
+    const allSlugs = new Set(toolSlugs);
+    for (const catSlug of catSlugs) {
+      for (const t of tools) {
+        if (t.categorySlug === catSlug || t.categories.includes(catSlug)) {
+          allSlugs.add(t.slug);
+        }
+      }
+    }
+    return allSlugs.size;
+  }
+
+  const totalWatchedCount = getTotalWatchedCount(watchlist, categoryWatchlist);
+  const isAtLimit = totalWatchedCount >= alertLimit;
+
   function addTool(slug: string) {
     if (watchlist.includes(slug)) return;
-    if (watchlist.length >= alertLimit) return;
+    if (isAtLimit) return;
     const updated = [...watchlist, slug];
     setWatchlist(updated);
     saveWatchlist(updated);
@@ -150,6 +166,9 @@ export default function AlertsClient() {
     if (categoryWatchlist.includes(slug)) {
       updated = categoryWatchlist.filter((s) => s !== slug);
     } else {
+      // Check if adding this category would exceed the limit
+      const newTotal = getTotalWatchedCount(watchlist, [...categoryWatchlist, slug]);
+      if (newTotal > alertLimit && alertLimit !== Infinity) return;
       updated = [...categoryWatchlist, slug];
     }
     setCategoryWatchlist(updated);
@@ -395,6 +414,9 @@ export default function AlertsClient() {
                 </span>
               ))}
             </p>
+            {isAtLimit && alertLimit !== Infinity && (
+              <ProNudge feature={`You're watching ${totalWatchedCount} tools (limit: ${alertLimit}). Upgrade to Pro for unlimited watches.`} />
+            )}
           </div>
         )}
 
@@ -510,7 +532,7 @@ export default function AlertsClient() {
                 </span>
               ))}
             </div>
-            {watchlist.length >= alertLimit && alertLimit !== Infinity && (
+            {isAtLimit && alertLimit !== Infinity && (
               <ProNudge feature="Watch unlimited tools with Pro" />
             )}
           </div>

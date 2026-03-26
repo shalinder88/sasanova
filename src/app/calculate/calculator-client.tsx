@@ -438,7 +438,7 @@ function CompareToolCosts({
 
   const results: CostResult[] = useMemo(() => {
     return categoryTools
-      .map((t) => bestPlanForScale(t, isCRM ? scale : 1, catConfig.type))
+      .map((t) => bestPlanForScale(t, scale, catConfig.type))
       .filter((r): r is CostResult => r !== null)
       .sort((a, b) => (a.monthlyTotal ?? Infinity) - (b.monthlyTotal ?? Infinity));
   }, [categoryTools, scale, catConfig.type, isCRM]);

@@ -90,6 +90,7 @@ export default function MigrateClient() {
   const [dataVolume, setDataVolume] = useState<"light" | "medium" | "heavy">("medium");
   const [calculated, setCalculated] = useState(false);
   const [savedAt, setSavedAt] = useState<string | null>(null);
+  const [shareCopied, setShareCopied] = useState(false);
 
   // Sync preselectedFrom on param change
   useEffect(() => {
@@ -190,7 +191,8 @@ export default function MigrateClient() {
     url.searchParams.set("rate", String(hourlyRate));
     url.searchParams.set("volume", dataVolume);
     navigator.clipboard.writeText(url.toString());
-    alert("Link copied to clipboard!");
+    setShareCopied(true);
+    setTimeout(() => setShareCopied(false), 2000);
   }
 
   // Load URL params on mount
@@ -376,6 +378,12 @@ export default function MigrateClient() {
                   {formatCurrency(Math.abs(results.annualDiff))}/yr
                 </span>
               </div>
+              <p className="text-xs text-muted mt-3">
+                Costs based on the recommended plan tier. Your actual plan may differ.{" "}
+                <Link href={`/pricing/${toTool.slug}`} className="text-accent hover:underline">
+                  See full pricing &rarr;
+                </Link>
+              </p>
             </div>
           </section>
 
@@ -611,7 +619,7 @@ export default function MigrateClient() {
               {/* Link to relevant comparison */}
               <div className="flex flex-wrap gap-3">
                 <Link
-                  href={`/compare/${fromSlug}-vs-${toSlug}`}
+                  href={`/compare/${[fromSlug, toSlug].sort().join("-vs-")}`}
                   className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-accent bg-accent-light rounded-lg hover:bg-accent hover:text-white transition-colors"
                 >
                   Full comparison: {fromTool.name} vs {toTool.name} →
@@ -639,7 +647,7 @@ export default function MigrateClient() {
                 onClick={handleShare}
                 className="px-5 py-2.5 text-sm font-semibold bg-surface-alt border border-border rounded-lg hover:border-accent transition-colors"
               >
-                Copy Share Link
+                {shareCopied ? "Copied!" : "Copy Share Link"}
               </button>
               {savedAt && (
                 <span className="text-xs text-success">Saved at {savedAt}</span>

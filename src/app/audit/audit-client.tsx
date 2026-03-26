@@ -165,8 +165,37 @@ function getComparisonLink(toolA: Tool, toolB: Tool): string {
   return `/compare/${slugs[0]}-vs-${slugs[1]}`;
 }
 
-function getMigrationGuideLink(fromTool: Tool, toTool: Tool): string {
-  return `/guides/migrate-${fromTool.slug}-to-${toTool.slug}`;
+/** Known migration guide paths — only render links for guides that actually exist */
+const KNOWN_MIGRATION_GUIDES = new Set([
+  "migrate-mailchimp-to-beehiiv",
+  "migrate-mailchimp-to-kit",
+  "migrate-substack-to-beehiiv",
+  "migrate-zapier-to-make",
+  "migrate-zapier-to-n8n",
+  "migrate-salesforce-to-hubspot",
+  "migrate-from-mailchimp",
+  "migrate-spreadsheet-to-crm",
+  "switch-from-mailchimp-to-activecampaign",
+  "switch-from-activecampaign-to-kit",
+  "switch-from-hubspot-to-pipedrive",
+  "switch-from-kit-to-beehiiv",
+  "switch-from-make-to-zapier",
+  "switch-from-notion-to-clickup",
+  "switch-from-pipedrive-to-hubspot",
+  "switch-from-mailchimp-to-brevo",
+  "switch-from-monday-to-asana",
+  "switch-from-jira-to-linear",
+  "switch-from-zoho-to-pipedrive",
+  "switch-from-trello-to-notion",
+  "switch-from-asana-to-clickup",
+]);
+
+function getMigrationGuideLink(fromTool: Tool, toTool: Tool): string | null {
+  const migrateSlug = `migrate-${fromTool.slug}-to-${toTool.slug}`;
+  if (KNOWN_MIGRATION_GUIDES.has(migrateSlug)) return `/guides/${migrateSlug}`;
+  const switchSlug = `switch-from-${fromTool.slug}-to-${toTool.slug}`;
+  if (KNOWN_MIGRATION_GUIDES.has(switchSlug)) return `/guides/${switchSlug}`;
+  return null;
 }
 
 /* ══════════════════════════════════════════
@@ -676,12 +705,14 @@ export default function AuditClient() {
                             >
                               View Comparison
                             </Link>
-                            <Link
-                              href={getMigrationGuideLink(result.tool, alt.tool)}
-                              className="text-accent hover:underline"
-                            >
-                              Migration Guide
-                            </Link>
+                            {getMigrationGuideLink(result.tool, alt.tool) && (
+                              <Link
+                                href={getMigrationGuideLink(result.tool, alt.tool)!}
+                                className="text-accent hover:underline"
+                              >
+                                Migration Guide
+                              </Link>
+                            )}
                           </>
                         )}
 
