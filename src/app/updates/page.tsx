@@ -100,11 +100,11 @@ export default function UpdatesPage() {
           </p>
           <div className="grid gap-3 sm:grid-cols-2">
             <Link
-              href="/updates/week-15-april-2026"
+              href="/updates/week-15-march-2026"
               className="block rounded-lg border border-border bg-background p-4 hover:border-accent transition-colors"
             >
               <span className="text-sm font-semibold text-foreground">
-                Week 15 &mdash; April 8–14, 2026
+                Week 15 &mdash; March 31–April 6, 2026
               </span>
               <span className="block text-xs text-muted mt-1">
                 Email deliverability comparison, CRM reporting, cost threshold
@@ -112,11 +112,11 @@ export default function UpdatesPage() {
               </span>
             </Link>
             <Link
-              href="/updates/week-14-april-2026"
+              href="/updates/week-14-march-2026"
               className="block rounded-lg border border-border bg-background p-4 hover:border-accent transition-colors"
             >
               <span className="text-sm font-semibold text-foreground">
-                Week 14 &mdash; April 1–7, 2026
+                Week 14 &mdash; March 25–31, 2026
               </span>
               <span className="block text-xs text-muted mt-1">
                 34-tool pricing audit, 19 corrections, annual cost comparisons

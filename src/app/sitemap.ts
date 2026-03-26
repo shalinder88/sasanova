@@ -85,8 +85,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const weeklyDigestSlugs = [
     "week-12-march-2026",
     "week-13-march-2026",
-    "week-14-april-2026",
-    "week-15-april-2026",
+    "week-14-march-2026",
+    "week-15-march-2026",
   ];
   const weeklyDigestPages: MetadataRoute.Sitemap = weeklyDigestSlugs.map(
     (slug) => ({

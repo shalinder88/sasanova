@@ -87,6 +87,13 @@ function titleCase(s: string): string {
     .join(" ");
 }
 
+/** Strip trailing product-type words and dangling "&" so body text reads naturally */
+function cleanCategoryLabel(name: string): string {
+  return name
+    .replace(/\s+(Tools?|Software|Platforms?|Apps?|Solutions?|Suites?|Builders?|Assistants?|Storage|Management|Services?|Surveys?|Contracts?|Commerce)$/i, '')
+    .replace(/\s+&\s*$/, '');
+}
+
 export function generateCategoryThesis(
   categorySlug: string,
   categoryName: string,
@@ -148,7 +155,7 @@ export function generateCategoryThesis(
   // Build paragraphs
   const paragraphs: string[] = [];
 
-  let p1 = `There are ${toolCount} ${categoryName.toLowerCase()} tools worth evaluating in 2026.`;
+  let p1 = `There are ${toolCount} ${cleanCategoryLabel(categoryName).toLowerCase()} tools worth evaluating in 2026.`;
   if (freeCount > 0) {
     p1 += ` ${freeCount} of them offer a free tier, so you can test before committing.`;
   }

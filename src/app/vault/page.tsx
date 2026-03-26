@@ -131,12 +131,6 @@ export default function VaultPage() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="py-10 border-t border-border">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <EmailCapture variant="hero" />
-        </div>
-      </section>
     </>
   );
 }

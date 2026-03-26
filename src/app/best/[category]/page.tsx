@@ -21,7 +21,9 @@ const CUSTOM_TITLES: Record<string, string> = {
 
 /** Strip trailing product-type words so we never produce "Tools Tools" or "Assistants tool" */
 function cleanName(name: string): string {
-  return name.replace(/\s+(Tools?|Software|Platforms?|Apps?|Solutions?|Suites?|Builders?|Assistants?|Storage|Management|Services?|Surveys?|Contracts?|Commerce)$/i, '');
+  return name
+    .replace(/\s+(Tools?|Software|Platforms?|Apps?|Solutions?|Suites?|Builders?|Assistants?|Storage|Management|Services?|Surveys?|Contracts?|Commerce)$/i, '')
+    .replace(/\s+&\s*$/, '');
 }
 
 function bestTitle(name: string, slug?: string): string {

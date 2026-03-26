@@ -40,7 +40,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 /** Strip trailing product-type words so we never produce "Tools Tools" or "Assistants tool" */
 function cleanCategoryName(name: string): string {
-  return name.replace(/\s+(Tools?|Software|Platforms?|Apps?|Solutions?|Suites?|Builders?|Assistants?|Storage|Management|Services?|Surveys?|Contracts?|Commerce)$/i, '');
+  return name
+    .replace(/\s+(Tools?|Software|Platforms?|Apps?|Solutions?|Suites?|Builders?|Assistants?|Storage|Management|Services?|Surveys?|Contracts?|Commerce)$/i, '')
+    .replace(/\s+&\s*$/, '');
 }
 
 function pricingSummary(tool: Tool): string {

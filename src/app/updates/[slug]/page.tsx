@@ -122,11 +122,11 @@ const weeklyDigests: DigestWeek[] = [
     ],
   },
   {
-    slug: "week-14-april-2026",
+    slug: "week-14-march-2026",
     weekNumber: 14,
-    month: "April",
+    month: "March",
     year: 2026,
-    dateRange: "April 1 – 7, 2026",
+    dateRange: "March 25 – 31, 2026",
     pricingChanges: [
       {
         text: "Pricing verification sweep completed: 34 tools audited, 19 corrections applied across all clusters",
@@ -170,11 +170,11 @@ const weeklyDigests: DigestWeek[] = [
     ],
   },
   {
-    slug: "week-15-april-2026",
+    slug: "week-15-march-2026",
     weekNumber: 15,
-    month: "April",
+    month: "March",
     year: 2026,
-    dateRange: "April 8 – 14, 2026",
+    dateRange: "March 31 – April 6, 2026",
     pricingChanges: [
       {
         text: "Cost threshold pages published: exact price points where HubSpot, Mailchimp, and Zapier stop being the cheaper option",
