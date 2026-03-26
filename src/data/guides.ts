@@ -1949,4 +1949,127 @@ export const guides: Guide[] = [
     readingTime: "14 min read",
     category: "Buyer Mistakes",
   },
+  // ── Checklist Pages ──
+  {
+    slug: "saas-audit-checklist",
+    title: "The SaaS Audit Checklist: Review Your Stack in 30 Minutes",
+    description:
+      "20-point checklist: are you paying for unused seats, redundant tools, wrong tiers, unnecessary add-ons? Examples with exact tools.ts prices. Potential savings by category.",
+    readingTime: "16 min read",
+    category: "Checklist",
+  },
+  {
+    slug: "crm-migration-checklist",
+    title: "CRM Migration Checklist: 15 Steps to Switch Without Losing Data",
+    description:
+      "Pre-migration audit, data export, field mapping, import, testing, go-live. Tool-specific notes for HubSpot ($20/seat Starter), Pipedrive ($14/seat Lite), Salesforce ($25/seat Starter Suite).",
+    readingTime: "18 min read",
+    category: "Checklist",
+  },
+  {
+    slug: "email-platform-migration-checklist",
+    title: "Email Platform Migration Checklist: 12 Steps for Zero Subscriber Loss",
+    description:
+      "Export, clean, import, domain verification, warmup, test send. Tool-specific for Mailchimp ($13/mo Essentials), Kit ($39/mo Creator), beehiiv ($49/mo Scale), Brevo ($9/mo Starter).",
+    readingTime: "15 min read",
+    category: "Checklist",
+  },
+  {
+    slug: "automation-migration-checklist",
+    title: "Automation Migration Checklist: Rebuild Your Workflows Without Breaking Things",
+    description:
+      "Audit existing flows, map to new platform, rebuild priority order, test, parallel run. Zapier ($29.99/mo) to Make ($10.59/mo) specific steps with exact savings math.",
+    readingTime: "16 min read",
+    category: "Checklist",
+  },
+  {
+    slug: "new-tool-evaluation-checklist",
+    title: "How to Evaluate Any SaaS Tool in 15 Minutes",
+    description:
+      "10-point framework: pricing transparency, free tier quality, data export, API, integrations, support quality, billing model, hidden costs, switching difficulty, vendor trajectory.",
+    readingTime: "12 min read",
+    category: "Checklist",
+  },
+  // ── Glossary / Explainer Pages ──
+  {
+    slug: "saas-pricing-terms-glossary",
+    title: "SaaS Pricing Glossary: 25 Terms You Need to Know",
+    description:
+      "Per-seat, per-contact, MAU, MRR, ARR, churn, usage-based, freemium, reverse trial, and 16 more terms. Each with real tool examples and exact prices from Pipedrive, Mailchimp, Zapier, and others.",
+    readingTime: "14 min read",
+    category: "Glossary",
+  },
+  {
+    slug: "what-is-saas-lock-in",
+    title: "What Is SaaS Lock-In? How It Works and How to Avoid It",
+    description:
+      "5 types of vendor lock-in (data, workflow, integration, knowledge, contract) with real examples from HubSpot, Salesforce, Zapier, and Notion. Exact switching costs and avoidance strategies.",
+    readingTime: "14 min read",
+    category: "Explainer",
+  },
+  {
+    slug: "what-is-per-seat-pricing",
+    title: "Per-Seat Pricing Explained: Why It Gets Expensive Fast",
+    description:
+      "How per-seat pricing works with cost projections at 5/10/25/50 seats. Freshsales Growth ($11/seat) to Salesforce Enterprise ($175/seat). When flat-rate (Basecamp $349/mo) is cheaper.",
+    readingTime: "13 min read",
+    category: "Explainer",
+  },
+  {
+    slug: "what-is-usage-based-pricing",
+    title: "Usage-Based Pricing Explained: Tasks, Operations, Events, Credits",
+    description:
+      "Zapier tasks vs Make operations vs n8n executions vs Pipedream credits. Exact counting differences: a 5-step workflow costs 4 Zapier tasks, 5 Make ops, or 1 n8n execution. Side-by-side cost comparison.",
+    readingTime: "14 min read",
+    category: "Explainer",
+  },
+  {
+    slug: "what-is-contact-based-pricing",
+    title: "Contact-Based Pricing Explained: Why Your Email Bill Keeps Growing",
+    description:
+      "How contact counting works (Mailchimp counts unsubscribes). Cost projections at 1K to 50K contacts: Mailchimp Standard ($20-$385/mo) vs beehiiv Scale ($49/mo flat) vs Brevo Standard ($18/mo).",
+    readingTime: "13 min read",
+    category: "Explainer",
+  },
+  // ── Seasonal / Timely Pages ──
+  {
+    slug: "best-saas-deals-annual-billing",
+    title: "Annual Billing Deals: How Much You Save on Every Tool",
+    description:
+      "Monthly vs annual savings for top 20 tools. Pipedrive Growth saves $120/seat/year. Zapier Professional saves $120/year. ClickUp Unlimited saves $36/member/year. Sample 5-person stack saves $1,009/year.",
+    readingTime: "14 min read",
+    category: "Seasonal",
+  },
+  {
+    slug: "saas-tools-that-raised-prices-recently",
+    title: "SaaS Tools That Raised Prices in 2025-2026",
+    description:
+      "Documented increases: Bardeen 890% ($10 to $99/mo), Ghost 100% ($9 to $18/mo), Salesforce 6%, Typeform 56%, Close CRM 96%, Mailchimp free tier 87.5% reduction. Exact old vs new prices with alternatives.",
+    readingTime: "15 min read",
+    category: "Pricing Intelligence",
+  },
+  {
+    slug: "saas-tools-with-lifetime-deals",
+    title: "SaaS Tools With Lifetime Deals in 2026",
+    description:
+      "TidyCal $29 one-time (vs Calendly $144/year), Carrd $19/year (vs Squarespace $192/year). 3-year cost comparison showing $403-$2,081 in savings. Risks of lifetime deals and when they're worth it.",
+    readingTime: "12 min read",
+    category: "Seasonal",
+  },
+  {
+    slug: "saas-tools-going-up-in-price",
+    title: "Which SaaS Tools Are Likely to Raise Prices Next?",
+    description:
+      "Data-informed predictions based on 5 warning signs: free tier reductions, plan restructures, AI add-ons, acquisitions, competitor consolidation. Mailchimp, Notion, Zapier, ClickUp analyzed.",
+    readingTime: "14 min read",
+    category: "Pricing Intelligence",
+  },
+  {
+    slug: "best-saas-black-friday-strategy",
+    title: "SaaS Black Friday Strategy: What to Buy and What to Skip",
+    description:
+      "Which tools typically offer annual discounts (Semrush, ActiveCampaign, Pipedrive). When to lock in annual billing. What NOT to buy on impulse. Pre-Black Friday preparation checklist.",
+    readingTime: "13 min read",
+    category: "Seasonal",
+  },
 ];
