@@ -76,6 +76,9 @@ export default function Home() {
               <Link href="#switching" className="px-7 py-3 text-sm font-semibold border border-border text-foreground rounded-lg hover:bg-surface transition-colors">
                 See Switching Costs
               </Link>
+              <Link href="/recommend" className="px-7 py-3 text-sm font-semibold bg-success/15 border border-success/40 text-success rounded-lg hover:bg-success/25 transition-all">
+                Get Recommendations &rarr;
+              </Link>
             </div>
 
             {/* Stats bar — secondary, smaller */}
@@ -127,9 +130,9 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               {
-                title: "Choose between two tools",
-                desc: "Side-by-side scoring, pricing, and switching analysis for any pair.",
-                href: "/compare",
+                title: "Compare tools side by side",
+                desc: "Pick 2-4 tools and compare scores, pricing, and features in real time.",
+                href: "/playground",
                 icon: (
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />

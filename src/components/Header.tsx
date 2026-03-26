@@ -8,10 +8,12 @@ import SearchBar from "./SearchBar";
 const nav = [
   { href: "/tools", label: "Tools Directory" },
   { href: "/compare", label: "Compare" },
+  { href: "/playground", label: "Playground" },
   { href: "/best", label: "Best Of" },
   { href: "/alternatives", label: "Alternatives" },
   { href: "/pricing", label: "Pricing" },
   { href: "/guides", label: "Guides" },
+  { href: "/recommend", label: "Recommend" },
   { href: "/alerts", label: "Alerts" },
   { href: "/vault", label: "Vault" },
 ];
