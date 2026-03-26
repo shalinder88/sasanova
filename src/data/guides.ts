@@ -2479,4 +2479,127 @@ export const guides: Guide[] = [
     readingTime: "18 min read",
     category: "Year in Review",
   },
+  // ── Alternatives Deep-Dive ──
+  {
+    slug: "hubspot-alternatives-for-small-teams",
+    title: "HubSpot Alternatives for Teams Under 10: What Actually Works",
+    description:
+      "Pipedrive Lite at $14/seat, Freshsales Growth at $11/seat, Zoho Standard at $20/seat, Close Essentials at $49/seat. When each CRM beats HubSpot for small teams — with exact pricing math.",
+    readingTime: "16 min read",
+    category: "Alternatives Deep-Dive",
+  },
+  {
+    slug: "mailchimp-alternatives-for-newsletters",
+    title: "Mailchimp Alternatives for Newsletter Creators: Real Cost Comparison",
+    description:
+      "Kit free for 10K subscribers, beehiiv free for 2,500, Substack takes 10%, Brevo free for 100K contacts, Ghost at $18/mo. Real cost at 5K, 10K, and 25K subscribers.",
+    readingTime: "15 min read",
+    category: "Alternatives Deep-Dive",
+  },
+  {
+    slug: "zapier-alternatives-for-agencies",
+    title: "Zapier Alternatives for Agencies: Multi-Client Automation",
+    description:
+      "Make Core at $10.59/mo, n8n self-hosted at $0, Pipedream at $29/mo. Per-client cost modeling for agencies managing 10+ client automations — with exact pricing math.",
+    readingTime: "17 min read",
+    category: "Alternatives Deep-Dive",
+  },
+  {
+    slug: "salesforce-alternatives-for-growing-teams",
+    title: "Salesforce Alternatives for 10-50 Person Teams",
+    description:
+      "HubSpot Professional at $890/mo, Pipedrive Growth at $39/seat, Zoho Enterprise at $50/seat. Total cost comparison at 25 and 50 users — with exact pricing math.",
+    readingTime: "18 min read",
+    category: "Alternatives Deep-Dive",
+  },
+  {
+    slug: "slack-alternatives-for-remote-teams",
+    title: "Slack Alternatives for Remote Teams: Beyond the 90-Day Limit",
+    description:
+      "Discord free with unlimited history, Microsoft Teams at $4/user, Loom for async video. When each beats Slack for remote teams — with exact pricing and feature comparisons.",
+    readingTime: "14 min read",
+    category: "Alternatives Deep-Dive",
+  },
+  // ── Budget Constraint ──
+  {
+    slug: "run-a-business-on-zero-saas-budget",
+    title: "Running a Business on $0/Month SaaS: Every Free Tool You Need",
+    description:
+      "A complete business stack using only free tiers. HubSpot CRM (unlimited contacts), beehiiv (2,500 subs), Zapier (100 tasks), Notion (unlimited pages), Canva (2M+ templates). Exact limits for every tool.",
+    readingTime: "20 min read",
+    category: "Budget Constraint",
+  },
+  {
+    slug: "saas-stack-for-bootstrapped-startups",
+    title: "The Bootstrapped Startup Stack: Maximum Value Under $50/Month",
+    description:
+      "The tightest useful SaaS stack for under $50/month. Make Core $10.59, beehiiv Scale $49, Pipedrive Lite $14/seat, Brevo Starter $9. Exact prices and what you get.",
+    readingTime: "14 min read",
+    category: "Budget Constraint",
+  },
+  {
+    slug: "when-to-stop-using-free-tools",
+    title: "When to Stop Using Free Tools: The Upgrade Trigger Guide",
+    description:
+      "For each SaaS category, the exact moment free costs more than paid. Zapier Free breaks at 100 tasks. HubSpot Free breaks at 1 pipeline. beehiiv at 2,500 subs. Exact prices and limits.",
+    readingTime: "16 min read",
+    category: "Budget Constraint",
+  },
+  {
+    slug: "negotiate-saas-pricing",
+    title: "How to Negotiate SaaS Pricing: What Actually Works",
+    description:
+      "Annual billing saves 15-25%. Multi-seat gets 10-20% off. Competitor quotes unlock 15-30% discounts. Renewal timing matters. Real discount percentages from actual SaaS negotiations.",
+    readingTime: "15 min read",
+    category: "Budget Constraint",
+  },
+  {
+    slug: "saas-spending-audit-template",
+    title: "SaaS Spending Audit: Find $500+/Month in Wasted Subscriptions",
+    description:
+      "Step-by-step audit process. Common waste patterns: duplicate tools, unused seats, missed annual billing. Which categories to cut first. Real price examples.",
+    readingTime: "16 min read",
+    category: "Budget Constraint",
+  },
+  // ── Trend Analysis ──
+  {
+    slug: "saas-pricing-trends-2026",
+    title: "SaaS Pricing Trends for 2026: What's Getting Cheaper and What's Not",
+    description:
+      "Automation is getting cheaper (Make Core $10.59/mo). CRM free tiers are shrinking. AI features add $5-$20/seat. Newsletter platforms hold steady. The full 2026 pricing landscape.",
+    readingTime: "16 min read",
+    category: "Trend Analysis",
+  },
+  {
+    slug: "ai-features-pricing-trends",
+    title: "The AI Tax: How Much Are SaaS Tools Charging for AI Features?",
+    description:
+      "Loom AI adds $6/user. Grammarly Pro AI costs $30/mo. Notion AI is bundled. Freshsales includes Freddy AI at $11/seat. The exact AI premium every major SaaS tool charges in 2026.",
+    readingTime: "14 min read",
+    category: "Trend Analysis",
+  },
+  {
+    slug: "free-tier-erosion-tracker",
+    title: "Free Tier Erosion: Which Tools Are Quietly Removing Free Plans",
+    description:
+      "Mailchimp shrank free to 250 contacts. Slack added the 90-day limit. Close removed free entirely. Which free tiers are shrinking, which are stable, and which are actually growing.",
+    readingTime: "13 min read",
+    category: "Trend Analysis",
+  },
+  {
+    slug: "per-seat-vs-flat-rate-trend",
+    title: "Per-Seat vs Flat-Rate: Which Pricing Model Is Winning in 2026?",
+    description:
+      "CRM is per-seat (Pipedrive $14-$99/seat). Automation is flat-rate (Make $10.59/mo). Newsletter is flat-rate (beehiiv $49/mo). Which model wins for each category — with exact prices.",
+    readingTime: "14 min read",
+    category: "Trend Analysis",
+  },
+  {
+    slug: "saas-consolidation-trend-2026",
+    title: "SaaS Consolidation: Which Tools Are Merging and What It Means for Your Stack",
+    description:
+      "Loom acquired by Atlassian. Mailchimp by Intuit. Slack by Salesforce. How consolidation changes pricing, features, and your switching costs. What to watch in 2026.",
+    readingTime: "15 min read",
+    category: "Trend Analysis",
+  },
 ];
