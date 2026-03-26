@@ -82,6 +82,7 @@ export const FREE_LIMITS = {
   alertTools: 3,
   playgroundTools: 2,
   savedComparisons: 3,
+  auditImportTools: 5,
 } as const;
 
 export const PRO_LIMITS = {
@@ -89,6 +90,7 @@ export const PRO_LIMITS = {
   alertTools: Infinity,
   playgroundTools: 4,
   savedComparisons: Infinity,
+  auditImportTools: Infinity,
 } as const;
 
 /** Get the appropriate limit based on Pro status */

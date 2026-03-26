@@ -200,11 +200,31 @@ export default function CalculatePage() {
         fallback={
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
             <div className="text-center mb-12">
+              <h2 className="text-2xl font-bold tracking-tight mb-3">
+                Interactive Cost Calculator
+              </h2>
               <p className="text-base sm:text-lg text-muted max-w-2xl mx-auto">
-                Loading interactive calculator...
+                Select your tools, team size, and billing cycle to see exact monthly and annual costs.
+                Compare up to 4 tools side-by-side with real pricing data.
               </p>
             </div>
-            <div className="animate-pulse bg-surface border border-border rounded-2xl h-96" />
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+              <div className="border border-border rounded-xl p-5 bg-surface">
+                <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-1">Step 1</p>
+                <p className="text-sm font-semibold text-foreground">Choose Your Tools</p>
+                <p className="text-xs text-muted mt-1">Pick from {tools.length}+ verified SaaS tools across email, CRM, automation, and more.</p>
+              </div>
+              <div className="border border-border rounded-xl p-5 bg-surface">
+                <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-1">Step 2</p>
+                <p className="text-sm font-semibold text-foreground">Set Team Size &amp; Billing</p>
+                <p className="text-xs text-muted mt-1">Adjust seats and toggle monthly vs annual billing to see how costs scale.</p>
+              </div>
+              <div className="border border-border rounded-xl p-5 bg-surface">
+                <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-1">Step 3</p>
+                <p className="text-sm font-semibold text-foreground">Compare &amp; Save</p>
+                <p className="text-xs text-muted mt-1">See total stack cost, annual savings from yearly billing, and cheaper alternatives.</p>
+              </div>
+            </div>
           </div>
         }
       >

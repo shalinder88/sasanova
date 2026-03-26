@@ -63,7 +63,7 @@ export default function Home() {
             </p>
 
             {/* Primary CTAs */}
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
+            <div className="flex flex-wrap justify-center gap-3 mb-4">
               <Link href="/audit" className="px-7 py-3 text-sm font-semibold bg-accent text-white rounded-lg hover:brightness-110 transition-all">
                 Audit Your Stack
               </Link>
@@ -74,6 +74,7 @@ export default function Home() {
                 Compare Tools
               </Link>
             </div>
+            <p className="text-xs text-muted/70 mb-12">Join teams saving thousands on SaaS</p>
 
             {/* Stats bar — secondary, smaller */}
             <div className="flex flex-wrap justify-center gap-6 text-sm">
@@ -125,7 +126,7 @@ export default function Home() {
             {[
               {
                 title: "Audit your stack",
-                desc: "Input your current tools and get a report showing where you're overpaying and what to replace.",
+                desc: "Audit your SaaS stack and share savings with your team.",
                 href: "/audit",
                 icon: (
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>

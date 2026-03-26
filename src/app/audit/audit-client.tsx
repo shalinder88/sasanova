@@ -11,9 +11,9 @@ import {
   type Tool,
   type PricingPlan,
 } from "@/data/tools";
-import { ProNudge } from "@/components/ProGate";
+import { ProNudge, ProBadge } from "@/components/ProGate";
 import { ConfidenceBadge, getConfidenceLevel } from "@/components/ConfidenceBadge";
-import { isProUser } from "@/lib/pro";
+import { isProUser, getLimit } from "@/lib/pro";
 
 /* ── Types ── */
 
@@ -115,6 +115,128 @@ function getOverpayLevel(
 
 function fmt(n: number): string {
   return "$" + n.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+}
+
+/* ── Import helpers ── */
+
+interface ImportMatch {
+  inputLine: string;
+  tool: Tool | null;
+  planName: string;
+  teamSize: number;
+}
+
+function fuzzyMatchTool(input: string): Tool | null {
+  const clean = input.trim().toLowerCase();
+  if (!clean) return null;
+  // Exact slug match
+  let match = tools.find((t) => t.slug === clean);
+  if (match) return match;
+  // Exact name match (case-insensitive)
+  match = tools.find((t) => t.name.toLowerCase() === clean);
+  if (match) return match;
+  // Partial name match
+  match = tools.find(
+    (t) =>
+      t.name.toLowerCase().includes(clean) ||
+      clean.includes(t.name.toLowerCase())
+  );
+  if (match) return match;
+  // Vendor name match
+  match = tools.find((t) => t.vendor.toLowerCase() === clean);
+  if (match) return match;
+  return null;
+}
+
+function getHighlightedOrFirstPlan(tool: Tool): string {
+  const highlighted = tool.pricing.find((p) => p.highlighted);
+  return highlighted ? highlighted.name : tool.pricing[0]?.name ?? "";
+}
+
+function matchPlanName(tool: Tool, rawPlan: string): string {
+  const clean = rawPlan.trim().toLowerCase();
+  if (!clean) return getHighlightedOrFirstPlan(tool);
+  // Exact match
+  const exact = tool.pricing.find((p) => p.name.toLowerCase() === clean);
+  if (exact) return exact.name;
+  // Partial match
+  const partial = tool.pricing.find(
+    (p) =>
+      p.name.toLowerCase().includes(clean) ||
+      clean.includes(p.name.toLowerCase())
+  );
+  if (partial) return partial.name;
+  return getHighlightedOrFirstPlan(tool);
+}
+
+function parseSpreadsheetPaste(text: string): ImportMatch[] {
+  const lines = text.split(/\n/).filter((l) => l.trim());
+  return lines.map((line) => {
+    // Split by tab, or by 2+ spaces
+    const parts = line.includes("\t")
+      ? line.split("\t").map((p) => p.trim())
+      : line.split(/\s{2,}/).map((p) => p.trim());
+    const toolName = parts[0] ?? "";
+    const rawPlan = parts[1] ?? "";
+    const rawCost = parts[2] ?? "";
+    const rawTeam = parts[3] ?? "";
+    const tool = fuzzyMatchTool(toolName);
+    const planName = tool ? matchPlanName(tool, rawPlan) : "";
+    const teamSize = Math.max(1, parseInt(rawTeam) || 1);
+    return { inputLine: line.trim(), tool, planName, teamSize };
+  });
+}
+
+function parseToolNamesPaste(text: string): ImportMatch[] {
+  const lines = text.split(/\n/).filter((l) => l.trim());
+  return lines.map((line) => {
+    const tool = fuzzyMatchTool(line.trim());
+    const planName = tool ? getHighlightedOrFirstPlan(tool) : "";
+    return { inputLine: line.trim(), tool, planName, teamSize: 1 };
+  });
+}
+
+function parseCSV(text: string): ImportMatch[] {
+  const lines = text.split(/\n/).filter((l) => l.trim());
+  if (lines.length === 0) return [];
+
+  // Try to detect headers in first line
+  const firstLine = lines[0].toLowerCase();
+  let hasHeaders = false;
+  let toolCol = 0;
+  let planCol = -1;
+  let teamCol = -1;
+
+  if (
+    firstLine.includes("tool") ||
+    firstLine.includes("name") ||
+    firstLine.includes("software")
+  ) {
+    hasHeaders = true;
+    const headers = lines[0].split(",").map((h) => h.trim().toLowerCase());
+    toolCol = headers.findIndex(
+      (h) => h.includes("tool") || h.includes("name") || h.includes("software")
+    );
+    planCol = headers.findIndex((h) => h.includes("plan") || h.includes("tier"));
+    teamCol = headers.findIndex(
+      (h) => h.includes("team") || h.includes("seat") || h.includes("user")
+    );
+    if (toolCol < 0) toolCol = 0;
+  }
+
+  const dataLines = hasHeaders ? lines.slice(1) : lines;
+  return dataLines
+    .filter((l) => l.trim())
+    .map((line) => {
+      const cols = line.split(",").map((c) => c.trim().replace(/^["']|["']$/g, ""));
+      const toolName = cols[toolCol] ?? "";
+      const rawPlan = planCol >= 0 ? cols[planCol] ?? "" : "";
+      const rawTeam = teamCol >= 0 ? cols[teamCol] ?? "" : "";
+      const tool = fuzzyMatchTool(toolName);
+      const planName = tool ? matchPlanName(tool, rawPlan) : "";
+      const teamSize = Math.max(1, parseInt(rawTeam) || 1);
+      return { inputLine: line.trim(), tool, planName, teamSize };
+    });
 }
 
 const STORAGE_KEY = "sasanova_audit";
@@ -222,6 +344,73 @@ function decodeAuditFromUrl(param: string): StackEntry[] {
   }
 }
 
+/* ── Report URL encoding (richer data for standalone report page) ── */
+
+interface ReportData {
+  tools: {
+    slug: string;
+    plan: string;
+    teamSize: number;
+    cost: number;
+    altSlug: string | null;
+    altPlan: string | null;
+    altCost: number | null;
+    savings: number;
+  }[];
+  totalSpend: number;
+  totalSavings: number;
+  auditScore: number;
+}
+
+function encodeReportUrl(
+  results: AuditResult[],
+  totalSpend: number,
+  totalSavings: number,
+  score: number
+): string {
+  const data: ReportData = {
+    tools: results.map((r) => ({
+      slug: r.tool.slug,
+      plan: r.plan.name,
+      teamSize: r.entry.teamSize,
+      cost: r.monthlyCost,
+      altSlug: r.cheaperAlternative?.tool.slug ?? null,
+      altPlan: r.cheaperAlternative?.plan.name ?? null,
+      altCost: r.cheaperAlternative?.monthlyCost ?? null,
+      savings: r.cheaperAlternative?.monthlySavings ?? 0,
+    })),
+    totalSpend,
+    totalSavings,
+    auditScore: score,
+  };
+  const encoded = btoa(JSON.stringify(data));
+  return `${window.location.origin}/audit/report?data=${encodeURIComponent(encoded)}`;
+}
+
+/* ── Re-audit reminder storage ── */
+
+const REAUDIT_STORAGE_KEY = "sasanova_reaudit_reminder";
+
+interface ReauditReminder {
+  email: string;
+  auditData: StackEntry[];
+  savedAt: string;
+  nextCheck: string;
+}
+
+function saveReauditReminder(email: string, entries: StackEntry[]): ReauditReminder {
+  const now = new Date();
+  const nextCheck = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
+  const reminder: ReauditReminder = {
+    email,
+    auditData: entries,
+    savedAt: now.toISOString(),
+    nextCheck: nextCheck.toISOString(),
+  };
+  localStorage.setItem(REAUDIT_STORAGE_KEY, JSON.stringify(reminder));
+  return reminder;
+}
+
 /* ── Comparison / Migration guide link helpers ── */
 
 function getComparisonLink(toolA: Tool, toolB: Tool): string {
@@ -290,7 +479,20 @@ export default function AuditClient() {
   const [activeSearchIdx, setActiveSearchIdx] = useState<number | null>(null);
   const [savedNotice, setSavedNotice] = useState("");
   const [shareUrl, setShareUrl] = useState("");
+  const [reportUrl, setReportUrl] = useState("");
+  const [reportCopied, setReportCopied] = useState(false);
+  const [reauditEmail, setReauditEmail] = useState("");
+  const [reauditSaved, setReauditSaved] = useState(false);
+  const [reauditNextDate, setReauditNextDate] = useState("");
   const resultsRef = useRef<HTMLDivElement>(null);
+
+  /* ── Import state ── */
+  const [importOpen, setImportOpen] = useState(false);
+  const [importTab, setImportTab] = useState<"spreadsheet" | "names" | "csv">("names");
+  const [importText, setImportText] = useState("");
+  const [importMatches, setImportMatches] = useState<ImportMatch[]>([]);
+  const [importParsed, setImportParsed] = useState(false);
+  const csvFileRef = useRef<HTMLInputElement>(null);
 
   /* ── Auto-show results for presets ── */
   useEffect(() => {
@@ -337,6 +539,63 @@ export default function AuditClient() {
       return prev.filter((e) => e.id !== id);
     });
   }, []);
+
+  /* ── Import handlers ── */
+  const handleImportParse = useCallback(() => {
+    let matches: ImportMatch[];
+    if (importTab === "spreadsheet") {
+      matches = parseSpreadsheetPaste(importText);
+    } else {
+      matches = parseToolNamesPaste(importText);
+    }
+    setImportMatches(matches);
+    setImportParsed(true);
+  }, [importTab, importText]);
+
+  const handleCSVUpload = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        const text = ev.target?.result as string;
+        if (!text) return;
+        const matches = parseCSV(text);
+        setImportMatches(matches);
+        setImportParsed(true);
+        setImportTab("csv");
+      };
+      reader.readAsText(file);
+      // Reset file input so the same file can be re-selected
+      if (csvFileRef.current) csvFileRef.current.value = "";
+    },
+    []
+  );
+
+  const handleImportConfirm = useCallback(() => {
+    const matched = importMatches.filter((m) => m.tool !== null);
+    const isPro = isProUser();
+    const limit = getLimit("auditImportTools");
+    const toAdd = matched.slice(0, Math.min(limit, MAX_TOOLS));
+    if (toAdd.length === 0) return;
+
+    const newEntries: StackEntry[] = toAdd.map((m) => ({
+      id: generateId(),
+      toolSlug: m.tool!.slug,
+      planName: m.planName,
+      teamSize: m.teamSize,
+    }));
+
+    setEntries(newEntries);
+    setImportOpen(false);
+    setImportParsed(false);
+    setImportText("");
+    setImportMatches([]);
+
+    // Auto-trigger results
+    setShowResults(true);
+    setTimeout(() => resultsRef.current?.scrollIntoView({ behavior: "smooth" }), 100);
+  }, [importMatches]);
 
   /* ── Compute audit results ── */
   const validEntries = entries.filter((e) => e.toolSlug && e.planName);
@@ -464,6 +723,271 @@ export default function AuditClient() {
       </section>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 space-y-12">
+        {/* ══════════ QUICK IMPORT ══════════ */}
+        <section className="border border-border rounded-xl bg-surface overflow-hidden">
+          <button
+            onClick={() => setImportOpen((v) => !v)}
+            className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-surface-alt transition-colors"
+          >
+            <div>
+              <h2 className="text-base font-bold text-foreground flex items-center gap-2">
+                Quick Import — Paste Your SaaS List
+                <svg
+                  className={`w-4 h-4 text-muted transition-transform ${importOpen ? "rotate-180" : ""}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </h2>
+              <p className="text-sm text-muted mt-0.5">
+                Copy from your spreadsheet, bank statement, or just type tool names
+              </p>
+            </div>
+          </button>
+
+          {importOpen && (
+            <div className="px-5 pb-5 space-y-4 border-t border-border pt-4">
+              {/* Tab selector */}
+              <div className="flex gap-1 bg-background rounded-lg p-1 w-fit">
+                <button
+                  onClick={() => {
+                    setImportTab("names");
+                    setImportParsed(false);
+                    setImportMatches([]);
+                  }}
+                  className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-colors ${
+                    importTab === "names"
+                      ? "bg-accent text-white"
+                      : "text-muted hover:text-foreground"
+                  }`}
+                >
+                  Tool Names
+                </button>
+                <button
+                  onClick={() => {
+                    setImportTab("spreadsheet");
+                    setImportParsed(false);
+                    setImportMatches([]);
+                  }}
+                  className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-colors ${
+                    importTab === "spreadsheet"
+                      ? "bg-accent text-white"
+                      : "text-muted hover:text-foreground"
+                  }`}
+                >
+                  Spreadsheet
+                </button>
+                <button
+                  onClick={() => {
+                    setImportTab("csv");
+                    setImportParsed(false);
+                    setImportMatches([]);
+                  }}
+                  className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-colors flex items-center gap-1.5 ${
+                    importTab === "csv"
+                      ? "bg-accent text-white"
+                      : "text-muted hover:text-foreground"
+                  }`}
+                >
+                  CSV Upload <ProBadge />
+                </button>
+              </div>
+
+              {/* Paste textareas */}
+              {importTab === "names" && (
+                <div className="space-y-3">
+                  <textarea
+                    value={importText}
+                    onChange={(e) => {
+                      setImportText(e.target.value);
+                      setImportParsed(false);
+                    }}
+                    placeholder={`Mailchimp\nZapier\nHubSpot\nNotion\nSlack\nbeehiiv`}
+                    rows={6}
+                    className="w-full px-4 py-3 text-sm font-mono bg-background border border-border rounded-lg text-foreground placeholder:text-muted/40 focus:outline-none focus:ring-1 focus:ring-accent resize-y"
+                  />
+                  <div className="flex items-center gap-3">
+                    <button
+                      onClick={handleImportParse}
+                      disabled={!importText.trim()}
+                      className="px-5 py-2 text-sm font-semibold bg-accent text-white rounded-lg hover:brightness-110 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                    >
+                      Import
+                    </button>
+                    <span className="text-xs text-muted">
+                      One tool per line &middot; Free up to {getLimit("auditImportTools")} tools
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              {importTab === "spreadsheet" && (
+                <div className="space-y-3">
+                  <textarea
+                    value={importText}
+                    onChange={(e) => {
+                      setImportText(e.target.value);
+                      setImportParsed(false);
+                    }}
+                    placeholder={`Mailchimp\tStandard\t20\nZapier\tProfessional\t29.99\nHubSpot CRM\tStarter\t20\nNotion\tPlus\t12`}
+                    rows={6}
+                    className="w-full px-4 py-3 text-sm font-mono bg-background border border-border rounded-lg text-foreground placeholder:text-muted/40 focus:outline-none focus:ring-1 focus:ring-accent resize-y"
+                  />
+                  <div className="flex items-center gap-3">
+                    <button
+                      onClick={handleImportParse}
+                      disabled={!importText.trim()}
+                      className="px-5 py-2 text-sm font-semibold bg-accent text-white rounded-lg hover:brightness-110 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                    >
+                      Import
+                    </button>
+                    <span className="text-xs text-muted">
+                      Tab-separated: Tool, Plan, Cost &middot; Free up to{" "}
+                      {getLimit("auditImportTools")} tools
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              {importTab === "csv" && (
+                <div className="space-y-3">
+                  {isProUser() ? (
+                    <>
+                      <div className="border-2 border-dashed border-border rounded-lg p-6 text-center bg-background">
+                        <p className="text-sm text-muted mb-3">
+                          Upload a .csv file with columns: Tool, Plan, Cost, Team Size
+                        </p>
+                        <label className="inline-flex items-center gap-2 px-5 py-2 text-sm font-semibold bg-accent text-white rounded-lg hover:brightness-110 transition-all cursor-pointer">
+                          Choose CSV File
+                          <input
+                            ref={csvFileRef}
+                            type="file"
+                            accept=".csv,text/csv"
+                            onChange={handleCSVUpload}
+                            className="sr-only"
+                          />
+                        </label>
+                        <p className="text-xs text-muted mt-2">
+                          Flexible column detection — headers are optional
+                        </p>
+                      </div>
+                    </>
+                  ) : (
+                    <ProNudge
+                      feature="CSV file upload is a Pro feature — upgrade for instant stack imports"
+                      ctaLabel="Upgrade to Pro"
+                    />
+                  )}
+                </div>
+              )}
+
+              {/* Import results */}
+              {importParsed && importMatches.length > 0 && (
+                <div className="space-y-3">
+                  <h3 className="text-sm font-semibold text-foreground">Import Results</h3>
+                  <div className="border border-border rounded-lg bg-background divide-y divide-border max-h-60 overflow-y-auto">
+                    {importMatches.map((m, i) => (
+                      <div
+                        key={i}
+                        className="flex items-center gap-3 px-4 py-2.5 text-sm"
+                      >
+                        {m.tool ? (
+                          <>
+                            <svg
+                              className="w-4 h-4 text-success flex-shrink-0"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              strokeWidth={2.5}
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M5 13l4 4L19 7"
+                              />
+                            </svg>
+                            <span className="font-medium text-foreground">
+                              {m.tool.name}
+                            </span>
+                            <span className="text-xs text-muted">
+                              {m.planName} plan
+                              {m.teamSize > 1 ? ` · ${m.teamSize} seats` : ""}
+                            </span>
+                          </>
+                        ) : (
+                          <>
+                            <svg
+                              className="w-4 h-4 text-yellow-400 flex-shrink-0"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              strokeWidth={2.5}
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                              />
+                            </svg>
+                            <span className="text-yellow-400">
+                              Could not match: &ldquo;{m.inputLine}&rdquo;
+                            </span>
+                          </>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Summary + confirm */}
+                  {(() => {
+                    const matched = importMatches.filter((m) => m.tool !== null);
+                    const unmatched = importMatches.filter((m) => m.tool === null);
+                    const limit = getLimit("auditImportTools");
+                    const isPro = isProUser();
+                    const needsUpgrade = !isPro && matched.length > limit;
+                    return (
+                      <div className="space-y-3">
+                        <p className="text-xs text-muted">
+                          {matched.length} matched, {unmatched.length} unmatched
+                          {needsUpgrade && (
+                            <span className="text-yellow-400 ml-1">
+                              — only first {limit} tools available on free tier
+                            </span>
+                          )}
+                        </p>
+                        {matched.length > 0 && (
+                          <button
+                            onClick={handleImportConfirm}
+                            className="px-5 py-2.5 text-sm font-bold bg-accent text-white rounded-lg hover:brightness-110 transition-all"
+                          >
+                            Add {Math.min(matched.length, needsUpgrade ? limit : matched.length)}{" "}
+                            Matched Tools to Audit
+                          </button>
+                        )}
+                        {needsUpgrade && (
+                          <ProNudge
+                            feature={`Import all ${matched.length} tools at once with Pro`}
+                            ctaLabel="Upgrade to Pro"
+                          />
+                        )}
+                      </div>
+                    );
+                  })()}
+                </div>
+              )}
+
+              {importParsed && importMatches.length === 0 && (
+                <p className="text-sm text-muted">
+                  No lines found. Paste your tool list above and try again.
+                </p>
+              )}
+            </div>
+          )}
+        </section>
+
         {/* ══════════ STEP 1: INPUT YOUR STACK ══════════ */}
         <section>
           <div className="flex items-center gap-3 mb-6">
@@ -852,8 +1376,9 @@ export default function AuditClient() {
                 <h2 className="text-xl font-bold">Save & Share</h2>
               </div>
 
-              <div className="border border-border rounded-xl p-6 bg-background">
-                <div className="flex flex-wrap gap-3 mb-4">
+              <div className="border border-border rounded-xl p-6 bg-background space-y-6">
+                {/* Quick actions row */}
+                <div className="flex flex-wrap gap-3">
                   <button
                     onClick={handleSave}
                     className="px-5 py-2.5 text-sm font-semibold bg-accent text-white rounded-lg hover:brightness-110 transition-all"
@@ -875,11 +1400,11 @@ export default function AuditClient() {
                 </div>
 
                 {savedNotice && (
-                  <p className="text-sm text-success font-medium mb-3">{savedNotice}</p>
+                  <p className="text-sm text-success font-medium">{savedNotice}</p>
                 )}
 
                 {shareUrl && (
-                  <div className="flex items-center gap-2 mb-4">
+                  <div className="flex items-center gap-2">
                     <input
                       type="text"
                       readOnly
@@ -894,6 +1419,122 @@ export default function AuditClient() {
                     </button>
                   </div>
                 )}
+
+                {/* ── Share This Audit ── */}
+                <div className="border-t border-border pt-6">
+                  <h3 className="text-base font-bold text-foreground mb-2">Share This Audit</h3>
+                  <p className="text-sm text-muted mb-4">
+                    Send a branded audit report to your team. They&apos;ll see your spend, savings, and per-tool recommendations.
+                  </p>
+
+                  <div className="flex flex-wrap gap-3">
+                    <button
+                      onClick={() => {
+                        const url = encodeReportUrl(auditResults, totalMonthlySpend, totalMonthlySavings, auditScore);
+                        setReportUrl(url);
+                        navigator.clipboard?.writeText(url).then(() => {
+                          setReportCopied(true);
+                          setTimeout(() => setReportCopied(false), 3000);
+                        }).catch(() => {});
+                      }}
+                      className="px-5 py-2.5 text-sm font-semibold bg-accent text-white rounded-lg hover:brightness-110 transition-all flex items-center gap-2"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                      </svg>
+                      {reportCopied ? "Link Copied!" : "Copy Share Link"}
+                    </button>
+
+                    <button
+                      onClick={() => {
+                        const url = encodeReportUrl(auditResults, totalMonthlySpend, totalMonthlySavings, auditScore);
+                        const text = encodeURIComponent(
+                          `I just audited my SaaS stack. Turns out I'm overpaying $${Math.round(totalMonthlySavings)}/month. Free audit at sasanova.com/audit`
+                        );
+                        window.open(
+                          `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}&summary=${text}`,
+                          "_blank",
+                          "width=600,height=500"
+                        );
+                      }}
+                      className="px-5 py-2.5 text-sm font-semibold border border-border text-foreground rounded-lg hover:bg-surface transition-colors flex items-center gap-2"
+                    >
+                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                      </svg>
+                      Share on LinkedIn
+                    </button>
+                  </div>
+
+                  {reportUrl && (
+                    <div className="mt-3 flex items-center gap-2">
+                      <input
+                        type="text"
+                        readOnly
+                        value={reportUrl}
+                        className="flex-1 px-3 py-2 text-xs bg-surface border border-border rounded-lg text-muted font-mono"
+                      />
+                      <button
+                        onClick={() => {
+                          navigator.clipboard?.writeText(reportUrl);
+                          setReportCopied(true);
+                          setTimeout(() => setReportCopied(false), 3000);
+                        }}
+                        className="px-3 py-2 text-xs font-semibold text-accent border border-accent/30 rounded-lg hover:bg-accent/10 transition-colors shrink-0"
+                      >
+                        {reportCopied ? "Copied!" : "Copy"}
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+                {/* ── Re-Audit Email Capture ── */}
+                <div className="border-t border-border pt-6">
+                  <h3 className="text-base font-bold text-foreground mb-2">Get Monthly Re-Audit Reminders</h3>
+                  <p className="text-sm text-muted mb-4">
+                    SaaS pricing changes constantly. We&apos;ll remind you to re-audit monthly so you never overpay.
+                  </p>
+
+                  {reauditSaved ? (
+                    <div className="bg-success/5 border border-success/20 rounded-lg p-4">
+                      <p className="text-sm text-success font-medium">
+                        We&apos;ll email you monthly when your stack costs change.
+                      </p>
+                      <p className="text-xs text-success/80 mt-1">
+                        Next check: {reauditNextDate}
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="flex gap-3">
+                      <input
+                        type="email"
+                        placeholder="your@email.com"
+                        value={reauditEmail}
+                        onChange={(e) => setReauditEmail(e.target.value)}
+                        className="flex-1 px-4 py-2.5 text-sm bg-surface border border-border rounded-lg text-foreground placeholder:text-muted/50 focus:outline-none focus:ring-1 focus:ring-accent"
+                      />
+                      <button
+                        onClick={() => {
+                          if (!reauditEmail || !reauditEmail.includes("@")) return;
+                          const reminder = saveReauditReminder(reauditEmail, entries);
+                          const nextDate = new Date(reminder.nextCheck);
+                          setReauditNextDate(
+                            nextDate.toLocaleDateString("en-US", {
+                              month: "long",
+                              day: "numeric",
+                              year: "numeric",
+                            })
+                          );
+                          setReauditSaved(true);
+                        }}
+                        disabled={!reauditEmail || !reauditEmail.includes("@")}
+                        className="px-5 py-2.5 text-sm font-semibold bg-accent text-white rounded-lg hover:brightness-110 transition-all disabled:opacity-40 disabled:cursor-not-allowed shrink-0"
+                      >
+                        Remind Me
+                      </button>
+                    </div>
+                  )}
+                </div>
 
                 {/* Pro upsell */}
                 <ProNudge
