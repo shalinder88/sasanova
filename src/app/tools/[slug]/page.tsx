@@ -5,6 +5,7 @@ import { tools, versusPairs, getOverallScore } from "@/data/tools";
 import ScoreBar from "@/components/ScoreBar";
 import PricingCalculator from "@/components/PricingCalculator";
 import StickyToolCTA from "@/components/StickyToolCTA";
+import WatchPriceButton from "@/components/WatchPriceButton";
 import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 
 /* ---------- Static generation ---------- */
@@ -582,7 +583,10 @@ export default async function ToolProfilePage({ params }: Props) {
 
         {/* Pricing Table */}
         <section>
-          <h2 className="text-lg font-bold mb-4">Pricing</h2>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-bold">Pricing</h2>
+            <WatchPriceButton slug={slug} toolName={tool.name} />
+          </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>

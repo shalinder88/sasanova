@@ -17,6 +17,7 @@ const footerSections = [
     links: [
       { href: "/guides", label: "Guides" },
       { href: "/vault", label: "Vault Newsletter" },
+      { href: "/alerts", label: "Price Alerts" },
       { href: "/updates", label: "Updates" },
     ],
   },
