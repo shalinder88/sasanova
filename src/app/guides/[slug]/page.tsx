@@ -487,6 +487,66 @@ const guideMeta: Record<string, { title: string; category: string }> = {
     title: "Monthly SaaS Review Template: Keep Your Stack Lean",
     category: "Workflow Template",
   },
+  "saas-costs-for-1-person-business": {
+    title: "SaaS Costs for a 1-Person Business: Complete Stack Breakdown",
+    category: "Team Size Scaling",
+  },
+  "saas-costs-for-5-person-team": {
+    title: "SaaS Costs for a 5-Person Team: Per-Seat Math Across Every Category",
+    category: "Team Size Scaling",
+  },
+  "saas-costs-for-10-person-team": {
+    title: "SaaS Costs for a 10-Person Team: Where Pricing Tiers Jump",
+    category: "Team Size Scaling",
+  },
+  "saas-costs-for-25-person-team": {
+    title: "SaaS Costs for a 25-Person Team: When Enterprise Tier Pressure Starts",
+    category: "Team Size Scaling",
+  },
+  "saas-costs-for-50-person-team": {
+    title: "SaaS Costs for a 50-Person Team: When Enterprise Plans Become Necessary",
+    category: "Team Size Scaling",
+  },
+  "what-you-get-for-free-in-crm": {
+    title: "What You Get for Free in CRM: Every Free Tier Mapped",
+    category: "Feature Availability",
+  },
+  "what-you-get-for-free-in-email": {
+    title: "What You Get for Free in Email Marketing: Every Free Tier Mapped",
+    category: "Feature Availability",
+  },
+  "what-you-get-for-free-in-automation": {
+    title: "What You Get for Free in Automation: Every Free Tier Mapped",
+    category: "Feature Availability",
+  },
+  "what-you-get-for-free-in-pm": {
+    title: "What You Get for Free in Project Management: Every Free Tier Mapped",
+    category: "Feature Availability",
+  },
+  "what-20-dollars-gets-you-in-saas": {
+    title: "What $20/Month Gets You in SaaS: The Definitive Budget Guide",
+    category: "Feature Availability",
+  },
+  "set-up-lead-capture-in-30-minutes": {
+    title: "Set Up Lead Capture in 30 Minutes: Form + CRM + Automation",
+    category: "Practical Workflow",
+  },
+  "set-up-newsletter-in-30-minutes": {
+    title: "Set Up a Newsletter in 30 Minutes: From Zero to First Send",
+    category: "Practical Workflow",
+  },
+  "set-up-crm-pipeline-in-30-minutes": {
+    title: "Set Up a CRM Pipeline in 30 Minutes: Pipedrive or HubSpot",
+    category: "Practical Workflow",
+  },
+  "set-up-social-scheduling-in-30-minutes": {
+    title: "Set Up Social Media Scheduling in 30 Minutes: Buffer Free",
+    category: "Practical Workflow",
+  },
+  "set-up-analytics-in-30-minutes": {
+    title: "Set Up Website Analytics in 30 Minutes: Plausible or PostHog",
+    category: "Practical Workflow",
+  },
 };
 
 export function generateStaticParams() {

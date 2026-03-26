@@ -3140,4 +3140,127 @@ export const guides: Guide[] = [
     readingTime: "16 min read",
     category: "Comparison for Specific Needs",
   },
+  // ── Team Size Scaling ──
+  {
+    slug: "saas-costs-for-1-person-business",
+    title: "SaaS Costs for a 1-Person Business: Complete Stack Breakdown",
+    description:
+      "Every software category priced for a solo operator. CRM, email, automation, PM, analytics, scheduling, forms, chat, and more at $0 and paid tiers. Exact verified prices.",
+    readingTime: "18 min read",
+    category: "Team Size Scaling",
+  },
+  {
+    slug: "saas-costs-for-5-person-team",
+    title: "SaaS Costs for a 5-Person Team: Per-Seat Math Across Every Category",
+    description:
+      "Complete stack costs for a 5-person team. Per-seat math for CRM, PM, communication, email, automation, and more. Budget ($104.59/mo) vs premium ($248.74/mo) stacks itemized.",
+    readingTime: "20 min read",
+    category: "Team Size Scaling",
+  },
+  {
+    slug: "saas-costs-for-10-person-team",
+    title: "SaaS Costs for a 10-Person Team: Where Pricing Tiers Jump",
+    description:
+      "Where free tiers break at 10 users. Jira Free maxes out, Slack Free becomes painful. CRM ranges from Freshsales Growth $110/mo to Salesforce Starter Suite $250/mo. Every tier jump mapped.",
+    readingTime: "20 min read",
+    category: "Team Size Scaling",
+  },
+  {
+    slug: "saas-costs-for-25-person-team",
+    title: "SaaS Costs for a 25-Person Team: When Enterprise Tier Pressure Starts",
+    description:
+      "Enterprise tier pressure points at 25 seats. Pipedrive Lite $350/mo, Slack Pro $218.75/mo, HubSpot Professional $890/mo flat. Budget ($653.59/mo) vs premium ($1,861.25/mo) stacks.",
+    readingTime: "20 min read",
+    category: "Team Size Scaling",
+  },
+  {
+    slug: "saas-costs-for-50-person-team",
+    title: "SaaS Costs for a 50-Person Team: When Enterprise Plans Become Necessary",
+    description:
+      "At 50 seats, CRM ranges from $550/mo (Freshsales Growth) to $5,000/mo (Salesforce Pro Suite). SSO and audit logs become compliance requirements. Flat-rate tools like Basecamp Pro ($349/mo) shine.",
+    readingTime: "22 min read",
+    category: "Team Size Scaling",
+  },
+  // ── Feature Availability by Price ──
+  {
+    slug: "what-you-get-for-free-in-crm",
+    title: "What You Get for Free in CRM: Every Free Tier Mapped",
+    description:
+      "HubSpot Free (unlimited contacts) vs Zoho Free (3 users, 5,000 records) vs Freshsales Free (3 users, built-in phone) vs Attio Free (3 seats, 50,000 records). Exact features and limits.",
+    readingTime: "16 min read",
+    category: "Feature Availability",
+  },
+  {
+    slug: "what-you-get-for-free-in-email",
+    title: "What You Get for Free in Email Marketing: Every Free Tier Mapped",
+    description:
+      "Mailchimp (250 contacts) vs Kit (10,000 subscribers) vs beehiiv (2,500 subscribers) vs Brevo (100,000 contacts, 300 emails/day) vs Buttondown (100 subscribers). Every free limit mapped.",
+    readingTime: "16 min read",
+    category: "Feature Availability",
+  },
+  {
+    slug: "what-you-get-for-free-in-automation",
+    title: "What You Get for Free in Automation: Every Free Tier Mapped",
+    description:
+      "Zapier Free (100 tasks/mo, two-step only) vs Make Free (1,000 ops/mo, 2 scenarios) vs n8n Community (unlimited, self-hosted). Task counting differences and which free tier is most usable.",
+    readingTime: "14 min read",
+    category: "Feature Availability",
+  },
+  {
+    slug: "what-you-get-for-free-in-pm",
+    title: "What You Get for Free in Project Management: Every Free Tier Mapped",
+    description:
+      "ClickUp (unlimited tasks/members, 100MB), Notion (unlimited pages, 7-day history), Trello (unlimited cards, 10 boards), Asana (2 users), Jira (10 users), Linear (250 issues). Every restriction mapped.",
+    readingTime: "16 min read",
+    category: "Feature Availability",
+  },
+  {
+    slug: "what-20-dollars-gets-you-in-saas",
+    title: "What $20/Month Gets You in SaaS: The Definitive Budget Guide",
+    description:
+      "What $20/month buys across CRM (Pipedrive Lite $14/seat), email (Brevo Standard $18/mo), automation (Make Core $10.59/mo), PM (ClickUp Unlimited $10/seat), analytics (Plausible $9/mo), and more.",
+    readingTime: "18 min read",
+    category: "Feature Availability",
+  },
+  // ── Practical Workflow ──
+  {
+    slug: "set-up-lead-capture-in-30-minutes",
+    title: "Set Up Lead Capture in 30 Minutes: Form + CRM + Automation",
+    description:
+      "Build a complete lead capture workflow using Tally Free + HubSpot Free + Zapier Free. Total cost: $0/month. Step-by-step from form creation to CRM pipeline to automation.",
+    readingTime: "12 min read",
+    category: "Practical Workflow",
+  },
+  {
+    slug: "set-up-newsletter-in-30-minutes",
+    title: "Set Up a Newsletter in 30 Minutes: From Zero to First Send",
+    description:
+      "Launch your newsletter using beehiiv Launch (free, 2,500 subs, custom domain) or Kit Newsletter (free, 10,000 subs). Domain setup, template design, and first send in 30 minutes.",
+    readingTime: "12 min read",
+    category: "Practical Workflow",
+  },
+  {
+    slug: "set-up-crm-pipeline-in-30-minutes",
+    title: "Set Up a CRM Pipeline in 30 Minutes: Pipedrive or HubSpot",
+    description:
+      "Build a working CRM pipeline using Pipedrive Lite ($14/seat/mo) or HubSpot Free ($0). Pipeline stages, contact import, email sync, and custom fields in 30 minutes.",
+    readingTime: "13 min read",
+    category: "Practical Workflow",
+  },
+  {
+    slug: "set-up-social-scheduling-in-30-minutes",
+    title: "Set Up Social Media Scheduling in 30 Minutes: Buffer Free",
+    description:
+      "Connect 3 social accounts, queue your first week of posts, and set up a posting schedule using Buffer Free ($0/mo, 10 posts per channel). When to upgrade to Essentials ($6/channel).",
+    readingTime: "11 min read",
+    category: "Practical Workflow",
+  },
+  {
+    slug: "set-up-analytics-in-30-minutes",
+    title: "Set Up Website Analytics in 30 Minutes: Plausible or PostHog",
+    description:
+      "Install Plausible ($9/mo, privacy-friendly, <1KB script) or PostHog (free, 1M events/mo, session replay). Script installation, goal tracking, and first dashboard in 30 minutes.",
+    readingTime: "12 min read",
+    category: "Practical Workflow",
+  },
 ];
