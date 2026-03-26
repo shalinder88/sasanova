@@ -62,6 +62,15 @@ const footerSections = [
     ],
   },
   {
+    title: "Services",
+    links: [
+      { href: "/services", label: "Expert Audit Service" },
+      { href: "/audit", label: "Free Stack Audit" },
+      { href: "/calculate", label: "Cost Calculator" },
+      { href: "/recommend", label: "Stack Recommender" },
+    ],
+  },
+  {
     title: "For Vendors",
     links: [
       { href: "/vendors", label: "Claim Your Profile" },
@@ -86,7 +95,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-border bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-3">
               <div className="w-6 h-6 rounded-md bg-accent flex items-center justify-center">

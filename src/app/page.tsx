@@ -74,7 +74,13 @@ export default function Home() {
                 Compare Tools
               </Link>
             </div>
-            <p className="text-xs text-muted/70 mb-12">Join teams saving thousands on SaaS</p>
+            <p className="text-xs text-muted/70 mb-3">Join teams saving thousands on SaaS</p>
+            <p className="text-xs text-muted/60 mb-12">
+              Need help?{" "}
+              <Link href="/services" className="text-accent hover:underline">
+                Our team can audit your stack for you &rarr;
+              </Link>
+            </p>
 
             {/* Stats bar — secondary, smaller */}
             <div className="flex flex-wrap justify-center gap-6 text-sm">

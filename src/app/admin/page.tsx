@@ -887,6 +887,12 @@ export default function AdminPage() {
             Auto-generated posts from {tools.length} tools,{" "}
             {versusPairs.length} comparisons, {categories.length} categories
           </p>
+          <a
+            href="/admin/expert-audit"
+            className="inline-flex items-center gap-1.5 mt-3 px-4 py-2 text-sm font-medium bg-[var(--accent)] text-white rounded-lg hover:opacity-90 transition-opacity"
+          >
+            Expert Audit Reports &rarr;
+          </a>
         </div>
       </header>
 
