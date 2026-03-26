@@ -2978,4 +2978,86 @@ export const guides: Guide[] = [
     readingTime: "10 min read",
     category: "Workflow Template",
   },
+  // ── Real-World Stack Guides ──
+  {
+    slug: "saas-startup-mvp-stack",
+    title: "Launch Your SaaS MVP: The Exact Tools and Monthly Cost",
+    description:
+      "Carrd Pro Standard ($19/yr, $1.58/mo), beehiiv Launch (free, 2,500 subs), Lemon Squeezy (5% + $0.50/txn), Plausible Starter ($9/mo), Crisp Free (2 seats), HubSpot Free CRM. Total: ~$10.58/mo fixed costs.",
+    readingTime: "16 min read",
+    category: "Real-World Stack",
+  },
+  {
+    slug: "freelance-business-stack",
+    title: "The Freelancer's Complete Stack Under $30/Month",
+    description:
+      "HubSpot Free CRM + Wave Free invoicing + Cal.com Free scheduling + Kit Free email (10K subs) + Google Docs proposals + Zapier Free automation = $0/mo. Upgrade triggers at $3K and $10K/mo revenue.",
+    readingTime: "14 min read",
+    category: "Real-World Stack",
+  },
+  {
+    slug: "newsletter-business-stack",
+    title: "Build a Newsletter Business: Tools, Costs, and Revenue Math",
+    description:
+      "beehiiv Launch (free) to Scale ($49/mo), Carrd Pro Standard ($19/yr), Canva Free, Plausible Starter ($9/mo). Revenue projections at 1K, 5K, and 10K paid subscribers. Start at $10.58/mo, scale to $79.58/mo.",
+    readingTime: "18 min read",
+    category: "Real-World Stack",
+  },
+  {
+    slug: "agency-client-onboarding-stack",
+    title: "Agency Client Onboarding Stack: CRM to Kickoff in 48 Hours",
+    description:
+      "Pipedrive Growth ($39/seat) + PandaDoc Essentials ($35/seat) + ClickUp Unlimited ($10/seat) + Slack Pro ($8.75/user) + Notion Plus ($12/user). Solo: $104.75/mo. 3 seats: $314.25/mo. 5 seats: $523.75/mo.",
+    readingTime: "15 min read",
+    category: "Real-World Stack",
+  },
+  {
+    slug: "content-team-stack",
+    title: "Content Team Stack for 3-5 People Under $200/Month",
+    description:
+      "Mangools Entry ($29.90/mo) + Grammarly Free + ChatGPT Plus ($20/mo) + Canva Pro ($15/mo) + Notion Plus 3 seats ($36/mo) + beehiiv Scale ($49/mo) + Buffer Free. Total: $149.90/mo for 3 people.",
+    readingTime: "16 min read",
+    category: "Real-World Stack",
+  },
+  // ── Pricing Trap Deep-Dive Guides ──
+  {
+    slug: "enterprise-pricing-trap",
+    title: "The 'Contact Sales' Trap: What Enterprise Pricing Actually Costs",
+    description:
+      "Salesforce ($25-$350/seat), HubSpot Pro ($890/mo + $3,000 onboarding), Zendesk Suite ($25-$169/agent), Intercom ($39-$139/seat + $0.99/AI resolution), Monday Enterprise (Contact Sales). What the call actually reveals.",
+    readingTime: "17 min read",
+    category: "Pricing Deep Dive",
+  },
+  {
+    slug: "annual-vs-monthly-billing-analysis",
+    title: "Annual vs Monthly Billing: Exact Savings for Every Major Tool",
+    description:
+      "23 tools compared: Zapier saves 33%, Canva saves 33%, ClickUp saves 30%, Pipedrive saves 26%, Notion saves 17%. Mailchimp, Brevo, and n8n offer no annual discount. When to lock in vs keep flexibility.",
+    readingTime: "15 min read",
+    category: "Pricing Deep Dive",
+  },
+  {
+    slug: "hidden-add-on-costs",
+    title: "SaaS Add-On Costs Nobody Warns You About",
+    description:
+      "Pipedrive add-ons (LeadBooster $32.50, Web Visitors $41, Smart Docs $32.50). HubSpot Hub stacking ($890/mo per Hub). Notion AI ($10/user). ClickUp Brain ($7/member). How add-ons double your base plan cost.",
+    readingTime: "14 min read",
+    category: "Pricing Deep Dive",
+  },
+  {
+    slug: "billing-model-comparison-guide",
+    title: "Per-Seat vs Per-Contact vs Flat Rate: Which Billing Model Saves You Money?",
+    description:
+      "Three billing models across CRM, email, and automation at solo, 5-person, and 25-person scale. Pipedrive per-seat vs HubSpot flat. ActiveCampaign per-contact vs beehiiv flat ($49/mo at any volume). Zapier usage-based vs Make flat.",
+    readingTime: "16 min read",
+    category: "Pricing Deep Dive",
+  },
+  {
+    slug: "saas-contract-negotiation-tips",
+    title: "How to Negotiate SaaS Pricing: 5 Tactics That Actually Work",
+    description:
+      "Annual commitment leverage (Zapier 33% off, Canva 33% off), multi-seat discounts, competitor quote leverage, end-of-quarter timing, and free-to-paid conversion leverage. Exact prices showing what you negotiate against.",
+    readingTime: "18 min read",
+    category: "Pricing Deep Dive",
+  },
 ];
