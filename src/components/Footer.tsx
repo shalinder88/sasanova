@@ -19,6 +19,8 @@ const footerSections = [
       { href: "/vault", label: "Vault Newsletter" },
       { href: "/recommend", label: "Stack Recommender" },
       { href: "/alerts", label: "Price Alerts" },
+      { href: "/changelog", label: "Pricing Changelog" },
+      { href: "/trends", label: "Price Trends" },
       { href: "/updates", label: "Updates" },
     ],
   },

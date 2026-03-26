@@ -76,6 +76,9 @@ export default function Home() {
               <Link href="#switching" className="px-7 py-3 text-sm font-semibold border border-border text-foreground rounded-lg hover:bg-surface transition-colors">
                 See Switching Costs
               </Link>
+              <Link href="/audit" className="px-7 py-3 text-sm font-semibold bg-red-500/15 border border-red-500/40 text-red-400 rounded-lg hover:bg-red-500/25 transition-all">
+                Audit Your Stack
+              </Link>
               <Link href="/recommend" className="px-7 py-3 text-sm font-semibold bg-success/15 border border-success/40 text-success rounded-lg hover:bg-success/25 transition-all">
                 Get Recommendations &rarr;
               </Link>
@@ -127,7 +130,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {[
               {
                 title: "Compare tools side by side",
@@ -166,6 +169,16 @@ export default function Home() {
                 icon: (
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Estimate switching cost",
+                desc: "Calculate the true cost of migrating: time, effort, productivity loss, and break-even.",
+                href: "/migrate",
+                icon: (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                   </svg>
                 ),
               },

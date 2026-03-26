@@ -14,7 +14,9 @@ const nav = [
   { href: "/pricing", label: "Pricing" },
   { href: "/guides", label: "Guides" },
   { href: "/recommend", label: "Recommend" },
+  { href: "/changelog", label: "Changelog" },
   { href: "/alerts", label: "Alerts" },
+  { href: "/audit", label: "Audit" },
   { href: "/vault", label: "Vault" },
 ];
 
