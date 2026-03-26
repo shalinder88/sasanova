@@ -249,7 +249,7 @@ export default function CrmPipelineTemplatePage() {
           <RelatedLinks
             tools={["pipedrive", "hubspot-crm", "salesforce", "freshsales", "zoho-crm"]}
             comparisons={["pipedrive-vs-hubspot-crm", "freshsales-vs-pipedrive"]}
-            guides={["crm-pipeline-setup-best-practices", "crm-deal-pipeline-features-compared", "best-crm-sales-teams"]}
+            guides={["crm-pipeline-setup-best-practices", "crm-reporting-features-ranked", "best-crm-sales-teams"]}
           />
         </div>
       </article>

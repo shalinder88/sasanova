@@ -208,7 +208,7 @@ export default function AutomateMeetingNotesToCrmPage() {
 
           <RelatedLinks
             tools={["grain", "fathom", "otter-ai", "pipedrive", "hubspot-crm", "zapier", "make"]}
-            comparisons={["pipedrive-vs-hubspot"]}
+            comparisons={["hubspot-crm-vs-pipedrive"]}
             guides={[
               "meeting-recording-comparison",
               "automate-new-lead-to-crm",

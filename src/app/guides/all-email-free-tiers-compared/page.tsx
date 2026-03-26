@@ -191,7 +191,7 @@ export default function AllEmailFreetiersComparedPage() {
 
           <RelatedLinks
             tools={["mailchimp", "convertkit", "beehiiv", "brevo", "buttondown", "substack"]}
-            comparisons={["mailchimp-vs-kit", "beehiiv-vs-kit", "beehiiv-vs-substack"]}
+            comparisons={["mailchimp-vs-convertkit", "beehiiv-vs-convertkit", "beehiiv-vs-substack"]}
             guides={[
               "best-free-email-tool-2026",
               "how-to-choose-email-platform",

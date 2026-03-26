@@ -102,7 +102,6 @@ const MIGRATION_GUIDES: Record<string, string> = {
   "substack->beehiiv": "/guides/migrate-substack-to-beehiiv",
   "zapier->make": "/guides/migrate-zapier-to-make",
   "zapier->n8n": "/guides/migrate-zapier-to-n8n",
-  "activecampaign->convertkit": "/guides/switch-from-activecampaign-to-kit",
   "hubspot->pipedrive": "/guides/switch-from-hubspot-to-pipedrive",
   "convertkit->beehiiv": "/guides/switch-from-kit-to-beehiiv",
   "make->zapier": "/guides/switch-from-make-to-zapier",

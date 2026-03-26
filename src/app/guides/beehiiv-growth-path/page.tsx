@@ -210,7 +210,7 @@ export default function BeehiivGrowthPathPage() {
 
           <RelatedLinks
             tools={["beehiiv", "substack", "ghost"]}
-            comparisons={["beehiiv-vs-substack", "beehiiv-vs-kit"]}
+            comparisons={["beehiiv-vs-substack", "beehiiv-vs-convertkit"]}
             guides={["best-newsletter-paid-subscribers", "switch-from-kit-to-beehiiv", "beehiiv-setup-guide"]}
           />
         </div>

@@ -291,10 +291,6 @@ const guideMeta: Record<string, { title: string; category: string }> = {
     title: "CRM Integrations That Actually Matter (And Ones That Don't)",
     category: "CRM",
   },
-  "hubspot-vs-activecampaign-full-comparison": {
-    title: "HubSpot vs ActiveCampaign: CRM + Email Marketing in One or Separate?",
-    category: "Cross-Platform Comparison",
-  },
   "mailchimp-vs-hubspot-marketing": {
     title: "Mailchimp vs HubSpot Marketing Hub: When Free Isn't Really Free",
     category: "Cross-Platform Comparison",
@@ -305,10 +301,6 @@ const guideMeta: Record<string, { title: string; category: string }> = {
   },
   "zapier-vs-hubspot-workflows": {
     title: "Zapier vs HubSpot Workflows: Do You Need Both?",
-    category: "Cross-Platform Comparison",
-  },
-  "beehiiv-vs-kit-vs-mailchimp-for-creators": {
-    title: "beehiiv vs Kit vs Mailchimp for Creators: The Definitive 2026 Comparison",
     category: "Cross-Platform Comparison",
   },
   "mailchimp-pricing-history": {

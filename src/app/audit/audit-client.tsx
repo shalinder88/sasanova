@@ -58,6 +58,8 @@ function findCheaperAlternative(
   teamSize: number
 ): AuditResult["cheaperAlternative"] {
   const currentCost = computeCost(plan, teamSize);
+  if (currentCost <= 0) return null; // Free plan — can't be overpaying
+
   const categoryTools = getToolsByCategory(tool.categorySlug);
   let best: AuditResult["cheaperAlternative"] = null;
 
@@ -66,18 +68,31 @@ function findCheaperAlternative(
     for (const altPlan of alt.pricing) {
       if (altPlan.priceMonthly === null) continue;
       const altCost = computeCost(altPlan, teamSize);
-      // Must be cheaper and still a paid plan or free
-      if (altCost < currentCost) {
-        const savings = currentCost - altCost;
-        if (!best || savings > best.monthlySavings) {
-          best = {
-            tool: alt,
-            plan: altPlan,
-            monthlyCost: altCost,
-            monthlySavings: savings,
-            annualSavings: savings * 12,
-          };
-        }
+
+      // Must be meaningfully cheaper (at least 10% savings to avoid noise)
+      const savings = currentCost - altCost;
+      const savingsPct = savings / currentCost;
+      if (altCost >= currentCost || savingsPct < 0.1) continue;
+
+      // Must be a comparable tier: don't recommend a basic plan to replace a premium one
+      // Compare by billing model similarity and plan position
+      const currentPlanIndex = tool.pricing.findIndex((p) => p.name === plan.name);
+      const altPlanIndex = alt.pricing.indexOf(altPlan);
+      const currentTierRatio = tool.pricing.length > 1 ? currentPlanIndex / (tool.pricing.length - 1) : 0.5;
+      const altTierRatio = alt.pricing.length > 1 ? altPlanIndex / (alt.pricing.length - 1) : 0.5;
+
+      // Skip if the alternative is a much lower tier (e.g., comparing Premium vs Free)
+      // Allow ±1 tier level of difference
+      if (Math.abs(currentTierRatio - altTierRatio) > 0.4) continue;
+
+      if (!best || savings > best.monthlySavings) {
+        best = {
+          tool: alt,
+          plan: altPlan,
+          monthlyCost: altCost,
+          monthlySavings: savings,
+          annualSavings: savings * 12,
+        };
       }
     }
   }
@@ -176,7 +191,6 @@ const KNOWN_MIGRATION_GUIDES = new Set([
   "migrate-from-mailchimp",
   "migrate-spreadsheet-to-crm",
   "switch-from-mailchimp-to-activecampaign",
-  "switch-from-activecampaign-to-kit",
   "switch-from-hubspot-to-pipedrive",
   "switch-from-kit-to-beehiiv",
   "switch-from-make-to-zapier",

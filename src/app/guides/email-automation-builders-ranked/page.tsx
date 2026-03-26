@@ -210,7 +210,7 @@ export default function EmailAutomationBuildersRanked() {
             "when-activecampaign-gets-expensive",
             "best-email-tool-creators",
           ]}
-          comparisons={["activecampaign-vs-mailchimp", "kit-vs-beehiiv"]}
+          comparisons={["activecampaign-vs-mailchimp", "beehiiv-vs-convertkit"]}
         />
       </article>
     </>

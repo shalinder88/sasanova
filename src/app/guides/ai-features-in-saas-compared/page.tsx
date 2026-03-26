@@ -210,7 +210,7 @@ export default function AiFeaturesInSaasCompared() {
             "when-notion-needs-a-paid-plan",
             "when-clickup-free-hits-limits",
           ]}
-          comparisons={["chatgpt-vs-claude"]}
+          comparisons={["chatgpt-vs-claude-ai"]}
         />
       </article>
     </>

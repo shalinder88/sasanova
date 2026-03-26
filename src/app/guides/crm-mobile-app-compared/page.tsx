@@ -215,11 +215,11 @@ export default function CrmMobileAppCompared() {
                 <span className="block text-xs text-muted mt-1">What you can automate at each price tier</span>
               </Link>
               <Link
-                href="/guides/crm-deal-pipeline-features-compared"
+                href="/guides/crm-reporting-features-ranked"
                 className="border border-border rounded-lg p-4 hover:border-accent/30 transition-colors block"
               >
-                <span className="text-sm font-semibold text-foreground">CRM Deal Pipeline Features</span>
-                <span className="block text-xs text-muted mt-1">Pipeline views, forecasting, deal rotting</span>
+                <span className="text-sm font-semibold text-foreground">CRM Reporting Features Ranked</span>
+                <span className="block text-xs text-muted mt-1">Reporting and analytics across 6 platforms</span>
               </Link>
               <Link
                 href="/guides/best-crm-sales-teams"
@@ -240,10 +240,10 @@ export default function CrmMobileAppCompared() {
 
           <RelatedLinks
             tools={["hubspot-crm", "pipedrive", "salesforce", "zoho-crm", "close-crm", "freshsales"]}
-            comparisons={["hubspot-vs-salesforce-detailed", "pipedrive-vs-close-detailed", "freshsales-vs-zoho-detailed"]}
+            comparisons={[]}
             guides={[
               "crm-automation-compared",
-              "crm-deal-pipeline-features-compared",
+              "crm-reporting-features-ranked",
               "best-crm-sales-teams",
             ]}
           />

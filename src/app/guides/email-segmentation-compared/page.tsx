@@ -246,7 +246,7 @@ export default function EmailSegmentationCompared() {
 
           <RelatedLinks
             tools={["mailchimp", "activecampaign", "convertkit", "beehiiv", "brevo"]}
-            comparisons={["mailchimp-vs-kit-detailed", "hubspot-vs-activecampaign-full-comparison"]}
+            comparisons={[]}
             guides={[
               "email-template-design-compared",
               "email-analytics-compared",

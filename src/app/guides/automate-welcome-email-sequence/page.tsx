@@ -195,7 +195,7 @@ export default function AutomateWelcomeEmailSequencePage() {
 
           <RelatedLinks
             tools={["convertkit", "activecampaign", "mailchimp", "beehiiv"]}
-            comparisons={["kit-vs-mailchimp", "mailchimp-vs-activecampaign", "beehiiv-vs-kit"]}
+            comparisons={["mailchimp-vs-convertkit", "mailchimp-vs-activecampaign", "beehiiv-vs-convertkit"]}
             guides={[
               "email-automation-sequences-compared",
               "how-to-choose-email-platform",

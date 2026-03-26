@@ -244,7 +244,7 @@ export default function AutomateNewLeadToCrmPage() {
 
           <RelatedLinks
             tools={["zapier", "make", "pipedrive", "hubspot-crm", "tally", "typeform"]}
-            comparisons={["zapier-vs-make", "pipedrive-vs-hubspot"]}
+            comparisons={["zapier-vs-make", "hubspot-crm-vs-pipedrive"]}
             guides={[
               "automate-lead-capture",
               "crm-solo-founder",

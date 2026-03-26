@@ -175,7 +175,7 @@ export default function NewsletterMonetizationComparedPage() {
         <div className="mt-12">
           <RelatedLinks
             tools={["beehiiv", "convertkit", "substack"]}
-            comparisons={["beehiiv-vs-kit"]}
+            comparisons={["beehiiv-vs-convertkit"]}
             guides={["best-newsletter-paid-subscribers", "when-beehiiv-scale-beats-launch", "email-platform-feature-tiers-explained"]}
           />
         </div>

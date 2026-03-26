@@ -361,7 +361,7 @@ export default function EmailPlatformFeatureTiersExplainedPage() {
         <div className="mt-12">
           <RelatedLinks
             tools={["mailchimp", "convertkit", "beehiiv", "activecampaign", "brevo"]}
-            comparisons={["beehiiv-vs-kit", "mailchimp-vs-kit"]}
+            comparisons={["beehiiv-vs-convertkit", "mailchimp-vs-convertkit"]}
             guides={["how-to-choose-email-platform", "email-list-size-cost-calculator", "best-free-email-tool-2026"]}
           />
         </div>

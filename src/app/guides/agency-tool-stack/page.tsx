@@ -136,8 +136,8 @@ const categories = [
         label: "Email Tools for Agencies",
       },
       {
-        href: "/guides/hubspot-vs-activecampaign-full-comparison",
-        label: "HubSpot vs ActiveCampaign",
+        href: "/guides/best-automation-marketing-teams",
+        label: "Best Automation for Marketing Teams",
       },
       {
         href: "/guides/switch-from-mailchimp-to-activecampaign",

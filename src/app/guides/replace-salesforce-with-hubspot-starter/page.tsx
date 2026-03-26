@@ -369,7 +369,7 @@ export default function ReplaceSalesforceWithHubspotStarter() {
         {/* ── Related Links ── */}
         <RelatedLinks
           tools={["salesforce", "hubspot-crm"]}
-          comparisons={["salesforce-vs-hubspot"]}
+          comparisons={["salesforce-vs-hubspot-crm"]}
           guides={[
             "who-should-not-use-salesforce",
             "salesforce-hidden-costs",

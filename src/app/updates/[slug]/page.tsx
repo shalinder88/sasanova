@@ -201,7 +201,7 @@ const weeklyDigests: DigestWeek[] = [
     relatedTools: ["hubspot", "mailchimp", "zapier", "make", "n8n"],
     relatedComparisons: [
       "zapier-vs-make",
-      "mailchimp-vs-kit",
+      "mailchimp-vs-convertkit",
     ],
     relatedGuides: [
       "email-deliverability-compared",

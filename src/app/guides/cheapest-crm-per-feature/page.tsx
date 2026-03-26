@@ -207,7 +207,7 @@ export default function CheapestCrmPerFeature() {
 
         <RelatedLinks
           tools={["hubspot-crm", "freshsales", "pipedrive", "zoho-crm", "salesforce", "attio"]}
-          comparisons={["hubspot-vs-salesforce", "freshsales-vs-pipedrive", "freshsales-vs-zoho"]}
+          comparisons={["salesforce-vs-hubspot-crm", "freshsales-vs-pipedrive", "freshsales-vs-zoho-crm"]}
           guides={[
             "best-free-crm-2026",
             "crm-pricing-cheat-sheet",

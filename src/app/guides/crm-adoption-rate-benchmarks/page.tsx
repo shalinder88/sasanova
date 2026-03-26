@@ -170,7 +170,7 @@ export default function CrmAdoptionRateBenchmarksPage() {
 
           <RelatedLinks
             tools={["pipedrive", "hubspot-crm", "freshsales", "attio", "zoho-crm", "salesforce"]}
-            comparisons={["pipedrive-vs-hubspot", "hubspot-vs-salesforce", "freshsales-vs-zoho"]}
+            comparisons={["hubspot-crm-vs-pipedrive", "salesforce-vs-hubspot-crm", "freshsales-vs-zoho-crm"]}
             guides={[
               "who-should-not-use-salesforce",
               "who-should-not-use-hubspot",

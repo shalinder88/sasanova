@@ -180,7 +180,7 @@ export default function BestCrmForEmailTrackingPage() {
 
           <RelatedLinks
             tools={["hubspot-crm", "pipedrive", "close-crm", "freshsales"]}
-            comparisons={["hubspot-vs-pipedrive", "pipedrive-vs-close"]}
+            comparisons={["hubspot-crm-vs-pipedrive", "close-crm-vs-pipedrive"]}
             guides={["best-crm-sales-teams", "hubspot-growth-path", "pipedrive-growth-path"]}
           />
         </div>

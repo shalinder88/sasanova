@@ -406,7 +406,7 @@ export default function CrmDataMigrationChecklist() {
 
           <RelatedLinks
             tools={["hubspot", "pipedrive", "salesforce", "zoho-crm"]}
-            comparisons={["hubspot-vs-pipedrive", "hubspot-vs-salesforce", "pipedrive-vs-zoho-crm"]}
+            comparisons={["hubspot-crm-vs-pipedrive", "salesforce-vs-hubspot-crm", "pipedrive-vs-zoho-crm"]}
             guides={[
               "migrate-salesforce-to-hubspot",
               "migrate-spreadsheet-to-crm",

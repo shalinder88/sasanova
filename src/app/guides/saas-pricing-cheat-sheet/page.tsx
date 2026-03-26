@@ -387,7 +387,7 @@ export default function SaasPricingCheatSheetGuide() {
               "saas-free-tier-cheat-sheet",
               "crm-pricing-cheat-sheet",
               "email-pricing-cheat-sheet",
-              "automation-pricing-cheat-sheet",
+              "automation-pricing-compared",
             ]}
           />
         </div>

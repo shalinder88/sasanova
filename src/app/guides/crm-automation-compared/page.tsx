@@ -200,18 +200,18 @@ export default function CrmAutomationCompared() {
             <h2 className="text-lg font-bold mb-4">Related Guides</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <Link
-                href="/guides/crm-deal-pipeline-features-compared"
+                href="/guides/crm-reporting-features-ranked"
                 className="border border-border rounded-lg p-4 hover:border-accent/30 transition-colors block"
               >
-                <span className="text-sm font-semibold text-foreground">CRM Deal Pipeline Features</span>
-                <span className="block text-xs text-muted mt-1">Pipeline views, forecasting, deal rotting</span>
+                <span className="text-sm font-semibold text-foreground">CRM Reporting Features Ranked</span>
+                <span className="block text-xs text-muted mt-1">Reporting and analytics across 6 platforms</span>
               </Link>
               <Link
-                href="/guides/crm-contact-management-compared"
+                href="/guides/crm-email-integration-compared"
                 className="border border-border rounded-lg p-4 hover:border-accent/30 transition-colors block"
               >
-                <span className="text-sm font-semibold text-foreground">CRM Contact Management</span>
-                <span className="block text-xs text-muted mt-1">Import, dedupe, enrich across 6 platforms</span>
+                <span className="text-sm font-semibold text-foreground">CRM Email Integration</span>
+                <span className="block text-xs text-muted mt-1">Email sync and tracking across 6 platforms</span>
               </Link>
               <Link
                 href="/guides/crm-mobile-app-compared"
@@ -232,10 +232,10 @@ export default function CrmAutomationCompared() {
 
           <RelatedLinks
             tools={["hubspot-crm", "pipedrive", "close-crm", "salesforce", "zoho-crm", "freshsales"]}
-            comparisons={["hubspot-vs-salesforce-detailed", "pipedrive-vs-close-detailed"]}
+            comparisons={[]}
             guides={[
-              "crm-deal-pipeline-features-compared",
-              "crm-contact-management-compared",
+              "crm-reporting-features-ranked",
+              "crm-email-integration-compared",
               "crm-annual-cost-2026",
             ]}
           />

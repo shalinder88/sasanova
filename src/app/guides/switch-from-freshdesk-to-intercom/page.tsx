@@ -204,11 +204,11 @@ export default function SwitchFreshdeskToIntercomPage() {
             <h2 className="text-lg font-bold mb-4">Related Guides</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <Link
-                href="/guides/how-to-choose-helpdesk"
+                href="/compare/freshdesk-vs-zendesk"
                 className="border border-border rounded-lg p-4 hover:border-accent/30 transition-colors block"
               >
-                <span className="text-sm font-semibold text-foreground">How to Choose a Helpdesk</span>
-                <span className="block text-xs text-muted mt-1">Ticket-based vs conversational vs hybrid</span>
+                <span className="text-sm font-semibold text-foreground">Freshdesk vs Zendesk</span>
+                <span className="block text-xs text-muted mt-1">Two top helpdesks compared side by side</span>
               </Link>
               <Link
                 href="/compare/freshdesk-vs-intercom"

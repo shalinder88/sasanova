@@ -167,7 +167,7 @@ export default function EmailOpenRateBenchmarks2026Page() {
 
           <RelatedLinks
             tools={["mailchimp", "convertkit", "beehiiv", "activecampaign", "brevo"]}
-            comparisons={["mailchimp-vs-kit", "beehiiv-vs-kit", "mailchimp-vs-activecampaign"]}
+            comparisons={["mailchimp-vs-convertkit", "beehiiv-vs-convertkit", "mailchimp-vs-activecampaign"]}
             guides={[
               "email-deliverability-compared",
               "email-list-health-guide",

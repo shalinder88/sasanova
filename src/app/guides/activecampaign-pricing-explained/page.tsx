@@ -237,7 +237,7 @@ export default function ActiveCampaignPricingExplainedPage() {
           <RelatedLinks
             tools={["activecampaign", "convertkit", "brevo"]}
             comparisons={["activecampaign-vs-brevo", "convertkit-vs-activecampaign"]}
-            guides={["when-activecampaign-gets-expensive", "switch-from-activecampaign-to-kit"]}
+            guides={["when-activecampaign-gets-expensive"]}
           />
         </div>
       </article>

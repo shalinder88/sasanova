@@ -163,7 +163,7 @@ export default function AutomateInvoiceAfterDealClosePage() {
 
           <RelatedLinks
             tools={["pipedrive", "hubspot-crm", "quickbooks-online", "freshbooks", "wave", "zapier", "make"]}
-            comparisons={["pipedrive-vs-hubspot", "zapier-vs-make"]}
+            comparisons={["hubspot-crm-vs-pipedrive", "zapier-vs-make"]}
             guides={[
               "automate-new-lead-to-crm",
               "accounting-freelancers",

@@ -330,7 +330,7 @@ export default function EmailTemplateDesignCompared() {
 
           <RelatedLinks
             tools={["mailchimp", "convertkit", "beehiiv", "activecampaign", "brevo"]}
-            comparisons={["mailchimp-vs-kit-detailed", "beehiiv-vs-kit-vs-mailchimp-for-creators"]}
+            comparisons={[]}
             guides={[
               "email-deliverability-compared",
               "best-email-tool-creators",

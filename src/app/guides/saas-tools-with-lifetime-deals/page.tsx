@@ -168,7 +168,7 @@ export default function SaasToolsWithLifetimeDealsPage() {
 
           <RelatedLinks
             tools={["tidycal", "carrd", "calendly", "cal-com", "squarespace"]}
-            comparisons={["calendly-vs-calcom"]}
+            comparisons={["calendly-vs-cal-com"]}
             guides={[
               "scheduling-tool-pricing-compared-2026",
               "website-builder-for-business",

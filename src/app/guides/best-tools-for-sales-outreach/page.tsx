@@ -284,7 +284,7 @@ export default function BestToolsForSalesOutreachPage() {
         <div className="mt-12">
           <RelatedLinks
             tools={["apollo-io", "lemlist", "instantly", "pipedrive", "close-crm"]}
-            comparisons={["pipedrive-vs-close", "lemlist-vs-instantly"]}
+            comparisons={["close-crm-vs-pipedrive", "lemlist-vs-instantly"]}
             guides={["best-crm-sales-teams", "automate-lead-capture"]}
           />
         </div>

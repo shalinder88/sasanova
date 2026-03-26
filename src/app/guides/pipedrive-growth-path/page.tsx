@@ -229,7 +229,7 @@ export default function PipedriveGrowthPathPage() {
 
           <RelatedLinks
             tools={["pipedrive", "hubspot-crm", "close-crm"]}
-            comparisons={["hubspot-vs-pipedrive", "pipedrive-vs-close"]}
+            comparisons={["hubspot-crm-vs-pipedrive", "close-crm-vs-pipedrive"]}
             guides={["best-crm-under-20-per-user", "switch-from-hubspot-to-pipedrive", "pipedrive-setup-guide"]}
           />
         </div>

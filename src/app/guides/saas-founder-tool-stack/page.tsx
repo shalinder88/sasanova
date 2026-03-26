@@ -249,7 +249,7 @@ const stages = [
     total: "$1,098-1,548/month",
     keyIntegration:
       "HubSpot Professional to ActiveCampaign Pro: HubSpot handles your sales pipeline and attribution reporting while ActiveCampaign handles complex email automation and lead scoring. The CRM owns the deal; the email tool owns the nurture. This split avoids the $3,600/mo Marketing Hub Professional trap.",
-    keyIntegrationLink: "/guides/hubspot-vs-activecampaign-full-comparison",
+    keyIntegrationLink: "/guides/best-automation-marketing-teams",
     whatToSkip: [
       "HubSpot Marketing Hub Professional ($800+/mo) -- ActiveCampaign Pro does 90% of it for $79/mo",
       "Salesforce -- unless you have 50+ sales reps, HubSpot Professional is cheaper and faster to implement",

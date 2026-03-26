@@ -216,7 +216,7 @@ export default function WhenMailchimpBecomesExpensive() {
 
           <RelatedLinks
             tools={["mailchimp", "beehiiv", "kit"]}
-            comparisons={["mailchimp-vs-beehiiv", "mailchimp-vs-kit"]}
+            comparisons={["mailchimp-vs-beehiiv", "mailchimp-vs-convertkit"]}
             guides={["mailchimp-hidden-costs", "migrate-mailchimp-to-beehiiv", "saas-pricing-traps-2026"]}
           />
         </div>

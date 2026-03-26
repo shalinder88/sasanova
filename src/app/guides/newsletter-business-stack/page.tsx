@@ -263,7 +263,6 @@ export default function NewsletterBusinessStack() {
             "when-beehiiv-scale-beats-launch",
             "best-email-tool-creators",
             "best-newsletter-paid-subscribers",
-            "beehiiv-vs-kit-vs-mailchimp-for-creators",
             "creator-toolkit",
           ]}
         />

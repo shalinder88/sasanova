@@ -302,7 +302,7 @@ export default function EmailMarketingCostOver3YearsPage() {
 
           <RelatedLinks
             tools={["mailchimp", "convertkit", "beehiiv"]}
-            comparisons={["mailchimp-vs-beehiiv", "kit-vs-beehiiv"]}
+            comparisons={["mailchimp-vs-beehiiv", "beehiiv-vs-convertkit"]}
             guides={[
               "email-marketing-annual-cost-2026",
               "when-mailchimp-becomes-expensive",

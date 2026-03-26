@@ -279,7 +279,7 @@ export default function EmailAnalyticsCompared() {
 
           <RelatedLinks
             tools={["mailchimp", "activecampaign", "convertkit", "beehiiv", "brevo"]}
-            comparisons={["mailchimp-vs-kit-detailed", "beehiiv-vs-kit-vs-mailchimp-for-creators"]}
+            comparisons={[]}
             guides={[
               "email-segmentation-compared",
               "email-template-design-compared",

@@ -163,7 +163,7 @@ export default function CheapestEmailPerSubscriber() {
 
         <RelatedLinks
           tools={["mailchimp", "convertkit", "brevo", "activecampaign", "beehiiv"]}
-          comparisons={["mailchimp-vs-kit", "brevo-vs-mailchimp", "activecampaign-vs-kit"]}
+          comparisons={["mailchimp-vs-convertkit", "brevo-vs-mailchimp"]}
           guides={[
             "email-pricing-cheat-sheet",
             "email-list-size-cost-calculator",

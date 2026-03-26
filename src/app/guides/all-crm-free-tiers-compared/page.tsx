@@ -159,7 +159,7 @@ export default function AllCrmFreetiersComparedPage() {
 
           <RelatedLinks
             tools={["hubspot-crm", "zoho-crm", "freshsales", "attio", "pipedrive"]}
-            comparisons={["hubspot-vs-pipedrive", "freshsales-vs-zoho", "hubspot-vs-salesforce"]}
+            comparisons={["hubspot-crm-vs-pipedrive", "freshsales-vs-zoho-crm", "salesforce-vs-hubspot-crm"]}
             guides={[
               "best-free-crm-2026",
               "when-free-crm-costs-more",

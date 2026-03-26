@@ -167,7 +167,7 @@ export default function SaasStackForLawFirms() {
 
         <RelatedLinks
           tools={["pipedrive", "calendly", "notion", "freshbooks"]}
-          comparisons={["pipedrive-vs-hubspot"]}
+          comparisons={["hubspot-crm-vs-pipedrive"]}
           guides={[
             "crm-for-service-businesses",
             "best-crm-freelancers-consultants",

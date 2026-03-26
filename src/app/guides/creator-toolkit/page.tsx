@@ -33,8 +33,8 @@ const categories = [
         label: "Best Email Platform for Creators",
       },
       {
-        href: "/guides/beehiiv-vs-kit-vs-mailchimp-for-creators",
-        label: "beehiiv vs Kit vs Mailchimp for Creators",
+        href: "/guides/best-email-tool-creators",
+        label: "Best Email Platform for Creators",
       },
       {
         href: "/compare/beehiiv-vs-convertkit",

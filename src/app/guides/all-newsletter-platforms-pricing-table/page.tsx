@@ -255,7 +255,7 @@ export default function AllNewsletterPlatformsPricingTablePage() {
 
           <RelatedLinks
             tools={["mailchimp", "convertkit", "beehiiv", "substack", "ghost", "buttondown"]}
-            comparisons={["beehiiv-vs-kit", "beehiiv-vs-substack", "beehiiv-vs-ghost"]}
+            comparisons={["beehiiv-vs-convertkit", "beehiiv-vs-substack", "beehiiv-vs-ghost"]}
             guides={[
               "best-email-tool-creators",
               "best-newsletter-paid-subscribers",

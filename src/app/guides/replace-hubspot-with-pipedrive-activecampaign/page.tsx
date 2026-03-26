@@ -344,7 +344,7 @@ export default function ReplaceHubspotWithPipedriveActivecampaign() {
         {/* ── Related Links ── */}
         <RelatedLinks
           tools={["hubspot-crm", "pipedrive", "activecampaign"]}
-          comparisons={["pipedrive-vs-hubspot"]}
+          comparisons={["hubspot-crm-vs-pipedrive"]}
           guides={[
             "who-should-not-use-hubspot",
             "hubspot-pricing-reality",

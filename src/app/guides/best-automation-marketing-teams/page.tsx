@@ -416,7 +416,6 @@ export default function BestAutomationMarketingTeams() {
             guides={[
               "automation-pricing-compared",
               "best-automation-tool-agencies",
-              "hubspot-vs-activecampaign-full-comparison",
             ]}
           />
         </div>

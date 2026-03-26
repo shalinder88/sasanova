@@ -305,7 +305,7 @@ export default function ShouldIPayForAutomationGuide() {
             comparisons={["zapier-vs-make", "make-vs-n8n"]}
             guides={[
               "automation-zapier-vs-make-vs-n8n",
-              "automation-pricing-cheat-sheet",
+              "automation-pricing-compared",
               "when-zapier-costs-more-than-make",
             ]}
           />

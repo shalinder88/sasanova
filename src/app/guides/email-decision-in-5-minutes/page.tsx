@@ -158,7 +158,7 @@ export default function EmailDecisionIn5MinutesPage() {
         <div className="mt-12">
           <RelatedLinks
             tools={["mailchimp", "convertkit", "beehiiv", "brevo"]}
-            comparisons={["beehiiv-vs-kit"]}
+            comparisons={["beehiiv-vs-convertkit"]}
             guides={["how-to-choose-email-platform", "best-email-tool-creators", "when-mailchimp-becomes-expensive"]}
           />
         </div>

@@ -156,7 +156,7 @@ export default function CrmDecisionIn5MinutesPage() {
         <div className="mt-12">
           <RelatedLinks
             tools={["hubspot-crm", "pipedrive", "close-crm"]}
-            comparisons={["hubspot-vs-pipedrive"]}
+            comparisons={["hubspot-crm-vs-pipedrive"]}
             guides={["how-to-choose-crm", "best-crm-freelancers-consultants", "best-crm-sales-teams"]}
           />
         </div>

@@ -776,14 +776,6 @@ export const guides: Guide[] = [
     category: "CRM",
   },
   {
-    slug: "hubspot-vs-activecampaign-full-comparison",
-    title: "HubSpot vs ActiveCampaign: CRM + Email Marketing in One or Separate?",
-    description:
-      "The #1 cross-cluster comparison buyers face. HubSpot as all-in-one vs ActiveCampaign as email+automation specialist. Real pricing at 1K to 25K contacts with CRM seats, and when each wins.",
-    readingTime: "18 min read",
-    category: "Cross-Platform Comparison",
-  },
-  {
     slug: "mailchimp-vs-hubspot-marketing",
     title: "Mailchimp vs HubSpot Marketing Hub: When Free Isn't Really Free",
     description:
@@ -805,14 +797,6 @@ export const guides: Guide[] = [
     description:
       "HubSpot's built-in workflows vs Zapier connecting everything. What each can't do, cost of HubSpot workflows, the hybrid approach most teams use, and when to drop Zapier entirely.",
     readingTime: "14 min read",
-    category: "Cross-Platform Comparison",
-  },
-  {
-    slug: "beehiiv-vs-kit-vs-mailchimp-for-creators",
-    title: "beehiiv vs Kit vs Mailchimp for Creators: The Definitive 2026 Comparison",
-    description:
-      "The 3 most common platforms creators evaluate. Monetization, growth tools, automation depth, cost at 2.5K to 50K subscribers, and definitive verdict by creator type.",
-    readingTime: "18 min read",
     category: "Cross-Platform Comparison",
   },
   {
@@ -1472,22 +1456,6 @@ export const guides: Guide[] = [
   },
   // ── Detailed Comparison Guides ──
   {
-    slug: "hubspot-vs-salesforce-detailed",
-    title: "HubSpot vs Salesforce: The Complete 2026 Comparison",
-    description:
-      "HubSpot Free Tools vs Salesforce Starter Suite at $25/seat — side-by-side pricing, feature tables, total cost at 5/20/50 users, migration playbook, common mistakes, and FAQ.",
-    readingTime: "28 min read",
-    category: "Detailed Comparison",
-  },
-  {
-    slug: "mailchimp-vs-kit-detailed",
-    title: "Mailchimp vs Kit (ConvertKit): Which Email Platform Wins?",
-    description:
-      "Mailchimp Standard $20/mo vs Kit Creator $39/mo — pricing tables, feature comparison, creator economics, annual cost at 1K/5K/25K subscribers, and migration guide.",
-    readingTime: "25 min read",
-    category: "Detailed Comparison",
-  },
-  {
     slug: "zapier-vs-make-detailed",
     title: "Zapier vs Make: The Definitive Pricing and Feature Comparison",
     description:
@@ -1536,27 +1504,11 @@ export const guides: Guide[] = [
     category: "Detailed Comparison",
   },
   {
-    slug: "pipedrive-vs-close-detailed",
-    title: "Pipedrive vs Close: Two Sales-Focused CRMs, Different Philosophies",
-    description:
-      "Pipedrive Lite $14/seat/mo vs Close Essentials $49/seat/mo — visual pipeline vs built-in calling, feature tables, cost at 3/10/25 reps, and when each sales motion fits.",
-    readingTime: "22 min read",
-    category: "Detailed Comparison",
-  },
-  {
     slug: "beehiiv-vs-ghost-detailed",
     title: "beehiiv vs Ghost: Newsletter Platform vs Publishing Platform",
     description:
       "beehiiv Scale $49/mo vs Ghost Publisher $35/mo — free tiers, ad network vs memberships, open source vs cloud, cost at 2.5K/10K/50K subscribers, and data ownership comparison.",
     readingTime: "24 min read",
-    category: "Detailed Comparison",
-  },
-  {
-    slug: "freshsales-vs-zoho-detailed",
-    title: "Freshsales vs Zoho CRM: Freshworks vs Zoho Ecosystem",
-    description:
-      "Freshsales Growth $11/seat/mo vs Zoho Standard $20/seat/mo — AI features, ecosystem breadth, built-in phone, cost at 5/15/50 seats, and when each ecosystem wins.",
-    readingTime: "22 min read",
     category: "Detailed Comparison",
   },
   {
@@ -2812,7 +2764,7 @@ export const guides: Guide[] = [
   },
   // ── HEAD-TO-HEAD DEEP DIVES ──
   {
-    slug: "activecampaign-vs-kit-detailed",
+    slug: "activecampaign-vs-convertkit-detailed",
     title: "ActiveCampaign vs Kit: Automation Powerhouse vs Creator Simplicity",
     description:
       "ActiveCampaign Starter at $15/mo vs Kit Newsletter free for 10,000 subscribers. Automation depth vs creator-first simplicity, CRM vs Commerce, exact pricing at every tier, and a decision framework.",

@@ -141,9 +141,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "email-marketing-annual-cost-2026", "crm-annual-cost-2026",
     "automation-annual-cost-2026",
     // Cross-cluster comparisons
-    "hubspot-vs-activecampaign-full-comparison",
     "mailchimp-vs-hubspot-marketing", "notion-vs-clickup-vs-asana",
-    "zapier-vs-hubspot-workflows", "beehiiv-vs-kit-vs-mailchimp-for-creators",
+    "zapier-vs-hubspot-workflows",
     // Who should NOT use
     "who-should-not-use-hubspot", "who-should-not-use-mailchimp",
     "who-should-not-use-zapier", "who-should-not-use-notion",

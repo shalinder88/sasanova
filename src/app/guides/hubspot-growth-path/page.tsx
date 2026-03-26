@@ -202,7 +202,7 @@ export default function HubSpotGrowthPathPage() {
 
           <RelatedLinks
             tools={["hubspot-crm", "pipedrive"]}
-            comparisons={["hubspot-vs-pipedrive"]}
+            comparisons={["hubspot-crm-vs-pipedrive"]}
             guides={["when-hubspot-stops-being-cheap", "hubspot-pricing-reality", "hubspot-onboarding-fee-explained"]}
           />
         </div>

@@ -483,7 +483,7 @@ export default function StateOfEmailPricingQ12026Page() {
 
           <RelatedLinks
             tools={["mailchimp", "kit", "beehiiv", "activecampaign", "brevo"]}
-            comparisons={["mailchimp-vs-beehiiv", "kit-vs-beehiiv", "mailchimp-vs-activecampaign"]}
+            comparisons={["mailchimp-vs-beehiiv", "beehiiv-vs-convertkit", "mailchimp-vs-activecampaign"]}
             guides={[
               "email-marketing-annual-cost-2026",
               "mailchimp-pricing-history",

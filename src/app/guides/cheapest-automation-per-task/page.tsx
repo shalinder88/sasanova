@@ -152,7 +152,7 @@ export default function CheapestAutomationPerTask() {
           tools={["zapier", "make", "n8n"]}
           comparisons={["zapier-vs-make", "n8n-vs-make"]}
           guides={[
-            "automation-pricing-cheat-sheet",
+            "automation-pricing-compared",
             "when-zapier-costs-more-than-make",
             "when-make-core-isnt-enough",
           ]}

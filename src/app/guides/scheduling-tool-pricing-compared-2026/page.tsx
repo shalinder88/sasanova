@@ -180,7 +180,7 @@ export default function SchedulingToolPricingCompared2026Page() {
         <div className="mt-12">
           <RelatedLinks
             tools={["calendly", "cal-com", "savvycal", "tidycal"]}
-            comparisons={["calendly-vs-calcom"]}
+            comparisons={["calendly-vs-cal-com"]}
             guides={["scheduling-tool-comparison", "when-calendly-free-stops-working"]}
           />
         </div>

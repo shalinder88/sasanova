@@ -466,7 +466,7 @@ export default function EmailMarketingAnnualCost2026Page() {
 
           <RelatedLinks
             tools={["mailchimp", "kit", "beehiiv", "activecampaign", "brevo"]}
-            comparisons={["mailchimp-vs-beehiiv", "kit-vs-beehiiv", "mailchimp-vs-activecampaign"]}
+            comparisons={["mailchimp-vs-beehiiv", "beehiiv-vs-convertkit", "mailchimp-vs-activecampaign"]}
             guides={[
               "migrate-from-mailchimp",
               "best-email-tool-creators",

@@ -381,11 +381,11 @@ export default function MailchimpVsHubSpotMarketingPage() {
             <h2 className="text-lg font-bold mb-4">Related Guides</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <Link
-                href="/guides/hubspot-vs-activecampaign-full-comparison"
+                href="/guides/best-automation-marketing-teams"
                 className="border border-border rounded-lg p-4 hover:border-accent/30 transition-colors block"
               >
-                <span className="text-sm font-semibold text-foreground">HubSpot vs ActiveCampaign</span>
-                <span className="block text-xs text-muted mt-1">CRM + Email in one or separate?</span>
+                <span className="text-sm font-semibold text-foreground">Best Automation for Marketing Teams</span>
+                <span className="block text-xs text-muted mt-1">Top marketing automation tools compared</span>
               </Link>
               <Link
                 href="/guides/hubspot-pricing-reality"

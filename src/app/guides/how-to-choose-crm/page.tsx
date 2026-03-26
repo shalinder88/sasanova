@@ -595,7 +595,7 @@ export default function HowToChooseCRM() {
           comparisons={[
             "hubspot-crm-vs-pipedrive",
             "hubspot-crm-vs-salesforce",
-            "pipedrive-vs-close",
+            "close-crm-vs-pipedrive",
           ]}
           guides={[
             "crm-solo-founder",
