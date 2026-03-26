@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RelatedLinks from "@/components/RelatedLinks";
+import { generateArticleSchema } from "@/lib/article-schema";
 
 export const metadata: Metadata = {
   title: "When Tools Stop Being Cheap: The Complete Series — Sasanova",
@@ -81,9 +82,24 @@ const costThresholds = [
   },
 ];
 
+const articleSchema = generateArticleSchema({
+  title: "When Tools Stop Being Cheap: The Complete Series",
+  description:
+    "The exact subscriber counts, task volumes, and seat thresholds where SaaS tools stop being affordable. Real pricing math for HubSpot, Mailchimp, Zapier, Notion, and more.",
+  url: "https://sasanova.com/guides/franchise/cost-thresholds",
+  datePublished: "2026-03-18",
+  dateModified: "2026-03-26",
+});
+
 export default function CostThresholdsHub() {
   return (
     <>
+      {/* JSON-LD Article */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+
       {/* Breadcrumb */}
       <div className="border-b border-border bg-surface">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">

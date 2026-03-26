@@ -87,9 +87,24 @@ const antiRecs = [
   },
 ];
 
+const articleSchema = generateArticleSchema({
+  title: "Who Should NOT Use: The Complete Series",
+  description:
+    "Honest anti-recommendations for 15 popular SaaS tools. Find out when HubSpot, Mailchimp, Zapier, Notion, Salesforce, and more are the wrong choice — with specific alternatives.",
+  url: "https://sasanova.com/guides/franchise/anti-recommendations",
+  datePublished: "2026-03-18",
+  dateModified: "2026-03-26",
+});
+
 export default function AntiRecommendationsHub() {
   return (
     <>
+      {/* JSON-LD Article */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+
       {/* Breadcrumb */}
       <div className="border-b border-border bg-surface">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
