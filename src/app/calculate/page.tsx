@@ -62,6 +62,8 @@ function computeScenario(
     for (const tool of categoryTools) {
       for (const plan of tool.pricing) {
         if (plan.priceMonthly === null) continue;
+        // BUG 3 FIX: Skip free plans so scenarios show cheapest PAID option
+        if (plan.priceMonthly === 0) continue;
         const cost =
           plan.billingModel === "per_seat"
             ? plan.priceMonthly * seats

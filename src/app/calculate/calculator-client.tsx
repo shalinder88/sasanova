@@ -27,6 +27,18 @@ interface CostResult {
 }
 
 function bestPlanForScale(tool: Tool, scale: number, categoryType: "crm" | "email" | "automation" | "other"): CostResult | null {
+  // BUG 1 FIX: For email/automation categories, skip tools that are primarily
+  // per_seat (CRM tools cross-listed in email). A tool is per_seat-primary if
+  // its highlighted or first paid plan uses per_seat billing.
+  if (categoryType === "email" || categoryType === "automation") {
+    const hasPerSeatPrimary = tool.pricing.some(
+      (p) => p.billingModel === "per_seat" && (p.highlighted || (p.priceMonthly !== null && p.priceMonthly > 0))
+    );
+    if (hasPerSeatPrimary && tool.categorySlug !== "email-marketing" && tool.categorySlug !== "automation") {
+      return null;
+    }
+  }
+
   const viable = tool.pricing.filter((p) => p.priceMonthly !== null);
   if (viable.length === 0) return null;
 
@@ -35,9 +47,12 @@ function bestPlanForScale(tool: Tool, scale: number, categoryType: "crm" | "emai
     const baseAnnual = plan.priceAnnual;
 
     if (plan.billingModel === "per_seat") {
+      // Only multiply by scale when category is CRM (scale = team size).
+      // For other categories, per_seat plans use 1 seat.
+      const seatCount = categoryType === "crm" ? scale : 1;
       return {
-        monthly: base * scale,
-        annual: baseAnnual !== null ? baseAnnual * scale : null,
+        monthly: base * seatCount,
+        annual: baseAnnual !== null ? baseAnnual * seatCount : null,
       };
     }
     if (plan.billingModel === "usage") {
@@ -56,7 +71,15 @@ function bestPlanForScale(tool: Tool, scale: number, categoryType: "crm" | "emai
   const cost = costForPlan(chosen);
   const monthlyCost = cost.monthly;
   const annualCost = cost.annual;
-  const savings = annualCost !== null ? monthlyCost * 12 - annualCost : null;
+
+  // BUG 2 FIX: Compute annual savings as difference between paying monthly
+  // for 12 months vs the annual price. Use the plan's base prices (not scaled)
+  // for the comparison, then scale.
+  const planMonthly = chosen.priceMonthly ?? 0;
+  const planAnnual = chosen.priceAnnual;
+  const savings = planAnnual !== null && planAnnual > 0
+    ? (monthlyCost * 12) - annualCost!
+    : null;
 
   return {
     tool,
