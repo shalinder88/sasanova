@@ -110,7 +110,7 @@ export const guides: Guide[] = [
     slug: "when-clickup-free-hits-limits",
     title: "ClickUp Free Is Generous. Here's When It Stops Being Enough.",
     description:
-      "Free gives you unlimited tasks, unlimited members, but only 100MB storage. Unlimited is $10/member/mo for unlimited storage, integrations, and dashboards. The exact triggers and per-seat math.",
+      "Free gives you unlimited tasks, unlimited members, but only 60MB storage. Unlimited is $10/member/mo for unlimited storage, integrations, and dashboards. The exact triggers and per-seat math.",
     readingTime: "10 min read",
     category: "Cost Threshold",
   },
@@ -1418,7 +1418,7 @@ export const guides: Guide[] = [
     slug: "clickup-pricing-explained",
     title: "ClickUp Pricing Explained: Free Is Generous, But Here's the Catch",
     description:
-      "ClickUp pricing decoded: Free Forever (unlimited tasks/members, 100MB storage), Unlimited $10/member/mo, Business $19/member/mo, Enterprise custom. Storage and integration limits explained.",
+      "ClickUp pricing decoded: Free Forever (unlimited tasks/members, 60MB storage), Unlimited $10/member/mo, Business $19/member/mo, Enterprise custom. Storage and integration limits explained.",
     readingTime: "12 min read",
     category: "Pricing Deep Dive",
   },
@@ -1458,7 +1458,7 @@ export const guides: Guide[] = [
     slug: "slack-pricing-explained",
     title: "Slack Pricing Explained: What 90-Day History Actually Costs You",
     description:
-      "Slack pricing decoded: Free (90-day history, 10 integrations), Pro $8.75/user/mo, Business+ $18/user/mo, Enterprise Grid custom. The knowledge loss calculation, integration limits, and when to pay.",
+      "Slack pricing decoded: Free (90-day history, 10 integrations), Pro $8.75/user/mo, Business+ $15/user/mo, Enterprise Grid custom. The knowledge loss calculation, integration limits, and when to pay.",
     readingTime: "12 min read",
     category: "Pricing Deep Dive",
   },
@@ -1896,7 +1896,7 @@ export const guides: Guide[] = [
     slug: "free-tier-limits-that-matter",
     title: "The Free Tier Limits That Actually Matter (And the Ones That Don't)",
     description:
-      "Across 15+ tools: which free tier limits hit first (Mailchimp 250 contacts, ClickUp 100MB, Zapier 100 tasks) and which rarely matter (Notion 7-day history, Grammarly 100 AI prompts). Exact upgrade costs.",
+      "Across 15+ tools: which free tier limits hit first (Mailchimp 250 contacts, ClickUp 60MB, Zapier 100 tasks) and which rarely matter (Notion 7-day history, Grammarly 100 AI prompts). Exact upgrade costs.",
     readingTime: "16 min read",
     category: "Feature Deep-Dive",
   },
@@ -3210,7 +3210,7 @@ export const guides: Guide[] = [
     slug: "what-you-get-for-free-in-pm",
     title: "What You Get for Free in Project Management: Every Free Tier Mapped",
     description:
-      "ClickUp (unlimited tasks/members, 100MB), Notion (unlimited pages, 7-day history), Trello (unlimited cards, 10 boards), Asana (2 users), Jira (10 users), Linear (250 issues). Every restriction mapped.",
+      "ClickUp (unlimited tasks/members, 60MB), Notion (unlimited pages, 7-day history), Trello (unlimited cards, 10 boards), Asana (2 users), Jira (10 users), Linear (250 issues). Every restriction mapped.",
     readingTime: "16 min read",
     category: "Feature Availability",
   },

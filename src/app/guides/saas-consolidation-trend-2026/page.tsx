@@ -50,7 +50,7 @@ export default function SaaSConsolidationTrend2026() {
 
           <h3 className="text-lg font-semibold mt-8 mb-3">Slack + Salesforce (2021, $27.7B)</h3>
           <p className="text-muted mb-4">
-            What changed: Slack is now the default communication layer for Salesforce&apos;s ecosystem. Pricing has been stable (Free, Pro at $8.75/user, Business+ at $18/user). The integration between Slack and Salesforce CRM deepened significantly. For Salesforce customers, Slack is becoming the natural choice. For non-Salesforce users, Slack has not gotten worse, but it has not gotten cheaper either.
+            What changed: Slack is now the default communication layer for Salesforce&apos;s ecosystem. Pricing has been stable (Free, Pro at $8.75/user, Business+ at $15/user). The integration between Slack and Salesforce CRM deepened significantly. For Salesforce customers, Slack is becoming the natural choice. For non-Salesforce users, Slack has not gotten worse, but it has not gotten cheaper either.
           </p>
           <p className="text-muted mb-4">
             <strong className="text-foreground">Impact on your stack:</strong> If you use Salesforce, Slack is the logical communication tool. If you do not use Salesforce, Discord Free or Microsoft Teams may be better value. The risk: Salesforce may eventually bundle Slack into CRM pricing, making standalone Slack pricing less competitive.

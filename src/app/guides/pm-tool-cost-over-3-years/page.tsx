@@ -102,7 +102,7 @@ export default function PmToolCostOver3YearsPage() {
             <h2 className="text-xl font-bold mb-3">Year 1: 3 Members</h2>
             <p className="text-muted leading-relaxed mb-4">
               At 3 members, all three tools are affordable. ClickUp&apos;s Free Forever plan
-              (unlimited tasks and members, 100MB storage) could even work here, but most
+              (unlimited tasks and members, 60MB storage) could even work here, but most
               teams need the Unlimited plan&apos;s integrations and storage.
             </p>
             <div className="overflow-x-auto rounded-lg border border-border my-4">
@@ -275,7 +275,7 @@ export default function PmToolCostOver3YearsPage() {
                   Can I use free tiers for all three years?
                 </summary>
                 <div className="px-4 pb-3 text-sm text-muted">
-                  ClickUp Free has unlimited tasks and members but only 100MB storage.
+                  ClickUp Free has unlimited tasks and members but only 60MB storage.
                   Notion Free works for individuals but limits guest access and page history.
                   Asana Personal limits you to 2 users. For teams of 3+, you&apos;ll need paid plans.
                 </div>

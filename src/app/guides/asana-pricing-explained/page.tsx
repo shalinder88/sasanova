@@ -102,7 +102,7 @@ export default function AsanaPricingExplainedPage() {
           </p>
           <ul className="list-disc pl-5 space-y-2 text-muted mb-4">
             <li><strong className="text-foreground">Teams of 3&ndash;10 that ran on Asana Free now must pay.</strong> A team of 5 on Starter costs $67.45/month ($54.95 annual). That&apos;s a jump from $0 to $660&ndash;$810/year overnight.</li>
-            <li><strong className="text-foreground">ClickUp Free has no user limit.</strong> Teams displaced from Asana Free have a direct alternative in ClickUp, which allows unlimited members at $0 (with a 100MB storage cap instead).</li>
+            <li><strong className="text-foreground">ClickUp Free has no user limit.</strong> Teams displaced from Asana Free have a direct alternative in ClickUp, which allows unlimited members at $0 (with a 60MB storage cap instead).</li>
             <li><strong className="text-foreground">The 2-user limit makes Free nearly useless for teams.</strong> Free Asana is now effectively a personal task manager, not a team tool. Any team collaboration requires paying.</li>
           </ul>
           <div className="rounded-lg border border-border bg-surface p-5 my-6">

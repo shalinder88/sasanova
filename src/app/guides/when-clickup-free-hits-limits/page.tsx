@@ -6,7 +6,7 @@ import ReviewerByline from "@/components/ReviewerByline";
 export const metadata: Metadata = {
   title: "ClickUp Free Is Generous. Here's When It Stops Being Enough.",
   description:
-    "ClickUp Free gives you unlimited tasks, unlimited members, and 100MB storage. Unlimited is $10/member/mo. Here are the exact triggers for upgrading.",
+    "ClickUp Free gives you unlimited tasks, unlimited members, and 60MB storage. Unlimited is $10/member/mo. Here are the exact triggers for upgrading.",
 };
 
 export default function WhenClickUpFreeHitsLimits() {
@@ -42,7 +42,7 @@ export default function WhenClickUpFreeHitsLimits() {
             ClickUp Free Is Generous. Here&apos;s When It Stops Being Enough.
           </h1>
           <p className="text-lg text-muted">
-            ClickUp&apos;s Free Forever plan is one of the most generous free tiers in project management: unlimited tasks, unlimited members, and no time limit. But 100MB storage, limited views, and no advanced reporting create walls that growing teams hit faster than expected.
+            ClickUp&apos;s Free Forever plan is one of the most generous free tiers in project management: unlimited tasks, unlimited members, and no time limit. But 60MB storage, limited views, and no advanced reporting create walls that growing teams hit faster than expected.
           </p>
         </header>
 
@@ -57,7 +57,7 @@ export default function WhenClickUpFreeHitsLimits() {
           <ul className="list-disc pl-5 space-y-2 text-muted mb-4">
             <li><strong className="text-foreground">Unlimited tasks.</strong> No cap on the number of tasks, subtasks, or checklists you create.</li>
             <li><strong className="text-foreground">Unlimited members.</strong> You can add your entire team without hitting a user limit.</li>
-            <li><strong className="text-foreground">100MB storage.</strong> Total storage across the entire workspace. This is the first wall most teams hit.</li>
+            <li><strong className="text-foreground">60MB storage.</strong> Total storage across the entire workspace. This is the first wall most teams hit.</li>
             <li><strong className="text-foreground">Limited views.</strong> List, Board, and Calendar views are available. Gantt, Timeline, Mind Map, and Workload views are restricted.</li>
             <li><strong className="text-foreground">Basic integrations.</strong> A limited set of integrations compared to paid plans.</li>
           </ul>
@@ -70,9 +70,9 @@ export default function WhenClickUpFreeHitsLimits() {
 
           <h2 className="text-xl font-bold mt-10 mb-4">The Exact Triggers for Upgrading</h2>
 
-          <h3 className="text-lg font-bold mt-8 mb-3">Trigger 1: You Hit 100MB Storage</h3>
+          <h3 className="text-lg font-bold mt-8 mb-3">Trigger 1: You Hit 60MB Storage</h3>
           <p className="text-muted mb-4">
-            100MB is surprisingly small for a workspace. A few dozen attachments, screenshots, or design files will fill it. Once you hit the cap, you can&apos;t upload anything new. ClickUp Unlimited ($10/member/mo) gives you unlimited storage.
+            60MB is surprisingly small for a workspace. A few dozen attachments, screenshots, or design files will fill it. Once you hit the cap, you can&apos;t upload anything new. ClickUp Unlimited ($10/member/mo) gives you unlimited storage.
           </p>
 
           <h3 className="text-lg font-bold mt-8 mb-3">Trigger 2: You Need Advanced Reporting and Dashboards</h3>
@@ -106,7 +106,7 @@ export default function WhenClickUpFreeHitsLimits() {
                   <td className="px-4 py-2.5 font-medium text-foreground">Free Forever</td>
                   <td className="px-4 py-2.5 text-green-400">$0</td>
                   <td className="px-4 py-2.5 text-green-400">$0</td>
-                  <td className="px-4 py-2.5">Unlimited tasks/members, 100MB storage</td>
+                  <td className="px-4 py-2.5">Unlimited tasks/members, 60MB storage</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-2.5 font-medium text-foreground">Unlimited</td>
@@ -134,7 +134,7 @@ export default function WhenClickUpFreeHitsLimits() {
           <div className="rounded-lg border border-border bg-surface p-5 my-6">
             <p className="text-sm font-semibold text-foreground mb-3">Upgrade to Unlimited ($10/member/mo) when:</p>
             <ul className="list-disc pl-5 space-y-2 text-sm text-muted">
-              <li>You&apos;ve hit or are approaching the 100MB storage cap.</li>
+              <li>You&apos;ve hit or are approaching the 60MB storage cap.</li>
               <li>You need Gantt charts with task dependencies for project planning.</li>
               <li>You need dashboards for reporting to stakeholders or clients.</li>
               <li>You need integrations with Slack, GitHub, or other tools.</li>
@@ -202,10 +202,10 @@ export default function WhenClickUpFreeHitsLimits() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Is ClickUp Free really free forever?</h3>
-                <p className="text-muted">Yes. ClickUp&apos;s Free Forever plan does not expire. You get unlimited tasks, unlimited members, and basic views at $0 with no time limit. The limits are on storage (100MB), views, and integrations.</p>
+                <p className="text-muted">Yes. ClickUp&apos;s Free Forever plan does not expire. You get unlimited tasks, unlimited members, and basic views at $0 with no time limit. The limits are on storage (60MB), views, and integrations.</p>
               </div>
               <div>
-                <h3 className="text-sm font-bold text-foreground mb-1">Can I work around the 100MB storage limit?</h3>
+                <h3 className="text-sm font-bold text-foreground mb-1">Can I work around the 60MB storage limit?</h3>
                 <p className="text-muted">Yes. Store files in Google Drive, Dropbox, or another cloud storage service and link to them from ClickUp tasks. This keeps your ClickUp storage usage near zero. Many teams on Free do this indefinitely.</p>
               </div>
               <div>

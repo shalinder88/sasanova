@@ -106,7 +106,7 @@ export default function PerSeatVsFlatRateTrend() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Is per-seat or flat-rate pricing better for small teams?</h3>
-                <p>Flat-rate is better for growing teams. Per-seat is fine for stable teams of 1&ndash;5. The pain point hits at 10+ seats, where per-seat CRM ($14&ndash;$100/seat) and communication ($4&ndash;$18/user) tools can collectively cost $500+/month just in seat fees.</p>
+                <p>Flat-rate is better for growing teams. Per-seat is fine for stable teams of 1&ndash;5. The pain point hits at 10+ seats, where per-seat CRM ($14&ndash;$100/seat) and communication ($4&ndash;$15/user) tools can collectively cost $500+/month just in seat fees.</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Which SaaS tools offer flat-rate pricing?</h3>

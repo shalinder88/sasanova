@@ -97,7 +97,7 @@ export default function SaasSpendingAuditTemplate() {
             <li><strong className="text-foreground">HubSpot Professional ($890/month)</strong> when Starter ($20/seat) covers your needs. If you are not using custom reporting, ABM, or advanced automation, you are overpaying by $800+/month.</li>
             <li><strong className="text-foreground">Zapier Team ($103.50/month)</strong> when you use under 2,000 tasks. Make Core at $10.59/month handles 10,000 operations. Savings: $93/month.</li>
             <li><strong className="text-foreground">Salesforce Enterprise ($175/seat)</strong> when Pro Suite ($100/seat) covers your workflow. At 20 seats: $1,500/month in savings.</li>
-            <li><strong className="text-foreground">Slack Business+ ($18/user)</strong> when Pro ($8.75/user) has everything your team needs. At 25 users: $231.25/month in savings.</li>
+            <li><strong className="text-foreground">Slack Business+ ($15/user)</strong> when Pro ($8.75/user) has everything your team needs. At 25 users: $156.25/month in savings.</li>
           </ul>
 
           <h2 className="text-xl font-bold mt-10 mb-4">Step 6: Replace Expensive Tools with Cheaper Alternatives (10 Minutes)</h2>

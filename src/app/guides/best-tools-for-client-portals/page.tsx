@@ -118,7 +118,7 @@ export default function BestToolsForClientPortalsPage() {
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">Free Forever</td>
                     <td className="px-4 py-2.5 text-accent font-semibold">$0</td>
-                    <td className="px-4 py-2.5 text-muted">100MB storage, unlimited tasks/members, limited views</td>
+                    <td className="px-4 py-2.5 text-muted">60MB storage, unlimited tasks/members, limited views</td>
                   </tr>
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">Unlimited</td>

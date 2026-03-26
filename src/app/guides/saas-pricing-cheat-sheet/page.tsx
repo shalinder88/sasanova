@@ -134,7 +134,7 @@ export default function SaasPricingCheatSheetGuide() {
                 </thead>
                 <tbody className="divide-y divide-border">
                   <tr><td className="px-3 py-2 font-medium text-foreground">Notion</td><td className="px-3 py-2">Yes (unlimited pages)</td><td className="px-3 py-2">$12/seat/mo (Plus)</td><td className="px-3 py-2">Per seat</td></tr>
-                  <tr><td className="px-3 py-2 font-medium text-foreground">ClickUp</td><td className="px-3 py-2">Yes (100MB storage)</td><td className="px-3 py-2">$10/seat/mo (Unlimited)</td><td className="px-3 py-2">Per seat</td></tr>
+                  <tr><td className="px-3 py-2 font-medium text-foreground">ClickUp</td><td className="px-3 py-2">Yes (60MB storage)</td><td className="px-3 py-2">$10/seat/mo (Unlimited)</td><td className="px-3 py-2">Per seat</td></tr>
                   <tr><td className="px-3 py-2 font-medium text-foreground">Asana</td><td className="px-3 py-2">Yes (2 users)</td><td className="px-3 py-2">$13.49/seat/mo (Starter)</td><td className="px-3 py-2">Per seat</td></tr>
                   <tr><td className="px-3 py-2 font-medium text-foreground">Monday.com</td><td className="px-3 py-2">Yes (2 seats)</td><td className="px-3 py-2">$12/seat/mo (Basic)</td><td className="px-3 py-2">Per seat</td></tr>
                   <tr><td className="px-3 py-2 font-medium text-foreground">Basecamp</td><td className="px-3 py-2">Yes (personal)</td><td className="px-3 py-2">$15/user/mo (Basecamp)</td><td className="px-3 py-2">Per seat</td></tr>

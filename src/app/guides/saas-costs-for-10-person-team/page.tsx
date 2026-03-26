@@ -151,7 +151,7 @@ export default function SaaSCosts10PersonPage() {
             <p className="text-muted text-sm leading-relaxed">
               <strong>Key threshold:</strong> Jira Free maxes at 10 users. At 11 users you must
               move to Jira Standard at $8.15/seat/mo. Asana Free is only 2 users &mdash; already
-              exceeded. ClickUp Free has unlimited members but 100MB storage.
+              exceeded. ClickUp Free has unlimited members but 60MB storage.
             </p>
           </section>
 

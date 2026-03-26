@@ -153,7 +153,7 @@ export default function ProjectManagementPricingCompared2026Page() {
                   </tr>
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">ClickUp</td>
-                    <td className="px-4 py-2.5 text-accent font-semibold">Unlimited tasks &amp; members, 100MB storage</td>
+                    <td className="px-4 py-2.5 text-accent font-semibold">Unlimited tasks &amp; members, 60MB storage</td>
                   </tr>
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">Asana</td>

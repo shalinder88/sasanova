@@ -41,11 +41,11 @@ export default function BiggestPmToolMistakes() {
           {/* ── Mistake 1 ── */}
           <h2 className="text-xl font-bold mt-10 mb-4">Mistake 1: Paying for Monday When ClickUp Free Exists</h2>
           <p className="text-muted mb-4">
-            Monday.com Free limits you to 2 seats and 3 boards. Most teams immediately upgrade to Standard ($14/seat/mo). For a 10-person team, that&apos;s $140/mo or $1,680/year. ClickUp Free Forever gives you unlimited tasks, unlimited members, and unlimited projects &mdash; with the 100MB storage limit as the only meaningful constraint. That&apos;s <strong className="text-foreground">$1,680/year saved</strong>.
+            Monday.com Free limits you to 2 seats and 3 boards. Most teams immediately upgrade to Standard ($14/seat/mo). For a 10-person team, that&apos;s $140/mo or $1,680/year. ClickUp Free Forever gives you unlimited tasks, unlimited members, and unlimited projects &mdash; with the 60MB storage limit as the only meaningful constraint. That&apos;s <strong className="text-foreground">$1,680/year saved</strong>.
           </p>
           <div className="rounded-lg border border-border bg-surface p-5 my-6">
             <p className="text-sm font-semibold text-foreground mb-2">What to Do Instead</p>
-            <p className="text-sm text-muted">Start with ClickUp Free if you want maximum features for free. Upgrade to ClickUp Unlimited ($10/member/mo) when you hit the 100MB storage limit or need Gantt charts. That&apos;s $100/mo for 10 people vs Monday Standard&apos;s $140/mo.</p>
+            <p className="text-sm text-muted">Start with ClickUp Free if you want maximum features for free. Upgrade to ClickUp Unlimited ($10/member/mo) when you hit the 60MB storage limit or need Gantt charts. That&apos;s $100/mo for 10 people vs Monday Standard&apos;s $140/mo.</p>
           </div>
 
           {/* ── Mistake 2 ── */}

@@ -192,7 +192,7 @@ export default function CompleteFreeStackGuidePage() {
                 <tbody className="divide-y divide-border">
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">ClickUp</td>
-                    <td className="px-4 py-2.5 text-muted">100MB storage, unlimited tasks and members, limited views</td>
+                    <td className="px-4 py-2.5 text-muted">60MB storage, unlimited tasks and members, limited views</td>
                     <td className="px-4 py-2.5 text-accent font-semibold">Very Good</td>
                   </tr>
                   <tr className="hover:bg-surface transition-colors">

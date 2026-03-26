@@ -83,7 +83,7 @@ export default function FreeInPMPage() {
                   </tr>
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">Storage</td>
-                    <td className="px-4 py-2.5 text-muted">100MB</td>
+                    <td className="px-4 py-2.5 text-muted">60MB</td>
                     <td className="px-4 py-2.5 text-muted">5MB uploads</td>
                     <td className="px-4 py-2.5 text-muted">10MB uploads</td>
                     <td className="px-4 py-2.5 text-muted">Standard</td>
@@ -126,7 +126,7 @@ export default function FreeInPMPage() {
             <h2 className="text-xl font-bold mb-3">Most Generous Free Tier: ClickUp</h2>
             <p className="text-muted leading-relaxed mb-4">
               ClickUp Free gives unlimited tasks, unlimited members, and unlimited spaces. The only
-              meaningful limit is 100MB storage. For a team that doesn&apos;t need file storage, ClickUp
+              meaningful limit is 60MB storage. For a team that doesn&apos;t need file storage, ClickUp
               Free can run indefinitely. The trade-off: ClickUp can be overwhelming to set up.
             </p>
           </section>

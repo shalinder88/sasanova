@@ -115,7 +115,7 @@ export default function SaasAcquisitionsImpact2026Page() {
             </p>
             <p className="text-muted leading-relaxed mb-4">
               <strong className="text-foreground">Current Slack pricing:</strong> Free (90-day
-              history, 10 integrations), Pro ($8.75/seat/month), Business+ ($18/seat/month),
+              history, 10 integrations), Pro ($8.75/seat/month), Business+ ($15/seat/month),
               Enterprise Grid (custom). Slack AI features are being layered as premium additions.
             </p>
             <p className="text-muted leading-relaxed mb-4">

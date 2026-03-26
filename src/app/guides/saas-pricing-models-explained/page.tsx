@@ -374,7 +374,7 @@ export default function SasPricingModelsExplainedPage() {
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">ClickUp</td>
                     <td className="px-4 py-2.5 text-accent">Strong</td>
-                    <td className="px-4 py-2.5 text-muted">Need storage (&gt;100MB) or integrations</td>
+                    <td className="px-4 py-2.5 text-muted">Need storage (&gt;60MB) or integrations</td>
                     <td className="px-4 py-2.5 text-muted">$0 &rarr; $10/user/mo (Unlimited)</td>
                   </tr>
                   <tr className="hover:bg-surface transition-colors">

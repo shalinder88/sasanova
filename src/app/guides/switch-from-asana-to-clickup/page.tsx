@@ -76,7 +76,7 @@ export default function SwitchAsanaToClickupPage() {
           <section>
             <h2 className="text-xl font-bold mt-10 mb-4">What You Gain Moving to ClickUp</h2>
             <p className="text-muted mb-4">
-              <strong className="text-foreground">Generous free plan.</strong> Unlimited users, unlimited tasks, multiple views (Board, List, Calendar), and 100MB storage on ClickUp Free Forever. Asana Free gives you 2 users with List and Board views only.
+              <strong className="text-foreground">Generous free plan.</strong> Unlimited users, unlimited tasks, multiple views (Board, List, Calendar), and 60MB storage on ClickUp Free Forever. Asana Free gives you 2 users with List and Board views only.
             </p>
             <p className="text-muted mb-4">
               <strong className="text-foreground">Built-in time tracking.</strong> ClickUp has native time tracking on all plans. Start a timer on any task, generate reports by project or person. Asana has no native time tracking &mdash; you need Harvest, Toggl, or Clockify.
@@ -155,7 +155,7 @@ export default function SwitchAsanaToClickupPage() {
               <strong className="text-foreground">Price source:</strong> Asana Starter is $13.49/user/mo, Advanced is $30.49/user/mo (monthly billing). ClickUp Unlimited is $10/user/mo, Business is $19/user/mo (monthly billing). Both offer discounts on annual billing.
             </p>
             <p className="text-muted mb-4">
-              <strong className="text-foreground">Free tier comparison:</strong> Asana Personal is free for up to 2 users with unlimited tasks and projects but limited views. ClickUp Free Forever supports unlimited members with 100MB storage and multiple views. For small teams that need 3+ users on a free plan, ClickUp wins outright.
+              <strong className="text-foreground">Free tier comparison:</strong> Asana Personal is free for up to 2 users with unlimited tasks and projects but limited views. ClickUp Free Forever supports unlimited members with 60MB storage and multiple views. For small teams that need 3+ users on a free plan, ClickUp wins outright.
             </p>
           </section>
 
@@ -207,7 +207,7 @@ export default function SwitchAsanaToClickupPage() {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Can I use ClickUp Free for my whole team?</h3>
-                <p className="text-muted">Yes. ClickUp Free Forever supports unlimited members with 100MB storage. You get Board, List, and Calendar views. For basic task management, it&apos;s functional for teams up to 15&ndash;20 before the storage limit becomes a problem.</p>
+                <p className="text-muted">Yes. ClickUp Free Forever supports unlimited members with 60MB storage. You get Board, List, and Calendar views. For basic task management, it&apos;s functional for teams up to 15&ndash;20 before the storage limit becomes a problem.</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">How much will I save switching from Asana to ClickUp?</h3>

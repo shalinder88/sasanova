@@ -82,7 +82,7 @@ export default function SasPricingTermsGlossaryPage() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Freemium</h3>
-                <p className="text-muted">A permanently free tier with limited features, designed to convert users to paid plans. <strong className="text-foreground">Examples:</strong> HubSpot Free (unlimited contacts, limited features), Kit Newsletter (10,000 subscribers, no automations), ClickUp Free (unlimited tasks, 100MB storage).</p>
+                <p className="text-muted">A permanently free tier with limited features, designed to convert users to paid plans. <strong className="text-foreground">Examples:</strong> HubSpot Free (unlimited contacts, limited features), Kit Newsletter (10,000 subscribers, no automations), ClickUp Free (unlimited tasks, 60MB storage).</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Free Trial</h3>

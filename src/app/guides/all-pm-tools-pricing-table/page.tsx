@@ -67,7 +67,7 @@ export default function AllPmToolsPricingTablePage() {
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">ClickUp</td>
                     <td className="px-4 py-2.5 text-muted">Yes</td>
-                    <td className="px-4 py-2.5 text-muted">Unlimited tasks/members, 100MB storage</td>
+                    <td className="px-4 py-2.5 text-muted">Unlimited tasks/members, 60MB storage</td>
                   </tr>
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">Monday.com</td>
@@ -266,7 +266,7 @@ export default function AllPmToolsPricingTablePage() {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Which PM tool has the best free tier for teams?</h3>
-                <p className="text-muted">ClickUp Free (unlimited tasks, unlimited members, 100MB storage) is the most generous for teams. Jira Free (10 users, Scrum and Kanban) is best for engineering teams. Notion Free is best for individuals (unlimited pages but limited collaboration).</p>
+                <p className="text-muted">ClickUp Free (unlimited tasks, unlimited members, 60MB storage) is the most generous for teams. Jira Free (10 users, Scrum and Kanban) is best for engineering teams. Notion Free is best for individuals (unlimited pages but limited collaboration).</p>
               </div>
             </div>
           </section>

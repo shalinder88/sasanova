@@ -86,7 +86,7 @@ export default function WhenToStopUsingFreeTools() {
 
           <h2 className="text-xl font-bold mt-10 mb-4">Project Management: Notion Free &rarr; Notion Plus ($12/User/Month)</h2>
           <p className="text-muted mb-4">
-            <strong className="text-foreground">Free limit:</strong> Unlimited pages, 7-day version history, 10 guest collaborators, 5MB file uploads. ClickUp Free gives unlimited tasks and members but 100MB total storage.
+            <strong className="text-foreground">Free limit:</strong> Unlimited pages, 7-day version history, 10 guest collaborators, 5MB file uploads. ClickUp Free gives unlimited tasks and members but 60MB total storage.
           </p>
           <p className="text-muted mb-4">
             <strong className="text-foreground">Upgrade trigger:</strong> When you need more than 10 guest collaborators, when 7-day version history causes you to lose work, or when 5MB file uploads block you from attaching documents. For ClickUp, upgrade when you need Gantt charts or unlimited storage.

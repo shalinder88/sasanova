@@ -6,7 +6,7 @@ import ReviewerByline from "@/components/ReviewerByline";
 export const metadata: Metadata = {
   title: "Slack Pricing Explained: What 90-Day History Actually Costs You",
   description:
-    "Slack pricing decoded: Free (90-day history, 10 integrations), Pro $8.75/user/mo, Business+ $18/user/mo, Enterprise Grid custom. The knowledge loss calculation and when to pay.",
+    "Slack pricing decoded: Free (90-day history, 10 integrations), Pro $8.75/user/mo, Business+ $15/user/mo, Enterprise Grid custom. The knowledge loss calculation and when to pay.",
 };
 
 export default function SlackPricingExplainedPage() {
@@ -135,9 +135,9 @@ export default function SlackPricingExplainedPage() {
             <strong className="text-foreground">Why most teams end up here:</strong> Unlimited history and unlimited integrations are table stakes for any team that relies on Slack as their communication hub. Pro is the real starting tier for business use.
           </p>
 
-          <h3 className="text-lg font-semibold mt-6 mb-3">Business+ ($18/user/mo) &mdash; Compliance and SSO</h3>
+          <h3 className="text-lg font-semibold mt-6 mb-3">Business+ ($15/user/mo) &mdash; Compliance and SSO</h3>
           <p className="text-muted mb-4">
-            Business+ adds SAML SSO, advanced Slack AI features, compliance message exports, data loss prevention tools, and a 99.99% uptime SLA. The jump from $8.75 to $18 is primarily driven by SSO and compliance needs.
+            Business+ adds SAML SSO, advanced Slack AI features, compliance message exports, data loss prevention tools, and a 99.99% uptime SLA. The jump from $8.75 to $15 is primarily driven by SSO and compliance needs.
           </p>
           <p className="text-muted mb-4">
             <strong className="text-foreground">When it&apos;s worth it:</strong> If your IT team requires SAML SSO for all tools, or if you need compliance exports for regulatory purposes. Most teams under 50 people don&apos;t need Business+.
@@ -166,7 +166,7 @@ export default function SlackPricingExplainedPage() {
               <strong className="text-foreground">Pro ($8.75/user)</strong> &mdash; The right tier for 90% of teams. Unlimited history, unlimited integrations, and group video calls cover standard business communication needs.
             </p>
             <p className="text-sm text-muted mb-3">
-              <strong className="text-foreground">Business+ ($18/user)</strong> &mdash; Required for SAML SSO compliance, message export for regulatory needs, or the 99.99% uptime SLA. Typically mid-market to enterprise companies.
+              <strong className="text-foreground">Business+ ($15/user)</strong> &mdash; Required for SAML SSO compliance, message export for regulatory needs, or the 99.99% uptime SLA. Typically mid-market to enterprise companies.
             </p>
             <p className="text-sm text-muted">
               <strong className="text-foreground">Enterprise Grid (custom)</strong> &mdash; Organizations needing multiple connected workspaces, HIPAA, EKM, or FedRAMP compliance. Typically 500+ users.
@@ -231,7 +231,7 @@ export default function SlackPricingExplainedPage() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">How much does Slack cost per user?</h3>
-                <p className="text-muted">Free for basic use with 90-day message limits. Pro is $8.75/user/month ($7.25 annual). Business+ is $18/user/month ($15 annual). Enterprise Grid is custom. A 25-person team on Pro pays $218.75/month or $2,625/year.</p>
+                <p className="text-muted">Free for basic use with 90-day message limits. Pro is $8.75/user/month ($7.25 annual). Business+ is $15/user/month ($12.50 annual). Enterprise Grid is custom. A 25-person team on Pro pays $218.75/month or $2,625/year.</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Does Slack Free delete messages after 90 days?</h3>

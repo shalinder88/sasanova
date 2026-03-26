@@ -54,7 +54,7 @@ export default function AIFeaturesPricingTrends() {
             <strong className="text-foreground">Model 2: Add-on tier.</strong> A separate tier or add-on that costs more for AI features. Examples: Loom Business + AI ($24/user vs $18/user for Business), Grammarly Pro ($30/month for full AI vs free for basic).
           </p>
           <p className="text-muted mb-4">
-            <strong className="text-foreground">Model 3: Enterprise-locked.</strong> AI features only available on the highest pricing tier. Examples: Zoho CRM Zia AI (Enterprise at $50/seat), Salesforce Einstein AI (Enterprise at $175/seat), Slack AI (Business+ at $18/user).
+            <strong className="text-foreground">Model 3: Enterprise-locked.</strong> AI features only available on the highest pricing tier. Examples: Zoho CRM Zia AI (Enterprise at $50/seat), Salesforce Einstein AI (Enterprise at $175/seat), Slack AI (Business+ at $15/user).
           </p>
 
           <h2 className="text-xl font-bold mt-10 mb-4">Communication Tools: The AI Premium</h2>
@@ -62,7 +62,7 @@ export default function AIFeaturesPricingTrends() {
             <strong className="text-foreground">Loom:</strong> Business is $18/user/month. Business + AI is $24/user/month. The AI add-on ($6/user/month, a 33% premium) adds auto-enhancement, filler word removal, and automatic meeting recaps. For a 10-person team: $60/month extra for AI features.
           </p>
           <p className="text-muted mb-4">
-            <strong className="text-foreground">Slack:</strong> AI summaries are included in Pro at $8.75/user. Advanced AI features (conversation summaries, search answers) require Business+ at $18/user &mdash; a $9.25/user premium (106% increase). Slack locks the best AI behind a tier that most small teams do not need for other reasons.
+            <strong className="text-foreground">Slack:</strong> AI summaries are included in Pro at $8.75/user. Advanced AI features (conversation summaries, search answers) require Business+ at $15/user &mdash; a $6.25/user premium (71% increase). Slack locks the best AI behind a tier that most small teams do not need for other reasons.
           </p>
 
           <h2 className="text-xl font-bold mt-10 mb-4">CRM: Where AI Gets Expensive</h2>

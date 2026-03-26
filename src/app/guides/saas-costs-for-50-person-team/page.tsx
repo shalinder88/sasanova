@@ -146,8 +146,8 @@ export default function SaaSCosts50PersonPage() {
                   </tr>
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">Slack Business+</td>
-                    <td className="px-4 py-2.5 text-muted">$18/user</td>
-                    <td className="px-4 py-2.5 text-muted font-semibold">$900</td>
+                    <td className="px-4 py-2.5 text-muted">$15/user</td>
+                    <td className="px-4 py-2.5 text-muted font-semibold">$750</td>
                   </tr>
                 </tbody>
               </table>
@@ -161,7 +161,7 @@ export default function SaaSCosts50PersonPage() {
                 <h3 className="font-semibold text-foreground mb-1">SSO (Single Sign-On)</h3>
                 <p className="text-muted text-sm leading-relaxed">
                   At 50 people, managing individual passwords becomes a security risk. SSO typically
-                  requires enterprise tiers: Slack Business+ ($18/user), Notion Enterprise (custom),
+                  requires enterprise tiers: Slack Business+ ($15/user), Notion Enterprise (custom),
                   ClickUp Enterprise (custom). This can double your bill for a single feature.
                 </p>
               </div>

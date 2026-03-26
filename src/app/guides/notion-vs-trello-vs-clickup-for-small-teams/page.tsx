@@ -63,7 +63,7 @@ export default function NotionVsTrelloVsClickupForSmallTeams() {
 
           <h3 className="text-lg font-semibold mt-8 mb-3">ClickUp Free Forever</h3>
           <p className="text-muted mb-4">
-            Unlimited tasks, unlimited members, 100MB storage. That storage limit is the real constraint &mdash; 100MB total across your entire workspace fills up fast if you attach files. You get multiple views (list, board, calendar) but with limited options. The upside: unlimited members means a 10-person team can all use it without paying. The downside: limited views and basic reporting mean you&apos;ll feel the ceiling on project visibility.
+            Unlimited tasks, unlimited members, 60MB storage. That storage limit is the real constraint &mdash; 60MB total across your entire workspace fills up fast if you attach files. You get multiple views (list, board, calendar) but with limited options. The upside: unlimited members means a 10-person team can all use it without paying. The downside: limited views and basic reporting mean you&apos;ll feel the ceiling on project visibility.
           </p>
 
           <h2 className="text-xl font-bold mt-10 mb-4">What Each Free Tier Walls Off</h2>
@@ -80,7 +80,7 @@ export default function NotionVsTrelloVsClickupForSmallTeams() {
 
           <h3 className="text-lg font-semibold mt-8 mb-3">ClickUp: Storage and Advanced Views Are the Gate</h3>
           <p className="text-muted mb-4">
-            ClickUp gives you the most on the free tier in terms of raw task management. But 100MB of storage is almost nothing for a team that shares files. The real upgrade trigger is when you need Gantt charts, unlimited integrations, or custom dashboards. The Unlimited plan at $10/member/month ($7/member/month annually) unlocks unlimited storage, integrations, dashboards, and Gantt charts.
+            ClickUp gives you the most on the free tier in terms of raw task management. But 60MB of storage is almost nothing for a team that shares files. The real upgrade trigger is when you need Gantt charts, unlimited integrations, or custom dashboards. The Unlimited plan at $10/member/month ($7/member/month annually) unlocks unlimited storage, integrations, dashboards, and Gantt charts.
           </p>
 
           <h2 className="text-xl font-bold mt-10 mb-4">The Paid Plan Comparison</h2>
@@ -119,13 +119,13 @@ export default function NotionVsTrelloVsClickupForSmallTeams() {
           <ul className="list-disc list-inside text-muted mb-4 space-y-2">
             <li>You have a larger team (unlimited members on Free is a real advantage)</li>
             <li>You need more task management features without paying yet</li>
-            <li>You don&apos;t share many files (the 100MB cap is the binding constraint)</li>
+            <li>You don&apos;t share many files (the 60MB cap is the binding constraint)</li>
             <li>You want the most features at $0, even if the interface is busier</li>
           </ul>
 
           <h2 className="text-xl font-bold mt-10 mb-4">Who Should NOT Use Any of These Free Tiers</h2>
           <p className="text-muted mb-4">
-            <strong className="text-foreground">Teams over 10 people.</strong> All three free tiers start breaking at scale. Notion caps guest collaborators at 10. Trello caps boards at 10. ClickUp caps storage at 100MB. If you have 15+ people, budget for a paid plan from day one.
+            <strong className="text-foreground">Teams over 10 people.</strong> All three free tiers start breaking at scale. Notion caps guest collaborators at 10. Trello caps boards at 10. ClickUp caps storage at 60MB. If you have 15+ people, budget for a paid plan from day one.
           </p>
           <p className="text-muted mb-4">
             <strong className="text-foreground">Teams needing enterprise compliance.</strong> SSO, audit logs, and SCIM provisioning are Enterprise-tier features on all three platforms. Notion Enterprise, Trello Enterprise, and ClickUp Enterprise are all custom-priced. If compliance is a requirement, free tiers are not an option.
@@ -157,7 +157,7 @@ export default function NotionVsTrelloVsClickupForSmallTeams() {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Which has the best free tier for just task management?</h3>
-                <p className="text-muted">ClickUp Free Forever. Unlimited tasks and unlimited members with multiple views. The 100MB storage cap only matters if you attach files directly to tasks.</p>
+                <p className="text-muted">ClickUp Free Forever. Unlimited tasks and unlimited members with multiple views. The 60MB storage cap only matters if you attach files directly to tasks.</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Which is easiest to set up?</h3>

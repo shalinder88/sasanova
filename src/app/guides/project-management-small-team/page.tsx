@@ -151,7 +151,7 @@ export default function ProjectManagementGuide() {
               ClickUp is the maximalist option. It has every feature you can imagine: docs,
               whiteboards, goals, time tracking, dashboards, custom views, automation, and
               an AI assistant. The free plan is surprisingly capable &mdash; unlimited tasks,
-              unlimited members, 100MB storage.
+              unlimited members, 60MB storage.
             </p>
             <p>
               The Unlimited plan ($7/user/month) removes storage limits, adds Gantt charts,
@@ -358,7 +358,7 @@ export default function ProjectManagementGuide() {
                   </tr>
                   <tr>
                     <td className="px-4 py-2.5 font-medium text-foreground">ClickUp</td>
-                    <td className="px-4 py-2.5">Unlimited users, 100MB storage</td>
+                    <td className="px-4 py-2.5">Unlimited users, 60MB storage</td>
                     <td className="px-4 py-2.5">$7&ndash;12</td>
                     <td className="px-4 py-2.5">$35&ndash;60/mo</td>
                   </tr>

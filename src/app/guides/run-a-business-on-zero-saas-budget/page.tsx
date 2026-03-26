@@ -93,7 +93,7 @@ export default function RunBusinessZeroBudget() {
 
           <h2 className="text-xl font-bold mt-10 mb-4">Task Management: ClickUp Free</h2>
           <p className="text-muted mb-4">
-            Unlimited tasks. Unlimited members. 100MB storage. Multiple views (list, board, calendar). The limits: basic reporting, no Gantt charts, 100 automations per month, 100 custom field uses. For teams that want more structured project management than Notion provides.
+            Unlimited tasks. Unlimited members. 60MB storage. Multiple views (list, board, calendar). The limits: basic reporting, no Gantt charts, 100 automations per month, 100 custom field uses. For teams that want more structured project management than Notion provides.
           </p>
 
           <h2 className="text-xl font-bold mt-10 mb-4">Communication: Discord Free</h2>

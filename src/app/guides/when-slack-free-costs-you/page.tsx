@@ -177,7 +177,7 @@ export default function WhenSlackFreeCostsYou() {
             </table>
           </div>
           <p className="text-muted mb-4">
-            Business+ at $18/user/mo adds SSO, advanced AI features, and compliance exports. Most teams under 25 people don&apos;t need it. Pro at $8.75/user/mo covers 90% of team needs.
+            Business+ at $15/user/mo adds SSO, advanced AI features, and compliance exports. Most teams under 25 people don&apos;t need it. Pro at $8.75/user/mo covers 90% of team needs.
           </p>
 
           <h2 className="text-xl font-bold mt-10 mb-4">The Cheaper Alternative: Discord Free</h2>
@@ -211,7 +211,7 @@ export default function WhenSlackFreeCostsYou() {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">When does Slack Business+ make sense?</h3>
-                <p className="text-muted">Business+ at $18/user/mo is necessary when your organization requires SSO for security compliance, needs compliance exports for regulatory reasons, or wants advanced AI features. For most teams under 50 people, Pro is sufficient.</p>
+                <p className="text-muted">Business+ at $15/user/mo is necessary when your organization requires SSO for security compliance, needs compliance exports for regulatory reasons, or wants advanced AI features. For most teams under 50 people, Pro is sufficient.</p>
               </div>
             </div>
           </section>

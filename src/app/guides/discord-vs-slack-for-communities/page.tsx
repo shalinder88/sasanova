@@ -62,7 +62,7 @@ export default function DiscordVsSlackForCommunities() {
           <ul className="list-disc list-inside text-muted mb-4 space-y-2">
             <li><strong className="text-foreground">Free:</strong> $0 &mdash; 90-day message history, 10 app integrations, 1:1 voice/video, 5GB total storage</li>
             <li><strong className="text-foreground">Pro:</strong> $8.75/user/month ($7.25/user/month annually) &mdash; Unlimited history, unlimited integrations, group video (up to 50), guest access, AI summaries</li>
-            <li><strong className="text-foreground">Business+:</strong> $18/user/month ($15/user/month annually) &mdash; SSO, advanced AI features, compliance exports, 99.99% uptime SLA</li>
+            <li><strong className="text-foreground">Business+:</strong> $15/user/month ($12.50/user/month annually) &mdash; SSO, advanced AI features, compliance exports, 99.99% uptime SLA</li>
             <li><strong className="text-foreground">Enterprise Grid:</strong> Custom pricing &mdash; Unlimited workspaces, DLP, eDiscovery, HIPAA, EKM, dedicated CSM</li>
           </ul>
           <p className="text-muted mb-4">

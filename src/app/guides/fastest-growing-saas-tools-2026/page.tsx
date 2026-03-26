@@ -72,7 +72,7 @@ export default function FastestGrowingSaasTools2026() {
           <h2 className="text-xl font-bold mt-10 mb-4">3. ClickUp &mdash; Project Management</h2>
           <div className="rounded-lg border border-border bg-surface p-5 my-6">
             <p className="text-sm text-muted">
-              <strong className="text-foreground">Current pricing:</strong> Free Forever (unlimited tasks/members, 100MB) | Unlimited $10/member/mo
+              <strong className="text-foreground">Current pricing:</strong> Free Forever (unlimited tasks/members, 60MB) | Unlimited $10/member/mo
               <br />
               <strong className="text-foreground">Why it&apos;s growing:</strong> ClickUp ships features at a pace that other PM tools cannot match. Docs, Chat, Whiteboards, Goals, AI, Clips &mdash; all added while keeping pricing stable at $10/member. The free tier with unlimited tasks and members attracts teams from Asana (2-user free limit) and Monday.com (2-seat, 3-board free limit).
               <br />

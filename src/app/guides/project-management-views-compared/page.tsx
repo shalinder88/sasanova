@@ -113,7 +113,7 @@ export default function ProjectManagementViewsCompared() {
 
           <h2 className="text-xl font-bold mt-10 mb-4">ClickUp: Most Views, Free Tier</h2>
           <p className="text-muted mb-4">
-            ClickUp Free Forever gives you list, board, and calendar views with unlimited tasks and members. Gantt charts require Unlimited ($10/member/mo). Mind maps and advanced dashboards require Business ($19/member/mo). ClickUp offers the most view types of any PM tool, but the free tier has 100MB storage limit and the interface can feel overwhelming.
+            ClickUp Free Forever gives you list, board, and calendar views with unlimited tasks and members. Gantt charts require Unlimited ($10/member/mo). Mind maps and advanced dashboards require Business ($19/member/mo). ClickUp offers the most view types of any PM tool, but the free tier has 60MB storage limit and the interface can feel overwhelming.
           </p>
 
           <h2 className="text-xl font-bold mt-10 mb-4">Monday.com: Colorful, Tiered Views</h2>

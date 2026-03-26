@@ -75,7 +75,7 @@ export default function WhoShouldNotUseClickUp() {
           {/* ── Case 2: Solo Users ── */}
           <h2 className="text-xl font-bold mt-10 mb-4">2. Solo Users and Freelancers</h2>
           <p className="text-muted mb-4">
-            ClickUp Free gives you unlimited tasks and members with 100MB of storage. Sounds great for a solo user &mdash; until you try to set it up. ClickUp&apos;s workspace structure (Spaces &rarr; Folders &rarr; Lists &rarr; Tasks) is designed for teams with departments. A solo freelancer managing 3 clients doesn&apos;t need a hierarchy four levels deep.
+            ClickUp Free gives you unlimited tasks and members with 60MB of storage. Sounds great for a solo user &mdash; until you try to set it up. ClickUp&apos;s workspace structure (Spaces &rarr; Folders &rarr; Lists &rarr; Tasks) is designed for teams with departments. A solo freelancer managing 3 clients doesn&apos;t need a hierarchy four levels deep.
           </p>
           <p className="text-muted mb-4">
             Todoist Pro at $7/month gives you 300 projects, reminders, calendar layout, and a mobile app that loads instantly. ClickUp&apos;s mobile app is functional but slower to navigate because of the feature density. For personal task management, simplicity wins over features every time.
@@ -171,7 +171,7 @@ export default function WhoShouldNotUseClickUp() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Is ClickUp Free actually usable?</h3>
-                <p className="text-muted">Yes, the Free Forever plan gives you unlimited tasks and members with 100MB of storage. The limits are on storage, not features or users. It&apos;s one of the most generous free tiers in project management. The problem is complexity, not cost.</p>
+                <p className="text-muted">Yes, the Free Forever plan gives you unlimited tasks and members with 60MB of storage. The limits are on storage, not features or users. It&apos;s one of the most generous free tiers in project management. The problem is complexity, not cost.</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Is ClickUp slow?</h3>

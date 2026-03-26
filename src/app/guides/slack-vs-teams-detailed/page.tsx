@@ -45,7 +45,7 @@ export default function SlackVsTeamsDetailedPage() {
                 <tbody className="text-muted">
                   <tr className="border-b border-border"><td className="py-3 px-4 font-medium text-foreground">Free</td><td className="py-3 px-4">$0 &mdash; 90-day history, 10 integrations, 5GB storage</td><td className="py-3 px-4">$0 &mdash; Chat, 60-min video, 5GB storage</td></tr>
                   <tr className="border-b border-border"><td className="py-3 px-4 font-medium text-foreground">Entry paid</td><td className="py-3 px-4">Pro $8.75/user/mo ($87/yr) &mdash; Unlimited history, integrations, group video</td><td className="py-3 px-4">Teams Essentials $4/user/mo ($48/yr) &mdash; 30-hr meetings, 10GB storage</td></tr>
-                  <tr className="border-b border-border"><td className="py-3 px-4 font-medium text-foreground">Business</td><td className="py-3 px-4">Business+ $18/user/mo ($180/yr) &mdash; SSO, advanced AI, compliance exports</td><td className="py-3 px-4">M365 Business Basic $6/user/mo ($72/yr) &mdash; Web Office apps, 1TB storage</td></tr>
+                  <tr className="border-b border-border"><td className="py-3 px-4 font-medium text-foreground">Business</td><td className="py-3 px-4">Business+ $15/user/mo ($150/yr) &mdash; SSO, advanced AI, compliance exports</td><td className="py-3 px-4">M365 Business Basic $6/user/mo ($72/yr) &mdash; Web Office apps, 1TB storage</td></tr>
                   <tr><td className="py-3 px-4 font-medium text-foreground">Enterprise</td><td className="py-3 px-4">Enterprise Grid &mdash; custom pricing, HIPAA, unlimited workspaces</td><td className="py-3 px-4">M365 Business Standard $12.50/user/mo ($150/yr) &mdash; Desktop Office apps</td></tr>
                 </tbody>
               </table>

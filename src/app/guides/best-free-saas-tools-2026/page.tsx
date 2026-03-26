@@ -240,8 +240,8 @@ export default function BestFreeSaasTools2026Page() {
                   </tr>
                   <tr className="hover:bg-surface transition-colors">
                     <td className="px-4 py-2.5 font-medium text-foreground">ClickUp</td>
-                    <td className="px-4 py-2.5 text-muted">Unlimited tasks, unlimited members, docs, whiteboards, 100MB storage</td>
-                    <td className="px-4 py-2.5 text-muted">100MB storage is tiny, limited views and integrations</td>
+                    <td className="px-4 py-2.5 text-muted">Unlimited tasks, unlimited members, docs, whiteboards, 60MB storage</td>
+                    <td className="px-4 py-2.5 text-muted">60MB storage is tiny, limited views and integrations</td>
                     <td className="px-4 py-2.5 text-muted">Need storage or Gantt charts &rarr; Unlimited $10/user/mo</td>
                   </tr>
                   <tr className="hover:bg-surface transition-colors">

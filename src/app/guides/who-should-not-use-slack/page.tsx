@@ -141,7 +141,7 @@ export default function WhoShouldNotUseSlack() {
           {/* ── Case 4: Large Teams Watching Costs ── */}
           <h2 className="text-xl font-bold mt-10 mb-4">4. Growing Teams Where Per-Seat Chat Costs Add Up</h2>
           <p className="text-muted mb-4">
-            Slack&apos;s per-seat pricing is straightforward but expensive at scale. Slack Pro at $8.75/seat/month for 50 people is $437.50/month, or $5,250/year. Business+ at $18/seat/month for the same team is $10,800/year. For a chat tool.
+            Slack&apos;s per-seat pricing is straightforward but expensive at scale. Slack Pro at $8.75/seat/month for 50 people is $437.50/month, or $5,250/year. Business+ at $15/seat/month for the same team is $9,000/year. For a chat tool.
           </p>
           <p className="text-muted mb-4">
             Discord&apos;s free tier handles teams of 50+ without any per-seat costs. The trade-off is fewer enterprise features (no SSO, no compliance exports, no SLA). If you need those enterprise features, Slack Business+ or Enterprise Grid may be unavoidable &mdash; but if you don&apos;t, the savings are substantial.

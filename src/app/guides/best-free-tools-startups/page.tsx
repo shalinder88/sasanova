@@ -60,7 +60,7 @@ export default function BestFreeToolsStartups() {
 
           <h3 className="text-lg font-semibold mt-8 mb-3">ClickUp Free &mdash; Task Management</h3>
           <p className="text-muted mb-4">
-            Unlimited tasks, unlimited members, 100MB storage. You get multiple views (list, board, calendar), time tracking, and basic automations. The catch: you&apos;re limited to 100 automations per month and 100 uses of custom fields. For a small team tracking tasks and sprints, that&apos;s plenty. Where it gets tight: reporting is basic on Free, and you can&apos;t do custom dashboards. Upgrade trigger: when you need Gantt charts or portfolio views, the Unlimited plan is $7/member/month.
+            Unlimited tasks, unlimited members, 60MB storage. You get multiple views (list, board, calendar), time tracking, and basic automations. The catch: you&apos;re limited to 100 automations per month and 100 uses of custom fields. For a small team tracking tasks and sprints, that&apos;s plenty. Where it gets tight: reporting is basic on Free, and you can&apos;t do custom dashboards. Upgrade trigger: when you need Gantt charts or portfolio views, the Unlimited plan is $7/member/month.
           </p>
 
           <h3 className="text-lg font-semibold mt-8 mb-3">beehiiv Launch &mdash; Newsletter Platform</h3>

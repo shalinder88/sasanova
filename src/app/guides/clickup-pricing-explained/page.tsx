@@ -6,7 +6,7 @@ import ReviewerByline from "@/components/ReviewerByline";
 export const metadata: Metadata = {
   title: "ClickUp Pricing Explained: Free Is Generous, But Here's the Catch",
   description:
-    "ClickUp pricing decoded: Free Forever (unlimited tasks/members, 100MB), Unlimited $10/member/mo, Business $19/member/mo, Enterprise custom. Storage, integration, and feature limits explained.",
+    "ClickUp pricing decoded: Free Forever (unlimited tasks/members, 60MB), Unlimited $10/member/mo, Business $19/member/mo, Enterprise custom. Storage, integration, and feature limits explained.",
 };
 
 export default function ClickUpPricingExplainedPage() {
@@ -42,7 +42,7 @@ export default function ClickUpPricingExplainedPage() {
             ClickUp Pricing Explained: Free Is Generous, But Here&apos;s the Catch
           </h1>
           <p className="text-lg text-muted">
-            ClickUp Free gives you unlimited tasks and unlimited members &mdash; more generous than Asana (2 users) or Monday (2 seats). But 100MB total storage, limited views, and missing integrations create walls that push growing teams to pay. This guide breaks down every tier and the exact moments Free stops working.
+            ClickUp Free gives you unlimited tasks and unlimited members &mdash; more generous than Asana (2 users) or Monday (2 seats). But 60MB total storage, limited views, and missing integrations create walls that push growing teams to pay. This guide breaks down every tier and the exact moments Free stops working.
           </p>
         </header>
 
@@ -69,7 +69,7 @@ export default function ClickUpPricingExplainedPage() {
                   <td className="px-4 py-2.5 font-medium text-foreground">Free Forever</td>
                   <td className="px-4 py-2.5">$0</td>
                   <td className="px-4 py-2.5">$0</td>
-                  <td className="px-4 py-2.5">Unlimited tasks/members, 100MB storage, limited views</td>
+                  <td className="px-4 py-2.5">Unlimited tasks/members, 60MB storage, limited views</td>
                 </tr>
                 <tr className="bg-surface-alt/50">
                   <td className="px-4 py-2.5 font-medium text-foreground">Unlimited</td>
@@ -105,7 +105,7 @@ export default function ClickUpPricingExplainedPage() {
             <strong className="text-foreground">The catches:</strong>
           </p>
           <ul className="list-disc pl-5 space-y-2 text-muted mb-4">
-            <li><strong className="text-foreground">100MB total storage.</strong> Not per user &mdash; total across the entire workspace. A few attachments or documents can eat this up in days. This is the single biggest Free limitation.</li>
+            <li><strong className="text-foreground">60MB total storage.</strong> Not per user &mdash; total across the entire workspace. A few attachments or documents can eat this up in days. This is the single biggest Free limitation.</li>
             <li><strong className="text-foreground">Limited views.</strong> Gantt charts, timelines, and mind maps are not available on Free. You get list, board, and calendar only.</li>
             <li><strong className="text-foreground">Limited integrations.</strong> Many integrations (Slack, GitHub, etc.) are restricted or unavailable on Free.</li>
             <li><strong className="text-foreground">100 automations per month.</strong> You can set up automations but are capped at 100 runs per month across the workspace.</li>
@@ -117,7 +117,7 @@ export default function ClickUpPricingExplainedPage() {
             Unlimited removes the storage cap (unlimited storage), unlocks all integrations, adds Gantt charts, unlimited dashboards, and raises automation runs to 1,000/month. At $10/member, it&apos;s one of the cheapest paid PM tiers available.
           </p>
           <p className="text-muted mb-4">
-            <strong className="text-foreground">Why this is the sweet spot:</strong> Unlimited storage and full integrations turn ClickUp from a constrained tool into a capable workspace. Most teams hit the 100MB storage wall within their first month and upgrade here.
+            <strong className="text-foreground">Why this is the sweet spot:</strong> Unlimited storage and full integrations turn ClickUp from a constrained tool into a capable workspace. Most teams hit the 60MB storage wall within their first month and upgrade here.
           </p>
 
           <h3 className="text-lg font-semibold mt-6 mb-3">Business ($19/member/mo) &mdash; SSO, Automations, Time Tracking</h3>
@@ -135,7 +135,7 @@ export default function ClickUpPricingExplainedPage() {
 
           <h2 className="text-xl font-bold mt-10 mb-4">Hidden Costs</h2>
           <ul className="list-disc pl-5 space-y-2 text-muted mb-4">
-            <li><strong className="text-foreground">100MB storage fills instantly.</strong> The Free tier&apos;s 100MB total storage is the most aggressive storage limit in PM tools. It&apos;s a trial in practice, even though it&apos;s marketed as &quot;forever.&quot;</li>
+            <li><strong className="text-foreground">60MB storage fills instantly.</strong> The Free tier&apos;s 60MB total storage is the most aggressive storage limit in PM tools. It&apos;s a trial in practice, even though it&apos;s marketed as &quot;forever.&quot;</li>
             <li><strong className="text-foreground">ClickUp AI is a separate cost.</strong> ClickUp Brain (AI features) costs $7/member/month on top of any paid plan. A 10-person team on Unlimited + AI pays $170/month, not $100.</li>
             <li><strong className="text-foreground">Feature overwhelm = onboarding cost.</strong> ClickUp has more features than any competitor. The hidden cost is the time your team spends learning and configuring it. Implementation takes 2&ndash;4x longer than Asana or Monday.</li>
             <li><strong className="text-foreground">Performance with large workspaces.</strong> ClickUp can slow down significantly with thousands of tasks, complex dashboards, or large files. This is a real operational cost that doesn&apos;t appear on the pricing page.</li>
@@ -211,11 +211,11 @@ export default function ClickUpPricingExplainedPage() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Is ClickUp Free really free forever?</h3>
-                <p className="text-muted">Yes, ClickUp Free has no time limit. You get unlimited tasks and unlimited members at $0 indefinitely. The practical limitation is 100MB total storage, which most teams exhaust within weeks. The free tier works for evaluation or task management without file attachments.</p>
+                <p className="text-muted">Yes, ClickUp Free has no time limit. You get unlimited tasks and unlimited members at $0 indefinitely. The practical limitation is 60MB total storage, which most teams exhaust within weeks. The free tier works for evaluation or task management without file attachments.</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">How much does ClickUp cost for a team of 10?</h3>
-                <p className="text-muted">$0 on Free (with 100MB total storage), $100/month on Unlimited, or $190/month on Business. Annual billing reduces Unlimited to $70/month and Business to $120/month for 10 members.</p>
+                <p className="text-muted">$0 on Free (with 60MB total storage), $100/month on Unlimited, or $190/month on Business. Annual billing reduces Unlimited to $70/month and Business to $120/month for 10 members.</p>
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">What is the difference between ClickUp Unlimited and Business?</h3>

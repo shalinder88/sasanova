@@ -105,7 +105,7 @@ export default function ReplaceAsanaWithNotionClickup() {
                   <td className="px-4 py-2.5">Free Forever</td>
                   <td className="px-4 py-2.5">$0</td>
                   <td className="px-4 py-2.5">Flat</td>
-                  <td className="px-4 py-2.5">100MB storage, unlimited tasks, unlimited members</td>
+                  <td className="px-4 py-2.5">60MB storage, unlimited tasks, unlimited members</td>
                 </tr>
               </tbody>
             </table>
@@ -250,7 +250,7 @@ export default function ReplaceAsanaWithNotionClickup() {
             Does ClickUp Free have enough features to replace Asana Starter?
           </h3>
           <p className="text-muted mb-4">
-            For most small teams, yes. ClickUp Free gives you unlimited tasks, unlimited members, multiple views (list, board, calendar), and 100MB storage. The main limitation is storage. If you need more, ClickUp Unlimited at $10/member/mo adds unlimited storage, integrations, and dashboards.
+            For most small teams, yes. ClickUp Free gives you unlimited tasks, unlimited members, multiple views (list, board, calendar), and 60MB storage. The main limitation is storage. If you need more, ClickUp Unlimited at $10/member/mo adds unlimited storage, integrations, and dashboards.
           </p>
 
           <h3 className="text-lg font-semibold mt-6 mb-2">

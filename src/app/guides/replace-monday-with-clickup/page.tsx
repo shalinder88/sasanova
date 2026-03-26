@@ -49,7 +49,7 @@ export default function ReplaceMondayWithClickup() {
               <br />
               Savings: <strong className="text-foreground">$4/user/mo</strong>. At 10 users: $40/mo ($480/yr). At 25 users: $100/mo ($1,200/yr).
               <br />
-              Or use ClickUp Free: <strong className="text-foreground">$0/mo</strong> for unlimited tasks and members (100MB storage limit).
+              Or use ClickUp Free: <strong className="text-foreground">$0/mo</strong> for unlimited tasks and members (60MB storage limit).
             </p>
           </div>
 
@@ -85,7 +85,7 @@ export default function ReplaceMondayWithClickup() {
                   <td className="px-4 py-2.5">Free Forever</td>
                   <td className="px-4 py-2.5">$0</td>
                   <td className="px-4 py-2.5">Flat</td>
-                  <td className="px-4 py-2.5">Unlimited tasks, unlimited members, 100MB storage</td>
+                  <td className="px-4 py-2.5">Unlimited tasks, unlimited members, 60MB storage</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-2.5 font-medium text-foreground">ClickUp</td>
@@ -202,7 +202,7 @@ export default function ReplaceMondayWithClickup() {
           <h2 className="text-xl font-bold mt-10 mb-4">Frequently Asked Questions</h2>
 
           <h3 className="text-lg font-semibold mt-6 mb-2">Is ClickUp Free enough to replace Monday Standard?</h3>
-          <p className="text-muted mb-4">For small teams, yes. ClickUp Free gives you unlimited tasks, members, and multiple views. The main limit is 100MB storage. If you attach files frequently, you&apos;ll need Unlimited at $10/member/mo.</p>
+          <p className="text-muted mb-4">For small teams, yes. ClickUp Free gives you unlimited tasks, members, and multiple views. The main limit is 60MB storage. If you attach files frequently, you&apos;ll need Unlimited at $10/member/mo.</p>
 
           <h3 className="text-lg font-semibold mt-6 mb-2">What about Monday&apos;s 3-seat minimum?</h3>
           <p className="text-muted mb-4">Monday requires a minimum of 3 seats on paid plans, so the real minimum cost is $42/mo (Standard) or $36/mo (Basic). ClickUp has no seat minimum &mdash; a single user on Unlimited pays $10/mo.</p>

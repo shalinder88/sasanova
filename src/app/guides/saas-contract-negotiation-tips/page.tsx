@@ -70,7 +70,7 @@ const tactics = [
     examples: [
       { tool: "HubSpot Free → Starter", monthly: "$0 → $20/seat/mo", annual: "$0 → $18/seat/mo", savings: "N/A", slug: "hubspot-crm", note: "Ask for extended trial of Starter features, or a first-year discount." },
       { tool: "Slack Free → Pro", monthly: "$0 → $8.75/user/mo", annual: "$0 → $7.25/user/mo", savings: "N/A", slug: "slack", note: "90-day message history on free is painful. Ask for a pilot discount on Pro." },
-      { tool: "ClickUp Free → Unlimited", monthly: "$0 → $10/seat/mo", annual: "$0 → $7/seat/mo", savings: "N/A", slug: "clickup", note: "100MB storage limit forces the upgrade. Ask about nonprofit or startup discounts." },
+      { tool: "ClickUp Free → Unlimited", monthly: "$0 → $10/seat/mo", annual: "$0 → $7/seat/mo", savings: "N/A", slug: "clickup", note: "60MB storage limit forces the upgrade. Ask about nonprofit or startup discounts." },
       { tool: "Crisp Free → Mini", monthly: "$0 → $45/mo", annual: "$0 → $45/mo", savings: "N/A", slug: "crisp", note: "2-seat limit forces upgrade. Flat-rate pricing (per workspace, not per seat) is already fair." },
     ],
     tactic: "When contacted by the vendor's sales team (they will reach out once you are active on free), respond: 'We love the product. We would upgrade today with a 20% first-year discount.' Most vendors have authority to grant 10-20% off to convert free users.",

@@ -92,7 +92,7 @@ export default function BestToolsForNonprofit() {
                 <tr>
                   <td className="px-4 py-2.5 font-medium text-foreground">PM (alt)</td>
                   <td className="px-4 py-2.5 text-muted"><Link href="/tools/clickup" className="text-accent hover:underline">ClickUp</Link></td>
-                  <td className="px-4 py-2.5 text-muted">Unlimited tasks, unlimited members, 100MB storage</td>
+                  <td className="px-4 py-2.5 text-muted">Unlimited tasks, unlimited members, 60MB storage</td>
                   <td className="px-4 py-2.5 text-green-400">$0</td>
                 </tr>
                 <tr>
@@ -144,7 +144,7 @@ export default function BestToolsForNonprofit() {
             <strong className="text-foreground">Notion Free</strong> gives unlimited pages for individuals with 7-day page history and 10 guest collaborators. Use it as a wiki, project tracker, and document hub. Notion also offers a free Plus plan for nonprofits and educators &mdash; apply through their credit programs.
           </p>
           <p className="text-muted mb-4">
-            <strong className="text-foreground">ClickUp Free</strong> gives unlimited tasks and unlimited members with 100MB storage. Better for structured project management with task assignments, due dates, and status tracking. ClickUp Unlimited ($10/member/mo) is the first upgrade when you need unlimited storage and integrations.
+            <strong className="text-foreground">ClickUp Free</strong> gives unlimited tasks and unlimited members with 60MB storage. Better for structured project management with task assignments, due dates, and status tracking. ClickUp Unlimited ($10/member/mo) is the first upgrade when you need unlimited storage and integrations.
           </p>
 
           {/* ── Nonprofit Discount Programs ── */}

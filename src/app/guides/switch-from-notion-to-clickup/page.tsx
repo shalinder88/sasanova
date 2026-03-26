@@ -165,7 +165,7 @@ export default function SwitchNotionToClickupPage() {
               <strong className="text-foreground">The honest comparison:</strong> ClickUp Unlimited undercuts Notion on price but lacks features like Gantt dependencies, time tracking exports, and advanced automations. ClickUp Business &mdash; where those features live &mdash; costs $2/user/mo more than Notion Plus. The cost difference is small enough that it shouldn&apos;t drive the decision. The feature difference should.
             </p>
             <p className="text-muted mb-4">
-              <strong className="text-foreground">Free tiers:</strong> Notion&apos;s free plan is generous for individuals (unlimited blocks, limited file uploads). ClickUp&apos;s Free Forever plan supports unlimited users with 100MB storage. Both are functional for small teams trying before buying.
+              <strong className="text-foreground">Free tiers:</strong> Notion&apos;s free plan is generous for individuals (unlimited blocks, limited file uploads). ClickUp&apos;s Free Forever plan supports unlimited users with 60MB storage. Both are functional for small teams trying before buying.
             </p>
           </section>
 
@@ -288,7 +288,7 @@ export default function SwitchNotionToClickupPage() {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-foreground mb-1">Does ClickUp have a free plan?</h3>
-                <p className="text-muted">Yes. ClickUp Free Forever supports unlimited users with 100MB storage, limited integrations, and most core features. It&apos;s functional for small teams testing the platform. Unlimited ($7/user/mo) removes storage limits; Business ($12/user/mo) adds time tracking, Gantt dependencies, and advanced automations.</p>
+                <p className="text-muted">Yes. ClickUp Free Forever supports unlimited users with 60MB storage, limited integrations, and most core features. It&apos;s functional for small teams testing the platform. Unlimited ($7/user/mo) removes storage limits; Business ($12/user/mo) adds time tracking, Gantt dependencies, and advanced automations.</p>
               </div>
             </div>
           </section>

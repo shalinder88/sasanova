@@ -92,7 +92,7 @@ export default function MostGenerousFreeTiers2026() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
-                <tr><td className="px-4 py-2.5">1</td><td className="px-4 py-2.5 font-medium text-foreground">ClickUp</td><td className="px-4 py-2.5 text-muted">Unlimited tasks, unlimited members, 100MB storage</td><td className="px-4 py-2.5 text-green-400">Exceptional</td></tr>
+                <tr><td className="px-4 py-2.5">1</td><td className="px-4 py-2.5 font-medium text-foreground">ClickUp</td><td className="px-4 py-2.5 text-muted">Unlimited tasks, unlimited members, 60MB storage</td><td className="px-4 py-2.5 text-green-400">Exceptional</td></tr>
                 <tr><td className="px-4 py-2.5">2</td><td className="px-4 py-2.5 font-medium text-foreground">Notion</td><td className="px-4 py-2.5 text-muted">Unlimited pages, 7-day history, 10 guests</td><td className="px-4 py-2.5 text-green-400">Very Good</td></tr>
                 <tr><td className="px-4 py-2.5">3</td><td className="px-4 py-2.5 font-medium text-foreground">Asana</td><td className="px-4 py-2.5 text-muted">2 users, unlimited tasks/projects, basic views</td><td className="px-4 py-2.5 text-yellow-400">Limited (2 users)</td></tr>
                 <tr><td className="px-4 py-2.5">4</td><td className="px-4 py-2.5 font-medium text-foreground">Monday.com</td><td className="px-4 py-2.5 text-muted">2 seats, 3 boards, unlimited docs</td><td className="px-4 py-2.5 text-yellow-400">Limited (2 seats, 3 boards)</td></tr>
@@ -187,7 +187,7 @@ export default function MostGenerousFreeTiers2026() {
 
           <h3 className="text-lg font-semibold mt-6 mb-2">What&apos;s the catch with these free tiers?</h3>
           <p className="text-muted mb-4">
-            Common limitations: vendor branding on emails/forms, limited reporting, no advanced automations, fewer integrations, and basic support. HubSpot Free adds HubSpot branding to forms and emails. Kit Free excludes automations and integrations. ClickUp Free caps storage at 100MB.
+            Common limitations: vendor branding on emails/forms, limited reporting, no advanced automations, fewer integrations, and basic support. HubSpot Free adds HubSpot branding to forms and emails. Kit Free excludes automations and integrations. ClickUp Free caps storage at 60MB.
           </p>
         </div>
 

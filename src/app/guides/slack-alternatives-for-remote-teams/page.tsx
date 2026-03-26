@@ -51,7 +51,7 @@ export default function SlackAlternativesRemoteTeams() {
             Remote teams rely on asynchronous communication more than office teams. When someone in Tokyo posts a decision at 3am New York time, that message needs to be findable three months later. On Slack Free, it disappears. The 10-integration cap also cripples remote workflows &mdash; you need GitHub, Google Drive, Zoom, your project tool, and your CRM connected at minimum. That&apos;s 5 integrations, leaving room for just 5 more.
           </p>
           <p className="text-muted mb-4">
-            Slack Pro at $8.75/user/month removes both limits. Business+ at $18/user adds SSO and compliance exports. Enterprise Grid is custom pricing. For teams watching costs, the alternatives below either solve the history problem for free or bundle chat with other tools you already pay for.
+            Slack Pro at $8.75/user/month removes both limits. Business+ at $15/user adds SSO and compliance exports. Enterprise Grid is custom pricing. For teams watching costs, the alternatives below either solve the history problem for free or bundle chat with other tools you already pay for.
           </p>
 
           <h2 className="text-xl font-bold mt-10 mb-4">Discord &mdash; Free (Unlimited History)</h2>

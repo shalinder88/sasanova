@@ -43,7 +43,7 @@ const costThresholds = [
   {
     slug: "when-clickup-free-hits-limits",
     tool: "ClickUp",
-    summary: "Free gives unlimited tasks but only 100MB storage. Unlimited is $10/member/mo.",
+    summary: "Free gives unlimited tasks but only 60MB storage. Unlimited is $10/member/mo.",
   },
   {
     slug: "when-pipedrive-needs-upgrade",

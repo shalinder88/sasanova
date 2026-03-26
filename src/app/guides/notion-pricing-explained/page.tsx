@@ -212,7 +212,7 @@ export default function NotionPricingExplainedPage() {
 
           <h2 className="text-xl font-bold mt-10 mb-4">Cheaper Alternative</h2>
           <p className="text-muted mb-4">
-            <strong className="text-foreground">ClickUp Free</strong> gives you unlimited tasks, unlimited members, and 100MB storage at $0. If you primarily need project management (not docs/wiki), ClickUp Free is more generous than Notion Free for teams. ClickUp Unlimited at $10/member/month is $2 less than Notion Plus.
+            <strong className="text-foreground">ClickUp Free</strong> gives you unlimited tasks, unlimited members, and 60MB storage at $0. If you primarily need project management (not docs/wiki), ClickUp Free is more generous than Notion Free for teams. ClickUp Unlimited at $10/member/month is $2 less than Notion Plus.
           </p>
           <p className="text-muted mb-4">
             <strong className="text-foreground">Obsidian</strong> is free for personal use with unlimited local files. If you want a knowledge base without collaboration needs, Obsidian gives you unlimited everything with no cloud dependency. The tradeoff: no real-time collaboration and a steeper learning curve.

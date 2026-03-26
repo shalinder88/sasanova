@@ -197,7 +197,7 @@ export default function NotionGrowthPathPage() {
                 <tr>
                   <td className="px-4 py-2.5 font-medium text-foreground">Free</td>
                   <td className="px-4 py-2.5">Unlimited pages, 10 guests</td>
-                  <td className="px-4 py-2.5">Unlimited tasks/members, 100MB storage</td>
+                  <td className="px-4 py-2.5">Unlimited tasks/members, 60MB storage</td>
                 </tr>
                 <tr className="bg-surface-alt/50">
                   <td className="px-4 py-2.5 font-medium text-foreground">Team tier</td>

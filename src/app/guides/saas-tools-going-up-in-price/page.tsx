@@ -108,7 +108,7 @@ export default function SaasToolsGoingUpInPricePage() {
               is a growth-stage strategy that may not persist as the company matures. ClickUp
               Brain ($7/member/month add-on) already shows monetization of existing features.
               Current Unlimited: $10/member/month. Watch for free tier storage limits tightening
-              (currently 100MB) or feature restrictions.
+              (currently 60MB) or feature restrictions.
             </p>
 
             <h3 className="text-lg font-semibold mt-6 mb-2">Tools Currently Safe (Low Risk)</h3>

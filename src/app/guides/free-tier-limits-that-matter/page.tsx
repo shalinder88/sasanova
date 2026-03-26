@@ -5,7 +5,7 @@ import RelatedLinks from "@/components/RelatedLinks";
 export const metadata: Metadata = {
   title: "The Free Tier Limits That Actually Matter (And the Ones That Don't)",
   description:
-    "HubSpot Free: 2,000 email sends/mo matters. Notion Free: 7-day history rarely matters. ClickUp Free: 100MB storage matters fast. Across 15+ tools, which free tier limits hit first and which are irrelevant.",
+    "HubSpot Free: 2,000 email sends/mo matters. Notion Free: 7-day history rarely matters. ClickUp Free: 60MB storage matters fast. Across 15+ tools, which free tier limits hit first and which are irrelevant.",
 };
 
 export default function FreeTierLimitsThatMatter() {
@@ -59,7 +59,7 @@ export default function FreeTierLimitsThatMatter() {
                 </tr>
                 <tr>
                   <td className="px-4 py-2.5 text-foreground font-medium">ClickUp Free</td>
-                  <td className="px-4 py-2.5 text-muted">100MB storage</td>
+                  <td className="px-4 py-2.5 text-muted">60MB storage</td>
                   <td className="px-4 py-2.5 text-muted">Filled within weeks with any file attachments</td>
                   <td className="px-4 py-2.5 text-muted">$10/member/mo Unlimited</td>
                 </tr>
@@ -152,7 +152,7 @@ export default function FreeTierLimitsThatMatter() {
           <h2 className="text-xl font-bold mt-10 mb-4">The 5 Universal Upgrade Triggers</h2>
           <ol className="list-decimal pl-5 space-y-2 text-muted mb-4">
             <li><strong className="text-foreground">Team size:</strong> Asana (3rd user), Monday (3rd user), Slack (11th integration). Adding people forces upgrades faster than features do.</li>
-            <li><strong className="text-foreground">Storage:</strong> ClickUp (100MB), Notion (5MB uploads on Free). File-heavy teams hit this in weeks.</li>
+            <li><strong className="text-foreground">Storage:</strong> ClickUp (60MB), Notion (5MB uploads on Free). File-heavy teams hit this in weeks.</li>
             <li><strong className="text-foreground">Automation:</strong> Zapier (100 tasks/mo), Make (2 scenarios). Any serious workflow exceeds free limits quickly.</li>
             <li><strong className="text-foreground">Contact/subscriber volume:</strong> Mailchimp (250), beehiiv (2,500), Kit (10,000 but no automation). Growth makes free tiers untenable.</li>
             <li><strong className="text-foreground">History/retention:</strong> Slack (90 days), Notion (7 days). The cost of lost information is invisible but real.</li>
