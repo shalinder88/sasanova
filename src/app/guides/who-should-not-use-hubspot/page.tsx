@@ -68,7 +68,7 @@ export default function WhoShouldNotUseHubspot() {
             <p className="text-sm font-semibold text-foreground mb-2">Use Instead</p>
             <ul className="text-sm text-muted space-y-2 list-none pl-0">
               <li><strong className="text-foreground">Pipedrive</strong> &mdash; Starts at $14/seat/month (Essential). Built specifically for sales-focused individuals and small teams. Visual pipeline, simple UI, no feature bloat. <Link href="/tools/pipedrive" className="text-accent hover:underline">See Pipedrive review</Link></li>
-              <li><strong className="text-foreground">Folk</strong> &mdash; Starts at $20/seat/month. Designed for relationship-driven solo operators (consultants, founders, VCs). Imports contacts from LinkedIn, email, and Twitter automatically. <Link href="/tools/folk" className="text-accent hover:underline">See Folk review</Link></li>
+              <li><strong className="text-foreground">Pipedrive</strong> &mdash; Starts at $14/seat/month (Essential). Built specifically for sales-focused individuals and small teams. Visual pipeline, simple UI, no feature bloat. <Link href="/tools/pipedrive" className="text-accent hover:underline">See Pipedrive review</Link></li>
             </ul>
           </div>
 
@@ -167,7 +167,7 @@ export default function WhoShouldNotUseHubspot() {
           <div className="rounded-lg border border-border bg-surface p-5 my-6">
             <p className="text-sm font-semibold text-foreground mb-2">Use Instead</p>
             <ul className="text-sm text-muted space-y-2 list-none pl-0">
-              <li><strong className="text-foreground">Kit (ConvertKit)</strong> &mdash; Free up to 10,000 subscribers (limited features). Creator plan from $25/month. Best for creators and content-driven businesses with simple automation needs. <Link href="/tools/kit" className="text-accent hover:underline">See Kit review</Link></li>
+              <li><strong className="text-foreground">Kit (ConvertKit)</strong> &mdash; Free up to 10,000 subscribers (limited features). Creator plan from $25/month. Best for creators and content-driven businesses with simple automation needs. <Link href="/tools/convertkit" className="text-accent hover:underline">See Kit review</Link></li>
               <li><strong className="text-foreground">ActiveCampaign</strong> &mdash; Starts at $15/month (Starter, 1,000 contacts). Plus plan at $49/month unlocks the visual automation builder that rivals HubSpot Professional. Best for businesses that need sophisticated email automation without a CRM price tag. <Link href="/tools/activecampaign" className="text-accent hover:underline">See ActiveCampaign review</Link></li>
             </ul>
           </div>
@@ -252,7 +252,7 @@ export default function WhoShouldNotUseHubspot() {
         </div>
 
         <RelatedLinks
-          tools={["hubspot-crm", "pipedrive", "folk", "activecampaign", "salesforce"]}
+          tools={["hubspot-crm", "pipedrive", "activecampaign", "salesforce"]}
           comparisons={["hubspot-crm-vs-pipedrive", "hubspot-crm-vs-salesforce"]}
           guides={["hubspot-pricing-reality", "crm-solo-founder", "switch-from-hubspot-to-pipedrive", "best-crm-sales-teams"]}
         />

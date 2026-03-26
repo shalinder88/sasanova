@@ -311,7 +311,7 @@ export default function BestToolsForContentMarketingPage() {
         <div className="mt-12">
           <RelatedLinks
             tools={["semrush", "mangools", "grammarly", "buffer", "beehiiv"]}
-            comparisons={["semrush-vs-mangools"]}
+            comparisons={[]}
             guides={["seo-tools-for-small-sites", "social-media-management-stack", "best-email-tool-creators"]}
           />
         </div>

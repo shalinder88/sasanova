@@ -409,12 +409,8 @@ export default function HowToChooseEmailPlatform() {
                 <div className="space-y-2 text-sm">
                   <p className="text-foreground">
                     <strong>Best pick:</strong>{" "}
-                    <Link
-                      href="/tools/klaviyo"
-                      className="text-accent hover:underline"
-                    >
-                      Klaviyo
-                    </Link>{" "}
+                    Klaviyo
+                    {" "}
                     — Free up to 250 contacts, then from $20/mo. Purpose-built
                     for e-commerce with Shopify/WooCommerce integration, revenue
                     attribution, and pre-built flows for cart abandonment,
@@ -654,12 +650,7 @@ export default function HowToChooseEmailPlatform() {
               </p>
               <p className="text-foreground">
                 <strong>E-commerce store?</strong> Start with{" "}
-                <Link
-                  href="/tools/klaviyo"
-                  className="text-accent hover:underline"
-                >
-                  Klaviyo (free up to 250 contacts)
-                </Link>
+                Klaviyo (free up to 250 contacts)
                 .
               </p>
               <p className="text-foreground">

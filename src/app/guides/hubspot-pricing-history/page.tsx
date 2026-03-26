@@ -480,7 +480,7 @@ export default function HubspotPricingHistoryPage() {
           </section>
 
           <RelatedLinks
-            tools={["hubspot", "pipedrive", "activecampaign", "folk"]}
+            tools={["hubspot-crm", "pipedrive", "activecampaign"]}
             comparisons={["hubspot-crm-vs-pipedrive", "salesforce-vs-hubspot-crm"]}
             guides={[
               "hubspot-pricing-reality",

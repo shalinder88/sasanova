@@ -366,7 +366,7 @@ export default function EmailMarketingFAQPage() {
 
         {/* Related Links */}
         <RelatedLinks
-          tools={["mailchimp", "kit", "beehiiv", "activecampaign", "brevo"]}
+          tools={["mailchimp", "convertkit", "beehiiv", "activecampaign", "brevo"]}
           comparisons={["mailchimp-vs-convertkit", "beehiiv-vs-substack", "activecampaign-vs-mailchimp"]}
           guides={[
             "email-marketing-annual-cost-2026",

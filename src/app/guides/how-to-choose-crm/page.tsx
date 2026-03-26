@@ -187,7 +187,7 @@ export default function HowToChooseCRM() {
                   </p>
                   <p className="text-sm text-foreground">
                     <Link
-                      href="/tools/folk"
+                      href="/tools/pipedrive"
                       className="text-accent hover:underline"
                     >
                       Folk
@@ -229,7 +229,7 @@ export default function HowToChooseCRM() {
                     </Link>{" "}
                     ($14/seat/mo) or{" "}
                     <Link
-                      href="/tools/close"
+                      href="/tools/close-crm"
                       className="text-accent hover:underline"
                     >
                       Close
@@ -585,8 +585,7 @@ export default function HowToChooseCRM() {
           tools={[
             "hubspot-crm",
             "pipedrive",
-            "close",
-            "folk",
+            "close-crm",
             "attio",
             "salesforce",
             "freshsales",

@@ -433,7 +433,7 @@ export default function MailchimpPricingHistoryPage() {
           </section>
 
           <RelatedLinks
-            tools={["mailchimp", "brevo", "activecampaign", "beehiiv", "kit"]}
+            tools={["mailchimp", "brevo", "activecampaign", "beehiiv", "convertkit"]}
             comparisons={["mailchimp-vs-convertkit", "mailchimp-vs-brevo"]}
             guides={[
               "mailchimp-hidden-costs",

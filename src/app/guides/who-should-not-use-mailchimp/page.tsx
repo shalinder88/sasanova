@@ -247,7 +247,7 @@ export default function WhoShouldNotUseMailchimp() {
         </div>
 
         <RelatedLinks
-          tools={["mailchimp", "beehiiv", "activecampaign", "kit", "brevo"]}
+          tools={["mailchimp", "beehiiv", "activecampaign", "convertkit", "brevo"]}
           comparisons={["mailchimp-vs-beehiiv", "mailchimp-vs-activecampaign"]}
           guides={["mailchimp-hidden-costs", "mailchimp-pricing-history", "migrate-from-mailchimp", "best-email-tool-creators"]}
         />

@@ -158,7 +158,7 @@ export default function BestPmToolForEngineeringTeamsPage() {
 
           <RelatedLinks
             tools={["linear", "jira", "clickup"]}
-            comparisons={["jira-vs-linear", "clickup-vs-linear"]}
+            comparisons={["jira-vs-linear"]}
             guides={[
               "best-pm-tool-for-remote-teams",
               "switch-from-jira-to-linear",

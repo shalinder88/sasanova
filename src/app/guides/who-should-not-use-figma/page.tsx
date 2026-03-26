@@ -189,7 +189,7 @@ export default function WhoShouldNotUseFigma() {
 
         <RelatedLinks
           tools={["figma", "canva", "framer", "webflow"]}
-          comparisons={["figma-vs-canva", "figma-vs-framer"]}
+          comparisons={["figma-vs-canva"]}
           guides={["design-tools-non-designers", "website-builder-for-business"]}
         />
       </article>

@@ -189,7 +189,7 @@ export default function WhoShouldNotUseWebflow() {
 
         <RelatedLinks
           tools={["webflow", "squarespace", "framer", "carrd", "shopify"]}
-          comparisons={["webflow-vs-framer", "webflow-vs-squarespace"]}
+          comparisons={["webflow-vs-framer"]}
           guides={["website-builder-for-business", "design-tools-non-designers", "landing-page-builder-comparison"]}
         />
       </article>

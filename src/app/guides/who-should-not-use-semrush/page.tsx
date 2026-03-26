@@ -190,7 +190,7 @@ export default function WhoShouldNotUseSemrush() {
 
         <RelatedLinks
           tools={["semrush", "ahrefs", "mangools"]}
-          comparisons={["semrush-vs-ahrefs", "semrush-vs-mangools"]}
+          comparisons={["semrush-vs-ahrefs"]}
           guides={["seo-tools-for-small-sites", "semrush-for-saas-companies"]}
         />
       </article>

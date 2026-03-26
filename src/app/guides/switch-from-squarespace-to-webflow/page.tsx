@@ -223,7 +223,7 @@ export default function SwitchSquarespaceToWebflowPage() {
 
         <RelatedLinks
           tools={["squarespace", "webflow"]}
-          comparisons={["squarespace-vs-webflow"]}
+          comparisons={[]}
           guides={[]}
         />
       </article>

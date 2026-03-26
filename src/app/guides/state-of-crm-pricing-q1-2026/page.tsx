@@ -528,7 +528,7 @@ export default function StateOfCrmPricingQ12026Page() {
           </section>
 
           <RelatedLinks
-            tools={["hubspot", "pipedrive", "salesforce", "zoho-crm", "freshsales", "close"]}
+            tools={["hubspot-crm", "pipedrive", "salesforce", "zoho-crm", "freshsales", "close-crm"]}
             comparisons={["hubspot-crm-vs-pipedrive", "salesforce-vs-hubspot-crm", "close-crm-vs-pipedrive"]}
             guides={[
               "crm-annual-cost-2026",

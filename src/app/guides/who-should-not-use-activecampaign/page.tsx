@@ -67,7 +67,7 @@ export default function WhoShouldNotUseActiveCampaign() {
           <div className="rounded-lg border border-border bg-surface p-5 my-6">
             <p className="text-sm font-semibold text-foreground mb-2">Use Instead</p>
             <ul className="text-sm text-muted space-y-2 list-none pl-0">
-              <li><strong className="text-foreground">Kit (ConvertKit)</strong> &mdash; Free Newsletter plan for 10,000 subscribers. Creator plan from $39/month (1,000 subscribers) adds automations and integrations. Built for creators who write, not marketers who automate. <Link href="/tools/kit" className="text-accent hover:underline">See Kit review</Link></li>
+              <li><strong className="text-foreground">Kit (ConvertKit)</strong> &mdash; Free Newsletter plan for 10,000 subscribers. Creator plan from $39/month (1,000 subscribers) adds automations and integrations. Built for creators who write, not marketers who automate. <Link href="/tools/convertkit" className="text-accent hover:underline">See Kit review</Link></li>
               <li><strong className="text-foreground">beehiiv</strong> &mdash; Free Launch plan for 2,500 subscribers, unlimited sends. Scale plan at $49/month for unlimited subscribers with ad network, referral program, and monetization tools. <Link href="/tools/beehiiv" className="text-accent hover:underline">See beehiiv review</Link></li>
             </ul>
           </div>
@@ -118,7 +118,7 @@ export default function WhoShouldNotUseActiveCampaign() {
             <p className="text-sm font-semibold text-foreground mb-2">Use Instead</p>
             <ul className="text-sm text-muted space-y-2 list-none pl-0">
               <li><strong className="text-foreground">Brevo Free</strong> &mdash; $0 for up to 100,000 contacts and 300 emails/day. Starter at $9/month for 5,000 emails/month removes the daily limit. Standard at $18/month adds marketing automation and A/B testing. <Link href="/tools/brevo" className="text-accent hover:underline">See Brevo review</Link></li>
-              <li><strong className="text-foreground">Kit Newsletter (Free)</strong> &mdash; $0 for 10,000 subscribers with unlimited sends. No advanced automations, but perfect for growing a list from scratch. <Link href="/tools/kit" className="text-accent hover:underline">See Kit review</Link></li>
+              <li><strong className="text-foreground">Kit Newsletter (Free)</strong> &mdash; $0 for 10,000 subscribers with unlimited sends. No advanced automations, but perfect for growing a list from scratch. <Link href="/tools/convertkit" className="text-accent hover:underline">See Kit review</Link></li>
             </ul>
           </div>
 
@@ -150,7 +150,7 @@ export default function WhoShouldNotUseActiveCampaign() {
           <div className="rounded-lg border border-border bg-surface p-5 my-6">
             <p className="text-sm font-semibold text-foreground mb-2">Use Instead</p>
             <ul className="text-sm text-muted space-y-2 list-none pl-0">
-              <li><strong className="text-foreground">Kit Creator</strong> &mdash; $39/month for 1,000 subscribers. Visual automation builder, integrations, live chat support. Simpler than ActiveCampaign but covers the automations most businesses need. <Link href="/tools/kit" className="text-accent hover:underline">See Kit review</Link></li>
+              <li><strong className="text-foreground">Kit Creator</strong> &mdash; $39/month for 1,000 subscribers. Visual automation builder, integrations, live chat support. Simpler than ActiveCampaign but covers the automations most businesses need. <Link href="/tools/convertkit" className="text-accent hover:underline">See Kit review</Link></li>
             </ul>
           </div>
 

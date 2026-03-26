@@ -342,7 +342,7 @@ export default function CRMSoloFounderGuide() {
             </div>
           </section>
           <RelatedLinks
-            tools={["pipedrive", "hubspot-crm", "folk-crm"]}
+            tools={["pipedrive", "hubspot-crm"]}
             comparisons={["hubspot-crm-vs-pipedrive"]}
             guides={["best-crm-freelancers-consultants", "migrate-spreadsheet-to-crm"]}
           />

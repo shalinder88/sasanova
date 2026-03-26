@@ -363,7 +363,7 @@ export default function CrmReportingCompared() {
           </section>
 
           <RelatedLinks
-            tools={["hubspot", "pipedrive", "salesforce", "close"]}
+            tools={["hubspot-crm", "pipedrive", "salesforce", "close-crm"]}
             comparisons={["hubspot-crm-vs-pipedrive", "salesforce-vs-hubspot-crm", "close-crm-vs-pipedrive"]}
             guides={[
               "crm-annual-cost-2026",

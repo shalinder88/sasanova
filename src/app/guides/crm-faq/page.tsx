@@ -274,7 +274,7 @@ export default function CRMFAQPage() {
 
         {/* Related Links */}
         <RelatedLinks
-          tools={["hubspot", "pipedrive", "salesforce", "freshsales", "zoho-crm"]}
+          tools={["hubspot-crm", "pipedrive", "salesforce", "freshsales", "zoho-crm"]}
           comparisons={["hubspot-crm-vs-pipedrive", "pipedrive-vs-salesforce", "salesforce-vs-hubspot-crm"]}
           guides={[
             "crm-annual-cost-2026",
