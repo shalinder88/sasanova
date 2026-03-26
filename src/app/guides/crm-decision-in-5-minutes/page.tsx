@@ -135,7 +135,7 @@ export default function CrmDecisionIn5MinutesPage() {
                   What about Salesforce?
                 </summary>
                 <div className="px-4 pb-3 text-sm text-muted">
-                  Salesforce starts at $25/user/mo (Starter) but most teams need Professional at $80/user/mo
+                  Salesforce starts at $25/user/mo (Starter) but most teams need Pro Suite at $100/user/mo
                   plus implementation costs. If you are asking this question, you probably do not need Salesforce yet.
                 </div>
               </details>

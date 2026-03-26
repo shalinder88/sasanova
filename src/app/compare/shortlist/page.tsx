@@ -77,8 +77,6 @@ export default function ShortlistComparePage() {
 
   if (shortlistedTools.length < 2) {
     return (
-      <>
-      <meta name="robots" content="noindex" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent-light mb-6">
           <svg
@@ -125,13 +123,11 @@ export default function ShortlistComparePage() {
           </svg>
         </Link>
       </div>
-      </>
     );
   }
 
   return (
     <>
-      <meta name="robots" content="noindex" />
       {/* Header */}
       <section className="border-b border-border bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">

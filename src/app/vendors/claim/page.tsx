@@ -368,9 +368,67 @@ function VendorClaimInner() {
   );
 }
 
+function VendorClaimStatic() {
+  return (
+    <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="mb-8">
+        <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2">
+          Claim Your Profile
+        </h1>
+        <p className="text-sm text-muted">
+          Submit corrections or updates. Our editorial team verifies and
+          publishes within 48 hours.
+        </p>
+      </div>
+
+      <div className="space-y-6 animate-pulse">
+        {/* Tool select skeleton */}
+        <div>
+          <div className="h-4 w-20 bg-border rounded mb-1.5" />
+          <div className="h-10 w-full bg-border/60 rounded-lg" />
+        </div>
+        {/* Name skeleton */}
+        <div>
+          <div className="h-4 w-24 bg-border rounded mb-1.5" />
+          <div className="h-10 w-full bg-border/60 rounded-lg" />
+        </div>
+        {/* Role skeleton */}
+        <div>
+          <div className="h-4 w-40 bg-border rounded mb-1.5" />
+          <div className="h-10 w-full bg-border/60 rounded-lg" />
+        </div>
+        {/* Email skeleton */}
+        <div>
+          <div className="h-4 w-28 bg-border rounded mb-1.5" />
+          <div className="h-10 w-full bg-border/60 rounded-lg" />
+        </div>
+        {/* Checkboxes skeleton */}
+        <div>
+          <div className="h-4 w-36 bg-border rounded mb-2" />
+          <div className="space-y-2">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="flex items-center gap-3">
+                <div className="w-4 h-4 bg-border rounded" />
+                <div className="h-3 w-48 bg-border/60 rounded" />
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* Details skeleton */}
+        <div>
+          <div className="h-4 w-16 bg-border rounded mb-1.5" />
+          <div className="h-28 w-full bg-border/60 rounded-lg" />
+        </div>
+        {/* Submit button skeleton */}
+        <div className="h-12 w-full bg-border rounded-xl" />
+      </div>
+    </div>
+  );
+}
+
 export default function VendorClaimPage() {
   return (
-    <Suspense fallback={<div className="max-w-2xl mx-auto px-4 py-12 text-center text-muted">Loading claim form...</div>}>
+    <Suspense fallback={<VendorClaimStatic />}>
       <VendorClaimInner />
     </Suspense>
   );

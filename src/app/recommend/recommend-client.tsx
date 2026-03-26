@@ -62,6 +62,7 @@ interface Recommendation {
   monthlyPrice: number;
   upgradeTriggers: string[];
   hiddenCosts: string[];
+  noFreeOption?: { cheapestTool: string; cheapestPrice: number };
 }
 
 function cheapestPrice(tool: Tool): number {
@@ -180,6 +181,20 @@ function recommendTool(
     reasons.push("supports multi-client workflows");
   if (pick.scores.value >= 7) reasons.push("excellent value score");
   if (reasons.length === 0) reasons.push("best overall match");
+
+  // When budget is $0 and no free tier exists, flag as noFreeOption
+  if (perCategory === 0 && !pick.freeTier) {
+    const cheapest = cheapestPrice(pick);
+    return {
+      tool: pick,
+      category: primaryCategory,
+      reason: reasons.join(" \u2022 "),
+      monthlyPrice: 0, // Don't count toward budget
+      upgradeTriggers: pick.switchingTriggers ?? [],
+      hiddenCosts: pick.hiddenCosts ?? [],
+      noFreeOption: { cheapestTool: pick.name, cheapestPrice: cheapest },
+    };
+  }
 
   return {
     tool: pick,
@@ -550,8 +565,22 @@ export default function RecommendClient() {
               {recommendations.map((rec) => (
                 <div
                   key={rec.tool.slug}
-                  className="bg-surface rounded-xl border border-border p-5 sm:p-6"
+                  className={`rounded-xl border p-5 sm:p-6 ${
+                    rec.noFreeOption
+                      ? "bg-warning-light/20 border-warning/30"
+                      : "bg-surface border-border"
+                  }`}
                 >
+                  {rec.noFreeOption ? (
+                    <div className="mb-4">
+                      <p className="text-xs text-muted uppercase tracking-wider mb-1">
+                        {rec.category.name}
+                      </p>
+                      <p className="text-sm font-medium text-warning">
+                        No free option in {rec.category.name}. Cheapest paid: {rec.noFreeOption.cheapestTool} at ${rec.noFreeOption.cheapestPrice}/mo
+                      </p>
+                    </div>
+                  ) : (
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <div>
                       <p className="text-xs text-muted uppercase tracking-wider mb-1">
@@ -578,7 +607,10 @@ export default function RecommendClient() {
                       )}
                     </div>
                   </div>
+                  )}
 
+                  {!rec.noFreeOption && (
+                  <>
                   {/* Why it fits */}
                   <div className="bg-accent-light rounded-lg px-3.5 py-2.5 mb-4">
                     <p className="text-xs font-medium text-accent">
@@ -657,6 +689,8 @@ export default function RecommendClient() {
                   >
                     Full review &amp; pricing details &rarr;
                   </Link>
+                  </>
+                  )}
                 </div>
               ))}
             </div>

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "See how much you could save on your SaaS stack. Free audit report powered by Sasanova.",
     url: "https://sasanova.com/audit/report",
   },
-  robots: { index: false, follow: true },
+  robots: { index: true, follow: true },
 };
 
 export default function ReportLayout({ children }: { children: React.ReactNode }) {

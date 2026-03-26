@@ -56,7 +56,12 @@ function bestPlanForScale(tool: Tool, scale: number, categoryType: "crm" | "emai
       };
     }
     if (plan.billingModel === "usage") {
-      const multiplier = Math.max(1, Math.ceil(scale / 5));
+      // For email/newsletter, use flat rate (tiered pricing, not per-subscriber)
+      if (categoryType === "email") {
+        return { monthly: base, annual: baseAnnual };
+      }
+      // For automation, apply limited multiplier (per 1000 tasks, not per 5)
+      const multiplier = Math.max(1, Math.ceil(scale / 1000));
       return {
         monthly: base * multiplier,
         annual: baseAnnual !== null ? baseAnnual * multiplier : null,
@@ -714,8 +719,8 @@ function SwitchingSavingsCalculator({
     const effort: "Easy" | "Moderate" | "Hard" = migDifficulty >= 7 ? "Easy" : migDifficulty >= 4 ? "Moderate" : "Hard";
 
     // Map migrationDifficulty (1-10, 10=easiest) to estimated hours
-    // 10 = ~2hrs, 1 = ~40hrs
-    const migrationHours = Math.round(2 + (10 - migDifficulty) * 4.2);
+    // 10 = ~2hrs, 1 = ~40hrs — use 38/9 for consistency with /migrate
+    const migrationHours = Math.round(2 + (10 - migDifficulty) * (38 / 9));
     const migrationTimeCost = migrationHours * hourlyRate;
 
     // Total first-year cost including switching
@@ -973,11 +978,12 @@ function SwitchingSavingsCalculator({
 interface StackPick {
   categorySlug: string;
   categoryLabel: string;
-  tool: Tool;
-  plan: PricingPlan;
+  tool: Tool | null;
+  plan: PricingPlan | null;
   monthlyCost: number;
   annualCost: number | null;
   upgradeTrigger: string;
+  noFreeOption?: { cheapestTool: string; cheapestPrice: number };
 }
 
 function StackBudgetBuilder({
@@ -1035,6 +1041,25 @@ function StackBudgetBuilder({
 
       const fitsInBudget = candidates.filter((c) => c.monthlyCost <= remainingBudget);
       const freeTier = candidates.filter((c) => c.monthlyCost === 0);
+
+      // When budget is 0 and no free tool exists, show a "no free option" note
+      if (budget === 0 && freeTier.length === 0) {
+        const cheapest = candidates[0]; // already sorted by cheapest
+        result.push({
+          categorySlug: need.key,
+          categoryLabel: need.label,
+          tool: null,
+          plan: null,
+          monthlyCost: 0,
+          annualCost: null,
+          upgradeTrigger: "",
+          noFreeOption: cheapest
+            ? { cheapestTool: cheapest.tool.name, cheapestPrice: cheapest.monthlyCost }
+            : { cheapestTool: "N/A", cheapestPrice: 0 },
+        });
+        continue;
+      }
+
       const chosen = fitsInBudget[0] ?? freeTier[0] ?? candidates[0];
 
       if (chosen) {
@@ -1073,7 +1098,7 @@ function StackBudgetBuilder({
   const altTotalAnnual = altPicks.reduce((sum, p) => sum + (p.annualCost ?? p.monthlyCost * 12), 0);
 
   // Check if alt stack is actually different
-  const altIsDifferent = altPicks.some((ap, i) => !picks[i] || ap.tool.slug !== picks[i].tool.slug);
+  const altIsDifferent = altPicks.some((ap, i) => !picks[i] || ap.tool?.slug !== picks[i].tool?.slug);
 
   return (
     <div>
@@ -1154,19 +1179,29 @@ function StackBudgetBuilder({
               </thead>
               <tbody>
                 {picks.map((p) => (
-                  <tr key={p.categorySlug} className="border-b border-border/50 transition-colors hover:bg-surface-alt/60">
+                  <tr key={p.categorySlug} className={`border-b border-border/50 transition-colors ${p.noFreeOption ? "bg-warning-light/20" : "hover:bg-surface-alt/60"}`}>
                     <td className="py-3 px-3 font-medium text-muted">{p.categoryLabel}</td>
-                    <td className="py-3 px-3">
-                      <Link href={`/tools/${p.tool.slug}`} className="font-semibold text-foreground hover:text-accent transition-colors">
-                        {p.tool.name}
-                      </Link>
-                    </td>
-                    <td className="py-3 px-3 text-muted">{p.plan.name}</td>
-                    <td className="py-3 px-3 text-right font-mono font-semibold">
-                      {fmt(p.monthlyCost)}
-                      {p.monthlyCost > 0 && <span className="text-muted font-normal">/mo</span>}
-                    </td>
-                    <td className="py-3 px-3 text-xs text-muted">{p.upgradeTrigger}</td>
+                    {p.noFreeOption ? (
+                      <>
+                        <td className="py-3 px-3 text-warning text-xs font-medium" colSpan={4}>
+                          No free option available. Cheapest paid: {p.noFreeOption.cheapestTool} at ${p.noFreeOption.cheapestPrice}/mo
+                        </td>
+                      </>
+                    ) : (
+                      <>
+                        <td className="py-3 px-3">
+                          <Link href={`/tools/${p.tool!.slug}`} className="font-semibold text-foreground hover:text-accent transition-colors">
+                            {p.tool!.name}
+                          </Link>
+                        </td>
+                        <td className="py-3 px-3 text-muted">{p.plan!.name}</td>
+                        <td className="py-3 px-3 text-right font-mono font-semibold">
+                          {fmt(p.monthlyCost)}
+                          {p.monthlyCost > 0 && <span className="text-muted font-normal">/mo</span>}
+                        </td>
+                        <td className="py-3 px-3 text-xs text-muted">{p.upgradeTrigger}</td>
+                      </>
+                    )}
                   </tr>
                 ))}
               </tbody>
@@ -1239,13 +1274,13 @@ function StackBudgetBuilder({
                           const alt = altPicks[i];
                           if (!alt) return null;
                           const diff = p.monthlyCost - alt.monthlyCost;
-                          const changed = p.tool.slug !== alt.tool.slug;
+                          const changed = p.tool?.slug !== alt.tool?.slug;
                           return (
                             <tr key={p.categorySlug} className={`border-b border-border/50 transition-colors hover:bg-surface-alt/60 ${changed ? "bg-accent/5" : ""}`}>
                               <td className="py-2 px-3 text-xs text-muted">{p.categoryLabel}</td>
-                              <td className="py-2 px-3 text-xs font-semibold">{p.tool.name} ({p.plan.name})</td>
+                              <td className="py-2 px-3 text-xs font-semibold">{p.tool?.name ?? "None"} {p.plan ? `(${p.plan.name})` : ""}</td>
                               <td className="py-2 px-3 text-right font-mono text-xs">{fmtMoney(p.monthlyCost)}/mo</td>
-                              <td className={`py-2 px-3 text-xs font-semibold ${changed ? "text-accent" : ""}`}>{alt.tool.name} ({alt.plan.name})</td>
+                              <td className={`py-2 px-3 text-xs font-semibold ${changed ? "text-accent" : ""}`}>{alt.tool?.name ?? "None"} {alt.plan ? `(${alt.plan.name})` : ""}</td>
                               <td className="py-2 px-3 text-right font-mono text-xs">{fmtMoney(alt.monthlyCost)}/mo</td>
                               <td className="py-2 px-3 text-right font-mono text-xs">
                                 {diff > 0 ? (

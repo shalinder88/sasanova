@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Sasanova Open Pricing Data — Download SaaS Pricing for 148 Tools",
   description:
     "Download normalized SaaS pricing data for 148 tools. Updated monthly. Free to use with attribution. CSV and JSON formats available.",
+  alternates: {
+    canonical: "https://sasanova.com/data",
+  },
   openGraph: {
     title: "Sasanova Open Pricing Data",
     description:
