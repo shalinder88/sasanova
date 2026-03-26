@@ -2685,4 +2685,47 @@ export const guides: Guide[] = [
     readingTime: "15 min read",
     category: "Automation Deep Dive",
   },
+  // ── Replacement Stacks ──
+  {
+    slug: "replace-hubspot-with-pipedrive-activecampaign",
+    title:
+      "Replace HubSpot with Pipedrive + ActiveCampaign (Save $700+/Month)",
+    description:
+      "HubSpot Professional costs $890/mo flat. Pipedrive Growth ($39/seat) + ActiveCampaign Starter ($15/mo) = $54/mo for 1 user. What you gain, what you lose, migration steps, and exact pricing.",
+    readingTime: "14 min read",
+    category: "Replacement Stack",
+  },
+  {
+    slug: "replace-mailchimp-with-beehiiv-tally",
+    title: "Replace Mailchimp with beehiiv + Tally (Save $200+/Year)",
+    description:
+      "Mailchimp Standard $20/mo for 500 contacts. beehiiv free (2,500 subs) + Tally free (unlimited forms) = $0/mo. For newsletters, beehiiv is better AND cheaper. Exact pricing and migration steps.",
+    readingTime: "11 min read",
+    category: "Replacement Stack",
+  },
+  {
+    slug: "replace-zapier-with-make",
+    title: "Replace Zapier with Make (Same Automations, 65% Less)",
+    description:
+      "Zapier Professional $29.99/mo (750 tasks). Make Core $10.59/mo (10,000 ops). 13x more volume at 65% less cost. Step-by-step migration for the top 5 Zaps.",
+    readingTime: "13 min read",
+    category: "Replacement Stack",
+  },
+  {
+    slug: "replace-salesforce-with-hubspot-starter",
+    title:
+      "Replace Salesforce with HubSpot Starter (Save $60+/Seat/Month)",
+    description:
+      "Salesforce Pro Suite $100/seat/mo. HubSpot Starter $20/seat/mo. You lose deep customization and AppExchange, but gain simplicity and $960/seat/yr in savings.",
+    readingTime: "13 min read",
+    category: "Replacement Stack",
+  },
+  {
+    slug: "replace-slack-with-discord",
+    title: "Replace Slack Pro with Discord (Save $105/User/Year)",
+    description:
+      "Slack Pro $8.75/user/mo ($105/yr). Discord free (unlimited messages, history). When Discord works, when it doesn't, and how to migrate your team.",
+    readingTime: "12 min read",
+    category: "Replacement Stack",
+  },
 ];
