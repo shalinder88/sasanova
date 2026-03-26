@@ -62,25 +62,16 @@ export default function Home() {
               Compare pricing, calculate switching costs, and find the right stack for your budget.
             </p>
 
-            {/* 4 action CTAs */}
+            {/* Primary CTAs */}
             <div className="flex flex-wrap justify-center gap-3 mb-12">
-              <Link href="/compare" className="px-7 py-3 text-sm font-semibold bg-accent text-white rounded-lg hover:brightness-110 transition-all">
-                Compare Two Tools
-              </Link>
-              <Link href="/calculate" className="px-7 py-3 text-sm font-semibold bg-accent/10 border border-accent text-accent rounded-lg hover:bg-accent/20 transition-all">
+              <Link href="/calculate" className="px-7 py-3 text-sm font-semibold bg-accent text-white rounded-lg hover:brightness-110 transition-all">
                 Calculate Costs
               </Link>
-              <Link href="#stacks" className="px-7 py-3 text-sm font-semibold border border-border text-foreground rounded-lg hover:bg-surface transition-colors">
-                Find Your Stack
-              </Link>
-              <Link href="#switching" className="px-7 py-3 text-sm font-semibold border border-border text-foreground rounded-lg hover:bg-surface transition-colors">
-                See Switching Costs
-              </Link>
-              <Link href="/audit" className="px-7 py-3 text-sm font-semibold bg-red-500/15 border border-red-500/40 text-red-400 rounded-lg hover:bg-red-500/25 transition-all">
+              <Link href="/audit" className="px-7 py-3 text-sm font-semibold bg-accent/10 border border-accent text-accent rounded-lg hover:bg-accent/20 transition-all">
                 Audit Your Stack
               </Link>
-              <Link href="/recommend" className="px-7 py-3 text-sm font-semibold bg-success/15 border border-success/40 text-success rounded-lg hover:bg-success/25 transition-all">
-                Get Recommendations &rarr;
+              <Link href="/compare" className="px-7 py-3 text-sm font-semibold border border-border text-foreground rounded-lg hover:bg-surface transition-colors">
+                Compare Tools
               </Link>
             </div>
 
@@ -110,6 +101,33 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          DASHBOARD NUDGE — Drive return-visitor engagement
+          ═══════════════════════════════════════════════════════ */}
+      <section className="py-8 border-b border-border bg-accent/5">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Link
+            href="/dashboard"
+            className="flex items-center justify-between gap-4 rounded-xl border border-accent/25 bg-background p-5 hover:border-accent/50 transition-colors group"
+          >
+            <div className="flex items-center gap-3">
+              <span className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center">
+                <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </span>
+              <div>
+                <p className="text-sm font-semibold">Track your SaaS spending</p>
+                <p className="text-xs text-muted">Set up your dashboard in 2 minutes — monitor budgets, find savings, and optimize your stack.</p>
+              </div>
+            </div>
+            <svg className="w-5 h-5 text-muted group-hover:text-accent transition-colors flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </section>
 

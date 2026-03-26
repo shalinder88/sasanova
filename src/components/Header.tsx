@@ -8,16 +8,9 @@ import SearchBar from "./SearchBar";
 const nav = [
   { href: "/tools", label: "Tools Directory" },
   { href: "/compare", label: "Compare" },
-  { href: "/playground", label: "Playground" },
-  { href: "/best", label: "Best Of" },
-  { href: "/alternatives", label: "Alternatives" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/guides", label: "Guides" },
-  { href: "/recommend", label: "Recommend" },
-  { href: "/changelog", label: "Changelog" },
-  { href: "/alerts", label: "Alerts" },
+  { href: "/calculate", label: "Calculator" },
   { href: "/audit", label: "Audit" },
-  { href: "/vault", label: "Vault" },
+  { href: "/guides", label: "Guides" },
 ];
 
 export default function Header() {
@@ -41,12 +34,12 @@ export default function Header() {
           </div>
 
           {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-0.5">
+          <div className="hidden lg:flex items-center gap-1.5">
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="px-3 py-1.5 text-[13px] font-medium text-muted hover:text-foreground rounded-md hover:bg-surface transition-colors"
+                className="px-3.5 py-1.5 text-[13px] font-medium text-muted hover:text-foreground rounded-md hover:bg-surface transition-colors"
               >
                 {item.label}
               </Link>
@@ -59,14 +52,8 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* CTA + Mobile toggle */}
+          {/* Mobile toggle */}
           <div className="flex items-center gap-2">
-            <Link
-              href="/vault"
-              className="hidden sm:inline-flex items-center px-3.5 py-1.5 text-[13px] font-semibold bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors"
-            >
-              Newsletter
-            </Link>
             <button
               className="lg:hidden p-1.5 text-muted hover:text-foreground"
               onClick={() => setOpen(!open)}

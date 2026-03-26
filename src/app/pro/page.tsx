@@ -208,6 +208,9 @@ export default function ProPage() {
             <p className="text-xs text-muted">
               14-day trial &middot; No credit card required
             </p>
+            <p className="text-xs text-muted mt-2">
+              $9/mo or $79/yr (save {savingsPercent}%)
+            </p>
           </div>
         </div>
       </section>
@@ -291,14 +294,54 @@ export default function ProPage() {
         </div>
       </section>
 
-      {/* ── Trust Signal ── */}
-      <section className="text-center mb-8">
-        <p className="text-sm text-muted">
-          Join <span className="text-foreground font-semibold">0</span> teams using Pro
-        </p>
-        <p className="text-xs text-muted mt-1">
-          We are just getting started. Early adopters get our attention.
-        </p>
+      {/* ── Example Pro Export ── */}
+      <section className="mb-16">
+        <h2 className="text-xl font-bold text-foreground text-center mb-8">
+          What a Pro Export Looks Like
+        </h2>
+        <div className="max-w-lg mx-auto rounded-2xl border border-border bg-surface p-6 shadow-lg">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 rounded-md bg-accent flex items-center justify-center">
+                <span className="text-white font-bold text-[10px]">S</span>
+              </div>
+              <span className="text-sm font-bold">Sasanova Pro Report</span>
+            </div>
+            <span className="text-[10px] text-muted uppercase tracking-wider">PDF Export</span>
+          </div>
+          <div className="border border-border rounded-xl overflow-hidden mb-4">
+            <div className="bg-accent/5 px-4 py-2.5 border-b border-border">
+              <p className="text-xs font-bold text-accent uppercase tracking-wider">Comparison Report Card</p>
+              <p className="text-[11px] text-muted">Mailchimp vs Kit (ConvertKit) &middot; March 2026</p>
+            </div>
+            <div className="p-4 space-y-3">
+              <div className="grid grid-cols-3 gap-2 text-center text-xs">
+                <div />
+                <div className="font-semibold text-foreground">Mailchimp</div>
+                <div className="font-semibold text-foreground">Kit</div>
+              </div>
+              {[
+                { label: "Value Score", a: "6.5", b: "8.2", bWins: true },
+                { label: "Starting Price", a: "$13/mo", b: "$9/mo", bWins: true },
+                { label: "Free Tier", a: "500 contacts", b: "10K subs", bWins: true },
+                { label: "Ease of Use", a: "7.0", b: "8.5", bWins: true },
+                { label: "Power Score", a: "8.0", b: "6.5", bWins: false },
+              ].map((row) => (
+                <div key={row.label} className="grid grid-cols-3 gap-2 text-center text-xs py-1.5 border-t border-border/50">
+                  <div className="text-left text-muted">{row.label}</div>
+                  <div className={!row.bWins ? "text-success font-semibold" : "text-foreground"}>{row.a}</div>
+                  <div className={row.bWins ? "text-success font-semibold" : "text-foreground"}>{row.b}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="bg-accent/5 rounded-lg p-3">
+            <p className="text-xs text-accent font-medium">Verdict: Kit wins for creators on value and ease. Mailchimp wins on advanced automation power.</p>
+          </div>
+          <p className="text-[10px] text-muted text-center mt-3">
+            Pro members can export full comparison reports as PDF &amp; CSV
+          </p>
+        </div>
       </section>
 
       {/* ── Bottom CTA ── */}
