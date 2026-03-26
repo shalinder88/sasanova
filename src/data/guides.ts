@@ -2810,4 +2810,91 @@ export const guides: Guide[] = [
     readingTime: "14 min read",
     category: "Competitive Intelligence",
   },
+  // ── HEAD-TO-HEAD DEEP DIVES ──
+  {
+    slug: "activecampaign-vs-kit-detailed",
+    title: "ActiveCampaign vs Kit: Automation Powerhouse vs Creator Simplicity",
+    description:
+      "ActiveCampaign Starter at $15/mo vs Kit Newsletter free for 10,000 subscribers. Automation depth vs creator-first simplicity, CRM vs Commerce, exact pricing at every tier, and a decision framework.",
+    readingTime: "20 min read",
+    category: "Detailed Comparison",
+  },
+  {
+    slug: "brevo-vs-mailchimp-detailed",
+    title: "Brevo vs Mailchimp: Pay-Per-Send vs Pay-Per-Contact",
+    description:
+      "Brevo Standard $18/mo (5,000 emails, unlimited contacts) vs Mailchimp Standard $20/mo (500 contacts). Fundamentally different billing models compared with exact pricing, cost at real contact counts, and feature tables.",
+    readingTime: "20 min read",
+    category: "Detailed Comparison",
+  },
+  {
+    slug: "freshsales-vs-pipedrive-detailed",
+    title: "Freshsales vs Pipedrive: Built-In Phone vs Pure Pipeline",
+    description:
+      "Freshsales Growth at $11/seat/mo with built-in phone and AI scoring vs Pipedrive Lite at $14/seat/mo with the best visual pipeline UX. Annual cost at 3, 5, 15, and 50 seats, feature comparison, and decision framework.",
+    readingTime: "20 min read",
+    category: "Detailed Comparison",
+  },
+  {
+    slug: "n8n-vs-make-detailed",
+    title: "n8n vs Make: Self-Host vs Cloud Automation",
+    description:
+      "n8n free self-hosted (unlimited executions) vs Make Core $10.59/mo (10,000 ops). Control vs convenience: real self-hosting costs, custom code vs visual builder, integration counts, and cost comparison at scale.",
+    readingTime: "22 min read",
+    category: "Detailed Comparison",
+  },
+  {
+    slug: "notion-vs-clickup-detailed",
+    title: "Notion vs ClickUp: Everything Tool vs Features Tool",
+    description:
+      "Notion Free (unlimited pages) vs ClickUp Free Forever (unlimited tasks). Blank canvas vs loaded toolkit — relational databases vs native Gantt, docs vs time tracking, exact pricing at every tier, and annual cost at 5/15/50 users.",
+    readingTime: "22 min read",
+    category: "Detailed Comparison",
+  },
+  // ── CATEGORY STATE PAGES ──
+  {
+    slug: "state-of-newsletter-platforms-2026",
+    title:
+      "State of Newsletter Platforms in 2026: Market Overview and Recommendations",
+    description:
+      "beehiiv, Substack, Kit, Ghost, Buttondown, and Mailchimp compared. Free tier analysis, monetization models (ad networks, 10% cuts, 0% cuts), pricing trends, and recommendations by creator type.",
+    readingTime: "18 min read",
+    category: "Category State",
+  },
+  {
+    slug: "state-of-crm-for-small-business-2026",
+    title:
+      "State of CRM for Small Business in 2026: Market Overview and Free Tier Comparison",
+    description:
+      "HubSpot, Freshsales, Zoho, Pipedrive, and Close compared. Free tier analysis (HubSpot unlimited contacts, Freshsales built-in phone), pricing cliff warnings (HubSpot's 4,350% jump), and recommendations by business type.",
+    readingTime: "18 min read",
+    category: "Category State",
+  },
+  {
+    slug: "state-of-no-code-automation-2026",
+    title:
+      "State of No-Code Automation in 2026: Zapier, Make, n8n, and the Pricing Wars",
+    description:
+      "Zapier ($29.99/mo, 750 tasks) vs Make ($10.59/mo, 10,000 ops) vs n8n (free self-hosted). Market dynamics, pricing wars, self-hosting trend, AI agent workflows, and cost comparison at every volume.",
+    readingTime: "18 min read",
+    category: "Category State",
+  },
+  {
+    slug: "state-of-project-management-2026",
+    title:
+      "State of Project Management Tools in 2026: Feature Convergence and Notion's Rise",
+    description:
+      "Notion, ClickUp, Asana, Monday.com, and Linear compared. Feature convergence (everyone has docs, AI, automations), Notion reshaping expectations, annual cost at 15 users, and recommendations by team type.",
+    readingTime: "18 min read",
+    category: "Category State",
+  },
+  {
+    slug: "state-of-customer-support-tools-2026",
+    title:
+      "State of Customer Support Tools in 2026: AI-First vs Traditional Helpdesk",
+    description:
+      "Intercom ($39/seat + $0.99/AI resolution) vs Zendesk ($69/agent) vs Freshdesk ($15/agent) vs Help Scout ($55/mo unlimited users). AI cost reality check, per-resolution math, and recommendations by team size.",
+    readingTime: "18 min read",
+    category: "Category State",
+  },
 ];
