@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RelatedLinks from "@/components/RelatedLinks";
+import { generateArticleSchema } from "@/lib/article-schema";
 
 export const metadata: Metadata = {
   title: "Hidden Costs: The Complete Series — Sasanova",
@@ -76,9 +77,24 @@ const hiddenCostEntries = [
   },
 ];
 
+const articleSchema = generateArticleSchema({
+  title: "Hidden Costs: The Complete Series",
+  description:
+    "What SaaS pricing pages don't show. Hidden costs, pricing reality checks, and detailed breakdowns for Mailchimp, Zapier, Salesforce, HubSpot, and more.",
+  url: "https://sasanova.com/guides/franchise/hidden-costs",
+  datePublished: "2026-03-18",
+  dateModified: "2026-03-26",
+});
+
 export default function HiddenCostsHub() {
   return (
     <>
+      {/* JSON-LD Article */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+
       {/* Breadcrumb */}
       <div className="border-b border-border bg-surface">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">

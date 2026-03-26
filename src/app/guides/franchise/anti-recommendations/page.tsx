@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RelatedLinks from "@/components/RelatedLinks";
+import { generateArticleSchema } from "@/lib/article-schema";
 
 export const metadata: Metadata = {
   title: "Who Should NOT Use: The Complete Series — Sasanova",

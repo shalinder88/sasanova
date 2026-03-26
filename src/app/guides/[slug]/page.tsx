@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { generateArticleSchema } from "@/lib/article-schema";
+import { canonicalUrl } from "@/lib/seo";
 
 const guideMeta: Record<string, { title: string; category: string }> = {
   "how-to-choose-email-platform": {
@@ -579,6 +581,26 @@ export default async function GuidePage({
     notFound();
   }
 
+  const articleSchema = generateArticleSchema({
+    title: guide.title,
+    description: `Read the full guide: ${guide.title}. Practical, tool-agnostic advice from the Sasanova editorial team.`,
+    url: canonicalUrl(`/guides/${slug}`),
+    datePublished: "2026-03-18",
+    dateModified: "2026-03-26",
+  });
+
   /* Guide content not yet published — return 404 instead of a stub page */
+  // When guide content is published, uncomment below and remove notFound():
+  // return (
+  //   <>
+  //     <script
+  //       type="application/ld+json"
+  //       dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+  //     />
+  //     {/* guide content here */}
+  //   </>
+  // );
+
+  void articleSchema; // ensure no unused-variable warning
   notFound();
 }

@@ -2,11 +2,22 @@
 
 import { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
-import { tools } from "@/data/tools";
+import { tools, categories } from "@/data/tools";
 import { subscribeToAlerts } from "@/lib/alerts";
 
 const WATCHLIST_KEY = "sasanova_price_watchlist";
 const WATCHLIST_META_KEY = "sasanova_price_watchlist_meta";
+const CATEGORY_WATCHLIST_KEY = "sasanova_category_watchlist";
+
+/** Categories available for "Watch My Stack" */
+const WATCHABLE_CATEGORIES = [
+  { slug: "email-marketing", label: "Email Marketing" },
+  { slug: "crm", label: "CRM" },
+  { slug: "automation", label: "Automation" },
+  { slug: "project-management", label: "Project Management" },
+  { slug: "analytics", label: "Analytics" },
+  { slug: "helpdesk-support", label: "Support" },
+];
 
 interface WatchlistMeta {
   [slug: string]: { addedAt: string };
@@ -16,6 +27,15 @@ function getWatchlist(): string[] {
   if (typeof window === "undefined") return [];
   try {
     return JSON.parse(localStorage.getItem(WATCHLIST_KEY) || "[]");
+  } catch {
+    return [];
+  }
+}
+
+function getCategoryWatchlist(): string[] {
+  if (typeof window === "undefined") return [];
+  try {
+    return JSON.parse(localStorage.getItem(CATEGORY_WATCHLIST_KEY) || "[]");
   } catch {
     return [];
   }
@@ -34,23 +54,45 @@ function saveWatchlist(slugs: string[]) {
   localStorage.setItem(WATCHLIST_KEY, JSON.stringify(slugs));
 }
 
+function saveCategoryWatchlist(slugs: string[]) {
+  localStorage.setItem(CATEGORY_WATCHLIST_KEY, JSON.stringify(slugs));
+}
+
 function saveWatchlistMeta(meta: WatchlistMeta) {
   localStorage.setItem(WATCHLIST_META_KEY, JSON.stringify(meta));
 }
 
+function getToolCountForCategory(categorySlug: string): number {
+  return tools.filter(
+    (t) =>
+      t.categorySlug === categorySlug || t.categories.includes(categorySlug)
+  ).length;
+}
+
+function getCategoryLabel(slug: string): string {
+  return (
+    WATCHABLE_CATEGORIES.find((c) => c.slug === slug)?.label ??
+    categories.find((c) => c.slug === slug)?.name ??
+    slug
+  );
+}
+
 export default function AlertsPage() {
   const [watchlist, setWatchlist] = useState<string[]>([]);
+  const [categoryWatchlist, setCategoryWatchlist] = useState<string[]>([]);
   const [email, setEmail] = useState("");
   const [search, setSearch] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [successNames, setSuccessNames] = useState<string[]>([]);
+  const [successCategories, setSuccessCategories] = useState<string[]>([]);
   const [emailError, setEmailError] = useState("");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setWatchlist(getWatchlist());
+    setCategoryWatchlist(getCategoryWatchlist());
   }, []);
 
   // Close dropdown on outside click
@@ -98,12 +140,42 @@ export default function AlertsPage() {
     saveWatchlist(updated);
   }
 
+  function toggleCategory(slug: string) {
+    let updated: string[];
+    if (categoryWatchlist.includes(slug)) {
+      updated = categoryWatchlist.filter((s) => s !== slug);
+    } else {
+      updated = [...categoryWatchlist, slug];
+    }
+    setCategoryWatchlist(updated);
+    saveCategoryWatchlist(updated);
+  }
+
   function getToolName(slug: string): string {
     return tools.find((t) => t.slug === slug)?.name ?? slug;
   }
 
+  const hasAnythingToWatch =
+    watchlist.length > 0 || categoryWatchlist.length > 0;
+
   function validateEmail(value: string): boolean {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
+
+  /** Collect all tool slugs covered by category watches (for Supabase) */
+  function getAllWatchedToolSlugs(): string[] {
+    const fromTools = new Set(watchlist);
+    for (const catSlug of categoryWatchlist) {
+      for (const t of tools) {
+        if (
+          t.categorySlug === catSlug ||
+          t.categories.includes(catSlug)
+        ) {
+          fromTools.add(t.slug);
+        }
+      }
+    }
+    return Array.from(fromTools);
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -114,22 +186,29 @@ export default function AlertsPage() {
       setEmailError("Please enter a valid email address.");
       return;
     }
-    if (watchlist.length === 0) {
-      setEmailError("Add at least one tool to watch.");
+    if (!hasAnythingToWatch) {
+      setEmailError("Add at least one tool or category to watch.");
       return;
     }
 
     setSubmitting(true);
 
+    const allSlugs = getAllWatchedToolSlugs();
+
     // Try Supabase, gracefully degrade
-    const saved = await subscribeToAlerts(email, watchlist).catch(() => false);
+    const saved = await subscribeToAlerts(email, allSlugs).catch(() => false);
 
     if (!saved) {
       // Graceful degradation: store locally
       try {
         localStorage.setItem(
           "sasanova_alert_email",
-          JSON.stringify({ email, toolSlugs: watchlist, createdAt: new Date().toISOString() })
+          JSON.stringify({
+            email,
+            toolSlugs: allSlugs,
+            categorySlugs: categoryWatchlist,
+            createdAt: new Date().toISOString(),
+          })
         );
       } catch {
         // ignore
@@ -137,6 +216,7 @@ export default function AlertsPage() {
     }
 
     setSuccessNames(watchlist.map(getToolName));
+    setSuccessCategories(categoryWatchlist.map(getCategoryLabel));
     setSuccess(true);
     setSubmitting(false);
   }
@@ -169,10 +249,24 @@ export default function AlertsPage() {
           </div>
           <h1 className="text-2xl font-bold mb-3">You&apos;re All Set</h1>
           <p className="text-muted mb-6">
-            You&apos;ll get an email when pricing changes for{" "}
-            <span className="text-foreground font-medium">
-              {successNames.join(", ")}
-            </span>
+            You&apos;ll get an email when pricing changes
+            {successCategories.length > 0 && (
+              <>
+                {" "}
+                in{" "}
+                <span className="text-foreground font-medium">
+                  {successCategories.join(", ")}
+                </span>
+              </>
+            )}
+            {successNames.length > 0 && (
+              <>
+                {successCategories.length > 0 ? " or for " : " for "}
+                <span className="text-foreground font-medium">
+                  {successNames.join(", ")}
+                </span>
+              </>
+            )}
             .
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -223,11 +317,95 @@ export default function AlertsPage() {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-8">
+        {/* ── Watch My Stack: Category Selection ── */}
+        <div>
+          <label className="block text-sm font-medium mb-1">
+            Watch My Stack
+          </label>
+          <p className="text-xs text-muted mb-3">
+            Select categories to watch every tool in that space. Any pricing
+            change in the category triggers an alert.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            {WATCHABLE_CATEGORIES.map((cat) => {
+              const isWatched = categoryWatchlist.includes(cat.slug);
+              const toolCount = getToolCountForCategory(cat.slug);
+              return (
+                <button
+                  key={cat.slug}
+                  type="button"
+                  onClick={() => toggleCategory(cat.slug)}
+                  className={`flex items-center gap-2 px-3 py-2.5 text-sm rounded-lg border transition-colors text-left ${
+                    isWatched
+                      ? "border-accent bg-accent-light text-accent font-medium"
+                      : "border-border bg-surface hover:bg-surface-alt text-foreground"
+                  }`}
+                >
+                  <span
+                    className={`shrink-0 w-4 h-4 rounded border flex items-center justify-center ${
+                      isWatched
+                        ? "bg-accent border-accent"
+                        : "border-border"
+                    }`}
+                  >
+                    {isWatched && (
+                      <svg
+                        className="w-3 h-3 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={3}
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                    )}
+                  </span>
+                  <span className="truncate">
+                    {cat.label}
+                    <span className="text-muted text-xs ml-1">
+                      ({toolCount})
+                    </span>
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Category watch summary */}
+        {categoryWatchlist.length > 0 && (
+          <div className="rounded-lg border border-accent/20 bg-accent-light/50 px-4 py-3">
+            <p className="text-sm text-foreground">
+              <span className="font-medium">You&apos;re watching:</span>{" "}
+              {categoryWatchlist.map((slug, i) => (
+                <span key={slug}>
+                  {i > 0 && ", "}
+                  {getCategoryLabel(slug)} ({getToolCountForCategory(slug)}{" "}
+                  tools)
+                </span>
+              ))}
+            </p>
+          </div>
+        )}
+
+        {/* Divider */}
+        <div className="flex items-center gap-3">
+          <div className="flex-1 border-t border-border" />
+          <span className="text-xs text-muted font-medium">
+            Or watch specific tools
+          </span>
+          <div className="flex-1 border-t border-border" />
+        </div>
+
         {/* Tool Search / Select */}
         <div>
           <label className="block text-sm font-medium mb-2">
-            Select tools to watch
+            Select individual tools to watch
           </label>
           <div className="relative" ref={dropdownRef}>
             <div className="relative">
@@ -355,7 +533,7 @@ export default function AlertsPage() {
         {/* Submit */}
         <button
           type="submit"
-          disabled={submitting || watchlist.length === 0}
+          disabled={submitting || !hasAnythingToWatch}
           className="w-full py-3 text-sm font-semibold bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {submitting ? (
@@ -382,7 +560,7 @@ export default function AlertsPage() {
               Saving...
             </span>
           ) : (
-            `Watch These Tools`
+            "Watch My Stack"
           )}
         </button>
 

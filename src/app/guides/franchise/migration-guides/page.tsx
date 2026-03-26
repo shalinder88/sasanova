@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RelatedLinks from "@/components/RelatedLinks";
+import { generateArticleSchema } from "@/lib/article-schema";
 
 export const metadata: Metadata = {
   title: "Migration & Switching Guides: The Complete Series — Sasanova",
@@ -131,9 +132,24 @@ const migrations = [
   },
 ];
 
+const articleSchema = generateArticleSchema({
+  title: "Migration & Switching Guides: The Complete Series",
+  description:
+    "Step-by-step migration and switching guides for SaaS tools. Move from Mailchimp, HubSpot, Zapier, Salesforce, and more — with cost comparisons and what you lose.",
+  url: "https://sasanova.com/guides/franchise/migration-guides",
+  datePublished: "2026-03-18",
+  dateModified: "2026-03-26",
+});
+
 export default function MigrationGuidesHub() {
   return (
     <>
+      {/* JSON-LD Article */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+
       {/* Breadcrumb */}
       <div className="border-b border-border bg-surface">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">

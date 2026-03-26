@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import RelatedLinks from "@/components/RelatedLinks";
 import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
+import { generateArticleSchema } from "@/lib/article-schema";
 
 /* ------------------------------------------------------------------ */
 /*  Weekly digest data                                                 */
@@ -75,7 +76,7 @@ const weeklyDigests: DigestWeek[] = [
     weekNumber: 13,
     month: "March",
     year: 2026,
-    dateRange: "March 18 – 24, 2026",
+    dateRange: "March 25 – 31, 2026",
     pricingChanges: [
       {
         text: "Bardeen pricing corrected: Professional plan now $99/mo (was incorrectly listed as $10/mo)",
@@ -126,7 +127,7 @@ const weeklyDigests: DigestWeek[] = [
     weekNumber: 14,
     month: "March",
     year: 2026,
-    dateRange: "March 25 – 31, 2026",
+    dateRange: "March 31 – April 6, 2026",
     pricingChanges: [
       {
         text: "Pricing verification sweep completed: 34 tools audited, 19 corrections applied across all clusters",
@@ -174,7 +175,7 @@ const weeklyDigests: DigestWeek[] = [
     weekNumber: 15,
     month: "March",
     year: 2026,
-    dateRange: "March 31 – April 6, 2026",
+    dateRange: "April 7 – 13, 2026",
     pricingChanges: [
       {
         text: "Cost threshold pages published: exact price points where HubSpot, Mailchimp, and Zapier stop being the cheaper option",
@@ -331,6 +332,23 @@ export default async function WeeklyDigestPage({
       ? weeklyDigests[currentIdx + 1]
       : null;
 
+  const title = `Sasanova Updates — Week ${digest.weekNumber}, ${digest.month} ${digest.year}`;
+  const description = `Weekly digest for ${digest.dateRange}: pricing changes, tool updates, corrections, and new content published on Sasanova.`;
+
+  const articleSchema = generateArticleSchema({
+    title,
+    description,
+    url: canonicalUrl(`/updates/${slug}`),
+    datePublished: digest.dateRange.split("–")[0]?.trim()
+      ? `${digest.year}-${String(
+          new Date(`${digest.dateRange.split("–")[0]?.trim()}, ${digest.year}`).getMonth() + 1
+        ).padStart(2, "0")}-${String(
+          new Date(`${digest.dateRange.split("–")[0]?.trim()}, ${digest.year}`).getDate()
+        ).padStart(2, "0")}`
+      : `${digest.year}-03-18`,
+    dateModified: `${digest.year}-03-26`,
+  });
+
   return (
     <>
       {/* JSON-LD breadcrumb */}
@@ -338,6 +356,14 @@ export default async function WeeklyDigestPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumbJsonLd(breadcrumbs)),
+        }}
+      />
+
+      {/* JSON-LD Article */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleSchema),
         }}
       />
 

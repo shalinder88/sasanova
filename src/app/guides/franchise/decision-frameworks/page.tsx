@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RelatedLinks from "@/components/RelatedLinks";
+import { generateArticleSchema } from "@/lib/article-schema";
 
 export const metadata: Metadata = {
   title: "Decision Frameworks: The Complete Series — Sasanova",
@@ -61,9 +62,24 @@ const frameworks = [
   },
 ];
 
+const articleSchema = generateArticleSchema({
+  title: "Decision Frameworks: The Complete Series",
+  description:
+    "Stop comparing 50 tools. Use our decision frameworks and 5-minute guides to choose the right CRM, email platform, automation tool, PM tool, and website builder.",
+  url: "https://sasanova.com/guides/franchise/decision-frameworks",
+  datePublished: "2026-03-18",
+  dateModified: "2026-03-26",
+});
+
 export default function DecisionFrameworksHub() {
   return (
     <>
+      {/* JSON-LD Article */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+
       {/* Breadcrumb */}
       <div className="border-b border-border bg-surface">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3">

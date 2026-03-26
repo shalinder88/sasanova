@@ -6,7 +6,16 @@ interface RelatedLinksProps {
   guides?: string[];
 }
 
+const FRANCHISE_LABELS: Record<string, string> = {
+  "franchise/anti-recommendations": "Who Should NOT Use Series",
+  "franchise/hidden-costs": "Hidden Costs & Pricing Reality Series",
+  "franchise/cost-thresholds": "When Tools Get Expensive Series",
+  "franchise/decision-frameworks": "Decision Frameworks & 5-Minute Guides",
+  "franchise/migration-guides": "Migration & Switching Guides",
+};
+
 function slugToLabel(slug: string): string {
+  if (FRANCHISE_LABELS[slug]) return FRANCHISE_LABELS[slug];
   return slug
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
