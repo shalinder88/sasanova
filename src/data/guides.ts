@@ -2897,4 +2897,85 @@ export const guides: Guide[] = [
     readingTime: "18 min read",
     category: "Category State",
   },
+  {
+    slug: "mailchimp-counts-unsubscribed-contacts",
+    title: "Mailchimp Counts Unsubscribed Contacts: What It Costs You",
+    description:
+      "Mailchimp bills you for unsubscribed, cleaned, and non-subscribed contacts. The exact mechanic, how it inflates bills by 20-40%, how to clean your list, and exact prices at each contact tier.",
+    readingTime: "11 min read",
+    category: "Pricing Gotcha",
+  },
+  {
+    slug: "zapier-multi-step-task-counting",
+    title: "How Zapier Counts Multi-Step Tasks (And Why Your Bill Is Higher)",
+    description:
+      "A 5-step Zap uses 5 tasks per run. 100 free tasks = only 20 runs. Exact tier prices from Free ($0, 100 tasks) to Team ($103.50/mo, 2,000 tasks), plus strategies to cut task consumption in half.",
+    readingTime: "12 min read",
+    category: "Pricing Gotcha",
+  },
+  {
+    slug: "hubspot-onboarding-fee-explained",
+    title:
+      "HubSpot's $3,000 Onboarding Fee: What You Get and Whether It's Worth It",
+    description:
+      "HubSpot's mandatory Professional onboarding fee is $3,000. What's included (guided setup calls), what's not (strategy, templates), and when to hire a freelancer for $1,125-$3,750 instead.",
+    readingTime: "13 min read",
+    category: "Pricing Gotcha",
+  },
+  {
+    slug: "salesforce-annual-contract-trap",
+    title: "Salesforce Annual Contracts: What Happens When You Want Out",
+    description:
+      "Salesforce has no monthly billing. All plans ($25-$350/seat/mo) require annual contracts. Early termination penalties, auto-renewal traps, how to negotiate, and CRM alternatives with monthly billing.",
+    readingTime: "14 min read",
+    category: "Pricing Gotcha",
+  },
+  {
+    slug: "per-seat-pricing-trap-explained",
+    title: "The Per-Seat Pricing Trap: How $14/Seat Becomes $14,000/Year",
+    description:
+      "Per-seat pricing math at 5, 10, 25, 50, and 100 seats for Pipedrive ($14-$99/seat), Salesforce ($25-$350/seat), Freshsales ($11-$71/seat), Zoho CRM ($20-$65/seat), and Close ($19-$149/seat).",
+    readingTime: "13 min read",
+    category: "Pricing Gotcha",
+  },
+  {
+    slug: "email-welcome-sequence-template",
+    title: "Welcome Email Sequence Template: 5 Emails That Convert",
+    description:
+      "A ready-to-use 5-email welcome sequence with timing and goals. Which platform supports automation at which tier: Mailchimp Standard ($20/mo), Kit Creator ($39/mo), ActiveCampaign Starter ($15/mo), beehiiv Scale ($49/mo), Brevo Standard ($18/mo).",
+    readingTime: "14 min read",
+    category: "Workflow Template",
+  },
+  {
+    slug: "crm-pipeline-template",
+    title: "CRM Pipeline Template: 5 Stages That Actually Work",
+    description:
+      "5-stage pipeline with win probabilities and exit criteria. Which CRM supports custom stages at which tier: Pipedrive Lite ($14/seat), HubSpot Free ($0), Salesforce Starter ($25/seat), Freshsales Free ($0).",
+    readingTime: "12 min read",
+    category: "Workflow Template",
+  },
+  {
+    slug: "automation-audit-template",
+    title: "Automation Audit Template: Find Wasted Tasks in 30 Minutes",
+    description:
+      "Step-by-step audit to identify zombie automations, duplicates, and over-built multi-step workflows. Cost savings calculator for Zapier ($29.99/mo, 750 tasks) and Make ($10.59/mo, 10,000 ops).",
+    readingTime: "11 min read",
+    category: "Workflow Template",
+  },
+  {
+    slug: "saas-vendor-comparison-template",
+    title: "SaaS Vendor Comparison Template: Evaluate Any Tool in 10 Minutes",
+    description:
+      "A 10-point weighted scoring framework covering true cost, feature fit, setup ease, pricing transparency, scaling cost, data export, integrations, support, contract flexibility, and vendor stability.",
+    readingTime: "10 min read",
+    category: "Workflow Template",
+  },
+  {
+    slug: "monthly-saas-review-template",
+    title: "Monthly SaaS Review Template: Keep Your Stack Lean",
+    description:
+      "A 15-minute monthly checklist: unused seats, approaching tier limits, cheaper alternatives, renewal dates, and feature overlap. Exact pricing thresholds for Zapier, Mailchimp, HubSpot, Salesforce, and Pipedrive.",
+    readingTime: "10 min read",
+    category: "Workflow Template",
+  },
 ];

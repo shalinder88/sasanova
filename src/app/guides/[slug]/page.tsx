@@ -441,6 +441,52 @@ const guideMeta: Record<string, { title: string; category: string }> = {
     title: "7 SaaS Pricing Traps That Cost Founders Thousands in 2026",
     category: "Cost Threshold",
   },
+  "mailchimp-counts-unsubscribed-contacts": {
+    title: "Mailchimp Counts Unsubscribed Contacts: What It Costs You",
+    category: "Pricing Gotcha",
+  },
+  "zapier-multi-step-task-counting": {
+    title:
+      "How Zapier Counts Multi-Step Tasks (And Why Your Bill Is Higher)",
+    category: "Pricing Gotcha",
+  },
+  "hubspot-onboarding-fee-explained": {
+    title:
+      "HubSpot's $3,000 Onboarding Fee: What You Get and Whether It's Worth It",
+    category: "Pricing Gotcha",
+  },
+  "salesforce-annual-contract-trap": {
+    title:
+      "Salesforce Annual Contracts: What Happens When You Want Out",
+    category: "Pricing Gotcha",
+  },
+  "per-seat-pricing-trap-explained": {
+    title:
+      "The Per-Seat Pricing Trap: How $14/Seat Becomes $14,000/Year",
+    category: "Pricing Gotcha",
+  },
+  "email-welcome-sequence-template": {
+    title: "Welcome Email Sequence Template: 5 Emails That Convert",
+    category: "Workflow Template",
+  },
+  "crm-pipeline-template": {
+    title: "CRM Pipeline Template: 5 Stages That Actually Work",
+    category: "Workflow Template",
+  },
+  "automation-audit-template": {
+    title:
+      "Automation Audit Template: Find Wasted Tasks in 30 Minutes",
+    category: "Workflow Template",
+  },
+  "saas-vendor-comparison-template": {
+    title:
+      "SaaS Vendor Comparison Template: Evaluate Any Tool in 10 Minutes",
+    category: "Workflow Template",
+  },
+  "monthly-saas-review-template": {
+    title: "Monthly SaaS Review Template: Keep Your Stack Lean",
+    category: "Workflow Template",
+  },
 };
 
 export function generateStaticParams() {
