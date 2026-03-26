@@ -2602,4 +2602,87 @@ export const guides: Guide[] = [
     readingTime: "15 min read",
     category: "Trend Analysis",
   },
+  // ── Email Cluster Depth ──
+  {
+    slug: "email-platform-feature-tiers-explained",
+    title: "Email Platform Feature Tiers: What You Unlock at Each Price Point",
+    description:
+      "For Mailchimp, Kit, beehiiv, ActiveCampaign, and Brevo: what's free, what's in the first paid tier, and what requires premium. Exact tier names and prices.",
+    readingTime: "14 min read",
+    category: "Email Deep Dive",
+  },
+  {
+    slug: "email-deliverability-setup-guide",
+    title: "Email Deliverability Setup: SPF, DKIM, DMARC for Every Platform",
+    description:
+      "Step-by-step authentication setup for Mailchimp, Kit, beehiiv, Brevo, and ActiveCampaign. Which platforms handle it automatically vs require manual DNS. Exact pricing tier where custom domain/auth is available.",
+    readingTime: "16 min read",
+    category: "Email Deep Dive",
+  },
+  {
+    slug: "newsletter-monetization-compared",
+    title: "Newsletter Monetization: beehiiv Boosts vs Kit Commerce vs Substack Paid",
+    description:
+      "Revenue models compared. beehiiv: Boosts + ad network + paid subs (0% platform cut on Scale at $49/mo). Kit: digital products + paid newsletter (3.5% + $0.30 on Creator at $39/mo). Substack: 10% cut, $0 platform fee.",
+    readingTime: "15 min read",
+    category: "Email Deep Dive",
+  },
+  {
+    slug: "email-list-size-cost-calculator",
+    title: "Email Cost by List Size: What You'll Pay at 1K, 5K, 10K, 25K, 50K, 100K Subscribers",
+    description:
+      "Giant comparison table: Mailchimp, Kit, beehiiv, ActiveCampaign, and Brevo at every subscriber tier. beehiiv Scale stays $49/mo flat. Mailchimp hits $800/mo+ at 100K. Contact counting traps explained.",
+    readingTime: "12 min read",
+    category: "Email Deep Dive",
+  },
+  // ── CRM Cluster Depth ──
+  {
+    slug: "crm-pipeline-setup-best-practices",
+    title: "CRM Pipeline Setup: How Many Stages, What to Track, and Common Mistakes",
+    description:
+      "Best practices for Pipedrive, HubSpot, Close, and Freshsales. The right number of stages (5-7), 5 custom fields that matter, and the exact tier where pipeline customization unlocks.",
+    readingTime: "14 min read",
+    category: "CRM Deep Dive",
+  },
+  {
+    slug: "crm-email-integration-compared",
+    title: "CRM Email Integration: Gmail and Outlook Sync Across 6 CRMs",
+    description:
+      "Which CRMs sync email natively, which need Zapier/Make, which tier it requires. HubSpot Free and Freshsales Free include sync. Pipedrive requires Growth at $39/seat. Salesforce Starter Suite at $25/seat.",
+    readingTime: "13 min read",
+    category: "CRM Deep Dive",
+  },
+  {
+    slug: "crm-for-service-businesses",
+    title: "Best CRM for Service Businesses: Plumbers, Lawyers, Consultants",
+    description:
+      "Service businesses need relationship tracking over deal pipelines. HubSpot Free ($0), Pipedrive Lite ($14/seat), and Freshsales Free ($0) compared for consultants, law firms, and contractors.",
+    readingTime: "12 min read",
+    category: "CRM Deep Dive",
+  },
+  // ── Automation Cluster Depth ──
+  {
+    slug: "automation-error-monitoring-setup",
+    title: "How to Monitor Your Automations: Error Alerts for Zapier, Make, and n8n",
+    description:
+      "Built-in monitoring per platform, what each tier offers, when to add external monitoring. Zapier email alerts on Free, Make error handlers on all plans, n8n error workflows. Exact prices.",
+    readingTime: "13 min read",
+    category: "Automation Deep Dive",
+  },
+  {
+    slug: "automation-for-email-marketing",
+    title: "Connecting Your Automation Tool to Email Marketing: Zapier vs Make vs Native",
+    description:
+      "Common flows: form to email list, purchase to tag, abandon to sequence. Which needs Zapier/Make vs native. Zapier Professional $29.99/mo (750 tasks) vs Make Core $10.59/mo (10,000 ops).",
+    readingTime: "14 min read",
+    category: "Automation Deep Dive",
+  },
+  {
+    slug: "multi-step-automation-cost-trap",
+    title: "The Multi-Step Automation Cost Trap: Why Your 5-Step Zap Uses 5x Your Budget",
+    description:
+      "Zapier counts every step as a task: a 5-step Zap uses 5 tasks per run. 750 tasks/mo on Professional = only 150 runs. Make Core gives 10,000 ops for $10.59/mo. n8n counts whole executions. Real examples with exact math.",
+    readingTime: "15 min read",
+    category: "Automation Deep Dive",
+  },
 ];
