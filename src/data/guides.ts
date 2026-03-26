@@ -3263,4 +3263,124 @@ export const guides: Guide[] = [
     readingTime: "12 min read",
     category: "Practical Workflow",
   },
+  {
+    slug: "replace-asana-with-notion-clickup",
+    title: "Replace Asana with Notion + ClickUp: Docs + Tasks in Two Tools",
+    description:
+      "Asana Starter costs $13.49/seat/mo. Notion Free + ClickUp Free gives you docs, wikis, and unlimited tasks for $0 total. When the combo wins, when Asana is still worth it, and how to migrate.",
+    readingTime: "14 min read",
+    category: "Replacement Stack",
+  },
+  {
+    slug: "replace-intercom-with-crisp-helpscout",
+    title: "Replace Intercom with Crisp or Help Scout: 80% Less",
+    description:
+      "Intercom Essential costs $39/seat/mo plus $0.99/AI resolution. Crisp Mini is $45/mo flat for 4 seats. Help Scout Free is $0 for 50 contacts/mo with unlimited users. Exact pricing and migration guide.",
+    readingTime: "13 min read",
+    category: "Replacement Stack",
+  },
+  {
+    slug: "replace-semrush-with-free-tools",
+    title: "Replace Semrush with Free SEO Tools: Google Search Console + Mangools",
+    description:
+      "Semrush Pro costs $139.95/mo. Google Search Console is free. Mangools Entry is $29.90/mo. Combined they cover 70% of what most small sites need for $29.90/mo total. What you lose and when Semrush is worth it.",
+    readingTime: "14 min read",
+    category: "Replacement Stack",
+  },
+  {
+    slug: "replace-monday-with-clickup",
+    title: "Replace Monday.com with ClickUp: Same Features, Less Cost",
+    description:
+      "Monday.com Standard costs $14/seat/mo with a 3-seat minimum. ClickUp Unlimited is $10/member/mo with no minimum. Feature comparison, migration steps, and exact savings at 5, 15, and 25 users.",
+    readingTime: "13 min read",
+    category: "Replacement Stack",
+  },
+  {
+    slug: "replace-zendesk-with-freshdesk",
+    title: "Replace Zendesk with Freshdesk: Enterprise Features at SMB Prices",
+    description:
+      "Zendesk Suite Team costs $69/agent/mo. Freshdesk Growth is $15/agent/mo — 78% cheaper per agent. Feature comparison, what you lose with Zendesk's marketplace, and migration steps.",
+    readingTime: "14 min read",
+    category: "Replacement Stack",
+  },
+  {
+    slug: "saas-stack-for-law-firms",
+    title: "SaaS Stack for Law Firms: CRM, Scheduling, Docs, and Billing",
+    description:
+      "The complete software stack for small law practices. Pipedrive Lite at $14/seat/mo for client management, Calendly Standard at $12/user/mo for scheduling, Notion Free for docs, and FreshBooks Plus at $43/mo for billing.",
+    readingTime: "15 min read",
+    category: "Industry Stack",
+  },
+  {
+    slug: "saas-stack-for-accounting-firms",
+    title: "SaaS Stack for Accounting Firms: CRM, Client Portal, Docs, and Communication",
+    description:
+      "The complete software stack for small accounting firms. HubSpot CRM Free for client management, QuickBooks Online Simple Start at $38/mo, Notion Free for docs, and Brevo Free for client communication.",
+    readingTime: "14 min read",
+    category: "Industry Stack",
+  },
+  {
+    slug: "saas-stack-for-marketing-agencies",
+    title: "SaaS Stack for Marketing Agencies: PM, Reporting, Social, Email, and CRM",
+    description:
+      "The complete software stack for marketing agencies. ClickUp Unlimited at $10/member/mo for PM, Buffer Essentials at $6/channel for social, ActiveCampaign Starter at $15/mo for email, and Mangools Entry at $29.90/mo for SEO.",
+    readingTime: "16 min read",
+    category: "Industry Stack",
+  },
+  {
+    slug: "saas-stack-for-healthcare-practices",
+    title: "SaaS Stack for Healthcare Practices: Scheduling, CRM, Communication, and Compliance",
+    description:
+      "The software stack for small healthcare practices. Calendly Standard at $12/user/mo for scheduling, HubSpot CRM Free for patient relationships, Slack Pro at $8.75/user/mo for communication, and HIPAA compliance guide.",
+    readingTime: "15 min read",
+    category: "Industry Stack",
+  },
+  {
+    slug: "saas-stack-for-ecommerce-brands",
+    title: "SaaS Stack for E-commerce Brands: Store, Email, Analytics, CRM, and Automation",
+    description:
+      "The complete software stack for e-commerce brands. Shopify Basic at $39/mo, Brevo Starter at $9/mo for email, PostHog Free for analytics, HubSpot CRM Free, Make Core at $10.59/mo for automation, and Freshdesk Free for support.",
+    readingTime: "16 min read",
+    category: "Industry Stack",
+  },
+  {
+    slug: "cheapest-crm-per-feature",
+    title: "Cheapest CRM Per Feature: Which Gives Most for Least in 2026",
+    description:
+      "CRMs ranked by cost-per-feature. HubSpot Free gives the most at $0. Freshsales Growth at $11/seat gives AI scoring. Zoho CRM Standard at $20/seat gives the deepest feature set. Pipedrive Lite at $14/seat focuses on pipeline.",
+    readingTime: "14 min read",
+    category: "Comparison Angle",
+  },
+  {
+    slug: "cheapest-email-per-subscriber",
+    title: "Cheapest Email Marketing Per Subscriber: Cost at 1K, 5K, 10K, and 25K",
+    description:
+      "Cost-per-subscriber comparison across Mailchimp, Kit, Brevo, ActiveCampaign, and beehiiv at every list size. Brevo wins on raw cost. Kit wins for creators under 10K subscribers. Mailchimp is most expensive at every tier.",
+    readingTime: "13 min read",
+    category: "Comparison Angle",
+  },
+  {
+    slug: "cheapest-automation-per-task",
+    title: "Cheapest Automation Per Task: Cost at 100, 1K, 5K, and 10K Tasks",
+    description:
+      "Automation tools ranked by cost-per-task. Make Core at $10.59/mo for 10,000 ops ($0.001/op). Zapier Professional at $29.99/mo for 750 tasks ($0.040/task). n8n self-hosted is unlimited and free. The multi-step trap explained.",
+    readingTime: "13 min read",
+    category: "Comparison Angle",
+  },
+  {
+    slug: "most-generous-free-tiers-2026",
+    title: "Most Generous Free Tiers in 2026: Every SaaS Tool Ranked",
+    description:
+      "Every tool ranked by free tier generosity. Kit gives 10,000 subscribers free. Brevo gives 100,000 contacts. ClickUp gives unlimited tasks and members. HubSpot CRM gives unlimited contacts. PostHog gives 1M events. The complete $0 stack.",
+    readingTime: "16 min read",
+    category: "Comparison Angle",
+  },
+  {
+    slug: "fastest-growing-saas-tools-2026",
+    title: "Fastest Growing SaaS Tools in 2026: Market Movers and Feature Velocity",
+    description:
+      "Analysis of tools gaining market share: beehiiv in newsletters, Make in automation, ClickUp in PM, Brevo in email, PostHog in analytics, and Freshsales in CRM. Common patterns and what it means for your stack decisions.",
+    readingTime: "15 min read",
+    category: "Comparison Angle",
+  },
 ];
