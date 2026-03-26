@@ -2728,4 +2728,86 @@ export const guides: Guide[] = [
     readingTime: "12 min read",
     category: "Replacement Stack",
   },
+  // ── Implementation Pitfall Guides ──
+  {
+    slug: "hubspot-implementation-mistakes",
+    title: "5 HubSpot Implementation Mistakes That Waste $10K+",
+    description:
+      "The most expensive HubSpot implementation mistakes: upgrading to Professional too early ($890/mo + $3,000 onboarding), importing dirty data, over-customizing properties, skipping training, and ignoring free tier limits. Exact costs and how to avoid each.",
+    readingTime: "14 min read",
+    category: "Implementation Pitfall",
+  },
+  {
+    slug: "salesforce-implementation-mistakes",
+    title: "5 Salesforce Implementation Mistakes (And Their Real Cost)",
+    description:
+      "The costliest Salesforce implementation mistakes: underestimating admin needs, skipping a consultant, choosing the wrong edition ($25\u2013$350/seat/mo), over-building from day one, and ignoring change management. Real costs from $10K to $50K+ wasted.",
+    readingTime: "15 min read",
+    category: "Implementation Pitfall",
+  },
+  {
+    slug: "crm-implementation-timeline",
+    title: "Realistic CRM Implementation Timeline by Tool",
+    description:
+      "How long it actually takes to implement each CRM: HubSpot Free in 30 minutes, Pipedrive Lite ($14/seat/mo) in 1 hour, Zoho CRM Standard ($20/seat/mo) in 1\u20132 weeks, Salesforce Pro Suite ($100/seat/mo) in 2\u20133 months.",
+    readingTime: "14 min read",
+    category: "Implementation Pitfall",
+  },
+  {
+    slug: "email-platform-onboarding-compared",
+    title: "Email Platform Onboarding: Which Is Fastest?",
+    description:
+      "Time-to-first-send for every major email platform: beehiiv in 15 min (free), Kit in 20 min (free), Mailchimp in 30 min (free, 250 contacts), ActiveCampaign in 45 min ($15/mo). What slows you down and how to skip it.",
+    readingTime: "13 min read",
+    category: "Implementation Pitfall",
+  },
+  {
+    slug: "automation-complexity-ladder",
+    title: "The Automation Complexity Ladder: When Simple Beats Powerful",
+    description:
+      "Level 1: Zapier Free (100 tasks/mo). Level 2: Make Core ($10.59/mo, 10,000 ops). Level 3: n8n self-hosted ($0, unlimited). Level 4: Zapier Professional ($29.99/mo, simplicity premium). When to climb vs stay.",
+    readingTime: "14 min read",
+    category: "Implementation Pitfall",
+  },
+  // ── Competitive Intelligence Guides ──
+  {
+    slug: "email-platform-changes-q1-2026",
+    title: "What Changed in Email Marketing This Quarter (Q1 2026)",
+    description:
+      "Every significant email marketing change in Q1 2026: Mailchimp free tier at 250 contacts, Ghost restructured to 3 tiers ($18/$35/$239), Kit Creator at $39/mo. What changed, who it affects, and what to do.",
+    readingTime: "13 min read",
+    category: "Competitive Intelligence",
+  },
+  {
+    slug: "crm-changes-q1-2026",
+    title: "What Changed in CRM This Quarter (Q1 2026)",
+    description:
+      "Every significant CRM change in Q1 2026: Salesforce ~6% renewal increases ($25\u2013$350/seat/mo), Pipedrive rebranded tiers ($14\u2013$99/seat/mo), Close restructured to 4 plans ($19\u2013$149/seat/mo). Exact pricing and what to do.",
+    readingTime: "14 min read",
+    category: "Competitive Intelligence",
+  },
+  {
+    slug: "automation-changes-q1-2026",
+    title: "What Changed in Automation This Quarter (Q1 2026)",
+    description:
+      "The biggest automation pricing shift: Bardeen jumped to $99/mo (from ~$10). Meanwhile Zapier Free stays at 100 tasks, Make Core at $10.59/mo, n8n self-hosted at $0. Full comparison and migration advice.",
+    readingTime: "13 min read",
+    category: "Competitive Intelligence",
+  },
+  {
+    slug: "saas-acquisitions-impact-2026",
+    title: "How SaaS Acquisitions Affect Your Pricing",
+    description:
+      "What happens to pricing after SaaS acquisitions: Intuit+Mailchimp (free tier shrank 87%), Salesforce+Slack (90-day history limit), Atlassian+Loom (25 videos, 5-min cap). The pattern and how to protect yourself.",
+    readingTime: "15 min read",
+    category: "Competitive Intelligence",
+  },
+  {
+    slug: "saas-free-tier-changes-2026",
+    title: "Every Free Tier Change in 2026 (Running Tracker)",
+    description:
+      "Which tools tightened free tiers (Mailchimp 250 contacts, Asana 2 users, Loom 25 videos, Slack 90-day history) and which stayed generous (Kit 10K subscribers, Brevo 100K contacts, HubSpot unlimited). Updated as changes happen.",
+    readingTime: "14 min read",
+    category: "Competitive Intelligence",
+  },
 ];
