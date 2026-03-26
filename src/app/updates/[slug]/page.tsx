@@ -75,7 +75,7 @@ const weeklyDigests: DigestWeek[] = [
     weekNumber: 13,
     month: "March",
     year: 2026,
-    dateRange: "March 25 – 31, 2026",
+    dateRange: "March 18 – 24, 2026",
     pricingChanges: [
       {
         text: "Bardeen pricing corrected: Professional plan now $99/mo (was incorrectly listed as $10/mo)",
@@ -386,22 +386,22 @@ export default async function WeeklyDigestPage({
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <DigestSection
           title="Pricing Changes"
-          icon="$"
+          icon="&#9679;"
           items={digest.pricingChanges}
         />
         <DigestSection
           title="Tools Added & Updated"
-          icon="+"
+          icon="&#9679;"
           items={digest.toolsAddedUpdated}
         />
         <DigestSection
           title="Content Published"
-          icon="#"
+          icon="&#9679;"
           items={digest.contentPublished}
         />
         <DigestSection
           title="Corrections Made"
-          icon="!"
+          icon="&#9679;"
           items={digest.correctionsMade}
         />
 

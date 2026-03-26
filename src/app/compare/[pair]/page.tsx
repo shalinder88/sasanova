@@ -132,6 +132,39 @@ export default async function ComparisonPage({ params }: PageProps) {
     ],
   };
 
+  /* Product structured data with pros/cons for rich results */
+  function buildProductJsonLd(tool: Tool) {
+    return {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: tool.name,
+      description: tool.bestFor[0] ?? `${tool.name} software`,
+      review: {
+        "@type": "Review",
+        author: { "@type": "Organization", name: "Sasanova" },
+        positiveNotes: {
+          "@type": "ItemList",
+          itemListElement: tool.bestFor.map((note, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: note,
+          })),
+        },
+        negativeNotes: {
+          "@type": "ItemList",
+          itemListElement: tool.avoidIf.map((note, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: note,
+          })),
+        },
+      },
+    };
+  }
+
+  const productJsonLdA = buildProductJsonLd(toolA);
+  const productJsonLdB = buildProductJsonLd(toolB);
+
   return (
     <>
       <script
@@ -149,6 +182,14 @@ export default async function ComparisonPage({ params }: PageProps) {
             ])
           ),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLdA).replace(/</g, "\\u003c") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLdB).replace(/</g, "\\u003c") }}
       />
 
       <StickyComparisonCTAs

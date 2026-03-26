@@ -155,7 +155,7 @@ export function generateCategoryThesis(
   // Build paragraphs
   const paragraphs: string[] = [];
 
-  let p1 = `There are ${toolCount} ${cleanCategoryLabel(categoryName).toLowerCase()} tools worth evaluating in 2026.`;
+  let p1 = `We track ${toolCount} ${cleanCategoryLabel(categoryName)} tools — here are the ones worth evaluating in 2026.`;
   if (freeCount > 0) {
     p1 += ` ${freeCount} of them offer a free tier, so you can test before committing.`;
   }
