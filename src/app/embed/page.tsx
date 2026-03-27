@@ -342,7 +342,7 @@ export default function EmbedShowcasePage() {
       {/* Footer */}
       <div className="border-t border-border pt-6 mt-6 text-center">
         <p className="text-xs text-muted">
-          All pricing data is independently verified. Widgets auto-update when we re-verify prices.
+          Pricing data is tracked with explicit provenance labels. Widgets auto-update when we re-verify prices.
         </p>
         <a
           href="https://sasanova.com"

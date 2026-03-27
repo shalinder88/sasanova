@@ -785,7 +785,7 @@ export default function AuditClient() {
               overpaying, what to replace, and your exact annual savings.
             </p>
             <p className="text-sm text-muted/70">
-              Powered by {tools.length}+ independently verified pricing data points.
+              Powered by {tools.length}+ pricing data points with explicit provenance tracking.
             </p>
           </div>
         </div>

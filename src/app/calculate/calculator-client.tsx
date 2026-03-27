@@ -1537,7 +1537,7 @@ function CalculatePageContent() {
       {/* Footer Note */}
       <div className="mt-8 text-center">
         <p className="text-xs text-muted max-w-xl mx-auto">
-          All pricing data is independently verified from vendor websites. Prices may vary by region, volume, or promotional offers. Last verified March 2026.
+          Pricing data is sourced from vendor websites with explicit provenance labels. Prices may vary by region, volume, or promotional offers.
         </p>
         <div className="flex justify-center gap-4 mt-4">
           <Link href="/pricing" className="text-xs text-accent hover:text-accent-dark transition-colors">

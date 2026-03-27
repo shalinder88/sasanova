@@ -87,6 +87,12 @@ export default function Header() {
               </svg>
               My Stack
             </Link>
+            <Link
+              href="/pro"
+              className="ml-1 px-2 py-1 text-[11px] font-medium text-muted hover:text-accent transition-colors"
+            >
+              Pro
+            </Link>
           </div>
 
           {/* Mobile toggle */}
@@ -132,6 +138,13 @@ export default function Header() {
               onClick={() => setOpen(false)}
             >
               My Stack
+            </Link>
+            <Link
+              href="/pro"
+              className="block px-3 py-2 text-xs text-muted hover:text-accent hover:bg-surface rounded-md transition-colors"
+              onClick={() => setOpen(false)}
+            >
+              Pro
             </Link>
           </div>
         )}

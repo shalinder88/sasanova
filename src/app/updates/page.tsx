@@ -81,9 +81,11 @@ export default function UpdatesPage() {
             Updates &amp; Verified Changes
           </h1>
           <p className="text-sm text-muted max-w-2xl">
-            Every tool on Sasanova is independently verified. This page shows
-            what we checked, when we checked it, and what changed. No
-            black-box scores.
+            Every tool on Sasanova is tracked with explicit provenance.
+            Tools are labeled as independently verified, vendor-claimed,
+            or community-reported so you always know the confidence level
+            of our data. This page shows what we checked, when we checked
+            it, and what changed. No black-box scores.
           </p>
         </div>
       </section>
@@ -104,7 +106,7 @@ export default function UpdatesPage() {
               className="block rounded-lg border border-border bg-background p-4 hover:border-accent transition-colors"
             >
               <span className="text-sm font-semibold text-foreground">
-                Week 15 &mdash; March 31–April 6, 2026
+                Week 15 &mdash; April 7–13, 2026
               </span>
               <span className="block text-xs text-muted mt-1">
                 Email deliverability comparison, CRM reporting, cost threshold
@@ -116,7 +118,7 @@ export default function UpdatesPage() {
               className="block rounded-lg border border-border bg-background p-4 hover:border-accent transition-colors"
             >
               <span className="text-sm font-semibold text-foreground">
-                Week 14 &mdash; March 25–31, 2026
+                Week 14 &mdash; March 31–April 6, 2026
               </span>
               <span className="block text-xs text-muted mt-1">
                 34-tool pricing audit, 19 corrections, annual cost comparisons

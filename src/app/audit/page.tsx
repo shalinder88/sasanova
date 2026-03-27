@@ -18,7 +18,7 @@ function AuditStatic() {
               detailed report showing savings opportunities.
             </p>
             <p className="text-sm text-muted/70 mb-3">
-              Powered by {tools.length}+ independently verified pricing data points.
+              Powered by {tools.length}+ pricing data points with explicit provenance tracking.
             </p>
             <p className="text-sm text-accent font-medium max-w-xl mx-auto">
               78% of IT leaders got hit with unexpected SaaS charges this year. Run your free audit to make sure you&apos;re not next.

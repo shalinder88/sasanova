@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { tools, categories } from "@/data/tools";
+import { tools, categories, getLatestVerifiedDate, formatVerifiedLong } from "@/data/tools";
 import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
@@ -69,7 +69,7 @@ export default function DataPage() {
               <p className="text-sm text-muted mt-1">Pricing Plans</p>
             </div>
             <div className="border border-border rounded-xl p-5 bg-surface text-center">
-              <p className="text-sm font-bold text-accent">March 2026</p>
+              <p className="text-sm font-bold text-accent">{formatVerifiedLong(getLatestVerifiedDate())}</p>
               <p className="text-sm text-muted mt-1">Last Verified</p>
             </div>
           </div>

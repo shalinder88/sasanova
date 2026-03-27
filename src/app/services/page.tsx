@@ -355,7 +355,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
             <div>
               <p className="text-xs text-muted leading-relaxed">
-                Powered by independently verified pricing data from <strong className="text-foreground">148+ tools</strong>
+                Powered by provenance-tracked pricing data from <strong className="text-foreground">148+ tools</strong>
               </p>
             </div>
             <div>

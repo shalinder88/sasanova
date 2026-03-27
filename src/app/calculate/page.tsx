@@ -125,7 +125,7 @@ export default function CalculatePage() {
           </h1>
           <p className="text-lg text-muted max-w-3xl mb-8">
             Stop guessing what software costs at your scale. This calculator uses
-            independently verified pricing data from {tools.length}+ tools to show you
+            provenance-tracked pricing data from {tools.length}+ tools to show you
             the real monthly and annual cost for email marketing, CRM, and automation
             platforms. Compare tools side-by-side, estimate switching savings, or build
             a complete stack on budget.
