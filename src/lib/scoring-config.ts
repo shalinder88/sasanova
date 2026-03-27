@@ -29,8 +29,8 @@ export const SCORING_DESCRIPTIONS: Record<keyof typeof SCORING_WEIGHTS, string> 
   value: "How much you get relative to what you pay",
   ease: "How quickly a new user becomes productive",
   power: "Depth and breadth of features for advanced use cases",
-  setupFriction: "How much effort initial setup requires (lower is better)",
-  migrationDifficulty: "How hard it is to switch away (lower is better)",
+  setupFriction: "How easy initial setup is (10 = easiest, 1 = most complex)",
+  migrationDifficulty: "How easy it is to switch to this tool (10 = easiest, 1 = hardest)",
   transparency: "How clearly the vendor communicates pricing, limits, and changes",
 };
 

@@ -14,18 +14,17 @@ export const metadata: Metadata = {
   },
 };
 
-function VerdictBadge({ verdict, nameA, nameB }: { verdict: string; nameA: string; nameB: string }) {
+function VerdictBadge({ verdict }: { verdict: string }) {
   if (verdict === "depends") {
     return (
-      <span className="inline-block text-[10px] font-semibold bg-amber-50 text-amber-700 border border-amber-200 px-2 py-0.5 rounded-full">
+      <span className="inline-block text-[10px] font-semibold bg-warning-light text-warning border border-warning/20 px-2 py-0.5 rounded-full">
         Different jobs
       </span>
     );
   }
   const winnerName = tools.find(t => t.slug === verdict)?.name;
-  const loserName = verdict === nameA ? nameB : nameA;
   return (
-    <span className="inline-block text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded-full">
+    <span className="inline-block text-[10px] font-semibold bg-success-light text-success border border-success/20 px-2 py-0.5 rounded-full">
       {winnerName ?? verdict} for most users
     </span>
   );
@@ -101,7 +100,7 @@ export default function ComparePage() {
 
                   {/* Verdict */}
                   <div className="flex items-center justify-between">
-                    <VerdictBadge verdict={vs.verdict} nameA={toolA.name} nameB={toolB.name} />
+                    <VerdictBadge verdict={vs.verdict} />
                     <svg
                       className="w-4 h-4 text-muted group-hover:text-accent shrink-0 transition-colors"
                       fill="none"

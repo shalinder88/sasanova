@@ -228,11 +228,15 @@ export async function getAlternatives(toolId: string): Promise<Alternative[]> {
 // ---------------------------------------------------------------------------
 
 export async function searchTools(query: string): Promise<Tool[]> {
+  // Sanitize query: strip PostgREST filter special characters to prevent filter injection
+  const sanitized = query.replace(/[()%,.*]/g, '').trim().slice(0, 100);
+  if (!sanitized) return [];
+
   const { data, error } = await supabase
     .from('tools')
     .select('*, vendors(name, website_url)')
     .eq('status', 'published')
-    .or(`name.ilike.%${query}%,tagline.ilike.%${query}%,description.ilike.%${query}%`)
+    .or(`name.ilike.%${sanitized}%,tagline.ilike.%${sanitized}%,description.ilike.%${sanitized}%`)
     .limit(20);
 
   if (error) {

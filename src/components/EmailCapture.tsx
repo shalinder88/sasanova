@@ -1,14 +1,41 @@
 "use client";
 
 import { useState } from "react";
+import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
 
 export default function EmailCapture({ variant = "default" }: { variant?: "default" | "inline" | "hero" }) {
   const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
+  const [error, setError] = useState("");
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: connect to beehiiv / ConvertKit
+    setError("");
+
+    // Basic email validation
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    try {
+      const { error: dbError } = await supabase
+        .from("email_subscribers")
+        .upsert({ email: email.toLowerCase().trim(), subscribed_at: new Date().toISOString() }, { onConflict: "email" });
+
+      if (dbError) {
+        console.error("EmailCapture insert error:", dbError.message);
+        // Still show success to avoid exposing DB errors to users
+      }
+    } catch {
+      // Silently fail — don't block UX on network errors
+    }
+
     setDone(true);
   };
 
@@ -25,9 +52,12 @@ export default function EmailCapture({ variant = "default" }: { variant?: "defau
 
   if (variant === "inline") {
     return (
-      <form onSubmit={submit} className="flex gap-2">
-        <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@company.com" className="flex-1 px-3 py-2 text-sm border border-border rounded-lg bg-background focus:ring-2 focus:ring-accent/30 focus:border-accent outline-none" />
-        <button type="submit" className="px-4 py-2 text-sm font-semibold bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors whitespace-nowrap">Subscribe</button>
+      <form onSubmit={submit} className="flex flex-col gap-1">
+        <div className="flex gap-2">
+          <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@company.com" className="flex-1 px-3 py-2 text-sm border border-border rounded-lg bg-background focus:ring-2 focus:ring-accent/30 focus:border-accent outline-none" />
+          <button type="submit" className="px-4 py-2 text-sm font-semibold bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors whitespace-nowrap">Subscribe</button>
+        </div>
+        {error && <p className="text-xs text-danger">{error}</p>}
       </form>
     );
   }
@@ -40,6 +70,7 @@ export default function EmailCapture({ variant = "default" }: { variant?: "defau
         <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@company.com" className="flex-1 px-3.5 py-2.5 text-sm border border-border rounded-lg bg-background focus:ring-2 focus:ring-accent/30 focus:border-accent outline-none" />
         <button type="submit" className="px-5 py-2.5 text-sm font-semibold bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors whitespace-nowrap">Subscribe Free</button>
       </form>
+      {error && <p className="text-xs text-danger mt-1">{error}</p>}
       <p className="text-[11px] text-muted mt-2">No spam. Unsubscribe anytime.</p>
     </div>
   );

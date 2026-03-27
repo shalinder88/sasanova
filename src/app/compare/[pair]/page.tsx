@@ -55,14 +55,14 @@ const scoreLabels: { key: keyof ToolScore; label: string }[] = [
 function VerdictBadge({ verdict, toolA, toolB }: { verdict: string; toolA: Tool; toolB: Tool }) {
   if (verdict === "depends") {
     return (
-      <span className="inline-block text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200 px-3 py-1 rounded-full">
+      <span className="inline-block text-xs font-semibold bg-warning-light text-warning border border-warning/20 px-3 py-1 rounded-full">
         Different jobs — depends on your workflow
       </span>
     );
   }
   const winner = verdict === toolA.slug ? toolA : verdict === toolB.slug ? toolB : null;
   return (
-    <span className="inline-block text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1 rounded-full">
+    <span className="inline-block text-xs font-semibold bg-success-light text-success border border-success/20 px-3 py-1 rounded-full">
       {winner ? `${winner.name} for most users` : `${verdict} for most users`}
     </span>
   );

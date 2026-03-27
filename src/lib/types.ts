@@ -189,15 +189,3 @@ export interface PageIndexStatus {
   approved_at: string | null;
 }
 
-// Helper: compute weighted overall score
-export function getOverallScore(tool: Pick<Tool, 'score_value' | 'score_ease' | 'score_power' | 'score_setup_friction' | 'score_migration_difficulty' | 'score_transparency'>): number {
-  const v = tool.score_value ?? 0;
-  const e = tool.score_ease ?? 0;
-  const p = tool.score_power ?? 0;
-  const sf = tool.score_setup_friction ?? 0;
-  const md = tool.score_migration_difficulty ?? 0;
-  const t = tool.score_transparency ?? 0;
-
-  const score = v * 0.25 + e * 0.15 + p * 0.20 + sf * 0.10 + md * 0.10 + t * 0.20;
-  return Math.round(score * 10) / 10;
-}

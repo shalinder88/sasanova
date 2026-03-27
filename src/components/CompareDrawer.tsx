@@ -1,19 +1,44 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useShortlist } from "./ShortlistProvider";
 import { tools } from "@/data/tools";
+
+const DISMISSED_KEY = "sasanova_compare_drawer_dismissed";
 
 export default function CompareDrawer() {
   const { shortlist, removeFromShortlist, clearShortlist } = useShortlist();
   const router = useRouter();
   const [dismissed, setDismissed] = useState(false);
 
-  const visible = shortlist.length >= 2 && !dismissed;
+  // Hydrate dismissed state from sessionStorage on mount
+  useEffect(() => {
+    try {
+      setDismissed(sessionStorage.getItem(DISMISSED_KEY) === "1");
+    } catch {
+      // sessionStorage unavailable in private browsing
+    }
+  }, []);
 
-  // Reset dismissed state when shortlist changes below 2 then back above
-  // (handled naturally: dismissed resets on remount or user adds again)
+  // Re-show drawer when shortlist changes (user added a new tool after closing)
+  useEffect(() => {
+    if (shortlist.length >= 2) {
+      try {
+        sessionStorage.removeItem(DISMISSED_KEY);
+      } catch { /* ignore */ }
+      setDismissed(false);
+    }
+  }, [shortlist.length]);
+
+  function dismiss() {
+    try {
+      sessionStorage.setItem(DISMISSED_KEY, "1");
+    } catch { /* ignore */ }
+    setDismissed(true);
+  }
+
+  const visible = shortlist.length >= 2 && !dismissed;
 
   function handleCompare() {
     router.push("/compare/shortlist");
@@ -89,13 +114,10 @@ export default function CompareDrawer() {
                 </svg>
               </button>
               <button
-                onClick={() => {
-                  clearShortlist();
-                  setDismissed(true);
-                }}
+                onClick={dismiss}
                 className="p-1.5 text-muted hover:text-foreground transition-colors"
                 aria-label="Dismiss compare drawer"
-                title="Clear and dismiss"
+                title="Dismiss (shortlist saved)"
               >
                 <svg
                   className="w-4 h-4"

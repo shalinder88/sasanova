@@ -355,7 +355,7 @@ export default async function WeeklyDigestPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbJsonLd(breadcrumbs)),
+          __html: JSON.stringify(breadcrumbJsonLd(breadcrumbs)).replace(/</g, "\\u003c"),
         }}
       />
 
@@ -363,7 +363,7 @@ export default async function WeeklyDigestPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(articleSchema),
+          __html: JSON.stringify(articleSchema).replace(/</g, "\\u003c"),
         }}
       />
 

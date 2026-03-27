@@ -1,21 +1,19 @@
 import Link from "next/link";
 
-function slugify(name: string): string {
-  return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
-}
-
 export default function AffiliateCTA({
   toolName,
+  toolSlug,
   affiliateUrl,
   hasFreeTier,
   provenance,
 }: {
   toolName: string;
+  /** The canonical tool slug from the data layer — used for the /pricing/ link */
+  toolSlug: string;
   affiliateUrl: string;
   hasFreeTier: boolean;
   provenance: string;
 }) {
-  const slug = slugify(toolName);
   const label = hasFreeTier ? `Try ${toolName}` : `Visit ${toolName}`;
 
   return (
@@ -45,7 +43,7 @@ export default function AffiliateCTA({
         </a>
 
         <Link
-          href={`/pricing/${slug}`}
+          href={`/pricing/${toolSlug}`}
           className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold border border-border rounded-lg text-foreground hover:bg-surface-alt transition-colors"
         >
           View pricing

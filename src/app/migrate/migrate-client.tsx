@@ -57,9 +57,9 @@ function getDataHours(volume: "light" | "medium" | "heavy"): number {
 }
 
 function getOnboardingFee(tool: Tool): number {
-  // TODO: These onboarding fees are hardcoded estimates and need periodic
-  // verification against vendor pricing pages. Last verified: 2025-Q4.
-  // Consider moving to tools.ts as an optional `onboardingFee` field.
+  // These onboarding fees are hardcoded estimates — verify periodically against vendor pages.
+  // Last reviewed: 2026-Q1. HubSpot Professional onboarding ~$3,000; Salesforce ~$5,000;
+  // Rippling ~$1,500. Consider moving to tools.ts as an optional `onboardingFee` field.
   const fees: Record<string, number> = {
     "hubspot-crm": 3000,
     salesforce: 5000,

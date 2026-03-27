@@ -122,6 +122,10 @@ export default function SearchBar({ variant = "header" }: { variant?: "header" |
             onKeyDown={handleKeyDown}
             placeholder={isPage ? "Search tools, comparisons, categories..." : "Search..."}
             autoFocus={isPage}
+            aria-label="Search software tools"
+            aria-autocomplete="list"
+            aria-expanded={open && suggestions.length > 0}
+            aria-controls="search-suggestions"
             className={`w-full bg-surface-alt border border-border text-foreground placeholder:text-muted outline-none transition-colors focus:ring-2 focus:ring-accent/30 focus:border-accent ${
               isPage
                 ? "pl-11 pr-4 py-3.5 text-base rounded-xl"
@@ -131,7 +135,10 @@ export default function SearchBar({ variant = "header" }: { variant?: "header" |
           {!isPage && (
             <div className="absolute inset-y-0 right-0 pr-2 flex items-center pointer-events-none">
               <kbd className="hidden sm:inline-flex items-center px-1.5 py-0.5 text-[10px] font-mono text-muted border border-border rounded">
-                {typeof navigator !== "undefined" && /Mac|iPod|iPhone|iPad/.test(navigator.platform ?? "")
+                {typeof navigator !== "undefined" && /Mac|iPod|iPhone|iPad/.test(
+                    // userAgentData.platform is the modern API; fall back to userAgent string
+                    ((navigator as unknown as { userAgentData?: { platform?: string } }).userAgentData?.platform ?? navigator.userAgent)
+                  )
                   ? "\u2318K"
                   : "Ctrl+K"}
               </kbd>
@@ -142,11 +149,13 @@ export default function SearchBar({ variant = "header" }: { variant?: "header" |
 
       {/* Suggestions dropdown */}
       {open && suggestions.length > 0 && (
-        <div className="absolute z-50 mt-1.5 w-full bg-surface border border-border rounded-xl shadow-lg overflow-hidden">
+        <div id="search-suggestions" role="listbox" aria-label="Search suggestions" className="absolute z-50 mt-1.5 w-full bg-surface border border-border rounded-xl shadow-lg overflow-hidden">
           {suggestions.map((tool, i) => (
             <Link
               key={tool.slug}
               href={`/tools/${tool.slug}`}
+              role="option"
+              aria-selected={i === highlightIndex}
               onClick={() => {
                 setOpen(false);
                 setQuery("");

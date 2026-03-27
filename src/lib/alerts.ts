@@ -6,16 +6,25 @@ import { supabase } from "@/lib/supabase";
  * Returns true on success, false on failure.
  * Gracefully degrades if Supabase is not configured.
  */
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const SLUG_RE = /^[a-z0-9-]+$/;
+
 export async function subscribeToAlerts(
   email: string,
   toolSlugs: string[]
 ): Promise<boolean> {
+  // Input validation
+  if (!EMAIL_RE.test(email) || email.length > 254) return false;
+  if (!Array.isArray(toolSlugs) || toolSlugs.length === 0 || toolSlugs.length > 50) return false;
+  const sanitizedSlugs = toolSlugs.filter((s) => typeof s === "string" && SLUG_RE.test(s) && s.length <= 80);
+  if (sanitizedSlugs.length === 0) return false;
+
   try {
     // Check if subscription already exists for this email
     const { data: existing, error: fetchError } = await supabase
       .from("price_alerts")
       .select("id, tool_slugs")
-      .eq("email", email)
+      .eq("email", email.toLowerCase().trim())
       .maybeSingle();
 
     if (fetchError) {
@@ -26,7 +35,7 @@ export async function subscribeToAlerts(
     if (existing) {
       // Merge new slugs with existing, deduplicate
       const merged = Array.from(
-        new Set([...(existing.tool_slugs as string[]), ...toolSlugs])
+        new Set([...(existing.tool_slugs as string[]), ...sanitizedSlugs])
       );
       const { error: updateError } = await supabase
         .from("price_alerts")
@@ -42,8 +51,8 @@ export async function subscribeToAlerts(
       const { error: insertError } = await supabase
         .from("price_alerts")
         .insert({
-          email,
-          tool_slugs: toolSlugs,
+          email: email.toLowerCase().trim(),
+          tool_slugs: sanitizedSlugs,
           created_at: new Date().toISOString(),
         });
 

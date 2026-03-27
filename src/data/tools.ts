@@ -251,7 +251,7 @@ export const tools: Tool[] = [
     switchingTriggers: ["Price increases as contacts grow", "Complexity for simple use cases"],
     switchingBlockers: ["Deep automation trees", "CRM pipeline data", "Site tracking history"],
     implementationComplexity: "medium",
-    alternatives: ["mailchimp", "brevo", "hubspot-crm", "jasper"],
+    alternatives: ["mailchimp", "brevo", "hubspot-crm", "klaviyo"],
   },
   {
     slug: "beehiiv",
@@ -340,7 +340,7 @@ export const tools: Tool[] = [
     ],
     pricingUrl: "https://ghost.org/pricing/",
     freeTier: false,
-    freeTierLimits: "No free tier. Ghost(Pro) starts at $15/mo billed annually. Self-hosted Ghost is free and open source.",
+    freeTierLimits: "No free tier. Ghost(Pro) Starter: $18/mo month-to-month or $180/yr ($15/mo billed annually). Self-hosted Ghost is free and open source.",
     bestFor: ["Professional publishers who want full ownership", "Developers who want a customizable open-source platform", "Creators who want memberships without a revenue cut"],
     avoidIf: ["You want the simplest setup possible", "You need marketing automation", "You're not comfortable with some technical setup"],
     features: ["Powerful editor", "Native memberships & subscriptions", "Newsletter delivery", "Custom themes", "SEO built-in", "Integrations via Zapier/webhooks", "Open source", "Self-hostable", "Stripe-native payments"],
@@ -373,7 +373,6 @@ export const tools: Tool[] = [
       { name: "Basic", priceMonthly: 9, priceAnnual: 90, billingModel: "flat", limits: "Unlimited subscribers, custom domain, automation", highlighted: true },
       { name: "Standard", priceMonthly: 29, priceAnnual: 290, billingModel: "flat", limits: "Paid subscriptions, surveys, team members, priority support" },
       { name: "Professional", priceMonthly: 79, priceAnnual: 790, billingModel: "flat", limits: "Everything in Standard + paid subscriptions, surveys, API access, team members" },
-      { name: "Advanced", priceMonthly: 139, priceAnnual: 1390, billingModel: "flat", limits: "Everything in Professional + priority support, dedicated IP, advanced analytics (plan existence unverified — verify at buttondown.com/pricing)" },
     ],
     pricingUrl: "https://buttondown.com/pricing",
     freeTier: true,
@@ -482,8 +481,8 @@ export const tools: Tool[] = [
     scores: { value: 9, ease: 4, power: 10, setupFriction: 3, migrationDifficulty: 5, transparency: 10 },
     pricing: [
       { name: "Community (self-hosted)", priceMonthly: 0, priceAnnual: 0, billingModel: "flat", limits: "Unlimited; self-host required" },
-      { name: "Starter", priceMonthly: 20, priceAnnual: 240, billingModel: "flat", limits: "2,500 executions, cloud-hosted. Note: all cloud prices are in EUR." },
-      { name: "Pro", priceMonthly: 50, priceAnnual: 600, billingModel: "flat", limits: "10,000 executions, unlimited workflows, global regions", highlighted: true },
+      { name: "Starter (€20/mo)", priceMonthly: 20, priceAnnual: 240, billingModel: "flat", limits: "2,500 executions, cloud-hosted. Priced in EUR — USD equivalent ~$22/mo at current rates." },
+      { name: "Pro (€50/mo)", priceMonthly: 50, priceAnnual: 600, billingModel: "flat", limits: "10,000 executions, unlimited workflows, global regions. Priced in EUR — USD equivalent ~$55/mo.", highlighted: true },
       { name: "Enterprise", priceMonthly: null, priceAnnual: null, billingModel: "custom", limits: "Unlimited, SSO, audit logs, dedicated support" },
     ],
     pricingUrl: "https://n8n.io/pricing/",
@@ -505,6 +504,7 @@ export const tools: Tool[] = [
     switchingBlockers: ["Self-hosted data sovereignty", "Custom code nodes", "Infrastructure investment"],
     implementationComplexity: "high",
     alternatives: ["zapier", "make", "pipedream"],
+    hiddenCosts: ["Cloud plans are priced in EUR (€), not USD — budget ~10% more for USD users depending on exchange rate", "Execution overage charges if workflows exceed monthly limit"],
   },
   // ── CLUSTER 2: Scheduling ──
   {
@@ -733,14 +733,14 @@ export const tools: Tool[] = [
     categories: ["project-management"],
     scores: { value: 6, ease: 8, power: 7, setupFriction: 8, migrationDifficulty: 5, transparency: 6 },
     pricing: [
-      { name: "Personal", priceMonthly: 0, priceAnnual: 0, billingModel: "flat", limits: "Up to 2 users, unlimited tasks/projects, basic views" },
+      { name: "Personal", priceMonthly: 0, priceAnnual: 0, billingModel: "flat", limits: "Up to 10 users, unlimited tasks/projects, basic views" },
       { name: "Starter", priceMonthly: 13.49, priceAnnual: 131.88, billingModel: "per_seat", limits: "Timeline, workflow builder, forms, unlimited dashboards", highlighted: true },
       { name: "Advanced", priceMonthly: 30.49, priceAnnual: 299.88, billingModel: "per_seat", limits: "Portfolios, goals, custom rules, approvals, proofing" },
       { name: "Enterprise", priceMonthly: null, priceAnnual: null, billingModel: "custom", limits: "SAML, data loss prevention, custom branding, audit logs" },
     ],
     pricingUrl: "https://asana.com/pricing",
     freeTier: true,
-    freeTierLimits: "Up to 2 users, unlimited tasks and projects, list and board views only",
+    freeTierLimits: "Up to 10 users, unlimited tasks and projects, list and board views only",
     bestFor: ["Teams that want structured, opinionated project management", "Marketing and ops teams managing recurring workflows", "Organizations that value clean UI and ease of onboarding"],
     avoidIf: ["You need docs/wiki alongside project management", "You want maximum customization (ClickUp wins)", "You're a solo user (limited value on free tier)"],
     features: ["Tasks and subtasks", "Timeline (Gantt)", "Board view", "List view", "Calendar", "Goals", "Portfolios", "Workflow builder", "Forms", "Approvals", "Reporting"],
@@ -1061,15 +1061,14 @@ export const tools: Tool[] = [
     categories: ["crm", "sales-outreach"],
     scores: { value: 4, ease: 3, power: 10, setupFriction: 2, migrationDifficulty: 2, transparency: 3 },
     pricing: [
-      { name: "Free Suite", priceMonthly: 0, priceAnnual: 0, billingModel: "flat", limits: "Up to 2 users, basic CRM features" },
       { name: "Starter Suite", priceMonthly: 25, priceAnnual: 300, billingModel: "per_seat", limits: "Basic CRM features, lead/contact/opportunity management, email integration" },
       { name: "Pro Suite", priceMonthly: 100, priceAnnual: 1200, billingModel: "per_seat", limits: "Complete CRM, forecasting, quotes, custom dashboards", highlighted: true },
       { name: "Enterprise", priceMonthly: 175, priceAnnual: 2100, billingModel: "per_seat", limits: "Advanced customization, workflow automation, API access" },
       { name: "Unlimited", priceMonthly: 350, priceAnnual: 4200, billingModel: "per_seat", limits: "Unlimited customization, 24/7 support, sandbox, Einstein AI" },
     ],
     pricingUrl: "https://www.salesforce.com/editions-pricing/sales-cloud/",
-    freeTier: true,
-    freeTierLimits: "Up to 2 users, basic CRM features",
+    freeTier: false,
+    freeTierLimits: "No free tier. Salesforce Sales Cloud starts at $25/user/month (Starter Suite). A 30-day free trial is available.",
     bestFor: ["Large enterprises needing maximum CRM customization", "Organizations requiring a massive app ecosystem (AppExchange)", "Companies with complex sales processes and large teams"],
     avoidIf: ["You're a small business on a budget", "You want simple, quick setup without a consultant", "You need a lightweight CRM for a small sales team"],
     features: ["Lead and opportunity management", "Sales forecasting", "Workflow automation", "Custom objects and fields", "AppExchange marketplace", "Einstein AI", "Reports and dashboards", "Territory management", "CPQ (Configure-Price-Quote)", "Mobile app"],
@@ -1268,6 +1267,7 @@ export const tools: Tool[] = [
     switchingBlockers: ["Custom code in workflows", "Data store configurations", "API integrations built"],
     implementationComplexity: "medium",
     alternatives: ["n8n", "zapier", "make"],
+    hiddenCosts: ["Pipedream has made significant pricing changes; community reports costs rising from ~$19/mo to ~$200/mo at higher usage — verify current plans at pipedream.com/pricing before committing", "Credit overages charged per 30 seconds of compute at 256MB memory"],
   },
   {
     slug: "tray-io",
@@ -4848,7 +4848,7 @@ export const tools: Tool[] = [
     pricing: [
       { name: "Standard", priceMonthly: 49, priceAnnual: 444, billingModel: "flat", limits: "Unlimited pages, traffic, and leads, 1 custom domain, email support" },
       { name: "Pro", priceMonthly: 99, priceAnnual: 888, billingModel: "flat", limits: "3 custom domains, online sales and payments, A/B testing, email trigger links", highlighted: true },
-      { name: "Advanced", priceMonthly: 199, priceAnnual: 2988, billingModel: "flat", limits: "50 custom domains, advanced integrations, sub-accounts, priority support" },
+      { name: "Advanced", priceMonthly: 199, priceAnnual: null, billingModel: "flat", limits: "50 custom domains, advanced integrations, sub-accounts, priority support" },
     ],
     pricingUrl: "https://www.leadpages.com/pricing",
     freeTier: false,
@@ -4868,7 +4868,7 @@ export const tools: Tool[] = [
     switchingBlockers: ["Published pages driving live traffic", "Payment collection workflows configured", "Template customizations invested in"],
     implementationComplexity: "low",
     alternatives: ["unbounce", "instapage", "carrd"],
-    hiddenCosts: ["A/B testing requires Pro plan", "No free tier — 14-day trial only", "Online sales locked to Pro+"],
+    hiddenCosts: ["A/B testing requires Pro plan", "No free tier — 14-day trial only", "Online sales locked to Pro+", "Advanced annual pricing unverified — verify at leadpages.com before committing"],
   },
   {
     slug: "swipe-pages",
@@ -5463,8 +5463,8 @@ export const tools: Tool[] = [
       { name: "Enterprise", priceMonthly: null, priceAnnual: null, billingModel: "custom", limits: "SSO, advanced security, CLM, API, dedicated support" },
     ],
     pricingUrl: "https://www.docusign.com/products-and-pricing",
-    freeTier: true,
-    freeTierLimits: "Free trial with limited envelopes; DocuSign for individuals available",
+    freeTier: false,
+    freeTierLimits: "No permanent free tier. DocuSign offers a 30-day free trial with limited envelopes. 'DocuSign for Individuals' is a paid Personal plan ($15/mo or $120/yr), not a free tier.",
     bestFor: ["Enterprises needing the most legally compliant e-signature solution", "Legal teams managing contracts with full CLM capabilities", "Global organizations needing e-signature recognition in 180+ countries"],
     avoidIf: ["You need a full proposal builder with design tools (use PandaDoc or Proposify)", "You want an affordable solution for simple signatures (use PandaDoc free)", "You only send a few documents per month (Personal plan limits to 5)"],
     features: ["Electronic signatures", "Templates and reusable fields", "Bulk send", "PowerForms (self-service signing)", "Payment collection", "Signer identification", "Contract Lifecycle Management (CLM)", "Intelligent Agreement Management (IAM)", "Audit trail", "Mobile signing"],
@@ -5788,4 +5788,10 @@ export function formatVerifiedLong(iso: string): string {
   const pairKeys = versusPairs.map(v => [v.slugA, v.slugB].sort().join("-vs-"));
   const dupePairs = pairKeys.filter((k, i) => pairKeys.indexOf(k) !== i);
   if (dupePairs.length > 0) throw new Error(`DATA INTEGRITY: duplicate versus pairs: ${dupePairs.join(", ")}`);
+
+  // 5. Recompute toolCount for each category from actual tools array so the
+  //    hardcoded values never drift out of sync with new/removed tools.
+  for (const cat of categories) {
+    cat.toolCount = tools.filter(t => t.categories.includes(cat.slug)).length;
+  }
 })();

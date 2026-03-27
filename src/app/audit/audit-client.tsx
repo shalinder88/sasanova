@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import {
   tools,
   categories,
@@ -444,6 +444,38 @@ function saveReauditReminder(email: string, entries: StackEntry[]): ReauditRemin
   return reminder;
 }
 
+/* ── Save to My Stack ── */
+
+const MY_STACK_KEY = "sasanova_my_stack";
+
+interface MyStackTool {
+  slug: string;
+  planName: string;
+  teamSize: number;
+  monthlyCost: number;
+}
+
+interface MyStackData {
+  tools: MyStackTool[];
+  savedAt: string;
+  lastVisit: string;
+}
+
+function saveToMyStack(results: AuditResult[]): void {
+  const stackTools: MyStackTool[] = results.map((r) => ({
+    slug: r.tool.slug,
+    planName: r.plan.name,
+    teamSize: r.entry.teamSize,
+    monthlyCost: r.monthlyCost,
+  }));
+  const data: MyStackData = {
+    tools: stackTools,
+    savedAt: new Date().toISOString(),
+    lastVisit: new Date().toISOString(),
+  };
+  localStorage.setItem(MY_STACK_KEY, JSON.stringify(data));
+}
+
 /* ── Comparison / Migration guide link helpers ── */
 
 function getComparisonLink(toolA: Tool, toolB: Tool): string {
@@ -489,6 +521,7 @@ function getMigrationGuideLink(fromTool: Tool, toTool: Tool): string | null {
 
 export default function AuditClient() {
   const searchParams = useSearchParams();
+  const router = useRouter();
 
   /* ── State ── */
   const [entries, setEntries] = useState<StackEntry[]>(() => {
@@ -1549,6 +1582,35 @@ export default function AuditClient() {
                   >
                     Export as Report
                   </button>
+                </div>
+
+                {/* Save to My Stack — bridge to retention */}
+                <div className="border border-accent/30 rounded-xl p-5 bg-accent/5">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center shrink-0">
+                      <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-base font-bold text-foreground mb-1">Track This Stack Monthly</h3>
+                      <p className="text-sm text-muted mb-3">
+                        Save your stack to your personal dashboard. We&apos;ll track pricing changes and show optimization opportunities every time you return.
+                      </p>
+                      <button
+                        onClick={() => {
+                          saveToMyStack(auditResults);
+                          router.push("/my-stack");
+                        }}
+                        className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold bg-accent text-white rounded-lg hover:brightness-110 transition-all"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                        </svg>
+                        Save to My Stack
+                      </button>
+                    </div>
+                  </div>
                 </div>
 
                 {savedNotice && (

@@ -84,8 +84,8 @@ export default function Home() {
                 </svg>
               </div>
               <div className="text-left">
-                <p className="text-xs font-semibold text-success">Last audit found: $312/mo in savings</p>
-                <p className="text-[10px] text-muted">for a 5-person team using 4 tools</p>
+                <p className="text-xs font-semibold text-success">Example audit: $312/mo in potential savings</p>
+                <p className="text-[10px] text-muted">calculated for a 5-person team using 4 tools</p>
               </div>
             </div>
 
@@ -130,25 +130,25 @@ export default function Home() {
           ═══════════════════════════════════════════════════════ */}
       <section className="py-10 lg:py-14 border-b border-border bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs text-muted uppercase tracking-wider font-semibold mb-6">What others found</p>
+          <p className="text-center text-xs text-muted uppercase tracking-wider font-semibold mb-6">Calculated savings based on published pricing</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
               {
                 savings: "$4,200/yr",
-                desc: "saved switching from Mailchimp to beehiiv",
-                team: "8-person marketing team",
+                desc: "calculated savings switching from Mailchimp to beehiiv",
+                team: "Example: 8-person marketing team, 10K contacts",
                 color: "text-success",
               },
               {
                 savings: "$1,114/yr",
-                desc: "saved switching from Zapier to Make",
-                team: "Solo founder, 2K tasks/mo",
+                desc: "calculated savings switching from Zapier to Make",
+                team: "Example: Solo founder, 2K tasks/mo",
                 color: "text-success",
               },
               {
                 savings: "$9,600/yr",
-                desc: "saved switching from Salesforce to HubSpot",
-                team: "10-person sales team",
+                desc: "calculated savings switching from Salesforce to HubSpot",
+                team: "Example: 10-person sales team, CRM Starter tier",
                 color: "text-success",
               },
             ].map((proof) => (
