@@ -103,16 +103,32 @@ export default function CalculatePage() {
     (r): r is CheapestResult => r !== null,
   );
 
-  // Pre-compute scenario stacks
-  const coreNeeds = [
+  // Pre-compute scenario stacks — each uses DIFFERENT categories
+  // so the results are visibly different at each team size
+  const soloNeeds = [
     { slug: "email-marketing", label: "Email" },
     { slug: "crm", label: "CRM" },
     { slug: "automation", label: "Automation" },
   ];
+  const teamNeeds = [
+    { slug: "crm", label: "CRM" },
+    { slug: "email-marketing", label: "Email" },
+    { slug: "automation", label: "Automation" },
+    { slug: "project-management", label: "PM" },
+    { slug: "communication", label: "Chat" },
+  ];
+  const growthNeeds = [
+    { slug: "crm", label: "CRM" },
+    { slug: "email-marketing", label: "Email" },
+    { slug: "automation", label: "Automation" },
+    { slug: "project-management", label: "PM" },
+    { slug: "communication", label: "Chat" },
+    { slug: "analytics", label: "Analytics" },
+  ];
 
-  const soloScenario = computeScenario("Solo founder stack", 1, coreNeeds);
-  const teamScenario = computeScenario("5-person team stack", 5, coreNeeds);
-  const growthScenario = computeScenario("25-person team stack", 25, coreNeeds);
+  const soloScenario = computeScenario("Solo founder (1 person)", 1, soloNeeds);
+  const teamScenario = computeScenario("Small team (5 people)", 5, teamNeeds);
+  const growthScenario = computeScenario("Growing team (25 people)", 25, growthNeeds);
   const scenarios = [soloScenario, teamScenario, growthScenario];
 
   return (
