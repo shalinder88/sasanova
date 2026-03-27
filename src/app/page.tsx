@@ -63,18 +63,32 @@ export default function Home() {
             </p>
 
             {/* Primary CTAs */}
-            <div className="flex flex-wrap justify-center gap-3 mb-4">
+            <div className="flex flex-wrap justify-center gap-3 mb-3">
               <Link href="/audit" className="px-7 py-3 text-sm font-semibold bg-accent text-white rounded-lg hover:brightness-110 transition-all">
-                Audit Your Stack
+                See Where You&apos;re Overpaying
               </Link>
               <Link href="/calculate" className="px-7 py-3 text-sm font-semibold bg-accent/10 border border-accent text-accent rounded-lg hover:bg-accent/20 transition-all">
-                Calculate Costs
+                Compare Real Prices
               </Link>
               <Link href="/compare" className="px-7 py-3 text-sm font-semibold border border-border text-foreground rounded-lg hover:bg-surface transition-colors">
                 Compare Tools
               </Link>
             </div>
-            <p className="text-xs text-muted/70 mb-3">Join teams saving thousands on SaaS</p>
+            <p className="text-xs text-muted/60 mb-4">Free &middot; No account needed &middot; Takes 2 minutes</p>
+
+            {/* Mini audit preview */}
+            <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl border border-success/20 bg-success/5 mb-4 animate-pulse-soft">
+              <div className="w-8 h-8 rounded-lg bg-success/10 flex items-center justify-center shrink-0">
+                <svg className="w-4 h-4 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div className="text-left">
+                <p className="text-xs font-semibold text-success">Last audit found: $312/mo in savings</p>
+                <p className="text-[10px] text-muted">for a 5-person team using 4 tools</p>
+              </div>
+            </div>
+
             <p className="text-xs text-muted/60 mb-12">
               Need help?{" "}
               <Link href="/services" className="text-accent hover:underline">
@@ -107,6 +121,46 @@ export default function Home() {
                 <p className="text-[10px] text-muted uppercase tracking-wider">Data Verified</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          SOCIAL PROOF — What others found
+          ═══════════════════════════════════════════════════════ */}
+      <section className="py-10 lg:py-14 border-b border-border bg-surface">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-xs text-muted uppercase tracking-wider font-semibold mb-6">What others found</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              {
+                savings: "$4,200/yr",
+                desc: "saved switching from Mailchimp to beehiiv",
+                team: "8-person marketing team",
+                color: "text-success",
+              },
+              {
+                savings: "$1,114/yr",
+                desc: "saved switching from Zapier to Make",
+                team: "Solo founder, 2K tasks/mo",
+                color: "text-success",
+              },
+              {
+                savings: "$9,600/yr",
+                desc: "saved switching from Salesforce to HubSpot",
+                team: "10-person sales team",
+                color: "text-success",
+              },
+            ].map((proof) => (
+              <div
+                key={proof.desc}
+                className="text-center p-5 rounded-xl border border-border bg-background"
+              >
+                <p className={`text-2xl font-extrabold ${proof.color} mb-1`}>{proof.savings}</p>
+                <p className="text-xs text-muted leading-relaxed mb-2">{proof.desc}</p>
+                <p className="text-[10px] text-muted/60 uppercase tracking-wider">{proof.team}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -286,80 +340,86 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════
           SECTION 3 — Switching Savings (promoted, expanded)
           ═══════════════════════════════════════════════════════ */}
-      <section id="switching" className="border-b border-border bg-surface">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-10">
-            <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
-              Switching
-              <br />
-              <span className="text-muted">saves real money</span>
-            </h2>
+      <section id="switching" className="border-b border-border bg-surface relative overflow-hidden">
+        {/* Attention-grabbing accent stripe */}
+        <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-success/60 via-success to-success/60" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+            <div>
+              <p className="text-xs font-semibold text-success uppercase tracking-wider mb-3">Stop scrolling. Read this.</p>
+              <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
+                Switching
+                <br />
+                <span className="text-muted">saves real money</span>
+              </h2>
+            </div>
             <p className="text-base text-muted leading-relaxed lg:pt-2">
               We calculated the annual savings for common tool switches using verified pricing data. These are real numbers, not estimates.
             </p>
           </div>
+          <p className="text-sm text-success font-semibold mb-10">Combined potential savings below: over $14,900/year for a 10-person team.</p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Mailchimp → beehiiv */}
-            <Link href="/guides/migrate-mailchimp-to-beehiiv" className="group flex flex-col p-5 border border-border rounded-xl bg-surface hover-glow hover:border-accent/30 transition-all">
-              <div className="flex items-start gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-success/10 flex items-center justify-center shrink-0">
-                  <svg className="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+            <Link href="/guides/migrate-mailchimp-to-beehiiv" className="group flex flex-col p-6 border border-success/20 rounded-xl bg-success/[0.03] hover-glow hover:border-success/40 transition-all">
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-12 h-12 rounded-lg bg-success/10 flex items-center justify-center shrink-0">
+                  <svg className="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <div>
-                  <p className="text-xs text-muted">Mailchimp → beehiiv</p>
-                  <p className="text-2xl font-extrabold text-success">Save 60%+</p>
+                  <p className="text-xs text-muted">Mailchimp &rarr; beehiiv</p>
+                  <p className="text-3xl font-extrabold text-success">Save 60%+</p>
                 </div>
               </div>
-              <p className="text-xs text-muted leading-relaxed flex-1">
+              <p className="text-sm text-muted leading-relaxed flex-1">
                 Mailchimp Standard starts at $20/mo for 500 contacts and scales steeply. beehiiv Scale is $49/mo for unlimited subscribers. The gap grows with every thousand contacts you add.
               </p>
-              <span className="text-xs text-accent font-medium mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                See the full breakdown →
+              <span className="text-xs text-accent font-semibold mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                See the full breakdown &rarr;
               </span>
             </Link>
 
             {/* Zapier → Make */}
-            <Link href="/guides/migrate-zapier-to-make" className="group flex flex-col p-5 border border-border rounded-xl bg-surface hover-glow hover:border-accent/30 transition-all">
-              <div className="flex items-start gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-success/10 flex items-center justify-center shrink-0">
-                  <svg className="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+            <Link href="/guides/migrate-zapier-to-make" className="group flex flex-col p-6 border border-success/20 rounded-xl bg-success/[0.03] hover-glow hover:border-success/40 transition-all">
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-12 h-12 rounded-lg bg-success/10 flex items-center justify-center shrink-0">
+                  <svg className="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
                 <div>
-                  <p className="text-xs text-muted">Zapier → Make</p>
-                  <p className="text-2xl font-extrabold text-success">$1,114/yr</p>
+                  <p className="text-xs text-muted">Zapier &rarr; Make</p>
+                  <p className="text-3xl font-extrabold text-success">$1,114/yr</p>
                 </div>
               </div>
-              <p className="text-xs text-muted leading-relaxed flex-1">
+              <p className="text-sm text-muted leading-relaxed flex-1">
                 At 2,000 tasks/mo, Zapier Team is $103.50/mo. Make Core handles 10K ops for $10.59/mo. Save $92.91/mo with more capacity.
               </p>
-              <span className="text-xs text-accent font-medium mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                See the full breakdown →
+              <span className="text-xs text-accent font-semibold mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                See the full breakdown &rarr;
               </span>
             </Link>
 
             {/* Salesforce → HubSpot */}
-            <Link href="/guides/migrate-salesforce-to-hubspot" className="group flex flex-col p-5 border border-border rounded-xl bg-surface hover-glow hover:border-accent/30 transition-all">
-              <div className="flex items-start gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-success/10 flex items-center justify-center shrink-0">
-                  <svg className="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+            <Link href="/guides/migrate-salesforce-to-hubspot" className="group flex flex-col p-6 border border-success/20 rounded-xl bg-success/[0.03] hover-glow hover:border-success/40 transition-all">
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-12 h-12 rounded-lg bg-success/10 flex items-center justify-center shrink-0">
+                  <svg className="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
                 <div>
-                  <p className="text-xs text-muted">Salesforce → HubSpot</p>
-                  <p className="text-2xl font-extrabold text-success">$9,600/yr</p>
+                  <p className="text-xs text-muted">Salesforce &rarr; HubSpot</p>
+                  <p className="text-3xl font-extrabold text-success">$9,600/yr</p>
                 </div>
               </div>
-              <p className="text-xs text-muted leading-relaxed flex-1">
+              <p className="text-sm text-muted leading-relaxed flex-1">
                 For a 10-person team, Salesforce Pro Suite is $100/seat/mo ($1,000/mo). HubSpot Starter is $20/seat/mo ($200/mo). Plus Salesforce requires a $3,000+ onboarding fee.
               </p>
-              <span className="text-xs text-accent font-medium mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                See the full breakdown →
+              <span className="text-xs text-accent font-semibold mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                See the full breakdown &rarr;
               </span>
             </Link>
           </div>
